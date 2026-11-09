@@ -1,0 +1,11 @@
+{
+  "schema_version": "access_case.v1",
+  "case_id": "ac-pharm-orders-view-select-own",
+  "role": "pharmacist",
+  "user_id": "44444444-4444-4444-8444-444444444444",
+  "resource": "pharmacist_orders_v",
+  "action": "select",
+  "ownership": "own",
+  "attack": null,
+  "expected": "allow"
+}

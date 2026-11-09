@@ -1,0 +1,48 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rec-fx-nurse-005",
+  "patient_ref": "pt-fx-0005",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "fx-nurse-005",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v1"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "headache",
+      "present": true,
+      "evidence": {
+        "span_text": "ತಲೆನೋವು ಇದೆ",
+        "char_start": 34,
+        "char_end": 45,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "vomiting",
+      "present": false,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ಆಗಿಲ್ಲ",
+        "char_start": 52,
+        "char_end": 64,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": {
+    "text": "if the fever does not come down, come back in two days",
+    "evidence": {
+      "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
+      "char_start": 66,
+      "char_end": 112,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

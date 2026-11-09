@@ -1,0 +1,20 @@
+{
+  "schema_version": "manifest.v1",
+  "file": "data/audio/tts/fx-pharm-003__v1__clean.wav",
+  "sha256": "c39ef43582924e844059ee21e398661a8e82f09025a935a210ce236a66a17980",
+  "bytes": 2554,
+  "source": "tts",
+  "split": "dev",
+  "noise_snr_db": null,
+  "speed_factor": null,
+  "voice_or_speaker": "tts-voice-A",
+  "dialect": "unknown",
+  "licence_spdx": "UNVERIFIED",
+  "licence_url": "UNVERIFIED",
+  "retrieved_at": "2026-11-09T12:00:00Z",
+  "generator_version": "fixtures-v1",
+  "seed": 1234,
+  "parent_id": null,
+  "consent_note": "synthetic TTS voice; no human speaker",
+  "native_validated": false
+}

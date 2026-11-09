@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rec-fx-asha-001",
+  "patient_ref": "pt-fx-0001",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "fx-asha-001",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v1"
+  },
+  "status": "final",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಮೂರು ದಿನದಿಂದ ಜ್ವರ ಇದೆ",
+        "char_start": 32,
+        "char_end": 53,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "cough",
+      "present": false,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು ಇಲ್ಲ",
+        "char_start": 55,
+        "char_end": 66,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

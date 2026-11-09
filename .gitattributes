@@ -1,0 +1,26 @@
+# Normalise text to LF everywhere so sha256 hashes (test.lock, manifest) match on every OS.
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+*.lock text eol=lf
+*.mk text eol=lf
+Makefile text eol=lf
+*.sh text eol=lf
+*.ipynb text eol=lf
+
+*.wav binary
+*.flac binary
+*.mp3 binary
+*.png binary
+*.jpg binary
+*.ttf binary
+*.otf binary
+*.woff2 binary
+*.pdf binary

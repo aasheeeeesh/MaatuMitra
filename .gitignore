@@ -1,0 +1,58 @@
+# --- secrets (constraint 3) ---
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+*.p12
+
+# --- python / tooling ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# --- model weights and caches (never commit; pin revisions instead) ---
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.gguf
+models/
+hf_cache/
+.hf_cache/
+huggingface/
+torch_cache/
+
+# --- audio (rebuilt by `make data`; sha256 in data/manifest.jsonl) ---
+data/audio/**
+*.wav
+*.flac
+*.mp3
+*.ogg
+!fixtures/audio/
+!fixtures/audio/*.wav
+
+# --- database data dirs ---
+pgdata/
+pg_data/
+postgres-data/
+**/.pgdata/
+*.sqlite3
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Claude Code local settings ---
+.claude/settings.local.json

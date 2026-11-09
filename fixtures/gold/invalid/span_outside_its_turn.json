@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "fx-asha-001",
+  "template_family_id": "a_fever_cough_duration",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಎಷ್ಟು ದಿನದಿಂದ ಜ್ವರ ಇದೆ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಮೂರು ದಿನದಿಂದ ಜ್ವರ ಇದೆ, ಕೆಮ್ಮು ಇಲ್ಲ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-fx-0001",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಮೂರು ದಿನದಿಂದ ಜ್ವರ ಇದೆ",
+          "char_start": 32,
+          "char_end": 53
+        }
+      },
+      {
+        "name": "cough",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಕೆಮ್ಮು ಇಲ್ಲ",
+          "char_start": 55,
+          "char_end": 66
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

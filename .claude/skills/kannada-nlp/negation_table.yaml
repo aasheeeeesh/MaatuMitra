@@ -1,0 +1,86 @@
+# Shared Kannada negation table (machine-readable STARTER table).
+#
+# Read by m3_extract (its negation FLAG must use ONLY this table).
+# m4_verify must NOT read this file: it hand-codes its own, independent rules
+# so the safety check is not circular. m1_data uses it for coverage
+# ("every pattern appears in >= 5 conversations").
+#
+# Every entry is a HYPOTHESIS (status: hypothesis_unverified). It came from
+# PROJECT_BRIEF.md AGENT 5 "NEGATION RULES" (origin: brief) or was added by the
+# architect agent (origin: architect_addition). None of it is native-validated.
+# Change it only with a decision entry (handoff) and bump `version`.
+#
+# How to apply (contract for readers of this file):
+#  - Normalise text (NFC, strip BOM/ZWSP, remove ZWJ/ZWNJ for comparison).
+#  - Tokenise with `tokenizer` (the `regex` library, not `re`).
+#  - strong_whole_token / suffix / soft_suffix / verb_lexicon_suffix patterns are
+#    matched against ONE token at a time (regex.search(pattern, token)).
+#  - Never match cues as raw substrings of the sentence.
+#  - Split clauses first (clause_splitter_*); a cue negates only its own clause.
+
+version: 1
+date: 2026-11-09
+tokenizer: '[\p{L}\p{M}\p{N}]+'
+# Verb stems for verb_lexicon_suffix / soft_suffix. STARTER list, UNVERIFIED;
+# m1/m3 extend it with sources. Stems are written as they appear before the suffix.
+verb_stems: [ಮುಗಿಸ, ತೆಗೆದುಕೊಳ್ಳ, ಕುಡಿಯ, ತಿನ್ನ, ಕೊಡ, ಬರ, ಹೋಗ, ಮಾಡ, ನಿಲ್ಲಿಸ, ಹಾಕ]
+
+entries:
+  # ---------------- strong cues, whole token ----------------
+  - {id: NEG-W01, type: strong_whole_token, pattern: '^ಇಲ್ಲ$', example: 'ಕೆಮ್ಮು ಇಲ್ಲ.', meaning: 'no / is not (existential)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-W02, type: strong_whole_token, pattern: '^ಇಲ್ಲಾ$', example: 'ಜ್ವರ ಇಲ್ಲಾ.', meaning: 'spoken lengthening of ಇಲ್ಲ', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-W03, type: strong_whole_token, pattern: '^ಅಲ್ಲ$', example: 'ಇದು ಆ ಮಾತ್ರೆ ಅಲ್ಲ.', meaning: 'is not (identity)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-W04, type: strong_whole_token, pattern: '^ಬೇಡ$', example: 'ನೆಗಡಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಡ.', meaning: 'not wanted / do not', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-W05, type: strong_whole_token, pattern: '^ಬೇಡಿ$', example: 'ಉಳಿದ ಮಾತ್ರೆ ಕೊಡುವುದು ಬೇಡಿ.', meaning: 'do not (polite/plural)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-W06, type: strong_whole_token, pattern: '^ಬಾರದು$', example: 'ಆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು.', meaning: 'must not (written as a separate word)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-W07, type: strong_whole_token, pattern: '^ಕೂಡದು$', example: 'ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು.', meaning: 'must not (formal)', status: hypothesis_unverified, origin: brief}
+
+  # ---------------- token-final suffixes ----------------
+  - {id: NEG-S01, type: suffix, pattern: 'ಿಲ್ಲಾ?$', example: 'ವಾಂತಿ ಆಗಿಲ್ಲ.', meaning: '-ಿಲ್ಲ past/perfect negative; covers -ಲಿಲ್ಲ, -ಡಿಲ್ಲ, -ದಿಲ್ಲ (ಬರಲಿಲ್ಲ, ಮಾಡಲಿಲ್ಲ)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-S02, type: suffix, pattern: 'ುದಿಲ್ಲಾ?$', example: 'ನಾನು ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುವುದಿಲ್ಲ.', meaning: '-ುದಿಲ್ಲ / -ವುದಿಲ್ಲ future/habitual negative (subset of NEG-S01; kept for reporting)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-S03, type: suffix, pattern: '[ಕ-ಹ]ದಿದ್ದರೆ$', example: 'ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ವೈದ್ಯರನ್ನು ನೋಡಿ.', meaning: 'if not (negative conditional). Architect refinement: a bare consonant must precede ದಿದ್ದರೆ, so positive ಓದಿದ್ದರೆ / ಬಂದಿದ್ದರೆ / ಕುಡಿದಿದ್ದರೆ do NOT match', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-S04, type: suffix, pattern: 'ಬಾರದು$', example: 'ನೆಗಡಿಗೆ antibiotic ತೆಗೆದುಕೊಳ್ಳಬಾರದು.', meaning: 'must not, fused to the verb (very common in writing)', status: hypothesis_unverified, origin: architect_addition}
+  - {id: NEG-S05, type: suffix, pattern: 'ಕೂಡದು$', example: 'ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು.', meaning: 'must not, fused', status: hypothesis_unverified, origin: architect_addition}
+  - {id: NEG-S06, type: suffix, pattern: '[ಕ-ಹ]ಬೇಡಿ?$', example: 'ಉಳಿದ ಮಾತ್ರೆಗಳನ್ನು ಬೇರೆಯವರಿಗೆ ಕೊಡಬೇಡಿ.', meaning: 'do not (prohibitive, fused): ಕೊಡಬೇಡಿ, ತಿನ್ನಬೇಡ', status: hypothesis_unverified, origin: architect_addition}
+
+  # ---------------- -ದೆ "without doing": ONLY on verb stems from verb_stems ----------------
+  - {id: NEG-V01, type: verb_lexicon_suffix, pattern: '^(ಮುಗಿಸ|ತೆಗೆದುಕೊಳ್ಳ|ಕುಡಿಯ|ತಿನ್ನ|ಕೊಡ|ಬರ|ಹೋಗ|ಮಾಡ|ನಿಲ್ಲಿಸ|ಹಾಕ)ದೆ$', example: 'ಔಷಧಿ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದರು.', meaning: 'without doing (stopped without finishing). Trap: ಇದೆ and ಬಂದಿದೆ also end in ದೆ', status: hypothesis_unverified, origin: brief}
+
+  # ---------------- soft cue: casual -ಲ್ಲ on a verb stem ----------------
+  - id: NEG-SOFT01
+    type: soft_suffix
+    pattern: '(?<!ಿ)ಲ್ಲಾ?$'
+    exclude_tokens: [ಇಲ್ಲ, ಇಲ್ಲಾ, ಅಲ್ಲ, ಎಲ್ಲ, ಎಲ್ಲಾ]
+    example: 'ಅವನು ನಾಳೆ ಬರಲ್ಲ.'
+    meaning: 'casual "will not / does not" (ಬರಲ್ಲ, ತಿನ್ನಲ್ಲ). Risky: FLAGS via C8 unless the stem (token minus ಲ್ಲ) is in verb_stems'
+    status: hypothesis_unverified
+    origin: brief
+
+  # ---------------- compound ----------------
+  - {id: NEG-C01, type: compound, pattern: '^ಯಾವುದೇ$', then_pattern: '^ಇಲ್ಲಾ?$', example: 'ಯಾವುದೇ ತೊಂದರೆ ಇಲ್ಲ.', meaning: '"not any": ಯಾವುದೇ ... ಇಲ್ಲ inside one clause', status: hypothesis_unverified, origin: brief}
+
+  # ---------------- clause scope ----------------
+  - {id: NEG-CL01, type: clause_splitter_punct, pattern: '[.?!,;:।॥\n]', example: 'ತಲೆನೋವು ಇದೆ, ವಾಂತಿ ಇಲ್ಲ.', meaning: 'split clauses at punctuation and line breaks', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-CL02, type: clause_splitter_word, pattern: '^ಆದರೆ$', example: 'ತಲೆನೋವು ಇದೆ ಆದರೆ ವಾಂತಿ ಆಗಿಲ್ಲ.', meaning: 'but', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-CL03, type: clause_splitter_word, pattern: '^ಮತ್ತು$', example: 'ಜ್ವರ ಇಲ್ಲ ಮತ್ತು ಕೆಮ್ಮು ಇದೆ.', meaning: 'and', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-CL04, type: clause_splitter_word, pattern: '^ಹಾಗೂ$', example: 'ಜ್ವರ ಇಲ್ಲ ಹಾಗೂ ಕೆಮ್ಮು ಇದೆ.', meaning: 'and (formal)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-CL05, type: clause_splitter_word, pattern: '^ಆದ್ದರಿಂದ$', example: 'ಜ್ವರ ಇಲ್ಲ ಆದ್ದರಿಂದ ಮಾತ್ರೆ ಬೇಡ.', meaning: 'therefore', status: hypothesis_unverified, origin: brief}
+
+  # ---------------- cross-turn answers ----------------
+  - {id: NEG-X01, type: cross_turn, pattern: '^(ಇಲ್ಲ|ಇಲ್ಲಾ)$', polarity: negative, example: 'ಇಲ್ಲ.', meaning: 'a turn whose ONLY token is ಇಲ್ಲ answers the previous turn question: negate the entity asked about. No resolvable question => ambiguity (C8)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-X02, type: cross_turn, pattern: '^ಹೌದು$', polarity: affirmative, example: 'ಹೌದು.', meaning: 'bare "yes": affirms the entity asked about in the previous turn', status: hypothesis_unverified, origin: brief}
+
+  # ---------------- MUST NOT trigger ----------------
+  - {id: NEG-T01, type: must_not_trigger, token: ಎಲ್ಲ, pattern: '^ಎಲ್ಲ$', example: 'ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ.', meaning: 'all', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T02, type: must_not_trigger, token: ಎಲ್ಲಾ, pattern: '^ಎಲ್ಲಾ$', example: 'ಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ.', meaning: 'all (spoken)', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T03, type: must_not_trigger, token: ಇಲ್ಲಿ, pattern: '^ಇಲ್ಲಿ$', example: 'ಮಾತ್ರೆ ಇಲ್ಲಿ ಇದೆ.', meaning: 'here', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T04, type: must_not_trigger, token: ಅಲ್ಲಿ, pattern: '^ಅಲ್ಲಿ$', example: 'ಆಸ್ಪತ್ರೆ ಅಲ್ಲಿ ಇದೆ.', meaning: 'there', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T05, type: must_not_trigger, token: ಅಲ್ವಾ, pattern: '^ಅಲ್ವಾ$', example: 'ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ, ಅಲ್ವಾ?', meaning: 'tag question "right?"', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T06, type: must_not_trigger, token: ಅಲ್ವ, pattern: '^ಅಲ್ವ$', example: 'ಜ್ವರ ಕಡಿಮೆ ಆಯ್ತು ಅಲ್ವ?', meaning: 'tag question "right?"', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T07, type: must_not_trigger, token: ಮಾತ್ರ, pattern: '^ಮಾತ್ರ$', example: 'ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮಾತ್ರ.', meaning: 'only', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T08, type: must_not_trigger, token: ಮಾತ್ರೆ, pattern: '^ಮಾತ್ರೆ$', example: 'ಒಂದು ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ.', meaning: 'tablet', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-T09, type: must_not_trigger, token: ಇದೆ, pattern: '^ಇದೆ$', example: 'ಜ್ವರ ಇದೆ.', meaning: 'is / exists. Ends in ದೆ: must not be read as -ದೆ "without"', status: hypothesis_unverified, origin: architect_addition}
+  - {id: NEG-T10, type: must_not_trigger, token: ಬಂದಿದೆ, pattern: '^ಬಂದಿದೆ$', example: 'ಜ್ವರ ಬಂದಿದೆ.', meaning: 'has come. Ends in ದೆ', status: hypothesis_unverified, origin: architect_addition}
+  - {id: NEG-T11, type: must_not_trigger, token: ಇದ್ದರೆ, pattern: '^ಇದ್ದರೆ$', example: 'ಜ್ವರ ಇದ್ದರೆ ಬನ್ನಿ.', meaning: 'if (it) is: positive conditional', status: hypothesis_unverified, origin: architect_addition}
+  - {id: NEG-T12, type: must_not_trigger, token: ಓದಿದ್ದರೆ, pattern: '^ಓದಿದ್ದರೆ$', example: 'ಚೀಟಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು.', meaning: 'if (one) had read: positive, but ends in ದಿದ್ದರೆ', status: hypothesis_unverified, origin: architect_addition}
+  - {id: NEG-T13, type: must_not_trigger, token: ಬೇಡಿಕೆ, pattern: '^ಬೇಡಿಕೆ$', example: 'ಔಷಧಿಗೆ ಬೇಡಿಕೆ ಇದೆ.', meaning: 'demand (noun); starts with ಬೇಡ', status: hypothesis_unverified, origin: architect_addition}

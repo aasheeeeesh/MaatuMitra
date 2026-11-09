@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:maatumitra:contract:record.v1",
+  "title": "record.v1",
+  "description": "Structured record extracted from one transcript. EVERY extracted item carries evidence: a span of the transcript text (code-point offsets, end exclusive) plus optional audio times. All records are synthetic. record.v1 has no approver field: the 'saved needs approval' gate is enforced by m5_backend (DB CHECK constraint + API), not by this schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_id", "patient_ref", "encounter_type", "source_transcript_id", "extractor", "status", "symptoms", "medications", "advice", "follow_up"],
+  "properties": {
+    "schema_version": {"const": "record.v1"},
+    "record_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.\\-]*$", "maxLength": 200},
+    "patient_ref": {"type": "string", "minLength": 1, "maxLength": 200, "description": "Synthetic patient reference (never a real identifier)."},
+    "encounter_type": {"enum": ["asha_household_visit", "nurse_consult", "physician_consult", "pharmacist_dispensing"]},
+    "source_transcript_id": {"type": "string", "minLength": 1, "description": "audio_id of the transcript.v1 this record was extracted from."},
+    "extractor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1}
+      }
+    },
+    "status": {"enum": ["draft", "flagged", "approved", "saved"]},
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "present", "evidence"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1, "description": "Canonical English symptom name, lower case (e.g. 'fever')."},
+          "present": {"type": "boolean"},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["drug", "dose_value", "dose_unit", "frequency_per_day", "duration_days", "negated", "evidence"],
+        "properties": {
+          "drug": {"type": "string", "minLength": 1, "description": "Lexicon generic_en name (Latin script, lower case)."},
+          "dose_value": {"type": ["number", "null"], "exclusiveMinimum": 0},
+          "dose_unit": {"enum": ["mg", "g", "mcg", "ml", "tablet", "capsule", "sachet", "drop", "teaspoon", "IU", null]},
+          "frequency_per_day": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 24},
+          "duration_days": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 365},
+          "negated": {"type": "boolean"},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "advice": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "negated", "evidence"],
+        "properties": {
+          "text": {"type": "string", "minLength": 1},
+          "negated": {"type": "boolean"},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "follow_up": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["text", "evidence"],
+          "properties": {
+            "text": {"type": "string", "minLength": 1},
+            "evidence": {"$ref": "#/$defs/evidence"}
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["span_text", "char_start", "char_end", "audio_start", "audio_end"],
+      "properties": {
+        "span_text": {"type": "string", "minLength": 1},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 1},
+        "audio_start": {"type": ["number", "null"], "minimum": 0},
+        "audio_end": {"type": ["number", "null"], "minimum": 0}
+      }
+    }
+  }
+}

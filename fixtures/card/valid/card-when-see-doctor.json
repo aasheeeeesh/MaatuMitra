@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "card-when-see-doctor",
+  "topic": "when to see a doctor",
+  "kn_text": "ಜ್ವರ ಮೂರು ದಿನಕ್ಕಿಂತ ಹೆಚ್ಚು ಇದ್ದರೆ ವೈದ್ಯರನ್ನು ಭೇಟಿ ಮಾಡಿ.",
+  "en_text": "FIXTURE: If fever lasts more than three days, see a doctor.",
+  "source_url": "https://example.org/fixture/card-when-see-doctor",
+  "source_retrieved_at": "2026-11-09T12:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

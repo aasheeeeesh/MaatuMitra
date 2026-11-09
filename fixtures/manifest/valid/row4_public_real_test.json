@@ -1,0 +1,20 @@
+{
+  "schema_version": "manifest.v1",
+  "file": "data/audio/public/fleurs_kn_fixture_0001.wav",
+  "sha256": "b82d58941d73de364e749c881eae6373c462bf856570868763a7e8e0d210437a",
+  "bytes": 2628,
+  "source": "public_real",
+  "split": "test",
+  "noise_snr_db": null,
+  "speed_factor": null,
+  "voice_or_speaker": "fleurs-speaker-fixture-17",
+  "dialect": "unknown",
+  "licence_spdx": "CC-BY-4.0",
+  "licence_url": "https://example.org/fixture/licence-page",
+  "retrieved_at": "2026-11-09T12:00:00Z",
+  "generator_version": "loader-fixture-v1",
+  "seed": null,
+  "parent_id": null,
+  "consent_note": "public dataset; consent per dataset card (fixture, UNVERIFIED)",
+  "native_validated": false
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "card-finish-prescribed",
+  "topic": "take only what the doctor prescribed",
+  "kn_text": "ವೈದ್ಯರು ಹೇಳಿದಷ್ಟು ದಿನ ಮಾತ್ರ ಔಷಧಿ ತೆಗೆದುಕೊಳ್ಳಿ. ಉಳಿದ ಮಾತ್ರೆಗಳನ್ನು ಬೇರೆಯವರಿಗೆ ಕೊಡಬೇಡಿ.",
+  "en_text": "FIXTURE: Take medicine only for as many days as the doctor said. Do not give leftover tablets to others.",
+  "source_url": "https://example.org/fixture/card-finish-prescribed",
+  "source_retrieved_at": "2026-11-09T12:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "access_case.v1",
+  "case_id": "ac-nurse-records-update-sqli",
+  "role": "nurse",
+  "user_id": "22222222-2222-4222-8222-222222222222",
+  "resource": "records",
+  "action": "update",
+  "ownership": "same_facility_other",
+  "attack": "sqli",
+  "expected": "allow"
+}

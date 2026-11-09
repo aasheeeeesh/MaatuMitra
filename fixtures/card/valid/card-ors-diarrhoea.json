@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "card-ors-diarrhoea",
+  "topic": "ORS for diarrhoea",
+  "kn_text": "ಭೇದಿ ಆದಾಗ ಓ.ಆರ್.ಎಸ್ ದ್ರಾವಣ ಕುಡಿಸಿ.",
+  "en_text": "FIXTURE: Give ORS solution during diarrhoea.",
+  "source_url": "https://example.org/fixture/card-ors-diarrhoea",
+  "source_retrieved_at": "2026-11-09T12:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

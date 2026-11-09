@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:maatumitra:contract:gold.v1",
+  "title": "gold.v1",
+  "description": "One synthetic conversation with its exact ground truth. CONVERSATION TEXT = the turn texts joined with one newline (U+000A). gold_span offsets are code-point offsets into that conversation text (end exclusive) and must lie inside turn turn_index. A gold transcript.v1 of this conversation uses exactly the same conversation text, so gold spans and record evidence share one coordinate system.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "conversation_id", "template_family_id", "turns", "gold_record", "tags"],
+  "properties": {
+    "schema_version": {"const": "gold.v1"},
+    "conversation_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.\\-]*$", "maxLength": 200},
+    "template_family_id": {"type": "string", "minLength": 1},
+    "turns": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["speaker_role", "text"],
+        "properties": {
+          "speaker_role": {"enum": ["asha", "nurse", "physician", "pharmacist", "patient", "caregiver"]},
+          "text": {"type": "string", "minLength": 1, "pattern": "^[^\\n]*$"}
+        }
+      }
+    },
+    "gold_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["patient_ref", "encounter_type", "symptoms", "medications", "advice", "follow_up"],
+      "properties": {
+        "patient_ref": {"type": "string", "minLength": 1},
+        "encounter_type": {"enum": ["asha_household_visit", "nurse_consult", "physician_consult", "pharmacist_dispensing"]},
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "present", "gold_span"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "present": {"type": "boolean"},
+              "gold_span": {"$ref": "#/$defs/gold_span"}
+            }
+          }
+        },
+        "medications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["drug", "dose_value", "dose_unit", "frequency_per_day", "duration_days", "negated", "gold_span"],
+            "properties": {
+              "drug": {"type": "string", "minLength": 1},
+              "dose_value": {"type": ["number", "null"], "exclusiveMinimum": 0},
+              "dose_unit": {"enum": ["mg", "g", "mcg", "ml", "tablet", "capsule", "sachet", "drop", "teaspoon", "IU", null]},
+              "frequency_per_day": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 24},
+              "duration_days": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 365},
+              "negated": {"type": "boolean"},
+              "gold_span": {"$ref": "#/$defs/gold_span"}
+            }
+          }
+        },
+        "advice": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["text", "negated", "gold_span"],
+            "properties": {
+              "text": {"type": "string", "minLength": 1},
+              "negated": {"type": "boolean"},
+              "gold_span": {"$ref": "#/$defs/gold_span"}
+            }
+          }
+        },
+        "follow_up": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text", "gold_span"],
+              "properties": {
+                "text": {"type": "string", "minLength": 1},
+                "gold_span": {"$ref": "#/$defs/gold_span"}
+              }
+            }
+          ]
+        }
+      }
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["has_negation", "trap_tokens", "code_switched", "cross_turn_negation"],
+      "properties": {
+        "has_negation": {"type": "boolean"},
+        "trap_tokens": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "code_switched": {"type": "boolean"},
+        "cross_turn_negation": {"type": "boolean"}
+      }
+    }
+  },
+  "$defs": {
+    "gold_span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["turn_index", "span_text", "char_start", "char_end"],
+      "properties": {
+        "turn_index": {"type": "integer", "minimum": 0},
+        "span_text": {"type": "string", "minLength": 1},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

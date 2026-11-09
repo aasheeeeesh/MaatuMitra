@@ -1,0 +1,11 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "rv-m4-integrity-fixture",
+  "reviewer_agent": "scientific-integrity-auditor",
+  "target": "m4_verify",
+  "date": "2026-11-09",
+  "sample_size": 12,
+  "findings": [],
+  "summary": "FIXTURE: example summary. Simulated review, not human validation.",
+  "label": "ai_simulated_review"
+}

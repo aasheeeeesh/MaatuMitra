@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "card-cold-no-antibiotic",
+  "topic": "antibiotics do not treat colds",
+  "kn_text": "ನೆಗಡಿ ಮತ್ತು ಸಾಮಾನ್ಯ ಶೀತಕ್ಕೆ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಡ. ಸಂದೇಹವಿದ್ದರೆ ವೈದ್ಯರನ್ನು ಕೇಳಿ.",
+  "en_text": "FIXTURE: Antibiotics are not needed for a common cold. If unsure, ask a doctor.",
+  "source_url": "https://example.org/fixture/card-cold-no-antibiotic",
+  "source_retrieved_at": "2026-11-09T12:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

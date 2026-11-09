@@ -1,0 +1,32 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "rv-m1-kn-fixture",
+  "reviewer_agent": "kannada-language-reviewer",
+  "target": "m1_data",
+  "date": "2026-11-09",
+  "sample_size": 30,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "blocker",
+      "item": "fixture item 1",
+      "problem": "FIXTURE: example problem text",
+      "suggested_fix": "FIXTURE: example fix text",
+      "evidence": "FIXTURE: model knowledge only, low confidence",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "F2",
+      "severity": "minor",
+      "item": "fixture item 2",
+      "problem": "FIXTURE: example problem text",
+      "suggested_fix": "FIXTURE: example fix text",
+      "evidence": "FIXTURE: model knowledge only, low confidence",
+      "source_urls": [],
+      "confidence": "medium"
+    }
+  ],
+  "summary": "FIXTURE: example summary. Simulated review, not human validation.",
+  "label": "ai_simulated_review"
+}

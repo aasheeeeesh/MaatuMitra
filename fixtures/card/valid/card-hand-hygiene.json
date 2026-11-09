@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "card-hand-hygiene",
+  "topic": "hand hygiene",
+  "kn_text": "ಊಟದ ಮೊದಲು ಮತ್ತು ಶೌಚಾಲಯದ ನಂತರ ಸೋಪಿನಿಂದ ಕೈ ತೊಳೆಯಿರಿ.",
+  "en_text": "FIXTURE: Wash hands with soap before eating and after using the toilet.",
+  "source_url": "https://example.org/fixture/card-hand-hygiene",
+  "source_retrieved_at": "2026-11-09T12:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

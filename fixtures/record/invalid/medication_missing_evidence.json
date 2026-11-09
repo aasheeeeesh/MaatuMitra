@@ -1,0 +1,48 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rec-fx-pharm-003",
+  "patient_ref": "pt-fx-0003",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "fx-pharm-003",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v1"
+  },
+  "status": "approved",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amoxicillin",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 3,
+      "duration_days": 5,
+      "negated": false
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 105,
+        "char_end": 113,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "text": "finish all tablets",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ",
+        "char_start": 115,
+        "char_end": 133,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

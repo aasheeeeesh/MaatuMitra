@@ -1,0 +1,42 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "rv-m5-sec-fixture",
+  "reviewer_agent": "security-auditor",
+  "target": "m5_backend",
+  "date": "2026-11-09",
+  "sample_size": 20,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "item": "fixture item 1",
+      "problem": "FIXTURE: example problem text",
+      "suggested_fix": "FIXTURE: example fix text",
+      "evidence": "FIXTURE: model knowledge only, low confidence",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F2",
+      "severity": "major",
+      "item": "fixture item 2",
+      "problem": "FIXTURE: example problem text",
+      "suggested_fix": "FIXTURE: example fix text",
+      "evidence": "FIXTURE: model knowledge only, low confidence",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F3",
+      "severity": "minor",
+      "item": "fixture item 3",
+      "problem": "FIXTURE: example problem text",
+      "suggested_fix": "FIXTURE: example fix text",
+      "evidence": "FIXTURE: model knowledge only, low confidence",
+      "source_urls": [],
+      "confidence": "low"
+    }
+  ],
+  "summary": "FIXTURE: example summary. Simulated review, not human validation.",
+  "label": "ai_simulated_review"
+}

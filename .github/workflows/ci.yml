@@ -1,0 +1,43 @@
+# MaatuMitra CI. Never been run on GitHub yet (no remote exists): UNVERIFIED until the
+# human pushes. Actions are pinned to commit SHAs resolved with `git ls-remote` on 2026-11-09.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+      - name: Install Python 3.11 (from .python-version) and the locked base deps
+        run: |
+          uv python install
+          make setup
+      - name: Lint
+        run: make lint
+      - name: Tests (repo + every module)
+        run: make test
+      - name: Every valid fixture passes, every invalid fixture fails
+        run: make validate-fixtures
+      - name: Frozen test split unchanged (warns if test.lock does not exist yet)
+        run: make split-lock
+      - name: Dependency vulnerability audit (pip-audit on uv.lock)
+        run: make audit
+
+  gitleaks:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # scan the whole git history, not only the last commit
+      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:maatumitra:contract:access_case.v1",
+  "title": "access_case.v1",
+  "description": "One automated access-control test case for the E5 access matrix. 'expected' comes from a table written BY HAND, independently of the SQL policies (otherwise the test is circular).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "role", "user_id", "resource", "action", "ownership", "attack", "expected"],
+  "properties": {
+    "schema_version": {"const": "access_case.v1"},
+    "case_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.\\-]*$", "maxLength": 200},
+    "role": {"enum": ["asha", "nurse", "physician", "pharmacist", "researcher"]},
+    "user_id": {"type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"},
+    "resource": {"enum": ["facilities", "users", "households", "patients", "encounters", "records", "medication_orders", "consents", "audit_log", "research_export", "pharmacist_orders_v", "audio"]},
+    "action": {"enum": ["select", "insert", "update", "delete"]},
+    "ownership": {"enum": ["own", "same_facility_other", "other_facility", "none"]},
+    "attack": {"enum": [null, "id_guess", "tampered_jwt", "expired_jwt", "alg_none", "wrong_aud", "sqli", "mass_assignment", "idor_audio", "guc_tamper"]},
+    "expected": {"enum": ["allow", "deny"]}
+  }
+}

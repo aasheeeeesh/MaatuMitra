@@ -1,0 +1,62 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "fx-nurse-005",
+  "template_family_id": "f_nurse_multi_symptom",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ತಲೆನೋವು ಇದೆಯಾ? ವಾಂತಿ ಆಗುತ್ತಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ತಲೆನೋವು ಇದೆ, ಆದರೆ ವಾಂತಿ ಆಗಿಲ್ಲ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-fx-0005",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ತಲೆನೋವು ಇದೆ",
+          "char_start": 34,
+          "char_end": 45
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವಾಂತಿ ಆಗಿಲ್ಲ",
+          "char_start": 52,
+          "char_end": 64
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": {
+      "text": "if the fever does not come down, come back in two days",
+      "gold_span": {
+        "turn_index": 2,
+        "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
+        "char_start": 66,
+        "char_end": 112
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

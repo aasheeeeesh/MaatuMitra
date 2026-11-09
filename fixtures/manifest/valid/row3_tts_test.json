@@ -1,0 +1,20 @@
+{
+  "schema_version": "manifest.v1",
+  "file": "data/audio/tts/fx-phys-004__v2__speed1.1.wav",
+  "sha256": "47bde8e64434c498046aa4ef53b457bf3e3bff071a03dc69480a70fb3628390a",
+  "bytes": 2628,
+  "source": "tts",
+  "split": "test",
+  "noise_snr_db": null,
+  "speed_factor": 1.1,
+  "voice_or_speaker": "tts-voice-B-heldout",
+  "dialect": "unknown",
+  "licence_spdx": "UNVERIFIED",
+  "licence_url": "UNVERIFIED",
+  "retrieved_at": "2026-11-09T12:00:00Z",
+  "generator_version": "fixtures-v1",
+  "seed": 1234,
+  "parent_id": null,
+  "consent_note": "synthetic TTS voice; no human speaker",
+  "native_validated": false
+}

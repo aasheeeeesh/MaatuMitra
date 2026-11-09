@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:maatumitra:contract:verdict.v1",
+  "title": "verdict.v1",
+  "description": "Safety verifier output for one record. Fail-closed: a check that raises an error is reported as status 'flag' with a reason starting 'check_error'. auto_acceptable must be false whenever any check flags, and also when checks is empty (enforced by contracts/validate.py).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_id", "checks", "auto_acceptable", "verifier_version"],
+  "properties": {
+    "schema_version": {"const": "verdict.v1"},
+    "record_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.\\-]*$", "maxLength": 200},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "name", "status", "reason", "field_path"],
+        "properties": {
+          "check_id": {"enum": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8"]},
+          "name": {"type": "string", "minLength": 1},
+          "status": {"enum": ["pass", "flag", "n/a"]},
+          "reason": {"type": "string", "minLength": 1},
+          "field_path": {"type": "string", "pattern": "^/", "description": "JSON-pointer path into the record, e.g. '/medications/0/dose_value', or '/' for the whole record."}
+        }
+      }
+    },
+    "auto_acceptable": {"type": "boolean"},
+    "verifier_version": {"type": "string", "minLength": 1}
+  }
+}

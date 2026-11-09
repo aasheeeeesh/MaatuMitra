@@ -1,0 +1,11 @@
+{
+  "schema_version": "access_case.v1",
+  "case_id": "ac-researcher-records-select-alg-none",
+  "role": "researcher",
+  "user_id": "55555555-5555-4555-8555-555555555555",
+  "resource": "records",
+  "action": "select",
+  "ownership": "none",
+  "attack": "alg_none",
+  "expected": "allow"
+}

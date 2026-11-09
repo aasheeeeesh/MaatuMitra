@@ -1,0 +1,20 @@
+# For people WITH Docker. The dev laptop has no Docker; m5_backend documents the
+# non-Docker path (see docs/DECISIONS_EXPLAINED.md, "No Docker" decision).
+# Port is published on 127.0.0.1 ONLY (constraint 4). Secrets come from .env.
+services:
+  db:
+    # postgres:16.15, digest read from the Docker Hub tags API on 2026-11-09.
+    # UNVERIFIED: never pulled on this machine (no Docker CLI).
+    image: postgres:16.15@sha256:f9a7b9ebf6f56201f949db745e47bc423c0f0f8294bafe991cc10bf74b029657
+    restart: "no"
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?set POSTGRES_DB in .env}
+      POSTGRES_USER: ${POSTGRES_USER:?set POSTGRES_USER in .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

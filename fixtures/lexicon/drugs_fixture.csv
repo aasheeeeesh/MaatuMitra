@@ -1,0 +1,9 @@
+id,generic_en,kn_primary,kn_variants,roman_variants,class,aware_class,nlem_listed,strengths_mg,adult_dose_range_mg,max_daily_mg,confusable_with,source_url,verified_by
+fx-drug-01,amoxicillin,ಅಮಾಕ್ಸಿಸಿಲಿನ್,ಅಮೋಕ್ಸಿಸಿಲಿನ್|ಅಮಾಕ್ಸಿಸಿಲಿನ್,amoxicillin|amoxycillin|amox,antibiotic,Access,UNVERIFIED,250|500,250-1000,3000,amoxicillin-clavulanate|azithromycin,https://example.org/fixture/lexicon,FIXTURE_ONLY_dose_and_class_UNVERIFIED
+fx-drug-02,azithromycin,ಅಜಿತ್ರೋಮೈಸಿನ್,ಅಜಿಥ್ರೊಮೈಸಿನ್|ಅಜಿತ್ರೊಮೈಸಿನ್,azithromycin|azithro,antibiotic,Watch,UNVERIFIED,250|500,250-500,500,amoxicillin|erythromycin,https://example.org/fixture/lexicon,FIXTURE_ONLY_dose_and_class_UNVERIFIED
+fx-drug-03,cefixime,ಸೆಫಿಕ್ಸಿಮ್,ಸೆಫಿಕ್ಸೈಮ್,cefixime|cefixim,antibiotic,Watch,UNVERIFIED,200|400,200-400,400,cephalexin|ceftriaxone,https://example.org/fixture/lexicon,FIXTURE_ONLY_dose_and_class_UNVERIFIED
+fx-drug-04,cephalexin,ಸೆಫಲೆಕ್ಸಿನ್,ಸೆಫಾಲೆಕ್ಸಿನ್,cephalexin|cefalexin,antibiotic,Access,UNVERIFIED,250|500,250-1000,4000,cefixime,https://example.org/fixture/lexicon,FIXTURE_ONLY_dose_and_class_UNVERIFIED
+fx-drug-05,ciprofloxacin,ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್,ಸಿಪ್ರೊಫ್ಲೋಕ್ಸಾಸಿನ್,ciprofloxacin|cipro,antibiotic,Watch,UNVERIFIED,250|500|750,250-750,1500,,https://example.org/fixture/lexicon,FIXTURE_ONLY_dose_and_class_UNVERIFIED
+fx-drug-06,metronidazole,ಮೆಟ್ರೋನಿಡಜೋಲ್,ಮೆಟ್ರೊನಿಡಜೋಲ್,metronidazole|metro,antibiotic,Access,UNVERIFIED,200|400,200-500,,,https://example.org/fixture/lexicon,FIXTURE_ONLY_dose_and_class_UNVERIFIED
+fx-drug-07,paracetamol,ಪ್ಯಾರಸಿಟಮಾಲ್,ಪ್ಯಾರಾಸಿಟಮಾಲ್|ಪ್ಯಾರಸಿಟಮೋಲ್,paracetamol|acetaminophen,analgesic_antipyretic,not_applicable,UNVERIFIED,500|650,500-1000,4000,,https://example.org/fixture/lexicon,FIXTURE_ONLY_dose_UNVERIFIED
+fx-drug-08,ors,ಒ.ಆರ್.ಎಸ್,ಓ ಆರ್ ಎಸ್|ಒಆರ್ಎಸ್,ors|oral rehydration salts,oral_rehydration,not_applicable,UNVERIFIED,,,,,https://example.org/fixture/lexicon,FIXTURE_ONLY_UNVERIFIED

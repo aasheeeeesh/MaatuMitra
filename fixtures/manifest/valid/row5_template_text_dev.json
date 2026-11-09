@@ -1,0 +1,20 @@
+{
+  "schema_version": "manifest.v1",
+  "file": "data/gold/fx-nurse-005.json",
+  "sha256": "3563d6ce4fdad6d230c10311b87f35a4c71ae6b2f4dc4f44daa3aaa13054e07b",
+  "bytes": 1999,
+  "source": "template_text",
+  "split": "dev",
+  "noise_snr_db": null,
+  "speed_factor": null,
+  "voice_or_speaker": "none",
+  "dialect": "unknown",
+  "licence_spdx": "NOASSERTION",
+  "licence_url": "UNVERIFIED",
+  "retrieved_at": "2026-11-09T12:00:00Z",
+  "generator_version": "fixtures-v1",
+  "seed": 1234,
+  "parent_id": null,
+  "consent_note": "template-generated synthetic text; no person involved",
+  "native_validated": false
+}

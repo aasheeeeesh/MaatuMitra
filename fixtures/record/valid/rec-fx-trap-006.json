@@ -1,0 +1,32 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rec-fx-trap-006",
+  "patient_ref": "pt-fx-0006",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "fx-trap-006",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v1"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+        "char_start": 0,
+        "char_end": 37,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

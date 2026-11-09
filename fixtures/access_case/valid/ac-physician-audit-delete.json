@@ -1,0 +1,11 @@
+{
+  "schema_version": "access_case.v1",
+  "case_id": "ac-physician-audit-delete",
+  "role": "physician",
+  "user_id": "33333333-3333-4333-8333-333333333333",
+  "resource": "audit_log",
+  "action": "delete",
+  "ownership": "none",
+  "attack": null,
+  "expected": "deny"
+}

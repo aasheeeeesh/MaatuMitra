@@ -1,0 +1,11 @@
+{
+  "schema_version": "access_case.v1",
+  "case_id": "ac-asha-households-select-own",
+  "role": "asha",
+  "user_id": "42",
+  "resource": "households",
+  "action": "select",
+  "ownership": "own",
+  "attack": null,
+  "expected": "allow"
+}

@@ -1,0 +1,101 @@
+[project]
+name = "maatumitra"
+version = "0.1.0"
+description = "MaatuMitra: Kannada voice scribe class sandbox experiment (synthetic data only, not a clinical tool)."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+# Base dependencies are kept LIGHT (free disk on the dev laptop is ~12 GB).
+# Exact versions are pinned in uv.lock (commit it). Heavy ML deps live in extras.
+dependencies = [
+    "pytest>=8",
+    "jsonschema>=4.23",
+    "regex>=2024.9",
+    "pyyaml>=6",
+    "ruff>=0.15",
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "pydantic>=2.8",
+    "psycopg[binary]>=3.2",
+    "pyjwt>=2.9",
+    "streamlit>=1.40",
+    "httpx>=0.27",
+    "pre-commit>=4",
+    "pip-audit>=2.7",
+]
+
+[project.optional-dependencies]
+# m2_asr. Install with: uv sync --extra asr
+asr = [
+    "faster-whisper>=1.0",
+    "soundfile>=0.12",
+    "librosa>=0.10",
+    "jiwer>=3.0",
+    "papermill>=2.6",
+    "ipykernel>=6.29",
+]
+# m1_data TTS. m1 adds its TTS engine here via a handoff note (decision entry).
+tts = [
+    "soundfile>=0.12",
+    "librosa>=0.10",
+]
+# m3_extract LLM comparison (E2) through a local Ollama server.
+llm = [
+    "ollama>=0.4",
+]
+# m8_helper retrieval embeddings.
+helper = [
+    "sentence-transformers>=3.0",
+]
+
+[tool.uv]
+# This repo is a set of modules, not an installable library.
+package = false
+
+[tool.pytest.ini_options]
+# importlib mode: test files with the same name in different module folders
+# (for example m1_data/tests/test_cli.py and m3_extract/tests/test_cli.py) do not clash.
+addopts = "--import-mode=importlib -ra"
+# Repo root on sys.path so `import contracts` and `import m4_verify` work.
+pythonpath = ["."]
+testpaths = [
+    "tests",
+    "m1_data/tests",
+    "m2_asr/tests",
+    "m3_extract/tests",
+    "m4_verify/tests",
+    "m5_backend/tests",
+    "m6_ui/tests",
+    "m7_eval/tests",
+    "m8_helper/tests",
+    "integration",
+]
+norecursedirs = [".venv", ".git", "results", "data", "notebooks", "*/handoff", "node_modules"]
+markers = [
+    "slow: long-running test (skipped unless RUN_SLOW=1)",
+    "needs_db: needs a running PostgreSQL 16",
+    "needs_model: needs downloaded model weights",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".venv", "notebooks", "results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "RUF"]
+ignore = [
+    "RUF001", "RUF002", "RUF003",  # Kannada text legitimately contains "ambiguous" characters
+    "S101",                          # assert is fine in tests
+    "E501",                          # line length is handled by `ruff format`; long strings are ok
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S", "B"]
+"tests/**" = ["S", "B"]
+"infra/scripts/**" = ["S603", "S607"]
+
+[tool.ruff.format]
+quote-style = "double"

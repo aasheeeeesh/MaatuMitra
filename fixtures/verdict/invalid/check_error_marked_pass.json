@@ -1,0 +1,64 @@
+{
+  "schema_version": "verdict.v1",
+  "record_id": "rec-fx-asha-001",
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "check_error: KeyError 'negated'",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "n/a",
+      "reason": "no ASR confidence (gold transcript)",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    }
+  ],
+  "auto_acceptable": true,
+  "verifier_version": "fixture-v1"
+}
