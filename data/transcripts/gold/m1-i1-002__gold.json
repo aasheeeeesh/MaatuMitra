@@ -1,0 +1,120 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-i1-002",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "amoxicillin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ, ಅಲ್ವಾ?",
+  "words": [
+    {
+      "w": "amoxicillin",
+      "char_start": 0,
+      "char_end": 11,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "250",
+      "char_start": 12,
+      "char_end": 15,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 16,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 19,
+      "char_end": 26,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 27,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಾರಿ",
+      "char_start": 32,
+      "char_end": 36,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 37,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 43,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್ಲಾ",
+      "char_start": 57,
+      "char_end": 62,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 63,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಿ",
+      "char_start": 70,
+      "char_end": 75,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇವೆ",
+      "char_start": 76,
+      "char_end": 79,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅಲ್ವಾ",
+      "char_start": 81,
+      "char_end": 86,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

@@ -1,0 +1,176 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-d5-007",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಜ್ವರ ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\nಇದು ವೈರಲ್ ಜ್ವರ, ಆದ್ದರಿಂದ ಆಂಟಿಬಯಾಟಿಕ್ ತೆಗೆದುಕೊಳ್ಳಬಾರದು.\nಪ್ಯಾರಸಿಟಮೋಲ್ ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "words": [
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 0,
+      "char_end": 4,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮತ್ತು",
+      "char_start": 5,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೈಕೈನೋವು",
+      "char_start": 11,
+      "char_end": 19,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 20,
+      "char_end": 23,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದು",
+      "char_start": 25,
+      "char_end": 28,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವೈರಲ್",
+      "char_start": 29,
+      "char_end": 34,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 35,
+      "char_end": 39,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆದ್ದರಿಂದ",
+      "char_start": 41,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಂಟಿಬಯಾಟಿಕ್",
+      "char_start": 50,
+      "char_end": 61,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬಾರದು",
+      "char_start": 62,
+      "char_end": 78,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಪ್ಯಾರಸಿಟಮೋಲ್",
+      "char_start": 80,
+      "char_end": 92,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೧೦೦೦",
+      "char_start": 93,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 98,
+      "char_end": 100,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 101,
+      "char_end": 107,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 108,
+      "char_end": 115,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 116,
+      "char_end": 122,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 123,
+      "char_end": 127,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 128,
+      "char_end": 132,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 133,
+      "char_end": 136,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 137,
+      "char_end": 149,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

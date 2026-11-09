@@ -1,0 +1,72 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-f2-001",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಏನು ತೊಂದರೆ?\nಅತಿಸಾರ ಇಲ್ಲಾ ಮತ್ತು ತಲೆನೋವು ಇಲ್ಲಾ.",
+  "words": [
+    {
+      "w": "ಏನು",
+      "char_start": 0,
+      "char_end": 3,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೊಂದರೆ",
+      "char_start": 4,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅತಿಸಾರ",
+      "char_start": 12,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 19,
+      "char_end": 24,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮತ್ತು",
+      "char_start": 25,
+      "char_end": 30,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಲೆನೋವು",
+      "char_start": 31,
+      "char_end": 38,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 39,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g3-008",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "prednisolone 10 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Ibuprofen ಬೇಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "clarithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಕೊಡುತ್ತೇನೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g3-008",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "prednisolone",
+        "dose_value": 10,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "prednisolone 10 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 47
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Ibuprofen ಬೇಡ",
+          "char_start": 62,
+          "char_end": 75
+        }
+      },
+      {
+        "drug": "clarithromycin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "clarithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ",
+          "char_start": 77,
+          "char_end": 116
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

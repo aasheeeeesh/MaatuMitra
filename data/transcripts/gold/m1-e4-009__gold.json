@@ -1,0 +1,280 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e4-009",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ.\nಸೆಫ್ಯುರಾಕ್ಸಿಮ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ.\nErythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿವಸ.\nಕ್ಲಾರಿತ್ರೋಮೈಸಿನ್ ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ, ಊಟದ ನಂತರ.",
+  "words": [
+    {
+      "w": "ಡಾಕ್ಟರ್",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಚೀಟಿ",
+      "char_start": 8,
+      "char_end": 12,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಿ",
+      "char_start": 13,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 19,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್",
+      "char_start": 24,
+      "char_end": 38,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "500",
+      "char_start": 39,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 43,
+      "char_end": 45,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 46,
+      "char_end": 48,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 49,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 56,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 64,
+      "char_end": 68,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 69,
+      "char_end": 73,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏಳು",
+      "char_start": 74,
+      "char_end": 77,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 78,
+      "char_end": 82,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Erythromycin",
+      "char_start": 84,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 97,
+      "char_end": 101,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 102,
+      "char_end": 108,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 109,
+      "char_end": 116,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 117,
+      "char_end": 121,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಾರಿ",
+      "char_start": 122,
+      "char_end": 126,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏಳು",
+      "char_start": 127,
+      "char_end": 130,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 131,
+      "char_end": 135,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಲಾರಿತ್ರೋಮೈಸಿನ್",
+      "char_start": 137,
+      "char_end": 153,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೨೫೦",
+      "char_start": 154,
+      "char_end": 157,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 158,
+      "char_end": 160,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 161,
+      "char_end": 167,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 168,
+      "char_end": 175,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 176,
+      "char_end": 180,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 181,
+      "char_end": 185,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 186,
+      "char_end": 190,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾರ",
+      "char_start": 191,
+      "char_end": 194,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 196,
+      "char_end": 199,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 200,
+      "char_end": 204,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

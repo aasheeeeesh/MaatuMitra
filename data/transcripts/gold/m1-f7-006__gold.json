@@ -1,0 +1,80 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-f7-006",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಚಳಿ ಅಥವಾ ಜ್ವರ ಬಂದಿದೆಯಾ?\nಚಳಿ ಬಂದಿಲ್ಲ, ಜ್ವರ ಬಂದಿದೆ.",
+  "words": [
+    {
+      "w": "ಚಳಿ",
+      "char_start": 0,
+      "char_end": 3,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅಥವಾ",
+      "char_start": 4,
+      "char_end": 8,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 9,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಂದಿದೆಯಾ",
+      "char_start": 14,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಚಳಿ",
+      "char_start": 24,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಂದಿಲ್ಲ",
+      "char_start": 28,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 37,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಂದಿದೆ",
+      "char_start": 42,
+      "char_end": 48,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

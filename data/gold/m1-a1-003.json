@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-a1-003",
+  "template_family_id": "a_fever_cough__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಎಷ್ಟು ದಿನದಿಂದ ಜ್ವರ ಇದೆ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಐದು ದಿನದಿಂದ ಜ್ವರ ಇದೆ, ತಲೆನೋವು ಇಲ್ಲಾ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a1-003",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಐದು ದಿನದಿಂದ ಜ್ವರ ಇದೆ",
+          "char_start": 32,
+          "char_end": 52
+        }
+      },
+      {
+        "name": "headache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ತಲೆನೋವು ಇಲ್ಲಾ",
+          "char_start": 54,
+          "char_end": 67
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

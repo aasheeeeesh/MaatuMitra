@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g1-012",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "metronidazole 400 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Antibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ ಡಾಕ್ಟರ್."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g1-012",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "metronidazole",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "metronidazole 400 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 0,
+          "char_end": 50
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "finish the full antibiotic course",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Antibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ",
+          "char_start": 65,
+          "char_end": 96
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-g3-010",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "Ciprofloxacin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nIbuprofen ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು.\nomeprazole 20 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ.",
+  "words": [
+    {
+      "w": "Ciprofloxacin",
+      "char_start": 0,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 14,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 19,
+      "char_end": 25,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 26,
+      "char_end": 33,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 34,
+      "char_end": 38,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 39,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏಳು",
+      "char_start": 44,
+      "char_end": 47,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 48,
+      "char_end": 52,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 53,
+      "char_end": 65,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Ibuprofen",
+      "char_start": 67,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳ",
+      "char_start": 77,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರದು",
+      "char_start": 89,
+      "char_end": 94,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "omeprazole",
+      "char_start": 96,
+      "char_end": 106,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "20",
+      "char_start": 107,
+      "char_end": 109,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 110,
+      "char_end": 112,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 113,
+      "char_end": 120,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 121,
+      "char_end": 125,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 126,
+      "char_end": 130,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡುತ್ತೇನೆ",
+      "char_start": 131,
+      "char_end": 141,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

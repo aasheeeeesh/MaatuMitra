@@ -1,0 +1,80 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-c3-004",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಕೋಟ್ರೈಮೋಕ್ಸಜೋಲ್ ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?\nಇಲ್ಲ.\nಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡಬೇಡಿ.",
+  "words": [
+    {
+      "w": "ಕೋಟ್ರೈಮೋಕ್ಸಜೋಲ್",
+      "char_start": 0,
+      "char_end": 15,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್ಲ",
+      "char_start": 16,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮುಗಿಸಿದಿರಾ",
+      "char_start": 21,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 33,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಉಳಿದ",
+      "char_start": 39,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 44,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇರೆಯವರಿಗೆ",
+      "char_start": 51,
+      "char_end": 61,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಬೇಡಿ",
+      "char_start": 62,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

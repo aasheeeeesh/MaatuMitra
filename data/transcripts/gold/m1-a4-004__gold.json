@@ -1,0 +1,160 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-a4-004",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನ ಆಯಿತು?\nಜ್ವರ ಬಂದು ಮೂರು ದಿನ ಆಯಿತು.\nಕೆಮ್ಮು ಇದೆಯಾ?\nಇಲ್ಲ.\nಮಗುವಿಗೆ ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ.",
+  "words": [
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 8,
+      "char_end": 12,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಂದು",
+      "char_start": 13,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಷ್ಟು",
+      "char_start": 18,
+      "char_end": 23,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 24,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಯಿತು",
+      "char_start": 28,
+      "char_end": 33,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 35,
+      "char_end": 39,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಂದು",
+      "char_start": 40,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 45,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 50,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಯಿತು",
+      "char_start": 54,
+      "char_end": 59,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 61,
+      "char_end": 67,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 68,
+      "char_end": 73,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 75,
+      "char_end": 79,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 81,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಕ್ಕಷ್ಟು",
+      "char_start": 89,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನೀರು",
+      "char_start": 98,
+      "char_end": 102,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಸಿ",
+      "char_start": 103,
+      "char_end": 109,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

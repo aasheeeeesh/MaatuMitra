@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b1-001",
+  "template_family_id": "b_cross_turn__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗು ನಿನ್ನೆ ಸೆಟಿರಿಜಿನ್ ಸಿರಪ್ ಕುಡಿಯಿತಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಔಷಧಿ ಕುಡಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b1-001",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cetirizine",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸೆಟಿರಿಜಿನ್ ಸಿರಪ್",
+          "char_start": 11,
+          "char_end": 27
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "give the medicine as the doctor said",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಔಷಧಿ ಕುಡಿಸಿ",
+          "char_start": 45,
+          "char_end": 73
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

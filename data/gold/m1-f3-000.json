@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f3-000",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಈಗ ಹೇಗಿದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನೆಗಡಿ ಇಲ್ಲ ಹಾಗೂ ವಾಂತಿ ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f3-000",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೆಗಡಿ ಇಲ್ಲ",
+          "char_start": 11,
+          "char_end": 21
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವಾಂತಿ ಇದೆ",
+          "char_start": 27,
+          "char_end": 36
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

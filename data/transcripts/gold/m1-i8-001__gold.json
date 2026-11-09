@@ -1,0 +1,144 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-i8-001",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಈ ಮಾತ್ರೆ ಜಾಸ್ತಿ ತಗೊಂಡ್ರೆ ಏನಾಗುತ್ತದೆ?\nಡಾಕ್ಸಿಸೈಕ್ಲಿನ್ 100 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.",
+  "words": [
+    {
+      "w": "ಈ",
+      "char_start": 0,
+      "char_end": 1,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 2,
+      "char_end": 8,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಾಸ್ತಿ",
+      "char_start": 9,
+      "char_end": 15,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಗೊಂಡ್ರೆ",
+      "char_start": 16,
+      "char_end": 24,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏನಾಗುತ್ತದೆ",
+      "char_start": 25,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಡಾಕ್ಸಿಸೈಕ್ಲಿನ್",
+      "char_start": 37,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "100",
+      "char_start": 52,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 56,
+      "char_end": 58,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
+      "char_start": 59,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 70,
+      "char_end": 77,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 78,
+      "char_end": 82,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 83,
+      "char_end": 87,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 88,
+      "char_end": 93,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 94,
+      "char_end": 106,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಾಸ್ತಿ",
+      "char_start": 108,
+      "char_end": 114,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
+      "char_start": 115,
+      "char_end": 130,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

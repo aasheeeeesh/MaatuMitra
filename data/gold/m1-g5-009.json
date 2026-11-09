@@ -1,0 +1,77 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g5-009",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Tablet metronidazole ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g5-009",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "metronidazole",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "metronidazole ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 7,
+          "char_end": 59
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 61,
+          "char_end": 95
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "only if there is fever",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 103,
+          "char_end": 121
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ",
+      "ಇದ್ದರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

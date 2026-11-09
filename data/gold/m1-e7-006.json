@@ -1,0 +1,83 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-e7-006",
+  "template_family_id": "e_pharmacist__f3",
+  "turns": [
+    {
+      "speaker_role": "caregiver",
+      "text": "ಮಗುವಿಗೆ ಅತಿಸಾರ ಇದೆ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಒ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ. zinc sulphate ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e7-006",
+    "encounter_type": "pharmacist_dispensing",
+    "symptoms": [
+      {
+        "name": "diarrhoea",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಅತಿಸಾರ",
+          "char_start": 8,
+          "char_end": 14
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ors",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಒ.ಆರ್.ಎಸ್",
+          "char_start": 20,
+          "char_end": 29
+        }
+      },
+      {
+        "drug": "zinc",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 14,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "zinc sulphate ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+          "char_start": 43,
+          "char_end": 100
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if the child does not drink, bring the child to hospital",
+      "gold_span": {
+        "turn_index": 2,
+        "span_text": "ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
+        "char_start": 107,
+        "char_end": 151
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-c1-005",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಡಾಕ್ಟರ್ ಕೊಟ್ಟ ಮಾತ್ರೆ ಮುಗಿಯಿತಾ?\nAmoxicillin ಕೋರ್ಸ್ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆವು.\nಆಂಟಿಬಯಾಟಿಕ್ ಕೋರ್ಸ್ ಪೂರ್ತಿ ಮುಗಿಸಬೇಕು.",
+  "words": [
+    {
+      "w": "ಡಾಕ್ಟರ್",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಟ್ಟ",
+      "char_start": 8,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 14,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮುಗಿಯಿತಾ",
+      "char_start": 21,
+      "char_end": 29,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Amoxicillin",
+      "char_start": 31,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೋರ್ಸ್",
+      "char_start": 43,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮುಗಿಸದೆ",
+      "char_start": 50,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಿಲ್ಲಿಸಿದೆವು",
+      "char_start": 58,
+      "char_end": 70,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಂಟಿಬಯಾಟಿಕ್",
+      "char_start": 72,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೋರ್ಸ್",
+      "char_start": 84,
+      "char_end": 90,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಪೂರ್ತಿ",
+      "char_start": 91,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮುಗಿಸಬೇಕು",
+      "char_start": 98,
+      "char_end": 107,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

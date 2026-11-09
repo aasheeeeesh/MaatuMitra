@@ -1,0 +1,96 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-f6-006",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಕೆಮ್ಮು ಇದೆಯಾ?\nಇಲ್ಲ.\nಈಗ ಜ್ವರ ಇಲ್ಲ ಆದ್ದರಿಂದ ಪ್ಯಾರಸಿಟಮಾಲ್ ಮಾತ್ರೆ ಬೇಡ.",
+  "words": [
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 0,
+      "char_end": 6,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 7,
+      "char_end": 12,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 14,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಈಗ",
+      "char_start": 20,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 23,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 28,
+      "char_end": 32,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆದ್ದರಿಂದ",
+      "char_start": 33,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 42,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 55,
+      "char_end": 61,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇಡ",
+      "char_start": 62,
+      "char_end": 65,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

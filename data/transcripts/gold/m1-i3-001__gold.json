@@ -1,0 +1,176 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-i3-001",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಈ ಮಾತ್ರೆಗೆ ತುಂಬಾ ಬೇಡಿಕೆ ಇದೆ.\nಸೆಫಿಕ್ಸಿಮ್ 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕು, ಅಲ್ವ?\nಹೌದು.",
+  "words": [
+    {
+      "w": "ಈ",
+      "char_start": 0,
+      "char_end": 1,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆಗೆ",
+      "char_start": 2,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತುಂಬಾ",
+      "char_start": 11,
+      "char_end": 16,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇಡಿಕೆ",
+      "char_start": 17,
+      "char_end": 23,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 24,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸೆಫಿಕ್ಸಿಮ್",
+      "char_start": 29,
+      "char_end": 39,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "400",
+      "char_start": 40,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 44,
+      "char_end": 46,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 47,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 54,
+      "char_end": 61,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 62,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 67,
+      "char_end": 71,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏಳು",
+      "char_start": 72,
+      "char_end": 75,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 76,
+      "char_end": 79,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 80,
+      "char_end": 92,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 94,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 98,
+      "char_end": 102,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕು",
+      "char_start": 103,
+      "char_end": 118,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅಲ್ವ",
+      "char_start": 120,
+      "char_end": 124,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 126,
+      "char_end": 130,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

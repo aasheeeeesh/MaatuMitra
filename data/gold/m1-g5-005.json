@@ -1,0 +1,76 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g5-005",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Tablet Cefixime 400 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g5-005",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefixime",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Cefixime 400 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ",
+          "char_start": 7,
+          "char_end": 48
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 50,
+          "char_end": 84
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "only if there is fever",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 92,
+          "char_end": 110
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರ",
+      "ಇದ್ದರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

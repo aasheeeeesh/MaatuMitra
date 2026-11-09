@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f2-004",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಏನು ತೊಂದರೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಕೆಮ್ಮು ಇಲ್ಲಾ ಮತ್ತು ಅತಿಸಾರ ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f2-004",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಕೆಮ್ಮು ಇಲ್ಲಾ",
+          "char_start": 12,
+          "char_end": 24
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಅತಿಸಾರ ಇದೆ",
+          "char_start": 31,
+          "char_end": 41
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

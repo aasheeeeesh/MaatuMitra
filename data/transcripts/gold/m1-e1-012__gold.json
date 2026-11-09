@@ -1,0 +1,176 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e1-012",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ 500 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಹೌದು, ಊಟದ ನಂತರ. ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ.",
+  "words": [
+    {
+      "w": "ಅಮಾಕ್ಸಿಸಿಲಿನ್",
+      "char_start": 0,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "500",
+      "char_start": 14,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 18,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
+      "char_start": 21,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 32,
+      "char_end": 39,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 40,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 45,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 50,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾರ",
+      "char_start": 55,
+      "char_end": 58,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 59,
+      "char_end": 71,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸರಿ",
+      "char_start": 73,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 78,
+      "char_end": 81,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 82,
+      "char_end": 86,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ",
+      "char_start": 87,
+      "char_end": 102,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 104,
+      "char_end": 108,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 110,
+      "char_end": 113,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 114,
+      "char_end": 118,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್ಲ",
+      "char_start": 120,
+      "char_end": 124,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 125,
+      "char_end": 131,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮುಗಿಸಿ",
+      "char_start": 132,
+      "char_end": 138,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

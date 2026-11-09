@@ -1,0 +1,176 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-g5-004",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "Tablet ciprofloxacin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ.\nIbuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
+  "words": [
+    {
+      "w": "Tablet",
+      "char_start": 0,
+      "char_end": 6,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ciprofloxacin",
+      "char_start": 7,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "250",
+      "char_start": 21,
+      "char_end": 24,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 25,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 28,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 36,
+      "char_end": 40,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 41,
+      "char_end": 45,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 46,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 51,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Ibuprofen",
+      "char_start": 56,
+      "char_end": 65,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "400",
+      "char_start": 66,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 70,
+      "char_end": 72,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 73,
+      "char_end": 80,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 81,
+      "char_end": 85,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 86,
+      "char_end": 90,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 91,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "fever",
+      "char_start": 98,
+      "char_end": 103,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದ್ದರೆ",
+      "char_start": 104,
+      "char_end": 110,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 111,
+      "char_end": 116,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸರಿ",
+      "char_start": 118,
+      "char_end": 121,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

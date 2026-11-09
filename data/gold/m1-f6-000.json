@@ -1,0 +1,71 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f6-000",
+  "template_family_id": "f_nurse_symptoms__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಉಸಿರಾಟದ ತೊಂದರೆ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಈಗ ಜ್ವರ ಇದೆ ಆದ್ದರಿಂದ Ibuprofen ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f6-000",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "breathing difficulty",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಉಸಿರಾಟದ ತೊಂದರೆ",
+          "char_start": 0,
+          "char_end": 14
+        }
+      },
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಜ್ವರ ಇದೆ",
+          "char_start": 31,
+          "char_end": 39
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Ibuprofen ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 49,
+          "char_end": 78
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

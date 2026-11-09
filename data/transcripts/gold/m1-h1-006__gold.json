@@ -1,0 +1,152 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-h1-006",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಅಮೋಕ್ಸಿಸಿಲಿನ್ 500 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ.",
+  "words": [
+    {
+      "w": "ಅಮೋಕ್ಸಿಸಿಲಿನ್",
+      "char_start": 0,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "500",
+      "char_start": 14,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 18,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
+      "char_start": 21,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 32,
+      "char_end": 39,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 40,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 45,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 50,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 54,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 58,
+      "char_end": 70,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 72,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕಡಿಮೆ",
+      "char_start": 77,
+      "char_end": 82,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಗದಿದ್ದರೆ",
+      "char_start": 83,
+      "char_end": 92,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 93,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನದಲ್ಲಿ",
+      "char_start": 98,
+      "char_end": 106,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮತ್ತೆ",
+      "char_start": 107,
+      "char_end": 112,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬನ್ನಿ",
+      "char_start": 113,
+      "char_end": 118,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

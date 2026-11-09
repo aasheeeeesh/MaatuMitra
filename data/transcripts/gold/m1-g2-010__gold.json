@@ -1,0 +1,224 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-g2-010",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "Azithromycin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ಮತ್ತು cetirizine 10 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "words": [
+    {
+      "w": "Azithromycin",
+      "char_start": 0,
+      "char_end": 12,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "500",
+      "char_start": 13,
+      "char_end": 16,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 17,
+      "char_end": 19,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 20,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 23,
+      "char_end": 30,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 31,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 36,
+      "char_end": 40,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 41,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 45,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮತ್ತು",
+      "char_start": 50,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "cetirizine",
+      "char_start": 56,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "10",
+      "char_start": 67,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 70,
+      "char_end": 72,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 73,
+      "char_end": 75,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 76,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 84,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 89,
+      "char_end": 93,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 94,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 98,
+      "char_end": 101,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 102,
+      "char_end": 114,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 116,
+      "char_end": 119,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೊದಲು",
+      "char_start": 120,
+      "char_end": 125,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ",
+      "char_start": 126,
+      "char_end": 141,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 143,
+      "char_end": 146,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 147,
+      "char_end": 151,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 152,
+      "char_end": 164,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

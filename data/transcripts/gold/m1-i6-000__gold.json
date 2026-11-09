@@ -1,0 +1,104 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-i6-000",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?\nತಲೆನೋವು ಇಲ್ಲ, ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ 500 mg ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "words": [
+    {
+      "w": "ಏನು",
+      "char_start": 0,
+      "char_end": 3,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾಡಬೇಕು",
+      "char_start": 4,
+      "char_end": 11,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಡಾಕ್ಟರ್",
+      "char_start": 12,
+      "char_end": 19,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಲೆನೋವು",
+      "char_start": 21,
+      "char_end": 28,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 29,
+      "char_end": 33,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 35,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "500",
+      "char_start": 52,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 56,
+      "char_end": 58,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 59,
+      "char_end": 65,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 66,
+      "char_end": 71,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 72,
+      "char_end": 84,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

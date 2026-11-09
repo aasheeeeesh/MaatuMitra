@@ -1,0 +1,96 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-f4-006",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಕೆಮ್ಮು, ಮೈಕೈನೋವು, ವಾಂತಿ ಇದೆಯಾ?\nಕೆಮ್ಮು ಇದೆ, ಮೈಕೈನೋವು ಇಲ್ಲ, ವಾಂತಿ ಇದೆ.",
+  "words": [
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 0,
+      "char_end": 6,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೈಕೈನೋವು",
+      "char_start": 8,
+      "char_end": 16,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾಂತಿ",
+      "char_start": 18,
+      "char_end": 23,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 24,
+      "char_end": 29,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 31,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 38,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೈಕೈನೋವು",
+      "char_start": 43,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 52,
+      "char_end": 56,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾಂತಿ",
+      "char_start": 58,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 64,
+      "char_end": 67,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e1-015",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಹೌದು, ಊಟದ ನಂತರ. ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ.",
+  "words": [
+    {
+      "w": "ನೈಟ್ರೋಫ್ಯುರಾಂಟಿನ್",
+      "char_start": 0,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 18,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 23,
+      "char_end": 29,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 30,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 38,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 45,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏಳು",
+      "char_start": 50,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 54,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 58,
+      "char_end": 70,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸರಿ",
+      "char_start": 72,
+      "char_end": 75,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 77,
+      "char_end": 80,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 81,
+      "char_end": 85,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ",
+      "char_start": 86,
+      "char_end": 101,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 103,
+      "char_end": 107,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 109,
+      "char_end": 112,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 113,
+      "char_end": 117,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್ಲ",
+      "char_start": 119,
+      "char_end": 123,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 124,
+      "char_end": 130,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮುಗಿಸಿ",
+      "char_start": 131,
+      "char_end": 137,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

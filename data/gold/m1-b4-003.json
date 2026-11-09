@@ -1,0 +1,58 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b4-003",
+  "template_family_id": "b_cross_turn__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಸುಸ್ತು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಅತಿಸಾರ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b4-003",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "tiredness",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸುಸ್ತು",
+          "char_start": 0,
+          "char_end": 6
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಅತಿಸಾರ",
+          "char_start": 20,
+          "char_end": 26
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

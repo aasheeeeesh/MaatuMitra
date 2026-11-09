@@ -1,0 +1,168 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-c2-001",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಆ ಮಾತ್ರೆ ಎಷ್ಟು ದಿನ ತೆಗೆದುಕೊಂಡಿರಿ?\nಎರಡು ದಿನ ತೆಗೆದುಕೊಂಡೆ, ಆಮೇಲೆ cotrimoxazole ಒಂದು ಮಾತ್ರೆ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆ.\nವೈದ್ಯರ ಸಲಹೆ ಇಲ್ಲದೆ ಮಾತ್ರೆ ನಿಲ್ಲಿಸಬೇಡಿ.",
+  "words": [
+    {
+      "w": "ಆ",
+      "char_start": 0,
+      "char_end": 1,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 2,
+      "char_end": 8,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಷ್ಟು",
+      "char_start": 9,
+      "char_end": 14,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 15,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಂಡಿರಿ",
+      "char_start": 19,
+      "char_end": 32,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 34,
+      "char_end": 38,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 39,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಂಡೆ",
+      "char_start": 43,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಮೇಲೆ",
+      "char_start": 56,
+      "char_end": 61,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "cotrimoxazole",
+      "char_start": 62,
+      "char_end": 75,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 76,
+      "char_end": 80,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 81,
+      "char_end": 87,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮುಗಿಸದೆ",
+      "char_start": 88,
+      "char_end": 95,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಿಲ್ಲಿಸಿದೆ",
+      "char_start": 96,
+      "char_end": 106,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವೈದ್ಯರ",
+      "char_start": 108,
+      "char_end": 114,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಲಹೆ",
+      "char_start": 115,
+      "char_end": 119,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲದೆ",
+      "char_start": 120,
+      "char_end": 126,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 127,
+      "char_end": 133,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಿಲ್ಲಿಸಬೇಡಿ",
+      "char_start": 134,
+      "char_end": 145,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

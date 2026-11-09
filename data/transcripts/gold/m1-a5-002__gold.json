@@ -1,0 +1,144 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-a5-002",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗುವಿಗೆ ಏನು ತೊಂದರೆ?\nಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು ಎರಡು ದಿನದಿಂದ ಇದೆ.\nಬೇರೆ ಏನಾದರೂ ತೊಂದರೆ ಇದೆಯಾ?\nಯಾವುದೇ ತಲೆನೋವು ಇಲ್ಲ.",
+  "words": [
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏನು",
+      "char_start": 8,
+      "char_end": 11,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೊಂದರೆ",
+      "char_start": 12,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 20,
+      "char_end": 24,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮತ್ತು",
+      "char_start": 25,
+      "char_end": 30,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 31,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 38,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನದಿಂದ",
+      "char_start": 43,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 51,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇರೆ",
+      "char_start": 56,
+      "char_end": 60,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏನಾದರೂ",
+      "char_start": 61,
+      "char_end": 67,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೊಂದರೆ",
+      "char_start": 68,
+      "char_end": 74,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 75,
+      "char_end": 80,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಯಾವುದೇ",
+      "char_start": 82,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಲೆನೋವು",
+      "char_start": 89,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 97,
+      "char_end": 101,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

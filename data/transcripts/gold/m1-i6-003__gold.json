@@ -1,0 +1,104 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-i6-003",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?\nಜ್ವರ ಇದೆ, ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ೪ mg ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "words": [
+    {
+      "w": "ಏನು",
+      "char_start": 0,
+      "char_end": 3,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾಡಬೇಕು",
+      "char_start": 4,
+      "char_end": 11,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಡಾಕ್ಟರ್",
+      "char_start": 12,
+      "char_end": 19,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 21,
+      "char_end": 25,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 26,
+      "char_end": 29,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್",
+      "char_start": 31,
+      "char_end": 45,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೪",
+      "char_start": 46,
+      "char_end": 47,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 48,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 51,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 58,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 64,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

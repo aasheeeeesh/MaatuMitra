@@ -1,0 +1,272 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e3-013",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ೨ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಪ್ಯಾರಾಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸೆಟಿರಿಜಿನ್ ೧೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
+  "words": [
+    {
+      "w": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್",
+      "char_start": 0,
+      "char_end": 14,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೨",
+      "char_start": 15,
+      "char_end": 16,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 17,
+      "char_end": 19,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 20,
+      "char_end": 26,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 27,
+      "char_end": 34,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 35,
+      "char_end": 39,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 40,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 45,
+      "char_end": 48,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 49,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 54,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಪ್ಯಾರಾಸಿಟಮಾಲ್",
+      "char_start": 68,
+      "char_end": 81,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "1000",
+      "char_start": 82,
+      "char_end": 86,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 87,
+      "char_end": 89,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 90,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 97,
+      "char_end": 104,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 105,
+      "char_end": 111,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 112,
+      "char_end": 116,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 117,
+      "char_end": 121,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 122,
+      "char_end": 125,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 126,
+      "char_end": 138,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸೆಟಿರಿಜಿನ್",
+      "char_start": 140,
+      "char_end": 150,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೧೦",
+      "char_start": 151,
+      "char_end": 153,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 154,
+      "char_end": 156,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 157,
+      "char_end": 163,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 164,
+      "char_end": 171,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 172,
+      "char_end": 176,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 177,
+      "char_end": 181,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 182,
+      "char_end": 186,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 187,
+      "char_end": 191,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 192,
+      "char_end": 204,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸರಿ",
+      "char_start": 206,
+      "char_end": 209,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಧನ್ಯವಾದಗಳು",
+      "char_start": 211,
+      "char_end": 221,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

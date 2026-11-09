@@ -1,0 +1,88 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b3-006",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಈ ವಾರ amoxicillin-clavulanate ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ?\nಇಲ್ಲ.\nವಾಂತಿ ಇದೆಯಾ?\nಹೌದು.",
+  "words": [
+    {
+      "w": "ಈ",
+      "char_start": 0,
+      "char_end": 1,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾರ",
+      "char_start": 2,
+      "char_end": 5,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "amoxicillin",
+      "char_start": 6,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "clavulanate",
+      "char_start": 18,
+      "char_end": 29,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ",
+      "char_start": 30,
+      "char_end": 47,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 49,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾಂತಿ",
+      "char_start": 55,
+      "char_end": 60,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 61,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 68,
+      "char_end": 72,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

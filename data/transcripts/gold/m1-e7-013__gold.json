@@ -1,0 +1,192 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e7-013",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗುವಿಗೆ ಅತಿಸಾರ ಇದೆ.\no.r.s ಆಗಾಗ ಕುಡಿಸಿ. ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ಕೊಡಿ.\nಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
+  "words": [
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅತಿಸಾರ",
+      "char_start": 8,
+      "char_end": 14,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 15,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "o",
+      "char_start": 20,
+      "char_end": 21,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "r",
+      "char_start": 22,
+      "char_end": 23,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "s",
+      "char_start": 24,
+      "char_end": 25,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಗಾಗ",
+      "char_start": 26,
+      "char_end": 30,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಸಿ",
+      "char_start": 31,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿಂಕ್",
+      "char_start": 39,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 45,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 50,
+      "char_end": 56,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 57,
+      "char_end": 64,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 65,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 70,
+      "char_end": 74,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹದಿನಾಲ್ಕು",
+      "char_start": 75,
+      "char_end": 84,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 85,
+      "char_end": 89,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಿ",
+      "char_start": 90,
+      "char_end": 94,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಗು",
+      "char_start": 96,
+      "char_end": 99,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಯದಿದ್ದರೆ",
+      "char_start": 100,
+      "char_end": 112,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಸ್ಪತ್ರೆಗೆ",
+      "char_start": 113,
+      "char_end": 123,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕರೆದುಕೊಂಡು",
+      "char_start": 124,
+      "char_end": 134,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬನ್ನಿ",
+      "char_start": 135,
+      "char_end": 140,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

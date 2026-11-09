@@ -1,0 +1,80 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b2-002",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "Cefuroxime ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡಿರಾ?\nಹೌದು.\nವೈದ್ಯರು ಹೇಳಿದಂತೆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "words": [
+    {
+      "w": "Cefuroxime",
+      "char_start": 0,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 11,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಂಡಿರಾ",
+      "char_start": 18,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 33,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವೈದ್ಯರು",
+      "char_start": 39,
+      "char_end": 46,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೇಳಿದಂತೆ",
+      "char_start": 47,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 56,
+      "char_end": 62,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 63,
+      "char_end": 75,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

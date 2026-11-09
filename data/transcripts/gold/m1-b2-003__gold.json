@@ -1,0 +1,80 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b2-003",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಅಜಿಥ್ರೋಮೈಸಿನ್ ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡಿರಾ?\nಇಲ್ಲಾ.\nವೈದ್ಯರು ಹೇಳಿದಂತೆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "words": [
+    {
+      "w": "ಅಜಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 0,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 14,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಂಡಿರಾ",
+      "char_start": 21,
+      "char_end": 34,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 36,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವೈದ್ಯರು",
+      "char_start": 43,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೇಳಿದಂತೆ",
+      "char_start": 51,
+      "char_end": 59,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 60,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 67,
+      "char_end": 79,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

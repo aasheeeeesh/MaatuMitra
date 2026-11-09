@@ -1,0 +1,224 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e6-006",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "Nitrofurantoin ೧೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.\nದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ, ಅಲ್ವಾ?\nಹೌದು. Ondansetron 8 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "words": [
+    {
+      "w": "Nitrofurantoin",
+      "char_start": 0,
+      "char_end": 14,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೧೦೦",
+      "char_start": 15,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 19,
+      "char_end": 21,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 22,
+      "char_end": 28,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 29,
+      "char_end": 36,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 37,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 44,
+      "char_end": 48,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 49,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 55,
+      "char_end": 67,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 69,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 77,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 84,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅಲ್ವಾ",
+      "char_start": 90,
+      "char_end": 95,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 97,
+      "char_end": 101,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Ondansetron",
+      "char_start": 103,
+      "char_end": 114,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "8",
+      "char_start": 115,
+      "char_end": 116,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 117,
+      "char_end": 119,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 120,
+      "char_end": 122,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 123,
+      "char_end": 129,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 130,
+      "char_end": 137,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 138,
+      "char_end": 142,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 143,
+      "char_end": 147,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 148,
+      "char_end": 152,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 153,
+      "char_end": 156,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೂಡ",
+      "char_start": 157,
+      "char_end": 160,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 161,
+      "char_end": 173,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

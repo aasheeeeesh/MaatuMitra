@@ -1,0 +1,136 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-c4-004",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?\nಲೇವೋ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡು ಬಿಟ್ಟೆ.\nಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು.",
+  "words": [
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 0,
+      "char_end": 4,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕಡಿಮೆ",
+      "char_start": 5,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆದ",
+      "char_start": 11,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೇಲೆ",
+      "char_start": 14,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏನು",
+      "char_start": 19,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾಡಿದಿರಿ",
+      "char_start": 23,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಲೇವೋ",
+      "char_start": 33,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "500",
+      "char_start": 38,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 42,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 45,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಂಡು",
+      "char_start": 52,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಿಟ್ಟೆ",
+      "char_start": 64,
+      "char_end": 70,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಉಳಿದ",
+      "char_start": 72,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 77,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹಂಚಿಕೊಳ್ಳಕೂಡದು",
+      "char_start": 84,
+      "char_end": 98,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

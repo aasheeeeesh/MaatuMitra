@@ -1,0 +1,18 @@
+- **Template**: a sentence pattern with blanks (slots) that the generator fills to make many synthetic conversations.
+- **Template family**: a group of templates that share sentence frames; a whole family goes to either dev or test, never both.
+- **Slot**: a typed blank in a template (drug, symptom, count, word, negation, cross-turn answer).
+- **Drug-dose combination**: a drug together with a spoken dose, e.g. (amoxicillin, 500, mg); each one is used in only one split.
+- **Minimal-pair twin**: the same sentence with only the negation word changed to its positive form (ಕೆಮ್ಮು ಇಲ್ಲ -> ಕೆಮ್ಮು ಇದೆ); used to test negation detection.
+- **Test lock**: a file listing a fingerprint (sha256) of every test file; if any test file changes, the check fails.
+- **sha256**: a fingerprint of a file's bytes; changing one byte changes it completely.
+- **Deterministic generator**: a program that produces exactly the same files every time it runs with the same inputs and seed.
+- **Seed**: a fixed number that makes "random" choices repeatable.
+- **Transliteration**: writing a word in another script by sound (amoxicillin -> ಅಮಾಕ್ಸಿಸಿಲಿನ್), not translating it.
+- **ISO 15919**: a standard way to write Indian-script sounds with Latin letters (ā, ṭ, ḍ, ṁ ...).
+- **Code-switching**: mixing two languages in one conversation (English drug names inside Kannada sentences).
+- **Trap token**: a word that looks like a negation word but is not one (ಇಲ್ಲಿ "here" vs ಇಲ್ಲ "no").
+- **Cross-turn negation**: a "no" that is a whole turn by itself and answers the previous turn's question.
+- **WHO AWaRe**: WHO's grouping of antibiotics into Access, Watch and Reserve by resistance risk.
+- **NLEM**: India's National List of Essential Medicines (2022 edition used here).
+- **openFDA drug label**: the US FDA's official prescribing text for a medicine, available as public data.
+- **Attested word**: a word we actually saw in a fetched real Kannada text; unattested words were composed by an AI.

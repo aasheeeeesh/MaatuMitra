@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f2-002",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಏನು ತೊಂದರೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಯಾವುದೇ ನೆಗಡಿ ಇಲ್ಲ ಮತ್ತು ಚಳಿ ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f2-002",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಯಾವುದೇ ನೆಗಡಿ ಇಲ್ಲ",
+          "char_start": 12,
+          "char_end": 29
+        }
+      },
+      {
+        "name": "chills",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಚಳಿ ಇದೆ",
+          "char_start": 36,
+          "char_end": 43
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f6-002",
+  "template_family_id": "f_nurse_symptoms__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಚಳಿ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಈಗ ಜ್ವರ ಇಲ್ಲ ಆದ್ದರಿಂದ ಪ್ಯಾರಸಿಟಮಾಲ್ ಮಾತ್ರೆ ಬೇಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f6-002",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "chills",
+        "present": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಚಳಿ",
+          "char_start": 0,
+          "char_end": 3
+        }
+      },
+      {
+        "name": "fever",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಜ್ವರ ಇಲ್ಲ",
+          "char_start": 20,
+          "char_end": 29
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಮಾತ್ರೆ ಬೇಡ",
+          "char_start": 39,
+          "char_end": 62
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

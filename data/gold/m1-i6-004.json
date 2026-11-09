@@ -1,0 +1,58 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-i6-004",
+  "template_family_id": "i_traps__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಜ್ವರ ಇಲ್ಲಾ, ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್ ಒಂದು ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i6-004",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಇಲ್ಲಾ",
+          "char_start": 21,
+          "char_end": 31
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cefadroxil",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್ ಒಂದು ಮಾತ್ರೆ",
+          "char_start": 33,
+          "char_end": 59
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

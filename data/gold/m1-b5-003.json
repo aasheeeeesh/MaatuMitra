@@ -1,0 +1,83 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b5-003",
+  "template_family_id": "b_cross_turn__f3",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಒ.ಆರ್.ಎಸ್ ಕೊಟ್ಟಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಕೊಟ್ಟಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಎಲ್ಲ ಔಷಧಿ ಸಮಯಕ್ಕೆ ಕೊಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b5-003",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ors",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಒ.ಆರ್.ಎಸ್",
+          "char_start": 8,
+          "char_end": 17
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+          "char_start": 39,
+          "char_end": 51
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "give all medicines on time",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 4,
+          "span_text": "ಎಲ್ಲ ಔಷಧಿ ಸಮಯಕ್ಕೆ ಕೊಡಿ",
+          "char_start": 73,
+          "char_end": 95
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಎಲ್ಲ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

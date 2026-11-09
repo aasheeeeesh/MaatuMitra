@@ -1,0 +1,176 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e5-002",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಇದು Azithromycin ಮಾತ್ರೆನಾ?\nಇದು Azithromycin ಅಲ್ಲ, ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ.",
+  "words": [
+    {
+      "w": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್",
+      "char_start": 0,
+      "char_end": 14,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "500",
+      "char_start": 15,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 19,
+      "char_end": 21,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 22,
+      "char_end": 28,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 29,
+      "char_end": 36,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 37,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 42,
+      "char_end": 46,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 47,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 51,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 55,
+      "char_end": 67,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದು",
+      "char_start": 69,
+      "char_end": 72,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Azithromycin",
+      "char_start": 73,
+      "char_end": 85,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆನಾ",
+      "char_start": 86,
+      "char_end": 94,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದು",
+      "char_start": 96,
+      "char_end": 99,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Azithromycin",
+      "char_start": 100,
+      "char_end": 112,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅಲ್ಲ",
+      "char_start": 113,
+      "char_end": 117,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾನು",
+      "char_start": 119,
+      "char_end": 123,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೇಳಿದ",
+      "char_start": 124,
+      "char_end": 129,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 130,
+      "char_end": 136,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇರೆ",
+      "char_start": 137,
+      "char_end": 141,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

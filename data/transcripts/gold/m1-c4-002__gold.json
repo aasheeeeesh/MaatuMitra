@@ -1,0 +1,144 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-c4-002",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?\nಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ 250 ಎಂ.ಜಿ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ.\nಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು.",
+  "words": [
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 0,
+      "char_end": 4,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕಡಿಮೆ",
+      "char_start": 5,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆದ",
+      "char_start": 11,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೇಲೆ",
+      "char_start": 14,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏನು",
+      "char_start": 19,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾಡಿದಿರಿ",
+      "char_start": 23,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 33,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "250",
+      "char_start": 50,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 54,
+      "char_end": 56,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 57,
+      "char_end": 59,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 60,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳದೆ",
+      "char_start": 67,
+      "char_end": 80,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಿಟ್ಟೆ",
+      "char_start": 81,
+      "char_end": 87,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಉಳಿದ",
+      "char_start": 89,
+      "char_end": 93,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 94,
+      "char_end": 100,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹಂಚಿಕೊಳ್ಳಕೂಡದು",
+      "char_start": 101,
+      "char_end": 115,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

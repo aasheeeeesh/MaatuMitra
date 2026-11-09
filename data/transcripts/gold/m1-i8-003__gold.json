@@ -1,0 +1,136 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-i8-003",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಈ ಮಾತ್ರೆ ಜಾಸ್ತಿ ತಗೊಂಡ್ರೆ ಏನಾಗುತ್ತದೆ?\nNitrofurantoin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.",
+  "words": [
+    {
+      "w": "ಈ",
+      "char_start": 0,
+      "char_end": 1,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 2,
+      "char_end": 8,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಾಸ್ತಿ",
+      "char_start": 9,
+      "char_end": 15,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಗೊಂಡ್ರೆ",
+      "char_start": 16,
+      "char_end": 24,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏನಾಗುತ್ತದೆ",
+      "char_start": 25,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Nitrofurantoin",
+      "char_start": 37,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 52,
+      "char_end": 56,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 57,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 64,
+      "char_end": 71,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 72,
+      "char_end": 78,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 79,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 84,
+      "char_end": 89,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 90,
+      "char_end": 102,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಾಸ್ತಿ",
+      "char_start": 104,
+      "char_end": 110,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
+      "char_start": 111,
+      "char_end": 126,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

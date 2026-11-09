@@ -1,0 +1,144 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-i8-007",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಈ ಮಾತ್ರೆ ಜಾಸ್ತಿ ತಗೊಂಡ್ರೆ ಏನಾಗುತ್ತದೆ?\nಕ್ಲಿಂಡಾಮೈಸಿನ್ 150 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.",
+  "words": [
+    {
+      "w": "ಈ",
+      "char_start": 0,
+      "char_end": 1,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 2,
+      "char_end": 8,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಾಸ್ತಿ",
+      "char_start": 9,
+      "char_end": 15,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಗೊಂಡ್ರೆ",
+      "char_start": 16,
+      "char_end": 24,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏನಾಗುತ್ತದೆ",
+      "char_start": 25,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಲಿಂಡಾಮೈಸಿನ್",
+      "char_start": 37,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "150",
+      "char_start": 51,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 55,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
+      "char_start": 58,
+      "char_end": 68,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 69,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 77,
+      "char_end": 81,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಾರಿ",
+      "char_start": 82,
+      "char_end": 86,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 87,
+      "char_end": 92,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 93,
+      "char_end": 105,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಾಸ್ತಿ",
+      "char_start": 107,
+      "char_end": 113,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
+      "char_start": 114,
+      "char_end": 129,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

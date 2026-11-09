@@ -1,0 +1,32 @@
+# Shared negation form sets for neg slots. Each form = negative text, positive (minimal-pair
+# twin) text, and the negation-table pattern ids the NEGATIVE text must fire (checked at
+# generation time). "$S" is replaced by the slot named in the neg slot's `subject:`.
+# Kannada here is AI-composed, not native-validated.
+form_sets:
+  EXIST:
+    - {neg: "ಇಲ್ಲ", pos: "ಇದೆ", patterns: [NEG-W01]}
+    - {neg: "ಇಲ್ಲಾ", pos: "ಇದೆ", patterns: [NEG-W02]}
+  EXIST_PHRASE:
+    - {neg: "{$S.kn} ಇಲ್ಲ", pos: "{$S.kn} ಇದೆ", patterns: [NEG-W01]}
+    - {neg: "{$S.kn} ಇಲ್ಲಾ", pos: "{$S.kn} ಇದೆ", patterns: [NEG-W02]}
+    - {neg: "ಯಾವುದೇ {$S.kn} ಇಲ್ಲ", pos: "{$S.kn} ಇದೆ", patterns: [NEG-C01, NEG-W01]}
+  COMPOUND_PHRASE:
+    - {neg: "ಯಾವುದೇ {$S.kn} ಇಲ್ಲ", pos: "{$S.kn} ಇದೆ", patterns: [NEG-C01, NEG-W01]}
+    - {neg: "ಯಾವುದೇ {$S.kn} ಇಲ್ಲಾ", pos: "{$S.kn} ಇದೆ", patterns: [NEG-C01, NEG-W02]}
+  HAPPEN:
+    - {neg: "ಆಗಿಲ್ಲ", pos: "ಆಗಿದೆ", patterns: [NEG-S01]}
+  COME:
+    - {neg: "ಬಂದಿಲ್ಲ", pos: "ಬಂದಿದೆ", patterns: [NEG-S01]}
+  NO_ANTIBIOTIC:
+    - {neg: "ಬೇಡ", pos: "ಬೇಕು", patterns: [NEG-W04]}
+    - {neg: "ತೆಗೆದುಕೊಳ್ಳಬಾರದು", pos: "ತೆಗೆದುಕೊಳ್ಳಬಹುದು", patterns: [NEG-S04]}
+    - {neg: "ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು", pos: "ತೆಗೆದುಕೊಳ್ಳಬಹುದು", patterns: [NEG-W06, NEG-S04]}
+  DO_NOT_GIVE:
+    - {neg: "ಕೊಡಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-S06]}
+    - {neg: "ಕೊಡುವುದು ಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-W05]}
+    - {neg: "ಕೊಡ ಕೂಡದು", pos: "ಕೊಡಬಹುದು", patterns: [NEG-W07, NEG-S05]}
+    - {neg: "ಕೊಡಕೂಡದು", pos: "ಕೊಡಬಹುದು", patterns: [NEG-S05]}
+  DO_NOT_TAKE:
+    - {neg: "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ", pos: "ತೆಗೆದುಕೊಳ್ಳಿ", patterns: [NEG-S06]}
+    - {neg: "ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು", pos: "ತೆಗೆದುಕೊಳ್ಳಬಹುದು", patterns: [NEG-W06, NEG-S04]}
+    - {neg: "ಬೇಡ", pos: "ತೆಗೆದುಕೊಳ್ಳಿ", patterns: [NEG-W04]}

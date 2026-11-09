@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-i1-000",
+  "template_family_id": "i_traps__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಎರಿಥ್ರೋಮೈಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ, ಅಲ್ವಾ?"
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i1-000",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "erythromycin",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಎರಿಥ್ರೋಮೈಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "char_start": 0,
+          "char_end": 45
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ",
+      "ಎಲ್ಲಾ",
+      "ಇಲ್ಲಿ",
+      "ಅಲ್ವಾ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

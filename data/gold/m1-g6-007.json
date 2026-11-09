@@ -1,0 +1,85 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g6-007",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನಾಲ್ಕು ದಿನದಿಂದ, ಅತಿಸಾರ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. Cefixime ೪೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ. acetaminophen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-007",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ",
+          "char_start": 0,
+          "char_end": 4
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಅತಿಸಾರ ಇದೆ",
+          "char_start": 40,
+          "char_end": 50
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cefixime",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Cefixime ೪೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ",
+          "char_start": 56,
+          "char_end": 97
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "acetaminophen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 112,
+          "char_end": 164
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

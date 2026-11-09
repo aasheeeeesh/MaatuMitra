@@ -1,0 +1,73 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-h4-000",
+  "template_family_id": "h_followup__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ತಲೆನೋವು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Ciprofloxacin 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಮೂರು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h4-000",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 0,
+          "char_end": 7
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ciprofloxacin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Ciprofloxacin 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "char_start": 21,
+          "char_end": 76
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if you do not improve in three days, come back",
+      "gold_span": {
+        "turn_index": 3,
+        "span_text": "ಮೂರು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ",
+        "char_start": 91,
+        "char_end": 131
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

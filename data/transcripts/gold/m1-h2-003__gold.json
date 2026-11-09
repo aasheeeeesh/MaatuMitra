@@ -1,0 +1,128 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-h2-003",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೊಡಿ.\nನಾಳೆಯೂ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
+  "words": [
+    {
+      "w": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 0,
+      "char_end": 12,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "1000",
+      "char_start": 13,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 18,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 21,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 28,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 36,
+      "char_end": 40,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 41,
+      "char_end": 45,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಿ",
+      "char_start": 46,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಳೆಯೂ",
+      "char_start": 52,
+      "char_end": 58,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜ್ವರ",
+      "char_start": 59,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಳಿಯದಿದ್ದರೆ",
+      "char_start": 64,
+      "char_end": 75,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಸ್ಪತ್ರೆಗೆ",
+      "char_start": 76,
+      "char_end": 86,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕರೆದುಕೊಂಡು",
+      "char_start": 87,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬನ್ನಿ",
+      "char_start": 98,
+      "char_end": 103,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

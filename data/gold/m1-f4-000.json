@@ -1,0 +1,60 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f4-000",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ, ಮೈಕೈನೋವು, ಸುಸ್ತು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಜ್ವರ ಇದೆ, ಮೈಕೈನೋವು ಇಲ್ಲ, ಸುಸ್ತು ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f4-000",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಇದೆ",
+          "char_start": 30,
+          "char_end": 38
+        }
+      },
+      {
+        "name": "body ache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಮೈಕೈನೋವು ಇಲ್ಲ",
+          "char_start": 40,
+          "char_end": 53
+        }
+      },
+      {
+        "name": "tiredness",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಸುಸ್ತು ಇದೆ",
+          "char_start": 55,
+          "char_end": 65
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

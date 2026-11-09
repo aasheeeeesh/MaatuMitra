@@ -1,0 +1,61 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-c1-003",
+  "template_family_id": "c_stopped_early__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಡಾಕ್ಟರ್ ಕೊಟ್ಟ ಮಾತ್ರೆ ಮುಗಿಯಿತಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಕೋರ್ಸ್ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆವು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಆಂಟಿಬಯಾಟಿಕ್ ಕೋರ್ಸ್ ಪೂರ್ತಿ ಮುಗಿಸಬೇಕು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c1-003",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "levofloxacin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಕೋರ್ಸ್ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆವು",
+          "char_start": 31,
+          "char_end": 75
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "the full antibiotic course must be finished",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಆಂಟಿಬಯಾಟಿಕ್ ಕೋರ್ಸ್ ಪೂರ್ತಿ ಮುಗಿಸಬೇಕು",
+          "char_start": 77,
+          "char_end": 112
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

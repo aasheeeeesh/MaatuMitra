@@ -1,0 +1,112 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-a2-007",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗುವಿಗೆ ಕೆಮ್ಮು ಇದೆಯಾ? ಎಷ್ಟು ದಿನದಿಂದ?\nಹೌದು, ಕೆಮ್ಮು ಮೂರು ದಿನದಿಂದ ಇದೆ, ನೆಗಡಿ ಇದೆ.",
+  "words": [
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 8,
+      "char_end": 14,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 15,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಷ್ಟು",
+      "char_start": 22,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನದಿಂದ",
+      "char_start": 28,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 37,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 43,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 50,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನದಿಂದ",
+      "char_start": 55,
+      "char_end": 62,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 63,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನೆಗಡಿ",
+      "char_start": 68,
+      "char_end": 73,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 74,
+      "char_end": 77,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

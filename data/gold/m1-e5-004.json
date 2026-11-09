@@ -1,0 +1,64 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-e5-004",
+  "template_family_id": "e_pharmacist__f2",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇದು ಮೆಟ್ಫಾರ್ಮಿನ್ ಮಾತ್ರೆನಾ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಇದು ಮೆಟ್ಫಾರ್ಮಿನ್ ಅಲ್ಲ, ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e5-004",
+    "encounter_type": "pharmacist_dispensing",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ciprofloxacin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 0,
+          "char_end": 59
+        }
+      },
+      {
+        "drug": "metformin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಇದು ಮೆಟ್ಫಾರ್ಮಿನ್ ಅಲ್ಲ",
+          "char_start": 101,
+          "char_end": 122
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

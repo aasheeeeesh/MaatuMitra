@@ -1,0 +1,176 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-g5-007",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "Tablet cephalexin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ.\nibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
+  "words": [
+    {
+      "w": "Tablet",
+      "char_start": 0,
+      "char_end": 6,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "cephalexin",
+      "char_start": 7,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 18,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
+      "char_start": 23,
+      "char_end": 33,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 34,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 42,
+      "char_end": 48,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 49,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 54,
+      "char_end": 58,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾರ",
+      "char_start": 59,
+      "char_end": 62,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ibuprofen",
+      "char_start": 64,
+      "char_end": 73,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೪೦೦",
+      "char_start": 74,
+      "char_end": 77,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 78,
+      "char_end": 80,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 81,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 89,
+      "char_end": 93,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 94,
+      "char_end": 98,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 99,
+      "char_end": 104,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "fever",
+      "char_start": 106,
+      "char_end": 111,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದ್ದರೆ",
+      "char_start": 112,
+      "char_end": 118,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರ",
+      "char_start": 119,
+      "char_end": 124,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸರಿ",
+      "char_start": 126,
+      "char_end": 129,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

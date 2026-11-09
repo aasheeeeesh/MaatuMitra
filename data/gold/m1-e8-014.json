@@ -1,0 +1,89 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-e8-014",
+  "template_family_id": "e_pharmacist__f3",
+  "turns": [
+    {
+      "speaker_role": "caregiver",
+      "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ors ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಸರಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e8-014",
+    "encounter_type": "pharmacist_dispensing",
+    "symptoms": [
+      {
+        "name": "vomiting",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ವಾಂತಿ",
+          "char_start": 8,
+          "char_end": 13
+        }
+      },
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ",
+          "char_start": 20,
+          "char_end": 24
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ors",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ors",
+          "char_start": 30,
+          "char_end": 33
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 56,
+          "char_end": 109
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

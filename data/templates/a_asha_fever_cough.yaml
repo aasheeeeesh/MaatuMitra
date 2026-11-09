@@ -1,0 +1,98 @@
+# (a) ASHA asks about fever / cough duration. Not native-validated.
+category: a
+encounter: asha_household_visit
+families:
+  - id: a_fever_cough__f1
+    templates:
+      - id: a1
+        grounding: [KN-2, KN-1]
+        slots:
+          K1: {type: count, values: [2, 3, 4, 5]}
+          S2: {type: symptom, pool: [cough, cold, headache, chills, diarrhoea]}
+          N1: {type: neg, forms: EXIST, p_neg: 0.7}
+        turns:
+          - {role: asha, text: "ಮಗುವಿಗೆ ಎಷ್ಟು ದಿನದಿಂದ ಜ್ವರ ಇದೆ?"}
+          - {role: caregiver, text: "[[s1|{K1.kn} ದಿನದಿಂದ ಜ್ವರ ಇದೆ]], [[s2|{S2.kn} {N1}]]."}
+        items:
+          - {kind: symptom, span: s1, name: fever}
+          - {kind: symptom, span: s2, slot: S2, neg: N1}
+      - id: a2
+        grounding: [KN-2, KN-4]
+        slots:
+          K1: {type: count, values: [2, 3, 4, 5]}
+          S2: {type: symptom, pool: [fever, cold, vomiting, chills]}
+          N1: {type: neg, forms: EXIST, p_neg: 0.7}
+        turns:
+          - {role: asha, text: "ಮಗುವಿಗೆ ಕೆಮ್ಮು ಇದೆಯಾ? ಎಷ್ಟು ದಿನದಿಂದ?"}
+          - {role: caregiver, text: "ಹೌದು, [[s1|ಕೆಮ್ಮು {K1.kn} ದಿನದಿಂದ ಇದೆ]], [[s2|{S2.kn} {N1}]]."}
+        items:
+          - {kind: symptom, span: s1, name: cough}
+          - {kind: symptom, span: s2, slot: S2, neg: N1}
+  - id: a_fever_cough__f2
+    templates:
+      - id: a3
+        grounding: [KN-2]
+        slots:
+          K1: {type: count, values: [2, 3, 4]}
+          D1: {type: drug, where: {generic: [paracetamol, ibuprofen]}, dose: given}
+          S2: {type: symptom, pool: [cough, cold, diarrhoea, vomiting]}
+          X1: {type: xturn, p_neg: 0.75}
+        turns:
+          - {role: asha, text: "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"}
+          - {role: caregiver, text: "[[s1|ಜ್ವರ {K1.kn} ದಿನದಿಂದ ಇದೆ]]. ನಿನ್ನೆ ರಾತ್ರಿ [[m1|{D1.name} {D1.dose}]] ಕೊಟ್ಟೆ."}
+          - {role: asha, text: "[[s2|{S2.kn}]] ಇದೆಯಾ?"}
+          - {role: caregiver, text: "{X1}"}
+        items:
+          - {kind: symptom, span: s1, name: fever}
+          - {kind: medication, span: m1, slot: D1, fields: [dose]}
+          - {kind: symptom, span: s2, slot: S2, neg: X1}
+      - id: a4
+        grounding: [KN-2]
+        slots:
+          K1: {type: count, values: [2, 3, 4, 5]}
+          S2: {type: symptom, pool: [cough, vomiting, diarrhoea, cold]}
+          X1: {type: xturn, p_neg: 0.75}
+        turns:
+          - {role: asha, text: "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನ ಆಯಿತು?"}
+          - {role: caregiver, text: "[[s1|ಜ್ವರ ಬಂದು {K1.kn} ದಿನ ಆಯಿತು]]."}
+          - {role: asha, text: "[[s2|{S2.kn}]] ಇದೆಯಾ?"}
+          - {role: caregiver, text: "{X1}"}
+          - {role: asha, text: "[[a1|ಮಗುವಿಗೆ ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ]]."}
+        items:
+          - {kind: symptom, span: s1, name: fever}
+          - {kind: symptom, span: s2, slot: S2, neg: X1}
+          - {kind: advice, span: a1, text: "give the child enough water to drink"}
+  - id: a_fever_cough__f3
+    templates:
+      - id: a5
+        grounding: [KN-2, KN-1]
+        slots:
+          K1: {type: count, values: [2, 3, 4, 5]}
+          S3: {type: symptom, pool: [pain, "body ache", headache]}
+          N1: {type: neg, forms: COMPOUND_PHRASE, subject: S3, p_neg: 0.9}
+        turns:
+          - {role: asha, text: "ಮಗುವಿಗೆ ಏನು ತೊಂದರೆ?"}
+          - {role: caregiver, text: "[[s1|ಜ್ವರ]] ಮತ್ತು [[s2|ಕೆಮ್ಮು]] {K1.kn} ದಿನದಿಂದ ಇದೆ."}
+          - {role: asha, text: "ಬೇರೆ ಏನಾದರೂ ತೊಂದರೆ ಇದೆಯಾ?"}
+          - {role: caregiver, text: "[[s3|{N1}]]."}
+        items:
+          - {kind: symptom, span: s1, name: fever}
+          - {kind: symptom, span: s2, name: cough}
+          - {kind: symptom, span: s3, slot: S3, neg: N1}
+      - id: a6
+        grounding: [KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, diarrhoea]}
+          S2: {type: symptom, pool: [chills, fever], distinct_from: [S1]}
+          X1: {type: xturn, p_neg: 0.7}
+          X2: {type: xturn, p_neg: 0.7}
+        turns:
+          - {role: asha, text: "ಮಗುವಿಗೆ [[s1|{S1.kn}]] ಇದೆಯಾ?"}
+          - {role: caregiver, text: "{X1}"}
+          - {role: asha, text: "[[s2|{S2.kn}]] ಬಂದಿದೆಯಾ?"}
+          - {role: caregiver, text: "{X2}"}
+          - {role: asha, text: "ಆರೋಗ್ಯ ಕೇಂದ್ರ ಅಲ್ಲಿ ಇದೆ, [[f1|ನಾಳೆ ಅಲ್ಲಿ ಬನ್ನಿ]]."}
+        items:
+          - {kind: symptom, span: s1, slot: S1, neg: X1}
+          - {kind: symptom, span: s2, slot: S2, neg: X2}
+          - {kind: follow_up, span: f1, text: "come to the health centre there tomorrow"}

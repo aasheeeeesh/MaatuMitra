@@ -1,0 +1,80 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b3-000",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಈ ವಾರ ಪ್ಯಾರಸಿಟಮಾಲ್ ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ?\nಇಲ್ಲ.\nತಲೆನೋವು ಇದೆಯಾ?\nಇಲ್ಲ.",
+  "words": [
+    {
+      "w": "ಈ",
+      "char_start": 0,
+      "char_end": 1,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾರ",
+      "char_start": 2,
+      "char_end": 5,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 6,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ",
+      "char_start": 19,
+      "char_end": 36,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 38,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತಲೆನೋವು",
+      "char_start": 44,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 52,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 59,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

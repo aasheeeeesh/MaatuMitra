@@ -1,0 +1,104 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b5-004",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗುವಿಗೆ ಸೆಟಿರಿಜಿನ್ ಕೊಟ್ಟಿದ್ದೀರಾ?\nಇಲ್ಲ.\nಜಿಂಕ್ ಕೊಟ್ಟಿದ್ದೀರಾ?\nಇಲ್ಲ.\nಎಲ್ಲ ಔಷಧಿ ಸಮಯಕ್ಕೆ ಕೊಡಿ.",
+  "words": [
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸೆಟಿರಿಜಿನ್",
+      "char_start": 8,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಟ್ಟಿದ್ದೀರಾ",
+      "char_start": 19,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 33,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿಂಕ್",
+      "char_start": 39,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಟ್ಟಿದ್ದೀರಾ",
+      "char_start": 45,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 59,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್ಲ",
+      "char_start": 65,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಔಷಧಿ",
+      "char_start": 70,
+      "char_end": 74,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಮಯಕ್ಕೆ",
+      "char_start": 75,
+      "char_end": 82,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಿ",
+      "char_start": 83,
+      "char_end": 87,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

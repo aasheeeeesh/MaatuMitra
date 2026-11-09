@@ -1,0 +1,160 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e5-006",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಪ್ರೆಡ್ನಿಸೋಲನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಇದು ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಮಾತ್ರೆನಾ?\nಇದು ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್, ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ.",
+  "words": [
+    {
+      "w": "ಪ್ರೆಡ್ನಿಸೋಲನ್",
+      "char_start": 0,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 14,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 19,
+      "char_end": 25,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 26,
+      "char_end": 33,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 34,
+      "char_end": 38,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 39,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 44,
+      "char_end": 47,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 48,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 52,
+      "char_end": 64,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದು",
+      "char_start": 66,
+      "char_end": 69,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 70,
+      "char_end": 86,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆನಾ",
+      "char_start": 87,
+      "char_end": 95,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದು",
+      "char_start": 97,
+      "char_end": 100,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 101,
+      "char_end": 117,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾನು",
+      "char_start": 119,
+      "char_end": 123,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೇಳಿದ",
+      "char_start": 124,
+      "char_end": 129,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 130,
+      "char_end": 136,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇರೆ",
+      "char_start": 137,
+      "char_end": 141,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

@@ -1,0 +1,176 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-e5-009",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "Ibuprofen 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಇದು ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಮಾತ್ರೆನಾ?\nಇದು ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಅಲ್ಲ, ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ.",
+  "words": [
+    {
+      "w": "Ibuprofen",
+      "char_start": 0,
+      "char_end": 9,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "400",
+      "char_start": 10,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 14,
+      "char_end": 16,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 17,
+      "char_end": 23,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 24,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 32,
+      "char_end": 36,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 37,
+      "char_end": 41,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 42,
+      "char_end": 46,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 47,
+      "char_end": 50,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 51,
+      "char_end": 63,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದು",
+      "char_start": 65,
+      "char_end": 68,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 69,
+      "char_end": 87,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆನಾ",
+      "char_start": 88,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದು",
+      "char_start": 98,
+      "char_end": 101,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 102,
+      "char_end": 120,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಅಲ್ಲ",
+      "char_start": 121,
+      "char_end": 125,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾನು",
+      "char_start": 127,
+      "char_end": 131,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೇಳಿದ",
+      "char_start": 132,
+      "char_end": 137,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 138,
+      "char_end": 144,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇರೆ",
+      "char_start": 145,
+      "char_end": 149,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

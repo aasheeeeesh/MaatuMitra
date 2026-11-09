@@ -1,0 +1,120 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b5-003",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗುವಿಗೆ ಒ.ಆರ್.ಎಸ್ ಕೊಟ್ಟಿದ್ದೀರಾ?\nಇಲ್ಲಾ.\nಪ್ಯಾರಸಿಟಮಾಲ್ ಕೊಟ್ಟಿದ್ದೀರಾ?\nಇಲ್ಲಾ.\nಎಲ್ಲ ಔಷಧಿ ಸಮಯಕ್ಕೆ ಕೊಡಿ.",
+  "words": [
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒ",
+      "char_start": 8,
+      "char_end": 9,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆರ್",
+      "char_start": 10,
+      "char_end": 13,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಸ್",
+      "char_start": 14,
+      "char_end": 17,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಟ್ಟಿದ್ದೀರಾ",
+      "char_start": 18,
+      "char_end": 30,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 32,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 39,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಟ್ಟಿದ್ದೀರಾ",
+      "char_start": 52,
+      "char_end": 64,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 66,
+      "char_end": 71,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್ಲ",
+      "char_start": 73,
+      "char_end": 77,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಔಷಧಿ",
+      "char_start": 78,
+      "char_end": 82,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಮಯಕ್ಕೆ",
+      "char_start": 83,
+      "char_end": 90,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಿ",
+      "char_start": 91,
+      "char_end": 95,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b1-007",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗು ನಿನ್ನೆ paracetamol ಸಿರಪ್ ಕುಡಿಯಿತಾ?\nಹೌದು.\nವೈದ್ಯರು ಹೇಳಿದಂತೆ ಔಷಧಿ ಕುಡಿಸಿ.",
+  "words": [
+    {
+      "w": "ಮಗು",
+      "char_start": 0,
+      "char_end": 3,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಿನ್ನೆ",
+      "char_start": 4,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "paracetamol",
+      "char_start": 11,
+      "char_end": 22,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಿರಪ್",
+      "char_start": 23,
+      "char_end": 28,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಯಿತಾ",
+      "char_start": 29,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 39,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವೈದ್ಯರು",
+      "char_start": 45,
+      "char_end": 52,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೇಳಿದಂತೆ",
+      "char_start": 53,
+      "char_end": 61,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಔಷಧಿ",
+      "char_start": 62,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಸಿ",
+      "char_start": 67,
+      "char_end": 73,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

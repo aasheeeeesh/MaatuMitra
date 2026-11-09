@@ -1,0 +1,64 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g7-011",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Cefazolin 1000 mg injection ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ಕೊಡುತ್ತೇವೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "acetaminophen ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ ಡಾಕ್ಟರ್."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g7-011",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefazolin",
+        "dose_value": 1000,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Cefazolin 1000 mg injection ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 53
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 2,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "acetaminophen ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 66,
+          "char_end": 109
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

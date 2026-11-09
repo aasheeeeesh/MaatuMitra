@@ -1,0 +1,63 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b3-004",
+  "template_family_id": "b_cross_turn__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಈ ವಾರ ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಅತಿಸಾರ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b3-004",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "diarrhoea",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಅತಿಸಾರ",
+          "char_start": 48,
+          "char_end": 54
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "clarithromycin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+          "char_start": 6,
+          "char_end": 22
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-f4-001",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ನೆಗಡಿ, ಚಳಿ, ಸುಸ್ತು ಇದೆಯಾ?\nನೆಗಡಿ ಇಲ್ಲಾ, ಚಳಿ ಇಲ್ಲಾ, ಸುಸ್ತು ಇದೆ.",
+  "words": [
+    {
+      "w": "ನೆಗಡಿ",
+      "char_start": 0,
+      "char_end": 5,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಚಳಿ",
+      "char_start": 7,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸುಸ್ತು",
+      "char_start": 12,
+      "char_end": 18,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 19,
+      "char_end": 24,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನೆಗಡಿ",
+      "char_start": 26,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 32,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಚಳಿ",
+      "char_start": 39,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 43,
+      "char_end": 48,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸುಸ್ತು",
+      "char_start": 50,
+      "char_end": 56,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 57,
+      "char_end": 60,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

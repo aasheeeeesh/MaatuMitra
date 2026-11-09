@@ -1,0 +1,144 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-d4-002",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಡಾಕ್ಟರೇ, ಕೆಮ್ಮು ಮತ್ತು ನೆಗಡಿ ಇದೆ.\nವೈರಲ್ ಸೋಂಕಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು ಬೇಕಾಗುವುದಿಲ್ಲ.\nಸರಿ, Cetirizine ೧೦ mg ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಇಲ್ಲ.",
+  "words": [
+    {
+      "w": "ಡಾಕ್ಟರೇ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 9,
+      "char_end": 15,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮತ್ತು",
+      "char_start": 16,
+      "char_end": 21,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನೆಗಡಿ",
+      "char_start": 22,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 28,
+      "char_end": 31,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವೈರಲ್",
+      "char_start": 33,
+      "char_end": 38,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸೋಂಕಿಗೆ",
+      "char_start": 39,
+      "char_end": 46,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಂಟಿಬಯಾಟಿಕ್",
+      "char_start": 47,
+      "char_end": 58,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಗಳು",
+      "char_start": 59,
+      "char_end": 62,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬೇಕಾಗುವುದಿಲ್ಲ",
+      "char_start": 63,
+      "char_end": 76,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸರಿ",
+      "char_start": 78,
+      "char_end": 81,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Cetirizine",
+      "char_start": 83,
+      "char_end": 93,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೧೦",
+      "char_start": 94,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 97,
+      "char_end": 99,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
+      "char_start": 100,
+      "char_end": 116,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲ",
+      "char_start": 118,
+      "char_end": 122,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

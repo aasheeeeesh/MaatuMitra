@@ -99,3 +99,13 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] (m4) Re-run E4 on m1 DEV gold when it exists: `uv run python -m m4_verify e4 --gold-dir <DEV gold dir> --lexicon data/lexicon/drugs.csv --out-dir results/m4_verify/dev` (never point it at test data; it refuses paths containing "test").
 - [ ] (m1/m4) Paracetamol in `data/lexicon/drugs.csv` has `adult_dose_range_mg = 1000-1000`, so the verifier flags a normal 500 mg tablet dose (fixture rec-fx-trap-006 becomes flagged). Check the source and correct the range (UNVERIFIED which value is right).
 - [ ] (m4) 12 of 34 rows in `data/lexicon/drugs.csv` have a blank dose range: every dosed record for those drugs will be flagged "no verified range" (fail-closed). Decide whether that review burden is acceptable.
+
+## From m1_data (merged 20261109T222420Z)
+
+- [ ] (m1, native Kannada) Review all 59 templates in `data/templates/*.yaml` and the 164 unattested words in `results/m1_data/unattested_tokens.json`; mark wrong/unnatural ones. Until then everything is "not native-validated".
+- [ ] (m1, native Kannada) Check Kannada drug spellings and variants in `data/lexicon/drugs.csv` (`kn_primary`, `kn_variants`).
+- [ ] (m1, pharmacist) Spot-check NLEM 2022 rows against the PDF (https://nppa.gov.in/storage/uploads/pdf/nlem-2022pdf-0cd1d2b28855bf30128875ab19fc5304.pdf), first the JSON-extracted ones: ibuprofen 2.1.3, ondansetron 17.2.3, metformin 18.3.1.6, iron-folic acid 8.1.3; also cefadroxil ("Tablet 100 mg") and levofloxacin ("Tablet 300 mg") odd printed strengths; cephalexin, erythromycin, ORS, amlodipine, omeprazole were NOT found by our queries.
+- [ ] (m1, pharmacist) Check each `adult_dose_range_mg` / `max_daily_mg` against the cited openFDA label URL in `source_url`; decide whether US label ranges are acceptable for an Indian setting (paracetamol 1000-1000 mg comes from a US OTC label).
+- [ ] (m1, clinician) Decide the gold convention "medicine stopped before finishing = negated: true" (docs/annotation_guide.md section 4).
+- [ ] (m1) Verify licences in `m1_data/handoff/licences.md` marked UNVERIFIED (NLEM, WHO AWaRe portal, ISMP list, Wikipedia page licences, news18 and CARE Hospitals pages: only single words used).
+- [ ] (m1) Confirm the split interpretation (families inside categories) is acceptable before the first `make eval-test`.

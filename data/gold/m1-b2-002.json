@@ -1,0 +1,61 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b2-002",
+  "template_family_id": "b_cross_turn__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "Cefuroxime ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡಿರಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b2-002",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefuroxime",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Cefuroxime ಮಾತ್ರೆ",
+          "char_start": 0,
+          "char_end": 17
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "take the tablets as the doctor said",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 39,
+          "char_end": 75
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

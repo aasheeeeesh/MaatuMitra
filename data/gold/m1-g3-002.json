@@ -1,0 +1,76 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g3-002",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Amoxicillin 500 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ibuprofen ಬೇಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "paracetamol 1000 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಕೊಡುತ್ತೇನೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g3-002",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "amoxicillin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Amoxicillin 500 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 0,
+          "char_end": 45
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen ಬೇಡ",
+          "char_start": 60,
+          "char_end": 73
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 1000,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "paracetamol 1000 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ",
+          "char_start": 75,
+          "char_end": 115
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

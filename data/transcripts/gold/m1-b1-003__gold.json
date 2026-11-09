@@ -1,0 +1,96 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b1-003",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗು ನಿನ್ನೆ cetrizine ಸಿರಪ್ ಕುಡಿಯಿತಾ?\nಇಲ್ಲಾ.\nವೈದ್ಯರು ಹೇಳಿದಂತೆ ಔಷಧಿ ಕುಡಿಸಿ.",
+  "words": [
+    {
+      "w": "ಮಗು",
+      "char_start": 0,
+      "char_end": 3,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಿನ್ನೆ",
+      "char_start": 4,
+      "char_end": 10,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "cetrizine",
+      "char_start": 11,
+      "char_end": 20,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಿರಪ್",
+      "char_start": 21,
+      "char_end": 26,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಯಿತಾ",
+      "char_start": 27,
+      "char_end": 35,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇಲ್ಲಾ",
+      "char_start": 37,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವೈದ್ಯರು",
+      "char_start": 44,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೇಳಿದಂತೆ",
+      "char_start": 52,
+      "char_end": 60,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಔಷಧಿ",
+      "char_start": 61,
+      "char_end": 65,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಸಿ",
+      "char_start": 66,
+      "char_end": 72,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

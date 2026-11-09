@@ -1,0 +1,58 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-i6-003",
+  "template_family_id": "i_traps__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಜ್ವರ ಇದೆ, ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ೪ mg ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i6-003",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಇದೆ",
+          "char_start": 21,
+          "char_end": 29
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "dexamethasone",
+        "dose_value": 4,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ೪ mg ಮಾತ್ರೆ",
+          "char_start": 31,
+          "char_end": 57
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

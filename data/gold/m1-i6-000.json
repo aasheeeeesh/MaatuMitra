@@ -1,0 +1,58 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-i6-000",
+  "template_family_id": "i_traps__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ತಲೆನೋವು ಇಲ್ಲ, ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ 500 mg ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i6-000",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ತಲೆನೋವು ಇಲ್ಲ",
+          "char_start": 21,
+          "char_end": 33
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "clarithromycin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ 500 mg ಮಾತ್ರೆ",
+          "char_start": 35,
+          "char_end": 65
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

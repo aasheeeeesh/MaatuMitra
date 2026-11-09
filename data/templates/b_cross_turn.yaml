@@ -1,0 +1,123 @@
+# (b) Did the child take the medicine? answered by a bare ಇಲ್ಲ / ಹೌದು in the NEXT turn.
+# Not native-validated.
+category: b
+families:
+  - id: b_cross_turn__f1
+    encounter: asha_household_visit
+    templates:
+      - id: b1
+        grounding: [KN-1, KN-2]
+        slots:
+          D1: {type: drug, where: {generic: [paracetamol, amoxicillin, cetirizine, ibuprofen]}, dose: none}
+          X1: {type: xturn, p_neg: 0.8}
+        turns:
+          - {role: asha, text: "ಮಗು ನಿನ್ನೆ [[m1|{D1.name} ಸಿರಪ್]] ಕುಡಿಯಿತಾ?"}
+          - {role: caregiver, text: "{X1}"}
+          - {role: asha, text: "[[a1|ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಔಷಧಿ ಕುಡಿಸಿ]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: X1}
+          - {kind: advice, span: a1, text: "give the medicine as the doctor said"}
+      - id: b2
+        grounding: [KN-3]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: none}
+          X1: {type: xturn, p_neg: 0.8}
+        turns:
+          - {role: asha, text: "[[m1|{D1.name} ಮಾತ್ರೆ]] ತೆಗೆದುಕೊಂಡಿರಾ?"}
+          - {role: patient, text: "{X1}"}
+          - {role: asha, text: "[[a1|ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: X1}
+          - {kind: advice, span: a1, text: "take the tablets as the doctor said"}
+  - id: b_cross_turn__f2
+    encounter: nurse_consult
+    templates:
+      - id: b3
+        grounding: [KN-3, KN-2]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic, nsaid, analgesic_antipyretic]}, dose: none}
+          S1: {type: symptom, pool: [fever, cough, headache, vomiting, diarrhoea]}
+          X1: {type: xturn, p_neg: 0.75}
+          X2: {type: xturn, p_neg: 0.6}
+        turns:
+          - {role: nurse, text: "ಈ ವಾರ [[m1|{D1.name}]] ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ?"}
+          - {role: patient, text: "{X1}"}
+          - {role: nurse, text: "[[s1|{S1.kn}]] ಇದೆಯಾ?"}
+          - {role: patient, text: "{X2}"}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: X1}
+          - {kind: symptom, span: s1, slot: S1, neg: X2}
+      - id: b4
+        grounding: [KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, headache, vomiting, chills, tiredness]}
+          S2: {type: symptom, pool: [diarrhoea, "body ache", cold, "breathing difficulty"], distinct_from: [S1]}
+          X1: {type: xturn, p_neg: 0.6}
+          X2: {type: xturn, p_neg: 0.6}
+        turns:
+          - {role: nurse, text: "[[s1|{S1.kn}]] ಇದೆಯಾ?"}
+          - {role: patient, text: "{X1}"}
+          - {role: nurse, text: "[[s2|{S2.kn}]] ಇದೆಯಾ?"}
+          - {role: patient, text: "{X2}"}
+        items:
+          - {kind: symptom, span: s1, slot: S1, neg: X1}
+          - {kind: symptom, span: s2, slot: S2, neg: X2}
+  - id: b_cross_turn__f3
+    encounter: asha_household_visit
+    templates:
+      - id: b5
+        grounding: [KN-2, KN-4]
+        slots:
+          D1: {type: drug, where: {class: [analgesic_antipyretic, mineral_supplement, oral_rehydration, antihistamine]}, dose: none, exclude_form: [injection]}
+          D2: {type: drug, where: {class: [analgesic_antipyretic, mineral_supplement, oral_rehydration, antihistamine]}, dose: none, exclude_form: [injection], distinct_from: [D1]}
+          X1: {type: xturn, p_neg: 0.7}
+          X2: {type: xturn, p_neg: 0.7}
+        turns:
+          - {role: asha, text: "ಮಗುವಿಗೆ [[m1|{D1.name}]] ಕೊಟ್ಟಿದ್ದೀರಾ?"}
+          - {role: caregiver, text: "{X1}"}
+          - {role: asha, text: "[[m2|{D2.name}]] ಕೊಟ್ಟಿದ್ದೀರಾ?"}
+          - {role: caregiver, text: "{X2}"}
+          - {role: asha, text: "[[a1|ಎಲ್ಲ ಔಷಧಿ ಸಮಯಕ್ಕೆ ಕೊಡಿ]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: X1}
+          - {kind: medication, span: m2, slot: D2, neg: X2}
+          - {kind: advice, span: a1, text: "give all medicines on time"}
+  - id: b_cross_turn__f4
+    templates:
+      - id: b6
+        encounter: asha_household_visit
+        grounding: [KN-1, KN-4]
+        slots:
+          D1: {type: drug, where: {generic: [paracetamol, amoxicillin, cetirizine, ibuprofen]}, dose: none}
+          N1:
+            type: neg
+            p_neg: 0.85
+            forms:
+              - {neg: "ಕುಡಿಯಲ್ಲ", pos: "ಕುಡಿಯುತ್ತೆ", patterns: [NEG-SOFT01]}
+              - {neg: "ಕುಡಿಯಲಿಲ್ಲ", pos: "ಕುಡಿಯಿತು", patterns: [NEG-S01]}
+              - {neg: "ಕುಡಿಯುವುದಿಲ್ಲ", pos: "ಕುಡಿಯುತ್ತದೆ", patterns: [NEG-S02, NEG-S01]}
+        turns:
+          - {role: asha, text: "ಮಗುವಿಗೆ ಔಷಧಿ ಕೊಡುತ್ತಿದ್ದೀರಾ?"}
+          - {role: caregiver, text: "ಕೊಡುತ್ತೇವೆ, ಆದರೆ ಮಗು [[m1|{D1.name} ಸಿರಪ್ {N1}]]."}
+          - {role: asha, text: "[[a1|ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: N1}
+          - {kind: advice, span: a1, text: "give it to drink little by little"}
+      - id: b7
+        encounter: nurse_consult
+        grounding: [KN-1]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic, analgesic_antipyretic]}, dose: none}
+          N1:
+            type: neg
+            p_neg: 0.85
+            forms:
+              - {neg: "ತಿನ್ನಲ್ಲ", pos: "ತಿನ್ನುತ್ತೆ", patterns: [NEG-SOFT01]}
+              - {neg: "ತಿನ್ನುವುದಿಲ್ಲ", pos: "ತಿನ್ನುತ್ತದೆ", patterns: [NEG-S02, NEG-S01]}
+        turns:
+          - {role: nurse, text: "ಮಗು ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತಿದೆಯಾ?"}
+          - {role: caregiver, text: "[[m1|{D1.name} ಮಾತ್ರೆ ಮಗು {N1}]]."}
+          - {role: nurse, text: "[[a1|ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: N1}
+          - {kind: advice, span: a1, text: "ask the doctor and take a syrup"}

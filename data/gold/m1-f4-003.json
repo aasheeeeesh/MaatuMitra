@@ -1,0 +1,60 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f4-003",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ, ತಲೆನೋವು, ಸುಸ್ತು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಜ್ವರ ಇಲ್ಲ, ತಲೆನೋವು ಇದೆ, ಸುಸ್ತು ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f4-003",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಇಲ್ಲ",
+          "char_start": 29,
+          "char_end": 38
+        }
+      },
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ತಲೆನೋವು ಇದೆ",
+          "char_start": 40,
+          "char_end": 51
+        }
+      },
+      {
+        "name": "tiredness",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಸುಸ್ತು ಇದೆ",
+          "char_start": 53,
+          "char_end": 63
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

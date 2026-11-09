@@ -1,0 +1,85 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g6-004",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ತಲೆನೋವು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನಾಲ್ಕು ದಿನದಿಂದ, ಚಳಿ ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. clindamycin 300 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ. Paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿವಸ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-004",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 0,
+          "char_end": 7
+        }
+      },
+      {
+        "name": "chills",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಚಳಿ ಇಲ್ಲಾ",
+          "char_start": 43,
+          "char_end": 52
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "clindamycin",
+        "dose_value": 300,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "clindamycin 300 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 58,
+          "char_end": 102
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿವಸ",
+          "char_start": 117,
+          "char_end": 168
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

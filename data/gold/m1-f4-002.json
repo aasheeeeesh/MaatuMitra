@@ -1,0 +1,60 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f4-002",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ನೆಗಡಿ, ತಲೆನೋವು, ಸುಸ್ತು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಯಾವುದೇ ನೆಗಡಿ ಇಲ್ಲ, ಯಾವುದೇ ತಲೆನೋವು ಇಲ್ಲ, ಸುಸ್ತು ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f4-002",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಯಾವುದೇ ನೆಗಡಿ ಇಲ್ಲ",
+          "char_start": 30,
+          "char_end": 47
+        }
+      },
+      {
+        "name": "headache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಯಾವುದೇ ತಲೆನೋವು ಇಲ್ಲ",
+          "char_start": 49,
+          "char_end": 68
+        }
+      },
+      {
+        "name": "tiredness",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಸುಸ್ತು ಇದೆ",
+          "char_start": 70,
+          "char_end": 80
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-e5-011",
+  "template_family_id": "e_pharmacist__f2",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಸೆಫಿಕ್ಸಿಮ್ 400 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇದು cetrizine ಮಾತ್ರೆನಾ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಇದು cetrizine, ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e5-011",
+    "encounter_type": "pharmacist_dispensing",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefixime",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸೆಫಿಕ್ಸಿಮ್ 400 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 53
+        }
+      },
+      {
+        "drug": "cetirizine",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಇದು cetrizine",
+          "char_start": 92,
+          "char_end": 105
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

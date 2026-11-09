@@ -72,4 +72,18 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Planted mistake**: an error we insert on purpose to see whether the verifier catches it (experiment E4).
 - **Unique mutation**: one distinct planted change; repeating the same change many times does not add independent evidence.
 - **Review burden**: the share of error-free fields that the verifier still flags, i.e. extra work for the human reviewer.
+- **Template**: a sentence pattern with blanks (slots) that the generator fills to make many synthetic conversations.
+- **Template family**: a group of templates that share sentence frames; a whole family goes to either dev or test, never both.
+- **Slot**: a typed blank in a template (drug, symptom, count, word, negation, cross-turn answer).
+- **Drug-dose combination**: a drug together with a spoken dose, e.g. (amoxicillin, 500, mg); each one is used in only one split.
+- **Test lock**: a file listing a fingerprint (sha256) of every test file; if any test file changes, the check fails.
+- **sha256**: a fingerprint of a file's bytes; changing one byte changes it completely.
+- **Deterministic generator**: a program that produces exactly the same files every time it runs with the same inputs and seed.
+- **Seed**: a fixed number that makes "random" choices repeatable.
+- **Transliteration**: writing a word in another script by sound (amoxicillin -> ಅಮಾಕ್ಸಿಸಿಲಿನ್), not translating it.
+- **ISO 15919**: a standard way to write Indian-script sounds with Latin letters (ā, ṭ, ḍ, ṁ ...).
+- **WHO AWaRe**: WHO's grouping of antibiotics into Access, Watch and Reserve by resistance risk.
+- **NLEM**: India's National List of Essential Medicines (2022 edition used here).
+- **openFDA drug label**: the US FDA's official prescribing text for a medicine, available as public data.
+- **Attested word**: a word we actually saw in a fetched real Kannada text; unattested words were composed by an AI.
 <!-- GLOSSARY-END -->

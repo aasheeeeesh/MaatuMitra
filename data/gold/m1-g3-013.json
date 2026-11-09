@@ -1,0 +1,78 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g3-013",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Ondansetron ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ibuprofen ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "metformin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g3-013",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ondansetron",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 2,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Ondansetron ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 0,
+          "char_end": 50
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು",
+          "char_start": 65,
+          "char_end": 92
+        }
+      },
+      {
+        "drug": "metformin",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 2,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "metformin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+          "char_start": 94,
+          "char_end": 133
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

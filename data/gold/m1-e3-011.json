@@ -1,0 +1,82 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-e3-011",
+  "template_family_id": "e_pharmacist__f1",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಒಮೆಪ್ರಜೋಲ್ 20 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "Erythromycin 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ, ಧನ್ಯವಾದಗಳು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e3-011",
+    "encounter_type": "pharmacist_dispensing",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "omeprazole",
+        "dose_value": 20,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 14,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಒಮೆಪ್ರಜೋಲ್ 20 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+          "char_start": 0,
+          "char_end": 59
+        }
+      },
+      {
+        "drug": "clarithromycin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ",
+          "char_start": 74,
+          "char_end": 131
+        }
+      },
+      {
+        "drug": "erythromycin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Erythromycin 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 146,
+          "char_end": 198
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

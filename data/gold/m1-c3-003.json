@@ -1,0 +1,62 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-c3-003",
+  "template_family_id": "c_stopped_early__f2",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಸೆಫಲೆಕ್ಸಿನ್ ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡಕೂಡದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c3-003",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cephalexin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸೆಫಲೆಕ್ಸಿನ್",
+          "char_start": 0,
+          "char_end": 11
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not give leftover tablets to others",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡಕೂಡದು",
+          "char_start": 36,
+          "char_end": 67
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಎಲ್ಲ",
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

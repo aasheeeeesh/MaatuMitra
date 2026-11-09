@@ -1,0 +1,76 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g3-004",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "acetaminophen 1000 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ibuprofen ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "prednisolone ೨೦ mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g3-004",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": 1000,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "acetaminophen 1000 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 0,
+          "char_end": 51
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು",
+          "char_start": 66,
+          "char_end": 93
+        }
+      },
+      {
+        "drug": "prednisolone",
+        "dose_value": 20,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "prednisolone ೨೦ mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+          "char_start": 95,
+          "char_end": 131
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

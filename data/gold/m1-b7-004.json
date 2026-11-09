@@ -1,0 +1,61 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b7-004",
+  "template_family_id": "b_cross_turn__f4",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಮಗು ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಎರಿಥ್ರೋಮೈಸಿನ್ ಮಾತ್ರೆ ಮಗು ತಿನ್ನಲ್ಲ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b7-004",
+    "encounter_type": "nurse_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "erythromycin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಎರಿಥ್ರೋಮೈಸಿನ್ ಮಾತ್ರೆ ಮಗು ತಿನ್ನಲ್ಲ",
+          "char_start": 33,
+          "char_end": 66
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "ask the doctor and take a syrup",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 68,
+          "char_end": 102
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-h5-006",
+  "template_family_id": "h_followup__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ವಾಂತಿ ಮತ್ತು ಅತಿಸಾರ ಇದೆ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಒ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಯಿರಿ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ವಾಂತಿ ನಿಲ್ಲದಿದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h5-006",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "vomiting",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ವಾಂತಿ",
+          "char_start": 0,
+          "char_end": 5
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಅತಿಸಾರ",
+          "char_start": 12,
+          "char_end": 18
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ors",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಒ.ಆರ್.ಎಸ್",
+          "char_start": 24,
+          "char_end": 33
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if the vomiting does not stop, come immediately",
+      "gold_span": {
+        "turn_index": 2,
+        "span_text": "ವಾಂತಿ ನಿಲ್ಲದಿದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ",
+        "char_start": 49,
+        "char_end": 79
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

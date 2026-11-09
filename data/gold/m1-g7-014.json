@@ -1,0 +1,64 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g7-014",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ceftriaxon 2000 ಎಂ.ಜಿ injection ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ ಕೊಡುತ್ತೇವೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ ಡಾಕ್ಟರ್."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g7-014",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ceftriaxone",
+        "dose_value": 2000,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ceftriaxon 2000 ಎಂ.ಜಿ injection ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 57
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 2,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "char_start": 70,
+          "char_end": 113
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

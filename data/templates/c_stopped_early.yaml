@@ -1,0 +1,84 @@
+# (c) Stopped the medicine before finishing the course (-ದೆ "without doing").
+# Gold convention: a medication that was stopped / not finished is negated: true.
+# Not native-validated.
+category: c
+families:
+  - id: c_stopped_early__f1
+    templates:
+      - id: c1
+        encounter: asha_household_visit
+        grounding: [KN-1, KN-3]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: none}
+          N1: {type: neg, p_neg: 0.85, forms: [{neg: "ಮುಗಿಸದೆ", pos: "ಮುಗಿಸಿ", patterns: [NEG-V01]}]}
+        turns:
+          - {role: asha, text: "ಡಾಕ್ಟರ್ ಕೊಟ್ಟ ಮಾತ್ರೆ ಮುಗಿಯಿತಾ?"}
+          - {role: caregiver, text: "[[m1|{D1.name} ಕೋರ್ಸ್ {N1} ನಿಲ್ಲಿಸಿದೆವು]]."}
+          - {role: asha, text: "[[a1|ಆಂಟಿಬಯಾಟಿಕ್ ಕೋರ್ಸ್ ಪೂರ್ತಿ ಮುಗಿಸಬೇಕು]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: N1}
+          - {kind: advice, span: a1, text: "the full antibiotic course must be finished"}
+      - id: c2
+        encounter: nurse_consult
+        grounding: [KN-1, KN-3]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: given}
+          N1: {type: neg, p_neg: 0.85, forms: [{neg: "ಮುಗಿಸದೆ", pos: "ಮುಗಿಸಿ", patterns: [NEG-V01]}]}
+          N2: {type: neg, p_neg: 1.0, forms: [{neg: "ನಿಲ್ಲಿಸಬೇಡಿ", pos: "ನಿಲ್ಲಿಸಿ", patterns: [NEG-S06]}]}
+        turns:
+          - {role: nurse, text: "ಆ ಮಾತ್ರೆ ಎಷ್ಟು ದಿನ ತೆಗೆದುಕೊಂಡಿರಿ?"}
+          - {role: patient, text: "ಎರಡು ದಿನ ತೆಗೆದುಕೊಂಡೆ, ಆಮೇಲೆ [[m1|{D1.name} {D1.dose} {N1} ನಿಲ್ಲಿಸಿದೆ]]."}
+          - {role: nurse, text: "[[a1|ವೈದ್ಯರ ಸಲಹೆ ಇಲ್ಲದೆ ಮಾತ್ರೆ {N2}]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, fields: [dose], neg: N1}
+          - {kind: advice, span: a1, text: "do not stop the tablets without the doctor's advice", neg: N2}
+  - id: c_stopped_early__f2
+    templates:
+      - id: c3
+        encounter: asha_household_visit
+        grounding: [KN-1, KN-3]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: none}
+          X1: {type: xturn, p_neg: 0.8}
+          N1: {type: neg, p_neg: 1.0, forms: DO_NOT_GIVE}
+        turns:
+          - {role: asha, text: "[[m1|{D1.name}]] ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?"}
+          - {role: caregiver, text: "{X1}"}
+          - {role: asha, text: "[[a1|ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ {N1}]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, neg: X1}
+          - {kind: advice, span: a1, text: "do not give leftover tablets to others", neg: N1}
+      - id: c4
+        encounter: nurse_consult
+        grounding: [KN-1]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: given}
+          N1: {type: neg, p_neg: 0.85, forms: [{neg: "ತೆಗೆದುಕೊಳ್ಳದೆ", pos: "ತೆಗೆದುಕೊಂಡು", patterns: [NEG-V01]}]}
+          N2:
+            type: neg
+            p_neg: 1.0
+            forms:
+              - {neg: "ಕೂಡದು", pos: "ಬಹುದು", patterns: [NEG-S05]}
+              - {neg: " ಕೂಡದು", pos: "ಬಹುದು", patterns: [NEG-W07, NEG-S05]}
+        turns:
+          - {role: nurse, text: "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?"}
+          - {role: patient, text: "[[m1|{D1.name} {D1.dose_tab} {N1} ಬಿಟ್ಟೆ]]."}
+          - {role: nurse, text: "[[a1|ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ{N2}]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, fields: [dose], neg: N1}
+          - {kind: advice, span: a1, text: "do not share leftover tablets", neg: N2}
+      - id: c5
+        encounter: physician_consult
+        grounding: [KN-3]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: none}
+          X1: {type: xturn, p_neg: 0.9}
+          N1: {type: neg, p_neg: 1.0, forms: [{neg: "ಮಾಡದೆ", pos: "ಮಾಡಿ", patterns: [NEG-V01]}]}
+        turns:
+          - {role: patient, text: "ನನಗೆ [[s1|ಜ್ವರ]] ಇದೆ, ಮನೆಯಲ್ಲಿ ಇದ್ದ [[m1|{D1.name}]] ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"}
+          - {role: physician, text: "{X1}"}
+          - {role: physician, text: "[[a1|ಸ್ವಯಂ ಔಷಧಿ {N1} ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ]]."}
+        items:
+          - {kind: symptom, span: s1, name: fever}
+          - {kind: medication, span: m1, slot: D1, neg: X1}
+          - {kind: advice, span: a1, text: "do not self-medicate; consult a doctor", neg: N1}

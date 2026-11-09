@@ -1,0 +1,54 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-h1-001",
+  "template_family_id": "h_followup__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "Cefadroxil ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h1-001",
+    "encounter_type": "nurse_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefadroxil",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Cefadroxil ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 48
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if the fever does not come down, come back in two days",
+      "gold_span": {
+        "turn_index": 1,
+        "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
+        "char_start": 63,
+        "char_end": 109
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

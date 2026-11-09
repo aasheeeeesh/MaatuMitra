@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f1-007",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಮೈಕೈನೋವು ಇದೆಯಾ? ವಾಂತಿ ಆಗುತ್ತಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಮೈಕೈನೋವು ಇಲ್ಲಾ, ಆದರೆ ವಾಂತಿ ಆಗಿಲ್ಲ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f1-007",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "body ache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಮೈಕೈನೋವು ಇಲ್ಲಾ",
+          "char_start": 35,
+          "char_end": 49
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವಾಂತಿ ಆಗಿಲ್ಲ",
+          "char_start": 56,
+          "char_end": 68
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

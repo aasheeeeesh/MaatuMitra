@@ -1,0 +1,85 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g6-013",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಕೆಮ್ಮು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನಾಲ್ಕು ದಿನದಿಂದ, ಉಸಿರಾಟದ ತೊಂದರೆ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. cephalexin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ. paracetmol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-013",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 0,
+          "char_end": 6
+        }
+      },
+      {
+        "name": "breathing difficulty",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಉಸಿರಾಟದ ತೊಂದರೆ ಇದೆ",
+          "char_start": 42,
+          "char_end": 60
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cephalexin",
+        "dose_value": 1,
+        "dose_unit": "capsule",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "cephalexin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ",
+          "char_start": 66,
+          "char_end": 118
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 2,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "paracetmol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+          "char_start": 133,
+          "char_end": 182
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-e6-009",
+  "template_family_id": "e_pharmacist__f2",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ, ಅಲ್ವಾ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಹೌದು. ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e6-009",
+    "encounter_type": "pharmacist_dispensing",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "dexamethasone",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ",
+          "char_start": 0,
+          "char_end": 44
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 2,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+          "char_start": 97,
+          "char_end": 148
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ",
+      "ಅಲ್ವಾ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

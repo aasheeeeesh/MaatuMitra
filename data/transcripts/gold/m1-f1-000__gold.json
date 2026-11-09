@@ -1,0 +1,88 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-f1-000",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಚಳಿ ಇದೆಯಾ? ವಾಂತಿ ಆಗುತ್ತಿದೆಯಾ?\nಚಳಿ ಇದೆ, ಆದರೆ ವಾಂತಿ ಆಗಿಲ್ಲ.",
+  "words": [
+    {
+      "w": "ಚಳಿ",
+      "char_start": 0,
+      "char_end": 3,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆಯಾ",
+      "char_start": 4,
+      "char_end": 9,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾಂತಿ",
+      "char_start": 11,
+      "char_end": 16,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಗುತ್ತಿದೆಯಾ",
+      "char_start": 17,
+      "char_end": 28,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಚಳಿ",
+      "char_start": 30,
+      "char_end": 33,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಇದೆ",
+      "char_start": 34,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆದರೆ",
+      "char_start": 39,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾಂತಿ",
+      "char_start": 44,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಗಿಲ್ಲ",
+      "char_start": 50,
+      "char_end": 56,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

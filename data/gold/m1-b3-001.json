@@ -1,0 +1,63 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b3-001",
+  "template_family_id": "b_cross_turn__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಈ ವಾರ ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್ ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ತಲೆನೋವು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b3-001",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 52,
+          "char_end": 59
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "nitrofurantoin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್",
+          "char_start": 6,
+          "char_end": 25
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

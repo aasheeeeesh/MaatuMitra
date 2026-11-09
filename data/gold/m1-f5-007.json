@@ -1,0 +1,76 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-f5-007",
+  "template_family_id": "f_nurse_symptoms__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ತಲೆನೋವು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನಾಲ್ಕು ದಿನದಿಂದ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ವಾಂತಿ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಚಳಿ ಬಂದಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f5-007",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 0,
+          "char_end": 7
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವಾಂತಿ",
+          "char_start": 43,
+          "char_end": 48
+        }
+      },
+      {
+        "name": "chills",
+        "present": false,
+        "gold_span": {
+          "turn_index": 4,
+          "span_text": "ಚಳಿ",
+          "char_start": 63,
+          "char_end": 66
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

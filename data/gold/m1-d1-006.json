@@ -1,0 +1,82 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-d1-006",
+  "template_family_id": "d_no_antibiotic__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ನೆಗಡಿ ಮತ್ತು ಕೆಮ್ಮು ಎರಡು ದಿನದಿಂದ ಇದೆ, ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ನೆಗಡಿಗೆ antibiotic ಬೇಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಸೇಟಿರಿಜಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-d1-006",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 0,
+          "char_end": 5
+        }
+      },
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 12,
+          "char_end": 18
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cetirizine",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸೇಟಿರಿಜಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 79,
+          "char_end": 128
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not take antibiotics for a cold",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೆಗಡಿಗೆ antibiotic ಬೇಡ",
+          "char_start": 55,
+          "char_end": 77
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

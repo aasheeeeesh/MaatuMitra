@@ -1,0 +1,112 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "m1-b6-002",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "m1-data-1.0.0"
+  },
+  "text": "ಮಗುವಿಗೆ ಔಷಧಿ ಕೊಡುತ್ತಿದ್ದೀರಾ?\nಕೊಡುತ್ತೇವೆ, ಆದರೆ ಮಗು amox ಸಿರಪ್ ಕುಡಿಯುವುದಿಲ್ಲ.\nಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.",
+  "words": [
+    {
+      "w": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಔಷಧಿ",
+      "char_start": 8,
+      "char_end": 12,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡುತ್ತಿದ್ದೀರಾ",
+      "char_start": 13,
+      "char_end": 27,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡುತ್ತೇವೆ",
+      "char_start": 29,
+      "char_end": 39,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆದರೆ",
+      "char_start": 41,
+      "char_end": 45,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಗು",
+      "char_start": 46,
+      "char_end": 49,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "amox",
+      "char_start": 50,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಿರಪ್",
+      "char_start": 55,
+      "char_end": 60,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಯುವುದಿಲ್ಲ",
+      "char_start": 61,
+      "char_end": 74,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸ್ವಲ್ಪ",
+      "char_start": 76,
+      "char_end": 82,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸ್ವಲ್ಪ",
+      "char_start": 83,
+      "char_end": 89,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕುಡಿಸಿ",
+      "char_start": 90,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T00:00:00Z"
+}

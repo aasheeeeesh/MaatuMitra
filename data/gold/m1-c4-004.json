@@ -1,0 +1,61 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-c4-004",
+  "template_family_id": "c_stopped_early__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಲೇವೋ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡು ಬಿಟ್ಟೆ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c4-004",
+    "encounter_type": "nurse_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "levofloxacin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಲೇವೋ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡು ಬಿಟ್ಟೆ",
+          "char_start": 33,
+          "char_end": 70
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not share leftover tablets",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು",
+          "char_start": 72,
+          "char_end": 98
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

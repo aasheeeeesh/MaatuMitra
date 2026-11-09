@@ -1,0 +1,59 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b6-007",
+  "template_family_id": "b_cross_turn__f4",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಔಷಧಿ ಕೊಡುತ್ತಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಕೊಡುತ್ತೇವೆ, ಆದರೆ ಮಗು ಐಬ್ಯುಪ್ರೊಫೆನ್ ಸಿರಪ್ ಕುಡಿಯಲಿಲ್ಲ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b6-007",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಐಬ್ಯುಪ್ರೊಫೆನ್ ಸಿರಪ್ ಕುಡಿಯಲಿಲ್ಲ",
+          "char_start": 50,
+          "char_end": 80
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "give it to drink little by little",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ",
+          "char_start": 82,
+          "char_end": 102
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

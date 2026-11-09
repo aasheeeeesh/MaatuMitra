@@ -1,0 +1,61 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-c4-000",
+  "template_family_id": "c_stopped_early__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್ 100 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c4-000",
+    "encounter_type": "nurse_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "nitrofurantoin",
+        "dose_value": 100,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್ 100 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ",
+          "char_start": 33,
+          "char_end": 87
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not share leftover tablets",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು",
+          "char_start": 89,
+          "char_end": 115
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

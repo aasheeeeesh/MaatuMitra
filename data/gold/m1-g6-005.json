@@ -1,0 +1,85 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g6-005",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎರಡು ದಿನದಿಂದ, ಉಸಿರಾಟದ ತೊಂದರೆ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. Erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ. Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿವಸ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-005",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ",
+          "char_start": 0,
+          "char_end": 4
+        }
+      },
+      {
+        "name": "breathing difficulty",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಉಸಿರಾಟದ ತೊಂದರೆ ಇದೆ",
+          "char_start": 38,
+          "char_end": 56
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "erythromycin",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 62,
+          "char_end": 115
+        }
+      },
+      {
+        "drug": "cetirizine",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "char_start": 130,
+          "char_end": 180
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

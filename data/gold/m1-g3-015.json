@@ -1,0 +1,76 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g3-015",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Diclofenac 50 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Ibuprofen ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Omeprazole 20 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g3-015",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "diclofenac",
+        "dose_value": 50,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Diclofenac 50 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 0,
+          "char_end": 43
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Ibuprofen ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
+          "char_start": 58,
+          "char_end": 83
+        }
+      },
+      {
+        "drug": "omeprazole",
+        "dose_value": 20,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Omeprazole 20 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+          "char_start": 85,
+          "char_end": 119
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

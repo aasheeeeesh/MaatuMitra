@@ -1,0 +1,73 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-a3-003",
+  "template_family_id": "a_fever_cough__f2",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ಕೊಟ್ಟೆ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ವಾಂತಿ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಹೌದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a3-003",
+    "encounter_type": "asha_household_visit",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ",
+          "char_start": 24,
+          "char_end": 47
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವಾಂತಿ",
+          "char_start": 92,
+          "char_end": 97
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ibuprofen",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg",
+          "char_start": 63,
+          "char_end": 83
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

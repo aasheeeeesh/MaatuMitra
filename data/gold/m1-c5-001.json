@@ -1,0 +1,70 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-c5-001",
+  "template_family_id": "c_stopped_early__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ನನಗೆ ಜ್ವರ ಇದೆ, ಮನೆಯಲ್ಲಿ ಇದ್ದ ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಸ್ವಯಂ ಔಷಧಿ ಮಾಡದೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c5-001",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ",
+          "char_start": 5,
+          "char_end": 9
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cotrimoxazole",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್",
+          "char_start": 29,
+          "char_end": 44
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not self-medicate; consult a doctor",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸ್ವಯಂ ಔಷಧಿ ಮಾಡದೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ",
+          "char_start": 70,
+          "char_end": 107
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

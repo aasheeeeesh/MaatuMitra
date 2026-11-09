@@ -1,0 +1,94 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g4-013",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಡಾಕ್ಟರ್, ತಲೆನೋವು ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Azithromycin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ, paracetmol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g4-013",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 9,
+          "char_end": 16
+        }
+      },
+      {
+        "name": "body ache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಮೈಕೈನೋವು",
+          "char_start": 23,
+          "char_end": 31
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "azithromycin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Azithromycin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+          "char_start": 37,
+          "char_end": 85
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 1000,
+        "dose_unit": "mg",
+        "frequency_per_day": 4,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "paracetmol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "char_start": 100,
+          "char_end": 138
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not stop the antibiotic midway",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
+          "char_start": 144,
+          "char_end": 176
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

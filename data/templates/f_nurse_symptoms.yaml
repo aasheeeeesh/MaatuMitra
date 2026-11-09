@@ -1,0 +1,109 @@
+# (f) Nurse consult with several symptoms, some negated (clause scope). Not native-validated.
+category: f
+encounter: nurse_consult
+families:
+  - id: f_nurse_symptoms__f1
+    templates:
+      - id: f1
+        grounding: [KN-2, KN-4, KN-1]
+        slots:
+          S1: {type: symptom, pool: [headache, "body ache", chills, cough]}
+          N1: {type: neg, forms: EXIST, p_neg: 0.5}
+          N2: {type: neg, forms: HAPPEN, p_neg: 0.8}
+        turns:
+          - {role: nurse, text: "{S1.kn} ಇದೆಯಾ? ವಾಂತಿ ಆಗುತ್ತಿದೆಯಾ?"}
+          - {role: patient, text: "[[s1|{S1.kn} {N1}]], ಆದರೆ [[s2|ವಾಂತಿ {N2}]]."}
+        items:
+          - {kind: symptom, span: s1, slot: S1, neg: N1}
+          - {kind: symptom, span: s2, name: vomiting, neg: N2}
+      - id: f2
+        grounding: [KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, cold, headache, diarrhoea, chills]}
+          S2: {type: symptom, pool: [fever, cough, cold, headache, diarrhoea, chills], distinct_from: [S1]}
+          N1: {type: neg, forms: EXIST_PHRASE, subject: S1, p_neg: 0.75}
+          N2: {type: neg, forms: EXIST, p_neg: 0.3}
+        turns:
+          - {role: nurse, text: "ಏನು ತೊಂದರೆ?"}
+          - {role: patient, text: "[[s1|{N1}]] ಮತ್ತು [[s2|{S2.kn} {N2}]]."}
+        items:
+          - {kind: symptom, span: s1, slot: S1, neg: N1}
+          - {kind: symptom, span: s2, slot: S2, neg: N2}
+      - id: f3
+        grounding: [KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, cold, headache, vomiting, tiredness]}
+          S2: {type: symptom, pool: [fever, cough, cold, headache, vomiting, tiredness], distinct_from: [S1]}
+          N1: {type: neg, forms: EXIST_PHRASE, subject: S1, p_neg: 0.75}
+          N2: {type: neg, forms: EXIST, p_neg: 0.3}
+        turns:
+          - {role: nurse, text: "ಈಗ ಹೇಗಿದೆ?"}
+          - {role: patient, text: "[[s1|{N1}]] ಹಾಗೂ [[s2|{S2.kn} {N2}]]."}
+        items:
+          - {kind: symptom, span: s1, slot: S1, neg: N1}
+          - {kind: symptom, span: s2, slot: S2, neg: N2}
+      - id: f4
+        grounding: [KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, cold]}
+          S2: {type: symptom, pool: [headache, "body ache", chills], distinct_from: [S1]}
+          S3: {type: symptom, pool: [diarrhoea, vomiting, tiredness], distinct_from: [S1, S2]}
+          N1: {type: neg, forms: EXIST_PHRASE, subject: S1, p_neg: 0.4}
+          N2: {type: neg, forms: EXIST_PHRASE, subject: S2, p_neg: 0.6}
+          N3: {type: neg, forms: EXIST_PHRASE, subject: S3, p_neg: 0.6}
+        turns:
+          - {role: nurse, text: "{S1.kn}, {S2.kn}, {S3.kn} ಇದೆಯಾ?"}
+          - {role: patient, text: "[[s1|{N1}]], [[s2|{N2}]], [[s3|{N3}]]."}
+        items:
+          - {kind: symptom, span: s1, slot: S1, neg: N1}
+          - {kind: symptom, span: s2, slot: S2, neg: N2}
+          - {kind: symptom, span: s3, slot: S3, neg: N3}
+  - id: f_nurse_symptoms__f2
+    templates:
+      - id: f5
+        grounding: [KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, headache, diarrhoea]}
+          K1: {type: count, values: [2, 3, 4, 5]}
+          S2: {type: symptom, pool: [vomiting, cold, "body ache", tiredness], distinct_from: [S1]}
+          S3: {type: symptom, pool: [chills, fever], distinct_from: [S1, S2]}
+          X1: {type: xturn, p_neg: 0.7}
+          X2: {type: xturn, p_neg: 0.6}
+        turns:
+          - {role: nurse, text: "[[s1|{S1.kn}]] ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"}
+          - {role: patient, text: "{K1.kn} ದಿನದಿಂದ."}
+          - {role: nurse, text: "[[s2|{S2.kn}]] ಇದೆಯಾ?"}
+          - {role: patient, text: "{X1}"}
+          - {role: nurse, text: "[[s3|{S3.kn}]] ಬಂದಿದೆಯಾ?"}
+          - {role: patient, text: "{X2}"}
+        items:
+          - {kind: symptom, span: s1, slot: S1}
+          - {kind: symptom, span: s2, slot: S2, neg: X1}
+          - {kind: symptom, span: s3, slot: S3, neg: X2}
+      - id: f6
+        grounding: [KN-2, KN-3]
+        slots:
+          S1: {type: symptom, pool: ["breathing difficulty", chills, cough]}
+          X1: {type: xturn, p_neg: 0.7}
+          D1: {type: drug, where: {class: [analgesic_antipyretic, nsaid]}, dose: none}
+          N1: {type: neg, forms: EXIST, p_neg: 0.85}
+          N2: {type: neg, link: N1, forms: [{neg: "ಬೇಡ", pos: "ತೆಗೆದುಕೊಳ್ಳಿ", patterns: [NEG-W04]}]}
+        turns:
+          - {role: nurse, text: "[[s1|{S1.kn}]] ಇದೆಯಾ?"}
+          - {role: patient, text: "{X1}"}
+          - {role: nurse, text: "ಈಗ [[s2|ಜ್ವರ {N1}]] ಆದ್ದರಿಂದ [[m1|{D1.name} ಮಾತ್ರೆ {N2}]]."}
+        items:
+          - {kind: symptom, span: s1, slot: S1, neg: X1}
+          - {kind: symptom, span: s2, name: fever, neg: N1}
+          - {kind: medication, span: m1, slot: D1, neg: N2}
+      - id: f7
+        grounding: [KN-2]
+        slots:
+          N1: {type: neg, forms: COME, p_neg: 0.7}
+          N2: {type: neg, forms: COME, p_neg: 0.5}
+        turns:
+          - {role: nurse, text: "ಚಳಿ ಅಥವಾ ಜ್ವರ ಬಂದಿದೆಯಾ?"}
+          - {role: patient, text: "[[s1|ಚಳಿ {N1}]], [[s2|ಜ್ವರ {N2}]]."}
+        items:
+          - {kind: symptom, span: s1, name: chills, neg: N1}
+          - {kind: symptom, span: s2, name: fever, neg: N2}

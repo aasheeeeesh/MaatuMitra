@@ -1,0 +1,82 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-d5-004",
+  "template_family_id": "d_no_antibiotic__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಜ್ವರ ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಇದು ವೈರಲ್ ಜ್ವರ, ಆದ್ದರಿಂದ antibiotic ಬೇಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-d5-004",
+    "encounter_type": "physician_consult",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ",
+          "char_start": 0,
+          "char_end": 4
+        }
+      },
+      {
+        "name": "body ache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಮೈಕೈನೋವು",
+          "char_start": 11,
+          "char_end": 19
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": 1000,
+        "dose_unit": "mg",
+        "frequency_per_day": 4,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 66,
+          "char_end": 122
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not take antibiotics",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "antibiotic ಬೇಡ",
+          "char_start": 50,
+          "char_end": 64
+        }
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

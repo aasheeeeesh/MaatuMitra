@@ -1,0 +1,50 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-i1-007",
+  "template_family_id": "i_traps__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಸೆಫಡ್ರಾಕ್ಸಿಲ್ 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ, ಅಲ್ವಾ?"
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i1-007",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefadroxil",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸೆಫಡ್ರಾಕ್ಸಿಲ್ 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+          "char_start": 0,
+          "char_end": 41
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರ",
+      "ಎಲ್ಲಾ",
+      "ಮಾತ್ರೆ",
+      "ಇಲ್ಲಿ",
+      "ಅಲ್ವಾ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

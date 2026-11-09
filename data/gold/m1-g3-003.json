@@ -1,0 +1,76 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-g3-003",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "clindamycin 150 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ibuprofen ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Dexamethasone 4 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g3-003",
+    "encounter_type": "physician_consult",
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "clindamycin",
+        "dose_value": 150,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "clindamycin 150 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 0,
+          "char_end": 45
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
+          "char_start": 60,
+          "char_end": 85
+        }
+      },
+      {
+        "drug": "dexamethasone",
+        "dose_value": 4,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Dexamethasone 4 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+          "char_start": 87,
+          "char_end": 123
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

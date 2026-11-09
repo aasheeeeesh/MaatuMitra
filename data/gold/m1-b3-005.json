@@ -1,0 +1,63 @@
+{
+  "schema_version": "gold.v1",
+  "conversation_id": "m1-b3-005",
+  "template_family_id": "b_cross_turn__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಈ ವಾರ ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್ ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಕೆಮ್ಮು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b3-005",
+    "encounter_type": "nurse_consult",
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 47,
+          "char_end": 53
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cefadroxil",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್",
+          "char_start": 6,
+          "char_end": 20
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

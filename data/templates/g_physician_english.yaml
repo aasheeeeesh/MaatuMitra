@@ -1,0 +1,110 @@
+# (g) Physician prescribing with English drug names inside Kannada sentences.
+# Not native-validated.
+category: g
+n: 16
+encounter: physician_consult
+families:
+  - id: g_physician_english__f1
+    templates:
+      - id: g1
+        grounding: [KN-3]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: given, needs: [freq, dur]}
+        turns:
+          - {role: physician, text: "[[m1|{D1.en} {D1.dose} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[a1|Antibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ]]."}
+          - {role: patient, text: "ಸರಿ ಡಾಕ್ಟರ್."}
+        items:
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: advice, span: a1, text: "finish the full antibiotic course"}
+      - id: g2
+        grounding: [KN-3, KN-4]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: given, needs: [freq, dur]}
+          D2: {type: drug, where: {class: [analgesic_antipyretic, nsaid, antihistamine]}, dose: given, needs: [freq, dur]}
+        turns:
+          - {role: physician, text: "[[m1|{D1.en} {D1.dose} {D1.freq} {D1.dur}]] ಮತ್ತು [[m2|{D2.en} {D2.dose} {D2.freq} {D2.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: patient, text: "ಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?"}
+          - {role: physician, text: "[[a1|ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+        items:
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
+          - {kind: advice, span: a1, text: "take after food"}
+      - id: g3
+        grounding: [KN-1, KN-3]
+        slots:
+          D1: {type: drug, dose: given, needs: [freq, dur]}
+          D2: {type: drug, where: {class: [nsaid]}, dose: none, distinct_from: [D1]}
+          D3: {type: drug, dose: given, needs: [freq], distinct_from: [D1, D2]}
+          N1: {type: neg, p_neg: 0.9, forms: DO_NOT_TAKE}
+        turns:
+          - {role: physician, text: "[[m1|{D1.en} {D1.dose} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[m2|{D2.en} {N1}]]."}
+          - {role: physician, text: "[[m3|{D3.en} {D3.dose} {D3.freq}]] ಕೊಡುತ್ತೇನೆ."}
+        items:
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m2, slot: D2, neg: N1}
+          - {kind: medication, span: m3, slot: D3, fields: [dose, freq]}
+      - id: g4
+        grounding: [KN-3, KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, headache]}
+          S2: {type: symptom, pool: ["body ache", chills, cold], distinct_from: [S1]}
+          D1: {type: drug, where: {class: [antibiotic]}, dose: given, needs: [freq, dur]}
+          D2: {type: drug, where: {class: [analgesic_antipyretic, nsaid]}, dose: given, needs: [freq]}
+          N1: {type: neg, p_neg: 1.0, forms: [{neg: "ನಿಲ್ಲಿಸಬೇಡಿ", pos: "ನಿಲ್ಲಿಸಿ", patterns: [NEG-S06]}]}
+        turns:
+          - {role: patient, text: "ಡಾಕ್ಟರ್, [[s1|{S1.kn}]] ಮತ್ತು [[s2|{S2.kn}]] ಇದೆ."}
+          - {role: physician, text: "[[m1|{D1.en} {D1.dose} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ, [[m2|{D2.en} {D2.dose} {D2.freq}]] ಕೂಡ."}
+          - {role: physician, text: "[[a1|Antibiotic ಮಧ್ಯದಲ್ಲಿ {N1}]]."}
+        items:
+          - {kind: symptom, span: s1, slot: S1}
+          - {kind: symptom, span: s2, slot: S2}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq]}
+          - {kind: advice, span: a1, text: "do not stop the antibiotic midway", neg: N1}
+  - id: g_physician_english__f2
+    templates:
+      - id: g5
+        grounding: [KN-2]
+        slots:
+          D1: {type: drug, where: {class: [antibiotic]}, dose: given, needs: [freq, dur]}
+          D2: {type: drug, where: {generic: [paracetamol, ibuprofen]}, dose: given, needs: [freq]}
+        turns:
+          - {role: physician, text: "Tablet [[m1|{D1.en} {D1.dose} {D1.freq} {D1.dur}]]."}
+          - {role: physician, text: "[[m2|{D2.en} {D2.dose} {D2.freq}]] ಮಾತ್ರ, [[a1|fever ಇದ್ದರೆ ಮಾತ್ರ]]."}
+          - {role: patient, text: "ಸರಿ."}
+        items:
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq]}
+          - {kind: advice, span: a1, text: "only if there is fever"}
+      - id: g6
+        grounding: [KN-2]
+        slots:
+          S1: {type: symptom, pool: [fever, cough, headache]}
+          S2: {type: symptom, pool: [vomiting, diarrhoea, chills, "breathing difficulty"], distinct_from: [S1]}
+          K1: {type: count, values: [2, 3, 4]}
+          N1: {type: neg, forms: EXIST_PHRASE, subject: S2, p_neg: 0.7}
+          D1: {type: drug, where: {class: [antibiotic]}, dose: given, needs: [freq, dur]}
+          D2: {type: drug, where: {class: [analgesic_antipyretic, antihistamine]}, dose: given, needs: [freq, dur]}
+        turns:
+          - {role: physician, text: "[[s1|{S1.kn}]] ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"}
+          - {role: patient, text: "{K1.kn} ದಿನದಿಂದ, [[s2|{N1}]]."}
+          - {role: physician, text: "OK. [[m1|{D1.en} {D1.dose} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ. [[m2|{D2.en} {D2.dose} {D2.freq} {D2.dur}]] ಕೂಡ."}
+        items:
+          - {kind: symptom, span: s1, slot: S1}
+          - {kind: symptom, span: s2, slot: S2, neg: N1}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
+      - id: g7
+        grounding: [KN-3]
+        slots:
+          D1: {type: drug, where: {form: [injection]}, dose: given, needs: [freq, dur]}
+          D2: {type: drug, where: {class: [analgesic_antipyretic]}, dose: given, needs: [freq]}
+        turns:
+          - {role: physician, text: "[[m1|{D1.en} {D1.dose} injection {D1.freq} {D1.dur}]] ಕೊಡುತ್ತೇವೆ."}
+          - {role: physician, text: "[[m2|{D2.en} {D2.dose} {D2.freq}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: patient, text: "ಸರಿ ಡಾಕ್ಟರ್."}
+        items:
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq]}
