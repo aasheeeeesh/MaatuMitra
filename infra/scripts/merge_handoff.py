@@ -65,7 +65,9 @@ def _meaningful(text: str) -> bool:
 def _insert_before(doc: str, marker: str, block: str, target: str) -> str:
     if marker not in doc:
         raise ValueError(f"{target}: marker {marker} not found; cannot merge safely")
-    i = doc.index(marker)
+    # Use the LAST occurrence: entries may quote the marker text (D-8 does), and the
+    # real marker always sits after all entries.
+    i = doc.rindex(marker)
     return doc[:i] + block + doc[i:]
 
 

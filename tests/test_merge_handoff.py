@@ -205,3 +205,19 @@ def test_cli_runs(repo):
     )
     assert res.returncode == 0, res.stderr
     assert "### D-4:" in _read(repo / "docs" / "DECISIONS_EXPLAINED.md")
+
+
+def test_insert_uses_last_marker_when_text_quotes_it():
+    """Regression: an entry that quotes the marker must not receive inserted text."""
+    import importlib.util
+    import pathlib
+
+    spec = importlib.util.spec_from_file_location(
+        "merge_handoff_mod", pathlib.Path(__file__).parents[1] / "infra/scripts/merge_handoff.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    doc = "entry quotes `<!-- M -->` here\nreal end\n<!-- M -->\n"
+    out = mod._insert_before(doc, "<!-- M -->", "NEW\n", "x")
+    assert out.index("NEW") > out.index("real end")
+    assert "quotes `<!-- M -->` here" in out
