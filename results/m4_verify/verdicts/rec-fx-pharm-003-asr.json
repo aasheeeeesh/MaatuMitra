@@ -1,0 +1,204 @@
+{
+  "schema_version": "verdict.v1",
+  "record_id": "rec-fx-pharm-003-asr",
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "source_transcript_id matches the transcript audio_id",
+      "field_path": "/source_transcript_id"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/0/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/advice/0/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/advice/1/evidence"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'amoxicillin' re-derived from the span via the lexicon",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "dose 50 mg re-derived from the span",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "n/a",
+      "reason": "free-text value: its meaning cannot be re-derived by rules (human review; C3/C6 still apply)",
+      "field_path": "/advice/0/text"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "n/a",
+      "reason": "free-text value: its meaning cannot be re-derived by rules (human review; C3/C6 still apply)",
+      "field_path": "/advice/1/text"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/0/negated"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/advice/0/negated"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/advice/1/negated"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "dose 50 mg is outside the lexicon range 250-1000 mg for amoxicillin (lexicon: FIXTURE_ONLY_dose_and_class_UNVERIFIED)",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "frequency 3 parsed from the span",
+      "field_path": "/medications/0/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "duration 5 parsed from the span",
+      "field_path": "/medications/0/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'amoxicillin' is mentioned in its span",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "dose_value 50 occurs in the span",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "frequency_per_day 3 occurs in the span",
+      "field_path": "/medications/0/frequency_per_day"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "duration_days 5 occurs in the span",
+      "field_path": "/medications/0/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "every number and drug in the text occurs in the span",
+      "field_path": "/advice/0/text"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "every number and drug in the text occurs in the span",
+      "field_path": "/advice/1/text"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "every lexicon drug mentioned in the transcript is in the record",
+      "field_path": "/medications"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "n/a",
+      "reason": "patient link not verifiable: no encounter index (transcript.v1 has no patient_ref); known blind spot",
+      "field_path": "/patient_ref"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "flag",
+      "reason": "critical token(s) below the confidence threshold 0.6 [UNTUNED placeholder (no DEV ASR run yet)]: number 50 ('50' conf 0.41)",
+      "field_path": "/medications/0"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "pass",
+      "reason": "all critical tokens in the span have confidence >= 0.6 or unknown [UNTUNED placeholder (no DEV ASR run yet)]",
+      "field_path": "/advice/0"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "pass",
+      "reason": "all critical tokens in the span have confidence >= 0.6 or unknown [UNTUNED placeholder (no DEV ASR run yet)]",
+      "field_path": "/advice/1"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/0"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/advice/0"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/advice/1"
+    }
+  ],
+  "auto_acceptable": false,
+  "verifier_version": "m4_verify-1.0.0"
+}

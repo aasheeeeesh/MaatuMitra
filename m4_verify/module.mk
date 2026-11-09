@@ -1,19 +1,26 @@
 # m4_verify make targets. Owned by the safety-engineer builder.
-# Architect stub: passes while the module has only the skipped placeholder test.
-# Builders: keep target names; add more targets freely (prefix them with m4-).
+#   m4-test   unit tests (negation rules, checks C1..C8, fail-closed, E4 generator, CLI)
+#   m4-mock   MODE=mock: fixtures only -> results/m4_verify/ (verdicts + E4 tables)
+#   m4-e4-data  E4 again with data/lexicon/drugs.csv (fixture gold until m1 DEV gold exists)
+#   m4-audit  re-run the negation matcher on the stored Kannada Wikipedia sentences
 
-.PHONY: m4-test m4-mock
+.PHONY: m4-test m4-mock m4-e4-data m4-audit m4-clean
 
 m4-test:
 	$(UV) run pytest m4_verify/tests
 
 m4-mock:
-	@echo "m4-mock: no mock run yet (m4_verify builder replaces this with a MODE=mock run on fixtures/)"
+	MODE=mock $(UV) run python -m m4_verify mock --out-dir results/m4_verify
 
-# Register with root aggregate targets when ready, for example:
-# DATA_TARGETS += m1-data
-# EVAL_TARGETS += m7-eval
-# EVAL_FULL_TARGETS += m2-eval-full
-# EVAL_TEST_TARGETS += m7-eval-test
-# DEMO_TARGETS += m6-demo
-# CLEAN_TARGETS += m4-clean
+m4-e4-data:
+	@if [ -f data/lexicon/drugs.csv ]; then \
+	  $(UV) run python -m m4_verify e4 --lexicon data/lexicon/drugs.csv --out-dir results/m4_verify/data_lexicon; \
+	else echo "m4-e4-data: data/lexicon/drugs.csv not built yet (make data)"; fi
+
+m4-audit:
+	$(UV) run python -m m4_verify audit --sentences m4_verify/audit/kn_wikipedia_jvara_sentences.txt
+
+m4-clean:
+	rm -rf results/m4_verify
+
+EVAL_TARGETS += m4-mock

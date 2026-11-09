@@ -49,6 +49,9 @@ llm = [
 helper = [
     "sentence-transformers>=3.0",
 ]
+data = [
+    "indic-transliteration==2.3.82",
+]
 
 [tool.uv]
 # This repo is a set of modules, not an installable library.

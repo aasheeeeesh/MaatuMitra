@@ -166,6 +166,33 @@
 - How to change this decision later: infra/scripts/merge_handoff.py and its tests; the markers `| D-27 | Phase B / orchestration | How the orchestrator runs the builder agents | done | Option 2. Each delegation message tells the agent to read its own .claude/agents/<name>.md file and infra/builder_rul... |
 | D-28 | Phase B / m1_data | Splitting the data module (m1) into a text pass and an audio pass | done | Option 2. |
 | D-29 | Phase A / repo | Who is the git author of the commits | done | Option 2. |
+| D-30 | Phase B / m5_backend | PostgreSQL 16 without Docker: EnterpriseDB 16.15 binaries zip | done | Option 2. |
+| D-31 | Phase B / m5_backend | Database roles: who logs in, who owns, who can do what | done | Option 2, plus three small NOLOGIN helper roles: `maint_role` (seed loader + research export, reachable only from `ow... |
+| D-32 | Phase B / m5_backend | RLS foundation: FORCE on every table, default deny, one transaction per request | done | Option 2. Every one of the 10 tables has ENABLE **and FORCE** row level security; no policy means no rows; no policy... |
+| D-33 | Phase B / m5_backend | Access rule: ASHA | done | Option 2: SELECT/INSERT on households with `assigned_asha_id = me` (insert also needs her facility), and on patients/... |
+| D-34 | Phase B / m5_backend | Access rule: nurse ("draft records" = draft or flagged) | done | Option 2. Nurse: SELECT/INSERT/UPDATE patients, encounters and draft\|flagged records in her facility; SELECT medicati... |
+| D-35 | Phase B / m5_backend | Access rule: physician (approve only in her own name; saved is final) | done | Option 2. Physician = nurse rights for any record status in her facility + INSERT/UPDATE medication_orders (patient a... |
+| D-36 | Phase B / m5_backend | Access rule: pharmacist only through a security_barrier view and an "active patient" | done | Option 3. `clinic.pharmacist_orders_v` (order id, 8-char patient ref, drug, dose, unit, frequency, duration, status)... |
+| D-37 | Phase B / m5_backend | Access rule: researcher only sees a de-identified export | done | Option 2. pseudonym = first 20 hex chars (80 bits) of HMAC-SHA256(key from `.env`, patient_id); age band, sex, encoun... |
+| D-38 | Phase B / m5_backend | Saved-record gate in the database and the API | done | Option 2. `CHECK (status <> 'saved' OR (approved_by IS NOT NULL AND approved_at IS NOT NULL))`. `POST /records/{id}/s... |
+| D-39 | Phase B / m5_backend | Audit log: append-only, written through one SECURITY DEFINER function | done | Option 2, plus REVOKE UPDATE/DELETE/TRUNCATE from everyone including the owner, and triggers that raise on UPDATE/DEL... |
+| D-40 | Phase B / m5_backend | Nobody gets DELETE; facilities, users and consents are closed to app roles (scope cut) | done (scope cut) | Option 2. |
+| D-41 | Phase B / m5_backend | Authentication: PyJWT mock issuer, HS256 pinned | done | Option 2: HS256 only (alg pinned; `none`, HS512 and RS/HS confusion rejected), `exp`, `iat`, `iss`, `aud`, `sub`, `ro... |
+| D-42 | Phase B / m5_backend | API hygiene: forbid extra fields, generic errors, 404 for hidden rows, audio after authorisation | done | (2). Every body model has `extra="forbid"`; server-owned fields (facility, author, approver, assigned ASHA, patient o... |
+| D-43 | Phase B / m5_backend | Access matrix E5: 1486 cases, 0 unauthorized successes | done locally; CI pending | Option 2. `tests/access_matrix_expected.yaml` was written by hand first. 960 base cases (5 roles x 12 resources x 4 a... |
+| D-44 | Phase B / m5_backend | Problems hit while building m5_backend (and fixes) | done | fix at the root. |
+| D-45 | Phase B / m4_verify | Fail-closed verifier with a rule registry | done | (3) plus (b). Every check is a plain function in `REGISTRY` (checks.py); the verifier calls it, and ANY exception bec... |
+| D-46 | Phase B / m4_verify | C1 span-exists | done | (2), plus a check that the record's `source_transcript_id` equals the transcript's `audio_id`, plus a contract valida... |
+| D-47 | Phase B / m4_verify | C2 span-supports-value, using the verifier's own parsers | done (word lists UNVERIFIED) | (2): `textnorm.py` (NFC, BOM/zero-width removal, ZWJ/ZWNJ removed for comparison only, Kannada digits to ASCII, `rege... |
+| D-48 | Phase B / m4_verify | C3 negation-consistency with independent, hand-coded rules | partly done (rules are hypotheses; ne... | (2). Whole-word cues (ಇಲ್ಲ, ಇಲ್ಲಾ, ಅಲ್ಲ, ಬೇಡ, ಬೇಡಿ, ಬಾರದು, ಕೂಡದು), token-final suffixes (-ಿಲ್ಲ, -ುದಿಲ್ಲ, consonant+ದಿ... |
+| D-49 | Phase B / m4_verify | Negation rules changed after the real-text audit | done (needs human re-check) | (2). Changes: ಇಲ್ಲವೇ/ಇಲ್ಲವೆ now mean "or" (clause split) unless "?" follows (was a frequent false positive); new stro... |
+| D-50 | Phase B / m4_verify | C4 dose-range: blank lexicon range is a flag (fail-closed) | done | (2), also for non-mass units (tablet, ml, sachet...), because lexicon ranges are in mg. Also: dose and unit must matc... |
+| D-51 | Phase B / m4_verify | C5 frequency and duration parse | done (phrases UNVERIFIED) | (2). Times-of-day words (ಬೆಳಿಗ್ಗೆ/ರಾತ್ರಿ) are NOT turned into a frequency: a record frequency based on them flags. |
+| D-52 | Phase B / m4_verify | C6 unsupported additions, omissions and the patient-link blind spot | done (patient link needs integration) | Every drug, number and symptom in a value must occur in its span; English numbers/drugs in advice text must occur in... |
+| D-53 | Phase B / m4_verify | C7 ASR risk: threshold from DEV only, n/a when no confidences | partly done (threshold UNTUNED) | (2) and (b). Critical words = drug, number, unit, negation cue. A second transcript (another ASR model or run), when... |
+| D-54 | Phase B / m4_verify | C8 ambiguity always flags | done | (2): soft cue; two cues in one clause; bare ಇಲ್ಲ with no resolvable question; bare answer after several questions or... |
+| D-55 | Phase B / m4_verify | Turn structure comes from newlines in the transcript text | done (contract gap open) | (2), and logged (1) as an open question. |
+| D-56 | Phase B / m4_verify | E4 planted-mistake generator design | done on fixtures; DEV re-run pending | (2) now, with a configurable gold source so it re-runs on m1 DEV gold (DEV only; any path with "test" is refused). Se... |
 <!-- INDEX-END -->` and `<!-- ENTRIES-END -->` in this file must stay.
 - Status: done
 
@@ -435,6 +462,317 @@
 - What else could be done: Rewrite the author with `git rebase --exec 'git commit --amend --reset-author --no-edit'` before pushing (only if the student wants that and understands what it does).
 - How to change this decision later: Change the author on future commits; history rewrite is optional.
 - Status: done
+
+### D-30: PostgreSQL 16 without Docker: EnterpriseDB 16.15 binaries zip   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How to get a real PostgreSQL 16 on a laptop with no Docker and no admin rights (follows D-4).
+- Options we considered:
+  1. `pgserver` from PyPI (pip-installable Postgres). Pro: one `uv add`. Con: it ships PostgreSQL **16.2** (README badge and its pgbuild/Makefile, fetched 2026-11-09). 16.2 is older than the fix for CVE-2024-10976 ("row security below e.g. subqueries disregards user ID changes", fixed in 16.5, postgresql.org page fetched 2026-11-09). That bug is about exactly our design (RLS + switching roles), so it is a bad fit.
+  2. EnterpriseDB "binaries from installer" zip, PostgreSQL 16.15. Pro: current patch release, no installer, no admin. Con: 373 MB download.
+  3. Install Docker Desktop. Con: admin rights, big disk use; the human must do it.
+- What we chose: Option 2.
+- Why: newest 16.x patch level, works without admin, the PostgreSQL License allows this use. We keep only the server parts to save disk (12 GB free).
+- What we actually did: downloaded `https://get.enterprisedb.com/postgresql/postgresql-16.15-5-windows-x64-binaries.zip` (link found on https://www.enterprisedb.com/download-postgresql-binaries, fetched 2026-11-09; 373,254,386 bytes; sha256 `43bb45f173a6f08cf1d29a97a6d8deb119e8e8093a24c00d2d1001a0ccaa8281`, same hash on two downloads). Unpacked `pgsql/bin`, `pgsql/lib`, `pgsql/share` to `%USERPROFILE%/.maatumitra/pg16` (126 MB), deleted the zip. Data dir `%USERPROFILE%/.maatumitra/pgdata16`. `m5_backend/scripts/db_up.sh` runs initdb (scram-sha-256 passwords, superuser name from .env) and starts the server with `listen_addresses=127.0.0.1`, port 54329 (checked with `netstat`: `127.0.0.1:54329 LISTENING` only). `db_down.sh` stops it.
+- What could go wrong / weaknesses: EDB does not publish a checksum next to the link, so the sha256 only proves both downloads were identical, not that the file is authentic (UNVERIFIED). The zip also contains pgAdmin/StackBuilder, which we did not unpack or use. Windows only; Linux/CI uses the postgres:16 Docker image instead.
+- What else could be done: verify the binaries' Authenticode signatures; use Docker on a machine that has it.
+- How to change this decision later: point `PG_BIN` in `.env` to another PostgreSQL 16 `bin/`; nothing else depends on EDB.
+- Status: done
+
+### D-31: Database roles: who logs in, who owns, who can do what   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: The brief says `api_login` is "NOLOGIN, privileges only through SET LOCAL ROLE". But the API must log in as *something*.
+- Options we considered:
+  1. API logs in as `owner_role`. Con: the table owner is the most powerful normal role; forbidden by the brief.
+  2. `api_login` = a LOGIN role with **no privileges of its own**, NOINHERIT, member of the five app roles with "SET only" (PG16 `WITH INHERIT FALSE, SET TRUE`). It must run `SET LOCAL ROLE <app role>` to touch anything.
+  3. One login role per app role. Con: five passwords in the API; the role choice would move into connection handling.
+- What we chose: Option 2, plus three small NOLOGIN helper roles: `maint_role` (seed loader + research export, reachable only from `owner_role`), `pharm_view_owner` (owns the pharmacist view, one narrow policy), `audit_writer` (owns the audit function). A **bootstrap superuser** (name/password in .env) is used only by `dbtool`/tests to create roles and databases.
+- Why: nothing a request uses is a superuser, has BYPASSRLS, or owns a table. If the API forgets `SET LOCAL ROLE`, it can do nothing at all (fail closed; tested).
+- What we actually did: `m5_backend/scripts/dbtool.py` (`bootstrap_roles` refuses to continue if any of our roles is superuser/BYPASSRLS). Tests: `test_no_role_is_superuser_or_bypassrls`, `test_api_login_memberships_are_set_only`, `test_api_login_has_no_table_privileges_of_its_own`.
+- What could go wrong / weaknesses: helper roles are a deviation from the brief's list (recorded here). Whoever has the `owner_role` password can become `maint_role` and read everything; whoever has the `api_login` password can become any app role.
+- What else could be done: separate operator login for the export job; a real secrets manager.
+- How to change this decision later: `scripts/dbtool.py` (roles), `sql/*.sql` (grants/policies).
+- Status: done
+
+### D-32: RLS foundation: FORCE on every table, default deny, one transaction per request   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How every request tells the database who is asking.
+- Options we considered:
+  1. Filter rows in Python. Con: one forgotten WHERE leaks data.
+  2. RLS policies reading per-transaction settings (**GUCs**) set with `SET LOCAL` / `set_config(..., true)`.
+  3. Session-level `SET`. Con: leaks to the next user of a pooled connection.
+- What we chose: Option 2. Every one of the 10 tables has ENABLE **and FORCE** row level security; no policy means no rows; no policy is granted to PUBLIC; IDs are UUIDs; composite foreign keys keep patient/encounter/order facilities consistent.
+- Why: the database refuses even if the API code has a bug. FORCE makes RLS apply to the table owner too.
+- What we actually did: `sql/010_schema.sql`, `sql/020_rls.sql`, `app/db.py` (`request_tx`: BEGIN, `SET LOCAL ROLE` from a fixed allowlist, `set_config('app.user_id'|'app.facility_id'|'app.role'|'app.active_patient_id', v, true)`). Tests: `test_every_table_has_rls_enabled_and_forced`, `test_table_owner_with_no_policy_sees_zero_rows` (owner sees 0 rows of 8 patients), `test_role_with_grants_but_no_policy_sees_zero_rows`, `test_no_role_or_guc_leaks_to_next_transaction_on_pooled_connection`, `test_reset_role_leaves_no_privileges`.
+- What could go wrong / weaknesses: anyone who can run raw SQL as `api_login` can set the GUCs to any user (residual limit; `test_residual_raw_api_credentials_can_set_gucs` shows it works). A malformed GUC raises an error (fails closed), it never widens access.
+- What else could be done: sign the context (e.g. pass a signed token into the DB and verify it in a SECURITY DEFINER function) so raw credentials alone are not enough.
+- How to change this decision later: `app/db.py`, `sql/020_rls.sql`.
+- Status: done
+
+### D-33: Access rule: ASHA   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: What an ASHA (community health worker) may see and write.
+- Options we considered: 1. Facility-wide access (simpler, but an ASHA would see households she never visits). 2. Only households assigned to her and what hangs off them (the brief).
+- What we chose: Option 2: SELECT/INSERT on households with `assigned_asha_id = me` (insert also needs her facility), and on patients/encounters/records reachable through those households. Her encounters must be `asha_household_visit` authored by herself; her records must be draft/flagged with no approver. No UPDATE, no DELETE, no orders, consents, audit, research. Audio follows encounter visibility.
+- Why: least privilege, straight from the brief.
+- What we actually did: policies `asha_*` in `sql/020_rls.sql`; expected table rows `asha:` in `tests/access_matrix_expected.yaml`; 192 base matrix cases for the ASHA role all pass.
+- What could go wrong / weaknesses: an ASHA cannot correct a typo she made (no UPDATE). Reassigning a household to another ASHA needs an operator.
+- What else could be done: allow UPDATE of her own draft records for a short time window.
+- How to change this decision later: `asha_*` policies + the `asha:` block of the expected table (edit both by hand, separately).
+- Status: done
+
+### D-34: Access rule: nurse ("draft records" = draft or flagged)   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: The brief says nurses work on "draft records". record.v1 has statuses draft, flagged, approved, saved.
+- Options we considered: 1. `draft` only. 2. `draft` and `flagged` (not yet approved). 3. All statuses.
+- What we chose: Option 2. Nurse: SELECT/INSERT/UPDATE patients, encounters and draft|flagged records in her facility; SELECT medication_orders in her facility; she cannot set approved/saved or an approver. UPDATE is limited by **column grants** (patients: name/age band/sex; encounters: type; records: json/status). No households.
+- Why: a flagged record is still a draft that needs work; approved/saved records are a physician's.
+- What we actually did: `nurse_*` policies and column grants in `sql/020_rls.sql`; tests `test_nurse_cannot_approve_or_see_saved_records`; all nurse matrix cases pass.
+- What could go wrong / weaknesses: nurses cannot read approved/saved records at all (possibly too strict clinically: open question). Nurses cannot see households, so they insert patients by household id they get elsewhere.
+- What else could be done: read-only access to saved records in her facility if clinicians want it.
+- How to change this decision later: `nurse_records_*` policies + `nurse:` block of the expected table.
+- Status: done
+
+### D-35: Access rule: physician (approve only in her own name; saved is final)   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How approval works in the database.
+- Options we considered: 1. Physician may write any approved_by value. 2. approved_by must equal the physician's own id; a saved record can never be updated.
+- What we chose: Option 2. Physician = nurse rights for any record status in her facility + INSERT/UPDATE medication_orders (patient and facility taken from the encounter) + approve/save with `approved_by = me`. UPDATE policy excludes status 'saved'.
+- Why: nobody can approve in a colleague's name; a saved record cannot be changed silently.
+- What we actually did: `physician_*` policies; tests `test_physician_cannot_approve_in_someone_elses_name`, `test_saved_record_is_immutable`.
+- What could go wrong / weaknesses: correcting a saved record needs a new record (no amendment workflow yet).
+- What else could be done: an amendment table that links a correction to the saved original.
+- How to change this decision later: `physician_records_update` policy.
+- Status: done
+
+### D-36: Access rule: pharmacist only through a security_barrier view and an "active patient"   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How a pharmacist sees orders without any table grant.
+- Options we considered: 1. Grant SELECT on medication_orders with a policy. Con: the brief says no table grants. 2. A `security_invoker` view. Con: needs table grants for the pharmacist. 3. A normal (owner-rights) view with `security_barrier`, owned by a narrow role.
+- What we chose: Option 3. `clinic.pharmacist_orders_v` (order id, 8-char patient ref, drug, dose, unit, frequency, duration, status) owned by `pharm_view_owner`, whose only policy is: facility = mine AND status = 'ready_to_dispense' AND patient_id = `app.active_patient_id`. The view's WHERE clause repeats this. The API sets the active patient only via `POST /pharmacist/active-patient`, which checks that a ready order exists for that patient at her facility (through the view) and writes an audit row (allow or deny); the choice is kept server-side for 10 minutes.
+- Why: the predicate is enforced twice in the database; the pharmacist can never list all patients.
+- What we actually did: `sql/030_views.sql`, `app/main.py`; test `test_pharmacist_active_patient_flow_is_checked_and_audited`; matrix: other facility, non-active patient and non-ready order are all denied even when the DB context is set directly.
+- What could go wrong / weaknesses: **the system cannot prove the patient is physically present**; it only narrows scope and audits. A pharmacist could try patient ids one by one; each try is audited (no lockout yet). The 8-character patient ref is part of the UUID (not secret, not a name).
+- What else could be done: rate-limit activations; require a code printed on the prescription.
+- How to change this decision later: `sql/030_views.sql`, `set_active_patient` in `app/main.py`.
+- Status: done
+
+### D-37: Access rule: researcher only sees a de-identified export   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How researchers get data without seeing patients.
+- Options we considered: 1. Views over base tables. Con: easy to leak ids/text. 2. A separate `research` schema filled by an export job (full refresh each time).
+- What we chose: Option 2. pseudonym = first 20 hex chars (80 bits) of HMAC-SHA256(key from `.env`, patient_id); age band, sex, encounter type, month (YYYY-MM), record status, symptom names, structured medication fields. No ids, no names, no free text (advice, follow-up and evidence spans dropped). Strings must be in a closed allowlist (symptom list in code, drug names from the lexicon CSV), otherwise dropped. Only `consents.research_ok = true` at export time; withdrawal disappears at the next export.
+- Why: researchers cannot reverse the pseudonym without the key; a full refresh makes withdrawal simple.
+- What we actually did: `app/export.py`, `sql/010_schema.sql` (research table), `sql/020_rls.sql`. Tests: `test_export_contains_no_ids_names_dates_or_free_text` (scans every id, name, exact date and free-text token: 0 hits), `test_only_consenting_patients_and_withdrawal_removes_at_next_export`.
+- What could go wrong / weaknesses: age band + sex + month + rare drug in a tiny facility could still re-identify someone (no k-anonymity check). 80-bit truncation: collisions are negligible at this size but not zero. The free-text scan exempts words that are also allowlisted drug/symptom names.
+- What else could be done: k-anonymity / suppression of small cells; rotate the HMAC key per study.
+- How to change this decision later: `app/export.py` (`PSEUDONYM_HEX`, vocabularies).
+- Status: done
+
+### D-38: Saved-record gate in the database and the API   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How to make sure nothing is "saved" without approval and with open safety flags.
+- Options we considered: 1. Only check in the UI. 2. DB CHECK constraint + API check of the verdict.
+- What we chose: Option 2. `CHECK (status <> 'saved' OR (approved_by IS NOT NULL AND approved_at IS NOT NULL))`. `POST /records/{id}/save` validates the verdict.v1 and refuses (409, audited `save_rejected`) when any check is `flag`, `auto_acceptable` is false, or checks is empty; 422 if the verdict belongs to another record.
+- Why: two independent layers (DB + server), both fail closed.
+- What we actually did: `sql/010_schema.sql`, `save_record` in `app/main.py`. Tests: `test_saved_check_constraint`, `test_saved_gate_rejects_unresolved_flags_and_accepts_clean_verdict`. Finding: for a physician, the RLS WITH CHECK already refuses an unapproved save before the CHECK runs.
+- What could go wrong / weaknesses: there is no way yet to mark a flag as "resolved by a human"; the API trusts the verdict the client sends (it does not re-run the verifier).
+- What else could be done: store the verdict server-side from m4_verify output and add explicit flag-resolution records.
+- How to change this decision later: `save_record` in `app/main.py`; the CHECK in `sql/010_schema.sql`.
+- Status: done
+
+### D-39: Audit log: append-only, written through one SECURITY DEFINER function   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: The brief says "INSERT-only for the api", but pharmacists and researchers must have NO table grants.
+- Options we considered: 1. Grant INSERT on audit_log to every app role. Con: breaks "no table grants" for pharmacist/researcher; lets a role forge another user's row. 2. A minimal SECURITY DEFINER function `app.audit_write(action, table, row_id, outcome)` (pinned search_path) owned by `audit_writer`; user and role come from the request GUCs, not from arguments.
+- What we chose: Option 2, plus REVOKE UPDATE/DELETE/TRUNCATE from everyone including the owner, and triggers that raise on UPDATE/DELETE/TRUNCATE. Columns are enums/ids only (no free-text column exists).
+- Why: no role can write arbitrary audit rows, and nobody can change them.
+- What we actually did: `sql/040_audit.sql`. Tests in `tests/test_audit_log.py`: update/delete/truncate fail for all 5 app roles, the owner and even the superuser (trigger).
+- What could go wrong / weaknesses: a superuser can disable triggers; the owner can re-grant itself rights. Audit rows written inside a failed request are rolled back, so the API writes the "deny" row in a second transaction; if that also fails, the deny is not logged.
+- What else could be done: ship the log to append-only storage outside the database.
+- How to change this decision later: `sql/040_audit.sql`.
+- Status: done
+
+### D-40: Nobody gets DELETE; facilities, users and consents are closed to app roles (scope cut)   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: The brief lists no rights for deleting, for facilities/users, or for managing consent.
+- Options we considered: 1. Give nurses consent management. 2. Default deny (only the operator via `maint_role` changes consents).
+- What we chose: Option 2.
+- Why: "default deny, then explicit policies" means unlisted rights stay closed.
+- What we actually did: no grants/policies for those; all such matrix cells expect and get deny.
+- What could go wrong / weaknesses: a real clinic needs a consent workflow (open question).
+- What else could be done: a nurse/ASHA consent endpoint with its own audit action.
+- How to change this decision later: `sql/020_rls.sql` + expected table.
+- Status: done (scope cut)
+
+### D-41: Authentication: PyJWT mock issuer, HS256 pinned   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How users prove who they are in the sandbox.
+- Options we considered: 1. A real identity provider (cost/time). 2. A local mock issuer with strict verification.
+- What we chose: Option 2: HS256 only (alg pinned; `none`, HS512 and RS/HS confusion rejected), `exp`, `iat`, `iss`, `aud`, `sub`, `role`, `fid` required, no leeway, expiry 300 s (max 900), signing key >= 32 chars from `.env`, and the token's user/role/facility must match the synthetic directory. Role is taken ONLY from the verified token. Login is rate-limited (5 per minute per IP+user, 30 per IP).
+- Why: covers the classic JWT mistakes listed in the brief.
+- What we actually did: `app/auth.py`, `app/ratelimit.py`, `seed/synthetic_users.json`; `tests/test_auth_jwt.py` (24 cases) + 143 token-attack matrix cases.
+- What could go wrong / weaknesses: one shared mock password; in-memory rate limit (resets on restart, one process only); no token revocation.
+- What else could be done: asymmetric keys (RS256/EdDSA) from a real issuer; refresh tokens.
+- How to change this decision later: `app/auth.py`.
+- Status: done
+
+### D-42: API hygiene: forbid extra fields, generic errors, 404 for hidden rows, audio after authorisation   (Phase B / m5_backend / backend-security-engineer / 2026-11-09)
+- What we needed to decide: How the API avoids mass assignment, injection and information leaks.
+- Options we considered: (1) default FastAPI behaviour (detailed error bodies echoing input); (2) strict models and generic errors.
+- What we chose: (2). Every body model has `extra="forbid"`; server-owned fields (facility, author, approver, assigned ASHA, patient of an order) come from the token or the RLS-visible encounter. Only parameterised SQL (`psycopg`), identifiers via `psycopg.sql.Identifier` from fixed lists. Errors are `{"error": "<generic>"}`, no stack traces, no OpenAPI docs. Rows hidden by RLS return 404. Audio is served only after the encounter is visible to the caller; the file name is built from a parsed UUID.
+- Why: OWASP A01/A03/A04/A05.
+- What we actually did: `app/models.py`, `app/main.py`; tests `test_models_ratelimit.py`, `test_api.py`; matrix sqli (192), mass_assignment (20), idor_audio (26), id_guess (100) cases all pass.
+- What could go wrong / weaknesses: 403 (grant/WITH CHECK) vs 404 (hidden) can still reveal that a row exists when updating a visible row. No TLS (127.0.0.1 only).
+- What else could be done: map every 403 on a write to 404; add request size limits.
+- How to change this decision later: `app/main.py`.
+- Status: done
+
+### D-43: Access matrix E5: 1486 cases, 0 unauthorized successes   (Phase B / m5_backend / backend-security-engineer / 2026-11-10)
+- What we needed to decide: How to prove the rules hold without the test being circular.
+- Options we considered: 1. Generate the expected outcomes from the SQL (circular: rejected). 2. Write the expected table by hand from the brief, before writing any policy.
+- What we chose: Option 2. `tests/access_matrix_expected.yaml` was written by hand first. 960 base cases (5 roles x 12 resources x 4 actions x 4 ownerships) run at DB level through the same `request_tx` as the API, each rolled back; 526 attack cases run through the API (tampered/expired/alg-none/wrong-aud tokens, id guessing, SQLi in path ids, query params, login fields, enum/pattern fields and free-text JSON, mass assignment, audio IDOR incl. path traversal, GUC tampering via headers/params/body SQL and at DB level RESET ROLE / SET ROLE owner / SET SESSION AUTHORIZATION / garbage GUCs). Every case validates as access_case.v1.
+- Why: rule of three: 0 failures in N trials gives a 95% upper bound of about 3/N.
+- What we actually did: `matrix/generate.py`, `matrix/run.py`, `tests/test_access_matrix.py`. Result (2026-11-10, PostgreSQL 16.15 local): **unauthorized successes: 0 of 1385 deny-expected cases (1486 total); 95% upper bound 3/1385 = 0.0022.** Unexpected denials (availability bugs): 0 of 101 allow-expected. Integrity failures: 0 (SQLi text stored and read back byte-identical). Files: `results/m5_backend/access_matrix_results.jsonl`, `access_matrix_summary.json`.
+- What could go wrong / weaknesses: the cases are not independent trials (many share one policy), so 3/N is optimistic. The matrix tests the rules we wrote; both the table and the SQL were written by the same AI agent from the same brief, so a shared misreading of the brief would not be caught. **Residual limit: anyone holding raw DB credentials can set GUCs / SET ROLE; credentials must stay out of reach (constraint 3).** CI run: UNVERIFIED.
+- What else could be done: an independent human writes a second expected table; property-based fuzzing; run in CI on every push.
+- How to change this decision later: edit the YAML by hand; never generate it from SQL.
+- Status: done locally; CI pending
+
+### D-44: Problems hit while building m5_backend (and fixes)   (Phase B / m5_backend / backend-security-engineer / 2026-11-10)
+- What we needed to decide: How to handle five problems found during the build.
+- Options we considered: fix each at the root vs. work around it.
+- What we chose: fix at the root.
+- Why: each one could hide a real failure.
+- What we actually did:
+  1. `unzip 'pgsql/share/*'` skipped sub-folders, so initdb failed ("could not open directory .../share/timezonesets"); re-downloaded (same sha256) and extracted with `'pgsql/share/**'`.
+  2. The server inherited the shell's output pipe, so the setup command never returned and stopping it killed Postgres; `db_up.sh` now redirects pg_ctl's stdin/stdout/stderr.
+  3. Migration error "permission denied for function audit_write": EXECUTE was granted after ownership moved to `audit_writer`; the grant now comes first.
+  4. First matrix run reported 3 "unauthorized successes": a **test bug**: the physician "role escalation" probe changed the role claim to "physician", i.e. it sent a genuine token. The probe now really changes the claim and asserts it did. Re-run: 0.
+  5. After a lint refactor, FastAPI could not resolve a function-local `Annotated` dependency (with `from __future__ import annotations`) and returned 422 everywhere; the dependency is now module-level. The matrix caught this as unexpected denials.
+- What could go wrong / weaknesses: none known left from these; problem 4 shows the matrix itself can contain bugs, so a human should read `matrix/run.py`.
+- What else could be done: a self-test that every attack probe differs from its control request.
+- How to change this decision later: n/a.
+- Status: done
+
+### D-45: Fail-closed verifier with a rule registry   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How the safety checker should behave when something goes wrong inside it, and how to switch single checks off for the ablation experiment (E3).
+- Options we considered: (1) Catch errors and ignore them: simple, but a crash would silently let a bad record through (unsafe). (2) Stop the whole program on any error: safe but one bad record blocks a batch. (3) Turn any error inside a check into a "flag" for that check and keep going: safe and keeps working. For switching checks off: (a) edit code, (b) a list of checks in a config file.
+- What we chose: (3) plus (b). Every check is a plain function in `REGISTRY` (checks.py); the verifier calls it, and ANY exception becomes status "flag" with reason "check_error: ...". A record is "auto-acceptable" only if nothing flags AND at least one check actually passed.
+- Why: "Fail-closed" means: when unsure, ask a human. A checker that says "fine" after crashing is the worst outcome. A config list (`disabled: [C3]`) lets E3 remove one check at a time without touching code.
+- What we actually did: `m4_verify/verifier.py`, `m4_verify/checks.py`, `m4_verify/config/default.yaml`. Tests: `uv run pytest m4_verify/tests/test_checks.py -k "fail_closed or disable or garbage or malformed"` (forced exception in each of C1..C8 gives flag + check_error + auto_acceptable false).
+- What could go wrong / weaknesses: A check that returns "pass" by mistake (a logic bug, not an exception) is not caught by this mechanism; only tests can find that. If ALL checks are disabled the record is never auto-acceptable (by design).
+- What else could be done: Run two independent verifiers and require both to pass; property-based tests.
+- How to change this decision later: `m4_verify/verifier.py` (the try/except and the auto_acceptable rule).
+- Status: done
+
+### D-46: C1 span-exists   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How to prove that the quoted evidence really is in the transcript.
+- Options we considered: (1) Search the span anywhere in the transcript: tolerant, but a span could be "found" in the wrong turn (for example inside a question instead of the answer). (2) Compare the exact slice at the stated offsets after Unicode NFC: strict and simple.
+- What we chose: (2), plus a check that the record's `source_transcript_id` equals the transcript's `audio_id`, plus a contract validation of both inputs.
+- Why: Offsets decide WHICH clause (and so which negation) the span belongs to; a span at the wrong place could change the meaning.
+- What we actually did: `checks.py::c1_span_exists`; tests `test_c1_*`.
+- What could go wrong / weaknesses: An extractor that computes offsets on a different normalisation of the text (for example after removing ZWNJ) will be flagged everywhere; that is intended but costs review time.
+- What else could be done: Report the nearest matching position to help the reviewer.
+- How to change this decision later: `checks.py::c1_span_exists`.
+- Status: done
+
+### D-47: C2 span-supports-value, using the verifier's own parsers   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How to check that a value (drug, dose, symptom) really follows from the quoted words, without trusting the extractor.
+- Options we considered: (1) Re-use m3's parser: cheap, but the same bug would hide in both (not independent). (2) Write our own small normaliser, number parser and lexicon matcher: more work, independent. (3) Ask an LLM: not deterministic.
+- What we chose: (2): `textnorm.py` (NFC, BOM/zero-width removal, ZWJ/ZWNJ removed for comparison only, Kannada digits to ASCII, `regex` tokeniser), `numbers.py` (digits + Kannada number words), `lexicon.py` (drug variants as token sequences). Free-text advice/follow-up gets "n/a" (meaning cannot be re-derived by rules).
+- Why: Independence is the whole point of a safety check. Unknown drugs or symptoms FLAG instead of passing.
+- What we actually did: `checks.py::c2_span_supports_value`; tests in test_checks.py and test_text_numbers_lexicon.py.
+- What could go wrong / weaknesses: Kannada number words and symptom words were written by an AI agent (UNVERIFIED, not native-validated). Missing spoken variants cause false flags (safe direction, but review burden). Advice text is not checked for meaning.
+- What else could be done: Native-speaker review of the number/symptom lists; English-Kannada advice paraphrase checks.
+- How to change this decision later: `numbers.py`, `lexicon.py` (SYMPTOMS, UNIT_FORMS), `checks.py`.
+- Status: done (word lists UNVERIFIED)
+
+### D-48: C3 negation-consistency with independent, hand-coded rules   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How to decide whether the words around a span say "not", and compare that with the record's `negated` / `present` field.
+- Options we considered: (1) Read the shared table `.claude/skills/kannada-nlp/negation_table.yaml` (same as m3): a mistake in the table would then be invisible. (2) Hand-code our own rules from the brief and grammar knowledge: independent. (3) A statistical model: needs labelled Kannada data we do not have.
+- What we chose: (2). Whole-word cues (ಇಲ್ಲ, ಇಲ್ಲಾ, ಅಲ್ಲ, ಬೇಡ, ಬೇಡಿ, ಬಾರದು, ಕೂಡದು), token-final suffixes (-ಿಲ್ಲ, -ುದಿಲ್ಲ, consonant+ದಿದ್ದರೆ, fused -ಬಾರದು/-ಕೂಡದು/-ಬೇಡ(ಿ)), -ದೆ only on a verb-stem list, soft casual -ಲ್ಲ, ಯಾವುದೇ...ಇಲ್ಲ, English no/not/never. Scope = the clause (split at punctuation and ಆದರೆ/ಮತ್ತು/ಹಾಗೂ/ಆದ್ದರಿಂದ). Cross-turn: a turn whose FIRST clause is only ಇಲ್ಲ/ಇಲ್ಲಾ/ಹೌದು answers the previous turn's question clause(s). Soft cues count as negation (conservative) and also raise C8.
+- Why: Matching on whole tokens (never substrings) avoids the classic trap ಇಲ್ಲಿ (here) containing ಇಲ್ಲ. "First clause" (not "whole turn") was chosen because answers like "ಇಲ್ಲ, ಅವನು ಮಲಗಿದ್ದ." are common; this is a documented extension of the brief.
+- What we actually did: `negation.py`; 125+ tests in `tests/test_negation.py` (every cue: positive, minimal-pair twin, trap; clause scope; cross-turn); audit in `negation_audit.md`.
+- What could go wrong / weaknesses: Not native-validated. Coordination ("A ಮತ್ತು B ಬೇಡ") is handled by a heuristic (bare item inherits the negation and C8 flags it). Questions without "?" (ASR text often has no punctuation) are not recognised as questions. Double negation fused with quotatives is missed (audit line 40).
+- What else could be done: Native-speaker review of every rule; a held-out real-text audit; real spoken transcripts.
+- How to change this decision later: `negation.py` (rule tables at the top) and its tests.
+- Status: partly done (rules are hypotheses; needs human)
+
+### D-49: Negation rules changed after the real-text audit   (Phase B / m4_verify / safety-engineer / 2026-11-10)
+- What we needed to decide: What to do with the errors found when running the rules on a real Kannada Wikipedia article and a news article.
+- Options we considered: (1) Keep the brief's starting rules unchanged and only report errors. (2) Fix clear, narrow errors with tests, and report the rest honestly.
+- What we chose: (2). Changes: ಇಲ್ಲವೇ/ಇಲ್ಲವೆ now mean "or" (clause split) unless "?" follows (was a frequent false positive); new strong rules S-VALLA (ರೋಗವಲ್ಲ, trap ಮಾತ್ರವಲ್ಲ), S-DIRU (ಬಾರದಿರುವುದು), S-ILLA-FUSED (ಮಾರ್ಗವಿಲ್ಲದೆ), S-DANTE (ಬರದಂತೆ), V-AAGADE (ಸಾಧ್ಯವಾಗದೆ), V-ISADE (ಗಣಿಸದೆ); ಇಲ್ಲದ/ಇಲ್ಲದೆ became SOFT cues.
+- Why: The "or" reading of ಇಲ್ಲವೇ would have marked many harmless sentences as negated; the missed fused forms are real negations.
+- What we actually did: `negation.py`, new test rows in `tests/test_negation.py`, `negation_audit.md`, `m4_verify/audit/`.
+- What could go wrong / weaknesses: The fixes were designed on the same 52 sentences they were measured on, so the after-fix numbers are optimistic. Formal written Kannada differs from spoken Kannada.
+- What else could be done: Audit a second, unseen article and real conversational transcripts.
+- How to change this decision later: `negation.py`; re-run `mingw32-make m4-audit`.
+- Status: done (needs human re-check)
+
+### D-50: C4 dose-range: blank lexicon range is a flag (fail-closed)   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: What to do when the lexicon has no verified dose range, when the unit is not in milligrams, and what counts as "unusual".
+- Options we considered: (1) Blank range -> "n/a" (no review cost, but an unchecked dose can be auto-accepted). (2) Blank range -> "flag: no verified range" (safe, but every such medication needs a human). (3) Invent ranges: not allowed (no source).
+- What we chose: (2), also for non-mass units (tablet, ml, sachet...), because lexicon ranges are in mg. Also: dose and unit must match the span; unit must be in the allowed set; dose x frequency must not exceed max daily; a dose inside the range but above the listed strengths passes with an "unusual" note (soft).
+- Why: A wrong dose is a CRITICAL error. Cost we accept: with `data/lexicon/drugs.csv`, 12 of 34 rows have a blank range, so every dosed record for those drugs goes to a human (review burden).
+- What we actually did: `checks.py::c4_dose_range`; config `blank_range_fails_closed: true`; tests `test_c4_*`.
+- What could go wrong / weaknesses: The lexicon has no "allowed units" column, so the allowed-unit list is a config default (contract gap, open_questions). The m1 lexicon gives paracetamol `1000-1000` mg, which flags a normal 500 mg tablet (lexicon question for m1/human).
+- What else could be done: Add per-drug unit and per-dose-form columns to the lexicon; separate paediatric ranges.
+- How to change this decision later: `config/default.yaml` (`blank_range_fails_closed`, `allowed_units`, `allowed_units_by_drug`), `checks.py`.
+- Status: done
+
+### D-51: C5 frequency and duration parse   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How to check "times per day" and "number of days" against the span.
+- Options we considered: (1) Any number in the span counts. (2) Parse phrases: number + ಬಾರಿ/ಸಲ with a per-day word (ದಿನಕ್ಕೆ), ಒಮ್ಮೆ, OD/BD/TDS; number + ದಿನ / ವಾರ (x7).
+- What we chose: (2). Times-of-day words (ಬೆಳಿಗ್ಗೆ/ರಾತ್ರಿ) are NOT turned into a frequency: a record frequency based on them flags.
+- Why: "ಮೂರು ದಿನದಿಂದ" (since three days) or "ದಿನಕ್ಕೆ" (per day) must not be read as a 3-day course.
+- What we actually did: `lexicon.py::parse_frequencies/parse_durations`, `checks.py::c5_freq_duration`; tests.
+- What could go wrong / weaknesses: Phrase list is AI-written, UNVERIFIED; "ವಾರಕ್ಕೆ ಎರಡು ಬಾರಿ" (twice a week) flags as "not per day".
+- What else could be done: A native-reviewed phrase table from real prescriptions.
+- How to change this decision later: `lexicon.py` (FREQ_MARK, PER_DAY, DAY_WORDS...).
+- Status: done (phrases UNVERIFIED)
+
+### D-52: C6 unsupported additions, omissions and the patient-link blind spot   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How to catch values nobody said, drugs that were said but left out, and a record attached to the wrong patient.
+- Options we considered: For patient links: (1) ignore; (2) check against an "encounter index" (which audio belongs to which patient) when one is given; (3) change the transcript contract to carry patient_ref (contract change, not ours to make).
+- What we chose: Every drug, number and symptom in a value must occur in its span; English numbers/drugs in advice text must occur in the span; a lexicon drug said in the transcript but missing from the record is a "possible omission" (MAJOR) unless it sits inside an advice/follow-up span; patient link: option (2), and "n/a: blind spot" without an index.
+- Why: transcript.v1 has no patient field, so text alone cannot detect a wrong patient. E4 shows it: 0/200 wrong-patient injections caught without the index, 200/200 with it.
+- What we actually did: `checks.py::c6_unsupported`; CLI `--encounter-index`; tests `test_c6_*`; contract request in open_questions.md.
+- What could go wrong / weaknesses: Symptom omissions are not checked (questions mention symptoms that are not findings). The index must come from a trusted source (m5 encounter table).
+- What else could be done: m5 passes the encounter index automatically.
+- How to change this decision later: `checks.py::c6_unsupported`.
+- Status: done (patient link needs integration)
+
+### D-53: C7 ASR risk: threshold from DEV only, n/a when no confidences   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How to warn about words the speech recogniser was unsure of, and what to do when it gives no confidence.
+- Options we considered: (1) Flag every record with no confidence (huge review burden, no information). (2) Mark "n/a" and record it as a limitation. For the cutoff: (a) pick a number by hand; (b) tune it on DEV ASR output only.
+- What we chose: (2) and (b). Critical words = drug, number, unit, negation cue. A second transcript (another ASR model or run), when given, is compared on drugs, doses, numbers, negation cues and bare answers. The cutoff 0.6 in `config/default.yaml` is an UNTUNED PLACEHOLDER until m2 produces DEV output; `python -m m4_verify tune-c7` does the tuning and refuses test paths.
+- Why: Tuning on test data would leak (PROJECT_BRIEF 6.5).
+- What we actually did: `checks.py::c7_asr_risk`, `tune_c7.py`, tests `test_c7_*`, `test_tune_c7.py`.
+- What could go wrong / weaknesses: Word confidences from Whisper-style models are often badly calibrated. C7 is the only check that can see an ASR-dropped negation, and only partly.
+- What else could be done: Align the two transcripts word by word instead of comparing counts.
+- How to change this decision later: `config/default.yaml` (`c7_conf_threshold`, `c7_threshold_status`), `checks.py`.
+- Status: partly done (threshold UNTUNED)
+
+### D-54: C8 ambiguity always flags   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: Which unclear situations should go to a human even when C3 agrees.
+- Options we considered: (1) Let C3 decide everything. (2) A separate check that always flags known ambiguous patterns.
+- What we chose: (2): soft cue; two cues in one clause; bare ಇಲ್ಲ with no resolvable question; bare answer after several questions or after a negative question; span inside a question nobody answered with yes/no; negation possibly shared across "A ಮತ್ತು B ಬೇಡ"; conflicting dose/frequency/duration values in one clause.
+- Why: In these cases even a careful rule can be wrong; asking a human is cheaper than a negation flip.
+- What we actually did: `checks.py::c8_ambiguity`, ambiguity notes from `negation.py`; tests `test_c8_*`.
+- What could go wrong / weaknesses: Adds review burden on real conversations (0/18 fixture fields flagged, but fixtures are few and clean).
+- What else could be done: Measure C8's burden on m1 DEV data and narrow the rules that fire most.
+- How to change this decision later: `checks.py::c8_ambiguity`, `negation.py`.
+- Status: done
+
+### D-55: Turn structure comes from newlines in the transcript text   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: Cross-turn negation needs to know where turns start, but transcript.v1 has no turn list.
+- Options we considered: (1) Ask for a contract change (turn list in transcript.v1). (2) Use the existing convention: conversation text = turns joined by "\n" (gold.v1, fixtures/build_fixtures.py, contracts/validate.py::conversation_text).
+- What we chose: (2), and logged (1) as an open question.
+- Why: No contract change is needed now; gold and gold-style transcripts already follow it.
+- What we actually did: `negation.py::_split_clauses` splits turns on "\n".
+- What could go wrong / weaknesses: Real ASR output on one audio file has no newlines: then the whole conversation is one turn and cross-turn answers are not resolved (a bare ಇಲ್ಲ inside one long line is simply a negation cue in its clause).
+- What else could be done: Speaker diarisation in m2, or turn timestamps in transcript.v2.
+- How to change this decision later: `negation.py` and a contract bump by the architect.
+- Status: done (contract gap open)
+
+### D-56: E4 planted-mistake generator design   (Phase B / m4_verify / safety-engineer / 2026-11-09)
+- What we needed to decide: How to create >= 200 planted mistakes per type, honestly, when only 6 fixture conversations exist.
+- Options we considered: (1) Only unique mutations (few per type). (2) 200 per type with repeats, reported with the number of UNIQUE mutations next to it. (3) Wait for m1 DEV gold.
+- What we chose: (2) now, with a configurable gold source so it re-runs on m1 DEV gold (DEV only; any path with "test" is refused). Seed 20261109. Every injection is logged (id, type, field_path, before, after, note, unique_key). Record level tests the verifier; transcript level edits the transcript and rebuilds the record as a faithful extractor would, then is scored text-only and with a second (clean) transcript.
+- Why: Repeating a mutation 50 times is not 50 independent trials; Wilson CIs are therefore also reported on unique mutations.
+- What we actually did: `planted.py`, `evaluate.py`, `results/m4_verify/e4/`.
+- What could go wrong / weaknesses: Transcript-level edits use the verifier's own cue finder to locate what to delete (some circularity in where errors are planted). Word confidences were not simulated (inventing them would be circular), so C7's confidence path is not evaluated by E4.
+- What else could be done: Re-run on m1 DEV gold (`mingw32-make m4-e4-data` after DEV gold exists, with `--gold-dir`); add natural ASR errors from m2.
+- How to change this decision later: `planted.py` (TYPES, value lists), `evaluate.py`.
+- Status: done on fixtures; DEV re-run pending
 
 <!-- ENTRIES-END -->
 

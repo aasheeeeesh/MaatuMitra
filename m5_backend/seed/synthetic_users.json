@@ -1,0 +1,103 @@
+{
+  "_note": "SYNTHETIC user directory for the sandbox mock issuer. Not real people. UUIDs made with uuid.uuid4() on 2026-11-09.",
+  "facilities": {
+    "F1": {
+      "id": "f90e1671-b816-4f71-a288-a6f8e0c07a08",
+      "name": "SYNTHETIC-PHC-F1"
+    },
+    "F2": {
+      "id": "5a8ce9fb-6fba-482a-a497-1b43d5ab65d5",
+      "name": "SYNTHETIC-PHC-F2"
+    },
+    "F3": {
+      "id": "aeb9807c-6282-490d-9070-c2b7437c0900",
+      "name": "SYNTHETIC-PHC-F3"
+    }
+  },
+  "users": [
+    {
+      "key": "A1",
+      "id": "c27dfe07-c8ae-413d-81ef-b2d37aaa678f",
+      "role": "asha",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-ASHA-A1"
+    },
+    {
+      "key": "A2",
+      "id": "d6b7c596-3cea-41be-b9b3-7ca700b47e82",
+      "role": "asha",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-ASHA-A2"
+    },
+    {
+      "key": "A3",
+      "id": "471e1e4d-6afc-4e2e-8c8c-0781b03d25d9",
+      "role": "asha",
+      "facility": "F2",
+      "display_name": "SYNTHETIC-ASHA-A3"
+    },
+    {
+      "key": "N1",
+      "id": "af2298b8-fc81-4903-87cd-c67a55ed712a",
+      "role": "nurse",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-NURSE-N1"
+    },
+    {
+      "key": "N2",
+      "id": "2586e09a-926d-4a29-b4db-61936f9313c0",
+      "role": "nurse",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-NURSE-N2"
+    },
+    {
+      "key": "N3",
+      "id": "ca78d4ac-677a-434a-bce3-8923b8402574",
+      "role": "nurse",
+      "facility": "F2",
+      "display_name": "SYNTHETIC-NURSE-N3"
+    },
+    {
+      "key": "P1",
+      "id": "24526572-1f43-4da7-afb0-b34f7a44cd40",
+      "role": "physician",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-PHYSICIAN-P1"
+    },
+    {
+      "key": "P2",
+      "id": "83dee4a3-5a05-4efe-b2f8-1fcf1014e8dd",
+      "role": "physician",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-PHYSICIAN-P2"
+    },
+    {
+      "key": "P3",
+      "id": "eecea8ba-74c3-4532-9dac-b7206480b4e7",
+      "role": "physician",
+      "facility": "F2",
+      "display_name": "SYNTHETIC-PHYSICIAN-P3"
+    },
+    {
+      "key": "Ph1",
+      "id": "50133f2f-5cd3-4b74-a047-30d99aff7614",
+      "role": "pharmacist",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-PHARMACIST-Ph1"
+    },
+    {
+      "key": "Ph2",
+      "id": "9ef41005-4532-4e24-86ae-15160e7fd6d8",
+      "role": "pharmacist",
+      "facility": "F2",
+      "display_name": "SYNTHETIC-PHARMACIST-Ph2"
+    },
+    {
+      "key": "R1",
+      "id": "17ec0a48-5a45-4971-a739-660662d06674",
+      "role": "researcher",
+      "facility": "F1",
+      "display_name": "SYNTHETIC-RESEARCHER-R1"
+    }
+  ]
+}

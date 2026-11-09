@@ -1,0 +1,20 @@
+# m4_verify default configuration. Copy and edit for experiments (E3 ablation: set `disabled`).
+#
+# lexicon_path: empty = data/lexicon/drugs.csv if it exists, else fixtures/lexicon/drugs_fixture.csv
+#               (MODE=mock always uses the fixture lexicon).
+lexicon_path: ""
+
+# Checks to switch off (E3 ablation), e.g. [C3]. A disabled check reports n/a "disabled by config".
+disabled: []
+
+# C7 ASR-confidence cutoff for critical tokens (drug, number, unit, negation cue).
+# MUST be tuned on DEV only (uv run python -m m4_verify tune-c7 ...). 0.6 is a PLACEHOLDER.
+c7_conf_threshold: 0.6
+c7_threshold_status: "UNTUNED placeholder (no DEV ASR run yet)"
+
+# The lexicon CSV has no allowed-unit column (contract gap). Default allowed dose units:
+allowed_units: [mg, g, mcg, ml, tablet, capsule, sachet, teaspoon]
+allowed_units_by_drug: {}
+
+# A medication whose lexicon dose range is blank is FLAGGED "no verified range" (fail-closed).
+blank_range_fails_closed: true

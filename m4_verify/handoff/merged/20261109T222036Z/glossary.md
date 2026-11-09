@@ -1,0 +1,15 @@
+- **Fail-closed**: when a safety check is unsure or crashes, it says "needs a human" (flag) instead of "fine".
+- **Verdict**: the verifier's output for one record: a list of checks with pass / flag / n/a and a reason.
+- **auto_acceptable**: true only when no check flags and at least one check passed; otherwise a human must review.
+- **Rule registry**: a table that maps each check id (C1..C8) to its function, so one check can be switched off by config.
+- **Ablation**: switching off one part of a system to measure how much that part contributes (experiment E3).
+- **Clause**: a piece of a sentence with its own verb or meaning; here it is cut at punctuation and at words like ಆದರೆ (but) and ಮತ್ತು (and).
+- **Negation cue**: a word or word ending that means "not", for example ಇಲ್ಲ or the ending -ಿಲ್ಲ.
+- **Minimal-pair twin**: the same sentence with only the negation removed or changed, used to test that a rule fires for the right reason.
+- **Trap token**: a word that looks like a negation but is not one, for example ಇಲ್ಲಿ (here) or ಮಾತ್ರೆ (tablet).
+- **Soft cue**: a word that may be a negation but is uncertain (for example casual -ಲ್ಲ on an unknown verb); it is counted as negation and also flagged for review.
+- **Cross-turn negation**: a "no" in one speaker turn (a bare ಇಲ್ಲ) that answers a question asked in the previous turn.
+- **Encounter index**: a list saying which audio/transcript belongs to which patient; needed to check the patient link.
+- **Planted mistake**: an error we insert on purpose to see whether the verifier catches it (experiment E4).
+- **Unique mutation**: one distinct planted change; repeating the same change many times does not add independent evidence.
+- **Review burden**: the share of error-free fields that the verifier still flags, i.e. extra work for the human reviewer.

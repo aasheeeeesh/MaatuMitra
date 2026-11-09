@@ -1,0 +1,20 @@
+- **RLS (row-level security)**: a PostgreSQL feature where the database itself decides, row by row, which rows a role may see or change, using rules called policies.
+- **FORCE ROW LEVEL SECURITY**: makes RLS apply even to the table's owner (without it, owners skip the rules).
+- **Policy**: one RLS rule, e.g. "a nurse may SELECT patients whose facility is her facility".
+- **GUC (Grand Unified Configuration setting)**: a named setting inside a PostgreSQL session, like `app.user_id`; our policies read them to know who is asking.
+- **SET LOCAL**: changes a setting or role only until the end of the current transaction, so it cannot leak to the next request on the same connection.
+- **Connection pool**: a set of open database connections reused by many requests.
+- **NOINHERIT**: a role option meaning "do not automatically get the rights of roles you are a member of"; you must switch with SET ROLE.
+- **BYPASSRLS / superuser**: role powers that ignore RLS completely; none of our request roles have them.
+- **security_barrier view**: a view PostgreSQL treats as a security boundary, so tricky user functions cannot peek at rows the view filters out.
+- **SECURITY DEFINER function**: a function that runs with its owner's rights instead of the caller's; used here only for writing audit rows.
+- **Append-only**: data can be added but never changed or deleted.
+- **HMAC-SHA256**: a keyed hash: the same input and key always give the same output, but without the key you cannot compute or reverse it.
+- **Pseudonym**: a stand-in identifier (here a truncated HMAC of the patient id) that lets researchers link a patient's rows without knowing who it is.
+- **JWT (JSON Web Token)**: a signed text token that says who the user is and which role they have.
+- **alg none attack**: sending a JWT that claims "no signature needed"; a correct server must refuse it.
+- **Mass assignment**: a client sneaking extra fields (like `role`) into a request body hoping the server saves them.
+- **IDOR (insecure direct object reference)**: getting someone else's data by changing an id in the URL.
+- **SQL injection (SQLi)**: smuggling SQL commands inside text input; prevented by parameterised queries.
+- **Rule of three**: if 0 failures happen in N independent trials, the 95% upper bound on the failure rate is about 3/N.
+- **Access matrix (E5)**: the automated table of roles x resources x actions x ownership (+ attacks) with the expected allow/deny for each.

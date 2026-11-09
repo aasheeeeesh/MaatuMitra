@@ -1,0 +1,28 @@
+{
+  "n_cases": 1486,
+  "n_expected_deny": 1385,
+  "n_expected_allow": 101,
+  "unauthorized_successes": 0,
+  "unexpected_denials": 0,
+  "integrity_failures": 0,
+  "passes": 1486,
+  "patients_rows_after_run": 8,
+  "by_attack": {
+    "None": 960,
+    "tampered_jwt": 66,
+    "expired_jwt": 22,
+    "alg_none": 33,
+    "wrong_aud": 22,
+    "id_guess": 100,
+    "sqli": 192,
+    "mass_assignment": 20,
+    "idor_audio": 26,
+    "guc_tamper": 45
+  },
+  "by_layer": {
+    "db": 905,
+    "api": 581
+  },
+  "runtime_s": 8.5,
+  "line": "unauthorized successes: 0 of 1385 deny-expected cases (1486 cases total); 95% upper bound (rule of three) 3/1385 = 0.0022"
+}

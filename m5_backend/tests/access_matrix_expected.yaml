@@ -1,0 +1,88 @@
+# E5 access matrix: EXPECTED outcomes, written BY HAND from PROJECT_BRIEF.md AGENT 6
+# (role rules), on 2026-11-09, BEFORE any policy SQL existed.
+#
+# Rules for this file:
+#  - It is NEVER generated from the SQL policies, and the SQL is never generated from it.
+#    Otherwise the test would be circular (it would check the policies against themselves).
+#  - Format: role -> resource -> action -> list of ownerships that are ALLOWED.
+#    Any (role, resource, action, ownership) not listed is DENY (default deny).
+#  - Ownership meaning (the actor is always a user of facility F1):
+#      own                 the row belongs to the actor's own scope:
+#                          ASHA = a household assigned to her and everything reachable from it;
+#                          nurse/physician = the patient/encounter/record/order chain they authored;
+#                          pharmacist = a ready_to_dispense order of HER active patient;
+#                          researcher = an exported row of a consenting patient.
+#      same_facility_other a row in F1 that belongs to a colleague (other ASHA's household,
+#                          other nurse's encounter, an order for a patient who is NOT active).
+#      other_facility      a row in facility F2.
+#      none                a row in F1 linked to nobody (unassigned household chain);
+#                          pharmacist: an order of her active patient that is NOT ready_to_dispense;
+#                          researcher: a patient WITHOUT research consent.
+#  - Actions: select / insert / update / delete. Nobody may delete anything.
+#  - Resources follow access_case.v1. "audio" = GET /encounters/{id}/audio (select only).
+
+version: 1
+written_by: backend-security-engineer (AI agent), by hand from the brief, 2026-11-09
+default: deny
+
+roles:
+  asha:
+    # "select/insert only on households where assigned_asha_id = her id, and on
+    #  patients/encounters/records reachable through those households"
+    households:        {select: [own], insert: [own]}
+    patients:          {select: [own], insert: [own]}
+    encounters:        {select: [own], insert: [own]}
+    records:           {select: [own], insert: [own]}
+    audio:             {select: [own]}          # audio follows encounter visibility
+    # facilities, users, medication_orders, consents, audit_log, research_export,
+    # pharmacist_orders_v: nothing listed -> deny everything
+
+  nurse:
+    # "select/insert/update on patients, encounters, draft records in her facility;
+    #  read-only on medication_orders"
+    patients:          {select: [own, same_facility_other, none], insert: [own, same_facility_other, none], update: [own, same_facility_other, none]}
+    encounters:        {select: [own, same_facility_other, none], insert: [own, same_facility_other, none], update: [own, same_facility_other, none]}
+    records:           {select: [own, same_facility_other, none], insert: [own, same_facility_other, none], update: [own, same_facility_other, none]}
+    medication_orders: {select: [own, same_facility_other, none]}
+    audio:             {select: [own, same_facility_other, none]}
+    # households: not in the nurse's rights -> deny
+
+  physician:
+    # "nurse rights plus insert/update medication_orders and approve records, in her facility"
+    patients:          {select: [own, same_facility_other, none], insert: [own, same_facility_other, none], update: [own, same_facility_other, none]}
+    encounters:        {select: [own, same_facility_other, none], insert: [own, same_facility_other, none], update: [own, same_facility_other, none]}
+    records:           {select: [own, same_facility_other, none], insert: [own, same_facility_other, none], update: [own, same_facility_other, none]}
+    medication_orders: {select: [own, same_facility_other, none], insert: [own, same_facility_other, none], update: [own, same_facility_other, none]}
+    audio:             {select: [own, same_facility_other, none]}
+
+  pharmacist:
+    # "NO direct table grants. SELECT only on view pharmacist_orders_v ... facility matches,
+    #  status = 'ready_to_dispense', AND patient_id = app.active_patient_id"
+    pharmacist_orders_v: {select: [own]}
+
+  researcher:
+    # "NO grants on base tables. SELECT only on schema research ... only patients with
+    #  consents.research_ok = true". The research schema is not facility-scoped.
+    research_export:   {select: [own, same_facility_other, other_facility]}
+
+# Attack expectations (also by hand). Every authentication / GUC attack expects deny
+# (contracts/validate.py enforces this for tampered_jwt, expired_jwt, alg_none, wrong_aud,
+# guc_tamper).
+attacks:
+  id_guess: deny            # random / sequential-looking ids never reveal or change a row
+  tampered_jwt: deny        # payload or signature changed -> 401
+  expired_jwt: deny         # exp in the past -> 401
+  alg_none: deny            # unsigned token -> 401
+  wrong_aud: deny           # token for another audience -> 401
+  mass_assignment: deny     # body carries role / assigned_asha_id / approved_by / facility_id / author_id -> 422
+  idor_audio: deny          # audio of an encounter the caller cannot see -> 404
+  guc_tamper: deny          # header/param/body tries SET app.user_id, RESET ROLE, SET ROLE -> no effect
+  sqli:
+    id_param: deny          # an SQLi string where a UUID is expected (path) -> 422, nothing runs
+    query_param: deny       # an SQLi string in a query-string filter (?household_id=) -> 422
+    constrained_field: deny # SQLi in an enum/pattern body field (encounter_type, drug,
+                            # name_synthetic, age_band) -> 422, nothing stored
+    login_field: deny       # SQLi in the login form never authenticates
+    text_field: base        # SQLi in a free-text JSON field is stored literally; outcome = the
+                            # base rule for (role, resource, action, ownership) above, and the
+                            # stored text must read back byte-identical (no injection)

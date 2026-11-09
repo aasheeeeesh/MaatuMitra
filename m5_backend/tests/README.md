@@ -1,1 +1,1 @@
-Tests for m5_backend. Run alone: `uv run pytest m5_backend/tests`.
+Tests for m5_backend. No DB: `MODE=mock mingw32-make m5-mock`. With DB (`bash m5_backend/scripts/db_up.sh`): `uv run pytest m5_backend/tests` (DB tests skip with a message when Postgres is unreachable).

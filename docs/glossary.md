@@ -40,4 +40,36 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **WER (word error rate)**: like CER but counted in whole words.
 - **Wilson interval**: a good way to compute a confidence interval for a proportion (k successes out of n), even when k is 0 or n is small.
 - **ruff**: a fast tool that checks Python code style and common bugs, and formats code.
+- **FORCE ROW LEVEL SECURITY**: makes RLS apply even to the table's owner (without it, owners skip the rules).
+- **Policy**: one RLS rule, e.g. "a nurse may SELECT patients whose facility is her facility".
+- **GUC (Grand Unified Configuration setting)**: a named setting inside a PostgreSQL session, like `app.user_id`; our policies read them to know who is asking.
+- **SET LOCAL**: changes a setting or role only until the end of the current transaction, so it cannot leak to the next request on the same connection.
+- **Connection pool**: a set of open database connections reused by many requests.
+- **NOINHERIT**: a role option meaning "do not automatically get the rights of roles you are a member of"; you must switch with SET ROLE.
+- **BYPASSRLS / superuser**: role powers that ignore RLS completely; none of our request roles have them.
+- **security_barrier view**: a view PostgreSQL treats as a security boundary, so tricky user functions cannot peek at rows the view filters out.
+- **SECURITY DEFINER function**: a function that runs with its owner's rights instead of the caller's; used here only for writing audit rows.
+- **Append-only**: data can be added but never changed or deleted.
+- **HMAC-SHA256**: a keyed hash: the same input and key always give the same output, but without the key you cannot compute or reverse it.
+- **Pseudonym**: a stand-in identifier (here a truncated HMAC of the patient id) that lets researchers link a patient's rows without knowing who it is.
+- **JWT (JSON Web Token)**: a signed text token that says who the user is and which role they have.
+- **alg none attack**: sending a JWT that claims "no signature needed"; a correct server must refuse it.
+- **Mass assignment**: a client sneaking extra fields (like `role`) into a request body hoping the server saves them.
+- **IDOR (insecure direct object reference)**: getting someone else's data by changing an id in the URL.
+- **SQL injection (SQLi)**: smuggling SQL commands inside text input; prevented by parameterised queries.
+- **Access matrix (E5)**: the automated table of roles x resources x actions x ownership (+ attacks) with the expected allow/deny for each.
+- **Verdict**: the verifier's output for one record: a list of checks with pass / flag / n/a and a reason.
+- **auto_acceptable**: true only when no check flags and at least one check passed; otherwise a human must review.
+- **Rule registry**: a table that maps each check id (C1..C8) to its function, so one check can be switched off by config.
+- **Ablation**: switching off one part of a system to measure how much that part contributes (experiment E3).
+- **Clause**: a piece of a sentence with its own verb or meaning; here it is cut at punctuation and at words like ಆದರೆ (but) and ಮತ್ತು (and).
+- **Negation cue**: a word or word ending that means "not", for example ಇಲ್ಲ or the ending -ಿಲ್ಲ.
+- **Minimal-pair twin**: the same sentence with only the negation removed or changed, used to test that a rule fires for the right reason.
+- **Trap token**: a word that looks like a negation but is not one, for example ಇಲ್ಲಿ (here) or ಮಾತ್ರೆ (tablet).
+- **Soft cue**: a word that may be a negation but is uncertain (for example casual -ಲ್ಲ on an unknown verb); it is counted as negation and also flagged for review.
+- **Cross-turn negation**: a "no" in one speaker turn (a bare ಇಲ್ಲ) that answers a question asked in the previous turn.
+- **Encounter index**: a list saying which audio/transcript belongs to which patient; needed to check the patient link.
+- **Planted mistake**: an error we insert on purpose to see whether the verifier catches it (experiment E4).
+- **Unique mutation**: one distinct planted change; repeating the same change many times does not add independent evidence.
+- **Review burden**: the share of error-free fields that the verifier still flags, i.e. extra work for the human reviewer.
 <!-- GLOSSARY-END -->
