@@ -18,7 +18,7 @@ Status values: todo / in-progress / done / blocked.
 | B1r | B | m1 reviews + fixes + gate | in-progress (clinical + integrity running) | 2026-11-10 | |
 | B4 | B | m4_verify build + reviews + gate | in-progress (built c6fdf72; reviews running) | 2026-11-10 | c6fdf72 |
 | B2 | B | m2_asr build + reviews + gate | todo | | |
-| B3 | B | m3_extract build + reviews + gate | in-progress (built; reviews pending: clinical, integrity) | 2026-11-10 | PENDING |
+| B3 | B | m3_extract build + reviews + gate | in-progress (built; reviews pending: clinical, integrity) | 2026-11-10 | ce46096 |
 | B5 | B | m5_backend build + reviews + gate | in-progress (built c6fdf72; security audit running) | 2026-11-10 | c6fdf72 |
 | B6 | B | m6_ui build + reviews + gate | in-progress (built; reviews pending: kannada, security) | 2026-11-10 | 67b2234 |
 | B7 | B | m7_eval build + reviews + gate | todo | | |
