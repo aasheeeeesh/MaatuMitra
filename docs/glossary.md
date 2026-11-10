@@ -111,4 +111,12 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Ollama digest**: the sha256 fingerprint of a model file in Ollama; it pins the exact model version.
 - **Errors per 1,000 fields**: number of wrong fields divided by number of fields checked, times 1,000.
 - **MA-WORDING-UNJUDGED**: our code for advice or follow-up text that differs from the gold English gloss; a computer cannot judge "same meaning", so it is counted as MAJOR (severity rule 5).
+- **Verdict (stored)**: the verifier's result for one record, saved by the server in the `verdicts` table so a client cannot supply its own.
+- **Resolution**: a physician's answer to one flag when saving: "confirmed" (looked, it is correct) or "edited" (fixed the field and re-verified).
+- **Record hash**: a fingerprint of a record's content computed by the database; a verdict is only valid for the exact content it was computed for.
+- **Stale verdict**: a verdict whose record was changed afterwards, so it no longer describes the saved content.
+- **DISCARD ALL**: a PostgreSQL command that forgets everything session-level (role, settings, temp objects, prepared statements); the pool runs it on every returned connection.
+- **Small-cell suppression (k-anonymity)**: dropping groups with fewer than k people from a dataset so no one stands out; here k = 5.
+- **Pseudonym map**: a private table linking a patient id to the research pseudonym, used only to delete research rows when consent is withdrawn.
+- **Trigger**: a database rule that runs automatically when rows change; ours block unapproved saves, protect append-only tables and remove research rows on consent withdrawal.
 <!-- GLOSSARY-END -->

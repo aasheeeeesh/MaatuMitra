@@ -4,7 +4,12 @@
 - dates coarsened to month ("YYYY-MM"); no names, no ids, no free text (advice, follow-up and
   evidence spans are dropped); structured strings must be in a closed allowlist (fail closed)
 - only patients with consents.research_ok = true AT EXPORT TIME; every export is a full
-  refresh, so a withdrawn consent disappears at the next export.
+  refresh. A consent withdrawal ALSO deletes that patient's rows at once (DB trigger, F4; it uses
+  research.pseudonym_map, which only the export job and the trigger can read).
+- small-cell suppression (F3): a cell = (age_band, sex, month, encounter_type). Cells with fewer
+  than K_MIN (5) distinct patients are DROPPED (not generalised). This is a basic safeguard, not
+  proof of anonymity: symptoms/medications are not part of the cell, and the pseudonym links one
+  patient's visits.
 
 Run: uv run python -m m5_backend.app.export   (uses owner_role credentials -> SET LOCAL ROLE maint_role)
 """
@@ -23,6 +28,7 @@ from typing import Any
 from .config import REPO_ROOT, Settings
 
 PSEUDONYM_HEX = 20
+K_MIN = 5
 SYMPTOM_VOCAB = frozenset(
     {
         "fever", "cough", "cold", "headache", "vomiting", "nausea", "diarrhoea", "diarrhea",
@@ -68,6 +74,17 @@ def hmac_key_bytes(settings: Settings) -> bytes:
 
 def month_of(ts: datetime) -> str:
     return f"{ts.year:04d}-{ts.month:02d}"
+
+
+def suppress_small_cells(rows: list[tuple], k_min: int = K_MIN) -> list[tuple]:
+    """Keep only rows whose cell (age_band, sex, month, encounter_type) has >= k_min DISTINCT
+    patients. Row layout = EXPORT_SELECT: (patient_id, age_band, sex, type, created_at, json, status)."""
+    if k_min < 1:
+        raise ValueError("k_min must be >= 1")
+    members: dict[tuple, set] = {}
+    for pid, band, sex, etype, created, _j, _s in rows:
+        members.setdefault((band, sex, month_of(created), etype), set()).add(pid)
+    return [r for r in rows if len(members[(r[1], r[2], month_of(r[4]), r[3])]) >= k_min]
 
 
 def _num(v: Any) -> float | int | None:
@@ -122,7 +139,7 @@ VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
 
-def run_export(settings: Settings, dbname: str | None = None) -> int:
+def run_export(settings: Settings, dbname: str | None = None, k_min: int = K_MIN) -> int:
     """Full refresh of research.encounters_deid. Returns the number of exported rows."""
     import psycopg
     from psycopg.types.json import Jsonb
@@ -132,12 +149,19 @@ def run_export(settings: Settings, dbname: str | None = None) -> int:
         with conn.transaction():
             cur = conn.cursor()
             cur.execute("SET LOCAL ROLE maint_role")
-            cur.execute("SELECT set_config('app.role', 'maint', true)")
             cur.execute("DELETE FROM research.encounters_deid")
-            rows = cur.execute(EXPORT_SELECT).fetchall()
+            cur.execute("DELETE FROM research.pseudonym_map")
+            rows = suppress_small_cells(cur.execute(EXPORT_SELECT).fetchall(), k_min)
             n = 0
+            mapped: set = set()
             for pid, age_band, sex, etype, created, rec_json, status in rows:
                 d = deidentify_record(rec_json)
+                if pid not in mapped:
+                    mapped.add(pid)
+                    cur.execute(
+                        "INSERT INTO research.pseudonym_map (patient_id, pseudonym) VALUES (%s, %s)",
+                        (pid, pseudonym(key, pid)),
+                    )
                 cur.execute(
                     EXPORT_INSERT,
                     (

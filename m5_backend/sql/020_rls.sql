@@ -14,6 +14,9 @@ ALTER TABLE clinic.medication_orders ENABLE ROW LEVEL SECURITY;  ALTER TABLE cli
 ALTER TABLE clinic.consents          ENABLE ROW LEVEL SECURITY;  ALTER TABLE clinic.consents          FORCE ROW LEVEL SECURITY;
 ALTER TABLE clinic.audit_log         ENABLE ROW LEVEL SECURITY;  ALTER TABLE clinic.audit_log         FORCE ROW LEVEL SECURITY;
 ALTER TABLE research.encounters_deid ENABLE ROW LEVEL SECURITY;  ALTER TABLE research.encounters_deid FORCE ROW LEVEL SECURITY;
+ALTER TABLE clinic.verdicts          ENABLE ROW LEVEL SECURITY;  ALTER TABLE clinic.verdicts          FORCE ROW LEVEL SECURITY;
+ALTER TABLE clinic.record_resolutions ENABLE ROW LEVEL SECURITY; ALTER TABLE clinic.record_resolutions FORCE ROW LEVEL SECURITY;
+ALTER TABLE research.pseudonym_map   ENABLE ROW LEVEL SECURITY;  ALTER TABLE research.pseudonym_map   FORCE ROW LEVEL SECURITY;
 
 -- ---------------------------------------------------------------- schema + helper access
 REVOKE ALL ON ALL TABLES IN SCHEMA clinic, research FROM PUBLIC;
@@ -22,6 +25,7 @@ GRANT USAGE ON SCHEMA research TO researcher_role, maint_role;
 GRANT USAGE ON SCHEMA app TO asha_role, nurse_role, physician_role, pharmacist_role, researcher_role, maint_role, pharm_view_owner, audit_writer;
 GRANT EXECUTE ON FUNCTION app.user_id(), app.facility_id(), app.active_patient_id()
   TO asha_role, nurse_role, physician_role, pharmacist_role, researcher_role, maint_role, pharm_view_owner;
+GRANT EXECUTE ON FUNCTION app.record_hash(jsonb) TO asha_role, nurse_role, physician_role, maint_role;
 
 -- ================================================================ ASHA
 -- "select/insert only on households where assigned_asha_id = her id, and on
@@ -162,6 +166,40 @@ GRANT SELECT ON research.encounters_deid TO researcher_role;
 CREATE POLICY researcher_deid_select ON research.encounters_deid FOR SELECT TO researcher_role
   USING (true);
 
+-- ================================================================ VERDICTS + RESOLUTIONS (F1 / D-80)
+-- Verdicts are written by the API after the SERVER-SIDE verifier ran on the stored record.
+-- A verdict is visible exactly when its record is visible (nested RLS on clinic.records).
+-- No UPDATE / DELETE is granted to anyone (and triggers refuse them, see 050_gate.sql).
+GRANT SELECT, INSERT ON clinic.verdicts TO asha_role, nurse_role, physician_role;
+CREATE POLICY asha_verdicts_select ON clinic.verdicts FOR SELECT TO asha_role
+  USING (EXISTS (SELECT 1 FROM clinic.records r WHERE r.id = verdicts.record_id));
+CREATE POLICY nurse_verdicts_select ON clinic.verdicts FOR SELECT TO nurse_role
+  USING (EXISTS (SELECT 1 FROM clinic.records r WHERE r.id = verdicts.record_id));
+CREATE POLICY physician_verdicts_select ON clinic.verdicts FOR SELECT TO physician_role
+  USING (EXISTS (SELECT 1 FROM clinic.records r WHERE r.id = verdicts.record_id));
+CREATE POLICY asha_verdicts_insert ON clinic.verdicts FOR INSERT TO asha_role
+  WITH CHECK (created_by = app.user_id() AND facility_id = app.facility_id()
+              AND EXISTS (SELECT 1 FROM clinic.records r WHERE r.id = verdicts.record_id));
+CREATE POLICY nurse_verdicts_insert ON clinic.verdicts FOR INSERT TO nurse_role
+  WITH CHECK (created_by = app.user_id() AND facility_id = app.facility_id()
+              AND EXISTS (SELECT 1 FROM clinic.records r WHERE r.id = verdicts.record_id));
+CREATE POLICY physician_verdicts_insert ON clinic.verdicts FOR INSERT TO physician_role
+  WITH CHECK (created_by = app.user_id() AND facility_id = app.facility_id()
+              AND EXISTS (SELECT 1 FROM clinic.records r WHERE r.id = verdicts.record_id));
+
+-- Only the approving physician writes resolutions, only in her own name and facility, only for
+-- the CURRENT content of the record, and only for a verdict that belongs to that record.
+GRANT SELECT, INSERT ON clinic.record_resolutions TO physician_role;
+CREATE POLICY physician_resolutions_select ON clinic.record_resolutions FOR SELECT TO physician_role
+  USING (facility_id = app.facility_id());
+CREATE POLICY physician_resolutions_insert ON clinic.record_resolutions FOR INSERT TO physician_role
+  WITH CHECK (resolved_by = app.user_id() AND facility_id = app.facility_id()
+              AND record_hash = (SELECT app.record_hash(r.json) FROM clinic.records r
+                                 WHERE r.id = record_resolutions.record_id)
+              AND EXISTS (SELECT 1 FROM clinic.verdicts v
+                          WHERE v.id = record_resolutions.verdict_id
+                            AND v.record_id = record_resolutions.record_id));
+
 -- ================================================================ MAINT (seed loader + export job)
 -- Reachable only from owner_role (operator credentials), never from api_login.
 GRANT SELECT, INSERT ON ALL TABLES IN SCHEMA clinic TO maint_role;
@@ -190,3 +228,11 @@ CREATE POLICY maint_audit_select      ON clinic.audit_log         FOR SELECT TO 
 CREATE POLICY maint_deid_select       ON research.encounters_deid FOR SELECT TO maint_role USING (true);
 CREATE POLICY maint_deid_insert       ON research.encounters_deid FOR INSERT TO maint_role WITH CHECK (true);
 CREATE POLICY maint_deid_delete       ON research.encounters_deid FOR DELETE TO maint_role USING (true);
+
+CREATE POLICY maint_verdicts_select    ON clinic.verdicts            FOR SELECT TO maint_role USING (true);
+CREATE POLICY maint_resolutions_select ON clinic.record_resolutions  FOR SELECT TO maint_role USING (true);
+-- private pseudonym map: maint_role only (the export job + the consent-withdrawal trigger)
+GRANT SELECT, INSERT, DELETE ON research.pseudonym_map TO maint_role;
+CREATE POLICY maint_pmap_select ON research.pseudonym_map FOR SELECT TO maint_role USING (true);
+CREATE POLICY maint_pmap_insert ON research.pseudonym_map FOR INSERT TO maint_role WITH CHECK (true);
+CREATE POLICY maint_pmap_delete ON research.pseudonym_map FOR DELETE TO maint_role USING (true);

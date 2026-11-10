@@ -32,6 +32,7 @@ from .config import Settings, load_settings
 from .db import Database, audit
 from .directory import Directory, load_directory
 from .ratelimit import LoginRateLimiter
+from .verifier import Verifier, manual_review_verifier
 
 GENERIC = {
     400: "bad request",
@@ -96,11 +97,16 @@ def create_app(
     directory: Directory | None = None,
     audio_dir: Path | None = None,
     rate_limiter: LoginRateLimiter | None = None,
+    verifier: Verifier | None = None,
+    check_login: bool = True,
 ) -> FastAPI:
     settings = settings or load_settings()
     directory = directory or load_directory()
     if db is None:
         db = Database(settings.conninfo("api"))
+    if check_login:
+        db.verify_login()  # F6: RuntimeError (the API does not start) on an unsafe DB login
+    verifier = verifier or manual_review_verifier
     audio_root = Path(audio_dir or settings.audio_dir or ".").resolve()
     limiter = rate_limiter or LoginRateLimiter(max_attempts=5, window_s=60)
     ip_limiter = LoginRateLimiter(max_attempts=30, window_s=60)
@@ -309,38 +315,106 @@ def create_app(
                " WHERE id = %s AND status IN ('draft', 'flagged') RETURNING id, status",
             (p.user_id, record_id)))  # fmt: skip
 
-    @app.post("/records/{record_id}/save")
-    def save_record(record_id: uuid.UUID, body: models.SaveIn, p: Auth):
-        verdict = body.verdict
-        if validate_doc("verdict.v1", verdict):
-            raise ApiError(422)
-        unresolved = (
-            not verdict["checks"]
-            or not verdict["auto_acceptable"]
-            or any(ch["status"] == "flag" for ch in verdict["checks"])
-        )
+    def _flag_keys(verdict: dict) -> set[tuple[str, str]]:
+        return {
+            (c["check_id"], c["field_path"]) for c in verdict["checks"] if c["status"] == "flag"
+        }
+
+    @app.post("/records/{record_id}/verify", status_code=201)
+    def verify_record(record_id: uuid.UUID, body: models.VerifyIn, p: Auth):
+        """The SERVER runs the verifier on the STORED record and stores the verdict itself."""
+        if p.role not in ("asha", "nurse", "physician"):
+            raise ApiError(403)
 
         def do(c: psycopg.Cursor):
-            r = one(
-                c,
-                "SELECT json->>'record_id' AS rid FROM clinic.records WHERE id = %s",
-                (record_id,),
-            )
-            if r["rid"] != verdict["record_id"]:
-                raise ApiError(422)
-            if unresolved:
+            r = one(c, "SELECT json, app.record_hash(json) AS h FROM clinic.records"
+                       " WHERE id = %s AND status IN ('draft', 'flagged', 'approved')", (record_id,))  # fmt: skip
+            try:
+                verdict = verifier(r["json"])
+            except Exception:
+                raise ApiError(500) from None  # fail closed; details never reach the client
+            if not isinstance(verdict, dict) or validate_doc("verdict.v1", verdict):
+                raise ApiError(500)
+            row = one(c, "INSERT INTO clinic.verdicts (record_id, record_hash, facility_id, verdict, created_by)"
+                         " VALUES (%s, 'set-by-trigger', %s, %s, %s) RETURNING id, record_hash",
+                      (record_id, p.facility_id, Jsonb(verdict), p.user_id))  # fmt: skip
+            c.execute("SELECT app.audit_write('verify', 'verdicts', %s, 'allow')", (row["id"],))
+            return {
+                "verdict_id": row["id"],
+                "record_id": record_id,
+                "record_hash": row["record_hash"],
+                "verdict": verdict,
+                "unresolved": [
+                    {"check_id": k, "field_path": f} for k, f in sorted(_flag_keys(verdict))
+                ],
+            }
+
+        return run(p, "verify", "records", record_id, do)
+
+    @app.get("/verdicts/{verdict_id}")
+    def get_verdict(verdict_id: uuid.UUID, p: Auth):
+        return run(p, "select", "verdicts", verdict_id, lambda c: one(
+            c, "SELECT id, record_id, record_hash, verdict, created_by, created_at FROM clinic.verdicts WHERE id = %s", (verdict_id,)))  # fmt: skip
+
+    @app.post("/records/{record_id}/save")
+    def save_record(record_id: uuid.UUID, body: models.SaveIn, p: Auth):
+        """Save = approve. Allowed only if EVERY flag of the server-stored verdict has exactly one
+        resolution from the approving physician (identity from the token only). Everything
+        (resolutions, status, approver, audit rows) commits in ONE transaction or not at all."""
+
+        def do(c: psycopg.Cursor):
+            if p.role != "physician":
+                raise ApiError(403)
+            rec = one(c, "SELECT status, app.record_hash(json) AS h FROM clinic.records"
+                         " WHERE id = %s FOR UPDATE", (record_id,))  # fmt: skip
+            if rec["status"] == "saved":
+                raise ApiError(409)
+            cur_hash = rec["h"]
+            v = one(c, "SELECT id, record_hash, verdict FROM clinic.verdicts WHERE id = %s AND record_id = %s",
+                    (body.verdict_id, record_id))  # fmt: skip
+            latest = _row(c, c.execute(
+                "SELECT id, verdict FROM clinic.verdicts WHERE record_id = %s AND record_hash = %s"
+                " ORDER BY created_at DESC, id DESC LIMIT 1", (record_id, cur_hash)).fetchone())  # fmt: skip
+            if latest is None or not latest["verdict"]["checks"] or not v["verdict"]["checks"]:
+                raise ApiError(409, "record must be verified again")
+            flags_v = _flag_keys(v["verdict"])
+            flags_now = _flag_keys(latest["verdict"])
+            if not flags_now and not latest["verdict"]["auto_acceptable"]:
+                raise ApiError(409, "verdict is not acceptable")
+            keys = [(r.check_id, r.field_path) for r in body.resolutions]
+            if len(set(keys)) != len(keys) or not set(keys) <= flags_v:
+                raise ApiError(422)  # duplicate resolution, or a flag that does not exist
+            if set(keys) != flags_v:
                 raise ApiError(409, "record has unresolved verdict flags")
-            return one(
-                c,
-                "UPDATE clinic.records SET status = 'saved', approved_by = %s, approved_at = now()"
-                " WHERE id = %s AND status <> 'saved' RETURNING id, status",
-                (p.user_id, record_id),
-            )
+            confirmed = {
+                (r.check_id, r.field_path) for r in body.resolutions if r.action == "confirmed"
+            }
+            if any(r.action == "edited" for r in body.resolutions):
+                # the record must really have changed and been re-verified; the NEW verdict may
+                # only contain flags the physician explicitly confirmed (no new flags)
+                if v["record_hash"] == cur_hash or not flags_now <= confirmed:
+                    raise ApiError(409, "edited record is not cleanly re-verified")
+            elif v["record_hash"] != cur_hash or latest["id"] != v["id"]:
+                raise ApiError(409, "verdict is stale")
+            for r in body.resolutions:
+                rid = one(c, "INSERT INTO clinic.record_resolutions (record_id, verdict_id, record_hash,"
+                             " facility_id, check_id, field_path, action, resolved_by)"
+                             " VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id",
+                          (record_id, v["id"], cur_hash, p.facility_id, r.check_id, r.field_path,
+                           r.action, p.user_id))["id"]  # fmt: skip
+                c.execute(
+                    "SELECT app.audit_write('resolve', 'record_resolutions', %s, 'allow')", (rid,)
+                )
+            out = one(c, "UPDATE clinic.records SET status = 'saved', approved_by = %s, approved_at = now()"
+                         " WHERE id = %s AND status <> 'saved' RETURNING id, status",
+                      (p.user_id, record_id))  # fmt: skip
+            out["resolved"] = len(body.resolutions)
+            return out
 
         try:
             return run(p, "save", "records", record_id, do)
         except ApiError as exc:
-            if exc.status == 409:
+            if exc.status in (409, 422):
                 _safe_audit(p, "save_rejected", "records", record_id, "deny")
             raise
 

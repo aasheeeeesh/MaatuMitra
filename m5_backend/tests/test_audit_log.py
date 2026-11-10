@@ -79,7 +79,7 @@ def test_audit_log_refuses_free_text(env):
 
 def test_audit_write_without_context_fails(env):
     with env.owner_conn() as c, c.transaction() as tx:
-        c.execute("SET LOCAL ROLE maint_role")
+        c.execute("SET LOCAL ROLE audit_writer")  # not a request role -> no valid context
         with pytest.raises(psycopg.errors.RaiseException):
             c.execute("SELECT app.audit_write('select', 'patients', NULL, 'allow')")
         raise psycopg.Rollback(tx)

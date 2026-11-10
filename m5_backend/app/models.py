@@ -65,8 +65,27 @@ class RecordUpdate(Strict):
     record: dict[str, Any]
 
 
+class VerifyIn(Strict):
+    """Empty on purpose: the SERVER loads the stored record and runs the verifier itself."""
+
+
+CheckId = Literal["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8"]
+
+
+class ResolutionIn(Strict):
+    """One answer to one flag. NO 'by' field: the resolver is the verified token's user."""
+
+    check_id: CheckId
+    field_path: str = Field(pattern=r"^/", max_length=200)
+    action: Literal["confirmed", "edited"]
+
+
 class SaveIn(Strict):
-    verdict: dict[str, Any]
+    """Save request (D-80). No verdict content: only the id of a verdict the SERVER stored and
+    one resolution per flag in it."""
+
+    verdict_id: uuid.UUID
+    resolutions: list[ResolutionIn] = Field(max_length=200)
 
 
 class OrderIn(Strict):

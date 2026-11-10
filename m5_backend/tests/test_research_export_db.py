@@ -91,35 +91,37 @@ def test_export_contains_no_ids_names_dates_or_free_text(client, env):
         assert regex.fullmatch(r"\d{4}-\d{2}", r["encounter_month"])
 
 
-def test_only_consenting_patients_and_withdrawal_removes_at_next_export(client, env):
+def test_only_consenting_patients_and_withdrawal_removes_rows(client, env):
     key, ids = hmac_key_bytes(env.settings), env.seed.patients
     env.export()
     ps = {r["pseudonym"] for r in research_rows(client, env)}
-    assert (
-        pseudonym(key, ids["A1"]) in ps
-        and pseudonym(key, ids["A2"]) in ps
-        and pseudonym(key, ids["A3"]) in ps
-    )
+    for k in ("C1", "C2", "C3", "C4", "C5"):  # the k >= 5 cohort is exported
+        assert pseudonym(key, ids[k]) in ps
+    # consenting but alone in their cell -> suppressed by the small-cell rule (F3)
+    for k in ("A1", "A2", "A3"):
+        assert pseudonym(key, ids[k]) not in ps
     assert pseudonym(key, ids["none"]) not in ps  # research_ok = false
     assert pseudonym(key, ids["A1b"]) not in ps  # no consent row at all
+    # withdrawal is immediate (F4 trigger): see test_hardening.py for the full check
     try:
         with env.owner_conn() as c, c.transaction():
             c.execute("SET LOCAL ROLE maint_role")
             c.execute(
                 "UPDATE clinic.consents SET research_ok = false, updated_at = now() WHERE patient_id = %s",
-                (ids["A2"],),
+                (ids["C3"],),
             )
-        ps_before = {r["pseudonym"] for r in research_rows(client, env)}
-        assert pseudonym(key, ids["A2"]) in ps_before  # not yet re-exported
-        env.export()
-        ps_after = {r["pseudonym"] for r in research_rows(client, env)}
-        assert pseudonym(key, ids["A2"]) not in ps_after
-        assert pseudonym(key, ids["A1"]) in ps_after
+        after = {r["pseudonym"] for r in research_rows(client, env)}
+        assert pseudonym(key, ids["C3"]) not in after and pseudonym(key, ids["C1"]) in after
+        env.export()  # 4 consenting patients are left in the cell -> k < 5 -> cell suppressed
+        assert not (
+            {r["pseudonym"] for r in research_rows(client, env)}
+            & {pseudonym(key, ids[k]) for k in ("C1", "C2")}
+        )
     finally:
         with env.owner_conn() as c, c.transaction():
             c.execute("SET LOCAL ROLE maint_role")
             c.execute(
-                "UPDATE clinic.consents SET research_ok = true WHERE patient_id = %s", (ids["A2"],)
+                "UPDATE clinic.consents SET research_ok = true WHERE patient_id = %s", (ids["C3"],)
             )
         env.export()
 

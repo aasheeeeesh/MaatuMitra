@@ -102,3 +102,11 @@ Things nobody has verified yet, with what to check. Builders add items through
 6. Question scope (found on dev_holdout, fixed in rules v2): in "ನನಗೆ ಜ್ವರ ಇದೆ, ... ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ? / ಇಲ್ಲ." the bare ಇಲ್ಲ answers only the question part. m3 v2 treats a comma clause that ends in ಇದೆ-type words as a statement. m4_verify's C8 rule ("bare ಇಲ್ಲ with no resolvable question") may want the same distinction (m4 must write its own rule).
 7. ASR: no transcripts from m2_asr existed on 2026-11-10, so no ASR-input extraction was run (AGENT 4 step 5 partly done).
 8. The LLM pipeline sees the same closed vocabulary as the rules (drug and symptom enums from our lists). That is fair for comparison but means neither pipeline can name a drug or symptom outside the lists.
+
+## From m5_backend (merged 20261110T160937Z)
+
+- m5 fix pass: contracts request: access_case.v1 `attack` has no value for saved-gate attacks, so the 13 new cases use `mass_assignment` / `id_guess`. Ask the architect whether to add `save_gate`.
+- m5 fix pass: who supplies the real verifier? m5 cannot import m4 (module rule). Proposed: the integration layer passes an adapter to `create_app(verifier=...)` that loads the stored record AND its transcript (m4 `verify(record, transcript)` needs both; m5 stores no transcripts). UNVERIFIED: where the transcript comes from at integration.
+- m5 fix pass: should a saved record require status `approved` first (the old `/approve` step)? Currently `/save` itself is the approval (resolutions + approver in one transaction), so draft and flagged records can be saved if every flag is resolved.
+- m5 fix pass: Docker path for the new `OWNER_DB_PASSWORD` is UNVERIFIED (no Docker).
+- m5 fix pass: R-order (does physical row order of the research table leak chronology?) still needs multi-month data. UNVERIFIED.

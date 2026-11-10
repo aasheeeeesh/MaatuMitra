@@ -113,3 +113,9 @@ What a human must check:
 - That the dev_holdout templates (a3 b4 c5 d2 e6 f3 g5 h6 i3) really were not used to write rules before the first holdout score (2026-11-10 13:32 +05:30). The agent saw a holdout failure and then fixed one bug (rules v2); the v1 scores are kept in `results/m3_extract/rules_v1_frozen/`.
 - Disclosure: before deciding to stop reading template files, the agent read the template file for category a (`data/templates/a_asha_fever_cough.yaml`), which includes the TEST family a_fever_cough__f3 (symptom pool pain / body ache / headache). No test gold, test transcript or other test template was opened. ನೋವು (pain) is in the symptom list; its listed sources are Wiktionary and KN-3.
 - The LLM latency numbers depend on what else was running on the laptop (the agent ran unit tests during the LLM run).
+
+## From m5_backend (merged 20261110T160937Z)
+
+### m5_backend fix pass (2026-11-10), backend-security-engineer (AI agent)
+- Generated: SQL migrations 010-050 changes (verdicts, record_resolutions, pseudonym_map, saved-gate and consent triggers, audit function), app code (verify/save endpoints, verifier hook, pool reset, startup login check, small-cell suppression), tests (test_save_gate.py, test_hardening.py, updates), 13 new matrix cases and one hand-written YAML line, README/CONTRACT updates, .env.example and docker-compose.yml comments.
+- Human must check: (1) re-read the save rules in app/main.py `save_record` and sql/050_gate.sql against the brief and D-80 (the same AI wrote rules, tests and matrix); (2) re-read the `attacks.save_gate: deny` line in tests/access_matrix_expected.yaml; (3) decide whether k = 5 and "drop, do not merge" are acceptable; (4) the Docker path is UNVERIFIED; (5) red-before-green was observed only for F5; the other new tests were written before the code but not run against the old code.

@@ -383,6 +383,32 @@ def all_cases(exp: dict[str, Any]) -> list[Case]:
                   "mass_assignment", e),
             {"kind": "api_mass", "method": method, "path": path, "body": body}))  # fmt: skip
 
+    # 5b) saved-gate attacks (F1 / D-80): the server owns the verdict; a save needs one
+    #     resolution per stored flag from the approving physician. Every case expects deny
+    #     (hand-written in access_matrix_expected.yaml: attacks.save_gate).
+    e = _attack_expected(exp, "save_gate")
+    save_gate = [
+        # (acting role, variant, attack label, ownership)
+        ("physician", "forged_verdict", "mass_assignment", "own"),
+        ("physician", "nonexistent_flag", "mass_assignment", "own"),
+        ("physician", "missing_resolution", "mass_assignment", "own"),
+        ("physician", "duplicate_resolution", "mass_assignment", "own"),
+        ("physician", "resolution_by_other_user", "mass_assignment", "own"),
+        ("physician", "stale_after_change", "mass_assignment", "own"),
+        ("physician", "unknown_verdict_id", "id_guess", "none"),
+        ("physician", "verdict_of_other_record", "id_guess", "own"),
+        ("physician", "cross_facility", "id_guess", "other_facility"),
+        ("nurse", "non_physician_resolves", "mass_assignment", "own"),
+        ("asha", "non_physician_resolves", "mass_assignment", "own"),
+        ("pharmacist", "non_physician_resolves", "mass_assignment", "own"),
+        ("researcher", "non_physician_resolves", "mass_assignment", "own"),
+    ]
+    for role, variant, atk, own in save_gate:
+        out.append(Case(
+            _case(f"atk.{atk}.save_gate.{role}.{variant}", role, uid[role], "records", "update", own,
+                  atk, e),
+            {"kind": "api_save_gate", "variant": variant}))  # fmt: skip
+
     # 6) IDOR on audio files
     e = _attack_expected(exp, "idor_audio")
     audio = []

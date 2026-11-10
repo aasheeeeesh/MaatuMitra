@@ -1,6 +1,6 @@
 """E5: run every generated case against the real DB/API; 0 unauthorized successes required.
 
-Writes results/m5_backend/access_matrix_results.jsonl and access_matrix_summary.json.
+Does not write tracked files (the matrix CLI does).
 """
 
 import pytest
@@ -11,7 +11,9 @@ pytestmark = pytest.mark.needs_db
 
 
 def test_access_matrix(env):
-    s = run_matrix(env)
+    s = run_matrix(
+        env, write=False
+    )  # tracked result files are written by `make m5-matrix`, not by tests
     print("\n" + s["line"])
     print(
         f"unexpected denials: {s['unexpected_denials']}; integrity failures: {s['integrity_failures']}"

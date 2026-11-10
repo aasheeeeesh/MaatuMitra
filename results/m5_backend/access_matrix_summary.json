@@ -1,28 +1,28 @@
 {
-  "n_cases": 1486,
-  "n_expected_deny": 1385,
+  "n_cases": 1499,
+  "n_expected_deny": 1398,
   "n_expected_allow": 101,
   "unauthorized_successes": 0,
   "unexpected_denials": 0,
   "integrity_failures": 0,
-  "passes": 1486,
-  "patients_rows_after_run": 8,
+  "passes": 1499,
+  "patients_rows_after_run": 13,
   "by_attack": {
     "None": 960,
     "tampered_jwt": 66,
     "expired_jwt": 22,
     "alg_none": 33,
     "wrong_aud": 22,
-    "id_guess": 100,
+    "id_guess": 103,
     "sqli": 192,
-    "mass_assignment": 20,
+    "mass_assignment": 30,
     "idor_audio": 26,
     "guc_tamper": 45
   },
   "by_layer": {
     "db": 905,
-    "api": 581
+    "api": 594
   },
-  "runtime_s": 8.5,
-  "line": "unauthorized successes: 0 of 1385 deny-expected cases (1486 cases total); 95% upper bound (rule of three) 3/1385 = 0.0022"
+  "runtime_s": 6.9,
+  "line": "unauthorized successes: 0 of 1398 deny-expected cases (1499 cases total); 95% upper bound (rule of three) 3/1398 = 0.0021"
 }

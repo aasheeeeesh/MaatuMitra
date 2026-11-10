@@ -1,0 +1,8 @@
+- **Verdict (stored)**: the verifier's result for one record, saved by the server in the `verdicts` table so a client cannot supply its own.
+- **Resolution**: a physician's answer to one flag when saving: "confirmed" (looked, it is correct) or "edited" (fixed the field and re-verified).
+- **Record hash**: a fingerprint of a record's content computed by the database; a verdict is only valid for the exact content it was computed for.
+- **Stale verdict**: a verdict whose record was changed afterwards, so it no longer describes the saved content.
+- **DISCARD ALL**: a PostgreSQL command that forgets everything session-level (role, settings, temp objects, prepared statements); the pool runs it on every returned connection.
+- **Small-cell suppression (k-anonymity)**: dropping groups with fewer than k people from a dataset so no one stands out; here k = 5.
+- **Pseudonym map**: a private table linking a patient id to the research pseudonym, used only to delete research rows when consent is withdrawn.
+- **Trigger**: a database rule that runs automatically when rows change; ours block unapproved saves, protect append-only tables and remove research rows on consent withdrawal.

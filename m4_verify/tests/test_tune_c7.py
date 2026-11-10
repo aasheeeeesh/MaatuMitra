@@ -17,7 +17,9 @@ def _load(name):
 
 
 def test_tune_finds_the_wrong_digit_token():
-    res = tune([(_load("fx-pharm-003__asr_digit_error.json"), _load("fx-pharm-003__gold.json"))], 0.2)
+    res = tune(
+        [(_load("fx-pharm-003__asr_digit_error.json"), _load("fx-pharm-003__gold.json"))], 0.2
+    )
     assert res["n_wrong"] == 1  # "50" is not in the gold text
     assert res["chosen"] is not None
     assert res["chosen"]["recall"] == 1.0 and res["chosen"]["flag_rate"] <= 0.2

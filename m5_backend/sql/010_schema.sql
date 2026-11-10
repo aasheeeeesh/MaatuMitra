@@ -19,7 +19,12 @@ CREATE FUNCTION app.facility_id() RETURNS uuid
 CREATE FUNCTION app.active_patient_id() RETURNS uuid
   LANGUAGE sql STABLE PARALLEL SAFE
   AS $$ SELECT NULLIF(current_setting('app.active_patient_id', true), '')::uuid $$;
-REVOKE ALL ON FUNCTION app.user_id(), app.facility_id(), app.active_patient_id() FROM PUBLIC;
+-- Hash of a record's JSON, computed by the DATABASE (jsonb text form is canonical), so a verdict
+-- can be bound to the exact record content it was computed for.
+CREATE FUNCTION app.record_hash(j jsonb) RETURNS text
+  LANGUAGE sql IMMUTABLE PARALLEL SAFE
+  AS $$ SELECT encode(sha256(convert_to(j::text, 'UTF8')), 'hex') $$;
+REVOKE ALL ON FUNCTION app.user_id(), app.facility_id(), app.active_patient_id(), app.record_hash(jsonb) FROM PUBLIC;
 
 CREATE TABLE clinic.facilities (
   id   uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -47,6 +52,8 @@ CREATE TABLE clinic.patients (
   name_synthetic text NOT NULL CHECK (name_synthetic ~ '^SYNTHETIC-'),
   age_band       text NOT NULL CHECK (age_band IN ('0-4','5-14','15-24','25-34','35-44','45-59','60+')),
   sex            text NOT NULL CHECK (sex IN ('F','M','X')),
+  -- F8: random display reference for the pharmacist view. NOT derived from the id.
+  ref            text NOT NULL UNIQUE DEFAULT substr(replace(gen_random_uuid()::text, '-', ''), 1, 12),
   UNIQUE (id, facility_id),
   -- a patient lives in a household of the SAME facility (RI checks bypass RLS by design)
   FOREIGN KEY (household_id, facility_id) REFERENCES clinic.households(id, facility_id)
@@ -74,6 +81,36 @@ CREATE TABLE clinic.records (
   -- Saved-record gate in the DATABASE: nothing is 'saved' without an approver and a time.
   CONSTRAINT saved_requires_approval
     CHECK (status <> 'saved' OR (approved_by IS NOT NULL AND approved_at IS NOT NULL))
+);
+
+-- Server-owned verdicts (F1 / D-80). Written ONLY by the API after the server-side verifier has
+-- run on the stored record; the client never supplies verdict content. Append-only.
+-- record_hash is set by a trigger from the stored records.json (not by the caller).
+CREATE TABLE clinic.verdicts (
+  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  record_id   uuid NOT NULL REFERENCES clinic.records(id),
+  record_hash text NOT NULL,
+  facility_id uuid NOT NULL REFERENCES clinic.facilities(id),
+  verdict     jsonb NOT NULL CHECK (jsonb_typeof(verdict->'checks') = 'array'),
+  created_by  uuid NOT NULL REFERENCES clinic.users(id),
+  created_at  timestamptz NOT NULL DEFAULT clock_timestamp()
+);
+CREATE INDEX verdicts_record_idx ON clinic.verdicts (record_id, record_hash, created_at);
+
+-- One row per flag a physician resolved when saving. Append-only; UNIQUE = exactly one
+-- resolution per flag per record content. No free text (no reason column on purpose).
+CREATE TABLE clinic.record_resolutions (
+  id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  record_id   uuid NOT NULL REFERENCES clinic.records(id),
+  verdict_id  uuid NOT NULL REFERENCES clinic.verdicts(id),
+  record_hash text NOT NULL,
+  facility_id uuid NOT NULL REFERENCES clinic.facilities(id),
+  check_id    text NOT NULL CHECK (check_id IN ('C1','C2','C3','C4','C5','C6','C7','C8')),
+  field_path  text NOT NULL CHECK (field_path ~ '^/' AND length(field_path) <= 200),
+  action      text NOT NULL CHECK (action IN ('confirmed','edited')),
+  resolved_by uuid NOT NULL REFERENCES clinic.users(id),
+  resolved_at timestamptz NOT NULL DEFAULT clock_timestamp(),
+  UNIQUE (record_id, record_hash, check_id, field_path)
 );
 
 CREATE TABLE clinic.medication_orders (
@@ -106,10 +143,11 @@ CREATE TABLE clinic.audit_log (
   user_id    uuid,
   app_role   text NOT NULL CHECK (app_role IN ('asha','nurse','physician','pharmacist','researcher','maint')),
   action     text NOT NULL CHECK (action IN ('select','list','insert','update','approve','save',
-                 'save_rejected','set_active_patient','audio','export','seed')),
+                 'save_rejected','set_active_patient','audio','export','seed','verify','resolve',
+                 'withdraw_consent')),
   table_name text NOT NULL CHECK (table_name IN ('facilities','users','households','patients',
                  'encounters','records','medication_orders','consents','audit_log','research_export',
-                 'pharmacist_orders_v','audio')),
+                 'pharmacist_orders_v','audio','verdicts','record_resolutions')),
   row_id     uuid,
   outcome    text NOT NULL CHECK (outcome IN ('allow','deny','error'))
 );
@@ -127,3 +165,11 @@ CREATE TABLE research.encounters_deid (
   symptoms_absent  text[] NOT NULL DEFAULT '{}',
   medications      jsonb NOT NULL DEFAULT '[]'
 );
+
+-- Private pseudonym map (F4): lets a consent withdrawal delete a patient's research rows at
+-- once, without the HMAC key being stored in the database. Not readable by researcher_role.
+CREATE TABLE research.pseudonym_map (
+  patient_id uuid PRIMARY KEY REFERENCES clinic.patients(id),
+  pseudonym  text NOT NULL CHECK (pseudonym ~ '^[0-9a-f]{20}$')
+);
+CREATE INDEX pseudonym_map_idx ON research.pseudonym_map (pseudonym);

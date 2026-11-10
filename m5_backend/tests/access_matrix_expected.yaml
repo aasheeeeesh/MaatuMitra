@@ -76,6 +76,8 @@ attacks:
   wrong_aud: deny           # token for another audience -> 401
   mass_assignment: deny     # body carries role / assigned_asha_id / approved_by / facility_id / author_id -> 422
   idor_audio: deny          # audio of an encounter the caller cannot see -> 404
+  save_gate: deny           # (D-80/F1) forged verdict, unknown/duplicate/missing resolution, resolver named in
+                            # the body, stale verdict, other-facility record, or any non-physician: never saved
   guc_tamper: deny          # header/param/body tries SET app.user_id, RESET ROLE, SET ROLE -> no effect
   sqli:
     id_param: deny          # an SQLi string where a UUID is expected (path) -> 422, nothing runs

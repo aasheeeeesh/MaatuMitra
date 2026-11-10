@@ -126,3 +126,12 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] (m3, licence) Open the upstream Qwen3-4B-Instruct model card and confirm the Apache-2.0 licence that `ollama show qwen3:4b-instruct` prints (not fetched by us).
 - [ ] (m3, clinical) A clinician decides whether "stopped before finishing" (ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆವು) should be `negated: true` (current convention from the annotation guide) or a separate status.
 - [ ] (m3, scores) Read `results/m3_extract/failures_dev.md`; the 0-error dev_tune score is in-sample (rules were written while reading those conversations). Only the dev_holdout row (and later the frozen test split via `make eval-test`) estimates performance on new wording.
+
+## From m5_backend (merged 20261110T160937Z)
+
+- [ ] m5 fix pass: re-read `m5_backend/app/main.py` (`save_record`, `verify_record`), `m5_backend/sql/050_gate.sql` and the new line `attacks.save_gate` in `m5_backend/tests/access_matrix_expected.yaml`; confirm they match D-80 and the brief.
+- [ ] m5 integration: wire the real m4 verifier into the API (`create_app(..., verifier=fn)`, fn(record_json) -> verdict.v1) and adapt m6_ui to `/records/{id}/verify` + `/save` with `{verdict_id, resolutions}` (see m5_backend/CONTRACT.md). Until then the default verifier flags every record for manual review.
+- [ ] UNVERIFIED: run the Docker path once (`docker compose up`, `POSTGRES_USER=mm_bootstrap`, `OWNER_DB_PASSWORD` set, then `uv run python -m m5_backend.scripts.dbtool all`) and confirm owner_role and the bootstrap superuser have different passwords. Add `OWNER_DB_PASSWORD` to your local `.env` if you move away from `POSTGRES_USER=owner_role`.
+- [ ] Decide whether k = 5 (drop small groups) is acceptable for the research export, or ask for merging instead.
+- [ ] Optional (audit condition 8): extra step (audio playback or second confirmation) before a critical flag (C3, C4) can be confirmed; not built.
+- [ ] Still open from the audit: run gitleaks with a verified checksum on the tree and history; re-run the R-order check with data spanning several months.

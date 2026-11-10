@@ -1,5 +1,7 @@
 # For people WITH Docker. The dev laptop has no Docker; m5_backend documents the
 # non-Docker path (see docs/DECISIONS_EXPLAINED.md, "No Docker" decision).
+# POSTGRES_USER / POSTGRES_PASSWORD are the image's bootstrap SUPERUSER (use mm_bootstrap, never
+# owner_role; see .env.example). m5_backend/scripts/dbtool.py then creates owner_role, api_login etc.
 # Port is published on 127.0.0.1 ONLY (constraint 4). Secrets come from .env.
 services:
   db:

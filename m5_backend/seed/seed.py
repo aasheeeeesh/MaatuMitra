@@ -7,6 +7,8 @@ Layout (facility F1 = actor facility, F2 = other facility):
   records     one draft record per encounter (record.v1 fixtures as JSON) + one SAVED record
   orders      ready_to_dispense for P1/P2/P3/none chains + one DRAFT order for the A1 chain
   consents    research_ok: A1, A2, A3 true; none false; "<key>b" patients have no consent row
+  cohort      C1..C5: five consenting patients (F1, 25-34, F, one nurse_consult in 2026-10) = the only
+              research cell with k >= 5; A1, A2, A3 are suppressed by the small-cell rule
 """
 
 from __future__ import annotations
@@ -82,7 +84,6 @@ def seed(
     with conn.transaction():
         cur = conn.cursor()
         cur.execute("SET LOCAL ROLE maint_role")
-        cur.execute("SELECT set_config('app.role', 'maint', true)")
         for k, f in d.facilities.items():
             fid = uuid.UUID(f["id"])
             cur.execute(
@@ -178,6 +179,41 @@ def seed(
                 " VALUES (%s, %s, %s, %s, 500, 'mg', 3, 5, %s) RETURNING id",
                 (ids.encounters[ek], ids.patients[pk], hh[pk][0], drug, status),
             ).fetchone()[0]
+
+        # Research cohort (F3): FIVE consenting patients in the same small cell (age band, sex,
+        # month, visit type) so that the k >= 5 small-cell rule leaves rows in the export. The
+        # other three consenting patients are alone in their cells and are suppressed.
+        cohort_t = datetime(2026, 10, 20, 11, 0, tzinfo=IST)
+        for i in range(1, 6):
+            ck = f"C{i}"
+            name = f"SYNTHETIC-Cohort{i}-{secrets.token_hex(3)}"
+            ids.names[ck] = name
+            ids.patients[ck] = cur.execute(
+                "INSERT INTO clinic.patients (household_id, facility_id, name_synthetic, age_band, sex)"
+                " VALUES (%s, %s, %s, '25-34', 'F') RETURNING id",
+                (ids.households["none"], F1, name),
+            ).fetchone()[0]
+            ids.encounter_times[ck] = cohort_t
+            ids.encounters[ck] = cur.execute(
+                "INSERT INTO clinic.encounters (patient_id, author_id, facility_id, encounter_type, created_at)"
+                " VALUES (%s, %s, %s, 'nurse_consult', %s) RETURNING id",
+                (ids.patients[ck], U["N1"], F1, cohort_t),
+            ).fetchone()[0]
+            rec = json.loads(json.dumps(fixtures[i % len(fixtures)]))
+            rec["record_id"], rec["patient_ref"], rec["status"] = (
+                f"rec-seed-c{i}",
+                f"pt-seed-c{i}",
+                "draft",
+            )
+            ids.record_json[ck] = rec
+            ids.records[ck] = cur.execute(
+                "INSERT INTO clinic.records (encounter_id, json, status) VALUES (%s, %s, 'draft') RETURNING id",
+                (ids.encounters[ck], Jsonb(rec)),
+            ).fetchone()[0]
+            cur.execute(
+                "INSERT INTO clinic.consents (patient_id, research_ok) VALUES (%s, true)",
+                (ids.patients[ck],),
+            )
 
         for pk, ok_ in (("A1", True), ("A2", True), ("A3", True), ("none", False)):
             cur.execute(

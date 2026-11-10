@@ -132,7 +132,16 @@ class Runner:
                    "other_facility": F2_PEER[role], "none": "none"}[own]  # fmt: skip
             return ids.audit[key]
         if res == "research_export":
-            return pseudonym(self.key, ids.patients[chain])
+            # F3: only patients in a k >= 5 cell are exported (seed cohort C1..C5, all consenting).
+            # The research schema is not facility-scoped, so "own" / "other" all mean "a patient
+            # who is in the export"; "none" is the non-consenting patient.
+            coh = {
+                "own": "C1",
+                "same_facility_other": "C2",
+                "other_facility": "C3",
+                "none": "none",
+            }[own]
+            return pseudonym(self.key, ids.patients[coh])
         raise KeyError(res)
 
     def active_patient(self, role: str, own: str) -> uuid.UUID | None:
@@ -405,7 +414,74 @@ class Runner:
                     headers={"X-Role": "physician", "X-Postgres-Role": "owner_role"},
                 )
             return ok(r)
+        if kind == "api_save_gate":
+            return self.save_gate_case(role, pr["variant"])
         raise KeyError(kind)
+
+    # ---------------------------------------------------------------- saved-gate attacks (F1)
+    def _sg_setup(self, creator: str = "N1", verifier: str = "P1", enc: str = "N1"):
+        """Create a draft record and let the SERVER verify it; returns (record_id, verdict_id)."""
+        from m5_backend.app.auth import issue_token
+
+        def tok(key):
+            return issue_token(self.s, self.d.by_key(key))
+
+        rec = self.valid_record("nurse")
+        r = self.client.post("/records", json={"encounter_id": str(self.ids.encounters[enc]), "record": rec},
+                             headers={"Authorization": f"Bearer {tok(creator)}"})  # fmt: skip
+        rid = r.json()["id"]
+        v = self.client.post(f"/records/{rid}/verify", json={},
+                             headers={"Authorization": f"Bearer {tok(verifier)}"})  # fmt: skip
+        return rid, v.json()["verdict_id"], rec
+
+    @staticmethod
+    def _valid_res():
+        return [{"check_id": "C6", "field_path": "/", "action": "confirmed"}]
+
+    def save_gate_case(self, role: str, variant: str):
+        # positive control: the same flow, done correctly, must work (else the denial proves nothing)
+        crid, cvid, _ = self._sg_setup()
+        ctl = self.call("physician", "POST", f"/records/{crid}/save",
+                        {"verdict_id": cvid, "resolutions": self._valid_res()})  # fmt: skip
+        if ctl.status_code != 200:
+            return "integrity_fail", f"control_http={ctl.status_code}"
+        rid, vid, rec = self._sg_setup()
+        path, body = f"/records/{rid}/save", {"verdict_id": vid, "resolutions": self._valid_res()}
+        if variant == "forged_verdict":
+            body = {"verdict": {"schema_version": "verdict.v1", "record_id": rec["record_id"], "checks": [
+                {"check_id": "C1", "name": "x", "status": "pass", "reason": "ok", "field_path": "/"}],
+                "auto_acceptable": True, "verifier_version": "forged"}}  # fmt: skip
+        elif variant == "nonexistent_flag":
+            body["resolutions"] = [{"check_id": "C3", "field_path": "/nope", "action": "confirmed"}]
+        elif variant == "missing_resolution":
+            body["resolutions"] = []
+        elif variant == "duplicate_resolution":
+            body["resolutions"] = self._valid_res() * 2
+        elif variant == "resolution_by_other_user":
+            body["resolved_by"] = str(self.ids.users["P2"])
+            body["resolutions"] = [{**self._valid_res()[0], "by": str(self.ids.users["P2"])}]
+        elif variant == "stale_after_change":
+            ch = self.call("nurse", "PATCH", f"/records/{rid}",
+                           {"record": self.valid_record("nurse", "changed after verdict")})  # fmt: skip
+            if ch.status_code != 200:
+                return "integrity_fail", f"patch_http={ch.status_code}"
+        elif variant == "unknown_verdict_id":
+            body["verdict_id"] = str(uuid.uuid4())
+        elif variant == "verdict_of_other_record":
+            _, other_vid, _ = self._sg_setup()
+            body["verdict_id"] = other_vid
+        elif variant == "cross_facility":
+            f2_rid, f2_vid, _ = self._sg_setup(creator="N3", verifier="P3", enc="N3")
+            path, body = (
+                f"/records/{f2_rid}/save",
+                {"verdict_id": f2_vid, "resolutions": self._valid_res()},
+            )
+        elif variant != "non_physician_resolves":
+            raise KeyError(variant)
+        r = self.call(role, "POST", path, body)
+        return (
+            "allow" if 200 <= r.status_code < 300 else "deny"
+        ), f"http={r.status_code};control=200"
 
     # ---------------------------------------------------------------- driver
     def run_case(self, case: Case) -> dict[str, Any]:

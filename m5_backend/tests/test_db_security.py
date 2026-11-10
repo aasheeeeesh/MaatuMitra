@@ -49,7 +49,7 @@ def test_every_table_has_rls_enabled_and_forced(env):
             " FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace"
             " WHERE c.relkind = 'r' AND n.nspname IN ('clinic', 'research')"
         ).fetchall()
-    assert len(rows) == 10
+    assert len(rows) == 13
     assert all(r[1] and r[2] for r in rows), rows
 
 
@@ -145,7 +145,7 @@ def test_no_role_or_guc_leaks_to_next_transaction_on_pooled_connection(env):
         with db.raw_connection() as conn:
             row = conn.execute(
                 "SELECT current_user, current_setting('app.user_id', true),"
-                " current_setting('app.facility_id', true), current_setting('app.role', true)"
+                " current_setting('app.facility_id', true), current_setting('app.active_patient_id', true)"
             ).fetchone()
         assert row[0] == "api_login"
         assert all(v in (None, "") for v in row[1:]), row

@@ -1,0 +1,5 @@
+- m5 fix pass: contracts request: access_case.v1 `attack` has no value for saved-gate attacks, so the 13 new cases use `mass_assignment` / `id_guess`. Ask the architect whether to add `save_gate`.
+- m5 fix pass: who supplies the real verifier? m5 cannot import m4 (module rule). Proposed: the integration layer passes an adapter to `create_app(verifier=...)` that loads the stored record AND its transcript (m4 `verify(record, transcript)` needs both; m5 stores no transcripts). UNVERIFIED: where the transcript comes from at integration.
+- m5 fix pass: should a saved record require status `approved` first (the old `/approve` step)? Currently `/save` itself is the approval (resolutions + approver in one transaction), so draft and flagged records can be saved if every flag is resolved.
+- m5 fix pass: Docker path for the new `OWNER_DB_PASSWORD` is UNVERIFIED (no Docker).
+- m5 fix pass: R-order (does physical row order of the research table leak chronology?) still needs multi-month data. UNVERIFIED.

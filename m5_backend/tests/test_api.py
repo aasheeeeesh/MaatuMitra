@@ -108,54 +108,7 @@ def _new_record(client, env, nurse="N1", enc="N1", fixture="rec-fx-phys-004"):
     return r.json()["id"], rec
 
 
-def test_saved_gate_rejects_unresolved_flags_and_accepts_clean_verdict(client, env):
-    rid, rec = _new_record(client, env)
-    flagged = json.loads((VERDICTS / "rec-fx-phys-004.json").read_text(encoding="utf-8"))
-    assert any(c["status"] == "flag" for c in flagged["checks"])
-    r = client.post(f"/records/{rid}/save", headers=hdr(env, "P1"), json={"verdict": flagged})
-    assert r.status_code == 409
-    assert any(
-        row[3] is not None and str(row[3]) == rid and row[4] == "deny"
-        for row in audit_rows(env, "save_rejected")
-    )
-    clean = {**flagged, "checks": [{**c, "status": "pass", "reason": "ok"} for c in flagged["checks"]],
-             "auto_acceptable": True}  # fmt: skip
-    # a nurse cannot save even with a clean verdict
-    assert (
-        client.post(
-            f"/records/{rid}/save", headers=hdr(env, "N1"), json={"verdict": clean}
-        ).status_code
-        == 403
-    )
-    # verdict for another record is refused
-    other = {**clean, "record_id": "rec-something-else"}
-    assert (
-        client.post(
-            f"/records/{rid}/save", headers=hdr(env, "P1"), json={"verdict": other}
-        ).status_code
-        == 422
-    )
-    r = client.post(f"/records/{rid}/save", headers=hdr(env, "P1"), json={"verdict": clean})
-    assert r.status_code == 200 and r.json()["status"] == "saved"
-    got = client.get(f"/records/{rid}", headers=hdr(env, "P1")).json()
-    assert got["approved_by"] == str(env.seed.users["P1"]) and got["approved_at"]
-    # saved is final
-    assert (
-        client.patch(f"/records/{rid}", headers=hdr(env, "P1"), json={"record": rec}).status_code
-        == 404
-    )
-
-
-def test_invalid_verdict_rejected(client, env):
-    rid, _ = _new_record(client, env)
-    bad = {"schema_version": "verdict.v1", "record_id": "rec-fx-phys-004", "checks": [], "auto_acceptable": True,
-           "verifier_version": "x"}  # fmt: skip
-    assert (
-        client.post(
-            f"/records/{rid}/save", headers=hdr(env, "P1"), json={"verdict": bad}
-        ).status_code
-        == 422
-    )
+# The saved-record gate (server-stored verdicts + per-flag resolutions) is tested in test_save_gate.py.
 
 
 def test_pharmacist_active_patient_flow_is_checked_and_audited(client, env):

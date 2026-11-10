@@ -43,10 +43,25 @@ class Database:
                 c = self._free.pop()
                 if not c.closed:
                     return c
-        return psycopg.connect(self.conninfo, autocommit=True)
+        conn = psycopg.connect(self.conninfo, autocommit=True)
+        # DISCARD ALL (see _put) also drops server-side prepared statements, so the client must
+        # not auto-prepare any (it would otherwise reuse a name the server has forgotten).
+        conn.prepare_threshold = None
+        return conn
 
     def _put(self, conn: psycopg.Connection) -> None:
         if conn.closed or conn.info.transaction_status != TransactionStatus.IDLE:
+            conn.close()
+            return
+        # F5: forget EVERYTHING session-level (SET ROLE, SET app.*, temp objects, prepared
+        # statements) before the connection is reused. Fails closed: if the reset fails, the
+        # connection is thrown away.
+        try:
+            conn.execute("DISCARD ALL")
+        except psycopg.Error:
+            conn.close()
+            return
+        if conn.info.transaction_status != TransactionStatus.IDLE:
             conn.close()
             return
         with self._lock:
@@ -54,6 +69,36 @@ class Database:
                 self._free.append(conn)
                 return
         conn.close()
+
+    def verify_login(self) -> None:
+        """F6: refuse to serve requests with a dangerous database login.
+
+        The login must not be a superuser, must not have BYPASSRLS, must not own any table,
+        view or function in the app schemas, and must not be able to create roles or databases.
+        Raises RuntimeError("unsafe database login: ...") so the API does not start.
+        """
+        with self.raw_connection() as conn:
+            row = conn.execute(
+                "SELECT r.rolsuper, r.rolbypassrls, r.rolcreaterole, r.rolcreatedb, r.rolreplication,"
+                " (SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace"
+                "   WHERE n.nspname IN ('clinic', 'research', 'app') AND c.relowner = r.oid),"
+                " (SELECT count(*) FROM pg_proc f JOIN pg_namespace n ON n.oid = f.pronamespace"
+                "   WHERE n.nspname IN ('clinic', 'research', 'app') AND f.proowner = r.oid),"
+                " current_user = session_user"
+                " FROM pg_roles r WHERE r.rolname = session_user"
+            ).fetchone()
+        if row is None:
+            raise RuntimeError("unsafe database login: role not found")
+        names = ("superuser", "BYPASSRLS", "CREATEROLE", "CREATEDB", "REPLICATION")
+        problems = [n for n, v in zip(names, row[:5], strict=True) if v]
+        if row[5]:
+            problems.append("owns tables")
+        if row[6]:
+            problems.append("owns functions")
+        if not row[7]:
+            problems.append("session role differs from login")
+        if problems:
+            raise RuntimeError("unsafe database login: " + ", ".join(problems))
 
     def close(self) -> None:
         with self._lock:
@@ -86,12 +131,10 @@ class Database:
                 cur.execute(
                     "SELECT set_config('app.user_id', %s, true),"
                     " set_config('app.facility_id', %s, true),"
-                    " set_config('app.role', %s, true),"
                     " set_config('app.active_patient_id', %s, true)",
                     (
                         str(principal.user_id),
                         str(principal.facility_id),
-                        principal.role,
                         str(active_patient_id) if active_patient_id else "",
                     ),
                 )

@@ -101,7 +101,13 @@ def load_settings(env_file: Path = ENV_FILE, environ: dict[str, str] | None = No
         pg_port=int(get("POSTGRES_PORT", "54329")),
         pg_db=get("POSTGRES_DB", "maatumitra"),
         owner_user="owner_role",
-        owner_password=get("POSTGRES_PASSWORD"),
+        # F7: with Docker, POSTGRES_USER/POSTGRES_PASSWORD are the image's BOOTSTRAP superuser and
+        # must not double as the owner_role password. Legacy .env files that still say
+        # POSTGRES_USER=owner_role keep working (non-Docker path).
+        owner_password=get("OWNER_DB_PASSWORD")
+        or (
+            get("POSTGRES_PASSWORD") if get("POSTGRES_USER", "owner_role") == "owner_role" else None
+        ),
         api_user=get("API_DB_USER", "api_login"),
         api_password=get("API_DB_PASSWORD"),
         bootstrap_user=get("PG_BOOTSTRAP_USER"),
