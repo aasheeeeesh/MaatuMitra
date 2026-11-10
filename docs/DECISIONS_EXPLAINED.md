@@ -226,6 +226,7 @@
 | D-87 | Phase B / m3_extract | LLM comparison (E2) with qwen3:4b-instruct on a seeded 40-conversation dev subset | done | Option 1. Revision = Ollama digest 0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0; temperature 0, t... |
 | D-88 | Phase B / m3_extract | Scope cut: no extraction from ASR transcripts yet | not done (needs m2 outputs) | Option 1; the runner already accepts `--transcripts DIR`. |
 | D-89 | Phase B / m3_extract | The extractor builder saw one template file that also contains a test family | partly done (auditor check pending) | Option 3. |
+| D-90 | Phase B / m1_data, m3_extract, m4_verify | Integrity audit of m1, m3 and m4: what we accept, and the correction to D-60/D-64 | partly done (fix passes pending) | Option 2 (no refreeze). All other findings are ACCEPTED. None rejected. |
 <!-- INDEX-END -->` and `<!-- ENTRIES-END -->` in this file must stay.
 - Status: done
 
@@ -1238,6 +1239,17 @@
 - What else could be done: Future builders get a template view with test families removed (a filtered copy), so they cannot see test frames at all.
 - How to change this decision later: m1_data could publish data/templates_dev_only/; m7 should report the a_fever_cough__f3 family separately in E2/E3 test results.
 - Status: partly done (auditor check pending)
+
+### D-90: Integrity audit of m1, m3 and m4: what we accept, and the correction to D-60/D-64   (Phase B / m1_data, m3_extract, m4_verify / orchestrator / 2026-11-10)
+- What we needed to decide: The simulated scientific-integrity auditor (reviews/{m1_data,m4_verify,m3_extract}/2026-11-10-integrity.md) failed all three module gates. For each finding: accept, reject or defer? And does the test split need to be refrozen?
+- Options we considered: For the shared "dose sentence" frame: (1) Refreeze now, adding 1-2 sentence frames that exist only in test. Pro: gives a clean "never-seen frame" test. Con: touches the frozen test lock; more work. (2) Keep the freeze, correct our written claim, and have m7 report test results separately for turns whose frame was also seen in dev versus frames never seen in dev. Pro: no change to frozen data; about 86% of test turns already use frames not in dev, so the "unseen" slice is large. Con: the "seen frame" slice may look better than real life.
+- What we chose: Option 2 (no refreeze). All other findings are ACCEPTED. None rejected.
+- Why: The audit confirmed the important things hold: the test lock is intact, only the freeze commit touched test files, no family or drug-dose combination crosses the split, the generator is byte-identical on re-run, all 872 dev spans are correct, and no test id appears in m3. The shared dose frame is a real overclaim in our own text (D-60 and D-64 said no sentence frame crosses the split; that is FALSE: one dosing frame covers 13.9% of test turns and 18.1% of test clauses), so we correct the text and measure the effect instead of hiding it.
+- What we actually did: Recorded the decision for each finding. CRITICAL M4-1 (accepted): m4's test guard only refuses paths containing the word "test", so `e4 --gold-dir data/gold` would read the 264 test gold files. Confirmed by reading m4_verify/planted.py (refuse_test_split). It has NOT been triggered (no E4 run on data/gold so far). Rule until fixed: nobody runs m4 E4 or tune-c7 on data/. MAJOR m4 (accepted, for the m4 fix pass): count a planted error as "caught" only when a flag lands on the injected field (5/30 wrong-patient catches came from an unrelated paracetamol flag); README must quote unique-mutation figures (e.g. 4/4, CI 0.51-1.0), not 200/200; review burden with the project lexicon is 1/18, not 0/18; the second-transcript (C7) result uses a perfect transcript and must be labelled an upper bound. MAJOR m1 (accepted): this entry corrects D-60/D-64; docs/annotation_guide.md must stop printing 8 words that occur only in test templates. MAJOR m3 (accepted): remove 3 test-only words, including the regex branch for ಡ್ರೆ that can only fire on test family i_traps__f2, then re-score dev; label that 32 of the 40 rules-vs-LLM conversations are in-sample for the rules; stop quoting the pooled "0 critical on full dev" headline. For m7 (accepted): field-level catch attribution with unique N, review burden next to recall, and separate test slices for a_fever_cough__f3, c_stopped_early__f1, i_traps__f2 and seen-frame vs unseen-frame turns.
+- What could go wrong / weaknesses: Removing test-only words from m3 after seeing them is itself a decision informed by the test templates; we disclose it. The auditor did not rerun E4 or m3 scoring, and its masking method may miss some shared frames (UNVERIFIED). The auditor is simulated (ai_simulated_review).
+- What else could be done: The optional refreeze (option 1) is still possible, but ONLY before the first `make eval-test`.
+- How to change this decision later: Add a new entry; the fix passes for m1, m3 and m4 are listed in PROGRESS.md.
+- Status: partly done (fix passes pending)
 
 <!-- ENTRIES-END -->
 

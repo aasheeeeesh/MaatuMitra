@@ -1,0 +1,62 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m3_extract-integrity-2026-11-10",
+  "reviewer_agent": "scientific-integrity-auditor",
+  "target": "m3_extract (commit ce46096; D-89 template exposure; results/m3_extract dev scores)",
+  "date": "2026-11-10",
+  "sample_size": 57,
+  "findings": [
+    {
+      "id": "M3-1",
+      "severity": "major",
+      "item": "m3 wording that occurs only in TEST-family templates (D-89)",
+      "problem": "Three test-only words (absent from DEV gold and fixtures) occur in m3: ತಗೊಂಡ್ರೆ (rules.py:44 CONDITIONAL_RE branch 'ಡ್ರೆ', which can fire only on test family i_traps__f2), ಮುಗಿಸದೆ (llm.py:174 prompt; c_stopped_early__f1) and ನಿಲ್ಲಿಸಿ (inside ನಿಲ್ಲಿಸಿದರು in tests/test_negation.py:47). Each also appears in docs/annotation_guide.md or the shared negation table, so no copy from the template is proven.",
+      "suggested_fix": "Remove the 'ಡ್ರೆ' branch or keep it with a decision entry citing annotation_guide line 19 (dev scores unchanged either way). m7 reports a_fever_cough__f3, c_stopped_early__f1 and i_traps__f2 as separate test slices.",
+      "evidence": "scratchpad m3_testonly.py: 57 test-only template tokens, 46 absent from DEV gold and fixtures, 3 found in m3_extract.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-2",
+      "severity": "major",
+      "item": "identical-data comparison; claims match tables",
+      "problem": "The rules-vs-LLM table uses the same 40 ids, but 32 of them are dev_tune (in-sample for the rules). The row 'rules v2, LLM subset: 0 critical' is not labelled in-sample. On the 8 holdout ids: rules 0/68 fields, LLM 1/70.",
+      "suggested_fix": "Label the row '80% in-sample'; compare on holdout ids only and state that N is too small to rank.",
+      "evidence": "results/m3_extract/llm_subset.txt; dev_scores.csv llm_subset dev_part rows; failures_dev.md table.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-3",
+      "severity": "major",
+      "item": "headline dev number",
+      "problem": "'rules v2, full dev: 0 critical (0/3624)' is listed first. It pools 240 in-sample records with a contaminated holdout.",
+      "suggested_fix": "Mark it 'not an accuracy estimate'. The honest unseen-wording figure is v1 holdout CR 7/920 = 7.6 per 1000 [3.7, 15.6].",
+      "evidence": "results/m3_extract/failures_dev.md lines 12-15.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-4",
+      "severity": "minor",
+      "item": "holdout strength and clustering",
+      "problem": "The holdout is unseen template but seen family (e.g. b4 with b3 in b_cross_turn__f2), sharing frames. The 7 v1 CR-NEG errors all come from template c5, so a field-level Wilson CI is too narrow.",
+      "suggested_fix": "Disclose; use a per-template or cluster bootstrap.",
+      "evidence": "m3_extract/splits.py:25; failures_dev.md item 1.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-5",
+      "severity": "minor",
+      "item": "denominators",
+      "problem": "LLM 508 vs rules 488 fields on the same 40 records (invented items add fields).",
+      "suggested_fix": "Also report per gold field or per record.",
+      "evidence": "failures_dev.md table.",
+      "source_urls": [],
+      "confidence": "high"
+    }
+  ],
+  "summary": "PASS: split-lock OK; no test files touched; 0 test ids in m3 code or results; id-based test refusal in splits.py; in-sample, contaminated and frozen-v1 holdout scores clearly labelled; Wilson CIs everywhere; no impact claims. FAIL (major): 3 test-only words in m3 (one regex branch fires only on test family i_traps__f2), all with an allowed indirect source (annotation guide / negation table); the rules-vs-LLM comparison is 80% in-sample for the rules without a label; the full-dev 0-critical headline pools in-sample data. Indirect influence of the a_fever_cough__f3 frames is UNVERIFIED.",
+  "label": "ai_simulated_review"
+}

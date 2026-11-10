@@ -1,0 +1,72 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m4_verify-integrity-2026-11-10",
+  "reviewer_agent": "scientific-integrity-auditor",
+  "target": "m4_verify (commit c6fdf72; E4 results in results/m4_verify)",
+  "date": "2026-11-10",
+  "sample_size": 52,
+  "findings": [
+    {
+      "id": "M4-1",
+      "severity": "critical",
+      "item": "test split cannot be read by E4 / tune-c7",
+      "problem": "refuse_test_split only rejects paths containing the word 'test'. TEST gold lives at data/gold/m1-*.json and load_gold_dir is called without an id filter, so the planned DEV re-run 'python -m m4_verify e4 --gold-dir data/gold' (D-56) would load all 264 TEST gold files. tune_c7 uses the same guard. Latent: no test data has been read yet (both E4 runs used fixtures).",
+      "suggested_fix": "Filter by data/splits/dev.txt ids and refuse any id in test.txt (as m3_extract/splits.py does). Add a test that --gold-dir data/gold yields only dev ids. Do this before any DEV re-run.",
+      "evidence": "m4_verify/planted.py:62-92; m4_verify/evaluate.py:152; m4_verify/tune_c7.py:65-72; summary.md gold source = fixtures.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-2",
+      "severity": "major",
+      "item": "definition of caught (recall)",
+      "problem": "caught = not auto_acceptable (any flag on the record). Data-lexicon run: wrong patient without the index reports 5/30 unique caught [0.073, 0.336] but caught_at_field = 0; all of these come from the unrelated paracetamol C4 flag. Second-transcript condition: any-flag 4/4 negation drops, at-field 0/4; duration 16/16 vs 0/16.",
+      "suggested_fix": "Make field-attributed recall primary. Label any-flag recall as 'record sent to review' and pair it with the clean-record flag rate on the same records.",
+      "evidence": "evaluate.py:246; recomputed from results/m4_verify/*/e4/injection_results.jsonl (scratchpad e4_check.py).",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-3",
+      "severity": "major",
+      "item": "claims match tables (unique N)",
+      "problem": "README and D-52 quote 200/200 and 0/200 (repeated injections; outcomes deterministic per unique mutation). Unique N per type is 3 to 90. For example, negation drop is 4/4 [0.510, 1.0], not 200/200 [0.981, 1.0].",
+      "suggested_fix": "Quote unique k/n with a Wilson CI in prose; repeated counts secondary.",
+      "evidence": "catch_rates.csv n_unique; 0 unique keys with mixed outcomes.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-4",
+      "severity": "major",
+      "item": "review burden reported beside recall",
+      "problem": "README gives 0/18 clean fields flagged (fixture lexicon). With the project lexicon it is 1/18 [0.010, 0.258] fields and 1/6 records. N = 18 cannot test the <= 20% bar.",
+      "suggested_fix": "Report both runs; state that burden is not yet estimable; re-measure on DEV gold after M4-1.",
+      "evidence": "results/m4_verify/data_lexicon/e4/clean_flag_rate.csv and clean_flagged_fields.jsonl.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-5",
+      "severity": "major",
+      "item": "second-transcript condition realism",
+      "problem": "The second transcript is the clean, uncorrupted transcript (an oracle), so 100% there is an upper bound. Its clean-record burden with a real, noisy second ASR is unmeasured.",
+      "suggested_fix": "Label this condition 'oracle second transcript (upper bound)'; measure the flag rate with a real or noisy second transcript before claiming C7 benefits.",
+      "evidence": "evaluate.py:240 second_transcript=inj['clean_transcript'].",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-6",
+      "severity": "minor",
+      "item": "negation audit / README completeness",
+      "problem": "The overfit is disclosed ('same sentences used to design the fixes', 'optimistic'). 'Zero trap-word triggers' has no N or 3/N bound. The data-lexicon E4 run is not linked from the README.",
+      "suggested_fix": "Add N and 3/N; link results/m4_verify/data_lexicon from the README.",
+      "evidence": "m4_verify/negation_audit.md lines 44-59; m4_verify/README.md.",
+      "source_urls": [],
+      "confidence": "high"
+    }
+  ],
+  "summary": "PASS: planted errors only (no pooling with natural errors); record and transcript levels separate; every table row has n, n_unique and Wilson CIs (all 52 rows recomputed exactly); C7 threshold an untuned placeholder, never tuned on test; negation-audit overfit disclosed; no impact claims. FAIL: critical latent test-leak path (path-name guard; data/gold mixes dev and test); 'caught' counts unrelated flags; prose quotes 200/200 instead of unique N; burden headline uses the favourable fixture lexicon (project lexicon gives 1/18); the second-transcript condition is an oracle. Kannada rules not native-validated; E4 not re-run (recomputed from raw logs).",
+  "label": "ai_simulated_review"
+}

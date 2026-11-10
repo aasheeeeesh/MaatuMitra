@@ -1,0 +1,72 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m1_data-integrity-2026-11-10",
+  "reviewer_agent": "scientific-integrity-auditor",
+  "target": "m1_data (freeze commit 9a3faf8; HEAD 3973bb5)",
+  "date": "2026-11-10",
+  "sample_size": 20,
+  "findings": [
+    {
+      "id": "M1-1",
+      "severity": "major",
+      "item": "near-duplicate sentences across dev/test; D-60/D-64 disclosure",
+      "problem": "The dose-instruction clause frame '{drug} {dose} {freq} {dur} ತೆಗೆದುಕೊಳ್ಳಿ' is used by families on both sides. Slot-masked: 118/848 test turns (13.9%) and 196/1083 test clauses (18.1%) have a >=4-token frame also in dev. The D-64 rule (families, dosed combos) is not violated, but the D-60/D-64 claims that no sentence frame or near-copy straddles the split are false, and the shared frame carries the critical dose/frequency/duration fields.",
+      "suggested_fix": "No refreeze required: add a decision entry correcting D-60/D-64 with these numbers, and require m7 to report seen-frame vs unseen-frame test slices. Optional: before the first make eval-test, refreeze with 1-2 test-only medication-instruction frames so an unseen-frame slice exists.",
+      "evidence": "Independent scripted check (scratchpad leak.py). Shared frame counts: 'D N mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ N ಬಾರಿ N ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ' dev 8 / test 25. Template text repeated in d, e, h, i families; freq phrase list from m1_data/render.py:104. Conversation level: 0 exact, 0 masked matches; max char-5 Jaccard test->dev 0.58 vs same-family dev median 1.00.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-2",
+      "severity": "minor",
+      "item": "test lock check strength",
+      "problem": "make split-lock uses --allow-missing, so a deleted data/splits/test.lock passes with only a warning. dev.txt and split_plan.json are not locked (acceptable because test.txt is).",
+      "suggested_fix": "Drop --allow-missing from the Makefile and CI now that the split is frozen.",
+      "evidence": "Makefile line 63; infra/scripts/check_split_lock.py main().",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-3",
+      "severity": "minor",
+      "item": "effective sample size",
+      "problem": "13 test (17 dev) conversations duplicate another conversation's normalised text in the same split; the test split has 251 unique texts out of 264.",
+      "suggested_fix": "m7 reports unique-text N, or uses a cluster bootstrap by template.",
+      "evidence": "leak.py conv_dup_within_test_norm = 13.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-4",
+      "severity": "minor",
+      "item": "stopped-early => negated:true convention",
+      "problem": "In annotation_guide section 4 and D-62, but not in docs/severity.md. Partial adherence (e.g. DEV m1-c3-007 'did you finish all? no') is scored as CR-NEG.",
+      "suggested_fix": "m7 reports category c as its own slice and cites the open question.",
+      "evidence": "docs/annotation_guide.md line 49; DEV m1-c3-007.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-5",
+      "severity": "minor",
+      "item": "slice imbalance",
+      "problem": "code_switched fraction is 0.70 in test vs 0.50 in dev.",
+      "suggested_fix": "Always slice by code_switched (docs/metrics.md section 5).",
+      "evidence": "results/m1_data/coverage.json.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-6",
+      "severity": "major",
+      "item": "test wording exposed via shared docs",
+      "problem": "docs/annotation_guide.md prints 8 Kannada words that occur only in TEST-family templates (not in DEV gold or fixtures), e.g. ತಗೊಂಡ್ರೆ, ಮುಗಿಸದೆ, ನಿಲ್ಲಿಸಿದೆವು. Builders read the guide, and m3 uses three of them.",
+      "suggested_fix": "Replace the examples with DEV-family wording or mark them as test-family wording. m7 reports c_stopped_early__f1, i_traps__f2 and a_fever_cough__f3 as separate slices.",
+      "evidence": "scratchpad m3_testonly.py plus triage: 57 test-only template tokens, 46 absent from DEV gold and fixtures, 8 of them in the annotation guide.",
+      "source_urls": [],
+      "confidence": "high"
+    }
+  ],
+  "summary": "PASS: split-lock OK; git history shows only the freeze commit 9a3faf8 touching test files; no test access log (no eval-test run); generator byte-deterministic (1191 files identical over two reruns and the repo); 0 shared families, templates or dosed combos; 0 conversation-level near-duplicates; twins and transcripts in their own split; coverage numbers match; 872/872 DEV spans correct and 20 sampled DEV conversations labelled consistently. FAIL (major): the dose-instruction sentence frame straddles dev/test (13.9% of test turns), contradicting D-60/D-64; the annotation guide exposes test-only wording. No refreeze is required, but disclosure and m7 slicing are. Optional refreeze must happen before the first make eval-test. Kannada not native-validated; test labels deliberately not inspected.",
+  "label": "ai_simulated_review"
+}
