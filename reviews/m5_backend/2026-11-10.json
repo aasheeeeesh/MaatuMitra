@@ -1,0 +1,92 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "rv-m5-sec-2026-11-10",
+  "reviewer_agent": "security-auditor",
+  "target": "m5_backend",
+  "date": "2026-11-10",
+  "sample_size": 121,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "item": "app/main.py save_record (saved-record gate)",
+      "problem": "The verdict used by the save gate comes from the request body. A physician client can send an all-pass verdict and save a flagged or never-approved draft record. The DB CHECK only requires approved_by/approved_at.",
+      "suggested_fix": "Load the latest verdict server-side (a verdicts table keyed by record id plus a hash of records.json, written by m4 or the API); accept only per-flag resolutions in the request (see the D-80 conditions in the .md).",
+      "evidence": "Attempt SG-1: P1 POST /records/{id}/save with a forged all-pass verdict on a draft record -> 200 status saved; the control SG-0 with the real flagged verdict -> 409. Builder already noted this in D-38 / open question 6.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F2",
+      "severity": "minor",
+      "item": "sql/040_audit.sql app.audit_write",
+      "problem": "app_role and user_id in audit rows come from GUCs that any SQL-capable app-role session can set, so audit rows can be forged in another user's or role's name (needs raw SQL).",
+      "suggested_fix": "Derive the role from current_user (e.g. INSERT grant plus RLS WITH CHECK mapping current_user to app_role instead of SECURITY DEFINER) and also log session_user/current_user.",
+      "evidence": "Attempt AL-forge: researcher tx set app.role=physician and app.user_id=P1, then app.audit_write('approve','records',NULL,'allow') -> accepted (rolled back).",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F3",
+      "severity": "minor",
+      "item": "app/export.py research export (quasi-identifiers)",
+      "problem": "No small-cell suppression: age_band+sex+month+encounter_type, plus a pseudonym that links all of one patient's visits, is unique for almost every patient.",
+      "suggested_fix": "Suppress or merge cells with k<5 before export (or drop sex/month in rare cells); document the threshold in DECISIONS.",
+      "evidence": "Attempt R-kanon on the seed export: 8/9 (age_band,sex,month,type) cells have k=1; 3/3 pseudonyms are unique on (age_band,sex). Acknowledged in D-37.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "F4",
+      "severity": "minor",
+      "item": "app/export.py consent withdrawal timing",
+      "problem": "Withdrawal only takes effect when someone runs the export again; there is no schedule or trigger, so a withdrawn patient stays visible to researchers for an unlimited time.",
+      "suggested_fix": "Add a trigger on clinic.consents (research_ok -> false) that deletes the matching research rows, or a scheduled export with a documented maximum delay.",
+      "evidence": "Attempt R-withdraw (rolled back): after research_ok=false, 4 research rows are still visible; the export SELECT returns 0 for that patient.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F5",
+      "severity": "minor",
+      "item": "app/db.py Database._put (connection pool)",
+      "problem": "Pooled connections are not reset. A session-level SET ROLE or SET app.* committed inside a request (only possible via injection) stays on the connection for the next borrower outside request_tx.",
+      "suggested_fix": "Run RESET ROLE; RESET ALL (or DISCARD ALL) in _put, or check current_user = session_user before reusing a connection.",
+      "evidence": "Attempt G-2: session-level SET ROLE physician_role and set_config('app.facility_id',F2,false) in a committed nurse request -> next raw borrower sees current_user=physician_role, app.facility_id=F2.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F6",
+      "severity": "minor",
+      "item": "app/config.py + app/main.py startup",
+      "problem": "API_DB_USER can be set from the environment and nothing refuses to start when that login is a superuser, has BYPASSRLS, or owns the tables.",
+      "suggested_fix": "At startup query pg_roles for session_user (rolsuper, rolbypassrls) and check table ownership; exit if any check fails.",
+      "evidence": "Code reading: no rolsuper/session_user check exists in m5_backend/app (grep).",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F7",
+      "severity": "minor",
+      "item": ".env.example POSTGRES_USER=owner_role (Docker path)",
+      "problem": "Under Docker, POSTGRES_USER becomes the bootstrap superuser. config.py also always uses POSTGRES_PASSWORD as the owner_role password, so following the comment gives the superuser and owner_role the same password.",
+      "suggested_fix": "Set POSTGRES_USER=mm_bootstrap in .env.example and add a separate OWNER_DB_PASSWORD key.",
+      "evidence": "RO-6: ALTER ROLE <bootstrap> NOSUPERUSER -> 'permission denied to alter role', so dbtool would fail closed rather than run with a superuser owner. Docker itself not run: UNVERIFIED.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "F8",
+      "severity": "minor",
+      "item": "catalog / EXPLAIN / pharmacist_orders_v.patient_ref",
+      "problem": "Any app role can read pg_class.reltuples and pg_stat_* views; EXPLAIN ANALYZE on the pharmacist view shows the number of hidden base-table rows; patient_ref is a fixed 8-hex prefix of the patient UUID. Needs raw SQL apart from patient_ref.",
+      "suggested_fix": "Accept and document as information; optionally derive patient_ref from a per-facility HMAC.",
+      "evidence": "PH-8: EXPLAIN ANALYZE with a hidden patient active shows 'Rows Removed by Filter: 5' (= all orders, all facilities). R-catalog: researcher can SELECT pg_class.reltuples for clinic tables.",
+      "source_urls": [],
+      "confidence": "high"
+    }
+  ],
+  "summary": "Simulated AI security review of m5_backend on local PostgreSQL 16.15. 121 concrete break attempts (53 DB, 68 API) plus 116 passing tests (E5 matrix: 0 of 1385 unauthorized successes). RLS is enabled and forced on all 10 tables; no superuser/BYPASSRLS/owner on the request path; SET LOCAL only; JWT pinned to HS256 with all claims required (alg none, HS/RS confusion, kid, missing claims, skew, wrong aud/iss all 401); mass assignment, SQLi, audio IDOR, the pharmacist view (other patient, error oracle, function/temp/view-owner tricks) and the research export (leak scan 0 hits, keyed HMAC) all held. One major finding: the save gate trusts a client-supplied verdict (forged save succeeded). Minor: forgeable audit role/user via GUCs, no k-anonymity, withdrawal waits for a manual export, pool not reset, no startup role check, .env.example Docker user, catalog/EXPLAIN row-count leaks. pip-audit clean; regex secret scan of tree and history clean; gitleaks NOT run (not installed). Docker path UNVERIFIED.",
+  "label": "ai_simulated_review"
+}
