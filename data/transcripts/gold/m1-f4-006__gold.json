@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಕೆಮ್ಮು, ಮೈಕೈನೋವು, ವಾಂತಿ ಇದೆಯಾ?\nಕೆಮ್ಮು ಇದೆ, ಮೈಕೈನೋವು ಇಲ್ಲ, ವಾಂತಿ ಇದೆ.",
   "words": [

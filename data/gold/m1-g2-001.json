@@ -5,7 +5,7 @@
   "turns": [
     {
       "speaker_role": "physician",
-      "text": "Azithromycin 500 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿನ ಮತ್ತು paracetamol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "Azithromycin 500 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿನ ಮತ್ತು paracetamol 500 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "patient",
@@ -37,16 +37,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 500,
         "dose_unit": "mg",
         "frequency_per_day": 4,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "paracetamol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "span_text": "paracetamol 500 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ",
           "char_start": 53,
-          "char_end": 102
+          "char_end": 101
         }
       }
     ],
@@ -57,8 +57,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ",
-          "char_start": 144,
-          "char_end": 165
+          "char_start": 143,
+          "char_end": 164
         }
       }
     ],

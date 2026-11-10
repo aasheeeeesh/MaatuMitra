@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಏನು ತೊಂದರೆ?\nಕೆಮ್ಮು ಇಲ್ಲಾ ಮತ್ತು ಅತಿಸಾರ ಇದೆ.",
   "words": [

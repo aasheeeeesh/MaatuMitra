@@ -25,7 +25,7 @@ families:
         turns:
           - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
           - {role: pharmacist, text: "[[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
-          - {role: patient, text: "ಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"}
+          - {role: patient, text: "ಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?"}
           - {role: pharmacist, text: "ಹೌದು, [[a1|ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ]]."}
         items:
           - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
@@ -96,7 +96,7 @@ families:
         slots:
           D1: {type: drug, where: {generic: [ors]}, dose: none}
           D2: {type: drug, where: {generic: [zinc]}, dose: given, needs: [freq, dur]}
-          N1: {type: neg, p_neg: 0.9, forms: [{neg: "ಕುಡಿಯದಿದ್ದರೆ", pos: "ಕುಡಿದರೆ", patterns: [NEG-S03]}]}
+          N1: {type: neg, p_neg: 0.9, forms: [{neg: "ಕುಡಿಯದಿದ್ದರೆ", pos: "ವಾಂತಿ ಮಾಡಿದರೆ", patterns: [NEG-S03]}]}
         turns:
           - {role: caregiver, text: "ಮಗುವಿಗೆ [[s1|ಅತಿಸಾರ]] ಇದೆ."}
           - {role: pharmacist, text: "[[m1|{D1.name}]] ಆಗಾಗ ಕುಡಿಸಿ. [[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] ಕೊಡಿ."}
@@ -105,16 +105,16 @@ families:
           - {kind: symptom, span: s1, name: diarrhoea}
           - {kind: medication, span: m1, slot: D1}
           - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
-          - {kind: follow_up, span: f1, neg: N1, text: "if the child does not drink, bring the child to hospital", text_pos: "if the child drinks, bring the child to hospital"}
+          - {kind: follow_up, span: f1, neg: N1, text: "if the child does not drink, bring the child to hospital", text_pos: "if the child vomits, bring the child to hospital"}
       - id: e8
         grounding: [KN-4]
         slots:
           D1: {type: drug, where: {generic: [ors]}, dose: none}
-          D2: {type: drug, where: {generic: [paracetamol]}, dose: given, needs: [freq, dur]}
+          D2: {type: drug, where: {generic: [paracetamol]}, dose: child_syrup, needs: [freq, dur]}
         turns:
           - {role: caregiver, text: "ಮಗುವಿಗೆ [[s1|ವಾಂತಿ]] ಮತ್ತು [[s2|ಜ್ವರ]] ಇದೆ."}
           - {role: pharmacist, text: "[[m1|{D1.name}]] ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ."}
-          - {role: pharmacist, text: "[[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] ಕೊಡಿ."}
+          - {role: pharmacist, text: "[[m2|{D2.name} ಸಿರಪ್ {D2.dose} {D2.freq} {D2.dur}]] ಕೊಡಿ."}
           - {role: caregiver, text: "ಸರಿ."}
         items:
           - {kind: symptom, span: s1, name: vomiting}

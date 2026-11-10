@@ -31,7 +31,7 @@ the annotation guide, and `make data`.
    `{N1}` negation slots with a (negative form, positive twin form, pattern ids) triple.
    Gold spans are COMPUTED from rendered text, never typed.
 3. **Generator** (`m1_data/generate.py`, CLI `python -m m1_data generate` and
-   `data/generate.py`): fixed seed 20261109, version `m1-data-1.0.0`, per-instance RNG
+   `data/generate.py`): fixed seed 20261109, version `m1-data-1.1.0`, per-instance RNG
    seeded with sha256(seed, template, index) so output never depends on dict/hash order.
    Writes gold.v1, transcript.v1 (model=gold, source=template_text), minimal-pair twins
    (`data/twins/twins_{dev,test}.jsonl`), manifest, splits, lock, coverage.

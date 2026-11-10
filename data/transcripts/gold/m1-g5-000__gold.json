@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Tablet levo ೫೦೦ mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಒಂದು ವಾರ.\nparacetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
+  "text": "Tablet Levofloxacin 500 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಏಳು ದಿವಸ.\nparacetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
   "words": [
     {
       "w": "Tablet",
@@ -17,153 +17,153 @@
       "conf": null
     },
     {
-      "w": "levo",
+      "w": "Levofloxacin",
       "char_start": 7,
-      "char_end": 11,
+      "char_end": 19,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "೫೦೦",
-      "char_start": 12,
-      "char_end": 15,
+      "w": "500",
+      "char_start": 20,
+      "char_end": 23,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 16,
-      "char_end": 18,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನಕ್ಕೆ",
-      "char_start": 19,
+      "char_start": 24,
       "char_end": 26,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಂದು",
-      "char_start": 27,
-      "char_end": 31,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಸಾರಿ",
-      "char_start": 32,
-      "char_end": 36,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಒಂದು",
-      "char_start": 37,
-      "char_end": 41,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ವಾರ",
-      "char_start": 42,
-      "char_end": 45,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "paracetamol",
-      "char_start": 47,
-      "char_end": 58,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಎರಡು",
-      "char_start": 59,
-      "char_end": 63,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 64,
-      "char_end": 70,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 71,
-      "char_end": 78,
+      "char_start": 27,
+      "char_end": 34,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ನಾಲ್ಕು",
-      "char_start": 79,
-      "char_end": 85,
+      "w": "ಒಂದು",
+      "char_start": 35,
+      "char_end": 39,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 86,
-      "char_end": 90,
+      "char_start": 40,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏಳು",
+      "char_start": 45,
+      "char_end": 48,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 49,
+      "char_end": 53,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "paracetamol",
+      "char_start": 55,
+      "char_end": 66,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 67,
+      "char_end": 71,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 72,
+      "char_end": 78,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 79,
+      "char_end": 86,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 87,
+      "char_end": 93,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 94,
+      "char_end": 98,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರ",
-      "char_start": 91,
-      "char_end": 96,
+      "char_start": 99,
+      "char_end": 104,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "fever",
-      "char_start": 98,
-      "char_end": 103,
+      "char_start": 106,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇದ್ದರೆ",
-      "char_start": 104,
-      "char_end": 110,
+      "char_start": 112,
+      "char_end": 118,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರ",
-      "char_start": 111,
-      "char_end": 116,
+      "char_start": 119,
+      "char_end": 124,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 118,
-      "char_end": 121,
+      "char_start": 126,
+      "char_end": 129,
       "start": null,
       "end": null,
       "conf": null

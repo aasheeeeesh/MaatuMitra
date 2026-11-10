@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಡಾಕ್ಟರ್, ತಲೆನೋವು ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\ndoxycycline 100 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ, Ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
   "words": [

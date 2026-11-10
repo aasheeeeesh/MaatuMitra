@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\nಒ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nಪ್ಯಾರಸಿಟಮೋಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ.\nಸರಿ.",
+  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\nಓ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ 10 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ಕೊಡಿ.\nಸರಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -49,7 +49,7 @@
       "conf": null
     },
     {
-      "w": "ಒ",
+      "w": "ಓ",
       "char_start": 30,
       "char_end": 31,
       "start": null,
@@ -105,16 +105,24 @@
       "conf": null
     },
     {
-      "w": "ಎರಡು",
+      "w": "ಸಿರಪ್",
       "char_start": 75,
-      "char_end": 79,
+      "char_end": 80,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 80,
+      "w": "10",
+      "char_start": 81,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ml",
+      "char_start": 84,
       "char_end": 86,
       "start": null,
       "end": null,
@@ -153,25 +161,25 @@
       "conf": null
     },
     {
-      "w": "ದಿನ",
+      "w": "ದಿವಸ",
       "char_start": 112,
-      "char_end": 115,
+      "char_end": 116,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಡಿ",
-      "char_start": 116,
-      "char_end": 120,
+      "char_start": 117,
+      "char_end": 121,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 122,
-      "char_end": 125,
+      "char_start": 123,
+      "char_end": 126,
       "start": null,
       "end": null,
       "conf": null

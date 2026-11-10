@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "Paracetamol 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "Paracetamol 650 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
     }
   ],
   "gold_record": {
@@ -44,16 +44,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 650,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "Paracetamol 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "span_text": "Paracetamol 650 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ",
           "char_start": 67,
-          "char_end": 121
+          "char_end": 120
         }
       }
     ],

@@ -34,17 +34,17 @@ families:
         grounding: [KN-2]
         slots:
           K1: {type: count, values: [2, 3, 4]}
-          D1: {type: drug, where: {generic: [paracetamol, ibuprofen]}, dose: given}
+          D1: {type: drug, where: {generic: [paracetamol, ibuprofen]}, dose: none}
           S2: {type: symptom, pool: [cough, cold, diarrhoea, vomiting]}
           X1: {type: xturn, p_neg: 0.75}
         turns:
           - {role: asha, text: "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"}
-          - {role: caregiver, text: "[[s1|ಜ್ವರ {K1.kn} ದಿನದಿಂದ ಇದೆ]]. ನಿನ್ನೆ ರಾತ್ರಿ [[m1|{D1.name} {D1.dose}]] ಕೊಟ್ಟೆ."}
+          - {role: caregiver, text: "[[s1|ಜ್ವರ {K1.kn} ದಿನದಿಂದ ಇದೆ]]. ನಿನ್ನೆ ರಾತ್ರಿ [[m1|{D1.name} ಸಿರಪ್]] ಕೊಟ್ಟೆ."}
           - {role: asha, text: "[[s2|{S2.kn}]] ಇದೆಯಾ?"}
           - {role: caregiver, text: "{X1}"}
         items:
           - {kind: symptom, span: s1, name: fever}
-          - {kind: medication, span: m1, slot: D1, fields: [dose]}
+          - {kind: medication, span: m1, slot: D1, fields: []}
           - {kind: symptom, span: s2, slot: S2, neg: X1}
       - id: a4
         grounding: [KN-2]

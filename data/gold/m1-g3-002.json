@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "paracetamol 1000 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಕೊಡುತ್ತೇನೆ."
+      "text": "paracetamol 650 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಕೊಡುತ್ತೇನೆ."
     }
   ],
   "gold_record": {
@@ -51,16 +51,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 650,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "paracetamol 1000 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ",
+          "span_text": "paracetamol 650 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ",
           "char_start": 75,
-          "char_end": 115
+          "char_end": 114
         }
       }
     ],

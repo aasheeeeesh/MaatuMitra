@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "patient",
-      "text": "ಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"
+      "text": "ಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?"
     },
     {
       "speaker_role": "pharmacist",
@@ -61,8 +61,8 @@
         "gold_span": {
           "turn_index": 3,
           "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ",
-          "char_start": 177,
-          "char_end": 198
+          "char_start": 167,
+          "char_end": 188
         }
       }
     ],

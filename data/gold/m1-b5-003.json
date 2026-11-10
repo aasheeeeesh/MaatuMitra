@@ -5,7 +5,7 @@
   "turns": [
     {
       "speaker_role": "asha",
-      "text": "ಮಗುವಿಗೆ ಒ.ಆರ್.ಎಸ್ ಕೊಟ್ಟಿದ್ದೀರಾ?"
+      "text": "ಮಗುವಿಗೆ ಓ.ಆರ್.ಎಸ್ ಕೊಟ್ಟಿದ್ದೀರಾ?"
     },
     {
       "speaker_role": "caregiver",
@@ -38,7 +38,7 @@
         "negated": true,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "ಒ.ಆರ್.ಎಸ್",
+          "span_text": "ಓ.ಆರ್.ಎಸ್",
           "char_start": 8,
           "char_end": 17
         }

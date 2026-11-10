@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "asha",
-      "text": "Paracetamol ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ."
+      "text": "Paracetamol ಸಿರಪ್ 7.5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ."
     },
     {
       "speaker_role": "asha",
@@ -34,16 +34,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
-        "dose_unit": "mg",
+        "dose_value": 7.5,
+        "dose_unit": "ml",
         "frequency_per_day": 4,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "Paracetamol ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "span_text": "Paracetamol ಸಿರಪ್ 7.5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
           "char_start": 21,
-          "char_end": 67
+          "char_end": 69
         }
       }
     ],
@@ -53,8 +53,8 @@
       "gold_span": {
         "turn_index": 2,
         "span_text": "ನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
-        "char_start": 74,
-        "char_end": 120
+        "char_start": 76,
+        "char_end": 122
       }
     }
   },
@@ -62,7 +62,6 @@
     "has_negation": false,
     "trap_tokens": [
       "ಬಂದಿದೆ",
-      "ಮಾತ್ರೆ",
       "ಇದ್ದರೆ"
     ],
     "code_switched": true,

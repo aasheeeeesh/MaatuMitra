@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 1000 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಕೊಡಿ.\nನಾಳೆಯೂ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
+  "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 5 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಕೊಡಿ.\nನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
   "words": [
     {
       "w": "ಪ್ಯಾರಸಿಟಮಾಲ್",
@@ -17,23 +17,23 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "ಸಿರಪ್",
       "char_start": 13,
-      "char_end": 17,
+      "char_end": 18,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಎಂ",
-      "char_start": 18,
+      "w": "5",
+      "char_start": 19,
       "char_end": 20,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಜಿ",
+      "w": "ml",
       "char_start": 21,
       "char_end": 23,
       "start": null,
@@ -41,48 +41,48 @@
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 24,
-      "char_end": 30,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 31,
-      "char_end": 38,
+      "char_start": 24,
+      "char_end": 31,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಾಲ್ಕು",
-      "char_start": 39,
-      "char_end": 45,
+      "char_start": 32,
+      "char_end": 38,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸಾರಿ",
-      "char_start": 46,
-      "char_end": 50,
+      "char_start": 39,
+      "char_end": 43,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಡಿ",
-      "char_start": 51,
-      "char_end": 55,
+      "char_start": 44,
+      "char_end": 48,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ನಾಳೆಯೂ",
-      "char_start": 57,
+      "w": "ನಾಳೆ",
+      "char_start": 50,
+      "char_end": 54,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೊತ್ತಿಗೆ",
+      "char_start": 55,
       "char_end": 63,
       "start": null,
       "end": null,

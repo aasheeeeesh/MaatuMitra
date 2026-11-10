@@ -45,7 +45,23 @@ class GenerationError(Exception):
 # ---------------------------------------------------------------- slot filling
 
 
-def _drug_candidates(spec, lex, chosen, combo_split, split):
+# Pairs that must not co-occur in one conversation, because several templates have the patient
+# ask "can I take both together?" and the pharmacist answer "yes" (clinical review M1-M10):
+# quinolones/doxycycline chelate with zinc and iron; two NSAIDs or two steroids duplicate therapy.
+CHELATORS = {"ciprofloxacin", "levofloxacin", "doxycycline"}
+METALS = {"zinc", "iron-folic acid"}
+NO_COTAKE_CLASSES = {"nsaid", "corticosteroid"}
+
+
+def conflicts(a, b) -> bool:
+    """True if drugs a and b (lexicon Drug objects) must not appear in one conversation."""
+    ga, gb = a.generic, b.generic
+    if (ga in CHELATORS and gb in METALS) or (gb in CHELATORS and ga in METALS):
+        return True
+    return a.cls == b.cls and a.cls in NO_COTAKE_CLASSES
+
+
+def _drug_candidates(spec, lex, chosen, combo_split, split, earlier=()):
     where = spec.get("where", {})
     out = []
     for g in sorted(lex):
@@ -62,11 +78,18 @@ def _drug_candidates(spec, lex, chosen, combo_split, split):
         needs = spec.get("needs", [])
         if ("freq" in needs and not d.freqs) or ("dur" in needs and not d.durs):
             continue
-        if g in chosen:
+        if g in chosen or any(conflicts(d, e) for e in earlier):
             continue
         combos = []
-        if spec.get("dose", "none") == "given":
-            combos = [c for c in d.dosed_combos() if combo_split.get(c) == split]
+        kind = spec.get("dose", "none")
+        if kind in ("given", "child_syrup"):
+            # "given" = adult oral dose (never ml); "child_syrup" = paediatric liquid in ml only
+            want_ml = kind == "child_syrup"
+            combos = [
+                c
+                for c in d.dosed_combos()
+                if combo_split.get(c) == split and (c[2] == "ml") == want_ml
+            ]
             if not combos:
                 continue
         out.append((d, combos))
@@ -80,7 +103,19 @@ def fill_slots(t, i: int, rng: random.Random, lex, combo_split, split) -> dict:
         excl = [fills[x] for x in spec.get("distinct_from", [])]
         if typ == "drug":
             chosen = {f.drug.generic for f in excl}
-            cands = _drug_candidates(spec, lex, chosen, combo_split, split)
+            # only drugs that are actually co-prescribed (dose given) can conflict; a drug that is
+            # mentioned only to be refused or named without a dose is exempt
+            dosed = ("given", "child_syrup")
+            earlier = (
+                [
+                    f.drug
+                    for k, f in fills.items()
+                    if isinstance(f, DrugFill) and t.slots[k].get("dose") in dosed
+                ]
+                if spec.get("dose") in dosed
+                else []
+            )
+            cands = _drug_candidates(spec, lex, chosen, combo_split, split, earlier)
             if not cands:
                 raise EmptyPool(f"{t.id}:{sid} has no candidate drug in split {split}")
             d, combos = rng.choice(cands)

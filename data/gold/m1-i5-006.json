@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "asha",
-      "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಒಂದು ಮಾತ್ರೆ ಕೊಡಿ, ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ."
+      "text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ 2.5 ml ಕೊಡಿ."
     }
   ],
   "gold_record": {
@@ -30,16 +30,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1,
-        "dose_unit": "tablet",
+        "dose_value": 2.5,
+        "dose_unit": "ml",
         "frequency_per_day": null,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಒಂದು ಮಾತ್ರೆ",
-          "char_start": 21,
-          "char_end": 45
+          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ 2.5 ml",
+          "char_start": 39,
+          "char_end": 64
         }
       }
     ],
@@ -50,8 +50,8 @@
         "gold_span": {
           "turn_index": 1,
           "span_text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ",
-          "char_start": 52,
-          "char_end": 69
+          "char_start": 21,
+          "char_end": 38
         }
       }
     ],
@@ -61,11 +61,10 @@
     "has_negation": false,
     "trap_tokens": [
       "ಬಂದಿದೆ",
-      "ಮಾತ್ರೆ",
       "ಇದ್ದರೆ",
       "ಮಾತ್ರ"
     ],
-    "code_switched": false,
+    "code_switched": true,
     "cross_turn_negation": false
   }
 }

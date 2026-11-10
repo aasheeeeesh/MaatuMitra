@@ -87,15 +87,19 @@ def build_rows() -> list[dict]:
             notes.append(f"AWaRe={d['aware']} (WHO AWaRe portal)")
         lo_hi = mx = ""
         if d["label"]:
-            lid, (lo, hi), max_daily, lnote = d["label"]
-            urls.append(fda(lid))
+            lid, (lo, hi), max_daily, lnote, *more = d["label"]
+            is_url = lid.startswith("https://")
+            urls.append(lid if is_url else fda(lid))
+            urls.extend(more[0] if more else [])
             lo_hi = f"{kn.fmt_num(lo)}-{kn.fmt_num(hi)}"
             mx = kn.fmt_num(max_daily) if max_daily else ""
-            notes.append(f"dose from openFDA US label {lid}: {lnote}")
+            kind = "fetched web page" if is_url else "openFDA US label"
+            notes.append(f"dose from {kind} {lid}: {lnote}")
             if not max_daily:
                 notes.append("max_daily not stated in label (blank)")
         else:
             notes.append(f"dose UNVERIFIED: {d.get('label_note', 'no label fetched')}")
+        urls.extend(d.get("extra_urls", []))
         if d.get("name_source"):
             urls.append(d["name_source"])
             notes.append("name/usage only: Kannada health page using 'ORS' (KN-4)")
@@ -158,6 +162,7 @@ class Drug:
     strengths: list[float]
     dose_range: tuple[float, float] | None
     form: str = "tablet"
+    syrup_ml: list[float] = field(default_factory=list)
     freqs: list[int] = field(default_factory=lambda: [1, 2, 3])
     durs: list[int] = field(default_factory=lambda: [3, 5])
 
@@ -181,6 +186,8 @@ class Drug:
             out.append((self.generic, 1, self.form))
             if self.generic == "paracetamol":
                 out.append((self.generic, 2, "tablet"))
+        # paediatric liquid volumes (generator hint, synthetic, not dosing advice; REFREEZE-1)
+        out += [(self.generic, v, "ml") for v in self.syrup_ml]
         return out
 
 
@@ -209,13 +216,16 @@ def load_lexicon(path: Path = LEXICON_CSV) -> dict[str, Drug]:
                 generic=r["generic_en"],
                 kn_primary=r["kn_primary"],
                 kn_variants=[v for v in r["kn_variants"].split("|") if v],
-                roman=[v for v in r["roman_variants"].split("|") if v] or [r["generic_en"]],
+                # purely numeric aliases (e.g. "625") are lexicon aliases only; never spoken as a name
+                roman=[v for v in r["roman_variants"].split("|") if v and not v.isdigit()]
+                or [r["generic_en"]],
                 cls=r["class"],
                 strengths=_nums(r["strengths_mg"]),
                 dose_range=rng,
             )
             if h:
                 drug.form, drug.freqs, drug.durs = h["form"], h["freqs"], h["durs"]
+                drug.syrup_ml = list(h.get("syrup_ml", []))
             elif r["class"] == "oral_rehydration":
                 drug.form, drug.freqs, drug.durs = "sachet", [], []
             lex[drug.generic] = drug

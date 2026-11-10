@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "clarithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ."
+      "text": "clarithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, ibuprofen 400 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ."
     },
     {
       "speaker_role": "physician",
@@ -58,16 +58,16 @@
       },
       {
         "drug": "ibuprofen",
-        "dose_value": 1,
-        "dose_unit": "tablet",
+        "dose_value": 400,
+        "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "span_text": "ibuprofen 400 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
           "char_start": 92,
-          "char_end": 131
+          "char_end": 129
         }
       }
     ],
@@ -78,8 +78,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
-          "char_start": 137,
-          "char_end": 169
+          "char_start": 135,
+          "char_end": 167
         }
       }
     ],
@@ -87,9 +87,7 @@
   },
   "tags": {
     "has_negation": true,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
+    "trap_tokens": [],
     "code_switched": true,
     "cross_turn_negation": false
   }

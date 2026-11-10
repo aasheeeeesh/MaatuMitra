@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "caregiver",
-      "text": "levo ಮಾತ್ರೆ ಮಗು ತಿನ್ನಲ್ಲ."
+      "text": "levoflox ಮಾತ್ರೆ ಮಗು ತಿನ್ನುತ್ತೆ."
     },
     {
       "speaker_role": "nurse",
@@ -27,12 +27,12 @@
         "dose_unit": null,
         "frequency_per_day": null,
         "duration_days": null,
-        "negated": true,
+        "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "levo ಮಾತ್ರೆ ಮಗು ತಿನ್ನಲ್ಲ",
+          "span_text": "levoflox ಮಾತ್ರೆ ಮಗು ತಿನ್ನುತ್ತೆ",
           "char_start": 33,
-          "char_end": 57
+          "char_end": 63
         }
       }
     ],
@@ -43,15 +43,15 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ",
-          "char_start": 59,
-          "char_end": 93
+          "char_start": 65,
+          "char_end": 99
         }
       }
     ],
     "follow_up": null
   },
   "tags": {
-    "has_negation": true,
+    "has_negation": false,
     "trap_tokens": [
       "ಮಾತ್ರೆ"
     ],

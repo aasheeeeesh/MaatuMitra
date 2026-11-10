@@ -5,11 +5,11 @@
   "turns": [
     {
       "speaker_role": "pharmacist",
-      "text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ ೫೦೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "Cefadroxil ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "pharmacist",
@@ -27,30 +27,30 @@
     "medications": [
       {
         "drug": "ibuprofen",
-        "dose_value": 1,
-        "dose_unit": "tablet",
+        "dose_value": 400,
+        "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+          "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
           "char_start": 0,
-          "char_end": 52
+          "char_end": 54
         }
       },
       {
-        "drug": "amoxicillin",
-        "dose_value": 500,
-        "dose_unit": "mg",
-        "frequency_per_day": 3,
-        "duration_days": 7,
+        "drug": "cefadroxil",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 2,
+        "duration_days": 5,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ ೫೦೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ",
-          "char_start": 67,
-          "char_end": 125
+          "span_text": "Cefadroxil ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 69,
+          "char_end": 117
         }
       },
       {
@@ -63,8 +63,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ",
-          "char_start": 140,
-          "char_end": 193
+          "char_start": 132,
+          "char_end": 185
         }
       }
     ],

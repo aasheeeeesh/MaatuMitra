@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?\nಕೆಮ್ಮು ಇಲ್ಲಾ, Clindamycin ೧೫೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [

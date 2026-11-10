@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "Amoxicillin-clavulanate ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, paracetamol ೧೦೦೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ."
+      "text": "Amoxicillin-clavulanate ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, paracetamol ೬೫೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ."
     },
     {
       "speaker_role": "physician",
@@ -58,16 +58,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 650,
         "dose_unit": "mg",
         "frequency_per_day": 4,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "paracetamol ೧೦೦೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "span_text": "paracetamol ೬೫೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
           "char_start": 108,
-          "char_end": 147
+          "char_end": 146
         }
       }
     ],
@@ -78,8 +78,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
-          "char_start": 153,
-          "char_end": 185
+          "char_start": 152,
+          "char_end": 184
         }
       }
     ],

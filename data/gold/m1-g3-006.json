@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "Dexamethasone 4 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
+      "text": "Diclofenac 50 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
     }
   ],
   "gold_record": {
@@ -50,17 +50,17 @@
         }
       },
       {
-        "drug": "dexamethasone",
-        "dose_value": 4,
+        "drug": "diclofenac",
+        "dose_value": 50,
         "dose_unit": "mg",
-        "frequency_per_day": 1,
+        "frequency_per_day": 2,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "Dexamethasone 4 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+          "span_text": "Diclofenac 50 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
           "char_start": 87,
-          "char_end": 126
+          "char_end": 124
         }
       }
     ],

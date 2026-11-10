@@ -1,0 +1,6 @@
+- UNVERIFIED: age band for child syrup volumes was not added (no fetched age table). Child ml volumes are synthetic.
+- Contract request: the lexicon CSV has no dose-unit column; ORS (sachet/ml) and iron-folic acid (mg iron, mcg folic acid) units are only in verified_by text. A unit column needs a contract change by the orchestrator.
+- Numeric alias "625" for amoxicillin-clavulanate may be read by m3/m4 as a dose number; they should handle it.
+- Optional ಸಲ ("times") was not generated; changing it would reshuffle all data. Decide at the next planned data change.
+- Spaced form "ಕೊಡ ಬೇಡಿ" is an orthographic artefact kept only so NEG-W05 appears in >= 5 conversations; a native reviewer may prefer dropping W05 from the coverage rule.
+- Outside my paths: m3_extract/tests/test_lexicon.py::test_multi_token_names_longest_match still expects ors spelled with short ಒ (ಒ.ಆರ್.ಎಸ್); the lexicon now has ಓ.ಆರ್.ಎಸ್.

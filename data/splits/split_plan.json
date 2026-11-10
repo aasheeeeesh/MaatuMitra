@@ -1,5 +1,5 @@
 {
-  "generator_version": "m1-data-1.0.0",
+  "generator_version": "m1-data-1.1.0",
   "seed": 20261109,
   "families": {
     "dev": [
@@ -148,7 +148,7 @@
       ],
       [
         "ibuprofen",
-        400,
+        200,
         "mg"
       ],
       [
@@ -198,8 +198,18 @@
       ],
       [
         "ondansetron",
-        8,
+        4,
         "mg"
+      ],
+      [
+        "paracetamol",
+        2.5,
+        "ml"
+      ],
+      [
+        "paracetamol",
+        10,
+        "ml"
       ],
       [
         "paracetamol",
@@ -365,6 +375,11 @@
       ],
       [
         "ibuprofen",
+        400,
+        "mg"
+      ],
+      [
+        "ibuprofen",
         1,
         "tablet"
       ],
@@ -376,6 +391,11 @@
       [
         "levofloxacin",
         750,
+        "mg"
+      ],
+      [
+        "metformin",
+        1000,
         "mg"
       ],
       [
@@ -415,8 +435,23 @@
       ],
       [
         "paracetamol",
-        1000,
+        500,
         "mg"
+      ],
+      [
+        "paracetamol",
+        650,
+        "mg"
+      ],
+      [
+        "paracetamol",
+        5,
+        "ml"
+      ],
+      [
+        "paracetamol",
+        7.5,
+        "ml"
       ],
       [
         "prednisolone",

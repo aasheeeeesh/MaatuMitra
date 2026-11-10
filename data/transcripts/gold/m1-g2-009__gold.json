@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "levofloxacin 750 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಮತ್ತು ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "levofloxacin 750 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಮತ್ತು ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "levofloxacin",
@@ -97,31 +97,39 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "400",
       "char_start": 65,
-      "char_end": 69,
+      "char_end": 68,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 70,
-      "char_end": 76,
+      "w": "mg",
+      "char_start": 69,
+      "char_end": 71,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 77,
-      "char_end": 84,
+      "char_start": 72,
+      "char_end": 79,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
+      "char_start": 80,
+      "char_end": 84,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
       "char_start": 85,
       "char_end": 89,
       "start": null,
@@ -129,7 +137,7 @@
       "conf": null
     },
     {
-      "w": "ಬಾರಿ",
+      "w": "ಮೂರು",
       "char_start": 90,
       "char_end": 94,
       "start": null,
@@ -137,73 +145,65 @@
       "conf": null
     },
     {
-      "w": "ಮೂರು",
-      "char_start": 95,
-      "char_end": 99,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ದಿನ",
-      "char_start": 100,
-      "char_end": 103,
+      "char_start": 95,
+      "char_end": 98,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 104,
+      "char_start": 99,
+      "char_end": 111,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 113,
       "char_end": 116,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಊಟದ",
-      "char_start": 118,
-      "char_end": 121,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ಮೊದಲು",
-      "char_start": 122,
-      "char_end": 127,
+      "char_start": 117,
+      "char_end": 122,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ",
-      "char_start": 128,
-      "char_end": 143,
+      "char_start": 123,
+      "char_end": 138,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 145,
-      "char_end": 148,
+      "char_start": 140,
+      "char_end": 143,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಂತರ",
-      "char_start": 149,
-      "char_end": 153,
+      "char_start": 144,
+      "char_end": 148,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 154,
-      "char_end": 166,
+      "char_start": 149,
+      "char_end": 161,
       "start": null,
       "end": null,
       "conf": null

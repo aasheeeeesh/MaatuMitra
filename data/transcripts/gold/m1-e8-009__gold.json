@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\nಒ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nparacetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ.\nಸರಿ.",
+  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\nಓ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nparacetamol ಸಿರಪ್ 10 ml ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ.\nಸರಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -49,7 +49,7 @@
       "conf": null
     },
     {
-      "w": "ಒ",
+      "w": "ಓ",
       "char_start": 30,
       "char_end": 31,
       "start": null,
@@ -105,16 +105,24 @@
       "conf": null
     },
     {
-      "w": "ಎರಡು",
+      "w": "ಸಿರಪ್",
       "char_start": 74,
-      "char_end": 78,
+      "char_end": 79,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 79,
+      "w": "10",
+      "char_start": 80,
+      "char_end": 82,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ml",
+      "char_start": 83,
       "char_end": 85,
       "start": null,
       "end": null,

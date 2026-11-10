@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "nurse",
-      "text": "ಜ್ವರ ಕಡಿಮೆ ಆಗಿದ್ದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ."
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ."
     }
   ],
   "gold_record": {
@@ -37,9 +37,9 @@
       "text": "if the fever has come down, come back in three days",
       "gold_span": {
         "turn_index": 1,
-        "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆಗಿದ್ದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
+        "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
         "char_start": 70,
-        "char_end": 115
+        "char_end": 111
       }
     }
   },

@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ceftriaxone 1000 mg injection ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ ಕೊಡುತ್ತೇವೆ.\nparacetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ ಡಾಕ್ಟರ್.",
   "words": [

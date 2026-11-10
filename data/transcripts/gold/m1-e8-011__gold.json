@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\noral rehydration salts ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nparacetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಮೂರು ದಿನ ಕೊಡಿ.\nಸರಿ.",
+  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\noral rehydration salts ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nparacetamol ಸಿರಪ್ 2.5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ಕೊಡಿ.\nಸರಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -105,47 +105,63 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "ಸಿರಪ್",
       "char_start": 87,
-      "char_end": 91,
+      "char_end": 92,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 92,
-      "char_end": 98,
+      "w": "2",
+      "char_start": 93,
+      "char_end": 94,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "5",
+      "char_start": 95,
+      "char_end": 96,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 97,
+      "char_end": 99,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್",
+      "char_start": 100,
+      "char_end": 103,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 99,
-      "char_end": 106,
+      "char_start": 104,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಾಲ್ಕು",
-      "char_start": 107,
-      "char_end": 113,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಸಾರಿ",
-      "char_start": 114,
+      "char_start": 112,
       "char_end": 118,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮೂರು",
+      "w": "ಬಾರಿ",
       "char_start": 119,
       "char_end": 123,
       "start": null,
@@ -153,25 +169,33 @@
       "conf": null
     },
     {
-      "w": "ದಿನ",
+      "w": "ಮೂರು",
       "char_start": 124,
-      "char_end": 127,
+      "char_end": 128,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 129,
+      "char_end": 133,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಡಿ",
-      "char_start": 128,
-      "char_end": 132,
+      "char_start": 134,
+      "char_end": 138,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 134,
-      "char_end": 137,
+      "char_start": 140,
+      "char_end": 143,
       "start": null,
       "end": null,
       "conf": null

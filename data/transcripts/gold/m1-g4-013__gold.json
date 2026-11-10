@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡಾಕ್ಟರ್, ತಲೆನೋವು ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\nAzithromycin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ, paracetmol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
+  "text": "ಡಾಕ್ಟರ್, ತಲೆನೋವು ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\nAzithromycin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ, paracetmol 500 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
   "words": [
     {
       "w": "ಡಾಕ್ಟರ್",
@@ -137,73 +137,73 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "500",
       "char_start": 111,
-      "char_end": 115,
+      "char_end": 114,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 116,
-      "char_end": 118,
+      "char_start": 115,
+      "char_end": 117,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 119,
-      "char_end": 126,
+      "char_start": 118,
+      "char_end": 125,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಾಲ್ಕು",
-      "char_start": 127,
-      "char_end": 133,
+      "char_start": 126,
+      "char_end": 132,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 134,
-      "char_end": 138,
+      "char_start": 133,
+      "char_end": 137,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೂಡ",
-      "char_start": 139,
-      "char_end": 142,
+      "char_start": 138,
+      "char_end": 141,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "Antibiotic",
-      "char_start": 144,
-      "char_end": 154,
+      "char_start": 143,
+      "char_end": 153,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಧ್ಯದಲ್ಲಿ",
-      "char_start": 155,
-      "char_end": 164,
+      "char_start": 154,
+      "char_end": 163,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಿಲ್ಲಿಸಬೇಡಿ",
-      "char_start": 165,
-      "char_end": 176,
+      "char_start": 164,
+      "char_end": 175,
       "start": null,
       "end": null,
       "conf": null

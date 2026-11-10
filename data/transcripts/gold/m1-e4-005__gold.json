@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ.\nprednisolone 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ.\nciprofloxacin ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿವಸ.\nಒಂಡನ್ಸಿಟ್ರಾನ್ 8 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ, ಊಟದ ನಂತರ.",
+  "text": "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ.\nprednisolone 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ.\nciprofloxacin ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿವಸ.\nಪ್ಯಾರಾಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ, ಊಟದ ನಂತರ.",
   "words": [
     {
       "w": "ಡಾಕ್ಟರ್",
@@ -185,7 +185,7 @@
       "conf": null
     },
     {
-      "w": "ಒಂಡನ್ಸಿಟ್ರಾನ್",
+      "w": "ಪ್ಯಾರಾಸಿಟಮಾಲ್",
       "char_start": 133,
       "char_end": 146,
       "start": null,
@@ -193,16 +193,8 @@
       "conf": null
     },
     {
-      "w": "8",
+      "w": "ಎರಡು",
       "char_start": 147,
-      "char_end": 148,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "mg",
-      "char_start": 149,
       "char_end": 151,
       "start": null,
       "end": null,
@@ -225,49 +217,49 @@
       "conf": null
     },
     {
-      "w": "ಎರಡು",
+      "w": "ನಾಲ್ಕು",
       "char_start": 167,
-      "char_end": 171,
+      "char_end": 173,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 172,
-      "char_end": 176,
+      "char_start": 174,
+      "char_end": 178,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 177,
-      "char_end": 181,
+      "char_start": 179,
+      "char_end": 183,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ದಿವಸ",
-      "char_start": 182,
-      "char_end": 186,
+      "w": "ದಿನ",
+      "char_start": 184,
+      "char_end": 187,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 188,
-      "char_end": 191,
+      "char_start": 189,
+      "char_end": 192,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಂತರ",
-      "char_start": 192,
-      "char_end": 196,
+      "char_start": 193,
+      "char_end": 197,
       "start": null,
       "end": null,
       "conf": null

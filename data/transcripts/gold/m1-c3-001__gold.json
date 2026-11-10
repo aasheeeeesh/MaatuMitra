@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Amoxicillin ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?\nಇಲ್ಲಾ.\nಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡುವುದು ಬೇಡಿ.",
+  "text": "Amoxicillin ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?\nಇಲ್ಲಾ.\nಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡ ಬೇಡಿ.",
   "words": [
     {
       "w": "Amoxicillin",
@@ -65,17 +65,17 @@
       "conf": null
     },
     {
-      "w": "ಕೊಡುವುದು",
+      "w": "ಕೊಡ",
       "char_start": 59,
-      "char_end": 67,
+      "char_end": 62,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬೇಡಿ",
-      "char_start": 68,
-      "char_end": 72,
+      "char_start": 63,
+      "char_end": 67,
       "start": null,
       "end": null,
       "conf": null

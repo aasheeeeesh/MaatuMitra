@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಕೆಮ್ಮು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nನಾಲ್ಕು ದಿನದಿಂದ, ವಾಂತಿ ಇದೆ.\nOK. Cefixime 400 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ. paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ಕೂಡ.",
   "words": [

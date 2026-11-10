@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಒ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ. ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ಕೊಡಿ."
+      "text": "ಓ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ. ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ಕೊಡಿ."
     },
     {
       "speaker_role": "pharmacist",
@@ -41,7 +41,7 @@
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಒ.ಆರ್.ಎಸ್",
+          "span_text": "ಓ.ಆರ್.ಎಸ್",
           "char_start": 20,
           "char_end": 29
         }

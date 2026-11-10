@@ -20,6 +20,8 @@ NUM_WORDS = {
     7: ("ಏಳು", "seven"),
     14: ("ಹದಿನಾಲ್ಕು", "fourteen"),
 }
+# syrup volumes in ml, spoken (AI-composed, not native-validated)
+ML_WORDS = {2.5: "ಎರಡೂವರೆ", 5: "ಐದು", 7.5: "ಏಳೂವರೆ", 10: "ಹತ್ತು"}
 
 
 def nfc(s: str) -> str:

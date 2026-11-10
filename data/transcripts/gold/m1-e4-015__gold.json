@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ.\nCefadroxil 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ.\nPrednisolone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ.\nZinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ, ಊಟದ ನಂತರ.",
+  "text": "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ.\nCefadroxil 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ.\nPrednisolone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ.\nParacetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ, ಊಟದ ನಂತರ.",
   "words": [
     {
       "w": "ಡಾಕ್ಟರ್",
@@ -185,81 +185,81 @@
       "conf": null
     },
     {
-      "w": "Zinc",
+      "w": "Paracetamol",
       "char_start": 132,
-      "char_end": 136,
+      "char_end": 143,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಂದು",
-      "char_start": 137,
-      "char_end": 141,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 142,
+      "w": "ಎರಡು",
+      "char_start": 144,
       "char_end": 148,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ದಿನಕ್ಕೆ",
+      "w": "ಮಾತ್ರೆ",
       "char_start": 149,
-      "char_end": 156,
+      "char_end": 155,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಂದು",
-      "char_start": 157,
-      "char_end": 161,
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 156,
+      "char_end": 163,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಲ್ಕು",
+      "char_start": 164,
+      "char_end": 170,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 162,
-      "char_end": 166,
+      "char_start": 171,
+      "char_end": 175,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಹದಿನಾಲ್ಕು",
-      "char_start": 167,
-      "char_end": 176,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನ",
-      "char_start": 177,
+      "w": "ಮೂರು",
+      "char_start": 176,
       "char_end": 180,
       "start": null,
       "end": null,
       "conf": null
     },
     {
+      "w": "ದಿನ",
+      "char_start": 181,
+      "char_end": 184,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
       "w": "ಊಟದ",
-      "char_start": 182,
-      "char_end": 185,
+      "char_start": 186,
+      "char_end": 189,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಂತರ",
-      "char_start": 186,
-      "char_end": 190,
+      "char_start": 190,
+      "char_end": 194,
       "start": null,
       "end": null,
       "conf": null

@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಹೌದು. ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 8 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಹೌದು. ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 4 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."
     }
   ],
   "gold_record": {
@@ -37,14 +37,14 @@
       },
       {
         "drug": "ondansetron",
-        "dose_value": 8,
+        "dose_value": 4,
         "dose_unit": "mg",
         "frequency_per_day": 2,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 8 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "span_text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 4 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ",
           "char_start": 97,
           "char_end": 151
         }

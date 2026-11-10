@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡಾಕ್ಟರೇ, ಕೆಮ್ಮು ಮತ್ತು ನೆಗಡಿ ಇದೆ.\nವೈರಲ್ ಸೋಂಕಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು ಬೇಕಾಗುವುದಿಲ್ಲ.\nಸರಿ, Paracetamol 1000 mg ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಇಲ್ಲಾ.",
+  "text": "ಡಾಕ್ಟರೇ, ಕೆಮ್ಮು ಮತ್ತು ನೆಗಡಿ ಇದೆ.\nವೈರಲ್ ಸೋಂಕಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು ಬೇಕಾಗುವುದಿಲ್ಲ.\nಸರಿ, Paracetamol 500 mg ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಇಲ್ಲಾ.",
   "words": [
     {
       "w": "ಡಾಕ್ಟರೇ",
@@ -105,33 +105,33 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "500",
       "char_start": 95,
-      "char_end": 99,
+      "char_end": 98,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 100,
-      "char_end": 102,
+      "char_start": 99,
+      "char_end": 101,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
-      "char_start": 103,
-      "char_end": 119,
+      "char_start": 102,
+      "char_end": 118,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇಲ್ಲಾ",
-      "char_start": 121,
-      "char_end": 126,
+      "char_start": 120,
+      "char_end": 125,
       "start": null,
       "end": null,
       "conf": null

@@ -65,11 +65,13 @@ DRUGS: list[dict] = [
             "amoxiclav",
             "co-amoxiclav",
             "amoxicillin clavulanic acid",
+            "625",
         ],
         cls="antibiotic",
         aware="Access",
         nlem="yes",
-        nlem_note="NLEM 6.2.1.2 tablet 500 mg + 125 mg; strengths_mg = amoxicillin component",
+        nlem_note="NLEM 6.2.1.2 tablet 500 mg + 125 mg; strengths_mg = amoxicillin component; "
+        "alias '625' = total tablet strength 500+125 mg spoken as 'six-two-five' (REFREEZE-1, review M1-M8)",
         strengths=[500],
         label=None,
         form="tablet",
@@ -319,8 +321,8 @@ DRUGS: list[dict] = [
     dict(
         generic="levofloxacin",
         iso="lēvōphlāksāsin",
-        iso_variants=["levophlōksāsin", "lēvō"],
-        roman=["levofloxacin", "levo", "levoflox"],
+        iso_variants=["levophlōksāsin"],
+        roman=["levofloxacin", "levoflox"],
         cls="antibiotic",
         aware="Watch",
         nlem="yes",
@@ -399,15 +401,17 @@ DRUGS: list[dict] = [
         nlem_note="NLEM 2.1.5 tablet 500/650 mg",
         strengths=[500, 650],
         label=(
-            "ee8e3aa2-8550-41c7-9911-0723b3fb2f87",
-            (1000, 1000),
-            3000,
-            "US OTC label: 2 x 500 mg every 6 h, max 6 per 24 h",
+            "https://www.nhs.uk/medicines/paracetamol-for-adults/how-and-when-to-take-paracetamol-for-adults/",
+            (500, 1000),
+            4000,
+            "NHS adult page: 1-2 x 500 mg, at least 4 h apart, max 8 x 500 mg in 24 h "
+            "(REFREEZE-1: replaces the US OTC 1000-1000 / 3000 consumer limit; clinical review M1-M1)",
         ),
         form="tablet",
         freqs=[3, 4],
         durs=[3],
         ismp=[],
+        syrup_ml=[2.5, 5, 7.5, 10],
     ),
     dict(
         generic="ibuprofen",
@@ -421,9 +425,14 @@ DRUGS: list[dict] = [
         strengths=[200, 400],
         label=(
             "5e595111-8477-4ec7-8d32-a0aeabc04e1a",
-            (300, 800),
+            (200, 800),
             3200,
-            "300 mg qid or 400-800 mg tid/qid; do not exceed 3200 mg daily",
+            "Rx label: 400 mg q4-6h, max 3200 mg daily; OTC label (openFDA ibuprofen OTC "
+            "query): 200 mg tablets, 1-2 per dose, max 1200 mg OTC (REFREEZE-1, review M1-M4)",
+            [
+                "https://api.fda.gov/drug/label.json?search=openfda.generic_name:ibuprofen"
+                "+AND+openfda.product_type:%22HUMAN+OTC+DRUG%22&limit=1"
+            ],
         ),
         form="tablet",
         freqs=[3],
@@ -432,8 +441,8 @@ DRUGS: list[dict] = [
     ),
     dict(
         generic="ors",
-        iso="o.ār.es",
-        iso_variants=["ō.ār.es", "ō ār es"],
+        iso="ō.ār.es",
+        iso_variants=["ō ār es"],
         roman=["ors", "o.r.s", "oral rehydration salts"],
         cls="oral_rehydration",
         aware="not_applicable",
@@ -445,7 +454,10 @@ DRUGS: list[dict] = [
         freqs=[],
         durs=[],
         ismp=[],
-        label_note="no label fetched",
+        label_note="no label fetched; dose unit is sachet (1 sachet in 1 litre of water) or ml "
+        "of made-up solution, never mg (WHO diarrhoea fact sheet; sachet size UNVERIFIED) "
+        "(REFREEZE-1, review M1-M8)",
+        extra_urls=["https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"],
         name_source="https://www.carehospitals.com/kn/blog-detail/how-to-prepare-oral-rehydration-solution-and-its-benifits/",
     ),
     dict(
@@ -498,9 +510,10 @@ DRUGS: list[dict] = [
         strengths=[4],
         label=(
             "cb0b89ea-904e-424e-9213-80fc4d073fe3",
-            (8, 24),
+            (4, 24),
             None,
-            "adult regimens 8 mg, 16 mg, single 24 mg (chemo/radiotherapy/post-op)",
+            "label tablets 4/8/16/24 mg; regimens 4 mg (age 4-11), 8 mg, 16 mg, single 24 mg "
+            "(REFREEZE-1: lower bound 8 -> 4, review M1-M2)",
         ),
         form="tablet",
         freqs=[2],
@@ -519,9 +532,12 @@ DRUGS: list[dict] = [
         strengths=[500, 1000],
         label=(
             "19e4bfb8-2ed1-4a6b-adf5-853ad2953362",
-            (500, 850),
+            (500, 1000),
             2550,
-            "start 500 mg bid or 850 mg qd; max 2550 mg per day",
+            "label tablets 500/850/1000 mg; start 500 mg bid or 850 mg qd; max 2550 mg per day; "
+            "1000 mg as a single dose is a derivation from the tablet strength "
+            "(REFREEZE-1, review M1-M3); NHS: 1 to 3 times a day with food",
+            ["https://www.nhs.uk/medicines/metformin/how-and-when-to-take-metformin/"],
         ),
         form="tablet",
         freqs=[2],
@@ -691,7 +707,8 @@ DRUGS: list[dict] = [
         freqs=[1],
         durs=[],
         ismp=["folinic acid"],
-        label_note="no label fetched",
+        label_note="no label fetched; per-component units: iron in mg (elemental), folic acid in "
+        "mcg (NEVER mg; mg/mcg confusion is a known risk); values UNVERIFIED (review M1-M8)",
     ),
 ]
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "m1-data-1.0.0"
+VERSION = "m1-data-1.1.0"
 SEED = 20261109
 # Fixed timestamp written into every generated file (never "now": keeps output deterministic).
 CREATED_AT = "2026-11-09T00:00:00Z"

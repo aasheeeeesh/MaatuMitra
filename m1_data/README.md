@@ -24,9 +24,9 @@ The lexicon build needs the optional extra `data` (`indic-transliteration==2.3.8
 - `negation.py` matcher for the shared negation table (self-check + coverage only)
 - `generate.py` the deterministic generator; `split.py` split plan + lock; `coverage.py`
 - `cli.py` / `__main__.py` command line; `../data/generate.py` thin wrapper
-- `config.py` VERSION (`m1-data-1.0.0`) and SEED (`20261109`)
+- `config.py` VERSION (`m1-data-1.1.0`) and SEED (`20261109`)
 
-## Current output (generator m1-data-1.0.0)
+## Current output (generator m1-data-1.1.0)
 
 592 conversations (dev 328 / test 264), 760 medication entries (test 352), 417 twins.
 Numbers: `results/m1_data/coverage.json`.

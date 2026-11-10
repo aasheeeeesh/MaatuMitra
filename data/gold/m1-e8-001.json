@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ಕೊಡಿ."
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಹತ್ತು ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ಕೊಡಿ."
     },
     {
       "speaker_role": "caregiver",
@@ -62,16 +62,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 2,
-        "dose_unit": "tablet",
+        "dose_value": 10,
+        "dose_unit": "ml",
         "frequency_per_day": 3,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಹತ್ತು ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
           "char_start": 62,
-          "char_end": 114
+          "char_end": 120
         }
       }
     ],
@@ -80,9 +80,7 @@
   },
   "tags": {
     "has_negation": false,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
+    "trap_tokens": [],
     "code_switched": false,
     "cross_turn_negation": false
   }

@@ -49,8 +49,11 @@ def compute_coverage(data_dir: Path = ROOT / "data") -> dict:
         s: (data_dir / "splits" / f"{s}.txt").read_text(encoding="utf-8").split()
         for s in ("dev", "test")
     }
-    reported = [e["id"] for e in table.entries if e["type"] in REPORTED_TYPES]
-    declarable = [e["id"] for e in table.entries if e["type"] in DECLARABLE_TYPES] + ["NEG-X01"]
+    # entries marked `generate: false` (table v2, e.g. the negative-question cue NEG-S07) are
+    # matched by readers but m1 does not have to produce them in >= 5 conversations
+    gen = [e for e in table.entries if e.get("generate", True)]
+    reported = [e["id"] for e in gen if e["type"] in REPORTED_TYPES]
+    declarable = [e["id"] for e in gen if e["type"] in DECLARABLE_TYPES] + ["NEG-X01"]
     detected = dict.fromkeys(reported, 0)
     traps = Counter()
     per_split = {}

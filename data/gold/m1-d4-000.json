@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "patient",
-      "text": "ಸರಿ, ಪ್ಯಾರಸಿಟಮೋಲ್ ೧೦೦೦ mg ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"
+      "text": "ಸರಿ, ಪ್ಯಾರಸಿಟಮೋಲ್ ೫೦೦ mg ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"
     },
     {
       "speaker_role": "physician",
@@ -48,16 +48,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 500,
         "dose_unit": "mg",
         "frequency_per_day": null,
         "duration_days": null,
         "negated": true,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೧೦೦೦ mg",
+          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೫೦೦ mg",
           "char_start": 83,
-          "char_end": 103
+          "char_end": 102
         }
       }
     ],

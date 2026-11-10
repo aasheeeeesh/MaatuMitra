@@ -48,8 +48,11 @@ def plan_combos(lex) -> dict[tuple, str]:
         rng = random.Random(seed_int("combo-split", g))  # noqa: S311
         rng.shuffle(combos)
         start = rng.randrange(2)
-        for i, c in enumerate(combos):
-            out[c] = ("dev", "test")[(i + start) % 2]
+        # adult (non-ml) and paediatric-liquid (ml) combinations alternate separately, so both
+        # splits get a paediatric volume when there are at least two (REFREEZE-1)
+        for group in ([c for c in combos if c[2] != "ml"], [c for c in combos if c[2] == "ml"]):
+            for i, c in enumerate(group):
+                out[c] = ("dev", "test")[(i + start) % 2]
     return out
 
 

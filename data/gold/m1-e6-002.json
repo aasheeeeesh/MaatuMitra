@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಹೌದು. clindamycin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಏಳು ದಿವಸ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಹೌದು. dexamethasone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."
     }
   ],
   "gold_record": {
@@ -36,17 +36,17 @@
         }
       },
       {
-        "drug": "clindamycin",
+        "drug": "dexamethasone",
         "dose_value": 1,
-        "dose_unit": "capsule",
-        "frequency_per_day": 3,
-        "duration_days": 7,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 5,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "clindamycin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಏಳು ದಿವಸ",
+          "span_text": "dexamethasone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ",
           "char_start": 88,
-          "char_end": 142
+          "char_end": 140
         }
       }
     ],

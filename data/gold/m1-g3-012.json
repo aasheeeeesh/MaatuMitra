@@ -9,11 +9,11 @@
     },
     {
       "speaker_role": "physician",
-      "text": "Diclofenac ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "Diclofenac ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ."
     },
     {
       "speaker_role": "physician",
-      "text": "Metformin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
+      "text": "Metformin 1000 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಕೊಡುತ್ತೇನೆ."
     }
   ],
   "gold_record": {
@@ -41,26 +41,26 @@
         "dose_unit": null,
         "frequency_per_day": null,
         "duration_days": null,
-        "negated": false,
+        "negated": true,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "Diclofenac ತೆಗೆದುಕೊಳ್ಳಿ",
+          "span_text": "Diclofenac ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
           "char_start": 59,
-          "char_end": 82
+          "char_end": 85
         }
       },
       {
         "drug": "metformin",
-        "dose_value": 1,
-        "dose_unit": "tablet",
+        "dose_value": 1000,
+        "dose_unit": "mg",
         "frequency_per_day": 2,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "Metformin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
-          "char_start": 84,
-          "char_end": 123
+          "span_text": "Metformin 1000 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ",
+          "char_start": 87,
+          "char_end": 122
         }
       }
     ],
@@ -68,10 +68,8 @@
     "follow_up": null
   },
   "tags": {
-    "has_negation": false,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
+    "has_negation": true,
+    "trap_tokens": [],
     "code_switched": true,
     "cross_turn_negation": false
   }

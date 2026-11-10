@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "prednisolone 10 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nIbuprofen ಬೇಡ.\nclarithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಕೊಡುತ್ತೇನೆ.",
   "words": [

@@ -1,0 +1,2 @@
+- (D-104) Child syrup volumes in the regenerated data are synthetic and not checked against an age/weight table. UNVERIFIED.
+- (D-104) How should the answer to a negative question (NEG-S07, -ಲ್ವಾ) be labelled in gold? Until decided, the generator does not produce it.

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Tablet ciprofloxacin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ.\nIbuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
+  "text": "Tablet ciprofloxacin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ.\nIbuprofen 200 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
   "words": [
     {
       "w": "Tablet",
@@ -89,7 +89,7 @@
       "conf": null
     },
     {
-      "w": "400",
+      "w": "200",
       "char_start": 66,
       "char_end": 69,
       "start": null,

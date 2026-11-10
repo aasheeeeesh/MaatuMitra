@@ -1,0 +1,2 @@
+- [ ] (D-104) Kannada native check: is "ಕೊಡ ಬೇಡಿ" (with a space) acceptable in the data, or should every case be "ಕೊಡಬೇಡಿ"? Only changeable before the first `make eval-test`.
+- [ ] (D-104) Paediatric check: child paracetamol syrup volumes in templates e8, h2, h3, i5 (2.5-10 ml) are synthetic and not matched to an age or weight table (UNVERIFIED).

@@ -23,7 +23,10 @@ form_sets:
     - {neg: "ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು", pos: "ತೆಗೆದುಕೊಳ್ಳಬಹುದು", patterns: [NEG-W06, NEG-S04]}
   DO_NOT_GIVE:
     - {neg: "ಕೊಡಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-S06]}
-    - {neg: "ಕೊಡುವುದು ಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-W05]}
+    # "ಕೊಡುವುದು ಬೇಡಿ" was ungrammatical (ಬೇಡಿ is an imperative, review D-93) and is removed.
+    # The spaced form below exists ONLY so the whole-token cue NEG-W05 is still exercised (same
+    # reason as "ಕೊಡ ಕೂಡದು"); a real speaker would write it fused: ಕೊಡಬೇಡಿ.
+    - {neg: "ಕೊಡ ಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-W05]}
     - {neg: "ಕೊಡ ಕೂಡದು", pos: "ಕೊಡಬಹುದು", patterns: [NEG-W07, NEG-S05]}
     - {neg: "ಕೊಡಕೂಡದು", pos: "ಕೊಡಬಹುದು", patterns: [NEG-S05]}
   DO_NOT_TAKE:

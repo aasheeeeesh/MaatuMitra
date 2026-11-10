@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಈ ಮಾತ್ರೆ ಜಾಸ್ತಿ ತಗೊಂಡ್ರೆ ಏನಾಗುತ್ತದೆ?\nಪ್ಯಾರಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.",
+  "text": "ಈ ಮಾತ್ರೆ ಜಾಸ್ತಿ ತಗೊಂಡ್ರೆ ಏನಾಗುತ್ತದೆ?\nಪ್ಯಾರಸಿಟಮಾಲ್ 650 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.",
   "words": [
     {
       "w": "ಈ",
@@ -57,81 +57,81 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "650",
       "char_start": 50,
-      "char_end": 54,
+      "char_end": 53,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 55,
-      "char_end": 57,
+      "char_start": 54,
+      "char_end": 56,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 58,
-      "char_end": 64,
+      "char_start": 57,
+      "char_end": 63,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 65,
-      "char_end": 72,
+      "char_start": 64,
+      "char_end": 71,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 73,
-      "char_end": 77,
+      "char_start": 72,
+      "char_end": 76,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 78,
-      "char_end": 82,
+      "char_start": 77,
+      "char_end": 81,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರ",
-      "char_start": 83,
-      "char_end": 88,
+      "char_start": 82,
+      "char_end": 87,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 89,
-      "char_end": 101,
+      "char_start": 88,
+      "char_end": 100,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಜಾಸ್ತಿ",
-      "char_start": 103,
-      "char_end": 109,
+      "char_start": 102,
+      "char_end": 108,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
-      "char_start": 110,
-      "char_end": 125,
+      "char_start": 109,
+      "char_end": 124,
       "start": null,
       "end": null,
       "conf": null

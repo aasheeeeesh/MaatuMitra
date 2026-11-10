@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 8 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ."
+      "text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 4 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ."
     },
     {
       "speaker_role": "pharmacist",
@@ -27,14 +27,14 @@
     "medications": [
       {
         "drug": "ondansetron",
-        "dose_value": 8,
+        "dose_value": 4,
         "dose_unit": "mg",
         "frequency_per_day": 2,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 8 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+          "span_text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ 4 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
           "char_start": 24,
           "char_end": 77
         }

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Clindamycin 150 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nDiclofenac ತೆಗೆದುಕೊಳ್ಳಿ.\nMetformin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಕೊಡುತ್ತೇನೆ.",
+  "text": "Clindamycin 150 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nDiclofenac ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.\nMetformin 1000 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಕೊಡುತ್ತೇನೆ.",
   "words": [
     {
       "w": "Clindamycin",
@@ -89,65 +89,65 @@
       "conf": null
     },
     {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
       "char_start": 70,
-      "char_end": 82,
+      "char_end": 85,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "Metformin",
-      "char_start": 84,
-      "char_end": 93,
+      "char_start": 87,
+      "char_end": 96,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಂದು",
-      "char_start": 94,
-      "char_end": 98,
+      "w": "1000",
+      "char_start": 97,
+      "char_end": 101,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 99,
-      "char_end": 105,
+      "w": "mg",
+      "char_start": 102,
+      "char_end": 104,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 106,
-      "char_end": 113,
+      "char_start": 105,
+      "char_end": 112,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಎರಡು",
-      "char_start": 114,
-      "char_end": 118,
+      "char_start": 113,
+      "char_end": 117,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಬಾರಿ",
-      "char_start": 119,
-      "char_end": 123,
+      "w": "ಸಾರಿ",
+      "char_start": 118,
+      "char_end": 122,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಡುತ್ತೇನೆ",
-      "char_start": 124,
-      "char_end": 134,
+      "char_start": 123,
+      "char_end": 133,
       "start": null,
       "end": null,
       "conf": null

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದಿದೆ.\nParacetamol ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ.\nನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
+  "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದಿದೆ.\nParacetamol ಸಿರಪ್ 5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ.\nನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -41,24 +41,32 @@
       "conf": null
     },
     {
-      "w": "೧೦೦೦",
+      "w": "ಸಿರಪ್",
       "char_start": 33,
-      "char_end": 37,
+      "char_end": 38,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "mg",
-      "char_start": 38,
+      "w": "5",
+      "char_start": 39,
       "char_end": 40,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
+      "w": "ಎಂ",
       "char_start": 41,
+      "char_end": 43,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್",
+      "char_start": 44,
       "char_end": 47,
       "start": null,
       "end": null,

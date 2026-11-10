@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\nಒ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ಕೊಡಿ.\nಸರಿ.",
+  "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇದೆ.\nಓ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.\nಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಎರಡೂವರೆ ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ.\nಸರಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -49,7 +49,7 @@
       "conf": null
     },
     {
-      "w": "ಒ",
+      "w": "ಓ",
       "char_start": 30,
       "char_end": 31,
       "start": null,
@@ -105,73 +105,89 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "ಸಿರಪ್",
       "char_start": 75,
-      "char_end": 79,
+      "char_end": 80,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 80,
-      "char_end": 86,
+      "w": "ಎರಡೂವರೆ",
+      "char_start": 81,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 89,
+      "char_end": 91,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್",
+      "char_start": 92,
+      "char_end": 95,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 87,
-      "char_end": 94,
+      "char_start": 96,
+      "char_end": 103,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಾಲ್ಕು",
-      "char_start": 95,
-      "char_end": 101,
+      "char_start": 104,
+      "char_end": 110,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 102,
-      "char_end": 106,
+      "char_start": 111,
+      "char_end": 115,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 107,
-      "char_end": 111,
+      "char_start": 116,
+      "char_end": 120,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ದಿವಸ",
-      "char_start": 112,
-      "char_end": 116,
+      "w": "ದಿನ",
+      "char_start": 121,
+      "char_end": 124,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಡಿ",
-      "char_start": 117,
-      "char_end": 121,
+      "char_start": 125,
+      "char_end": 129,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 123,
-      "char_end": 126,
+      "char_start": 131,
+      "char_end": 134,
       "start": null,
       "end": null,
       "conf": null

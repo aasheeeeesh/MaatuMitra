@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಏನು ತೊಂದರೆ?\nಯಾವುದೇ ನೆಗಡಿ ಇಲ್ಲ ಮತ್ತು ಚಳಿ ಇದೆ.",
   "words": [

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದಿದೆ.\nಪ್ಯಾರಸಿಟಮೋಲ್ ಒಂದು ಮಾತ್ರೆ ಕೊಡಿ, ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ.",
+  "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದಿದೆ.\nಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ ಎರಡೂವರೆ ಎಂ.ಎಲ್ ಕೊಡಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -33,57 +33,73 @@
       "conf": null
     },
     {
-      "w": "ಪ್ಯಾರಸಿಟಮೋಲ್",
-      "char_start": 21,
-      "char_end": 33,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಒಂದು",
-      "char_start": 34,
-      "char_end": 38,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 39,
-      "char_end": 45,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಕೊಡಿ",
-      "char_start": 46,
-      "char_end": 50,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ಜ್ವರ",
-      "char_start": 52,
-      "char_end": 56,
+      "char_start": 21,
+      "char_end": 25,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇದ್ದರೆ",
-      "char_start": 57,
-      "char_end": 63,
+      "char_start": 26,
+      "char_end": 32,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರ",
-      "char_start": 64,
-      "char_end": 69,
+      "char_start": 33,
+      "char_end": 38,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಪ್ಯಾರಸಿಟಮೋಲ್",
+      "char_start": 39,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಿರಪ್",
+      "char_start": 52,
+      "char_end": 57,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡೂವರೆ",
+      "char_start": 58,
+      "char_end": 65,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 66,
+      "char_end": 68,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್",
+      "char_start": 69,
+      "char_end": 72,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಿ",
+      "char_start": 73,
+      "char_end": 77,
       "start": null,
       "end": null,
       "conf": null

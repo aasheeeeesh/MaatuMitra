@@ -110,3 +110,17 @@ Things nobody has verified yet, with what to check. Builders add items through
 - m5 fix pass: should a saved record require status `approved` first (the old `/approve` step)? Currently `/save` itself is the approval (resolutions + approver in one transaction), so draft and flagged records can be saved if every flag is resolved.
 - m5 fix pass: Docker path for the new `OWNER_DB_PASSWORD` is UNVERIFIED (no Docker).
 - m5 fix pass: R-order (does physical row order of the research table leak chronology?) still needs multi-month data. UNVERIFIED.
+
+## From m1_data (merged 20261110T180301Z)
+
+- UNVERIFIED: age band for child syrup volumes was not added (no fetched age table). Child ml volumes are synthetic.
+- Contract request: the lexicon CSV has no dose-unit column; ORS (sachet/ml) and iron-folic acid (mg iron, mcg folic acid) units are only in verified_by text. A unit column needs a contract change by the orchestrator.
+- Numeric alias "625" for amoxicillin-clavulanate may be read by m3/m4 as a dose number; they should handle it.
+- Optional ಸಲ ("times") was not generated; changing it would reshuffle all data. Decide at the next planned data change.
+- Spaced form "ಕೊಡ ಬೇಡಿ" is an orthographic artefact kept only so NEG-W05 appears in >= 5 conversations; a native reviewer may prefer dropping W05 from the coverage rule.
+- Outside my paths: m3_extract/tests/test_lexicon.py::test_multi_token_names_longest_match still expects ors spelled with short ಒ (ಒ.ಆರ್.ಎಸ್); the lexicon now has ಓ.ಆರ್.ಎಸ್.
+
+## From infra (merged 20261110T180301Z)
+
+- (D-110) Child syrup volumes in the regenerated data are synthetic and not checked against an age/weight table. UNVERIFIED.
+- (D-110) How should the answer to a negative question (NEG-S07, -ಲ್ವಾ) be labelled in gold? Until decided, the generator does not produce it.

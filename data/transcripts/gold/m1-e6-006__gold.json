@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Nitrofurantoin ೧೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.\nದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ, ಅಲ್ವಾ?\nಹೌದು. Ondansetron 8 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "Nitrofurantoin ೧೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.\nದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ, ಅಲ್ವಾ?\nಹೌದು. Ondansetron 4 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "Nitrofurantoin",
@@ -129,7 +129,7 @@
       "conf": null
     },
     {
-      "w": "8",
+      "w": "4",
       "char_start": 115,
       "char_end": 116,
       "start": null,

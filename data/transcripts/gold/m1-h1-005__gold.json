@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ.",
+  "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ.",
   "words": [
     {
       "w": "ಪ್ಯಾರಸಿಟಮೋಲ್",
@@ -17,129 +17,129 @@
       "conf": null
     },
     {
-      "w": "೧೦೦೦",
+      "w": "೫೦೦",
       "char_start": 13,
-      "char_end": 17,
+      "char_end": 16,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 18,
-      "char_end": 20,
+      "char_start": 17,
+      "char_end": 19,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 21,
-      "char_end": 27,
+      "char_start": 20,
+      "char_end": 26,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 28,
-      "char_end": 35,
+      "char_start": 27,
+      "char_end": 34,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 36,
-      "char_end": 40,
+      "char_start": 35,
+      "char_end": 39,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸಾರಿ",
-      "char_start": 41,
-      "char_end": 45,
+      "char_start": 40,
+      "char_end": 44,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 46,
-      "char_end": 50,
+      "char_start": 45,
+      "char_end": 49,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನ",
-      "char_start": 51,
-      "char_end": 54,
+      "char_start": 50,
+      "char_end": 53,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 55,
-      "char_end": 67,
+      "char_start": 54,
+      "char_end": 66,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಜ್ವರ",
-      "char_start": 69,
-      "char_end": 73,
+      "char_start": 68,
+      "char_end": 72,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕಡಿಮೆ",
-      "char_start": 74,
-      "char_end": 79,
+      "char_start": 73,
+      "char_end": 78,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಆಗದಿದ್ದರೆ",
-      "char_start": 80,
-      "char_end": 89,
+      "char_start": 79,
+      "char_end": 88,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಎರಡು",
-      "char_start": 90,
-      "char_end": 94,
+      "char_start": 89,
+      "char_end": 93,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನದಲ್ಲಿ",
-      "char_start": 95,
-      "char_end": 103,
+      "char_start": 94,
+      "char_end": 102,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮತ್ತೆ",
-      "char_start": 104,
-      "char_end": 109,
+      "char_start": 103,
+      "char_end": 108,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬನ್ನಿ",
-      "char_start": 110,
-      "char_end": 115,
+      "char_start": 109,
+      "char_end": 114,
       "start": null,
       "end": null,
       "conf": null

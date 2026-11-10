@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್",
@@ -169,31 +169,47 @@
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
+      "w": "ಔಷಧಿ",
       "char_start": 147,
-      "char_end": 153,
+      "char_end": 151,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಟ್ಟಿಗೆ",
-      "char_start": 154,
-      "char_end": 161,
+      "char_start": 152,
+      "char_end": 159,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
-      "char_start": 162,
-      "char_end": 178,
+      "w": "ಕೊಡಬಹುದಾ",
+      "char_start": 160,
+      "char_end": 168,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹೌದು",
+      "char_start": 170,
+      "char_end": 174,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 176,
+      "char_end": 179,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
       "char_start": 180,
       "char_end": 184,
       "start": null,
@@ -201,25 +217,9 @@
       "conf": null
     },
     {
-      "w": "ಊಟದ",
-      "char_start": 186,
-      "char_end": 189,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ನಂತರ",
-      "char_start": 190,
-      "char_end": 194,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 195,
-      "char_end": 207,
+      "char_start": 185,
+      "char_end": 197,
       "start": null,
       "end": null,
       "conf": null

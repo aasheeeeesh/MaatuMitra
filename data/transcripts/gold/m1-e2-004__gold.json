@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nMontelukast 4 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nMontelukast 4 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್",
@@ -177,31 +177,47 @@
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
+      "w": "ಔಷಧಿ",
       "char_start": 146,
-      "char_end": 152,
+      "char_end": 150,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಟ್ಟಿಗೆ",
-      "char_start": 153,
-      "char_end": 160,
+      "char_start": 151,
+      "char_end": 158,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
-      "char_start": 161,
-      "char_end": 177,
+      "w": "ಕೊಡಬಹುದಾ",
+      "char_start": 159,
+      "char_end": 167,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹೌದು",
+      "char_start": 169,
+      "char_end": 173,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 175,
+      "char_end": 178,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
       "char_start": 179,
       "char_end": 183,
       "start": null,
@@ -209,25 +225,9 @@
       "conf": null
     },
     {
-      "w": "ಊಟದ",
-      "char_start": 185,
-      "char_end": 188,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ನಂತರ",
-      "char_start": 189,
-      "char_end": 193,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 194,
-      "char_end": 206,
+      "char_start": 184,
+      "char_end": 196,
       "start": null,
       "end": null,
       "conf": null

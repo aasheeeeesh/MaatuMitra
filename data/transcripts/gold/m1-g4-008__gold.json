@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಡಾಕ್ಟರ್, ಕೆಮ್ಮು ಮತ್ತು ಚಳಿ ಇದೆ.\ncotrimoxazole ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ, diclofenac 50 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
   "words": [

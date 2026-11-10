@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "Cefuroxime ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, Paracetamol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ."
+      "text": "Cefuroxime ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, Paracetamol 650 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ."
     },
     {
       "speaker_role": "physician",
@@ -58,16 +58,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 650,
         "dose_unit": "mg",
         "frequency_per_day": 4,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "Paracetamol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "span_text": "Paracetamol 650 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
           "char_start": 95,
-          "char_end": 134
+          "char_end": 133
         }
       }
     ],
@@ -78,8 +78,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
-          "char_start": 140,
-          "char_end": 172
+          "char_start": 139,
+          "char_end": 171
         }
       }
     ],

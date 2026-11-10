@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡೈಕ್ಲೋ 50 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nparacetamol ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
+  "text": "ಡೈಕ್ಲೋ 50 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nprednisolone 10 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಮೆಟ್ರೋನಿಡಜೋಲ್ 400 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
   "words": [
     {
       "w": "ಡೈಕ್ಲೋ",
@@ -97,169 +97,193 @@
       "conf": null
     },
     {
-      "w": "paracetamol",
+      "w": "prednisolone",
       "char_start": 65,
-      "char_end": 76,
+      "char_end": 77,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "೧೦೦೦",
-      "char_start": 77,
-      "char_end": 81,
+      "w": "10",
+      "char_start": 78,
+      "char_end": 80,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "mg",
-      "char_start": 82,
-      "char_end": 84,
+      "w": "ಎಂ",
+      "char_start": 81,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 84,
+      "char_end": 86,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 85,
-      "char_end": 91,
+      "char_start": 87,
+      "char_end": 93,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 92,
-      "char_end": 99,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 100,
-      "char_end": 104,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಬಾರಿ",
-      "char_start": 105,
-      "char_end": 109,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 110,
-      "char_end": 114,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನ",
-      "char_start": 115,
-      "char_end": 118,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 119,
-      "char_end": 131,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಐಬ್ಯುಪ್ರೋಫೆನ್",
-      "char_start": 133,
-      "char_end": 146,
+      "char_start": 94,
+      "char_end": 101,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಂದು",
-      "char_start": 147,
-      "char_end": 151,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 152,
-      "char_end": 158,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನಕ್ಕೆ",
-      "char_start": 159,
-      "char_end": 166,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 167,
-      "char_end": 171,
+      "char_start": 102,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 172,
-      "char_end": 176,
+      "char_start": 107,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮೂರು",
-      "char_start": 177,
-      "char_end": 181,
+      "w": "ಐದು",
+      "char_start": 112,
+      "char_end": 115,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ದಿವಸ",
-      "char_start": 182,
-      "char_end": 186,
+      "w": "ದಿನ",
+      "char_start": 116,
+      "char_end": 119,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 120,
+      "char_end": 132,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೆಟ್ರೋನಿಡಜೋಲ್",
+      "char_start": 134,
+      "char_end": 147,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "400",
+      "char_start": 148,
+      "char_end": 151,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಂ",
+      "char_start": 152,
+      "char_end": 154,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 155,
+      "char_end": 157,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 158,
+      "char_end": 164,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 165,
+      "char_end": 172,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮೂರು",
+      "char_start": 173,
+      "char_end": 177,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಾರಿ",
+      "char_start": 178,
+      "char_end": 182,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 183,
+      "char_end": 186,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
       "char_start": 187,
-      "char_end": 199,
+      "char_end": 190,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 191,
+      "char_end": 203,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 201,
-      "char_end": 204,
+      "char_start": 205,
+      "char_end": 208,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಧನ್ಯವಾದಗಳು",
-      "char_start": 206,
-      "char_end": 216,
+      "char_start": 210,
+      "char_end": 220,
       "start": null,
       "end": null,
       "conf": null

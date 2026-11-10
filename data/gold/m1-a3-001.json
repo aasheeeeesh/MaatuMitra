@@ -9,11 +9,11 @@
     },
     {
       "speaker_role": "caregiver",
-      "text": "ಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ paracetamol ಒಂದು ಮಾತ್ರೆ ಕೊಟ್ಟೆ."
+      "text": "ಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ Paracetamol ಸಿರಪ್ ಕೊಟ್ಟೆ."
     },
     {
       "speaker_role": "asha",
-      "text": "ವಾಂತಿ ಇದೆಯಾ?"
+      "text": "ನೆಗಡಿ ಇದೆಯಾ?"
     },
     {
       "speaker_role": "caregiver",
@@ -35,29 +35,29 @@
         }
       },
       {
-        "name": "vomiting",
+        "name": "cold",
         "present": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ವಾಂತಿ",
-          "char_start": 95,
-          "char_end": 100
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 89,
+          "char_end": 94
         }
       }
     ],
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1,
-        "dose_unit": "tablet",
+        "dose_value": null,
+        "dose_unit": null,
         "frequency_per_day": null,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ",
+          "span_text": "Paracetamol ಸಿರಪ್",
           "char_start": 63,
-          "char_end": 86
+          "char_end": 80
         }
       }
     ],
@@ -66,9 +66,7 @@
   },
   "tags": {
     "has_negation": true,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
+    "trap_tokens": [],
     "code_switched": true,
     "cross_turn_negation": true
   }

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ಮೂರು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ paracetamol ಎರಡು ಮಾತ್ರೆ ಕೊಟ್ಟೆ.\nವಾಂತಿ ಇದೆಯಾ?\nಇಲ್ಲ.",
+  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ಮೂರು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ.\nನೆಗಡಿ ಇದೆಯಾ?\nಹೌದು.",
   "words": [
     {
       "w": "ಜ್ವರ",
@@ -89,57 +89,49 @@
       "conf": null
     },
     {
-      "w": "paracetamol",
+      "w": "ಪ್ಯಾರಸಿಟಮಾಲ್",
       "char_start": 61,
-      "char_end": 72,
+      "char_end": 73,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಎರಡು",
-      "char_start": 73,
-      "char_end": 77,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 78,
-      "char_end": 84,
+      "w": "ಸಿರಪ್",
+      "char_start": 74,
+      "char_end": 79,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಟ್ಟೆ",
-      "char_start": 85,
-      "char_end": 91,
+      "char_start": 80,
+      "char_end": 86,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ವಾಂತಿ",
-      "char_start": 93,
-      "char_end": 98,
+      "w": "ನೆಗಡಿ",
+      "char_start": 88,
+      "char_end": 93,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇದೆಯಾ",
-      "char_start": 99,
-      "char_end": 104,
+      "char_start": 94,
+      "char_end": 99,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಇಲ್ಲ",
-      "char_start": 106,
-      "char_end": 110,
+      "w": "ಹೌದು",
+      "char_start": 101,
+      "char_end": 105,
       "start": null,
       "end": null,
       "conf": null

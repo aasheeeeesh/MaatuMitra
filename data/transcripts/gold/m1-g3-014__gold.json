@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "Azithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nDiclofenac ಬೇಡ.\nPrednisolone ೧೦ mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ.",
   "words": [

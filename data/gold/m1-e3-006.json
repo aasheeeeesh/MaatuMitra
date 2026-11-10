@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ 250 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "patient",
@@ -54,17 +54,17 @@
         }
       },
       {
-        "drug": "ibuprofen",
-        "dose_value": 1,
-        "dose_unit": "tablet",
-        "frequency_per_day": 3,
-        "duration_days": 3,
+        "drug": "levofloxacin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 7,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "span_text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ 250 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಏಳು ದಿನ",
           "char_start": 135,
-          "char_end": 188
+          "char_end": 194
         }
       }
     ],

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೊಡಿ.\nನಾಳೆಯೂ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
+  "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ ಏಳೂವರೆ ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೊಡಿ.\nನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
   "words": [
     {
       "w": "ಪ್ಯಾರಸಿಟಮೋಲ್",
@@ -17,47 +17,47 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "ಸಿರಪ್",
       "char_start": 13,
-      "char_end": 17,
+      "char_end": 18,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "mg",
-      "char_start": 18,
-      "char_end": 20,
+      "w": "ಏಳೂವರೆ",
+      "char_start": 19,
+      "char_end": 25,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 21,
-      "char_end": 27,
+      "w": "ಎಂ",
+      "char_start": 26,
+      "char_end": 28,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್",
+      "char_start": 29,
+      "char_end": 32,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 28,
-      "char_end": 35,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 36,
+      "char_start": 33,
       "char_end": 40,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಬಾರಿ",
+      "w": "ಮೂರು",
       "char_start": 41,
       "char_end": 45,
       "start": null,
@@ -65,7 +65,7 @@
       "conf": null
     },
     {
-      "w": "ಕೊಡಿ",
+      "w": "ಬಾರಿ",
       "char_start": 46,
       "char_end": 50,
       "start": null,
@@ -73,49 +73,65 @@
       "conf": null
     },
     {
-      "w": "ನಾಳೆಯೂ",
-      "char_start": 52,
-      "char_end": 58,
+      "w": "ಕೊಡಿ",
+      "char_start": 51,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಾಳೆ",
+      "char_start": 57,
+      "char_end": 61,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೊತ್ತಿಗೆ",
+      "char_start": 62,
+      "char_end": 70,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಜ್ವರ",
-      "char_start": 59,
-      "char_end": 63,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಇಳಿಯದಿದ್ದರೆ",
-      "char_start": 64,
+      "char_start": 71,
       "char_end": 75,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಆಸ್ಪತ್ರೆಗೆ",
+      "w": "ಇಳಿಯದಿದ್ದರೆ",
       "char_start": 76,
-      "char_end": 86,
+      "char_end": 87,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಆಸ್ಪತ್ರೆಗೆ",
+      "char_start": 88,
+      "char_end": 98,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕರೆದುಕೊಂಡು",
-      "char_start": 87,
-      "char_end": 97,
+      "char_start": 99,
+      "char_end": 109,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬನ್ನಿ",
-      "char_start": 98,
-      "char_end": 103,
+      "char_start": 110,
+      "char_end": 115,
       "start": null,
       "end": null,
       "conf": null

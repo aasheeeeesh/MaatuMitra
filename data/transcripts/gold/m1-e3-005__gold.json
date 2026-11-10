@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Azithromycin 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಲೇವೋ ೭೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
+  "text": "Azithromycin 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್ ೭೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
   "words": [
     {
       "w": "Azithromycin",
@@ -89,177 +89,177 @@
       "conf": null
     },
     {
-      "w": "ಲೇವೋ",
+      "w": "ಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್",
       "char_start": 68,
-      "char_end": 72,
+      "char_end": 84,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "೭೫೦",
-      "char_start": 73,
-      "char_end": 76,
+      "char_start": 85,
+      "char_end": 88,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 77,
-      "char_end": 79,
+      "char_start": 89,
+      "char_end": 91,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 80,
-      "char_end": 86,
+      "char_start": 92,
+      "char_end": 98,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 87,
-      "char_end": 94,
+      "char_start": 99,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಂದು",
-      "char_start": 95,
-      "char_end": 99,
+      "char_start": 107,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 100,
-      "char_end": 104,
+      "char_start": 112,
+      "char_end": 116,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಐದು",
-      "char_start": 105,
-      "char_end": 108,
+      "char_start": 117,
+      "char_end": 120,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನ",
-      "char_start": 109,
-      "char_end": 112,
+      "char_start": 121,
+      "char_end": 124,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 113,
-      "char_end": 125,
+      "char_start": 125,
+      "char_end": 137,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್",
-      "char_start": 127,
-      "char_end": 145,
+      "char_start": 139,
+      "char_end": 157,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "೫೦೦",
-      "char_start": 146,
-      "char_end": 149,
+      "char_start": 158,
+      "char_end": 161,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 150,
-      "char_end": 152,
+      "char_start": 162,
+      "char_end": 164,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 153,
-      "char_end": 159,
+      "char_start": 165,
+      "char_end": 171,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 160,
-      "char_end": 167,
+      "char_start": 172,
+      "char_end": 179,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಎರಡು",
-      "char_start": 168,
-      "char_end": 172,
+      "char_start": 180,
+      "char_end": 184,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 173,
-      "char_end": 177,
+      "char_start": 185,
+      "char_end": 189,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಐದು",
-      "char_start": 178,
-      "char_end": 181,
+      "char_start": 190,
+      "char_end": 193,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿವಸ",
-      "char_start": 182,
-      "char_end": 186,
+      "char_start": 194,
+      "char_end": 198,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 187,
-      "char_end": 199,
+      "char_start": 199,
+      "char_end": 211,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 201,
-      "char_end": 204,
+      "char_start": 213,
+      "char_end": 216,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಧನ್ಯವಾದಗಳು",
-      "char_start": 206,
-      "char_end": 216,
+      "char_start": 218,
+      "char_end": 228,
       "start": null,
       "end": null,
       "conf": null

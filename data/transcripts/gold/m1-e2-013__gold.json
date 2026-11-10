@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಒಮೆಪ್ರಜೋಲ್ ೨೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nclarithro ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "ಒಮೆಪ್ರಜೋಲ್ ೨೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nclarithro ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "ಒಮೆಪ್ರಜೋಲ್",
@@ -177,31 +177,47 @@
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
+      "w": "ಔಷಧಿ",
       "char_start": 144,
-      "char_end": 150,
+      "char_end": 148,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಟ್ಟಿಗೆ",
-      "char_start": 151,
-      "char_end": 158,
+      "char_start": 149,
+      "char_end": 156,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
-      "char_start": 159,
-      "char_end": 175,
+      "w": "ಕೊಡಬಹುದಾ",
+      "char_start": 157,
+      "char_end": 165,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹೌದು",
+      "char_start": 167,
+      "char_end": 171,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 173,
+      "char_end": 176,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
       "char_start": 177,
       "char_end": 181,
       "start": null,
@@ -209,25 +225,9 @@
       "conf": null
     },
     {
-      "w": "ಊಟದ",
-      "char_start": 183,
-      "char_end": 186,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ನಂತರ",
-      "char_start": 187,
-      "char_end": 191,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 192,
-      "char_end": 204,
+      "char_start": 182,
+      "char_end": 194,
       "start": null,
       "end": null,
       "conf": null

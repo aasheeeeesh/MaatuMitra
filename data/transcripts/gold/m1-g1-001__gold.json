@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "Amoxicillin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nAntibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ.\nಸರಿ ಡಾಕ್ಟರ್.",
   "words": [

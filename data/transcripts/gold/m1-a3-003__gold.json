@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ಕೊಟ್ಟೆ.\nವಾಂತಿ ಇದೆಯಾ?\nಹೌದು.",
+  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಐಬ್ಯುಪ್ರೋಫೆನ್ ಸಿರಪ್ ಕೊಟ್ಟೆ.\nವಾಂತಿ ಇದೆಯಾ?\nಹೌದು.",
   "words": [
     {
       "w": "ಜ್ವರ",
@@ -97,49 +97,41 @@
       "conf": null
     },
     {
-      "w": "400",
+      "w": "ಸಿರಪ್",
       "char_start": 77,
-      "char_end": 80,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "mg",
-      "char_start": 81,
-      "char_end": 83,
+      "char_end": 82,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಟ್ಟೆ",
-      "char_start": 84,
-      "char_end": 90,
+      "char_start": 83,
+      "char_end": 89,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ವಾಂತಿ",
-      "char_start": 92,
-      "char_end": 97,
+      "char_start": 91,
+      "char_end": 96,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇದೆಯಾ",
-      "char_start": 98,
-      "char_end": 103,
+      "char_start": 97,
+      "char_end": 102,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹೌದು",
-      "char_start": 105,
-      "char_end": 109,
+      "char_start": 104,
+      "char_end": 108,
       "start": null,
       "end": null,
       "conf": null

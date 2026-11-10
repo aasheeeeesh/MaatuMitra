@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ನೆಗಡಿ, ಚಳಿ, ಸುಸ್ತು ಇದೆಯಾ?\nನೆಗಡಿ ಇಲ್ಲಾ, ಚಳಿ ಇಲ್ಲಾ, ಸುಸ್ತು ಇದೆ.",
   "words": [

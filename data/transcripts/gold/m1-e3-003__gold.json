@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಸೆಫುರೋಕ್ಸಿಮ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಲೇವೋ 750 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nmontelukast ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
+  "text": "ಸೆಫುರೋಕ್ಸಿಮ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್ 750 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nmontelukast ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
   "words": [
     {
       "w": "ಸೆಫುರೋಕ್ಸಿಮ್",
@@ -81,185 +81,185 @@
       "conf": null
     },
     {
-      "w": "ಲೇವೋ",
+      "w": "ಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್",
       "char_start": 65,
-      "char_end": 69,
+      "char_end": 81,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "750",
-      "char_start": 70,
-      "char_end": 73,
+      "char_start": 82,
+      "char_end": 85,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಎಂ",
-      "char_start": 74,
-      "char_end": 76,
+      "char_start": 86,
+      "char_end": 88,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಜಿ",
-      "char_start": 77,
-      "char_end": 79,
+      "char_start": 89,
+      "char_end": 91,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 80,
-      "char_end": 86,
+      "char_start": 92,
+      "char_end": 98,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 87,
-      "char_end": 94,
+      "char_start": 99,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಂದು",
-      "char_start": 95,
-      "char_end": 99,
+      "char_start": 107,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 100,
-      "char_end": 104,
+      "char_start": 112,
+      "char_end": 116,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಐದು",
-      "char_start": 105,
-      "char_end": 108,
+      "char_start": 117,
+      "char_end": 120,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನ",
-      "char_start": 109,
-      "char_end": 112,
+      "char_start": 121,
+      "char_end": 124,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 113,
-      "char_end": 125,
+      "char_start": 125,
+      "char_end": 137,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "montelukast",
-      "char_start": 127,
-      "char_end": 138,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "೪",
       "char_start": 139,
-      "char_end": 140,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "mg",
-      "char_start": 141,
-      "char_end": 143,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 144,
       "char_end": 150,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ದಿನಕ್ಕೆ",
+      "w": "೪",
       "char_start": 151,
-      "char_end": 158,
+      "char_end": 152,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 153,
+      "char_end": 155,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 156,
+      "char_end": 162,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 163,
+      "char_end": 170,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಂದು",
-      "char_start": 159,
-      "char_end": 163,
+      "char_start": 171,
+      "char_end": 175,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 164,
-      "char_end": 168,
+      "char_start": 176,
+      "char_end": 180,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹದಿನಾಲ್ಕು",
-      "char_start": 169,
-      "char_end": 178,
+      "char_start": 181,
+      "char_end": 190,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನ",
-      "char_start": 179,
-      "char_end": 182,
+      "char_start": 191,
+      "char_end": 194,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 183,
-      "char_end": 195,
+      "char_start": 195,
+      "char_end": 207,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 197,
-      "char_end": 200,
+      "char_start": 209,
+      "char_end": 212,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಧನ್ಯವಾದಗಳು",
-      "char_start": 202,
-      "char_end": 212,
+      "char_start": 214,
+      "char_end": 224,
       "start": null,
       "end": null,
       "conf": null

@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ."
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 650 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ."
     }
   ],
   "gold_record": {
@@ -19,16 +19,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 650,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 650 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
           "char_start": 37,
-          "char_end": 82
+          "char_end": 81
         }
       }
     ],
@@ -39,8 +39,8 @@
         "gold_span": {
           "turn_index": 1,
           "span_text": "ಜಾಸ್ತಿ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ",
-          "char_start": 103,
-          "char_end": 125
+          "char_start": 102,
+          "char_end": 124
         }
       }
     ],

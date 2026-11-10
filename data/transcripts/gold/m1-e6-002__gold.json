@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಝಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.\nದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ, ಅಲ್ವಾ?\nಹೌದು. clindamycin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಏಳು ದಿವಸ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "ಝಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ.\nದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ, ಅಲ್ವಾ?\nಹೌದು. dexamethasone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "ಝಿಂಕ್",
@@ -113,81 +113,81 @@
       "conf": null
     },
     {
-      "w": "clindamycin",
+      "w": "dexamethasone",
       "char_start": 88,
-      "char_end": 99,
+      "char_end": 101,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಂದು",
-      "char_start": 100,
-      "char_end": 104,
+      "char_start": 102,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
-      "char_start": 105,
-      "char_end": 115,
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 107,
+      "char_end": 113,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 116,
-      "char_end": 123,
+      "char_start": 114,
+      "char_end": 121,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮೂರು",
-      "char_start": 124,
-      "char_end": 128,
+      "w": "ಒಂದು",
+      "char_start": 122,
+      "char_end": 126,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸಾರಿ",
-      "char_start": 129,
-      "char_end": 133,
+      "char_start": 127,
+      "char_end": 131,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಏಳು",
-      "char_start": 134,
-      "char_end": 137,
+      "w": "ಐದು",
+      "char_start": 132,
+      "char_end": 135,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿವಸ",
-      "char_start": 138,
-      "char_end": 142,
+      "char_start": 136,
+      "char_end": 140,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೂಡ",
-      "char_start": 143,
-      "char_end": 146,
+      "char_start": 141,
+      "char_end": 144,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 147,
-      "char_end": 159,
+      "char_start": 145,
+      "char_end": 157,
       "start": null,
       "end": null,
       "conf": null

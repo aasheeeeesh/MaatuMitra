@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "Clarithromycin 500 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, paracetmol ೧೦೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ."
+      "text": "Clarithromycin 500 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, paracetmol ೬೫೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ."
     },
     {
       "speaker_role": "physician",
@@ -58,16 +58,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 650,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "paracetmol ೧೦೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "span_text": "paracetmol ೬೫೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
           "char_start": 95,
-          "char_end": 131
+          "char_end": 130
         }
       }
     ],
@@ -78,8 +78,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
-          "char_start": 137,
-          "char_end": 169
+          "char_start": 136,
+          "char_end": 168
         }
       }
     ],

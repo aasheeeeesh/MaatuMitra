@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ.\nzinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ.\nಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ.\nIbuprofen ೪೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ, ಊಟದ ನಂತರ.",
+  "text": "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ.\nzinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ.\nಡೈಕ್ಲೋಫೆನಾಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ.\nNitrofurantoin ೧೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ, ಊಟದ ನಂತರ.",
   "words": [
     {
       "w": "ಡಾಕ್ಟರ್",
@@ -105,153 +105,153 @@
       "conf": null
     },
     {
-      "w": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್",
+      "w": "ಡೈಕ್ಲೋಫೆನಾಕ್",
       "char_start": 74,
-      "char_end": 88,
+      "char_end": 86,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಂದು",
-      "char_start": 89,
-      "char_end": 93,
+      "char_start": 87,
+      "char_end": 91,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 94,
-      "char_end": 100,
+      "char_start": 92,
+      "char_end": 98,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 101,
-      "char_end": 108,
+      "char_start": 99,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಂದು",
-      "char_start": 109,
-      "char_end": 113,
+      "w": "ಎರಡು",
+      "char_start": 107,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 114,
-      "char_end": 118,
+      "char_start": 112,
+      "char_end": 116,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಐದು",
-      "char_start": 119,
-      "char_end": 122,
+      "w": "ಮೂರು",
+      "char_start": 117,
+      "char_end": 121,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನ",
-      "char_start": 123,
-      "char_end": 126,
+      "char_start": 122,
+      "char_end": 125,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "Ibuprofen",
-      "char_start": 128,
-      "char_end": 137,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "೪೦೦",
-      "char_start": 138,
+      "w": "Nitrofurantoin",
+      "char_start": 127,
       "char_end": 141,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "mg",
+      "w": "೧೦೦",
       "char_start": 142,
-      "char_end": 144,
+      "char_end": 145,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 146,
+      "char_end": 148,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 145,
-      "char_end": 151,
+      "char_start": 149,
+      "char_end": 155,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 152,
-      "char_end": 159,
+      "char_start": 156,
+      "char_end": 163,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮೂರು",
-      "char_start": 160,
-      "char_end": 164,
+      "w": "ನಾಲ್ಕು",
+      "char_start": 164,
+      "char_end": 170,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 165,
-      "char_end": 169,
+      "char_start": 171,
+      "char_end": 175,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮೂರು",
-      "char_start": 170,
-      "char_end": 174,
+      "w": "ಒಂದು",
+      "char_start": 176,
+      "char_end": 180,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ದಿನ",
-      "char_start": 175,
-      "char_end": 178,
+      "w": "ವಾರ",
+      "char_start": 181,
+      "char_end": 184,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 180,
-      "char_end": 183,
+      "char_start": 186,
+      "char_end": 189,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಂತರ",
-      "char_start": 184,
-      "char_end": 188,
+      "char_start": 190,
+      "char_end": 194,
       "start": null,
       "end": null,
       "conf": null

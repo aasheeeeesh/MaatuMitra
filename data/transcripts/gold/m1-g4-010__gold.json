@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡಾಕ್ಟರ್, ಜ್ವರ ಮತ್ತು ಚಳಿ ಇದೆ.\nclarithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
+  "text": "ಡಾಕ್ಟರ್, ಜ್ವರ ಮತ್ತು ಚಳಿ ಇದೆ.\nclarithromycin ೫೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, ibuprofen 400 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
   "words": [
     {
       "w": "ಡಾಕ್ಟರ್",
@@ -129,73 +129,81 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "400",
       "char_start": 102,
-      "char_end": 106,
+      "char_end": 105,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 107,
-      "char_end": 113,
+      "w": "ಎಂ",
+      "char_start": 106,
+      "char_end": 108,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಜಿ",
+      "char_start": 109,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 114,
-      "char_end": 121,
+      "char_start": 112,
+      "char_end": 119,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 122,
-      "char_end": 126,
+      "char_start": 120,
+      "char_end": 124,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 127,
-      "char_end": 131,
+      "char_start": 125,
+      "char_end": 129,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೂಡ",
-      "char_start": 132,
-      "char_end": 135,
+      "char_start": 130,
+      "char_end": 133,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "Antibiotic",
-      "char_start": 137,
-      "char_end": 147,
+      "char_start": 135,
+      "char_end": 145,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಧ್ಯದಲ್ಲಿ",
-      "char_start": 148,
-      "char_end": 157,
+      "char_start": 146,
+      "char_end": 155,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಿಲ್ಲಿಸಬೇಡಿ",
-      "char_start": 158,
-      "char_end": 169,
+      "char_start": 156,
+      "char_end": 167,
       "start": null,
       "end": null,
       "conf": null

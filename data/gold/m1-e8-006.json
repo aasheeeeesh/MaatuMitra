@@ -9,11 +9,11 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಒ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ."
+      "text": "ಓ.ಆರ್.ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ."
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ಕೊಡಿ."
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 10 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ಕೊಡಿ."
     },
     {
       "speaker_role": "caregiver",
@@ -55,21 +55,21 @@
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಒ.ಆರ್.ಎಸ್",
+          "span_text": "ಓ.ಆರ್.ಎಸ್",
           "char_start": 30,
           "char_end": 39
         }
       },
       {
         "drug": "paracetamol",
-        "dose_value": 2,
-        "dose_unit": "tablet",
+        "dose_value": 10,
+        "dose_unit": "ml",
         "frequency_per_day": 4,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 10 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ",
           "char_start": 62,
           "char_end": 116
         }
@@ -80,10 +80,8 @@
   },
   "tags": {
     "has_negation": false,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
-    "code_switched": false,
+    "trap_tokens": [],
+    "code_switched": true,
     "cross_turn_negation": false
   }
 }

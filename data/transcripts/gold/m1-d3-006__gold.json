@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ನೆಗಡಿ ಮಾತ್ರ ಇದೆಯಾ?\nಹೌದು, ತಲೆನೋವು ಇಲ್ಲ.\nಹಾಗಾದರೆ ಪ್ರತಿಜೈವಿಕ ಕೊಡುವುದು ಬೇಡಿ. ಬಿಸಿ ನೀರು ಕುಡಿಸಿ.",
+  "text": "ಮಗುವಿಗೆ ನೆಗಡಿ ಮಾತ್ರ ಇದೆಯಾ?\nಹೌದು, ತಲೆನೋವು ಇಲ್ಲ.\nಹಾಗಾದರೆ ಪ್ರತಿಜೈವಿಕ ಕೊಡ ಬೇಡಿ. ಬಿಸಿ ನೀರು ಕುಡಿಸಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -81,23 +81,31 @@
       "conf": null
     },
     {
-      "w": "ಕೊಡುವುದು",
+      "w": "ಕೊಡ",
       "char_start": 66,
-      "char_end": 74,
+      "char_end": 69,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬೇಡಿ",
-      "char_start": 75,
-      "char_end": 79,
+      "char_start": 70,
+      "char_end": 74,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಿಸಿ",
+      "char_start": 76,
+      "char_end": 80,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನೀರು",
       "char_start": 81,
       "char_end": 85,
       "start": null,
@@ -105,17 +113,9 @@
       "conf": null
     },
     {
-      "w": "ನೀರು",
-      "char_start": 86,
-      "char_end": 90,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ಕುಡಿಸಿ",
-      "char_start": 91,
-      "char_end": 97,
+      "char_start": 86,
+      "char_end": 92,
       "start": null,
       "end": null,
       "conf": null

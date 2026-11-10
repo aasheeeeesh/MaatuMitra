@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Salbutamol 2 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಅಮೋಕ್ಸಿಕ್ಲಾವ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "Salbutamol 2 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಅಮೋಕ್ಸಿಕ್ಲಾವ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "Salbutamol",
@@ -177,31 +177,47 @@
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
+      "w": "ಔಷಧಿ",
       "char_start": 138,
-      "char_end": 144,
+      "char_end": 142,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಟ್ಟಿಗೆ",
-      "char_start": 145,
-      "char_end": 152,
+      "char_start": 143,
+      "char_end": 150,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
-      "char_start": 153,
-      "char_end": 169,
+      "w": "ಕೊಡಬಹುದಾ",
+      "char_start": 151,
+      "char_end": 159,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹೌದು",
+      "char_start": 161,
+      "char_end": 165,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 167,
+      "char_end": 170,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
       "char_start": 171,
       "char_end": 175,
       "start": null,
@@ -209,25 +225,9 @@
       "conf": null
     },
     {
-      "w": "ಊಟದ",
-      "char_start": 177,
-      "char_end": 180,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ನಂತರ",
-      "char_start": 181,
-      "char_end": 185,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 186,
-      "char_end": 198,
+      "char_start": 176,
+      "char_end": 188,
       "start": null,
       "end": null,
       "conf": null

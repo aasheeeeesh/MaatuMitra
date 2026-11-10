@@ -5,7 +5,7 @@
   "turns": [
     {
       "speaker_role": "nurse",
-      "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "nurse",
@@ -19,16 +19,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 500,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
           "char_start": 0,
-          "char_end": 54
+          "char_end": 53
         }
       }
     ],
@@ -38,8 +38,8 @@
       "gold_span": {
         "turn_index": 1,
         "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
-        "char_start": 69,
-        "char_end": 115
+        "char_start": 68,
+        "char_end": 114
       }
     }
   },

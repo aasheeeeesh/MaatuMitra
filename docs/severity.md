@@ -19,6 +19,15 @@ and sliced as in docs/metrics.md.
 | CR-DUR | wrong duration | 5 days recorded as 3 days |
 | CR-PATIENT | wrong patient link | record attached to another patient_ref |
 | CR-UNSUPPORTED | a drug or dose in the record with no spoken support | a drug that nobody said |
+| CR-ROUTE | wrong route of administration (oral, injection, drops, topical) | "injection" recorded as "tablet"; a drug said to be drunk recorded as injected |
+| CR-PAEDIATRIC | a child or weight-based dose recorded or checked as an ordinary adult dose | a syrup volume for a child recorded as an adult 500 mg tablet; a child dose passed because it lies inside the adult range |
+| CR-LIQUID-STRENGTH | liquid strength (mg per 5 ml) or volume (ml) error | 120 mg/5 ml read as 250 mg/5 ml; 5 ml recorded as 5 mg |
+
+*Added before any test run, REFREEZE-1 (D-91): CR-ROUTE, CR-PAEDIATRIC and CR-LIQUID-STRENGTH
+come from the simulated clinical review (ai_simulated_review, not a real clinician). No test
+split has been evaluated yet (`results/test_access_log.md` does not exist), so pre-registration
+is unchanged for every other class. In reports these three count as CRITICAL, in addition to
+CR-DOSE when the unit also differs.*
 
 ## MAJOR (important information lost or invented, not directly a dosing error)
 

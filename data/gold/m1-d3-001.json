@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "nurse",
-      "text": "ಹಾಗಾದರೆ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಡ. ಬಿಸಿ ನೀರು ಕುಡಿಸಿ."
+      "text": "ಹಾಗಾದರೆ ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಬೇಡಿ. ಬಿಸಿ ನೀರು ಕುಡಿಸಿ."
     }
   ],
   "gold_record": {
@@ -48,9 +48,9 @@
         "negated": true,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಹಾಗಾದರೆ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಡ",
+          "span_text": "ಹಾಗಾದರೆ ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಬೇಡಿ",
           "char_start": 48,
-          "char_end": 71
+          "char_end": 75
         }
       },
       {
@@ -59,8 +59,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ಬಿಸಿ ನೀರು ಕುಡಿಸಿ",
-          "char_start": 73,
-          "char_end": 89
+          "char_start": 77,
+          "char_end": 93
         }
       }
     ],

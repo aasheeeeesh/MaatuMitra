@@ -119,3 +119,7 @@ What a human must check:
 ### m5_backend fix pass (2026-11-10), backend-security-engineer (AI agent)
 - Generated: SQL migrations 010-050 changes (verdicts, record_resolutions, pseudonym_map, saved-gate and consent triggers, audit function), app code (verify/save endpoints, verifier hook, pool reset, startup login check, small-cell suppression), tests (test_save_gate.py, test_hardening.py, updates), 13 new matrix cases and one hand-written YAML line, README/CONTRACT updates, .env.example and docker-compose.yml comments.
 - Human must check: (1) re-read the save rules in app/main.py `save_record` and sql/050_gate.sql against the brief and D-80 (the same AI wrote rules, tests and matrix); (2) re-read the `attacks.save_gate: deny` line in tests/access_matrix_expected.yaml; (3) decide whether k = 5 and "drop, do not merge" are acceptable; (4) the Docker path is UNVERIFIED; (5) red-before-green was observed only for F5; the other new tests were written before the code but not run against the old code.
+
+## From m1_data (merged 20261110T180301Z)
+
+- m1_data / data-scientist (Claude, 2026-11-10): rewrote child-dose templates, lexicon rows, negation table v2, severity classes, annotation guide examples, tests (m1_data/tests/test_refreeze1.py), regenerated data (REFREEZE-1). All Kannada is AI-composed (wording from the ai_simulated_review reviewer); human must check Kannada, dose ranges and the clinical choices.

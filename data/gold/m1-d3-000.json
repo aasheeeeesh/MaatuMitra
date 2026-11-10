@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "nurse",
-      "text": "ಹಾಗಾದರೆ antibiotic ಕೊಡುವುದು ಬೇಡಿ. ಬಿಸಿ ನೀರು ಕುಡಿಸಿ."
+      "text": "ಹಾಗಾದರೆ antibiotic ಕೊಡ ಬೇಡಿ. ಬಿಸಿ ನೀರು ಕುಡಿಸಿ."
     }
   ],
   "gold_record": {
@@ -48,9 +48,9 @@
         "negated": true,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಹಾಗಾದರೆ antibiotic ಕೊಡುವುದು ಬೇಡಿ",
+          "span_text": "ಹಾಗಾದರೆ antibiotic ಕೊಡ ಬೇಡಿ",
           "char_start": 47,
-          "char_end": 79
+          "char_end": 74
         }
       },
       {
@@ -59,8 +59,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ಬಿಸಿ ನೀರು ಕುಡಿಸಿ",
-          "char_start": 81,
-          "char_end": 97
+          "char_start": 76,
+          "char_end": 92
         }
       }
     ],

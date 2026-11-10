@@ -5,7 +5,7 @@
   "turns": [
     {
       "speaker_role": "physician",
-      "text": "Ciprofloxacin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ ಮತ್ತು Paracetamol ೧೦೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "Ciprofloxacin 500 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ ಮತ್ತು Paracetamol ೫೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "patient",
@@ -37,16 +37,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 500,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "Paracetamol ೧೦೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+          "span_text": "Paracetamol ೫೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
           "char_start": 58,
-          "char_end": 104
+          "char_end": 103
         }
       }
     ],
@@ -57,8 +57,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ",
-          "char_start": 146,
-          "char_end": 167
+          "char_start": 145,
+          "char_end": 166
         }
       }
     ],

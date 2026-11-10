@@ -1,0 +1,3 @@
+- **REFREEZE-1**: the one planned regeneration and relock of the frozen test split, done before any test evaluation.
+- **Syrup (child_syrup slot)**: a paediatric liquid dose given in ml; the generator's `child_syrup` dose kind produces only ml, `given` produces only adult mg/tablet doses.
+- **generate: false**: a negation-table entry that readers must match but the data generator is not required to produce.

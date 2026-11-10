@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ವಾಂತಿ ಮತ್ತು ಅತಿಸಾರ ಇದೆ.\nOrs ಆಗಾಗ ಕುಡಿಯಿರಿ.\nವಾಂತಿ ನಿಂತರೆ ತಕ್ಷಣ ಬನ್ನಿ.",
+  "text": "ವಾಂತಿ ಮತ್ತು ಅತಿಸಾರ ಇದೆ.\nOrs ಆಗಾಗ ಕುಡಿಯಿರಿ.\nವಾಂತಿ ಇದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ.",
   "words": [
     {
       "w": "ವಾಂತಿ",
@@ -73,7 +73,7 @@
       "conf": null
     },
     {
-      "w": "ನಿಂತರೆ",
+      "w": "ಇದ್ದರೆ",
       "char_start": 49,
       "char_end": 55,
       "start": null,

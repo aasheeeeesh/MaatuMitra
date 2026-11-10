@@ -18,12 +18,16 @@
 #  - Never match cues as raw substrings of the sentence.
 #  - Split clauses first (clause_splitter_*); a cue negates only its own clause.
 
-version: 1
-date: 2026-11-09
+version: 2
+date: 2026-11-10
+# v2 (REFREEZE-1, D-93, ai_simulated_review findings, NOT native-validated): ಬೆಲ್ಲ no longer matches the soft cue;
+#   new soft cue NEG-S07 (negative question -ಲ್ವಾ); ಆಗದೆ added to the -ದೆ verb stems;
+#   the punctuation clause splitter no longer splits at a dot inside an abbreviation (ಎಂ.ಜಿ, ಎಂ.ಎಲ್).
+#   Entries with `generate: false` are matched by readers but m1_data does not have to generate them.
 tokenizer: '[\p{L}\p{M}\p{N}]+'
 # Verb stems for verb_lexicon_suffix / soft_suffix. STARTER list, UNVERIFIED;
 # m1/m3 extend it with sources. Stems are written as they appear before the suffix.
-verb_stems: [ಮುಗಿಸ, ತೆಗೆದುಕೊಳ್ಳ, ಕುಡಿಯ, ತಿನ್ನ, ಕೊಡ, ಬರ, ಹೋಗ, ಮಾಡ, ನಿಲ್ಲಿಸ, ಹಾಕ]
+verb_stems: [ಮುಗಿಸ, ತೆಗೆದುಕೊಳ್ಳ, ಕುಡಿಯ, ತಿನ್ನ, ಕೊಡ, ಬರ, ಹೋಗ, ಮಾಡ, ನಿಲ್ಲಿಸ, ಹಾಕ, ಆಗ]
 
 entries:
   # ---------------- strong cues, whole token ----------------
@@ -44,23 +48,26 @@ entries:
   - {id: NEG-S06, type: suffix, pattern: '[ಕ-ಹ]ಬೇಡಿ?$', example: 'ಉಳಿದ ಮಾತ್ರೆಗಳನ್ನು ಬೇರೆಯವರಿಗೆ ಕೊಡಬೇಡಿ.', meaning: 'do not (prohibitive, fused): ಕೊಡಬೇಡಿ, ತಿನ್ನಬೇಡ', status: hypothesis_unverified, origin: architect_addition}
 
   # ---------------- -ದೆ "without doing": ONLY on verb stems from verb_stems ----------------
-  - {id: NEG-V01, type: verb_lexicon_suffix, pattern: '^(ಮುಗಿಸ|ತೆಗೆದುಕೊಳ್ಳ|ಕುಡಿಯ|ತಿನ್ನ|ಕೊಡ|ಬರ|ಹೋಗ|ಮಾಡ|ನಿಲ್ಲಿಸ|ಹಾಕ)ದೆ$', example: 'ಔಷಧಿ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದರು.', meaning: 'without doing (stopped without finishing). Trap: ಇದೆ and ಬಂದಿದೆ also end in ದೆ', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-V01, type: verb_lexicon_suffix, pattern: '^(ಮುಗಿಸ|ತೆಗೆದುಕೊಳ್ಳ|ಕುಡಿಯ|ತಿನ್ನ|ಕೊಡ|ಬರ|ಹೋಗ|ಮಾಡ|ನಿಲ್ಲಿಸ|ಹಾಕ|ಆಗ)ದೆ$', example: 'ಔಷಧಿ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದರು.', meaning: 'without doing (stopped without finishing; v2 adds ಆಗದೆ "without happening"). Trap: ಇದೆ and ಬಂದಿದೆ also end in ದೆ', status: hypothesis_unverified, origin: brief}
 
   # ---------------- soft cue: casual -ಲ್ಲ on a verb stem ----------------
   - id: NEG-SOFT01
     type: soft_suffix
-    pattern: '(?<!ಿ)ಲ್ಲಾ?$'
-    exclude_tokens: [ಇಲ್ಲ, ಇಲ್ಲಾ, ಅಲ್ಲ, ಎಲ್ಲ, ಎಲ್ಲಾ]
+    pattern: '(?<=[ಕ-ಹ])ಲ್ಲಾ?$'
+    exclude_tokens: [ಇಲ್ಲ, ಇಲ್ಲಾ, ಅಲ್ಲ, ಎಲ್ಲ, ಎಲ್ಲಾ, ಬೆಲ್ಲ]
     example: 'ಅವನು ನಾಳೆ ಬರಲ್ಲ.'
     meaning: 'casual "will not / does not" (ಬರಲ್ಲ, ತಿನ್ನಲ್ಲ). Risky: FLAGS via C8 unless the stem (token minus ಲ್ಲ) is in verb_stems'
     status: hypothesis_unverified
     origin: brief
 
+  # ---------------- soft cue: negative question (v2) ----------------
+  - {id: NEG-S07, type: soft_suffix, pattern: '[ಕ-ಹ]ಲ್ವಾ?$', exclude_tokens: [ಅಲ್ವಾ, ಅಲ್ವ], generate: false, example: 'ಮಗು ಮಾತ್ರೆ ಕುಡಿಯಲ್ವಾ?', meaning: 'colloquial negative question "does (he) not drink?" (-ಲ್ವಾ; source: sharmaeklavya2.github.io/notes/kannada/grammar/04-verbs.html, fetched 2026-11-10 by the Kannada reviewer). The polarity of a negative question and of its answer is undecided, so readers should FLAG (soft) rather than negate. ಅಲ್ವಾ/ಅಲ್ವ (tag "right?") stay traps. m1 does not generate it (no gold polarity rule yet); native reviewer must rule.', status: hypothesis_unverified, origin: architect_addition}
+
   # ---------------- compound ----------------
   - {id: NEG-C01, type: compound, pattern: '^ಯಾವುದೇ$', then_pattern: '^ಇಲ್ಲಾ?$', example: 'ಯಾವುದೇ ತೊಂದರೆ ಇಲ್ಲ.', meaning: '"not any": ಯಾವುದೇ ... ಇಲ್ಲ inside one clause', status: hypothesis_unverified, origin: brief}
 
   # ---------------- clause scope ----------------
-  - {id: NEG-CL01, type: clause_splitter_punct, pattern: '[.?!,;:।॥\n]', example: 'ತಲೆನೋವು ಇದೆ, ವಾಂತಿ ಇಲ್ಲ.', meaning: 'split clauses at punctuation and line breaks', status: hypothesis_unverified, origin: brief}
+  - {id: NEG-CL01, type: clause_splitter_punct, pattern: '[?!,;:।॥\n]|\.(?!\p{L})', example: 'ತಲೆನೋವು ಇದೆ, ವಾಂತಿ ಇಲ್ಲ.', meaning: 'split clauses at punctuation and line breaks. v2: a dot directly followed by a letter is part of an abbreviation (ಎಂ.ಜಿ, ಎಂ.ಎಲ್, ಒ.ಆರ್.ಎಸ್) and does NOT split; a full stop is followed by a space, a newline or the end', status: hypothesis_unverified, origin: brief}
   - {id: NEG-CL02, type: clause_splitter_word, pattern: '^ಆದರೆ$', example: 'ತಲೆನೋವು ಇದೆ ಆದರೆ ವಾಂತಿ ಆಗಿಲ್ಲ.', meaning: 'but', status: hypothesis_unverified, origin: brief}
   - {id: NEG-CL03, type: clause_splitter_word, pattern: '^ಮತ್ತು$', example: 'ಜ್ವರ ಇಲ್ಲ ಮತ್ತು ಕೆಮ್ಮು ಇದೆ.', meaning: 'and', status: hypothesis_unverified, origin: brief}
   - {id: NEG-CL04, type: clause_splitter_word, pattern: '^ಹಾಗೂ$', example: 'ಜ್ವರ ಇಲ್ಲ ಹಾಗೂ ಕೆಮ್ಮು ಇದೆ.', meaning: 'and (formal)', status: hypothesis_unverified, origin: brief}
@@ -83,4 +90,5 @@ entries:
   - {id: NEG-T10, type: must_not_trigger, token: ಬಂದಿದೆ, pattern: '^ಬಂದಿದೆ$', example: 'ಜ್ವರ ಬಂದಿದೆ.', meaning: 'has come. Ends in ದೆ', status: hypothesis_unverified, origin: architect_addition}
   - {id: NEG-T11, type: must_not_trigger, token: ಇದ್ದರೆ, pattern: '^ಇದ್ದರೆ$', example: 'ಜ್ವರ ಇದ್ದರೆ ಬನ್ನಿ.', meaning: 'if (it) is: positive conditional', status: hypothesis_unverified, origin: architect_addition}
   - {id: NEG-T12, type: must_not_trigger, token: ಓದಿದ್ದರೆ, pattern: '^ಓದಿದ್ದರೆ$', example: 'ಚೀಟಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು.', meaning: 'if (one) had read: positive, but ends in ದಿದ್ದರೆ', status: hypothesis_unverified, origin: architect_addition}
+  - {id: NEG-T14, type: must_not_trigger, token: ಬೆಲ್ಲ, pattern: '^ಬೆಲ್ಲ$', example: 'ಬೆಲ್ಲ ಕೊಡಿ.', meaning: 'jaggery (ends in ಲ್ಲ; v2 soft cue needs a bare consonant before ಲ್ಲ)', status: hypothesis_unverified, origin: architect_addition}
   - {id: NEG-T13, type: must_not_trigger, token: ಬೇಡಿಕೆ, pattern: '^ಬೇಡಿಕೆ$', example: 'ಔಷಧಿಗೆ ಬೇಡಿಕೆ ಇದೆ.', meaning: 'demand (noun); starts with ಬೇಡ', status: hypothesis_unverified, origin: architect_addition}

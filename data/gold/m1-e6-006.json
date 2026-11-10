@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಹೌದು. Ondansetron 8 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಹೌದು. Ondansetron 4 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."
     }
   ],
   "gold_record": {
@@ -37,14 +37,14 @@
       },
       {
         "drug": "ondansetron",
-        "dose_value": 8,
+        "dose_value": 4,
         "dose_unit": "mg",
         "frequency_per_day": 2,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "Ondansetron 8 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+          "span_text": "Ondansetron 4 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
           "char_start": 103,
           "char_end": 156
         }

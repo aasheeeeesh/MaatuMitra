@@ -5,7 +5,7 @@
   "turns": [
     {
       "speaker_role": "physician",
-      "text": "doxycycline 100 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ಮತ್ತು ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "doxycycline 100 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ಮತ್ತು ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "patient",
@@ -37,16 +37,16 @@
       },
       {
         "drug": "ibuprofen",
-        "dose_value": 1,
-        "dose_unit": "tablet",
+        "dose_value": 400,
+        "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "span_text": "ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
           "char_start": 54,
-          "char_end": 103
+          "char_end": 97
         }
       }
     ],
@@ -57,8 +57,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ",
-          "char_start": 145,
-          "char_end": 166
+          "char_start": 139,
+          "char_end": 160
         }
       }
     ],
@@ -66,9 +66,7 @@
   },
   "tags": {
     "has_negation": false,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
+    "trap_tokens": [],
     "code_switched": true,
     "cross_turn_negation": false
   }

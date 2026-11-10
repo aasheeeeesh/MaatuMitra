@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದಿದೆ.\nಪ್ಯಾರಸಿಟಮಾಲ್ ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಕೊಡಿ.\nನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
+  "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದಿದೆ.\nಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಕೊಡಿ.\nನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.",
   "words": [
     {
       "w": "ಮಗುವಿಗೆ",
@@ -41,24 +41,32 @@
       "conf": null
     },
     {
-      "w": "೧೦೦೦",
+      "w": "ಸಿರಪ್",
       "char_start": 34,
-      "char_end": 38,
+      "char_end": 39,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "mg",
-      "char_start": 39,
+      "w": "5",
+      "char_start": 40,
       "char_end": 41,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
+      "w": "ಎಂ",
       "char_start": 42,
+      "char_end": 44,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎಲ್",
+      "char_start": 45,
       "char_end": 48,
       "start": null,
       "end": null,

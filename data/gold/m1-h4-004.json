@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "ಐಬುಪ್ರೋಫೆನ್ 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಐಬುಪ್ರೋಫೆನ್ 200 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "physician",
@@ -38,14 +38,14 @@
     "medications": [
       {
         "drug": "ibuprofen",
-        "dose_value": 400,
+        "dose_value": 200,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": 3,
         "negated": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ಐಬುಪ್ರೋಫೆನ್ 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+          "span_text": "ಐಬುಪ್ರೋಫೆನ್ 200 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
           "char_start": 21,
           "char_end": 73
         }

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nDoxycycline 100 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "Ibuprofen ೪೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\namoxicillin ೫೦೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "Ibuprofen",
@@ -17,209 +17,217 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "೪೦೦",
       "char_start": 10,
-      "char_end": 14,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 15,
-      "char_end": 21,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನಕ್ಕೆ",
-      "char_start": 22,
-      "char_end": 29,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 30,
-      "char_end": 34,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಸಾರಿ",
-      "char_start": 35,
-      "char_end": 39,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 40,
-      "char_end": 44,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನ",
-      "char_start": 45,
-      "char_end": 48,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 49,
-      "char_end": 61,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "Doxycycline",
-      "char_start": 63,
-      "char_end": 74,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "100",
-      "char_start": 75,
-      "char_end": 78,
+      "char_end": 13,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 79,
-      "char_end": 81,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
-      "char_start": 82,
-      "char_end": 92,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನಕ್ಕೆ",
-      "char_start": 93,
-      "char_end": 100,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಒಂದು",
-      "char_start": 101,
-      "char_end": 105,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಸಾರಿ",
-      "char_start": 106,
-      "char_end": 110,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಐದು",
-      "char_start": 111,
-      "char_end": 114,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿವಸ",
-      "char_start": 115,
-      "char_end": 119,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 120,
-      "char_end": 132,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಎರಡೂ",
-      "char_start": 134,
-      "char_end": 138,
+      "char_start": 14,
+      "char_end": 16,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 139,
-      "char_end": 145,
+      "char_start": 17,
+      "char_end": 23,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಟ್ಟಿಗೆ",
-      "char_start": 146,
-      "char_end": 153,
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 24,
+      "char_end": 31,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
-      "char_start": 154,
-      "char_end": 170,
+      "w": "ಮೂರು",
+      "char_start": 32,
+      "char_end": 36,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಹೌದು",
-      "char_start": 172,
-      "char_end": 176,
+      "w": "ಬಾರಿ",
+      "char_start": 37,
+      "char_end": 41,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಊಟದ",
-      "char_start": 178,
-      "char_end": 181,
+      "w": "ಮೂರು",
+      "char_start": 42,
+      "char_end": 46,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ನಂತರ",
-      "char_start": 182,
-      "char_end": 186,
+      "w": "ದಿವಸ",
+      "char_start": 47,
+      "char_end": 51,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 187,
-      "char_end": 199,
+      "char_start": 52,
+      "char_end": 64,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "amoxicillin",
+      "char_start": 66,
+      "char_end": 77,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೫೦೦",
+      "char_start": 78,
+      "char_end": 81,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 82,
+      "char_end": 84,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
+      "char_start": 85,
+      "char_end": 95,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 96,
+      "char_end": 103,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 104,
+      "char_end": 108,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಾರಿ",
+      "char_start": 109,
+      "char_end": 113,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 114,
+      "char_end": 118,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ವಾರ",
+      "char_start": 119,
+      "char_end": 122,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 123,
+      "char_end": 135,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡೂ",
+      "char_start": 137,
+      "char_end": 141,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಔಷಧಿ",
+      "char_start": 142,
+      "char_end": 146,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಟ್ಟಿಗೆ",
+      "char_start": 147,
+      "char_end": 154,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಬಹುದಾ",
+      "char_start": 155,
+      "char_end": 163,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಹೌದು",
+      "char_start": 165,
+      "char_end": 169,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಊಟದ",
+      "char_start": 171,
+      "char_end": 174,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ನಂತರ",
+      "char_start": 175,
+      "char_end": 179,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 180,
+      "char_end": 192,
       "start": null,
       "end": null,
       "conf": null

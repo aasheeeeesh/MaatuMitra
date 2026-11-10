@@ -1,0 +1,1 @@
+- m1_data / data-scientist (Claude, 2026-11-10): rewrote child-dose templates, lexicon rows, negation table v2, severity classes, annotation guide examples, tests (m1_data/tests/test_refreeze1.py), regenerated data (REFREEZE-1). All Kannada is AI-composed (wording from the ai_simulated_review reviewer); human must check Kannada, dose ranges and the clinical choices.

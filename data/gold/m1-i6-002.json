@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "ಯಾವುದೇ ಜ್ವರ ಇಲ್ಲ, ಪ್ಯಾರಾಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಯಾವುದೇ ಜ್ವರ ಇಲ್ಲ, ಪ್ಯಾರಾಸಿಟಮಾಲ್ 500 mg ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
     }
   ],
   "gold_record": {
@@ -30,16 +30,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 500,
         "dose_unit": "mg",
         "frequency_per_day": null,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್ 1000 mg ಮಾತ್ರೆ",
+          "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್ 500 mg ಮಾತ್ರೆ",
           "char_start": 39,
-          "char_end": 67
+          "char_end": 66
         }
       }
     ],

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nclindamycin 150 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nAmoxicillin-clavulanate ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
+  "text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಡೆಕ್ಸಾಮಿಥಾಸೋನ್ ೨ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nAmoxicillin-clavulanate ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಸರಿ, ಧನ್ಯವಾದಗಳು.",
   "words": [
     {
       "w": "ಐಬ್ಯುಪ್ರೋಫೆನ್",
@@ -17,241 +17,249 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "400",
       "char_start": 14,
-      "char_end": 18,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 19,
-      "char_end": 25,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನಕ್ಕೆ",
-      "char_start": 26,
-      "char_end": 33,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 34,
-      "char_end": 38,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಬಾರಿ",
-      "char_start": 39,
-      "char_end": 43,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 44,
-      "char_end": 48,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿವಸ",
-      "char_start": 49,
-      "char_end": 53,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 54,
-      "char_end": 66,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "clindamycin",
-      "char_start": 68,
-      "char_end": 79,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "150",
-      "char_start": 80,
-      "char_end": 83,
+      "char_end": 17,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 84,
-      "char_end": 86,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಕ್ಯಾಪ್ಸೂಲ್",
-      "char_start": 87,
-      "char_end": 97,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನಕ್ಕೆ",
-      "char_start": 98,
-      "char_end": 105,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮೂರು",
-      "char_start": 106,
-      "char_end": 110,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಸಾರಿ",
-      "char_start": 111,
-      "char_end": 115,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಏಳು",
-      "char_start": 116,
-      "char_end": 119,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿನ",
-      "char_start": 120,
-      "char_end": 123,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 124,
-      "char_end": 136,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "Amoxicillin",
-      "char_start": 138,
-      "char_end": 149,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "clavulanate",
-      "char_start": 150,
-      "char_end": 161,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಒಂದು",
-      "char_start": 162,
-      "char_end": 166,
+      "char_start": 18,
+      "char_end": 20,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 167,
-      "char_end": 173,
+      "char_start": 21,
+      "char_end": 27,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 174,
-      "char_end": 181,
+      "char_start": 28,
+      "char_end": 35,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಎರಡು",
-      "char_start": 182,
-      "char_end": 186,
+      "w": "ಮೂರು",
+      "char_start": 36,
+      "char_end": 40,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಬಾರಿ",
-      "char_start": 187,
-      "char_end": 191,
+      "w": "ಸಾರಿ",
+      "char_start": 41,
+      "char_end": 45,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಏಳು",
-      "char_start": 192,
-      "char_end": 195,
+      "w": "ಮೂರು",
+      "char_start": 46,
+      "char_end": 50,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ದಿವಸ",
-      "char_start": 196,
-      "char_end": 200,
+      "w": "ದಿನ",
+      "char_start": 51,
+      "char_end": 54,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 201,
-      "char_end": 213,
+      "char_start": 55,
+      "char_end": 67,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಡೆಕ್ಸಾಮಿಥಾಸೋನ್",
+      "char_start": 69,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "೨",
+      "char_start": 84,
+      "char_end": 85,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 86,
+      "char_end": 88,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 89,
+      "char_end": 95,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 96,
+      "char_end": 103,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 104,
+      "char_end": 108,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 109,
+      "char_end": 113,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 114,
+      "char_end": 117,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 118,
+      "char_end": 121,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 122,
+      "char_end": 134,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "Amoxicillin",
+      "char_start": 136,
+      "char_end": 147,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "clavulanate",
+      "char_start": 148,
+      "char_end": 159,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 160,
+      "char_end": 164,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಮಾತ್ರೆ",
+      "char_start": 165,
+      "char_end": 171,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 172,
+      "char_end": 179,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಎರಡು",
+      "char_start": 180,
+      "char_end": 184,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 185,
+      "char_end": 189,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಏಳು",
+      "char_start": 190,
+      "char_end": 193,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿವಸ",
+      "char_start": 194,
+      "char_end": 198,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+      "char_start": 199,
+      "char_end": 211,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸರಿ",
-      "char_start": 215,
-      "char_end": 218,
+      "char_start": 213,
+      "char_end": 216,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಧನ್ಯವಾದಗಳು",
-      "char_start": 220,
-      "char_end": 230,
+      "char_start": 218,
+      "char_end": 228,
       "start": null,
       "end": null,
       "conf": null

@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "pharmacist",
-      "text": "ಚೀಟಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು. ibuprofen ೪೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಚೀಟಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು. ibuprofen ೨೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."
     }
   ],
   "gold_record": {
@@ -19,14 +19,14 @@
     "medications": [
       {
         "drug": "ibuprofen",
-        "dose_value": 400,
+        "dose_value": 200,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ibuprofen ೪೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "span_text": "ibuprofen ೨೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
           "char_start": 67,
           "char_end": 108
         }

@@ -9,15 +9,15 @@
     },
     {
       "speaker_role": "caregiver",
-      "text": "ಜ್ವರ ಮೂರು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮೋಲ್ ಎರಡು ಮಾತ್ರೆ ಕೊಟ್ಟೆ."
+      "text": "ಜ್ವರ ಮೂರು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ."
     },
     {
       "speaker_role": "asha",
-      "text": "ವಾಂತಿ ಇದೆಯಾ?"
+      "text": "ಅತಿಸಾರ ಇದೆಯಾ?"
     },
     {
       "speaker_role": "caregiver",
-      "text": "ಹೌದು."
+      "text": "ಇಲ್ಲಾ."
     }
   ],
   "gold_record": {
@@ -35,29 +35,29 @@
         }
       },
       {
-        "name": "vomiting",
-        "present": true,
+        "name": "diarrhoea",
+        "present": false,
         "gold_span": {
           "turn_index": 2,
-          "span_text": "ವಾಂತಿ",
-          "char_start": 94,
-          "char_end": 99
+          "span_text": "ಅತಿಸಾರ",
+          "char_start": 88,
+          "char_end": 94
         }
       }
     ],
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 2,
-        "dose_unit": "tablet",
+        "dose_value": null,
+        "dose_unit": null,
         "frequency_per_day": null,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಎರಡು ಮಾತ್ರೆ",
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್",
           "char_start": 61,
-          "char_end": 85
+          "char_end": 79
         }
       }
     ],
@@ -65,11 +65,9 @@
     "follow_up": null
   },
   "tags": {
-    "has_negation": false,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
+    "has_negation": true,
+    "trap_tokens": [],
     "code_switched": false,
-    "cross_turn_negation": false
+    "cross_turn_negation": true
   }
 }

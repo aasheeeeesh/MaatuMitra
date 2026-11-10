@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ಎರಡು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ಕೊಟ್ಟೆ.\nಅತಿಸಾರ ಇದೆಯಾ?\nಇಲ್ಲಾ.",
+  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ಎರಡು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ Paracetamol ಸಿರಪ್ ಕೊಟ್ಟೆ.\nಕೆಮ್ಮು ಇದೆಯಾ?\nಇಲ್ಲಾ.",
   "words": [
     {
       "w": "ಜ್ವರ",
@@ -89,23 +89,23 @@
       "conf": null
     },
     {
-      "w": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "w": "Paracetamol",
       "char_start": 61,
-      "char_end": 73,
+      "char_end": 72,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಂದು",
-      "char_start": 74,
+      "w": "ಸಿರಪ್",
+      "char_start": 73,
       "char_end": 78,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
+      "w": "ಕೊಟ್ಟೆ",
       "char_start": 79,
       "char_end": 85,
       "start": null,
@@ -113,33 +113,25 @@
       "conf": null
     },
     {
-      "w": "ಕೊಟ್ಟೆ",
-      "char_start": 86,
-      "char_end": 92,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಅತಿಸಾರ",
-      "char_start": 94,
-      "char_end": 100,
+      "w": "ಕೆಮ್ಮು",
+      "char_start": 87,
+      "char_end": 93,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇದೆಯಾ",
-      "char_start": 101,
-      "char_end": 106,
+      "char_start": 94,
+      "char_end": 99,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇಲ್ಲಾ",
-      "char_start": 108,
-      "char_end": 113,
+      "char_start": 101,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null

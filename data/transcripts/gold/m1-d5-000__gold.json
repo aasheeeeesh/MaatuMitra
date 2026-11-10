@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಜ್ವರ ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\nಇದು ವೈರಲ್ ಜ್ವರ, ಆದ್ದರಿಂದ ಪ್ರತಿಜೈವಿಕ ಬೇಡ.\nಪ್ಯಾರಾಸಿಟಮಾಲ್ 1000 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "ಜ್ವರ ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\nಇದು ವೈರಲ್ ಜ್ವರ, ಆದ್ದರಿಂದ ಪ್ರತಿಜೈವಿಕ ಬೇಡ.\nಪ್ಯಾರಾಸಿಟಮಾಲ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "ಜ್ವರ",
@@ -97,81 +97,81 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "500",
       "char_start": 80,
-      "char_end": 84,
+      "char_end": 83,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಎಂ",
-      "char_start": 85,
-      "char_end": 87,
+      "char_start": 84,
+      "char_end": 86,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಜಿ",
-      "char_start": 88,
-      "char_end": 90,
+      "char_start": 87,
+      "char_end": 89,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 91,
-      "char_end": 97,
+      "char_start": 90,
+      "char_end": 96,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 98,
-      "char_end": 105,
+      "char_start": 97,
+      "char_end": 104,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಾಲ್ಕು",
-      "char_start": 106,
-      "char_end": 112,
+      "char_start": 105,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸಾರಿ",
-      "char_start": 113,
-      "char_end": 117,
+      "char_start": 112,
+      "char_end": 116,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 118,
-      "char_end": 122,
+      "char_start": 117,
+      "char_end": 121,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿವಸ",
-      "char_start": 123,
-      "char_end": 127,
+      "char_start": 122,
+      "char_end": 126,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 128,
-      "char_end": 140,
+      "char_start": 127,
+      "char_end": 139,
       "start": null,
       "end": null,
       "conf": null

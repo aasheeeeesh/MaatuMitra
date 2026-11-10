@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "doxycycline 100 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ಮತ್ತು ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "doxycycline 100 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ಮತ್ತು ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "doxycycline",
@@ -97,31 +97,39 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "400",
       "char_start": 64,
-      "char_end": 68,
+      "char_end": 67,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 69,
-      "char_end": 75,
+      "w": "mg",
+      "char_start": 68,
+      "char_end": 70,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 76,
-      "char_end": 83,
+      "char_start": 71,
+      "char_end": 78,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
+      "char_start": 79,
+      "char_end": 83,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸಾರಿ",
       "char_start": 84,
       "char_end": 88,
       "start": null,
@@ -129,7 +137,7 @@
       "conf": null
     },
     {
-      "w": "ಬಾರಿ",
+      "w": "ಮೂರು",
       "char_start": 89,
       "char_end": 93,
       "start": null,
@@ -137,73 +145,65 @@
       "conf": null
     },
     {
-      "w": "ಮೂರು",
+      "w": "ದಿನ",
       "char_start": 94,
-      "char_end": 98,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ದಿವಸ",
-      "char_start": 99,
-      "char_end": 103,
+      "char_end": 97,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 104,
-      "char_end": 116,
+      "char_start": 98,
+      "char_end": 110,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 118,
-      "char_end": 121,
+      "char_start": 112,
+      "char_end": 115,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೊದಲು",
-      "char_start": 122,
-      "char_end": 127,
+      "char_start": 116,
+      "char_end": 121,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ",
-      "char_start": 128,
-      "char_end": 143,
+      "char_start": 122,
+      "char_end": 137,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 145,
-      "char_end": 148,
+      "char_start": 139,
+      "char_end": 142,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಂತರ",
-      "char_start": 149,
-      "char_end": 153,
+      "char_start": 143,
+      "char_end": 147,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 154,
-      "char_end": 166,
+      "char_start": 148,
+      "char_end": 160,
       "start": null,
       "end": null,
       "conf": null

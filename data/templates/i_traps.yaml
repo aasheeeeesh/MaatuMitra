@@ -54,10 +54,10 @@ families:
         encounter: asha_household_visit
         grounding: [KN-2]
         slots:
-          D1: {type: drug, where: {class: [analgesic_antipyretic]}, dose: given}
+          D1: {type: drug, where: {generic: [paracetamol]}, dose: child_syrup}
         turns:
           - {role: caregiver, text: "ಮಗುವಿಗೆ [[s1|ಜ್ವರ ಬಂದಿದೆ]]."}
-          - {role: asha, text: "[[m1|{D1.name} {D1.dose_tab}]] ಕೊಡಿ, [[a1|ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ]]."}
+          - {role: asha, text: "[[a1|ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ]] [[m1|{D1.name} ಸಿರಪ್ {D1.dose}]] ಕೊಡಿ."}
         items:
           - {kind: symptom, span: s1, name: fever}
           - {kind: medication, span: m1, slot: D1, fields: [dose]}

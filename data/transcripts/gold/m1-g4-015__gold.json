@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಡಾಕ್ಟರ್, ಜ್ವರ ಮತ್ತು ನೆಗಡಿ ಇದೆ.\nCefuroxime ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, Paracetamol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
+  "text": "ಡಾಕ್ಟರ್, ಜ್ವರ ಮತ್ತು ನೆಗಡಿ ಇದೆ.\nCefuroxime ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ, Paracetamol 650 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ.\nAntibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ.",
   "words": [
     {
       "w": "ಡಾಕ್ಟರ್",
@@ -129,73 +129,73 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "650",
       "char_start": 107,
-      "char_end": 111,
+      "char_end": 110,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 112,
-      "char_end": 114,
+      "char_start": 111,
+      "char_end": 113,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 115,
-      "char_end": 122,
+      "char_start": 114,
+      "char_end": 121,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಾಲ್ಕು",
-      "char_start": 123,
-      "char_end": 129,
+      "char_start": 122,
+      "char_end": 128,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 130,
-      "char_end": 134,
+      "char_start": 129,
+      "char_end": 133,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೂಡ",
-      "char_start": 135,
-      "char_end": 138,
+      "char_start": 134,
+      "char_end": 137,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "Antibiotic",
-      "char_start": 140,
-      "char_end": 150,
+      "char_start": 139,
+      "char_end": 149,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಧ್ಯದಲ್ಲಿ",
-      "char_start": 151,
-      "char_end": 160,
+      "char_start": 150,
+      "char_end": 159,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಿಲ್ಲಿಸಬೇಡಿ",
-      "char_start": 161,
-      "char_end": 172,
+      "char_start": 160,
+      "char_end": 171,
       "start": null,
       "end": null,
       "conf": null

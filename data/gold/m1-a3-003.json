@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "caregiver",
-      "text": "ಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ಕೊಟ್ಟೆ."
+      "text": "ಜ್ವರ ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಐಬ್ಯುಪ್ರೋಫೆನ್ ಸಿರಪ್ ಕೊಟ್ಟೆ."
     },
     {
       "speaker_role": "asha",
@@ -40,24 +40,24 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "ವಾಂತಿ",
-          "char_start": 92,
-          "char_end": 97
+          "char_start": 91,
+          "char_end": 96
         }
       }
     ],
     "medications": [
       {
         "drug": "ibuprofen",
-        "dose_value": 400,
-        "dose_unit": "mg",
+        "dose_value": null,
+        "dose_unit": null,
         "frequency_per_day": null,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg",
+          "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ ಸಿರಪ್",
           "char_start": 63,
-          "char_end": 83
+          "char_end": 82
         }
       }
     ],
@@ -67,7 +67,7 @@
   "tags": {
     "has_negation": false,
     "trap_tokens": [],
-    "code_switched": true,
+    "code_switched": false,
     "cross_turn_negation": false
   }
 }

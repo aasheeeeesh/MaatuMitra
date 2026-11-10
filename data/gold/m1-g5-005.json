@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "ibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ."
+      "text": "ibuprofen ೨೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ."
     },
     {
       "speaker_role": "patient",
@@ -37,14 +37,14 @@
       },
       {
         "drug": "ibuprofen",
-        "dose_value": 400,
+        "dose_value": 200,
         "dose_unit": "mg",
         "frequency_per_day": 3,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "span_text": "ibuprofen ೨೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
           "char_start": 50,
           "char_end": 84
         }

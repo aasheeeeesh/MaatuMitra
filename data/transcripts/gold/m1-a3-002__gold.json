@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ಎರಡು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ಕೊಟ್ಟೆ.\nಕೆಮ್ಮು ಇದೆಯಾ?\nಇಲ್ಲ.",
+  "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\nಜ್ವರ ಎರಡು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ.\nಕೆಮ್ಮು ಇದೆಯಾ?\nಇಲ್ಲ.",
   "words": [
     {
       "w": "ಜ್ವರ",
@@ -97,49 +97,41 @@
       "conf": null
     },
     {
-      "w": "ಒಂದು",
+      "w": "ಸಿರಪ್",
       "char_start": 74,
-      "char_end": 78,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 79,
-      "char_end": 85,
+      "char_end": 79,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಟ್ಟೆ",
-      "char_start": 86,
-      "char_end": 92,
+      "char_start": 80,
+      "char_end": 86,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೆಮ್ಮು",
-      "char_start": 94,
-      "char_end": 100,
+      "char_start": 88,
+      "char_end": 94,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇದೆಯಾ",
-      "char_start": 101,
-      "char_end": 106,
+      "char_start": 95,
+      "char_end": 100,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಇಲ್ಲ",
-      "char_start": 108,
-      "char_end": 112,
+      "char_start": 102,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null

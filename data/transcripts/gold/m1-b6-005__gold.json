@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "ಮಗುವಿಗೆ ಔಷಧಿ ಕೊಡುತ್ತಿದ್ದೀರಾ?\nಕೊಡುತ್ತೇವೆ, ಆದರೆ ಮಗು ibuprofen ಸಿರಪ್ ಕುಡಿಯುವುದಿಲ್ಲ.\nಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ.",
   "words": [

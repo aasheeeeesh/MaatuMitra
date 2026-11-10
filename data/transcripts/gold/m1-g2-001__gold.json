@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Azithromycin 500 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿನ ಮತ್ತು paracetamol 1000 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "Azithromycin 500 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿನ ಮತ್ತು paracetamol 500 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?\nಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "Azithromycin",
@@ -89,113 +89,113 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "500",
       "char_start": 65,
-      "char_end": 69,
+      "char_end": 68,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 70,
-      "char_end": 72,
+      "char_start": 69,
+      "char_end": 71,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 73,
-      "char_end": 80,
+      "char_start": 72,
+      "char_end": 79,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಾಲ್ಕು",
-      "char_start": 81,
-      "char_end": 87,
+      "char_start": 80,
+      "char_end": 86,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 88,
-      "char_end": 92,
+      "char_start": 87,
+      "char_end": 91,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 93,
-      "char_end": 97,
+      "char_start": 92,
+      "char_end": 96,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿವಸ",
-      "char_start": 98,
-      "char_end": 102,
+      "char_start": 97,
+      "char_end": 101,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 103,
-      "char_end": 115,
+      "char_start": 102,
+      "char_end": 114,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 117,
-      "char_end": 120,
+      "char_start": 116,
+      "char_end": 119,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೊದಲು",
-      "char_start": 121,
-      "char_end": 126,
+      "char_start": 120,
+      "char_end": 125,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ",
-      "char_start": 127,
-      "char_end": 142,
+      "char_start": 126,
+      "char_end": 141,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 144,
-      "char_end": 147,
+      "char_start": 143,
+      "char_end": 146,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಂತರ",
-      "char_start": 148,
-      "char_end": 152,
+      "char_start": 147,
+      "char_end": 151,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 153,
-      "char_end": 165,
+      "char_start": 152,
+      "char_end": 164,
       "start": null,
       "end": null,
       "conf": null

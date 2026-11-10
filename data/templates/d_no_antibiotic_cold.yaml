@@ -48,7 +48,8 @@ families:
             type: neg
             p_neg: 1.0
             forms:
-              - {neg: "ಕೊಡುವುದು ಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-W05]}
+              - {neg: "ಕೊಡ ಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-W05]}  # spaced: keeps whole-token NEG-W05 exercised
+              - {neg: "ಕೊಡಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-S06]}
               - {neg: "ಬೇಡ", pos: "ಬೇಕು", patterns: [NEG-W04]}
         turns:
           - {role: nurse, text: "ಮಗುವಿಗೆ [[s1|ನೆಗಡಿ]] ಮಾತ್ರ ಇದೆಯಾ?"}

@@ -5,11 +5,11 @@
   "turns": [
     {
       "speaker_role": "asha",
-      "text": "Paracetamol ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ."
+      "text": "Paracetamol ಸಿರಪ್ 5 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ."
     },
     {
       "speaker_role": "asha",
-      "text": "ನಾಳೆಯೂ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ."
+      "text": "ನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ."
     }
   ],
   "gold_record": {
@@ -19,16 +19,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
-        "dose_unit": "mg",
+        "dose_value": 5,
+        "dose_unit": "ml",
         "frequency_per_day": 4,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "Paracetamol ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "span_text": "Paracetamol ಸಿರಪ್ 5 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
           "char_start": 0,
-          "char_end": 46
+          "char_end": 42
         }
       }
     ],
@@ -37,17 +37,15 @@
       "text": "if the fever does not come down by tomorrow, bring the child to hospital",
       "gold_span": {
         "turn_index": 1,
-        "span_text": "ನಾಳೆಯೂ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
-        "char_start": 53,
-        "char_end": 104
+        "span_text": "ನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
+        "char_start": 49,
+        "char_end": 107
       }
     }
   },
   "tags": {
     "has_negation": true,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
+    "trap_tokens": [],
     "code_switched": true,
     "cross_turn_negation": false
   }

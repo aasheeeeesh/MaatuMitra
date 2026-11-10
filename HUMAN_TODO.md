@@ -135,3 +135,14 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] Decide whether k = 5 (drop small groups) is acceptable for the research export, or ask for merging instead.
 - [ ] Optional (audit condition 8): extra step (audio playback or second confirmation) before a critical flag (C3, C4) can be confirmed; not built.
 - [ ] Still open from the audit: run gitleaks with a verified checksum on the tree and history; re-run the R-order check with data spanning several months.
+
+## From m1_data (merged 20261110T180301Z)
+
+- [ ] Native Kannada reviewer: check the syrup wording (ಸಿರಪ್ ಐದು ಎಂ.ಎಲ್ ... ಕೊಡಿ), the rewritten twins of h5/e7/h2, ಓ.ಆರ್.ಎಸ್, and the artefact form "ಕೊಡ ಬೇಡಿ" (reviews/human_sheets/kannada_review_sheet.csv). ai_simulated_review only so far.
+- [ ] Real pharmacist/doctor: confirm paracetamol 500-1000/4000, ondansetron 4-24, metformin 500-1000, ibuprofen 200-800 and that synthetic syrup volumes 2.5/5/7.5/10 ml are acceptable as non-advice text. Fill NLEM-based rows (metronidazole, cotrimoxazole stay UNVERIFIED).
+- [ ] Decide negative-question (-ಲ್ವಾ) gold polarity (table NEG-S07 is not generated).
+
+## From infra (merged 20261110T180301Z)
+
+- [ ] (D-110) Kannada native check: is "ಕೊಡ ಬೇಡಿ" (with a space) acceptable in the data, or should every case be "ಕೊಡಬೇಡಿ"? Only changeable before the first `make eval-test`.
+- [ ] (D-110) Paediatric check: child paracetamol syrup volumes in templates e8, h2, h3, i5 (2.5-10 ml) are synthetic and not matched to an age or weight table (UNVERIFIED).

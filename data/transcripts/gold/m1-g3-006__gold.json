@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Prednisolone ೨೦ mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nIbuprofen ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.\nDexamethasone 4 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ.",
+  "text": "Prednisolone ೨೦ mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nIbuprofen ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.\nDiclofenac 50 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಕೊಡುತ್ತೇನೆ.",
   "words": [
     {
       "w": "Prednisolone",
@@ -97,65 +97,65 @@
       "conf": null
     },
     {
-      "w": "Dexamethasone",
+      "w": "Diclofenac",
       "char_start": 87,
+      "char_end": 97,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "50",
+      "char_start": 98,
       "char_end": 100,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "4",
-      "char_start": 101,
-      "char_end": 102,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
       "w": "ಎಂ",
-      "char_start": 103,
-      "char_end": 105,
+      "char_start": 101,
+      "char_end": 103,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಜಿ",
-      "char_start": 106,
-      "char_end": 108,
+      "char_start": 104,
+      "char_end": 106,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 109,
-      "char_end": 116,
+      "char_start": 107,
+      "char_end": 114,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಒಂದು",
-      "char_start": 117,
-      "char_end": 121,
+      "w": "ಎರಡು",
+      "char_start": 115,
+      "char_end": 119,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 122,
-      "char_end": 126,
+      "char_start": 120,
+      "char_end": 124,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಡುತ್ತೇನೆ",
-      "char_start": 127,
-      "char_end": 137,
+      "char_start": 125,
+      "char_end": 135,
       "start": null,
       "end": null,
       "conf": null

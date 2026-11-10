@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಪ್ರೆಡ್ನಿಸಲೋನ್ 10 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಮೆಟ್ರೋನಿಡಜೋಲ್ ೪೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಮಾತ್ರೆ ಒಟ್ಟಿಗೆ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "ಪ್ರೆಡ್ನಿಸಲೋನ್ 10 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಮಾಂಟೆಲುಕಾಸ್ಟ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\nಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?\nಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "ಪ್ರೆಡ್ನಿಸಲೋನ್",
@@ -89,7 +89,7 @@
       "conf": null
     },
     {
-      "w": "ಮೆಟ್ರೋನಿಡಜೋಲ್",
+      "w": "ಮಾಂಟೆಲುಕಾಸ್ಟ್",
       "char_start": 67,
       "char_end": 80,
       "start": null,
@@ -97,137 +97,137 @@
       "conf": null
     },
     {
-      "w": "೪೦೦",
+      "w": "೪",
       "char_start": 81,
-      "char_end": 84,
+      "char_end": 82,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 85,
-      "char_end": 87,
+      "char_start": 83,
+      "char_end": 85,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 88,
-      "char_end": 94,
+      "char_start": 86,
+      "char_end": 92,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 95,
-      "char_end": 102,
+      "char_start": 93,
+      "char_end": 100,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮೂರು",
-      "char_start": 103,
-      "char_end": 107,
+      "w": "ಒಂದು",
+      "char_start": 101,
+      "char_end": 105,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 108,
-      "char_end": 112,
+      "char_start": 106,
+      "char_end": 110,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಐದು",
-      "char_start": 113,
-      "char_end": 116,
+      "w": "ಹದಿನಾಲ್ಕು",
+      "char_start": 111,
+      "char_end": 120,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿವಸ",
-      "char_start": 117,
-      "char_end": 121,
+      "char_start": 121,
+      "char_end": 125,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 122,
-      "char_end": 134,
+      "char_start": 126,
+      "char_end": 138,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಎರಡೂ",
-      "char_start": 136,
-      "char_end": 140,
+      "char_start": 140,
+      "char_end": 144,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಮಾತ್ರೆ",
-      "char_start": 141,
-      "char_end": 147,
+      "w": "ಔಷಧಿ",
+      "char_start": 145,
+      "char_end": 149,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಒಟ್ಟಿಗೆ",
-      "char_start": 148,
-      "char_end": 155,
+      "char_start": 150,
+      "char_end": 157,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ",
-      "char_start": 156,
-      "char_end": 172,
+      "w": "ಕೊಡಬಹುದಾ",
+      "char_start": 158,
+      "char_end": 166,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹೌದು",
-      "char_start": 174,
-      "char_end": 178,
+      "char_start": 168,
+      "char_end": 172,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಊಟದ",
-      "char_start": 180,
-      "char_end": 183,
+      "char_start": 174,
+      "char_end": 177,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ನಂತರ",
-      "char_start": 184,
-      "char_end": 188,
+      "char_start": 178,
+      "char_end": 182,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 189,
-      "char_end": 201,
+      "char_start": 183,
+      "char_end": 195,
       "start": null,
       "end": null,
       "conf": null

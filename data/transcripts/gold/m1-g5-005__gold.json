@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Tablet Cefixime 400 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ.\nibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
+  "text": "Tablet Cefixime 400 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ.\nibuprofen ೨೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ.\nಸರಿ.",
   "words": [
     {
       "w": "Tablet",
@@ -89,7 +89,7 @@
       "conf": null
     },
     {
-      "w": "೪೦೦",
+      "w": "೨೦೦",
       "char_start": 60,
       "char_end": 63,
       "start": null,

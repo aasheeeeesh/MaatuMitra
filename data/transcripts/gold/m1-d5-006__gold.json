@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಜ್ವರ ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\nಇದು ವೈರಲ್ ಜ್ವರ, ಆದ್ದರಿಂದ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಡ.\nParacetamol 1000 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.",
+  "text": "ಜ್ವರ ಮತ್ತು ಮೈಕೈನೋವು ಇದೆ.\nಇದು ವೈರಲ್ ಜ್ವರ, ಆದ್ದರಿಂದ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಡ.\nParacetamol 650 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.",
   "words": [
     {
       "w": "ಜ್ವರ",
@@ -97,73 +97,73 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "650",
       "char_start": 79,
-      "char_end": 83,
+      "char_end": 82,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 84,
-      "char_end": 86,
+      "char_start": 83,
+      "char_end": 85,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 87,
-      "char_end": 93,
+      "char_start": 86,
+      "char_end": 92,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 94,
-      "char_end": 101,
+      "char_start": 93,
+      "char_end": 100,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 102,
-      "char_end": 106,
+      "char_start": 101,
+      "char_end": 105,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬಾರಿ",
-      "char_start": 107,
-      "char_end": 111,
+      "char_start": 106,
+      "char_end": 110,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 112,
-      "char_end": 116,
+      "char_start": 111,
+      "char_end": 115,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿವಸ",
-      "char_start": 117,
-      "char_end": 121,
+      "char_start": 116,
+      "char_end": 120,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
-      "char_start": 122,
-      "char_end": 134,
+      "char_start": 121,
+      "char_end": 133,
       "start": null,
       "end": null,
       "conf": null

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಎರಿಥ್ರೋಮಿಸಿನ್ 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಜ್ವರ ಕಡಿಮೆ ಆಗಿದ್ದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ.",
+  "text": "ಎರಿಥ್ರೋಮಿಸಿನ್ 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ.\nಜ್ವರ ಕಡಿಮೆ ಆದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ.",
   "words": [
     {
       "w": "ಎರಿಥ್ರೋಮಿಸಿನ್",
@@ -105,41 +105,41 @@
       "conf": null
     },
     {
-      "w": "ಆಗಿದ್ದರೆ",
+      "w": "ಆದರೆ",
       "char_start": 81,
-      "char_end": 89,
+      "char_end": 85,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 90,
-      "char_end": 94,
+      "char_start": 86,
+      "char_end": 90,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನದಲ್ಲಿ",
-      "char_start": 95,
-      "char_end": 103,
+      "char_start": 91,
+      "char_end": 99,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮತ್ತೆ",
-      "char_start": 104,
-      "char_end": 109,
+      "char_start": 100,
+      "char_end": 105,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬನ್ನಿ",
-      "char_start": 110,
-      "char_end": 115,
+      "char_start": 106,
+      "char_end": 111,
       "start": null,
       "end": null,
       "conf": null

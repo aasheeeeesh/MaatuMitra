@@ -5,7 +5,7 @@
   "turns": [
     {
       "speaker_role": "pharmacist",
-      "text": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್ ೮ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+      "text": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
     },
     {
       "speaker_role": "patient",
@@ -23,14 +23,14 @@
     "medications": [
       {
         "drug": "ondansetron",
-        "dose_value": 8,
+        "dose_value": 4,
         "dose_unit": "mg",
         "frequency_per_day": 2,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್ ೮ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+          "span_text": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
           "char_start": 0,
           "char_end": 44
         }

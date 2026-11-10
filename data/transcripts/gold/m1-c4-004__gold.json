@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?\nಲೇವೋ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡು ಬಿಟ್ಟೆ.\nಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು.",
+  "text": "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?\nಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ.\nಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು.",
   "words": [
     {
       "w": "ಜ್ವರ",
@@ -57,73 +57,73 @@
       "conf": null
     },
     {
-      "w": "ಲೇವೋ",
+      "w": "ಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್",
       "char_start": 33,
-      "char_end": 37,
+      "char_end": 49,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "500",
-      "char_start": 38,
-      "char_end": 41,
+      "char_start": 50,
+      "char_end": 53,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "mg",
-      "char_start": 42,
-      "char_end": 44,
+      "char_start": 54,
+      "char_end": 56,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 45,
-      "char_end": 51,
-      "start": null,
-      "end": null,
-      "conf": null
-    },
-    {
-      "w": "ತೆಗೆದುಕೊಂಡು",
-      "char_start": 52,
+      "char_start": 57,
       "char_end": 63,
       "start": null,
       "end": null,
       "conf": null
     },
     {
-      "w": "ಬಿಟ್ಟೆ",
+      "w": "ತೆಗೆದುಕೊಳ್ಳದೆ",
       "char_start": 64,
-      "char_end": 70,
+      "char_end": 77,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಿಟ್ಟೆ",
+      "char_start": 78,
+      "char_end": 84,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಉಳಿದ",
-      "char_start": 72,
-      "char_end": 76,
+      "char_start": 86,
+      "char_end": 90,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮಾತ್ರೆ",
-      "char_start": 77,
-      "char_end": 83,
+      "char_start": 91,
+      "char_end": 97,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಹಂಚಿಕೊಳ್ಳಕೂಡದು",
-      "char_start": 84,
-      "char_end": 98,
+      "char_start": 98,
+      "char_end": 112,
       "start": null,
       "end": null,
       "conf": null

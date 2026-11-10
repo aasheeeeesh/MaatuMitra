@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "physician",
-      "text": "Nitrofurantoin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ, Paracetamol ೧೦೦೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ."
+      "text": "Nitrofurantoin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ, Paracetamol ೫೦೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೂಡ."
     },
     {
       "speaker_role": "physician",
@@ -58,16 +58,16 @@
       },
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
+        "dose_value": 500,
         "dose_unit": "mg",
         "frequency_per_day": 4,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "Paracetamol ೧೦೦೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "span_text": "Paracetamol ೫೦೦ mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
           "char_start": 103,
-          "char_end": 142
+          "char_end": 141
         }
       }
     ],
@@ -78,8 +78,8 @@
         "gold_span": {
           "turn_index": 2,
           "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
-          "char_start": 148,
-          "char_end": 180
+          "char_start": 147,
+          "char_end": 179
         }
       }
     ],

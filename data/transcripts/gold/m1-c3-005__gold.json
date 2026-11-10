@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?\nಹೌದು.\nಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡುವುದು ಬೇಡಿ.",
+  "text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?\nಹೌದು.\nಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡ ಬೇಡಿ.",
   "words": [
     {
       "w": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
@@ -65,17 +65,17 @@
       "conf": null
     },
     {
-      "w": "ಕೊಡುವುದು",
+      "w": "ಕೊಡ",
       "char_start": 63,
-      "char_end": 71,
+      "char_end": 66,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಬೇಡಿ",
-      "char_start": 72,
-      "char_end": 76,
+      "char_start": 67,
+      "char_end": 71,
       "start": null,
       "end": null,
       "conf": null

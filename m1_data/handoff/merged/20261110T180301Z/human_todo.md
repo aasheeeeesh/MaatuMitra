@@ -1,0 +1,3 @@
+- [ ] Native Kannada reviewer: check the syrup wording (ಸಿರಪ್ ಐದು ಎಂ.ಎಲ್ ... ಕೊಡಿ), the rewritten twins of h5/e7/h2, ಓ.ಆರ್.ಎಸ್, and the artefact form "ಕೊಡ ಬೇಡಿ" (reviews/human_sheets/kannada_review_sheet.csv). ai_simulated_review only so far.
+- [ ] Real pharmacist/doctor: confirm paracetamol 500-1000/4000, ondansetron 4-24, metformin 500-1000, ibuprofen 200-800 and that synthetic syrup volumes 2.5/5/7.5/10 ml are acceptable as non-advice text. Fill NLEM-based rows (metronidazole, cotrimoxazole stay UNVERIFIED).
+- [ ] Decide negative-question (-ಲ್ವಾ) gold polarity (table NEG-S07 is not generated).

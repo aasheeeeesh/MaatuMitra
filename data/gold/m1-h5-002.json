@@ -13,7 +13,7 @@
     },
     {
       "speaker_role": "nurse",
-      "text": "ವಾಂತಿ ನಿಂತರೆ ತಕ್ಷಣ ಬನ್ನಿ."
+      "text": "ವಾಂತಿ ಇದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ."
     }
   ],
   "gold_record": {
@@ -59,10 +59,10 @@
     ],
     "advice": [],
     "follow_up": {
-      "text": "if the vomiting stops, come immediately",
+      "text": "if there is vomiting, come immediately",
       "gold_span": {
         "turn_index": 2,
-        "span_text": "ವಾಂತಿ ನಿಂತರೆ ತಕ್ಷಣ ಬನ್ನಿ",
+        "span_text": "ವಾಂತಿ ಇದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ",
         "char_start": 43,
         "char_end": 67
       }
@@ -70,7 +70,9 @@
   },
   "tags": {
     "has_negation": false,
-    "trap_tokens": [],
+    "trap_tokens": [
+      "ಇದ್ದರೆ"
+    ],
     "code_switched": true,
     "cross_turn_negation": false
   }

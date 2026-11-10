@@ -119,4 +119,7 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Small-cell suppression (k-anonymity)**: dropping groups with fewer than k people from a dataset so no one stands out; here k = 5.
 - **Pseudonym map**: a private table linking a patient id to the research pseudonym, used only to delete research rows when consent is withdrawn.
 - **Trigger**: a database rule that runs automatically when rows change; ours block unapproved saves, protect append-only tables and remove research rows on consent withdrawal.
+- **REFREEZE-1**: the one planned regeneration and relock of the frozen test split, done before any test evaluation.
+- **Syrup (child_syrup slot)**: a paediatric liquid dose given in ml; the generator's `child_syrup` dose kind produces only ml, `given` produces only adult mg/tablet doses.
+- **generate: false**: a negation-table entry that readers must match but the data generator is not required to produce.
 <!-- GLOSSARY-END -->

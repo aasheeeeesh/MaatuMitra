@@ -4,7 +4,7 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
   "text": "clindamycin 150 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ.\nibuprofen ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ.\nDexamethasone 4 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಕೊಡುತ್ತೇನೆ.",
   "words": [

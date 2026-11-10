@@ -5,11 +5,11 @@
   "turns": [
     {
       "speaker_role": "asha",
-      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ."
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 7.5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ."
     },
     {
       "speaker_role": "asha",
-      "text": "ನಾಳೆಯೂ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ."
+      "text": "ನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ."
     }
   ],
   "gold_record": {
@@ -19,16 +19,16 @@
     "medications": [
       {
         "drug": "paracetamol",
-        "dose_value": 1000,
-        "dose_unit": "mg",
+        "dose_value": 7.5,
+        "dose_unit": "ml",
         "frequency_per_day": 4,
         "duration_days": null,
         "negated": false,
         "gold_span": {
           "turn_index": 0,
-          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ೧೦೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 7.5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
           "char_start": 0,
-          "char_end": 47
+          "char_end": 49
         }
       }
     ],
@@ -37,18 +37,16 @@
       "text": "if the fever does not come down by tomorrow, bring the child to hospital",
       "gold_span": {
         "turn_index": 1,
-        "span_text": "ನಾಳೆಯೂ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
-        "char_start": 54,
-        "char_end": 105
+        "span_text": "ನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
+        "char_start": 56,
+        "char_end": 114
       }
     }
   },
   "tags": {
     "has_negation": true,
-    "trap_tokens": [
-      "ಮಾತ್ರೆ"
-    ],
-    "code_switched": true,
+    "trap_tokens": [],
+    "code_switched": false,
     "cross_turn_negation": false
   }
 }

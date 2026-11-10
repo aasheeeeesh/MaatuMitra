@@ -9,7 +9,7 @@
     },
     {
       "speaker_role": "nurse",
-      "text": "ಒ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಯಿರಿ."
+      "text": "ಓ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಯಿರಿ."
     },
     {
       "speaker_role": "nurse",
@@ -51,7 +51,7 @@
         "negated": false,
         "gold_span": {
           "turn_index": 1,
-          "span_text": "ಒ.ಆರ್.ಎಸ್",
+          "span_text": "ಓ.ಆರ್.ಎಸ್",
           "char_start": 24,
           "char_end": 33
         }

@@ -4,9 +4,9 @@
   "source": "template_text",
   "model": {
     "name": "gold",
-    "revision": "m1-data-1.0.0"
+    "revision": "m1-data-1.1.0"
   },
-  "text": "Amoxicillin 500 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ.\nibuprofen ಬೇಡ.\nparacetamol 1000 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಕೊಡುತ್ತೇನೆ.",
+  "text": "Amoxicillin 500 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ.\nibuprofen ಬೇಡ.\nparacetamol 650 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಕೊಡುತ್ತೇನೆ.",
   "words": [
     {
       "w": "Amoxicillin",
@@ -105,57 +105,57 @@
       "conf": null
     },
     {
-      "w": "1000",
+      "w": "650",
       "char_start": 87,
-      "char_end": 91,
+      "char_end": 90,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಎಂ",
-      "char_start": 92,
-      "char_end": 94,
+      "char_start": 91,
+      "char_end": 93,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಜಿ",
-      "char_start": 95,
-      "char_end": 97,
+      "char_start": 94,
+      "char_end": 96,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ದಿನಕ್ಕೆ",
-      "char_start": 98,
-      "char_end": 105,
+      "char_start": 97,
+      "char_end": 104,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಮೂರು",
-      "char_start": 106,
-      "char_end": 110,
+      "char_start": 105,
+      "char_end": 109,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಸಾರಿ",
-      "char_start": 111,
-      "char_end": 115,
+      "char_start": 110,
+      "char_end": 114,
       "start": null,
       "end": null,
       "conf": null
     },
     {
       "w": "ಕೊಡುತ್ತೇನೆ",
-      "char_start": 116,
-      "char_end": 126,
+      "char_start": 115,
+      "char_end": 125,
       "start": null,
       "end": null,
       "conf": null

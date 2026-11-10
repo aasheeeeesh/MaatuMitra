@@ -97,6 +97,16 @@ class DrugFill:
                     ],
                 )
                 s["dose_tab"] = f"{s['dose']} {FORM_WORD[self.drug.form]}"
+            elif unit == "ml":
+                # paediatric liquid (syrup) volume; spoken with the number word or digits
+                s["dose"] = s["dose_tab"] = _pick(
+                    rng,
+                    [
+                        (0.45, f"{kn.ML_WORDS[v]} ಎಂ.ಎಲ್"),
+                        (0.35, f"{kn.fmt_num(v)} ml"),
+                        (0.2, f"{kn.fmt_num(v)} ಎಂ.ಎಲ್"),
+                    ],
+                )
             else:
                 s["dose"] = s["dose_tab"] = f"{kn.NUM_WORDS[int(v)][0]} {FORM_WORD[unit]}"
         if self.freq:

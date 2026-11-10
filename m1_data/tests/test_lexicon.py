@@ -58,7 +58,7 @@ def test_every_row_cites_fetched_urls(rows):
 
 def test_dose_ranges_only_from_a_fetched_label(rows):
     for r in rows:
-        has_label = "api.fda.gov" in r["source_url"]
+        has_label = any(k in r["source_url"] for k in ("api.fda.gov", "www.nhs.uk"))
         if r["adult_dose_range_mg"]:
             assert has_label, f"{r['id']}: dose range without a fetched label"
             lo, hi = (float(x) for x in r["adult_dose_range_mg"].split("-"))
