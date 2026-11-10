@@ -1,0 +1,82 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m3_extract-kannada-2026-11-10",
+  "reviewer_agent": "kannada-language-reviewer",
+  "target": "m3_extract Kannada phrase and word lists (data/phrases.yaml, data/symptoms.yaml, numbers.py, units.py)",
+  "date": "2026-11-10",
+  "sample_size": 40,
+  "findings": [
+    {
+      "id": "M3-K1",
+      "severity": "major",
+      "item": "m3_extract/data/phrases.yaml FU-FEVER-DOWN tokens (ಆಗದಿದ್ದರೆ|ಆದರೆ)",
+      "problem": "Template h1 produces the positive twin 'ಆಗಿದ್ದರೆ', which the pattern does not list, so the positive text is missed. ಆದರೆ also means 'but' and is a clause splitter, which makes 'ಜ್ವರ ಕಡಿಮೆ ಆದರೆ' ambiguous.",
+      "suggested_fix": "List ಆಗಿದ್ದರೆ and ಆದರೆ; note the 'but' reading as an ambiguity.",
+      "evidence": "Direct comparison of data/templates/h_followup.yaml h1 with phrases.yaml.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-K2",
+      "severity": "major",
+      "item": "m3_extract/data/symptoms.yaml: inflected forms deliberately not listed",
+      "problem": "ಜ್ವರವಿದೆ, ಜ್ವರವಿಲ್ಲ, ಕೆಮ್ಮಿಲ್ಲ, ತಲೆನೋವಿದೆ, ವಾಂತಿಯಾಗಿದೆ are ordinary clinic speech, so denied or present symptoms written in the fused way are missed. Spaced forms (ತಲೆ ನೋವು, ಮೈಕೈ ನೋವು, ಹೊಟ್ಟೆ ನೋವು, ಗಂಟಲು ನೋವು) are also missing; m4 already has them.",
+      "suggested_fix": "Add stem-prefix matching as m4 does, and the spaced forms.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-K3",
+      "severity": "major",
+      "item": "m3_extract/units.py: sachet and tablet forms",
+      "problem": "m1 generates ORS sachets as 'ಪ್ಯಾಕೆಟ್' but m3 knows only 'ಸ್ಯಾಚೆಟ್'/'sachet'. Inflected 'ಮಾತ್ರೆಯನ್ನು/ಮಾತ್ರೆಗಳನ್ನು', and 'ಗುಳಿಗೆ', 'ಟ್ಯಾಬ್ಲೆಟ್' are missing.",
+      "suggested_fix": "Add ಪ್ಯಾಕೆಟ್, ಗುಳಿಗೆ, ಟ್ಯಾಬ್ಲೆಟ್ and the accusative forms.",
+      "evidence": "Comparison of m1_data/render.py FORM_WORD with UNIT_PHRASES.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-K4",
+      "severity": "minor",
+      "item": "m3_extract/numbers.py word list",
+      "problem": "The values 11 (ಹನ್ನೊಂದು), 12 (ಹನ್ನೆರಡು), 16 (ಹದಿನಾರು), 20 (ಇಪ್ಪತ್ತು), 30 (ಮೂವತ್ತು), 100 (ನೂರು) look correct to me, but not from a fetched source. Missing: 17 to 19, 40 to 90, ಇನ್ನೂರು to ಐನೂರು (so 'ಐನೂರು ಎಂ.ಜಿ' is missed), ಸಾವಿರ, ಒಂದೂವರೆ, ಕಾಲು, ಮುಕ್ಕಾಲು.",
+      "suggested_fix": "Copy the fuller tables from m4_verify/numbers.py after a human checks them.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-K5",
+      "severity": "minor",
+      "item": "m3_extract/units.py frequency and duration words",
+      "problem": "ಬಾರಿ, ಸಾರಿ, ಸಲ, ಒಮ್ಮೆ and ದಿನಕ್ಕೆ are natural. Missing: ದಿನಾ, ಪ್ರತಿದಿನ, ದಿನಕ್ಕೊಮ್ಮೆ, ದಿನಕ್ಕೊಂದು, ಮೂರು ಹೊತ್ತು, and duration plurals ದಿನಗಳು, ದಿನಗಳ ಕಾಲ, ವಾರಗಳು, ತಿಂಗಳ. ಚಮಚ -> teaspoon stays UNVERIFIED (a spoon is not a measured teaspoon); variants ಚಮಚೆ, ಟೀ ಸ್ಪೂನ್ missing.",
+      "suggested_fix": "Add the words; keep the ಚಮಚ mapping flagged UNVERIFIED.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-K6",
+      "severity": "minor",
+      "item": "m3_extract/data/phrases.yaml advice and follow-up coverage",
+      "problem": "Closed list (stated by m3). Spoken variants are missing: ಊಟ ಆದ ಮೇಲೆ and ಊಟದ ಮೊದಲು (before food, the opposite advice), ಪೂರ್ತಿ ಮುಗಿಸಿ, ಗುಣವಾಗದಿದ್ದರೆ / ಕಮ್ಮಿ ಆಗದಿದ್ದರೆ, ಮಗುವಿಗೆ ... ಕುಡಿಯದಿದ್ದರೆ, ತೋರಿಸಿ / ಸಂಪರ್ಕಿಸಿ, ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು, ಶೀತಕ್ಕೆ. A before-food sentence matching the after-food pattern would invert advice.",
+      "suggested_fix": "Add the variants and an explicit before-food pattern.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-K7",
+      "severity": "minor",
+      "item": "m3_extract negation table use (shared table)",
+      "problem": "Because m3 must use the shared table, it inherits the table's gaps: the soft pattern flags ಬೆಲ್ಲ, no negative-question cue (ಇಲ್ಲವಾ, -ಲ್ವಾ), ಆಗದೆ missed, ತಗೋಬೇಡಿ missed, and a naive split at the dot in ಎಂ.ಜಿ. See m4_verify Kannada review section E.",
+      "suggested_fix": "Update the table through a decision entry (see M4-K12).",
+      "evidence": "Comparison of the table with m4_verify/negation.py.",
+      "source_urls": [],
+      "confidence": "high"
+    }
+  ],
+  "summary": "ai_simulated_review of the m3 Kannada lists. Core phrases (ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ, ಊಟದ ನಂತರ, ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ, ದಿನಕ್ಕೆ N ಬಾರಿ/ಸಲ/ಸಾರಿ, ಒಮ್ಮೆ, ಚಮಚ) are natural. Main problems: ಆಗಿದ್ದರೆ vs ಆದರೆ mismatch with template h1, fused symptom forms such as ಜ್ವರವಿಲ್ಲ missed, ಪ್ಯಾಕೆಟ್ not known as a sachet word, and smaller number and plural gaps compared with m4. Not native-validated; Wiktionary claims in m3 docstrings were not re-checked; validator not run.",
+  "label": "ai_simulated_review"
+}

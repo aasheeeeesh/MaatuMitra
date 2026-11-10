@@ -1,0 +1,132 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m4_verify-kannada-2026-11-10",
+  "reviewer_agent": "kannada-language-reviewer",
+  "target": "m4_verify Kannada negation rules, traps, clause splitters, cross-turn rules, number and frequency/duration words (m4_verify/negation.py, numbers.py, lexicon.py)",
+  "date": "2026-11-10",
+  "sample_size": 38,
+  "findings": [
+    {
+      "id": "M4-K1",
+      "severity": "major",
+      "item": "m4_verify/negation.py S-BEDI and S-BEDA (regex C+ಬೇಡಿ / C+ಬೇಡ)",
+      "problem": "A consonant letter is required directly before ಬೇಡ(ಿ). Spoken contractions end in a vowel sign or virama (ತಗೋಬೇಡಿ, ಕೊಡ್ಬೇಡಿ, ಮಾಡ್ಬೇಡ), so these prohibitions are missed and the text reads as affirmative.",
+      "suggested_fix": "Use a pattern like .ಬೇಡಿ?$ with at least 2 characters. ಬೇಡಿಕೆ ends in ಕೆ so it stays safe. Add tests for ತಗೋಬೇಡಿ and ಕೊಡ್ಬೇಡಿ.",
+      "evidence": "Model knowledge of colloquial Kannada contraction; reading of the regex. No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K2",
+      "severity": "major",
+      "item": "m4_verify/negation.py STRONG_WHOLE: missing spoken negative words",
+      "problem": "Not matched: ಬೇಡಾ, ಬೇಡವಾ, ಬೇಡವೇ, ಬೇಡ್ವಾ, ಬೇಡದ, ಇಲ್ರಿ, ಇಲ್ರೀ, ಇಲ್ಲರೀ, ಇಲ್ಲಪ್ಪ, ಇಲ್ಲಮ್ಮ. Common in clinic speech, especially North Karnataka (ಇಲ್ರೀ).",
+      "suggested_fix": "Add as whole tokens; mark ಬೇಡವಾ/ಬೇಡವೇ as negative questions (W-NEGQ).",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K3",
+      "severity": "major",
+      "item": "m4_verify/negation.py: colloquial negative question -ಲ್ವಾ (ಕುಡಿಯಲ್ವಾ?, ಬರಲ್ವಾ?)",
+      "problem": "No rule matches C+ಲ್ವಾ, so a negative question about a medicine or symptom reads as affirmative.",
+      "suggested_fix": "Add C+ಲ್ವಾ?$ as a negative-question soft cue. Keep ಅಲ್ವಾ/ಅಲ್ವ as traps (tag questions).",
+      "evidence": "The fetched grammar note says negative questions replace the final ಲ್ಲ with ಲ್ವಾ, example ನೀನು ನೋಡಲ್ವಾ? 'Don't you see?'",
+      "source_urls": ["https://sharmaeklavya2.github.io/notes/kannada/grammar/04-verbs.html"],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K4",
+      "severity": "major",
+      "item": "m4_verify/negation.py _split_clauses: scope depends on punctuation",
+      "problem": "Kannada is verb-final and clauses chain without commas (ಜ್ವರ ಇದೆ ಕೆಮ್ಮು ಇಲ್ಲ; ಜ್ವರ ಬಂದು ಕೆಮ್ಮು ಇಲ್ಲ). Without punctuation (ASR often drops commas) the cue ಇಲ್ಲ negates the fever span too.",
+      "suggested_fix": "Close a clause after a finite predicate (ಇದೆ, ಇವೆ, ಇಲ್ಲ, ಆಯಿತು, ಆಗಿದೆ, ಬಂದಿದೆ) when more tokens follow, and after a -ು conjunctive participle (ಬಂದು). Add unpunctuated tests.",
+      "evidence": "Model knowledge of Kannada clause structure. No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K5",
+      "severity": "major",
+      "item": "m4_verify/negation.py _cross_turn: bare answer must be exactly one token",
+      "problem": "Real answers carry address terms or particles: ಇಲ್ಲ ಅಕ್ಕ, ಇಲ್ಲ ಮೇಡಂ, ಹೌದು ಸರ್, ಇಲ್ರೀ, ಹೌದ್ರೀ, ಹೂಂ, ಇದೆ. The link to the previous question is lost, so the asked-about symptom or drug gets no polarity from the answer.",
+      "suggested_fix": "Allow answer word + optional vocative/politeness token (ರೀ, ಸರ್, ಮೇಡಂ, ಅಕ್ಕ, ಅಮ್ಮ, ಡಾಕ್ಟರ್, ಡಾಕ್ಟರೇ); add variants ಇಲ್ವ, ಇಲ್ರೀ, ಇಲ್ಲಪ್ಪ, ಹೌದ್ರೀ, ಹೌದಪ್ಪ, ಹೂಂ, bare ಇದೆ.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K6",
+      "severity": "minor",
+      "item": "m4_verify/negation.py OR_WORDS: ಇಲ್ಲವೇ/ಇಲ್ಲವೆ read as a cue only before '?'",
+      "problem": "The rule was designed on Wikipedia text, where it means 'or'. In speech the question 'isn't there?' is far more likely and ASR may drop '?'. A spoken 'ಜ್ವರ ಇಲ್ಲವೇ' then reads as neither.",
+      "suggested_fix": "When the text has no '?', treat clause-final ಇಲ್ಲವೇ as a soft cue. Also add ಇಲ್ಲವಾದರೆ ('otherwise').",
+      "evidence": "m4_verify/negation_audit.md corpus is encyclopaedic written text. No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M4-K7",
+      "severity": "minor",
+      "item": "m4_verify/negation.py VERB_STEMS contains ನಿಲ್ಲಿಸ (V-DE, V-ISADE)",
+      "problem": "ನಿಲ್ಲಿಸದೆ often means 'without stopping' (a positive instruction, e.g. ನಿಲ್ಲಿಸದೆ ತೆಗೆದುಕೊಳ್ಳಿ), the same reason ಮರೆಯದೆ was excluded. It would be flagged as a hard negation.",
+      "suggested_fix": "Make ನಿಲ್ಲಿಸದೆ a soft cue with an ambiguity note, not a hard negation.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K8",
+      "severity": "minor",
+      "item": "m4_verify/negation.py CLAUSE_WORDS and COORD_WORDS",
+      "problem": "Short list. Missing ಅಥವಾ, ಆದ್ರೆ, ಹಾಗಾಗಿ, ಏಕೆಂದರೆ, ಯಾಕಂದ್ರೆ, ಆದರೂ, ಮತ್ತೆ, ಜೊತೆಗೆ. ಆದರೆ also means 'if (it) becomes' (ಜ್ವರ ಕಡಿಮೆ ಆದರೆ).",
+      "suggested_fix": "Add the words; note the conditional use of ಆದರೆ in a comment.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K9",
+      "severity": "minor",
+      "item": "m4_verify/negation.py S-ILLA-FUSED (ಿಲ್ಲ[ದವ], unanchored)",
+      "problem": "Matches inside a word, so ಬಿಲ್ಲವ (Billava community, coastal Karnataka) is read as negation. Rare in health talk but a coastal-dialect/name trap.",
+      "suggested_fix": "Anchor the pattern or add ಬಿಲ್ಲವ to the trap list; add a test.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M4-K10",
+      "severity": "minor",
+      "item": "m4_verify/negation.py two-cue ambiguity rule and question detection",
+      "problem": "A repeated identical cue (ಇಲ್ಲ ಇಲ್ಲ) is emphasis, not double negation, but is flagged. Questions are detected only by '?', not by clause-final -ಆ/-ಯಾ/-ನಾ/-ವಾ (ಇದೆಯಾ, ಕುಡಿಯಿತಾ, ಮಾತ್ರೆನಾ).",
+      "suggested_fix": "Skip the ambiguity for identical repeated cues; treat clause-final -ಆ/-ಯಾ/-ನಾ/-ವಾ as a question mark.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-K11",
+      "severity": "minor",
+      "item": "m4_verify/numbers.py and lexicon.py word lists",
+      "problem": "Number words 0 to 19, tens, hundreds, ಸಾವಿರ, -ೂವರೆ forms and ದಿನ/ವಾರ/ತಿಂಗಳು plurals look correct. Gaps: ಕಾಲು, ಮುಕ್ಕಾಲು, ದಿನಕ್ಕೊಂದು, ಮೂರು ಹೊತ್ತು, N ಗಂಟೆಗೊಮ್ಮೆ, fused ಇಪ್ಪತ್ತೈದು, spoken ಆರ್ನೂರು. ಚಮಚ is a spoon, not a measured teaspoon.",
+      "suggested_fix": "Add the missing forms; keep ಚಮಚ mapping UNVERIFIED and fail closed.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M4-K12",
+      "severity": "major",
+      "item": ".claude/skills/kannada-nlp/negation_table.yaml vs m4_verify/negation.py",
+      "problem": "The shared table (used by m3) is weaker: soft pattern (?<!ಿ)ಲ್ಲಾ?$ flags ಬೆಲ್ಲ; no negative-question cue; no ಆಗ stem so ಆಗದೆ is missed; splits at any '.' (cuts ಎಂ.ಜಿ). m4 is better on these four points. Both share the ತಗೋಬೇಡಿ gap. Table example 'ಕೊಡುವುದು ಬೇಡಿ' is unnatural.",
+      "suggested_fix": "Bring the table up to m4's stronger rules (via a decision entry and a version bump), without making m4 read the table.",
+      "evidence": "Direct comparison of the two files.",
+      "source_urls": [],
+      "confidence": "high"
+    }
+  ],
+  "summary": "ai_simulated_review of m4_verify Kannada rules: the core cues (ಇಲ್ಲ, ಅಲ್ಲ, ಬೇಡ, -ಿಲ್ಲ, -ದಿದ್ದರೆ, verb-lexicon -ದೆ) and number words look natural, and the trap handling (ಇದೆ, ಬಂದಿದೆ, ಮರೆಯದೆ, ಬೆಲ್ಲ, ಹೇಳಿದಂತೆ) is sound. Main gaps are colloquial: contracted ತಗೋಬೇಡಿ, ಬೇಡಾ/ಬೇಡವಾ/ಇಲ್ರೀ, negative question -ಲ್ವಾ, clause scope without punctuation, and bare answers with address terms. Not native-validated. One external source fetched; the validator command was not run (no shell), so schema validity is UNVERIFIED by tool.",
+  "label": "ai_simulated_review"
+}

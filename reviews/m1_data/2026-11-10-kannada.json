@@ -1,0 +1,92 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m1_data-kannada-2026-11-10",
+  "reviewer_agent": "kannada-language-reviewer",
+  "target": "m1_data templates (sampled 20 of 59 plus a3, e8, h3, e2; h2 and i5 were in the sample), render slot wording, docs/annotation_guide.md",
+  "date": "2026-11-10",
+  "sample_size": 24,
+  "findings": [
+    {
+      "id": "M1-K1",
+      "severity": "major",
+      "item": "data/templates/a_asha_fever_cough.yaml a3; e_pharmacist.yaml e8, e2; h_followup.yaml h2, h3; i_traps.yaml i5 (refreeze group)",
+      "problem": "A child is given an adult mg tablet dose ('ಪ್ಯಾರಸಿಟಮಾಲ್ 500 mg ಮಾತ್ರೆ ... ಕೊಡಿ'). No caregiver or ASHA says this. The verb ತೆಗೆದುಕೊಳ್ಳಿ is used for a child in e2, 'ಎರಡೂ ಮಾತ್ರೆ' is wrong if one drug is a syrup, h2's twin 'ನಾಳೆಯೂ ಜ್ವರ ಇಳಿದರೆ ...' reads as nonsense, and i5 puts the condition after the verb.",
+      "suggested_fix": "a3: 'ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಐದು ಎಂ.ಎಲ್ ಕೊಟ್ಟೆ.' (no dose: '... ಸಿರಪ್ ಕೊಟ್ಟೆ.'). e8: 'ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಐದು ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಎರಡು ದಿನ ಕೊಡಿ.' h2: 'ನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ ಇಳಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ.' h3: syrup line + keep 'ನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ...'. i5: 'ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಐದು ಎಂ.ಎಲ್ ಕೊಡಿ.' e2: 'ಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?' with the verb ಕೊಡಿ/ಕುಡಿಸಿ chosen by recipient and form.",
+      "evidence": "Model knowledge of how caregivers and ASHA workers speak; see the .md file section B. No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-K2",
+      "severity": "major",
+      "item": "data/templates/_forms.yaml DO_NOT_GIVE form 'ಕೊಡುವುದು ಬೇಡಿ' (also the NEG-W05 example in negation_table.yaml)",
+      "problem": "ಬೇಡಿ is an imperative ('do not!'), so 'ಕೊಡುವುದು ಬೇಡಿ' is not natural Kannada. Natural choices are 'ಕೊಡುವುದು ಬೇಡ' or 'ಕೊಡಬೇಡಿ'. Gold data would contain unnatural text for the standalone-ಬೇಡಿ pattern.",
+      "suggested_fix": "Replace with 'ಕೊಡುವುದು ಬೇಡ' (cue NEG-W04). Keep NEG-W05 coverage only with short imperative uses a real reviewer confirms.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-K3",
+      "severity": "minor",
+      "item": "data/templates/c_stopped_early.yaml c4 N2 ('ಹಂಚಿಕೊಳ್ಳಕೂಡದು' / 'ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು') and the c4 positive twin 'ತೆಗೆದುಕೊಂಡು ಬಿಟ್ಟೆ'",
+      "problem": "ಕೂಡದು is very formal and rare in a nurse's speech. The positive twin changes the meaning (took it and quit).",
+      "suggested_fix": "Nurse: 'ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡಬೇಡಿ' or 'ಹಂಚಿಕೊಳ್ಳಬಾರದು'. Twin: 'ತೆಗೆದುಕೊಂಡೆ'.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-K4",
+      "severity": "minor",
+      "item": "data/templates/f_nurse_symptoms.yaml f1 ('ತಲೆನೋವು ಇಲ್ಲ, ಆದರೆ ವಾಂತಿ ಆಗಿಲ್ಲ')",
+      "problem": "ಆದರೆ ('but') between two negative statements is unnatural; it is natural when the first part is positive.",
+      "suggested_fix": "Choose the connective by polarity: ಆದರೆ after a positive part; ಮತ್ತು or 'ವಾಂತಿನೂ ಆಗಿಲ್ಲ' after a negative.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-K5",
+      "severity": "minor",
+      "item": "data/templates h5, e7, h2 positive minimal-pair twins ('ವಾಂತಿ ನಿಂತರೆ ತಕ್ಷಣ ಬನ್ನಿ', 'ಮಗು ಕುಡಿದರೆ ಆಸ್ಪತ್ರೆಗೆ ... ಬನ್ನಿ')",
+      "problem": "The negated sentence is natural, but the flipped twin says 'come to hospital at once if the vomiting stops', which no speaker would say.",
+      "suggested_fix": "Mark these twins as artificial in annotation_guide.md and the human sheet; do not present them as natural speech.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-K6",
+      "severity": "minor",
+      "item": "m1_data/render.py frequency, duration, dose and symptom surface forms; the AB choice 'ಪ್ರತಿಜೈವಿಕ'",
+      "problem": "Frequency is only ಬಾರಿ 80 / ಸಾರಿ 20; the common spoken ಸಲ is never generated although template i4 asks 'ಎಷ್ಟು ಸಲ'. Kannada digits glued to Latin 'mg' (೫೦೦ mg) are rare in speech. ಪ್ರತಿಜೈವಿಕ is a textbook word. Spoken ಭೇದಿ / ಲೂಸ್ ಮೋಷನ್ and ಗುಳಿಗೆ are absent.",
+      "suggested_fix": "Weights ಸಲ 40, ಬಾರಿ 30, ಸಾರಿ 20, ಒಮ್ಮೆ 10; use '೫೦೦ ಎಂ.ಜಿ' or '500 mg'; add some ಐನೂರು ಎಂ.ಜಿ; drop or down-weight ಪ್ರತಿಜೈವಿಕ; add ಭೇದಿ and ಗುಳಿಗೆ.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-K7",
+      "severity": "minor",
+      "item": "docs/annotation_guide.md: 'ಒ.ಆರ್.ಎಸ್'",
+      "problem": "The English letter O is pronounced long, so the Kannada letter should be long ಓ: 'ಓ.ಆರ್.ಎಸ್'.",
+      "suggested_fix": "Change to ಓ.ಆರ್.ಎಸ್ in the guide and in any generator text that uses it.",
+      "evidence": "No external source, model knowledge only, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-K8",
+      "severity": "minor",
+      "item": "sample method for the 30 percent template sample",
+      "problem": "No shell was available, so Python random.Random(20261110) could not be run. A stand-in rule (sorted ids, every item with 0-based index mod 3 = 1) was used, giving 20 of 59 templates: a2 a5 b2 b5 c1 c4 d2 d5 e3 e6 f1 f4 f7 g3 g6 h2 h5 i2 i5 i8. This is NOT the project's seeded sample.",
+      "suggested_fix": "Re-draw with the project's sampler and review any ids that differ.",
+      "evidence": "Method limitation, UNVERIFIED.",
+      "source_urls": [],
+      "confidence": "high"
+    }
+  ],
+  "summary": "ai_simulated_review of 24 m1 templates and the annotation guide. Most sampled sentences are natural spoken or semi-formal Kannada and the trap sentences (ಎಲ್ಲ, ಇಲ್ಲಿ, ಅಲ್ಲಿ, ಅಲ್ವಾ, ಮಾತ್ರ, ಬಂದಿದೆ) are good. Main problems: adult mg doses given to children in the refreeze group (a3, e8, h2, h3, i5, e2; syrup-in-ml wording supplied), the unnatural form 'ಕೊಡುವುದು ಬೇಡಿ', over-formal ಕೂಡದು, ಆದರೆ between two negatives, nonsensical positive twins, and narrow frequency wording. Not native-validated; sample drawn with a stand-in rule; validator not run.",
+  "label": "ai_simulated_review"
+}

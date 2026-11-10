@@ -15,7 +15,7 @@ Status values: todo / in-progress / done / blocked.
 | A2 | A | Seed PROGRESS/HUMAN_TODO/DECISIONS; commit | done | 2026-11-09 | ef3a288 |
 | B1a | B | m1 text data: lexicon, templates, generator, split, lock | done (test split frozen) | 2026-11-10 | 9a3faf8 |
 | B1b | B | m1 audio: TTS + public real speech + manifest | todo | | |
-| B1r | B | m1 reviews + fixes + gate | in-progress (clinical + integrity running) | 2026-11-10 | |
+| B1r | B | m1 reviews + fixes + gate | in-progress (all 3 reviews done D-90,D-91,D-93; REFREEZE-1 fix pass pending) | 2026-11-10 | |
 | B4 | B | m4_verify build + reviews + gate | in-progress (built c6fdf72; reviews running) | 2026-11-10 | c6fdf72 |
 | B2 | B | m2_asr build + reviews + gate | todo | | |
 | B3 | B | m3_extract build + reviews + gate | in-progress (built; reviews pending: clinical, integrity) | 2026-11-10 | ce46096 |
