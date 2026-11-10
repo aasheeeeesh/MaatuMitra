@@ -1,0 +1,182 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m1_data-clinical-2026-11-10",
+  "reviewer_agent": "clinical-reviewer",
+  "target": "m1_data (data/lexicon/drugs.csv all 34 rows; data/templates/*.yaml all 10 files)",
+  "date": "2026-11-10",
+  "sample_size": 44,
+  "findings": [
+    {
+      "id": "M1-C1",
+      "severity": "critical",
+      "item": "templates a3, e8, h2, h3, i5 (child encounters) + m1_data/lexicon.py mg_doses",
+      "problem": "Child-encounter templates render ADULT doses: paracetamol only as 1000 mg or 2 tablets (range 1000-1000) up to 4 times a day, ibuprofen 400 mg. Gold labels treat this as correct, and m4 C4 passes it with an adult range.",
+      "suggested_fix": "Use dose: none in child templates, or add paediatric liquid forms (ml with mg/5 ml strength) plus an age band; never sample adult mg_doses for a child.",
+      "evidence": "NHS: children's doses depend on age/weight; 120 mg/5 ml and 250 mg/5 ml liquids; 500 mg tablets only from age 10. US OTC label used by builder: 'children under 12 years: ask a doctor'.",
+      "source_urls": ["https://www.nhs.uk/medicines/paracetamol-for-children/how-and-when-to-give-paracetamol-for-children/", "https://api.fda.gov/drug/label.json?search=id%3A%22ee8e3aa2-8550-41c7-9911-0723b3fb2f87%22&skip=0&limit=1"],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-M1",
+      "severity": "major",
+      "item": "drug-19 paracetamol adult_dose_range_mg=1000-1000, max_daily_mg=3000",
+      "problem": "A normal 500 or 650 mg dose (NLEM strengths) is out of range; 3000 mg is a US OTC consumer limit, so a gold 1000 mg x 4/day regimen is flagged.",
+      "suggested_fix": "adult_dose_range_mg=500-1000; max_daily_mg=4000",
+      "evidence": "NHS adults: one dose is 1 or 2 x 500 mg tablets, at least 4 h apart, no more than 8 in 24 h.",
+      "source_urls": ["https://www.nhs.uk/medicines/paracetamol-for-adults/how-and-when-to-take-paracetamol-for-adults/"],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-M2",
+      "severity": "major",
+      "item": "drug-24 ondansetron adult_dose_range_mg=8-24",
+      "problem": "The NLEM 4 mg strength is out of range; the generator falls back to 8 mg.",
+      "suggested_fix": "adult_dose_range_mg=4-24 (16/24 mg are specialist single-dose regimens)",
+      "evidence": "US label: tablets 4, 8, 16, 24 mg; 4 mg doses listed; single 24 mg dose before chemotherapy.",
+      "source_urls": ["https://api.fda.gov/drug/label.json?search=id%3A%22cb0b89ea-904e-424e-9213-80fc4d073fe3%22&skip=0&limit=1"],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-M3",
+      "severity": "major",
+      "item": "drug-25 metformin adult_dose_range_mg=500-850",
+      "problem": "The NLEM 1000 mg strength is flagged as out of range.",
+      "suggested_fix": "adult_dose_range_mg=500-1000; keep max_daily_mg=2550",
+      "evidence": "US label: tablets 500/850/1000 mg; max 2550 mg/day in divided doses. NHS: taken 1 to 3 times a day. 1000 mg per dose is derived, not quoted.",
+      "source_urls": ["https://api.fda.gov/drug/label.json?search=id%3A%2219e4bfb8-2ed1-4a6b-adf5-853ad2953362%22&skip=0&limit=1", "https://www.nhs.uk/medicines/metformin/how-and-when-to-take-metformin/"],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-M4",
+      "severity": "major",
+      "item": "drug-20 ibuprofen adult_dose_range_mg=300-800",
+      "problem": "The 200 mg strength (NLEM, OTC) is out of range.",
+      "suggested_fix": "adult_dose_range_mg=200-800; max_daily_mg 3200 (Rx), note OTC max 1200",
+      "evidence": "OTC label: 200 mg, 1 tablet (2 if needed) every 4-6 h, max 6 in 24 h. Rx label: 400 mg q4-6h, do not exceed 3200 mg/day.",
+      "source_urls": ["https://api.fda.gov/drug/label.json?search=openfda.generic_name:ibuprofen+AND+openfda.product_type:%22HUMAN+OTC+DRUG%22&limit=1", "https://api.fda.gov/drug/label.json?search=id%3A%225e595111-8477-4ec7-8d32-a0aeabc04e1a%22&skip=0&limit=1"],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-M5",
+      "severity": "major",
+      "item": "drug-07 metronidazole adult_dose_range_mg=250-2000",
+      "problem": "The NLEM 200 mg strength is below the lower bound and is flagged.",
+      "suggested_fix": "adult_dose_range_mg=200-2000 (UNVERIFIED: the 200 mg strength comes from the builder's NLEM extraction, not re-fetched)",
+      "evidence": "Lexicon strengths_mg=200|400 versus range 250-2000 in the same row.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-M6",
+      "severity": "major",
+      "item": "drug-08 cotrimoxazole adult_dose_range_mg=800-800",
+      "problem": "A single 400 mg SMX tablet (NLEM strength) is flagged.",
+      "suggested_fix": "adult_dose_range_mg=400-800 (SMX component). UNVERIFIED, not re-fetched.",
+      "evidence": "Builder's label note: 1 DS tablet or 2 SS tablets q12h; strengths 400|800.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-M7",
+      "severity": "major",
+      "item": "blank adult_dose_range_mg on drug-02,10,17,18,21,22,29,30,31,32,33,34",
+      "problem": "Under m4 fail-closed, every dosed gold mention of these 12 drugs is flagged, which confounds verifier precision.",
+      "suggested_fix": "A human fills each range from a fetched label or the National Formulary of India; no values are suggested here.",
+      "evidence": "drugs.csv rows marked 'dose UNVERIFIED'.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-M8",
+      "severity": "major",
+      "item": "units/strengths: drug-21 ORS, drug-22 zinc, drug-34 iron-folic acid, drug-02/08 combinations",
+      "problem": "ORS has no unit (it should be sachet or ml, not mg); zinc is a paediatric 10-14 day product, so an adult range does not fit; IFA has no per-component strengths (mg iron + mcg folic acid, an mg/mcg confusion risk); combinations store only one component, so '625 mg' cannot match.",
+      "suggested_fix": "Add a unit/form column (sachet/ml for ORS); a population column for zinc; per-component strengths for IFA; total-strength aliases (625) for amoxicillin-clavulanate.",
+      "evidence": "WHO: diarrhoea treated with ORS; 10-14 day course of dispersible zinc tablets.",
+      "source_urls": ["https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease"],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-M9",
+      "severity": "major",
+      "item": "drug-15 roman_variants 'levo' / kn_variants 'ಲೇವೋ'",
+      "problem": "'levo' in Indian speech often means levocetirizine (not in the lexicon), so this mapping risks a wrong-drug record.",
+      "suggested_fix": "Remove the 'levo' short forms; review metro/dexa/diclo/amlo the same way.",
+      "evidence": "AI clinical judgement only (UNVERIFIED; no source fetched).",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M1-M10",
+      "severity": "major",
+      "item": "template e2 ('can I take both together?' -> 'yes')",
+      "problem": "The pharmacist says 'yes' for random pairs, which can include ciprofloxacin/levofloxacin/doxycycline with zinc or iron-folic acid (chelation), or two NSAIDs.",
+      "suggested_fix": "Exclude chelating and same-class pairs from e2, or remove the 'yes' answer.",
+      "evidence": "Ciprofloxacin label: administer at least 2 h before or 6 h after products containing calcium, iron or zinc.",
+      "source_urls": ["https://api.fda.gov/drug/label.json?search=id%3A%222fc39084-df93-4b13-e063-6394a90a38a8%22&skip=0&limit=1"],
+      "confidence": "high"
+    },
+    {
+      "id": "M1-M11",
+      "severity": "major",
+      "item": "D-62 gold convention: stopped early = negated:true (templates c1-c5)",
+      "problem": "Partial intake is recorded the same way as never taken; a reader may assume no antibiotic exposure.",
+      "suggested_fix": "Add an adherence field (taken / partially_taken / not_taken) in record.v2; until then document the limitation.",
+      "evidence": "docs/DECISIONS_EXPLAINED.md D-62 (status needs human).",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-M12",
+      "severity": "major",
+      "item": "confusable_with gaps (12 rows empty)",
+      "problem": "E4 falls back to random drugs; clinically important pairs (dexamethasone<->prednisolone, diclofenac<->ibuprofen) are missing; the builder's ISMP pairs could not be re-verified.",
+      "suggested_fix": "Add the within-lexicon pairs (AI-proposed, UNVERIFIED); a human checks the ISMP list.",
+      "evidence": "drugs.csv confusable_with column; the ISMP PDF fetch was unreadable.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M1-m1",
+      "severity": "minor",
+      "item": "nlem_listed=UNVERIFIED for drug-09,16,21,26,27",
+      "problem": "NLEM 2022 membership not confirmed; all NLEM PDF fetches failed in this session.",
+      "suggested_fix": "A human checks the NLEM 2022 PDF (ORS, amlodipine and omeprazole are believed listed, UNVERIFIED).",
+      "evidence": "Fetch failures recorded in the .md.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M1-m2",
+      "severity": "minor",
+      "item": "drug-03 azithromycin range 250-2000, drug-06 doxycycline 100-300, max_daily blank",
+      "problem": "The upper bounds are single-dose regimens; repeated daily they are an overdose that C4 cannot see.",
+      "suggested_fix": "Add max_daily_mg (values UNVERIFIED; take them from the label).",
+      "evidence": "Builder label notes: single 1 g/2 g azithromycin; 300 mg single-visit doxycycline.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M1-m3",
+      "severity": "minor",
+      "item": "template g7 ceftriaxone, all strengths as a 5-day daily course; e1/i2 'finish all tablets' on as-needed drugs; g5/i5 'only if fever' with a fixed frequency",
+      "problem": "Clinically odd combinations (250 mg/day ceftriaxone for an adult; 'finish the course' for paracetamol; an as-needed dose stored as a fixed frequency).",
+      "suggested_fix": "Restrict ceftriaxone to 1000/2000 mg in g7; restrict 'finish' advice to antibiotics; note that as-needed instructions are not representable.",
+      "evidence": "AI clinical judgement (UNVERIFIED).",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M1-m4",
+      "severity": "minor",
+      "item": "aware_class drug-01..drug-18",
+      "problem": "All 18 match the WHO portal, but the portal shows no edition year.",
+      "suggested_fix": "A human confirms against the WHO AWaRe 2023/2025 classification file.",
+      "evidence": "Portal: amoxicillin, amoxicillin-clavulanate, doxycycline, metronidazole, SMX-TMP, cefalexin, nitrofurantoin, cefadroxil, clindamycin, cefazolin = Access; azithromycin, cefixime, ciprofloxacin, ceftriaxone, clarithromycin, cefuroxime, levofloxacin, erythromycin = Watch.",
+      "source_urls": ["https://aware.essentialmeds.org/list"],
+      "confidence": "high"
+    }
+  ],
+  "summary": "SIMULATED clinical review (not clinical validation). AWaRe classes are all correct. Critical: child-encounter templates use adult paracetamol/ibuprofen doses. Major: US-label ranges flag normal Indian doses (paracetamol 500-1000/max 4000, ondansetron 4-24, metformin 500-1000, ibuprofen 200-800, metronidazole 200-2000, cotrimoxazole 400-800); 12 blank ranges; ORS/zinc/IFA unit gaps; 'levo' alias; e2 'take together' with chelating pairs; D-62 adherence; confusable gaps. NLEM and ISMP were not re-verified (fetches failed).",
+  "label": "ai_simulated_review"
+}

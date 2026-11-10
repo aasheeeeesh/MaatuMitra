@@ -1,0 +1,92 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m4_verify-clinical-2026-11-10",
+  "reviewer_agent": "clinical-reviewer",
+  "target": "m4_verify (C4 dose-range, C5 frequency/duration, config allowed units and blank-range policy, E4 drug swap) and docs/severity.md",
+  "date": "2026-11-10",
+  "sample_size": 6,
+  "findings": [
+    {
+      "id": "M4-C1",
+      "severity": "critical",
+      "item": "m4_verify/checks.py c4_dose_range (adult range applied to all patients)",
+      "problem": "A child given paracetamol 1000 mg three times a day passes C4 (in range, 3000 mg not above max). There is no age or child awareness.",
+      "suggested_fix": "When the transcript or encounter indicates a child (e.g. 'ಮಗು/ಮಗುವಿಗೆ') or the age is below 12, flag 'paediatric dose: weight-based, adult range not applicable'; add age/weight to record.v2.",
+      "evidence": "NHS: children's paracetamol depends on age and sometimes weight; 500 mg tablets only from age 10.",
+      "source_urls": ["https://www.nhs.uk/medicines/paracetamol-for-children/how-and-when-to-give-paracetamol-for-children/"],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-M1",
+      "severity": "major",
+      "item": "m4_verify/config/default.yaml blank_range_fails_closed: true; C4 non-mass units branch",
+      "problem": "Safe as a default, but correct gold doses for 12 blank-range drugs and ALL tablet/capsule/sachet/ml doses are flagged, so flag and false-positive rates measure lexicon gaps.",
+      "suggested_fix": "Keep fail-closed but use a distinct reason code (unverifiable_no_range) reported separately from out_of_range; convert single-strength tablet counts to mg or allow 1-2 units per dose.",
+      "evidence": "checks.py lines 347-388: range_mg None -> flag; du not in MASS -> flag 'no verified range for unit'.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-M2",
+      "severity": "major",
+      "item": "C4 max-daily check and the missing regimen/duration plausibility",
+      "problem": "max_daily_mg is blank for 25 of 34 drugs, so e.g. levofloxacin 750 mg x 4/day or azithromycin 2000 mg/day for 5 days pass; duration is never checked.",
+      "suggested_fix": "Add max_daily_mg from labels (ciprofloxacin 1500 mg/day = 750 mg q12h; the others UNVERIFIED) and per-drug allowed frequencies.",
+      "evidence": "Ciprofloxacin label dosing table: 500-750 mg every 12 hours for skin infections.",
+      "source_urls": ["https://api.fda.gov/drug/label.json?search=id%3A%222fc39084-df93-4b13-e063-6394a90a38a8%22&skip=0&limit=1"],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-M3",
+      "severity": "major",
+      "item": "config allowed_units (global) / allowed_units_by_drug {}",
+      "problem": "Every unit is allowed for every drug: 'ceftriaxone 1 tablet' and 'ORS 500 mg' pass the unit test; no route check.",
+      "suggested_fix": "allowed_units_by_drug: ceftriaxone/cefazolin [mg, g]; ors [sachet, ml]; zinc [mg, tablet]; iron-folic acid [tablet, mg, mcg].",
+      "evidence": "config.py DEFAULT_ALLOWED_UNITS; lexicon_source.py form=injection for ceftriaxone/cefazolin.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-M4",
+      "severity": "major",
+      "item": "m4_verify/planted.py _swap_drug (E4 type f)",
+      "problem": "Record-level swaps can pick non-lexicon confusables (prednisone, fomepizole, sertraline, sulfasalazine, folinic acid), which are caught trivially; drugs with no confusable fall back to random drugs (unrealistic).",
+      "suggested_fix": "Report non-lexicon and fallback swaps as separate rows or require need_in_lexicon=True; add within-lexicon pairs dexamethasone<->prednisolone, diclofenac<->ibuprofen (UNVERIFIED).",
+      "evidence": "planted.py _swap_drug(need_in_lexicon=False) at record level; FALLBACK note string.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M4-M5",
+      "severity": "major",
+      "item": "docs/severity.md taxonomy",
+      "problem": "Missing clinically critical classes: route, patient population / paediatric weight-based dose, liquid concentration/strength, adherence (stopped early vs never), as-needed instructions.",
+      "suggested_fix": "Add CR-ROUTE, CR-POPULATION, CR-STRENGTH, MA-ADHERENCE, MA-PRN via a decision entry; record.v2 fields for route/form/age/prn/adherence.",
+      "evidence": "NHS: 120 mg/5 ml vs 250 mg/5 ml paracetamol liquids, so an equal ml volume can deliver double the mg. record.v1 has no route/form/age fields.",
+      "source_urls": ["https://www.nhs.uk/medicines/paracetamol-for-children/how-and-when-to-give-paracetamol-for-children/"],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-m1",
+      "severity": "minor",
+      "item": "m4_verify/lexicon.py frequency phrases (C5)",
+      "problem": "'1-0-1', 'q8h'/'every 8 hours', 'HS', 'SOS'/PRN do not parse (safe flags but false alarms); 'per' is span-wide, so mixed spans can be mislabelled.",
+      "suggested_fix": "Add these patterns with tests; compute per-day/per-week locally around each number.",
+      "evidence": "FREQ_WORDS, PER_DAY and parse_frequencies in m4_verify/lexicon.py.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M4-m2",
+      "severity": "minor",
+      "item": "E4 FREQS includes 6/day",
+      "problem": "Type g is then partly detectable by plausibility rather than by the span; this must be stated.",
+      "suggested_fix": "Report it in the E4 results.",
+      "evidence": "planted.py FREQS = [1, 2, 3, 4, 6].",
+      "source_urls": [],
+      "confidence": "medium"
+    }
+  ],
+  "summary": "SIMULATED clinical review (not clinical validation). Critical: C4 applies adult ranges to children (paracetamol 1000 mg tid for a child passes). Blank-range fail-closed is right for safety but must be a separate 'unverifiable' code, or verifier precision measures lexicon gaps. Major: 25/34 drugs lack max_daily; global allowed units (no route check); E4 swaps to non-lexicon or random drugs; taxonomy lacks route, population, strength, adherence and PRN.",
+  "label": "ai_simulated_review"
+}
