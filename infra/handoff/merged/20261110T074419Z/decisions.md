@@ -1,0 +1,10 @@
+### D-?: Using a cheaper AI model for routine reviews and fix passes   (Phase B / orchestration / orchestrator / 2026-11-10)
+- What we needed to decide: The free usage allowance ran out twice (each "window" is about 5 hours). About 5-6 more windows of work were estimated. Which AI model should do which job so the allowance lasts longer?
+- Options we considered: (1) Strongest model (Opus) for everything, as the brief asks for reviewers. Pro: deepest reviews. Con: uses the allowance fastest; the project takes more days. (2) Cheaper model (Sonnet) for routine reviews and fix passes; strongest model kept for the safety verifier (m4) and the two auditors (scientific-integrity-auditor, security-auditor). Pro: each window does more work; the most safety-critical judgement stays with the strongest model. Con: the cheaper Kannada and clinical reviews may catch fewer problems. (3) Cheaper model for everything. Pro: fastest. Con: weaker safety checks and audits; not acceptable for the scientific core.
+- What we chose: Option 2. The student asked for this on 2026-11-10.
+- Why: Saving usage matters, but the verifier and the audits are where a missed problem would change the scientific result, so they keep the strongest model. This is a deviation from the brief, which asked for the strongest model for all reviewers.
+- What we actually did: From now on: Sonnet for kannada-language-reviewer, clinical-reviewer and every fix pass (except m4); Opus for m4_verify work, scientific-integrity-auditor and security-auditor. Builders keep the model they started with when they are resumed. Each review report's file says which model wrote it.
+- What could go wrong / weaknesses: The Kannada and clinical reviews are already SIMULATED (ai_simulated_review), and a cheaper simulation may miss more. This makes the real human review sheets (HUMAN_TODO item b) even more important.
+- What else could be done: Re-run the Kannada and clinical reviews with the strongest model at the end, if usage remains.
+- How to change this decision later: Pass a different `model` when starting the agent; the `model:` line in .claude/agents/<name>.md sets the default.
+- Status: done
