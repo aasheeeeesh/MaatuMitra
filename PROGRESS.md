@@ -1,6 +1,6 @@
 # PROGRESS
 
-NEXT STEP (2026-11-10): m3_extract (B3) and m6_ui (B6) builders RESUMED; the user asked for only these two now. Still stopped, resume later from on-disk state: m5 security audit (re-check results/m5_backend/access_matrix_summary.json, rewritten by its rerun); m4 Kannada review; m1+m4 clinical review; m1+m4 integrity audit (it had found a dosing-instruction sentence frame shared by dev and test: possible leak). After that: m1/m4 fixes, m4 E4 on DEV gold, B1b audio, m2. At most 3 agents at a time.
+NEXT STEP (2026-11-10): m3 (ce46096) and m6 (67b2234) are BUILT and committed; awaiting reviews. Resume later from on-disk state: m5 security audit (re-check uncommitted results/m5_backend/access_matrix_summary.json, rewritten by its rerun); m4 Kannada review; m1+m4 clinical review; m1+m4 integrity audit (possible dev/test sentence-frame leak) - ALSO ask it to check m3 for test-only wording (D-89). Then: reviews for m3 (clinical, integrity) and m6 (kannada, security); m5 fix pass incl. confirmed-flag resolutions (D-80); m1/m4 fixes; m4 E4 on DEV gold; B1b audio; m2. Model policy D-65. At most 3 agents at a time.
 
 NOTE: on Windows set `export UV_PROJECT_ENVIRONMENT=$USERPROFILE/.venvs/maatumitra` before `uv run` (path-length limit, D-3). Use `mingw32-make` for make.
 MODEL POLICY (D-65, user request 2026-11-10): Sonnet for kannada-language-reviewer, clinical-reviewer and fix passes (except m4); Opus for m4_verify work, scientific-integrity-auditor, security-auditor.
