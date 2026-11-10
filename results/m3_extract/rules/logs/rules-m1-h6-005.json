@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-h6-005",
+  "source_transcript_id": "m1-h6-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "metronidazole",
+      "match_type": "exact",
+      "form": "ಮೆಟ್ರೋನಿಡಜೋಲ್",
+      "char_start": 0
+    }
+  ]
+}

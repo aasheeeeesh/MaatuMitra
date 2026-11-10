@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e6-001",
+  "patient_ref": "pt-m1-e6-001",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e6-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amlodipine",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಅಮ್ಲೋಡಿಪೈನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ",
+        "char_start": 0,
+        "char_end": 41,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "levofloxacin",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 94,
+        "char_end": 149,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-013",
+  "source_transcript_id": "m1-e5-013",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "exact",
+      "form": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "cefixime",
+      "char_start": 74
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "cefixime",
+      "char_start": 97
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "cefixime"
+    }
+  ]
+}

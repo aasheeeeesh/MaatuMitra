@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-b7-002",
+  "source_transcript_id": "m1-b7-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "levofloxacin",
+      "match_type": "variant",
+      "form": "levo",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-ASK-DOCTOR-SYRUP",
+      "negated": false
+    }
+  ]
+}

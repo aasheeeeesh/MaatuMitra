@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e6-002",
+  "patient_ref": "pt-m1-e6-002",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e6-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "zinc",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಝಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+        "char_start": 0,
+        "char_end": 35,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "clindamycin",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 3,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "clindamycin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಏಳು ದಿವಸ",
+        "char_start": 88,
+        "char_end": 142,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

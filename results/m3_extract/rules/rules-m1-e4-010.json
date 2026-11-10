@@ -1,0 +1,74 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e4-010",
+  "patient_ref": "pt-m1-e4-010",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-010",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 24,
+        "char_end": 75,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "nitrofurantoin",
+      "dose_value": 100,
+      "dose_unit": "mg",
+      "frequency_per_day": 4,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟಿನ್ 100 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಏಳು ದಿನ",
+        "char_start": 77,
+        "char_end": 136,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "ciprofloxacin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ 250 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ",
+        "char_start": 138,
+        "char_end": 199,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 201,
+        "char_end": 209,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

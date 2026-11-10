@@ -1,0 +1,70 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e8-006",
+  "patient_ref": "pt-m1-e8-006",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e8-006",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": true,
+      "evidence": {
+        "span_text": "ವಾಂತಿ",
+        "char_start": 8,
+        "char_end": 13,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 20,
+        "char_end": 28,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "ors",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಒ.ಆರ್.ಎಸ್",
+        "char_start": 30,
+        "char_end": 39,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 4,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ",
+        "char_start": 62,
+        "char_end": 116,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

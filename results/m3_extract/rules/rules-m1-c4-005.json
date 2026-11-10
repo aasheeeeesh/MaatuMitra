@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-c4-005",
+  "patient_ref": "pt-m1-c4-005",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-c4-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "nitrofurantoin",
+      "dose_value": 100,
+      "dose_unit": "mg",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟಿನ್ ೧೦೦ mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ",
+        "char_start": 33,
+        "char_end": 78,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not share leftover tablets",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು",
+        "char_start": 87,
+        "char_end": 114,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-h4-001",
+  "patient_ref": "pt-m1-h4-001",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-h4-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು",
+        "char_start": 0,
+        "char_end": 6,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "cefuroxime",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ",
+        "char_start": 20,
+        "char_end": 77,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": {
+    "text": "if you do not improve in two days, come back",
+    "evidence": {
+      "span_text": "ಎರಡು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ",
+      "char_start": 92,
+      "char_end": 132,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

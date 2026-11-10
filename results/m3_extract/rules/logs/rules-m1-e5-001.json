@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-001",
+  "source_transcript_id": "m1-e5-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "iron-folic acid",
+      "match_type": "exact",
+      "form": "ಐರನ್ ಫೋಲಿಕ್ ಆಸಿಡ್",
+      "char_start": 70
+    },
+    {
+      "rule": "drug_match",
+      "drug": "iron-folic acid",
+      "match_type": "exact",
+      "form": "ಐರನ್ ಫೋಲಿಕ್ ಆಸಿಡ್",
+      "char_start": 102
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "iron-folic acid"
+    }
+  ]
+}

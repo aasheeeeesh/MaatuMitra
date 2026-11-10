@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-b4-002",
+  "patient_ref": "pt-m1-b4-002",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b4-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "chills",
+      "present": false,
+      "evidence": {
+        "span_text": "ಚಳಿ",
+        "char_start": 0,
+        "char_end": 3,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "body ache",
+      "present": true,
+      "evidence": {
+        "span_text": "ಮೈಕೈನೋವು",
+        "char_start": 17,
+        "char_end": 25,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

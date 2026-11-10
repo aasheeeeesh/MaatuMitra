@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-g7-006",
+  "latency_ms": 42775.49249998992,
+  "meta": {
+    "total_duration": 42732789600,
+    "load_duration": 9078300,
+    "prompt_eval_count": 4600,
+    "eval_count": 268,
+    "eval_duration": 42277267000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 1000,\n      \"drug\": \"cefazolin\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"cefazolin 1000 mg injection ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ\"\n    },\n    {\n      \"dose_unit\": null,\n      \"dose_value\": null,\n      \"drug\": \"paracetamol\",\n      \"duration_days\": null,\n      \"frequency_per_day\": 4,\n      \"negated\": false,\n      \"quote\": \"paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

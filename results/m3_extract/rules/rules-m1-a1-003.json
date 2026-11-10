@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-a1-003",
+  "patient_ref": "pt-m1-a1-003",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-a1-003",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 44,
+        "char_end": 52,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "headache",
+      "present": false,
+      "evidence": {
+        "span_text": "ತಲೆನೋವು ಇಲ್ಲಾ",
+        "char_start": 54,
+        "char_end": 67,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

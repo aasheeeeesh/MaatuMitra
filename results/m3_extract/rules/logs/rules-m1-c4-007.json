@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-c4-007",
+  "source_transcript_id": "m1-c4-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "doxycycline",
+      "match_type": "variant",
+      "form": "doxy",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-SHARE",
+      "negated": true
+    }
+  ]
+}

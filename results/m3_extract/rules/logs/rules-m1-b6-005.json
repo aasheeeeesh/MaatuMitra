@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-b6-005",
+  "source_transcript_id": "m1-b6-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ibuprofen",
+      "char_start": 50
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LITTLE",
+      "negated": false
+    }
+  ]
+}

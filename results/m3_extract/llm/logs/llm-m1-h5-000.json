@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-h5-000",
+  "latency_ms": 42979.66350003844,
+  "meta": {
+    "total_duration": 42957906000,
+    "load_duration": 9375900,
+    "prompt_eval_count": 4560,
+    "eval_count": 268,
+    "eval_duration": 42532733000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಆಗಾಗ ಕುಡಿಯಿರಿ\",\n      \"text\": \"take oral rehydration salts occasionally\"\n    },\n    {\n      \"negated\": true,\n      \"quote\": \"ವಾಂತಿ ನಿಲ್ಲದಿದ್ದರೆ\",\n      \"text\": \"do not wait for vomiting to stop; come if vomiting persists\"\n    }\n  ],\n  \"follow_up\": {\n    \"quote\": \"ವಾಂತಿ ನಿಲ್ಲದಿದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ.\",\n    \"text\": \"come if vomiting persists\"\n  },\n  \"medications\": [],\n  \"symptoms\": [\n    {\n      \"name\": \"vomiting\",\n      \"present\": true,\n      \"quote\": \"ವಾಂತಿ\"\n    },\n    {\n      \"name\": \"diarrhoea\",\n      \"present\": true,\n      \"quote\": \"ಅತಿಸಾರ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-b7-006",
+  "source_transcript_id": "m1-b7-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "exact",
+      "form": "nitrofurantoin",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-ASK-DOCTOR-SYRUP",
+      "negated": false
+    }
+  ]
+}

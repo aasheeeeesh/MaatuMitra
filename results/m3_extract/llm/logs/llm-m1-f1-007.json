@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-f1-007",
+  "latency_ms": 14460.14160005143,
+  "meta": {
+    "total_duration": 14431383700,
+    "load_duration": 10181800,
+    "prompt_eval_count": 4546,
+    "eval_count": 95,
+    "eval_duration": 14046092000
+  },
+  "raw_output": "{\"advice\": [], \"follow_up\": null, \"medications\": [], \"symptoms\": [{\"name\": \"body ache\", \"present\": false, \"quote\": \"ಮೈಕೈನೋವು ಇಲ್ಲಾ\"}, {\"name\": \"vomiting\", \"present\": false, \"quote\": \"ವಾಂತಿ ಆಗಿಲ್ಲ\"}]}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

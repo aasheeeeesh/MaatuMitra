@@ -1,0 +1,70 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-g6-006",
+  "patient_ref": "pt-m1-g6-006",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g6-006",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ",
+        "char_start": 0,
+        "char_end": 4,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "chills",
+      "present": true,
+      "evidence": {
+        "span_text": "ಚಳಿ ಇದೆ",
+        "char_start": 38,
+        "char_end": 45,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "ciprofloxacin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ciprofloxacin 250 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 51,
+        "char_end": 101,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+        "char_start": 116,
+        "char_end": 166,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

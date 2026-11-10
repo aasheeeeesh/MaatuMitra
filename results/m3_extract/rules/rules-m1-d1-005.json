@@ -1,0 +1,67 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-d1-005",
+  "patient_ref": "pt-m1-d1-005",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-d1-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cold",
+      "present": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ",
+        "char_start": 0,
+        "char_end": 5,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು",
+        "char_start": 12,
+        "char_end": 18,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 4,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 93,
+        "char_end": 146,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not take antibiotics for a cold",
+      "negated": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿಗೆ ಪ್ರತಿಜೈವಿಕ ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು",
+        "char_start": 55,
+        "char_end": 91,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

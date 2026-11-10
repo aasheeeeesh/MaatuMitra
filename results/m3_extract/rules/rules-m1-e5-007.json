@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e5-007",
+  "patient_ref": "pt-m1-e5-007",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefuroxime",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "Cefuroxime 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ",
+        "char_start": 0,
+        "char_end": 51,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "cotrimoxazole",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಅಲ್ಲ",
+        "char_start": 100,
+        "char_end": 120,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

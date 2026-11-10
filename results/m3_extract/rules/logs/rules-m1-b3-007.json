@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-b3-007",
+  "source_transcript_id": "m1-b3-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "exact",
+      "form": "ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್",
+      "char_start": 6
+    },
+    {
+      "rule": "cross_turn",
+      "item": "nitrofurantoin",
+      "polarity": "negative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "headache",
+      "polarity": "negative"
+    }
+  ]
+}

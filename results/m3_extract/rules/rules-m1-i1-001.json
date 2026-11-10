@@ -1,0 +1,32 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i1-001",
+  "patient_ref": "pt-m1-i1-001",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-i1-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "ibuprofen",
+      "dose_value": 400,
+      "dose_unit": "mg",
+      "frequency_per_day": 3,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+        "char_start": 0,
+        "char_end": 38,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

@@ -1,0 +1,87 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-e7-011",
+  "patient_ref": "pt-m1-e7-011",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e7-011",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "diarrhoea",
+      "present": true,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ ಇದೆ",
+        "char_start": 8,
+        "char_end": 18,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "zinc",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 1,
+      "duration_days": 14,
+      "negated": false,
+      "evidence": {
+        "span_text": "Zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ಕೊಡಿ",
+        "char_start": 43,
+        "char_end": 97,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "give ORS occasionally",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಆರ್ ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ",
+        "char_start": 22,
+        "char_end": 41,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "text": "give zinc one tablet once a day for 14 days",
+      "negated": false,
+      "evidence": {
+        "span_text": "Zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ಕೊಡಿ",
+        "char_start": 43,
+        "char_end": 97,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "text": "do not give ORS if child does not drink",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
+        "char_start": 99,
+        "char_end": 143,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": {
+    "text": "come if child does not drink",
+    "evidence": {
+      "span_text": "ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
+      "char_start": 99,
+      "char_end": 143,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

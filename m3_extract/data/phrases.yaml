@@ -1,0 +1,76 @@
+# m3_extract advice / follow-up phrase patterns (rules pipeline).
+# Written by nlp-engineer (AI) on 2026-11-10 from DEV-TUNE gold conversations and the hand-made
+# fixtures only (never test, never dev-holdout). English glosses copy the gold convention.
+# These patterns are a closed list: advice worded differently will be MISSED (reported on the
+# dev-holdout part). NOT native-validated.
+#
+# tokens: one regex per token, full-matched against the token's comparison form.
+#   `optional: [indexes]` lists tokens that may be absent. "{N}" matches any number
+#   (numbers.py) and fills {N} in the gloss with an English number word.
+# extend_to_clause_end: the evidence span runs to the end of the clause (to include the verb/cue).
+# Polarity is NEVER taken from the pattern: it comes from the shared negation table on the span's
+# clause(s). gloss_neg is used when the table says negated, gloss_pos otherwise.
+version: 1
+advice:
+  - id: ADV-WATER
+    tokens: ["ಮಗುವಿಗೆ", "ತಕ್ಕಷ್ಟು", "ನೀರು", "ಕುಡಿಸಿ"]
+    optional: [0]
+    gloss_pos: "give the child enough water to drink"
+    gloss_neg: "do not give the child enough water to drink"
+  - id: ADV-LITTLE
+    tokens: ["ಸ್ವಲ್ಪ", "ಸ್ವಲ್ಪ", "ಕುಡಿಸಿ"]
+    gloss_pos: "give it to drink little by little"
+    gloss_neg: "do not give it to drink little by little"
+  - id: ADV-ASK-DOCTOR-SYRUP
+    tokens: ["ವೈದ್ಯರನ್ನು", "ಕೇಳಿ", "ಸಿರಪ್", "ತೆಗೆದುಕೊಳ್ಳಿ"]
+    gloss_pos: "ask the doctor and take a syrup"
+    gloss_neg: "ask the doctor and do not take a syrup"
+  - id: ADV-LEFTOVER-GIVE
+    tokens: ["ಉಳಿದ", "ಮಾತ್ರೆ(ಗಳನ್ನು)?", "ಬೇರೆಯವರಿಗೆ"]
+    extend_to_clause_end: true
+    gloss_pos: "give leftover tablets to others"
+    gloss_neg: "do not give leftover tablets to others"
+  - id: ADV-LEFTOVER-SHARE
+    tokens: ["ಉಳಿದ", "ಮಾತ್ರೆ(ಗಳನ್ನು)?", "ಹಂಚಿಕೊಳ್ಳ.*"]
+    extend_to_clause_end: true
+    gloss_pos: "share leftover tablets"
+    gloss_neg: "do not share leftover tablets"
+  - id: ADV-NO-ANTIBIOTIC-COLD
+    tokens: ["ನೆಗಡಿಗೆ", "(ಪ್ರತಿಜೈವಿಕ|ಆಂಟಿಬಯಾಟಿಕ್|antibiotic|antibiotics)"]
+    extend_to_clause_end: true
+    gloss_pos: "take antibiotics for a cold"
+    gloss_neg: "do not take antibiotics for a cold"
+  - id: ADV-AFTER-FOOD
+    tokens: ["ಊಟದ", "ನಂತರ"]
+    gloss_pos: "take after food"
+    gloss_neg: "do not take after food"
+  - id: ADV-FINISH-ALL
+    tokens: ["(ಎಲ್ಲ|ಎಲ್ಲಾ)", "(ಮಾತ್ರೆ|ಮಾತ್ರೆಗಳನ್ನು)", "ಮುಗಿಸಿ"]
+    gloss_pos: "finish all tablets"
+    gloss_neg: "do not finish all tablets"
+  - id: ADV-ONLY-IF-FEVER
+    tokens: ["ಜ್ವರ", "ಇದ್ದರೆ", "ಮಾತ್ರ"]
+    gloss_pos: "only if there is fever"
+    gloss_neg: "only if there is no fever"
+follow_up:
+  # gloss_neg is used when the span contains an "if not" cue (NEG-S03) or a negation cue.
+  - id: FU-DRINK-HOSPITAL
+    tokens: ["ಮಗು", "(ಕುಡಿಯದಿದ್ದರೆ|ಕುಡಿದರೆ)", "ಆಸ್ಪತ್ರೆಗೆ", "ಕರೆದುಕೊಂಡು", "ಬನ್ನಿ"]
+    gloss_neg: "if the child does not drink, bring the child to hospital"
+    gloss_pos: "if the child drinks, bring the child to hospital"
+  - id: FU-IMPROVE-N-DAYS
+    tokens: ["{N}", "ದಿನದಲ್ಲಿ", "(ಸುಧಾರಿಸದಿದ್ದರೆ|ಸುಧಾರಿಸಿದರೆ)", "ಮತ್ತೆ", "ಬನ್ನಿ"]
+    gloss_neg: "if you do not improve in {N} days, come back"
+    gloss_pos: "if you improve in {N} days, come back"
+  - id: FU-VOMIT-STOP
+    tokens: ["ವಾಂತಿ", "(ನಿಲ್ಲದಿದ್ದರೆ|ನಿಂತರೆ)", "ತಕ್ಷಣ", "ಬನ್ನಿ"]
+    gloss_neg: "if the vomiting does not stop, come immediately"
+    gloss_pos: "if the vomiting stops, come immediately"
+  - id: FU-FEVER-DOWN
+    tokens: ["ಜ್ವರ", "ಕಡಿಮೆ", "(ಆಗದಿದ್ದರೆ|ಆದರೆ)", "{N}", "ದಿನದಲ್ಲಿ", "ಮತ್ತೆ", "ಬನ್ನಿ"]
+    gloss_neg: "if the fever does not come down, come back in {N} days"
+    gloss_pos: "if the fever comes down, come back in {N} days"
+# Fallback: a non-question sentence whose tokens include one of these words is a follow-up with
+# text "[untranslated] <the Kannada sentence>" (counted as MA-WORDING-UNJUDGED when scored).
+follow_up_fallback_tokens: ["ಬನ್ನಿ"]
+number_words_en: {1: one, 2: two, 3: three, 4: four, 5: five, 6: six, 7: seven, 10: ten, 14: fourteen}

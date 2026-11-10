@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i1-003",
+  "source_transcript_id": "m1-i1-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "montelukast",
+      "match_type": "variant",
+      "form": "ಮೊಂಟೆಲುಕಾಸ್ಟ್",
+      "char_start": 0
+    }
+  ]
+}

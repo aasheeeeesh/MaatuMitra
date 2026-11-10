@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-d2-002",
+  "source_transcript_id": "m1-d2-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "exact",
+      "form": "nitrofurantoin",
+      "char_start": 37
+    }
+  ]
+}

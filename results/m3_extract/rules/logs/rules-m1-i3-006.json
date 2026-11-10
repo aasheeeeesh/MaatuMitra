@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i3-006",
+  "source_transcript_id": "m1-i3-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "ಜಿಂಕ್",
+      "char_start": 29
+    }
+  ]
+}

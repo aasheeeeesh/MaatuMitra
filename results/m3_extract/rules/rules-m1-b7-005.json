@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-b7-005",
+  "patient_ref": "pt-m1-b7-005",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b7-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cotrimoxazole",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಮಾತ್ರೆ ಮಗು ತಿನ್ನುವುದಿಲ್ಲ",
+        "char_start": 33,
+        "char_end": 73,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "ask the doctor and take a syrup",
+      "negated": false,
+      "evidence": {
+        "span_text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ",
+        "char_start": 75,
+        "char_end": 109,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

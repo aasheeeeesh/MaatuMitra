@@ -1,0 +1,74 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e4-001",
+  "patient_ref": "pt-m1-e4-001",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "clarithromycin",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ",
+        "char_start": 24,
+        "char_end": 78,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "cephalexin",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "cephalexin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಒಂದು ವಾರ",
+        "char_start": 80,
+        "char_end": 133,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "omeprazole",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 1,
+      "duration_days": 14,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಒಮೆಪ್ರಜೋಲ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ",
+        "char_start": 135,
+        "char_end": 194,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 196,
+        "char_end": 204,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

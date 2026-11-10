@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-010",
+  "source_transcript_id": "m1-e4-010",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "variant",
+      "form": "ನೈಟ್ರೋಫ್ಯುರಾಂಟಿನ್",
+      "char_start": 77
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ciprofloxacin",
+      "match_type": "exact",
+      "form": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 138
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

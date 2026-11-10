@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-a4-002",
+  "latency_ms": 27718.472700042184,
+  "meta": {
+    "total_duration": 27679520600,
+    "load_duration": 19927500,
+    "prompt_eval_count": 4597,
+    "eval_count": 204,
+    "eval_duration": 26322971000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಮಗುವಿಗೆ ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ\",\n      \"text\": \"give adequate fluids\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [],\n  \"symptoms\": [\n    {\n      \"name\": \"fever\",\n      \"present\": true,\n      \"quote\": \"ಜ್ವರ ಬಂದು ಮೂರು ದಿನ ಆಯಿತು\"\n    },\n    {\n      \"name\": \"vomiting\",\n      \"present\": false,\n      \"quote\": \"ವಾಂತಿ ಇದೆಯಾ? ಇಲ್ಲ.\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

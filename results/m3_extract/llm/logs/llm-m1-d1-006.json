@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-d1-006",
+  "latency_ms": 53144.00070003467,
+  "meta": {
+    "total_duration": 53113149500,
+    "load_duration": 12295700,
+    "prompt_eval_count": 4634,
+    "eval_count": 296,
+    "eval_duration": 52628778000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": true,\n      \"quote\": \"ನೆಗಡಿಗೆ antibiotic ಬೇಡ.\",\n      \"text\": \"do not take antibiotic for cold\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 1,\n      \"drug\": \"cetirizine\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"ಸೇಟಿರಿಜಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ.\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"cold\",\n      \"present\": true,\n      \"quote\": \"ನೆಗಡಿ\"\n    },\n    {\n      \"name\": \"cough\",\n      \"present\": true,\n      \"quote\": \"ಕೆಮ್ಮು\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

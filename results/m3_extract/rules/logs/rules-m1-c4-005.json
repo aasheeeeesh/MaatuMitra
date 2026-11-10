@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-c4-005",
+  "source_transcript_id": "m1-c4-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "variant",
+      "form": "ನೈಟ್ರೋಫ್ಯುರಾಂಟಿನ್",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-SHARE",
+      "negated": true
+    }
+  ]
+}

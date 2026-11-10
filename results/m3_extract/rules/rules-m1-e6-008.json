@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e6-008",
+  "patient_ref": "pt-m1-e6-008",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e6-008",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cephalexin",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 4,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸೆಫ್ಲೆಕ್ಸಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+        "char_start": 0,
+        "char_end": 48,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "cefadroxil",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸೆಫಡ್ರೋಕ್ಸಿಲ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 103,
+        "char_end": 159,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

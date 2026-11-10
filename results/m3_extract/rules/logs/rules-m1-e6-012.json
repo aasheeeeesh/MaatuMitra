@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-012",
+  "source_transcript_id": "m1-e6-012",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "exact",
+      "form": "ಸೆಟಿರಿಜಿನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin",
+      "match_type": "exact",
+      "form": "ಅಮಾಕ್ಸಿಸಿಲಿನ್",
+      "char_start": 93
+    }
+  ]
+}

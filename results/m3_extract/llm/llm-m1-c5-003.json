@@ -1,0 +1,65 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-c5-003",
+  "patient_ref": "pt-m1-c5-003",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-c5-003",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ನನಗೆ ಜ್ವರ ಇದೆ",
+        "char_start": 0,
+        "char_end": 13,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "azithromycin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಅಜಿತ್ರೋಮೈಸಿನ್",
+        "char_start": 29,
+        "char_end": 42,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not take azithromycin",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಅಜಿತ್ರೋಮೈಸಿನ್ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?",
+        "char_start": 29,
+        "char_end": 60,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": {
+    "text": "contact a doctor instead of self-medicating",
+    "evidence": {
+      "span_text": "ಸ್ವಯಂ ಔಷಧಿ ಮಾಡದೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+      "char_start": 68,
+      "char_end": 106,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

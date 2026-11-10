@@ -1,0 +1,16 @@
+{
+  "record_id": "rules-m1-a4-002",
+  "source_transcript_id": "m1-a4-002",
+  "events": [
+    {
+      "rule": "cross_turn",
+      "item": "vomiting",
+      "polarity": "negative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-WATER",
+      "negated": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-d2-003",
+  "source_transcript_id": "m1-d2-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin",
+      "match_type": "exact",
+      "form": "ಅಮಾಕ್ಸಿಸಿಲಿನ್",
+      "char_start": 37
+    }
+  ]
+}

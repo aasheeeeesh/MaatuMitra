@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-005",
+  "source_transcript_id": "m1-e4-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "prednisolone",
+      "match_type": "exact",
+      "form": "prednisolone",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ciprofloxacin",
+      "match_type": "exact",
+      "form": "ciprofloxacin",
+      "char_start": 77
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "variant",
+      "form": "ಒಂಡನ್ಸಿಟ್ರಾನ್",
+      "char_start": 133
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

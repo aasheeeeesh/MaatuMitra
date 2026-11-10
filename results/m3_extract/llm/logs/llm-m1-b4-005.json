@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-b4-005",
+  "latency_ms": 12066.501100023743,
+  "meta": {
+    "total_duration": 12029882200,
+    "load_duration": 17579400,
+    "prompt_eval_count": 4503,
+    "eval_count": 90,
+    "eval_duration": 11638579000
+  },
+  "raw_output": "{\"advice\": [], \"follow_up\": null, \"medications\": [], \"symptoms\": [{\"name\": \"vomiting\", \"present\": false, \"quote\": \"ವಾಂತಿ ಇದೆಯಾ?\"}, {\"name\": \"cold\", \"present\": false, \"quote\": \"ನೆಗಡಿ ಇದೆಯಾ?\"}]}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

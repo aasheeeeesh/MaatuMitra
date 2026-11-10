@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-b3-005",
+  "latency_ms": 19851.054700033274,
+  "meta": {
+    "total_duration": 19828843500,
+    "load_duration": 16675900,
+    "prompt_eval_count": 4544,
+    "eval_count": 151,
+    "eval_duration": 19455240000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": null,\n      \"dose_value\": null,\n      \"drug\": \"cefadroxil\",\n      \"duration_days\": null,\n      \"frequency_per_day\": null,\n      \"negated\": true,\n      \"quote\": \"ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"cough\",\n      \"present\": true,\n      \"quote\": \"ಕೆಮ್ಮು ಇದೆ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

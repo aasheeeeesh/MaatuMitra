@@ -1,0 +1,27 @@
+{
+  "record_id": "rules-m1-e5-011",
+  "source_transcript_id": "m1-e5-011",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "ಸೆಫಿಕ್ಸಿಮ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "variant",
+      "form": "cetrizine",
+      "char_start": 72
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "variant",
+      "form": "cetrizine",
+      "char_start": 96
+    }
+  ]
+}

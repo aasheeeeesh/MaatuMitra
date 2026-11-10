@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e5-015",
+  "latency_ms": 29335.018199984916,
+  "meta": {
+    "total_duration": 29297710000,
+    "load_duration": 10454900,
+    "prompt_eval_count": 4617,
+    "eval_count": 177,
+    "eval_duration": 28814010000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 0.5,\n      \"drug\": \"dexamethasone\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"ಡೆಕ್ಸಾ 0.5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

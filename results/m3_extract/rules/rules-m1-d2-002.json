@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-d2-002",
+  "patient_ref": "pt-m1-d2-002",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-d2-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cold",
+      "present": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ ಇದೆ",
+        "char_start": 0,
+        "char_end": 9,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "nitrofurantoin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "nitrofurantoin ಬೇಡ",
+        "char_start": 37,
+        "char_end": 55,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

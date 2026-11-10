@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-a2-007",
+  "patient_ref": "pt-m1-a2-007",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-a2-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು",
+        "char_start": 43,
+        "char_end": 49,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "cold",
+      "present": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ ಇದೆ",
+        "char_start": 68,
+        "char_end": 77,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

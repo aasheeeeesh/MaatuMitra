@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-c4-001",
+  "patient_ref": "pt-m1-c4-001",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-c4-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefuroxime",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ",
+        "char_start": 33,
+        "char_end": 75,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not share leftover tablets",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು",
+        "char_start": 84,
+        "char_end": 111,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

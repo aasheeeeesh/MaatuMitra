@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i1-004",
+  "source_transcript_id": "m1-i1-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "omeprazole",
+      "match_type": "exact",
+      "form": "omeprazole",
+      "char_start": 0
+    }
+  ]
+}

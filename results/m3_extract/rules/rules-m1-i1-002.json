@@ -1,0 +1,32 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i1-002",
+  "patient_ref": "pt-m1-i1-002",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-i1-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amoxicillin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "amoxicillin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ",
+        "char_start": 0,
+        "char_end": 36,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

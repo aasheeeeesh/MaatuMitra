@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-008",
+  "source_transcript_id": "m1-e4-008",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "diclofenac",
+      "match_type": "exact",
+      "form": "ಡೈಕ್ಲೋಫೆನಾಕ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 78
+    },
+    {
+      "rule": "drug_match",
+      "drug": "dexamethasone",
+      "match_type": "exact",
+      "form": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್",
+      "char_start": 131
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

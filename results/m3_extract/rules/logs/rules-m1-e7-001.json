@@ -1,0 +1,25 @@
+{
+  "record_id": "rules-m1-e7-001",
+  "source_transcript_id": "m1-e7-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "variant",
+      "form": "ಓ ಆರ್ ಎಸ್",
+      "char_start": 20
+    },
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "zinc",
+      "char_start": 43
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-DRINK-HOSPITAL",
+      "negated": false
+    }
+  ]
+}

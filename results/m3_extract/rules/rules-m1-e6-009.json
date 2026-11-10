@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e6-009",
+  "patient_ref": "pt-m1-e6-009",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e6-009",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "dexamethasone",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ",
+        "char_start": 0,
+        "char_end": 44,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+        "char_start": 97,
+        "char_end": 148,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

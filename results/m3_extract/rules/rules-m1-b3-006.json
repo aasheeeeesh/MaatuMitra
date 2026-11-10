@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-b3-006",
+  "patient_ref": "pt-m1-b3-006",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b3-006",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": true,
+      "evidence": {
+        "span_text": "ವಾಂತಿ",
+        "char_start": 55,
+        "char_end": 60,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "amoxicillin-clavulanate",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "amoxicillin-clavulanate",
+        "char_start": 6,
+        "char_end": 29,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

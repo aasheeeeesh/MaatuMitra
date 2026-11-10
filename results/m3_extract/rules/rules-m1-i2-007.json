@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i2-007",
+  "patient_ref": "pt-m1-i2-007",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-i2-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefadroxil",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "cefadroxil 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 0,
+        "char_end": 53,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "finish all tablets",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ",
+        "char_start": 107,
+        "char_end": 125,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

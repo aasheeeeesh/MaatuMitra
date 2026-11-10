@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-h4-006",
+  "source_transcript_id": "m1-h4-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "variant",
+      "form": "ಸೇಟಿರಿಜಿನ್",
+      "char_start": 22
+    },
+    {
+      "rule": "cross_turn",
+      "item": "body ache",
+      "polarity": "affirmative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-IMPROVE-N-DAYS",
+      "negated": false
+    }
+  ]
+}

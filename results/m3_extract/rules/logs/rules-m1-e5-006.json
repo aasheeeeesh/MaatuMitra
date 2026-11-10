@@ -1,0 +1,27 @@
+{
+  "record_id": "rules-m1-e5-006",
+  "source_transcript_id": "m1-e5-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "prednisolone",
+      "match_type": "variant",
+      "form": "ಪ್ರೆಡ್ನಿಸೋಲನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "levofloxacin",
+      "match_type": "exact",
+      "form": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 70
+    },
+    {
+      "rule": "drug_match",
+      "drug": "levofloxacin",
+      "match_type": "exact",
+      "form": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 101
+    }
+  ]
+}

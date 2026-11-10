@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-000",
+  "source_transcript_id": "m1-e5-000",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "ಸೆಫಿಕ್ಸಿಮ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "exact",
+      "form": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್",
+      "char_start": 69
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "exact",
+      "form": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್",
+      "char_start": 98
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "ondansetron"
+    }
+  ]
+}

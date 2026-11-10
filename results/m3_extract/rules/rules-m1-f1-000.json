@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-f1-000",
+  "patient_ref": "pt-m1-f1-000",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f1-000",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "chills",
+      "present": true,
+      "evidence": {
+        "span_text": "ಚಳಿ ಇದೆ",
+        "char_start": 30,
+        "char_end": 37,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "vomiting",
+      "present": false,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ಆಗಿಲ್ಲ",
+        "char_start": 44,
+        "char_end": 56,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-f2-001",
+  "patient_ref": "pt-m1-f2-001",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f2-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "diarrhoea",
+      "present": false,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ ಇಲ್ಲಾ",
+        "char_start": 12,
+        "char_end": 24,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "headache",
+      "present": false,
+      "evidence": {
+        "span_text": "ತಲೆನೋವು ಇಲ್ಲಾ",
+        "char_start": 31,
+        "char_end": 44,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

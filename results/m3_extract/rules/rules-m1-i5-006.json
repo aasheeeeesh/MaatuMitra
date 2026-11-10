@@ -1,0 +1,56 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i5-006",
+  "patient_ref": "pt-m1-i5-006",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-i5-006",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಬಂದಿದೆ",
+        "char_start": 8,
+        "char_end": 19,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಒಂದು ಮಾತ್ರೆ",
+        "char_start": 21,
+        "char_end": 45,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "only if there is fever",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ",
+        "char_start": 52,
+        "char_end": 69,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

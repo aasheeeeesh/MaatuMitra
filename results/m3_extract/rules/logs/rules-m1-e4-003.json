@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-003",
+  "source_transcript_id": "m1-e4-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "clarithromycin",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "exact",
+      "form": "ondansetron",
+      "char_start": 81
+    },
+    {
+      "rule": "drug_match",
+      "drug": "dexamethasone",
+      "match_type": "exact",
+      "form": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್",
+      "char_start": 133
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

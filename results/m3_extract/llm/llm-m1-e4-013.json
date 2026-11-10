@@ -1,0 +1,74 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-e4-013",
+  "patient_ref": "pt-m1-e4-013",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-013",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "ibuprofen",
+      "dose_value": 400,
+      "dose_unit": "mg",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ibuprofen ೪೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 24,
+        "char_end": 74,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "clarithromycin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "Clarithromycin ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ",
+        "char_start": 76,
+        "char_end": 130,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "levofloxacin",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಒಂದು ವಾರ, ಊಟದ ನಂತರ",
+        "char_start": 132,
+        "char_end": 199,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 191,
+        "char_end": 199,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

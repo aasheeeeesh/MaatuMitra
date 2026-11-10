@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-g6-014",
+  "latency_ms": 67512.62029999634,
+  "meta": {
+    "total_duration": 67466381000,
+    "load_duration": 9408100,
+    "prompt_eval_count": 4673,
+    "eval_count": 402,
+    "eval_duration": 66939382000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"capsule\",\n      \"dose_value\": 1,\n      \"drug\": \"azithromycin\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"Azithromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    },\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 1,\n      \"drug\": \"paracetamol\",\n      \"duration_days\": 3,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"Paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"cough\",\n      \"present\": true,\n      \"quote\": \"ಕೆಮ್ಮು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\"\n    },\n    {\n      \"name\": \"chills\",\n      \"present\": false,\n      \"quote\": \"ಯಾವುದೇ ಚಳಿ ಇಲ್ಲ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

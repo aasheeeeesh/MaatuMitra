@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-b6-002",
+  "patient_ref": "pt-m1-b6-002",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-b6-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amoxicillin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "amox ಸಿರಪ್ ಕುಡಿಯುವುದಿಲ್ಲ",
+        "char_start": 50,
+        "char_end": 74,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "give it to drink little by little",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ",
+        "char_start": 76,
+        "char_end": 96,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

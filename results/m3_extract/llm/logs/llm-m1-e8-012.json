@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e8-012",
+  "latency_ms": 60876.574699999765,
+  "meta": {
+    "total_duration": 60857662100,
+    "load_duration": 11985600,
+    "prompt_eval_count": 4591,
+    "eval_count": 383,
+    "eval_duration": 60397974000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ors ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ\",\n      \"text\": \"take ORS in small amounts\"\n    },\n    {\n      \"negated\": false,\n      \"quote\": \"paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ\",\n      \"text\": \"take paracetamol two tablets three times a day for three days\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 2,\n      \"drug\": \"paracetamol\",\n      \"duration_days\": 3,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"vomiting\",\n      \"present\": true,\n      \"quote\": \"ವಾಂತಿ\"\n    },\n    {\n      \"name\": \"fever\",\n      \"present\": true,\n      \"quote\": \"ಜ್ವರ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

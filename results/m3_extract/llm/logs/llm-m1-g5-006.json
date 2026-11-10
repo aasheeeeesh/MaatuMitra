@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-g5-006",
+  "latency_ms": 49661.01289994549,
+  "meta": {
+    "total_duration": 49638650300,
+    "load_duration": 13085800,
+    "prompt_eval_count": 4568,
+    "eval_count": 315,
+    "eval_duration": 49207742000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"fever ಇದ್ದರೆ ಮಾತ್ರ\",\n      \"text\": \"take only if fever is present\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 400,\n      \"drug\": \"cefixime\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"Tablet Cefixime 400 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ\"\n    },\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 400,\n      \"drug\": \"ibuprofen\",\n      \"duration_days\": null,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"Ibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

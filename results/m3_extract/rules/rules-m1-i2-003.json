@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i2-003",
+  "patient_ref": "pt-m1-i2-003",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-i2-003",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "omeprazole",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 1,
+      "duration_days": 14,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಒಮೆಪ್ರಜೋಲ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ",
+        "char_start": 0,
+        "char_end": 59,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "finish all tablets",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ",
+        "char_start": 113,
+        "char_end": 131,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

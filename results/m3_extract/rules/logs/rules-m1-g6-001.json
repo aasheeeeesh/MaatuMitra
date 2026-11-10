@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-001",
+  "source_transcript_id": "m1-g6-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ciprofloxacin",
+      "match_type": "exact",
+      "form": "ciprofloxacin",
+      "char_start": 60
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 121
+    }
+  ]
+}

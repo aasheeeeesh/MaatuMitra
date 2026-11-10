@@ -1,0 +1,78 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-e8-012",
+  "patient_ref": "pt-m1-e8-012",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e8-012",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": true,
+      "evidence": {
+        "span_text": "ವಾಂತಿ",
+        "char_start": 8,
+        "char_end": 13,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ",
+        "char_start": 20,
+        "char_end": 24,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ",
+        "char_start": 56,
+        "char_end": 111,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take ORS in small amounts",
+      "negated": false,
+      "evidence": {
+        "span_text": "ors ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ",
+        "char_start": 30,
+        "char_end": 54,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "text": "take paracetamol two tablets three times a day for three days",
+      "negated": false,
+      "evidence": {
+        "span_text": "paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ",
+        "char_start": 56,
+        "char_end": 111,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

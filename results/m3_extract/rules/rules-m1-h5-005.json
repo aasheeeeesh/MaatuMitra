@@ -1,0 +1,64 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-h5-005",
+  "patient_ref": "pt-m1-h5-005",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-h5-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": true,
+      "evidence": {
+        "span_text": "ವಾಂತಿ",
+        "char_start": 0,
+        "char_end": 5,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "diarrhoea",
+      "present": true,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ ಇದೆ",
+        "char_start": 12,
+        "char_end": 22,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "ors",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "oral rehydration salts",
+        "char_start": 24,
+        "char_end": 46,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": {
+    "text": "if the vomiting does not stop, come immediately",
+    "evidence": {
+      "span_text": "ವಾಂತಿ ನಿಲ್ಲದಿದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ",
+      "char_start": 62,
+      "char_end": 92,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

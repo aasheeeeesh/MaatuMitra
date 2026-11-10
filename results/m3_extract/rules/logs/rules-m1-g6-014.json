@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-014",
+  "source_transcript_id": "m1-g6-014",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "azithromycin",
+      "match_type": "exact",
+      "form": "azithromycin",
+      "char_start": 61
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 127
+    }
+  ]
+}

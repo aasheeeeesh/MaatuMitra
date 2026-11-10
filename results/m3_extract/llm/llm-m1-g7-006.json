@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-g7-006",
+  "patient_ref": "pt-m1-g7-006",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g7-006",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefazolin",
+      "dose_value": 1000,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "cefazolin 1000 mg injection ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 0,
+        "char_end": 53,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": 4,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ",
+        "char_start": 66,
+        "char_end": 122,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

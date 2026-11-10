@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-c3-007",
+  "patient_ref": "pt-m1-c3-007",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-c3-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amoxicillin-clavulanate",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಅಮಾಕ್ಸಿಕ್ಲಾವ್",
+        "char_start": 0,
+        "char_end": 13,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not give leftover tablets to others",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡಕೂಡದು",
+        "char_start": 38,
+        "char_end": 69,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

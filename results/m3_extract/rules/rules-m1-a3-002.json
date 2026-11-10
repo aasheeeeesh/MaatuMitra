@@ -1,0 +1,55 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-a3-002",
+  "patient_ref": "pt-m1-a3-002",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-a3-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ",
+        "char_start": 24,
+        "char_end": 28,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "cough",
+      "present": false,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು",
+        "char_start": 94,
+        "char_end": 100,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ",
+        "char_start": 61,
+        "char_end": 85,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

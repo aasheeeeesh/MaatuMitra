@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-f3-006",
+  "latency_ms": 12886.250299983658,
+  "meta": {
+    "total_duration": 12866467200,
+    "load_duration": 9030000,
+    "prompt_eval_count": 4503,
+    "eval_count": 86,
+    "eval_duration": 12533564000
+  },
+  "raw_output": "{\"advice\": [], \"follow_up\": null, \"medications\": [], \"symptoms\": [{\"name\": \"vomiting\", \"present\": true, \"quote\": \"ವಾಂತಿ ಇದೆ\"}, {\"name\": \"cough\", \"present\": false, \"quote\": \"ಕೆಮ್ಮು ಇಲ್ಲ\"}]}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

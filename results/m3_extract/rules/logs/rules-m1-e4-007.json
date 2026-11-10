@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-007",
+  "source_transcript_id": "m1-e4-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "zinc",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "dexamethasone",
+      "match_type": "exact",
+      "form": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್",
+      "char_start": 74
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ibuprofen",
+      "char_start": 128
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

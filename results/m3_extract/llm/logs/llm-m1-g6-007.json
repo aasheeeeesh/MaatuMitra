@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-g6-007",
+  "latency_ms": 56835.934500035364,
+  "meta": {
+    "total_duration": 56794705700,
+    "load_duration": 9766300,
+    "prompt_eval_count": 4654,
+    "eval_count": 356,
+    "eval_duration": 56326048000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 400,\n      \"drug\": \"cefixime\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"Cefixime ೪೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ\"\n    },\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 1,\n      \"drug\": \"paracetamol\",\n      \"duration_days\": 3,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"acetaminophen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"fever\",\n      \"present\": true,\n      \"quote\": \"ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?\"\n    },\n    {\n      \"name\": \"diarrhoea\",\n      \"present\": true,\n      \"quote\": \"ಅತಿಸಾರ ಇದೆ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

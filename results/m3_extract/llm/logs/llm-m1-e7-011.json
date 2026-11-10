@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e7-011",
+  "latency_ms": 86589.263700007,
+  "meta": {
+    "total_duration": 86549904900,
+    "load_duration": 10087500,
+    "prompt_eval_count": 4639,
+    "eval_count": 539,
+    "eval_duration": 86057457000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಆರ್ ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ\",\n      \"text\": \"give ORS occasionally\"\n    },\n    {\n      \"negated\": false,\n      \"quote\": \"Zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ಕೊಡಿ\",\n      \"text\": \"give zinc one tablet once a day for 14 days\"\n    },\n    {\n      \"negated\": true,\n      \"quote\": \"ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ\",\n      \"text\": \"do not give ORS if child does not drink\"\n    }\n  ],\n  \"follow_up\": {\n    \"quote\": \"ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ\",\n    \"text\": \"come if child does not drink\"\n  },\n  \"medications\": [\n    {\n      \"dose_unit\": \"capsule\",\n      \"dose_value\": 1,\n      \"drug\": \"zinc\",\n      \"duration_days\": 14,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"Zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ಕೊಡಿ\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"diarrhoea\",\n      \"present\": true,\n      \"quote\": \"ಅತಿಸಾರ ಇದೆ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

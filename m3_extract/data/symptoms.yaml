@@ -1,0 +1,53 @@
+# m3_extract symptom lexicon (rules pipeline). Canonical English name -> whole-token forms.
+# Built by nlp-engineer (AI) on 2026-11-10 from: words seen in DEV-TUNE gold spans (never test,
+# never dev-holdout), Wiktionary entries fetched 2026-11-10 (raw wikitext, Kannada section), and
+# m1_data's fetched-source list (data/templates/SOURCES.md KN-2/KN-3/KN-4; fetched by m1, not by us).
+# Latin forms are for code-switched speech. NOT native-validated. Inflected forms (ಜ್ವರವಿದೆ,
+# ವಾಂತಿಯಾಗಿದೆ, ನೆಗಡಿಗೆ ...) are deliberately NOT listed: an inflected word is usually not a
+# plain "the patient has X" statement (ನೆಗಡಿಗೆ = "for a cold").
+version: 1
+symptoms:
+  fever:
+    kn: [ಜ್ವರ]
+    latin: [fever]
+    source: "en.wiktionary ಜ್ವರ = fever (fetched 2026-11-10); dev-tune gold"
+  cough:
+    kn: [ಕೆಮ್ಮು]
+    latin: [cough]
+    source: "en.wiktionary ಕೆಮ್ಮು = cough (fetched 2026-11-10); dev-tune gold"
+  cold:
+    kn: [ನೆಗಡಿ, ಶೀತ]
+    latin: [cold]
+    source: "dev-tune gold (ನೆಗಡಿ); KN-2/KN-4 via m1 (ನೆಗಡಿ, ಶೀತ). ಶೀತ = cold: UNVERIFIED by us"
+  chills:
+    kn: [ಚಳಿ]
+    latin: [chills]
+    source: "en.wiktionary ಚಳಿ = cold, chilly (fetched 2026-11-10); dev-tune gold maps it to chills"
+  diarrhoea:
+    kn: [ಅತಿಸಾರ, ಭೇದಿ]
+    latin: [diarrhoea, diarrhea]
+    source: "dev-tune gold (ಅತಿಸಾರ); KN-4 via m1. ಭೇದಿ: general knowledge, UNVERIFIED"
+  vomiting:
+    kn: [ವಾಂತಿ]
+    latin: [vomiting]
+    source: "dev-tune gold; KN-4 via m1"
+  headache:
+    kn: [ತಲೆನೋವು]
+    latin: [headache]
+    source: "dev-tune gold; KN-2 via m1"
+  body ache:
+    kn: [ಮೈಕೈನೋವು]
+    latin: []
+    source: "dev-tune gold; KN-2 via m1"
+  tiredness:
+    kn: [ಸುಸ್ತು]
+    latin: []
+    source: "dev-tune gold; KN-2 via m1"
+  pain:
+    kn: [ನೋವು]
+    latin: [pain]
+    source: "en.wiktionary ನೋವು = pain (fetched 2026-11-10); KN-3 via m1 (ನೋವು ನಿವಾರಕ)"
+  breathing difficulty:
+    kn: [ಉಸಿರಾಟದ ತೊಂದರೆ, ಉಸಿರಾಟಕ್ಕೆ ತೊಂದರೆ]
+    latin: []
+    source: "dev-tune gold (ಉಸಿರಾಟದ ತೊಂದರೆ); KN-2 via m1 (ಉಸಿರಾಟಕ್ಕೆ ತೊಂದರೆ). Multi-token form"

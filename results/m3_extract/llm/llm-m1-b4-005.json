@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-b4-005",
+  "patient_ref": "pt-m1-b4-005",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b4-005",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": false,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ಇದೆಯಾ?",
+        "char_start": 0,
+        "char_end": 12,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "cold",
+      "present": false,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ ಇದೆಯಾ?",
+        "char_start": 20,
+        "char_end": 32,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

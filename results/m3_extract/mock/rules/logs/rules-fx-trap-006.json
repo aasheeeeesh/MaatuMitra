@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-fx-trap-006",
+  "source_transcript_id": "fx-trap-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 0
+    }
+  ]
+}

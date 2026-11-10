@@ -1,0 +1,25 @@
+{
+  "record_id": "rules-m1-g5-015",
+  "source_transcript_id": "m1-g5-015",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "exact",
+      "form": "cefadroxil",
+      "char_start": 7
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 53
+    },
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "fever",
+      "char_start": 102
+    }
+  ]
+}

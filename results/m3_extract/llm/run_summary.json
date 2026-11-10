@@ -1,0 +1,14 @@
+{
+  "pipeline": "llm",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+  "seed": 20261110,
+  "prompt_version": "prompt-v1",
+  "hardware": "i7-12650H, 16 GB RAM, RTX 3050 Ti 4 GB VRAM, Windows 11 (builder_rules.md)",
+  "n": 40,
+  "n_rejected": 4,
+  "latency_ms_p50": 47169.95,
+  "latency_ms_p95": 253269.03000000003,
+  "run_at": "2026-11-10T08:42:06+00:00",
+  "python": "3.11.15"
+}

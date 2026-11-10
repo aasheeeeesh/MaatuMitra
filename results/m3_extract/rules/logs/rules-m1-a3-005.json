@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-a3-005",
+  "source_transcript_id": "m1-a3-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "variant",
+      "form": "ಪ್ಯಾರಸಿಟಮೋಲ್",
+      "char_start": 61
+    },
+    {
+      "rule": "cross_turn",
+      "item": "vomiting",
+      "polarity": "affirmative"
+    }
+  ]
+}

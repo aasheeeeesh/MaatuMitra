@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-i1-001",
+  "latency_ms": 52339.90909997374,
+  "meta": {
+    "total_duration": 52318257900,
+    "load_duration": 12745200,
+    "prompt_eval_count": 4574,
+    "eval_count": 318,
+    "eval_duration": 51863254000
+  },
+  "raw_output": "{\"advice\": [{\"negated\": false, \"quote\": \"ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ\", \"text\": \"take ibuprofen 400 mg three times a day for one dose\"}, {\"negated\": false, \"quote\": \"ಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ\", \"text\": \"all doses are here\"}], \"follow_up\": null, \"medications\": [{\"dose_unit\": \"mg\", \"dose_value\": 400, \"drug\": \"ibuprofen\", \"duration_days\": null, \"frequency_per_day\": 3, \"negated\": false, \"quote\": \"ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ\"}], \"symptoms\": []}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

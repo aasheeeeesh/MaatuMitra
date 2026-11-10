@@ -1,0 +1,74 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e4-005",
+  "patient_ref": "pt-m1-e4-005",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "prednisolone",
+      "dose_value": 5,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "prednisolone 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 24,
+        "char_end": 75,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "ciprofloxacin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ciprofloxacin ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿವಸ",
+        "char_start": 77,
+        "char_end": 131,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "ondansetron",
+      "dose_value": 8,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಒಂಡನ್ಸಿಟ್ರಾನ್ 8 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ",
+        "char_start": 133,
+        "char_end": 186,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 188,
+        "char_end": 196,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

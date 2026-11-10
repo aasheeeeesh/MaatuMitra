@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-b3-007",
+  "patient_ref": "pt-m1-b3-007",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b3-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "headache",
+      "present": false,
+      "evidence": {
+        "span_text": "ತಲೆನೋವು",
+        "char_start": 52,
+        "char_end": 59,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "nitrofurantoin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್",
+        "char_start": 6,
+        "char_end": 25,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

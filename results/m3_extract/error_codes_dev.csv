@@ -1,0 +1,14 @@
+pipeline,subset,code,severity,errors,n_fields
+rules,full_dev,MA-MISSED-ADVICE,major,40,3624
+rules,full_dev,MA-MISSED-FOLLOWUP,major,8,3624
+rules,llm_subset,MA-MISSED-ADVICE,major,3,488
+rules,llm_subset,MA-MISSED-FOLLOWUP,major,1,488
+llm,llm_subset,CR-DOSE,critical,5,508
+llm,llm_subset,CR-DUR,critical,1,508
+llm,llm_subset,MA-EXTRA-ADVICE,major,20,508
+llm,llm_subset,MA-EXTRA-FOLLOWUP,major,1,508
+llm,llm_subset,MA-MISSED-ADVICE,major,4,508
+llm,llm_subset,MA-MISSED-DRUG,major,15,508
+llm,llm_subset,MA-MISSED-FOLLOWUP,major,3,508
+llm,llm_subset,MA-MISSED-SYMPTOM,major,4,508
+llm,llm_subset,MA-WORDING-UNJUDGED,major,12,508

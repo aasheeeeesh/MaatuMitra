@@ -1,0 +1,71 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-h5-007",
+  "patient_ref": "pt-m1-h5-007",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-h5-007",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": true,
+      "evidence": {
+        "span_text": "ವಾಂತಿ",
+        "char_start": 0,
+        "char_end": 5,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "diarrhoea",
+      "present": true,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ",
+        "char_start": 12,
+        "char_end": 18,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [
+    {
+      "text": "take oral rehydration salts occasionally",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಆಗಾಗ ಕುಡಿಯಿರಿ",
+        "char_start": 34,
+        "char_end": 47,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "text": "do not wait for vomiting to subside; come if vomiting persists",
+      "negated": true,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ನಿಲ್ಲದಿದ್ದರೆ",
+        "char_start": 49,
+        "char_end": 67,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": {
+    "text": "come if vomiting persists",
+    "evidence": {
+      "span_text": "ವಾಂತಿ ನಿಲ್ಲದಿದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ.",
+      "char_start": 49,
+      "char_end": 80,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

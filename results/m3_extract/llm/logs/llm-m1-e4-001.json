@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e4-001",
+  "latency_ms": 75714.56890000263,
+  "meta": {
+    "total_duration": 75660980000,
+    "load_duration": 94730700,
+    "prompt_eval_count": 4719,
+    "eval_count": 489,
+    "eval_duration": 74980421000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಊಟದ ನಂತರ\",\n      \"text\": \"take after food\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"capsule\",\n      \"dose_value\": 1,\n      \"drug\": \"clarithromycin\",\n      \"duration_days\": 7,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ\"\n    },\n    {\n      \"dose_unit\": \"capsule\",\n      \"dose_value\": 1,\n      \"drug\": \"cephalexin\",\n      \"duration_days\": 7,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"cephalexin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಒಂದು ವಾರ\"\n    },\n    {\n      \"dose_unit\": \"capsule\",\n      \"dose_value\": 1,\n      \"drug\": \"omeprazole\",\n      \"duration_days\": 14,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"ಒಮೆಪ್ರಜೋಲ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ, ಊಟದ ನಂತರ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

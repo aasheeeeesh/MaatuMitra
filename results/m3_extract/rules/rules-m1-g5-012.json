@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-g5-012",
+  "patient_ref": "pt-m1-g5-012",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g5-012",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "doxycycline",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 1,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "doxy ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಏಳು ದಿನ",
+        "char_start": 7,
+        "char_end": 53,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "Paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ",
+        "char_start": 55,
+        "char_end": 96,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

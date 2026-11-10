@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-h6-006",
+  "latency_ms": 46415.065700013656,
+  "meta": {
+    "total_duration": 46393833100,
+    "load_duration": 10274900,
+    "prompt_eval_count": 4612,
+    "eval_count": 283,
+    "eval_duration": 45943339000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಲಕ್ಷಣಗಳು ಮುಂದುವರಿದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ\",\n      \"text\": \"contact doctor if symptoms worsen\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 5,\n      \"drug\": \"montelukast\",\n      \"duration_days\": 14,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"ಮಾಂಟೆಲುಕಾಸ್ಟ್ ೫ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

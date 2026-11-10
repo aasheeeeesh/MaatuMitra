@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-fx-phys-004",
+  "source_transcript_id": "fx-phys-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "azithromycin",
+      "match_type": "exact",
+      "form": "azithromycin",
+      "char_start": 0
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-NO-ANTIBIOTIC-COLD",
+      "negated": true
+    }
+  ]
+}

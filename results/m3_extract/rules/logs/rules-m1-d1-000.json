@@ -1,0 +1,22 @@
+{
+  "record_id": "rules-m1-d1-000",
+  "source_transcript_id": "m1-d1-000",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "variant",
+      "form": "cetrizine",
+      "char_start": 79
+    },
+    {
+      "rule": "coordination",
+      "item": "cold"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-NO-ANTIBIOTIC-COLD",
+      "negated": true
+    }
+  ]
+}

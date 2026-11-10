@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e5-004",
+  "patient_ref": "pt-m1-e5-004",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-004",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "ciprofloxacin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ 250 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 0,
+        "char_end": 59,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "metformin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಮೆಟ್ಫಾರ್ಮಿನ್ ಅಲ್ಲ",
+        "char_start": 105,
+        "char_end": 122,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

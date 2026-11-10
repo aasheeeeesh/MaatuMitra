@@ -1,0 +1,53 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-h4-007",
+  "patient_ref": "pt-m1-h4-007",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-h4-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cold",
+      "present": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ",
+        "char_start": 0,
+        "char_end": 5,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "diclofenac",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 2,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಡೈಕ್ಲೋಫೆನಾಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಮೂರು ದಿವಸ",
+        "char_start": 19,
+        "char_end": 71,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": {
+    "text": "if you do not improve in three days, come back",
+    "evidence": {
+      "span_text": "ಮೂರು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ",
+      "char_start": 86,
+      "char_end": 126,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

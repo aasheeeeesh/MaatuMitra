@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-009",
+  "source_transcript_id": "m1-e4-009",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefuroxime",
+      "match_type": "exact",
+      "form": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "erythromycin",
+      "match_type": "exact",
+      "form": "erythromycin",
+      "char_start": 84
+    },
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "variant",
+      "form": "ಕ್ಲಾರಿತ್ರೋಮೈಸಿನ್",
+      "char_start": 137
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

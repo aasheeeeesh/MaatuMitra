@@ -1,0 +1,70 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-g6-009",
+  "patient_ref": "pt-m1-g6-009",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g6-009",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?",
+        "char_start": 0,
+        "char_end": 25,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "vomiting",
+      "present": false,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ಇಲ್ಲ.",
+        "char_start": 40,
+        "char_end": 51,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "cefixime",
+      "dose_value": 400,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Cefixime 400 mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+        "char_start": 56,
+        "char_end": 97,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "cetirizine",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 112,
+        "char_end": 160,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

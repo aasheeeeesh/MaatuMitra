@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e4-006",
+  "latency_ms": 71464.7801000392,
+  "meta": {
+    "total_duration": 71445224300,
+    "load_duration": 10989700,
+    "prompt_eval_count": 4679,
+    "eval_count": 449,
+    "eval_duration": 70978439000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಊಟದ ನಂತರ\",\n      \"text\": \"take after food\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 4,\n      \"drug\": \"salbutamol\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"ಸಾಲ್ಬ್ಯುಟಮಾಲ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ\"\n    },\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 500,\n      \"drug\": \"cefuroxime\",\n      \"duration_days\": 7,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"Cefuroxime 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ\"\n    },\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 1,\n      \"drug\": \"prednisolone\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"prednisolone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ, ಊಟದ ನಂತರ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

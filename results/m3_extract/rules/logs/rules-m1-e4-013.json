@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-013",
+  "source_transcript_id": "m1-e4-013",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ibuprofen",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "clarithromycin",
+      "char_start": 76
+    },
+    {
+      "rule": "drug_match",
+      "drug": "levofloxacin",
+      "match_type": "exact",
+      "form": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 132
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

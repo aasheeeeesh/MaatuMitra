@@ -1,0 +1,70 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-g6-007",
+  "patient_ref": "pt-m1-g6-007",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g6-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ",
+        "char_start": 0,
+        "char_end": 4,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "diarrhoea",
+      "present": true,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ ಇದೆ",
+        "char_start": 40,
+        "char_end": 50,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "cefixime",
+      "dose_value": 400,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Cefixime ೪೦೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ",
+        "char_start": 56,
+        "char_end": 97,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "acetaminophen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 112,
+        "char_end": 164,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

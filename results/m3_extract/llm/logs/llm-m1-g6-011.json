@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-g6-011",
+  "latency_ms": 60625.661300029606,
+  "meta": {
+    "total_duration": 60591531300,
+    "load_duration": 10104900,
+    "prompt_eval_count": 4653,
+    "eval_count": 370,
+    "eval_duration": 60123934000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 500,\n      \"drug\": \"cefuroxime\",\n      \"duration_days\": 7,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"Cefuroxime 500 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    },\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 1,\n      \"drug\": \"paracetamol\",\n      \"duration_days\": 3,\n      \"frequency_per_day\": 4,\n      \"negated\": false,\n      \"quote\": \"paracetmol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"fever\",\n      \"present\": true,\n      \"quote\": \"ಮೂರು ದಿನದಿಂದ\"\n    },\n    {\n      \"name\": \"vomiting\",\n      \"present\": true,\n      \"quote\": \"ವಾಂತಿ ಇದೆ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

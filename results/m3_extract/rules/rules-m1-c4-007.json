@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-c4-007",
+  "patient_ref": "pt-m1-c4-007",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-c4-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "doxycycline",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "doxy ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ತೆಗೆದುಕೊಳ್ಳದೆ",
+        "char_start": 33,
+        "char_end": 67,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not share leftover tablets",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು",
+        "char_start": 76,
+        "char_end": 103,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

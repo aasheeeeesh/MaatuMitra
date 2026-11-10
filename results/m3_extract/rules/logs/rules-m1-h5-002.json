@@ -1,0 +1,22 @@
+{
+  "record_id": "rules-m1-h5-002",
+  "source_transcript_id": "m1-h5-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "exact",
+      "form": "ors",
+      "char_start": 24
+    },
+    {
+      "rule": "coordination",
+      "item": "vomiting"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-VOMIT-STOP",
+      "negated": false
+    }
+  ]
+}

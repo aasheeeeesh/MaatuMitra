@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-c4-006",
+  "latency_ms": 24312.327799969353,
+  "meta": {
+    "total_duration": 24290475200,
+    "load_duration": 14587000,
+    "prompt_eval_count": 4615,
+    "eval_count": 172,
+    "eval_duration": 23821006000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 250,\n      \"drug\": \"ciprofloxacin\",\n      \"duration_days\": null,\n      \"frequency_per_day\": null,\n      \"negated\": true,\n      \"quote\": \"ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ೨೫೦ mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

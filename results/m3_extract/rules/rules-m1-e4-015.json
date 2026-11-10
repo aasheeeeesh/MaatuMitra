@@ -1,0 +1,74 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e4-015",
+  "patient_ref": "pt-m1-e4-015",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-015",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefadroxil",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Cefadroxil 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 24,
+        "char_end": 78,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "prednisolone",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Prednisolone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 80,
+        "char_end": 130,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "zinc",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 14,
+      "negated": false,
+      "evidence": {
+        "span_text": "Zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+        "char_start": 132,
+        "char_end": 180,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 182,
+        "char_end": 190,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

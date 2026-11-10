@@ -1,0 +1,14 @@
+- **Rules pipeline**: a program made of hand-written rules (word lists and patterns) that turns a transcript into a record. Same input always gives the same output.
+- **Evidence span**: the exact piece of the transcript (start and end character positions) that supports one value in the record, for example "ಅಮಾಕ್ಸಿಸಿಲಿನ್ 500 mg".
+- **Evidence check**: a test that cuts the transcript at the stated positions and confirms the piece equals the quoted text. If any quote in a record fails, the whole record is rejected.
+- **Forged span**: a deliberately wrong quote or position, used in a test to prove the evidence check catches it.
+- **Edit distance (Levenshtein)**: the smallest number of single-letter insertions, deletions or substitutions that turn one word into another ("azithromycn" to "azithromycin" is 1).
+- **Comparison form**: a copy of a word used only for matching: invisible joiners removed, Kannada digits turned into 0-9, lower case. The stored text is never changed.
+- **Cross-turn answer**: a turn that is only "ಇಲ್ಲ" (no) or "ಹೌದು" (yes); it answers the question in the previous turn.
+- **Coordination rule**: in "ನೆಗಡಿ ಮತ್ತು ಕೆಮ್ಮು ... ಇದೆ" (cold and cough ... are present) a bare noun before "and" shares the verb of the next part.
+- **dev_tune / dev_holdout**: two parts of the DEV split made by m3. dev_tune conversations were read while writing rules; dev_holdout templates (a3 b4 c5 d2 e6 f3 g5 h6 i3) were not, so their score estimates how rules do on unseen wording.
+- **In-sample score**: a score measured on the same examples used to build the system. It is optimistic and says little about new data.
+- **JSON-schema-constrained output**: the LLM server only lets the model produce text that fits a given JSON structure (field names, allowed values).
+- **Ollama digest**: the sha256 fingerprint of a model file in Ollama; it pins the exact model version.
+- **Errors per 1,000 fields**: number of wrong fields divided by number of fields checked, times 1,000.
+- **MA-WORDING-UNJUDGED**: our code for advice or follow-up text that differs from the gold English gloss; a computer cannot judge "same meaning", so it is counted as MAJOR (severity rule 5).

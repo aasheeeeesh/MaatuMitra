@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-c5-003",
+  "latency_ms": 46041.46919999039,
+  "meta": {
+    "total_duration": 45997214400,
+    "load_duration": 20636000,
+    "prompt_eval_count": 4598,
+    "eval_count": 304,
+    "eval_duration": 45534912000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": true,\n      \"quote\": \"ಅಜಿತ್ರೋಮೈಸಿನ್ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?\",\n      \"text\": \"do not take azithromycin\"\n    }\n  ],\n  \"follow_up\": {\n    \"quote\": \"ಸ್ವಯಂ ಔಷಧಿ ಮಾಡದೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ.\",\n    \"text\": \"contact a doctor instead of self-medicating\"\n  },\n  \"medications\": [\n    {\n      \"dose_unit\": null,\n      \"dose_value\": null,\n      \"drug\": \"azithromycin\",\n      \"duration_days\": null,\n      \"frequency_per_day\": null,\n      \"negated\": true,\n      \"quote\": \"ಅಜಿತ್ರೋಮೈಸಿನ್\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"fever\",\n      \"present\": true,\n      \"quote\": \"ನನಗೆ ಜ್ವರ ಇದೆ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-f4-000",
+  "patient_ref": "pt-m1-f4-000",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f4-000",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 30,
+        "char_end": 38,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "body ache",
+      "present": false,
+      "evidence": {
+        "span_text": "ಮೈಕೈನೋವು ಇಲ್ಲ",
+        "char_start": 40,
+        "char_end": 53,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "tiredness",
+      "present": true,
+      "evidence": {
+        "span_text": "ಸುಸ್ತು ಇದೆ",
+        "char_start": 55,
+        "char_end": 65,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

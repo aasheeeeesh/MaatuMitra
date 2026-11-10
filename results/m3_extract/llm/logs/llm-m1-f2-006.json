@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-f2-006",
+  "latency_ms": 15262.1828999836,
+  "meta": {
+    "total_duration": 15241984900,
+    "load_duration": 11081700,
+    "prompt_eval_count": 4501,
+    "eval_count": 102,
+    "eval_duration": 14870132000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [],\n  \"symptoms\": [\n    {\n      \"name\": \"cold\",\n      \"present\": false,\n      \"quote\": \"ನೆಗಡಿ ಇಲ್ಲ\"\n    },\n    {\n      \"name\": \"fever\",\n      \"present\": true,\n      \"quote\": \"ಜ್ವರ ಇದೆ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

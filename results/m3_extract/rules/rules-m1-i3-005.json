@@ -1,0 +1,32 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i3-005",
+  "patient_ref": "pt-m1-i3-005",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-i3-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "doxycycline",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಡಾಕ್ಸಿಸೈಕ್ಲಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 29,
+        "char_end": 86,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-b3-005",
+  "patient_ref": "pt-m1-b3-005",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b3-005",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು ಇದೆ",
+        "char_start": 47,
+        "char_end": 57,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "cefadroxil",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್",
+        "char_start": 6,
+        "char_end": 20,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

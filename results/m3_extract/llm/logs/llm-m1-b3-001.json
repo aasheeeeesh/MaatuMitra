@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-b3-001",
+  "latency_ms": 22062.31160002062,
+  "meta": {
+    "total_duration": 22040554400,
+    "load_duration": 24055700,
+    "prompt_eval_count": 4555,
+    "eval_count": 164,
+    "eval_duration": 21593670000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": null,\n      \"dose_value\": null,\n      \"drug\": \"nitrofurantoin\",\n      \"duration_days\": null,\n      \"frequency_per_day\": null,\n      \"negated\": true,\n      \"quote\": \"ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"headache\",\n      \"present\": false,\n      \"quote\": \"ತಲೆನೋವು ಇದೆಯಾ?\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

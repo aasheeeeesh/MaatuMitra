@@ -1,0 +1,16 @@
+{
+  "record_id": "rules-m1-b4-006",
+  "source_transcript_id": "m1-b4-006",
+  "events": [
+    {
+      "rule": "cross_turn",
+      "item": "chills",
+      "polarity": "negative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "diarrhoea",
+      "polarity": "negative"
+    }
+  ]
+}

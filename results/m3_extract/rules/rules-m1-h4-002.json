@@ -1,0 +1,53 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-h4-002",
+  "patient_ref": "pt-m1-h4-002",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-h4-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "body ache",
+      "present": true,
+      "evidence": {
+        "span_text": "ಮೈಕೈನೋವು",
+        "char_start": 0,
+        "char_end": 8,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "clindamycin",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 3,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಕ್ಲಿಂಡಾಮೈಸಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 22,
+        "char_end": 78,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": {
+    "text": "if you do not improve in two days, come back",
+    "evidence": {
+      "span_text": "ಎರಡು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ",
+      "char_start": 93,
+      "char_end": 133,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

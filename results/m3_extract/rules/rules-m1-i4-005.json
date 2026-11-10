@@ -1,0 +1,32 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i4-005",
+  "patient_ref": "pt-m1-i4-005",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-i4-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "clarithromycin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+        "char_start": 67,
+        "char_end": 115,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

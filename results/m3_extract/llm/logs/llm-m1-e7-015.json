@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e7-015",
+  "latency_ms": 91127.39979999606,
+  "meta": {
+    "total_duration": 91105134700,
+    "load_duration": 11351900,
+    "prompt_eval_count": 4630,
+    "eval_count": 539,
+    "eval_duration": 90627380000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"oral rehydration salts ಆಗಾಗ ಕುಡಿಸಿ\",\n      \"text\": \"give oral rehydration salts regularly\"\n    },\n    {\n      \"negated\": false,\n      \"quote\": \"zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ಕೊಡಿ\",\n      \"text\": \"give zinc one tablet per day for 14 days\"\n    },\n    {\n      \"negated\": true,\n      \"quote\": \"ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ\",\n      \"text\": \"do not let the child drink; go to hospital if child does not drink\"\n    }\n  ],\n  \"follow_up\": {\n    \"quote\": \"ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ\",\n    \"text\": \"come to hospital if child does not drink\"\n  },\n  \"medications\": [\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 1,\n      \"drug\": \"zinc\",\n      \"duration_days\": 14,\n      \"frequency_per_day\": 1,\n      \"negated\": false,\n      \"quote\": \"zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ ಕೊಡಿ\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"diarrhoea\",\n      \"present\": true,\n      \"quote\": \"ಅತಿಸಾರ ಇದೆ\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

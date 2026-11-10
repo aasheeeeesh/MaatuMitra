@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i4-005",
+  "source_transcript_id": "m1-i4-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 67
+    }
+  ]
+}

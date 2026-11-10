@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e4-010",
+  "latency_ms": 79732.94610000448,
+  "meta": {
+    "total_duration": 79711713800,
+    "load_duration": 8820300,
+    "prompt_eval_count": 4733,
+    "eval_count": 507,
+    "eval_duration": 79177337000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಊಟದ ನಂತರ\",\n      \"text\": \"take after food\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 2,\n      \"drug\": \"paracetamol\",\n      \"duration_days\": 3,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ\"\n    },\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 100,\n      \"drug\": \"nitrofurantoin\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 4,\n      \"negated\": false,\n      \"quote\": \"ನೈಟ್ರೊಫ್ಯುರಾಂಟಿನ್ 100 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಏಳು ದಿನ\"\n    },\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 250,\n      \"drug\": \"ciprofloxacin\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ 250 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿನ, ಊಟದ ನಂತರ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

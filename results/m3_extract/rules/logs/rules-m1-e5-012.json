@@ -1,0 +1,27 @@
+{
+  "record_id": "rules-m1-e5-012",
+  "source_transcript_id": "m1-e5-012",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "exact",
+      "form": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "exact",
+      "form": "ಒ ಆರ್ ಎಸ್",
+      "char_start": 70
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "exact",
+      "form": "ಒ ಆರ್ ಎಸ್",
+      "char_start": 94
+    }
+  ]
+}

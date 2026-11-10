@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i3-007",
+  "source_transcript_id": "m1-i3-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "prednisolone",
+      "match_type": "exact",
+      "form": "ಪ್ರೆಡ್ನಿಸೋಲೋನ್",
+      "char_start": 29
+    }
+  ]
+}

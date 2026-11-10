@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-i2-007",
+  "latency_ms": 38069.85649996204,
+  "meta": {
+    "total_duration": 38043985300,
+    "load_duration": 11817500,
+    "prompt_eval_count": 4611,
+    "eval_count": 231,
+    "eval_duration": 37526334000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": false,\n      \"quote\": \"ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ\",\n      \"text\": \"finish all tablets\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 500,\n      \"drug\": \"cefadroxil\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 2,\n      \"negated\": false,\n      \"quote\": \"cefadroxil 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

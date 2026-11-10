@@ -1,0 +1,50 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-f4-001",
+  "patient_ref": "pt-m1-f4-001",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f4-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cold",
+      "present": false,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ ಇಲ್ಲಾ",
+        "char_start": 26,
+        "char_end": 37,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "chills",
+      "present": false,
+      "evidence": {
+        "span_text": "ಚಳಿ ಇಲ್ಲಾ",
+        "char_start": 39,
+        "char_end": 48,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "tiredness",
+      "present": true,
+      "evidence": {
+        "span_text": "ಸುಸ್ತು ಇದೆ",
+        "char_start": 50,
+        "char_end": 60,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

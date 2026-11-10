@@ -1,0 +1,32 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-c4-006",
+  "patient_ref": "pt-m1-c4-006",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-c4-006",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "ciprofloxacin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ೨೫೦ mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ",
+        "char_start": 33,
+        "char_end": 86,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

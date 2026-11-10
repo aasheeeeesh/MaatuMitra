@@ -1,0 +1,16 @@
+{
+  "record_id": "rules-fx-nurse-005",
+  "source_transcript_id": "fx-nurse-005",
+  "events": [
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "fever",
+      "char_start": 66
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-FEVER-DOWN",
+      "negated": false
+    }
+  ]
+}

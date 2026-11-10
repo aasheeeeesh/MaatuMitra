@@ -1,0 +1,70 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-g6-002",
+  "patient_ref": "pt-m1-g6-002",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g6-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು",
+        "char_start": 0,
+        "char_end": 6,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "diarrhoea",
+      "present": false,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ ಇಲ್ಲ",
+        "char_start": 47,
+        "char_end": 58,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "nitrofurantoin",
+      "dose_value": 100,
+      "dose_unit": "mg",
+      "frequency_per_day": 4,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Nitrofurantoin 100 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 64,
+        "char_end": 113,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "cetirizine",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 128,
+        "char_end": 176,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

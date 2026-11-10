@@ -1,0 +1,68 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e7-014",
+  "patient_ref": "pt-m1-e7-014",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e7-014",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "diarrhoea",
+      "present": true,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ ಇದೆ",
+        "char_start": 8,
+        "char_end": 18,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "ors",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "Ors",
+        "char_start": 20,
+        "char_end": 23,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "zinc",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 14,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+        "char_start": 37,
+        "char_end": 86,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": {
+    "text": "if the child does not drink, bring the child to hospital",
+    "evidence": {
+      "span_text": "ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
+      "char_start": 93,
+      "char_end": 137,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

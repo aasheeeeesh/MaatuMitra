@@ -1,0 +1,44 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-c3-007",
+  "patient_ref": "pt-m1-c3-007",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-c3-007",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amoxicillin-clavulanate",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಅಮಾಕ್ಸಿಕ್ಲಾವ್ ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?",
+        "char_start": 0,
+        "char_end": 30,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not give remaining tablets to others",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡಕೂಡದು",
+        "char_start": 38,
+        "char_end": 69,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

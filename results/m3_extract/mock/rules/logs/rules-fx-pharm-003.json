@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-fx-pharm-003",
+  "source_transcript_id": "fx-pharm-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin",
+      "match_type": "exact",
+      "form": "ಅಮಾಕ್ಸಿಸಿಲಿನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-FINISH-ALL",
+      "negated": false
+    }
+  ]
+}

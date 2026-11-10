@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-013",
+  "source_transcript_id": "m1-e6-013",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "diclofenac",
+      "match_type": "exact",
+      "form": "ಡೈಕ್ಲೋಫೆನಾಕ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 95
+    }
+  ]
+}

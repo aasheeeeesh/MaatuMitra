@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-004",
+  "source_transcript_id": "m1-e6-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "ಜಿಂಕ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "variant",
+      "form": "ಸೆಫಡ್ರೋಕ್ಸಿಲ್",
+      "char_start": 88
+    }
+  ]
+}

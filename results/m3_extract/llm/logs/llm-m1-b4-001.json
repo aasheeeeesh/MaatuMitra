@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-b4-001",
+  "latency_ms": 12257.103600015398,
+  "meta": {
+    "total_duration": 12235741900,
+    "load_duration": 21698000,
+    "prompt_eval_count": 4509,
+    "eval_count": 96,
+    "eval_duration": 11899909000
+  },
+  "raw_output": "{\"advice\": [], \"follow_up\": null, \"medications\": [], \"symptoms\": [{\"name\": \"cough\", \"present\": false, \"quote\": \"ಕೆಮ್ಮು ಇದೆಯಾ?\"}, {\"name\": \"body ache\", \"present\": false, \"quote\": \"ಮೈಕೈನೋವು ಇದೆಯಾ?\"}]}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

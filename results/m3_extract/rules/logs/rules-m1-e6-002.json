@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-002",
+  "source_transcript_id": "m1-e6-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "variant",
+      "form": "ಝಿಂಕ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "clindamycin",
+      "match_type": "exact",
+      "form": "clindamycin",
+      "char_start": 88
+    }
+  ]
+}

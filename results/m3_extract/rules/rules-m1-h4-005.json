@@ -1,0 +1,53 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-h4-005",
+  "patient_ref": "pt-m1-h4-005",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-h4-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "headache",
+      "present": true,
+      "evidence": {
+        "span_text": "ತಲೆನೋವು",
+        "char_start": 0,
+        "char_end": 7,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "amoxicillin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಅಮಾಕ್ಸಿ 250 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 21,
+        "char_end": 72,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": {
+    "text": "if you do not improve in three days, come back",
+    "evidence": {
+      "span_text": "ಮೂರು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ",
+      "char_start": 87,
+      "char_end": 127,
+      "audio_start": null,
+      "audio_end": null
+    }
+  }
+}

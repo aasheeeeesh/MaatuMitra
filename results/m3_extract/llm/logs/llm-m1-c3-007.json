@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-c3-007",
+  "latency_ms": 28008.505000034347,
+  "meta": {
+    "total_duration": 27973138600,
+    "load_duration": 19374900,
+    "prompt_eval_count": 4548,
+    "eval_count": 209,
+    "eval_duration": 27576751000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": true,\n      \"quote\": \"ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡಕೂಡದು\",\n      \"text\": \"do not give remaining tablets to others\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": null,\n      \"dose_value\": null,\n      \"drug\": \"amoxicillin-clavulanate\",\n      \"duration_days\": null,\n      \"frequency_per_day\": null,\n      \"negated\": true,\n      \"quote\": \"ಅಮಾಕ್ಸಿಕ್ಲಾವ್ ಎಲ್ಲ ಮುಗಿಸಿದಿರಾ?\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

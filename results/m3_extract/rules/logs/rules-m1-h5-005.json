@@ -1,0 +1,27 @@
+{
+  "record_id": "rules-m1-h5-005",
+  "source_transcript_id": "m1-h5-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "variant",
+      "form": "oral rehydration salts",
+      "char_start": 24
+    },
+    {
+      "rule": "coordination",
+      "item": "vomiting"
+    },
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "vomiting",
+      "char_start": 62
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-VOMIT-STOP",
+      "negated": false
+    }
+  ]
+}

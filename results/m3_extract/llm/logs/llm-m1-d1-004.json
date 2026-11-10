@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-d1-004",
+  "latency_ms": 51999.27739996929,
+  "meta": {
+    "total_duration": 51957658800,
+    "load_duration": 21004300,
+    "prompt_eval_count": 4666,
+    "eval_count": 323,
+    "eval_duration": 51434426000
+  },
+  "raw_output": "{\n  \"advice\": [\n    {\n      \"negated\": true,\n      \"quote\": \"ನೆಗಡಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್ ತೆಗೆದುಕೊಳ್ಳಬಾರದು\",\n      \"text\": \"do not take antibiotics for cold\"\n    }\n  ],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"tablet\",\n      \"dose_value\": 2,\n      \"drug\": \"paracetamol\",\n      \"duration_days\": 3,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    }\n  ],\n  \"symptoms\": [\n    {\n      \"name\": \"cold\",\n      \"present\": true,\n      \"quote\": \"ನೆಗಡಿ\"\n    },\n    {\n      \"name\": \"cough\",\n      \"present\": true,\n      \"quote\": \"ಕೆಮ್ಮು\"\n    }\n  ]\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

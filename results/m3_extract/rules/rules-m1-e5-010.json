@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e5-010",
+  "patient_ref": "pt-m1-e5-010",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-010",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "doxycycline",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಡೊಕ್ಸಿಸೈಕ್ಲಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 0,
+        "char_end": 57,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "azithromycin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಅಜಿತ್ರೋಮೈಸಿನ್ ಅಲ್ಲ",
+        "char_start": 104,
+        "char_end": 122,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

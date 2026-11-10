@@ -1,0 +1,39 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "llm-m1-b4-001",
+  "patient_ref": "pt-m1-b4-001",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b4-001",
+  "extractor": {
+    "name": "llm-qwen3:4b-instruct",
+    "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": false,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು ಇದೆಯಾ?",
+        "char_start": 0,
+        "char_end": 13,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "body ache",
+      "present": false,
+      "evidence": {
+        "span_text": "ಮೈಕೈನೋವು ಇದೆಯಾ?",
+        "char_start": 21,
+        "char_end": 36,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null
+}

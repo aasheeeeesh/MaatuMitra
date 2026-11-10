@@ -1,0 +1,47 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-e5-015",
+  "patient_ref": "pt-m1-e5-015",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-015",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "dexamethasone",
+      "dose_value": 0.5,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಡೆಕ್ಸಾ 0.5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 0,
+        "char_end": 47,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "drug": "zinc",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಜಿಂಕ್ ಅಲ್ಲ",
+        "char_start": 86,
+        "char_end": 96,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

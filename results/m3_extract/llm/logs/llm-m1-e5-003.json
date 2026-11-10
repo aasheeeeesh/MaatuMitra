@@ -1,0 +1,14 @@
+{
+  "record_id": "llm-m1-e5-003",
+  "latency_ms": 46860.347599955276,
+  "meta": {
+    "total_duration": 46838055900,
+    "load_duration": 9270600,
+    "prompt_eval_count": 4642,
+    "eval_count": 299,
+    "eval_duration": 46386630000
+  },
+  "raw_output": "{\n  \"advice\": [],\n  \"follow_up\": null,\n  \"medications\": [\n    {\n      \"dose_unit\": \"mg\",\n      \"dose_value\": 4,\n      \"drug\": \"salbutamol\",\n      \"duration_days\": 5,\n      \"frequency_per_day\": 3,\n      \"negated\": false,\n      \"quote\": \"ಸಾಲ್ಬ್ಯುಟಮಾಲ್ 4 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ\"\n    },\n    {\n      \"dose_unit\": null,\n      \"dose_value\": null,\n      \"drug\": \"metformin\",\n      \"duration_days\": null,\n      \"frequency_per_day\": null,\n      \"negated\": false,\n      \"quote\": \"ಇದು ಮೆಟ್ಫಾರ್ಮಿನ್, ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ.\"\n    }\n  ],\n  \"symptoms\": []\n}",
+  "model": "qwen3:4b-instruct",
+  "digest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+}

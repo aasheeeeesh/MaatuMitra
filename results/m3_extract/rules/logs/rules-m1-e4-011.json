@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-011",
+  "source_transcript_id": "m1-e4-011",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "exact",
+      "form": "cetirizine",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "exact",
+      "form": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್",
+      "char_start": 76
+    },
+    {
+      "rule": "drug_match",
+      "drug": "erythromycin",
+      "match_type": "exact",
+      "form": "ಎರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 129
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

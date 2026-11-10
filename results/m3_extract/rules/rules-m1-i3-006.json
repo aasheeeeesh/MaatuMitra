@@ -1,0 +1,32 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rules-m1-i3-006",
+  "patient_ref": "pt-m1-i3-006",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-i3-006",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v1+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "zinc",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 14,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+        "char_start": 29,
+        "char_end": 78,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

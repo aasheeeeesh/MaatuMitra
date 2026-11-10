@@ -1,0 +1,58 @@
+{
+  "record_id": "llm-m1-a4-002",
+  "source_transcript_id": "m1-a4-002",
+  "reasons": [
+    "symptoms/1: quote not found verbatim in transcript: 'ವಾಂತಿ ಇದೆಯಾ? ಇಲ್ಲ.'"
+  ],
+  "record": {
+    "schema_version": "record.v1",
+    "record_id": "llm-m1-a4-002",
+    "patient_ref": "pt-m1-a4-002",
+    "encounter_type": "asha_household_visit",
+    "source_transcript_id": "m1-a4-002",
+    "extractor": {
+      "name": "llm-qwen3:4b-instruct",
+      "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+    },
+    "status": "draft",
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "evidence": {
+          "span_text": "ಜ್ವರ ಬಂದು ಮೂರು ದಿನ ಆಯಿತು",
+          "char_start": 35,
+          "char_end": 59,
+          "audio_start": null,
+          "audio_end": null
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": false,
+        "evidence": {
+          "span_text": "ವಾಂತಿ ಇದೆಯಾ? ಇಲ್ಲ.",
+          "char_start": 0,
+          "char_end": 18,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [
+      {
+        "text": "give adequate fluids",
+        "negated": false,
+        "evidence": {
+          "span_text": "ಮಗುವಿಗೆ ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ",
+          "char_start": 80,
+          "char_end": 108,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    ],
+    "follow_up": null
+  }
+}

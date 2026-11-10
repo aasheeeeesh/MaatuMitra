@@ -1,0 +1,23 @@
+{
+  "record_id": "llm-m1-e7-004",
+  "source_transcript_id": "m1-e7-004",
+  "reasons": [
+    "model output is not valid JSON: Unterminated string starting at: line 5 column 16 (char 61)"
+  ],
+  "record": {
+    "schema_version": "record.v1",
+    "record_id": "llm-m1-e7-004",
+    "patient_ref": "pt-m1-e7-004",
+    "encounter_type": "pharmacist_dispensing",
+    "source_transcript_id": "m1-e7-004",
+    "extractor": {
+      "name": "llm-qwen3:4b-instruct",
+      "version": "ollama-0edcdef34593+prompt-v1+seed20261110"
+    },
+    "status": "draft",
+    "symptoms": [],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  }
+}
