@@ -1,19 +1,19 @@
 # m6_ui make targets. Owned by the frontend-engineer builder.
-# Architect stub: passes while the module has only the skipped placeholder test.
-# Builders: keep target names; add more targets freely (prefix them with m6-).
+# m6-test : all m6 tests (pure logic + Streamlit AppTest), MODE=mock
+# m6-mock : headless mock run on fixtures -> results/m6_ui/mock_summary.json + conjunct test page
+# m6-run  : start the app on http://127.0.0.1:8501 (MODE=mock unless you set MODE=live)
+# Streamlit reads m6_ui/.streamlit/config.toml only when started from inside m6_ui/, so
+# m6-run does `cd m6_ui`; the address is ALSO forced on the command line.
 
-.PHONY: m6-test m6-mock
+.PHONY: m6-test m6-mock m6-run
+
+M6_MODE ?= $(if $(MODE),$(MODE),mock)
 
 m6-test:
-	$(UV) run pytest m6_ui/tests
+	MODE=mock $(UV) run pytest m6_ui/tests
 
 m6-mock:
-	@echo "m6-mock: no mock run yet (m6_ui builder replaces this with a MODE=mock run on fixtures/)"
+	MODE=mock $(UV) run python -m m6_ui.mock_run
 
-# Register with root aggregate targets when ready, for example:
-# DATA_TARGETS += m1-data
-# EVAL_TARGETS += m7-eval
-# EVAL_FULL_TARGETS += m2-eval-full
-# EVAL_TEST_TARGETS += m7-eval-test
-# DEMO_TARGETS += m6-demo
-# CLEAN_TARGETS += m6-clean
+m6-run:
+	cd m6_ui && MODE=$(M6_MODE) $(UV) run streamlit run app.py --server.address 127.0.0.1 --server.port 8501 --server.headless true

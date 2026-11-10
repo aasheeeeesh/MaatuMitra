@@ -1,0 +1,114 @@
+uv run pytest
+============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\AASHISH\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\scratch-workspaces\3b3f3360-0ebd-4d41-b52b-62b6ca92ff4a\467491e8-c22e-4280-a242-2bea353ccbd7\scratch-2026-11-09-3cb2b8
+configfile: pyproject.toml
+testpaths: tests, m1_data/tests, m2_asr/tests, m3_extract/tests, m4_verify/tests, m5_backend/tests, m6_ui/tests, m7_eval/tests, m8_helper/tests, integration
+plugins: anyio-4.16.0, platformdirs-4.14.5
+collected 700 items
+
+tests\test_contracts.py ..............................................   [  6%]
+tests\test_guards.py ...........                                         [  8%]
+tests\test_merge_handoff.py ...........                                  [  9%]
+tests\test_shared_assets.py .......                                      [ 10%]
+m1_data\tests\test_generate.py .....                                     [ 11%]
+m1_data\tests\test_kn_render.py ......                                   [ 12%]
+m1_data\tests\test_lexicon.py .......                                    [ 13%]
+m1_data\tests\test_mock.py .                                             [ 13%]
+m1_data\tests\test_split.py ......                                       [ 14%]
+m1_data\tests\test_split_lock.py ...                                     [ 14%]
+m1_data\tests\test_templates.py ....                                     [ 15%]
+m2_asr\tests\test_placeholder.py s                                       [ 15%]
+m3_extract\tests\test_cli_mock.py ..                                     [ 15%]
+m3_extract\tests\test_evidence.py ........                               [ 16%]
+m3_extract\tests\test_lexicon.py ......                                  [ 17%]
+m3_extract\tests\test_llm.py .......                                     [ 18%]
+m3_extract\tests\test_negation.py ..............................         [ 23%]
+m3_extract\tests\test_numbers_units.py .........................         [ 26%]
+m3_extract\tests\test_rules.py .........................                 [ 30%]
+m3_extract\tests\test_scoring.py ..........                              [ 31%]
+m3_extract\tests\test_splits.py .......                                  [ 32%]
+m3_extract\tests\test_textnorm.py .......                                [ 33%]
+m4_verify\tests\test_checks.py ......................................... [ 39%]
+                                                                         [ 39%]
+m4_verify\tests\test_fixtures_cli.py ..................                  [ 42%]
+m4_verify\tests\test_negation.py ....................................... [ 47%]
+........................................................................ [ 57%]
+.............................                                            [ 62%]
+m4_verify\tests\test_planted.py .....................                    [ 65%]
+m4_verify\tests\test_text_numbers_lexicon.py ...................         [ 67%]
+m4_verify\tests\test_tune_c7.py ..                                       [ 68%]
+m5_backend\tests\test_access_matrix.py s                                 [ 68%]
+m5_backend\tests\test_api.py ssssssssss                                  [ 69%]
+m5_backend\tests\test_audit_log.py sssssssssssssssssssssssssssss         [ 73%]
+m5_backend\tests\test_auth_jwt.py ........................               [ 77%]
+m5_backend\tests\test_db_security.py ssssssssssssssss                    [ 79%]
+m5_backend\tests\test_export_pure.py ....                                [ 80%]
+m5_backend\tests\test_matrix_generation.py ........                      [ 81%]
+m5_backend\tests\test_models_ratelimit.py ....................           [ 84%]
+m5_backend\tests\test_research_export_db.py ssss                         [ 84%]
+m6_ui\tests\test_app.py .................                                [ 87%]
+m6_ui\tests\test_audio.py .........                                      [ 88%]
+m6_ui\tests\test_data.py .....                                           [ 89%]
+m6_ui\tests\test_design.py ...........................                   [ 92%]
+m6_ui\tests\test_failures.py ...                                         [ 93%]
+m6_ui\tests\test_gate.py ..............                                  [ 95%]
+m6_ui\tests\test_highlight.py ......                                     [ 96%]
+m6_ui\tests\test_i18n.py .......                                         [ 97%]
+m6_ui\tests\test_review.py .........                                     [ 98%]
+m6_ui\tests\test_verifier.py ........                                    [ 99%]
+m7_eval\tests\test_placeholder.py s                                      [ 99%]
+m8_helper\tests\test_placeholder.py s                                    [ 99%]
+integration\test_placeholder_integration.py s                            [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\..\..\..\.venvs\maatumitra\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\AASHISH\.venvs\maatumitra\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+SKIPPED [1] m2_asr\tests\test_placeholder.py:4: placeholder: the ml-engineer-asr builder replaces this with real tests
+SKIPPED [1] m5_backend\tests\test_access_matrix.py:13: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:28: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:49: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:59: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:67: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:79: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:111: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:149: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:161: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:195: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_api.py:208: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [15] m5_backend\tests\test_audit_log.py:28: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [5] m5_backend\tests\test_audit_log.py:36: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [3] m5_backend\tests\test_audit_log.py:45: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [3] m5_backend\tests\test_audit_log.py:52: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_audit_log.py:59: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_audit_log.py:72: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_audit_log.py:80: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:20: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:34: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:45: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:56: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:69: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:81: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:93: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:111: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:129: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:138: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:156: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:163: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:178: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:198: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:215: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_db_security.py:225: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_research_export_db.py:67: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_research_export_db.py:94: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_research_export_db.py:127: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m5_backend\tests\test_research_export_db.py:140: needs_db: PostgreSQL 16 not reachable (ConnectionTimeout connecting to 127.0.0.1:54329). Start it with `bash m5_backend/scripts/db_up.sh` (or the CI postgres:16 service).
+SKIPPED [1] m7_eval\tests\test_placeholder.py:4: placeholder: the research-scientist-eval builder replaces this with real tests
+SKIPPED [1] m8_helper\tests\test_placeholder.py:4: placeholder: the counselling-helper-engineer builder replaces this with real tests
+SKIPPED [1] integration\test_placeholder_integration.py:4: placeholder: integration-qa adds boundary and end-to-end tests in Phase C
+=========== 636 passed, 64 skipped, 1 warning in 216.34s (0:03:36) ============
+exit 0

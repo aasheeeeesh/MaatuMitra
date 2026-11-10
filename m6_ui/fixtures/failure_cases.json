@@ -1,0 +1,10 @@
+{
+  "_meta": {
+    "purpose": "Fallback list for the 'where it failed' panel when no evaluation results exist. Hand-made; NOT measured.",
+    "measured": false
+  },
+  "cases": [
+    {"type_name": "speech recognition dropped a 'not'", "condition": "text-only checks", "example": "fixture: the word for 'no' is missing from the transcript, so the record looks consistent", "why": "Known blind spot: text-only checks cannot see words that ASR silently dropped."},
+    {"type_name": "wrong patient link", "condition": "no encounter index", "example": "fixture: record attached to another synthetic patient", "why": "The patient check needs an encounter index; without it the check says n/a."}
+  ]
+}

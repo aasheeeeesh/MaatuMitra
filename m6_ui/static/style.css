@@ -1,0 +1,92 @@
+/* m6_ui styles. Colours come from theme.py (CSS variables). Rules: base >= 18 px,
+   line-height 1.6 for Kannada, touch targets >= 48 px with >= 8 px gaps, one column at 360 px. */
+
+html, body, .stApp, .stMarkdown, button, input, textarea, select {
+  font-family: "Noto Sans Kannada", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.block-container { padding: 16px 16px 96px 16px; max-width: 760px; }
+img, audio, table, pre, video, iframe { max-width: 100%; }
+.mm-card, .transcript, .row-head { overflow-wrap: anywhere; word-break: normal; }
+
+/* hide Streamlit chrome that confuses users */
+#MainMenu, [data-testid="stAppDeployButton"], [data-testid="stStatusWidget"], footer { display: none; }
+
+/* touch targets */
+.stButton button, .stFormSubmitButton button, .stDownloadButton button {
+  min-height: 56px;
+  min-width: 48px;
+  padding: 8px 16px;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: 2px solid var(--mm-border);
+}
+[data-testid="stHorizontalBlock"], [data-testid="stLayoutWrapper"] { gap: 8px; }
+.stButton button[kind="primary"], .stFormSubmitButton button[kind="primaryFormSubmit"] {
+  background: var(--mm-primary);
+  color: var(--mm-on-primary);
+  border-color: var(--mm-primary);
+}
+.stButton button:disabled {
+  background: var(--mm-surface);
+  color: var(--mm-muted);
+  border: 2px dashed var(--mm-border);
+  cursor: not-allowed;
+}
+input, select, textarea, [data-baseweb="select"] > div { min-height: 48px; font-size: 1rem; }
+
+/* banners */
+.mm-banner { padding: 8px 16px; border-radius: 8px; margin: 0 0 8px 0; font-size: 1rem; }
+.mm-banner.mock { background: var(--mm-done-bg); color: var(--mm-done-text); border-left: 6px solid var(--mm-done); }
+.mm-banner.flags { background: var(--mm-flag-bg); color: var(--mm-flag-text); border-left: 8px solid var(--mm-flag); font-weight: 700; }
+.mm-banner.clean { background: var(--mm-ok-bg); color: var(--mm-ok-text); border-left: 8px solid var(--mm-ok); }
+.mm-title { font-size: 1.6rem; font-weight: 700; color: var(--mm-text); margin: 0; line-height: 1.4; }
+.mm-sub { font-size: 1rem; color: var(--mm-muted); margin: 0 0 8px 0; }
+.mm-h2 { font-size: 1.3rem; font-weight: 700; margin: 16px 0 8px 0; }
+
+/* transcript */
+.transcript { background: var(--mm-surface); border: 2px solid var(--mm-border); border-radius: 12px;
+  padding: 16px; font-size: 1.15rem; line-height: 1.9; }
+mark.ev { background: var(--mm-ev-bg); color: var(--mm-text); padding: 2px 0; border-bottom: 2px solid var(--mm-muted); }
+mark.ev-flag { background: var(--mm-ev-flag-bg); border-bottom: 4px solid var(--mm-flag); }
+.ev-marker { display: inline-block; min-width: 1.4em; text-align: center; margin-left: 2px;
+  background: var(--mm-flag); color: var(--mm-on-flag); border-radius: 50%; font-weight: 700; font-size: 1rem; }
+
+/* field rows */
+.row-head { border-radius: 12px; padding: 12px 16px; border: 2px solid var(--mm-border); background: var(--mm-surface); }
+.row-head.row-flag { border: 3px solid var(--mm-flag); background: var(--mm-flag-bg); }
+.row-head.row-done { border: 3px solid var(--mm-done); background: var(--mm-done-bg); }
+.row-head .field-name { font-size: 1rem; color: var(--mm-muted); margin: 0; }
+.row-head .field-value { font-size: 1.25rem; font-weight: 700; color: var(--mm-text); margin: 0; }
+.row-head .heard { font-size: 1rem; color: var(--mm-text); margin: 4px 0 0 0; }
+.badge { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 4px 12px;
+  font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.badge-flag { background: var(--mm-flag); color: var(--mm-on-flag); }
+.badge-ok { background: var(--mm-ok); color: var(--mm-on-ok); }
+.badge-done { background: var(--mm-done); color: var(--mm-on-done); }
+.icon { display: inline-block; width: 1.3em; height: 1.3em; line-height: 1.3em; text-align: center;
+  border-radius: 50%; background: var(--mm-on-flag); font-weight: 900; font-size: 1rem; }
+.icon-flag { color: var(--mm-flag); }
+.icon-ok { color: var(--mm-ok); }
+.icon-done { color: var(--mm-done); }
+.reasons { margin: 8px 0 0 0; padding: 8px 12px; background: var(--mm-surface); border-radius: 8px;
+  border-left: 6px solid var(--mm-flag); }
+.reasons p { margin: 4px 0; font-size: 1rem; color: var(--mm-text); }
+.reasons .raw { color: var(--mm-muted); font-size: 1rem; }
+
+/* gate result */
+.gate-result { border-radius: 12px; padding: 16px; font-size: 1.05rem; }
+.gate-result.refused { background: var(--mm-flag-bg); color: var(--mm-flag-text); border: 3px solid var(--mm-flag); }
+.gate-result.saved { background: var(--mm-ok-bg); color: var(--mm-ok-text); border: 3px solid var(--mm-ok); }
+.gate-result .title { font-weight: 700; font-size: 1.2rem; margin: 0 0 4px 0; }
+
+/* counselling + failures + font page */
+.mm-card { background: var(--mm-surface); border: 2px solid var(--mm-border); border-radius: 12px; padding: 16px; margin: 8px 0; }
+.ask-doctor { background: var(--mm-flag-bg); color: var(--mm-flag-text); border: 4px solid var(--mm-flag);
+  border-radius: 12px; padding: 16px; }
+.ask-doctor .title { font-size: 1.4rem; font-weight: 800; margin: 0; }
+.fail-row { border-left: 8px solid var(--mm-flag); }
+.conj { font-size: 2.4rem; line-height: 1.8; margin: 0; }
+.cps { font-family: ui-monospace, Consolas, monospace; font-size: 1rem; color: var(--mm-muted); overflow-wrap: anywhere; }

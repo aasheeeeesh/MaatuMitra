@@ -1,0 +1,21 @@
+MODE=mock uv run pytest m6_ui/tests
+============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-9.2.0, pluggy-1.7.0
+rootdir: C:\Users\AASHISH\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\scratch-workspaces\3b3f3360-0ebd-4d41-b52b-62b6ca92ff4a\467491e8-c22e-4280-a242-2bea353ccbd7\scratch-2026-11-09-3cb2b8
+configfile: pyproject.toml
+plugins: anyio-4.16.0, platformdirs-4.14.5
+collected 105 items
+
+m6_ui\tests\test_app.py .................                                [ 16%]
+m6_ui\tests\test_audio.py .........                                      [ 24%]
+m6_ui\tests\test_data.py .....                                           [ 29%]
+m6_ui\tests\test_design.py ...........................                   [ 55%]
+m6_ui\tests\test_failures.py ...                                         [ 58%]
+m6_ui\tests\test_gate.py ..............                                  [ 71%]
+m6_ui\tests\test_highlight.py ......                                     [ 77%]
+m6_ui\tests\test_i18n.py .......                                         [ 83%]
+m6_ui\tests\test_review.py .........                                     [ 92%]
+m6_ui\tests\test_verifier.py ........                                    [100%]
+
+============================ 105 passed in 18.94s =============================
+exit 0

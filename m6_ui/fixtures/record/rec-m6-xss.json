@@ -1,0 +1,56 @@
+{
+  "schema_version": "record.v1",
+  "record_id": "rec-m6-xss",
+  "patient_ref": "pt-fx-<i>xss</i>",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "fx-m6-xss",
+  "extractor": {
+    "name": "m6-fixture-hand-made",
+    "version": "m6-fixture-v1"
+  },
+  "status": "flagged",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ <script>alert('xss')</script>",
+        "char_start": 0,
+        "char_end": 38,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol<script>alert('drug')</script>",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 500 mg <img src=x onerror=alert(1)> ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+        "char_start": 39,
+        "char_end": 105,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "<script>alert('advice')</script> do not drink cold water",
+      "negated": true,
+      "evidence": {
+        "span_text": "ತಣ್ಣೀರು ಕುಡಿಯಬೇಡಿ <b onmouseover=alert(2)>ok</b>",
+        "char_start": 107,
+        "char_end": 155,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

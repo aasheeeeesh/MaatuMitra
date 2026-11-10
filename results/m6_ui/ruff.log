@@ -1,0 +1,14 @@
+All checks passed!
+unformatted: File would be reformatted
+  --> m6_ui\app.py:72:19
+   |
+71 |     ss.setdefault("page", os.environ.get("M6_DEMO_PAGE", "record") if demo else "record")
+   -     ss.setdefault("record_id", os.environ.get("M6_DEMO_RECORD", DEFAULT_RECORD) if demo else DEFAULT_RECORD)
+72 +     ss.setdefault(
+73 +         "record_id", os.environ.get("M6_DEMO_RECORD", DEFAULT_RECORD) if demo else DEFAULT_RECORD
+74 +     )
+75 |     ss.setdefault("work", {})
+   |
+
+1 file would be reformatted, 35 files already formatted
+ruff exit 1

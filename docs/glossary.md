@@ -86,4 +86,15 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **NLEM**: India's National List of Essential Medicines (2022 edition used here).
 - **openFDA drug label**: the US FDA's official prescribing text for a medicine, available as public data.
 - **Attested word**: a word we actually saw in a fetched real Kannada text; unattested words were composed by an AI.
+- **AppTest**: Streamlit's built-in test tool (`streamlit.testing.v1.AppTest`). It runs the app script without a browser and lets a test click buttons and read what is shown.
+- **XSS (cross-site scripting)**: an attack where text such as `<script>` inside data is treated by the browser as code. Prevented by escaping the text first.
+- **Escaping (HTML)**: replacing characters like `<`, `>`, `&` and quotes with safe codes (`&lt;` ...) so the browser shows them as text instead of running them.
+- **WCAG AA contrast**: an accessibility rule: normal text needs a brightness contrast ratio of at least 4.5 to 1 with its background; icons and borders at least 3 to 1.
+- **Touch target**: the area of a button that a finger can tap; we use at least 48 x 48 pixels.
+- **Conjunct (ottakshara)**: a group of Kannada consonants joined by a virama (ಕ + ್ + ಷ = ಕ್ಷ) and drawn as one combined shape.
+- **Variable font**: one font file that contains every weight (thin to black) instead of one file per weight.
+- **SIL Open Font License (OFL) 1.1**: a free licence for fonts that allows using and bundling the font with software; the font may not be sold on its own.
+- **Save gate**: the server-side rule that refuses to save a record unless it was approved and its verifier result has no open flags.
+- **Stand-in (mock verifier)**: a small fake used in mock mode so the UI can be tested without the real verifier; it is not the real safety logic.
+- **Repha (arkavattu)**: the special raised form of ರ when it comes first in a Kannada conjunct (ರ್ಕ).
 <!-- GLOSSARY-END -->

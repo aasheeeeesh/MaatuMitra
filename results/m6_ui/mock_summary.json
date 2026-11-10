@@ -1,0 +1,99 @@
+{
+  "mode": "mock",
+  "all_checks_ok": true,
+  "records": [
+    {
+      "record_id": "rec-fx-asha-001",
+      "load_errors": [],
+      "rows": 2,
+      "flagged_rows": [],
+      "flagged_first": true,
+      "approve_enabled_before_answers": true,
+      "gate_after_confirming_all": "saved",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec-fx-asha-002",
+      "load_errors": [],
+      "rows": 5,
+      "flagged_rows": [],
+      "flagged_first": true,
+      "approve_enabled_before_answers": true,
+      "gate_after_confirming_all": "saved",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec-fx-nurse-005",
+      "load_errors": [],
+      "rows": 3,
+      "flagged_rows": [
+        "/symptoms/1"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_unresolved_flags",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec-fx-pharm-003",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 8,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_invalid",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec-fx-pharm-003-asr",
+      "load_errors": [],
+      "rows": 7,
+      "flagged_rows": [
+        "/medications/0/dose_value"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_unresolved_flags",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec-fx-phys-004",
+      "load_errors": [],
+      "rows": 6,
+      "flagged_rows": [
+        "/advice/0"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_unresolved_flags",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec-fx-trap-006",
+      "load_errors": [],
+      "rows": 5,
+      "flagged_rows": [],
+      "flagged_first": true,
+      "approve_enabled_before_answers": true,
+      "gate_after_confirming_all": "saved",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec-m6-xss",
+      "load_errors": [],
+      "rows": 7,
+      "flagged_rows": [
+        "/medications/0/dose_value",
+        "/advice/0"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_unresolved_flags",
+      "transcript_markup_inert": true
+    }
+  ]
+}

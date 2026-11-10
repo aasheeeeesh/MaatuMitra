@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "purpose": "Kannada rendering test data for the font test page (test data, not UI text).",
+    "native_validated": false,
+    "note": "AI-chosen examples; a human must look at them on Windows, Android and Linux."
+  },
+  "items": [
+    {"text": "ಕ್ಷ", "what": "ka + virama + ssa (ksha)"},
+    {"text": "ಜ್ಞ", "what": "ja + virama + nya (jnya)"},
+    {"text": "ತ್ರ", "what": "ta + virama + ra (ra below)"},
+    {"text": "ಶ್ರೀ", "what": "sha + virama + ra + long ii (shri)"},
+    {"text": "ಸ್ತ್ರೀ", "what": "three-consonant cluster sa+ta+ra + ii"},
+    {"text": "ರ್ಕ", "what": "ra + virama + ka (repha / arkavattu)"},
+    {"text": "ಕ್ಕೆ", "what": "doubled ka + vowel sign e"},
+    {"text": "ಳ್ಳ", "what": "doubled lla"},
+    {"text": "ದ್ವ", "what": "da + virama + va"},
+    {"text": "ಮಾತ್ರೆ", "what": "word: tablet"},
+    {"text": "ತೆಗೆದುಕೊಳ್ಳಿ", "what": "word: take (polite)"},
+    {"text": "ಪ್ಯಾರಸಿಟಮಾಲ್", "what": "word: paracetamol (ya-phala + final virama)"},
+    {"text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್", "what": "word: amoxicillin"},
+    {"text": "ಮಧ್ಯಾಹ್ನ", "what": "word: afternoon (dhya, hna)"},
+    {"text": "ರ‌್ಕ", "what": "ra + ZWNJ + virama + ka (joiner test; expected appearance UNVERIFIED)"},
+    {"text": "ಕ್‌ಷ", "what": "ka + virama + ZWNJ + ssa (ZWNJ should block the conjunct; UNVERIFIED)"},
+    {"text": "೦೧೨೩೪೫೬೭೮೯", "what": "Kannada digits 0-9"}
+  ]
+}

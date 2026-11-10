@@ -1,0 +1,48 @@
+..........................................................F.....F..F.... [ 81%]
+................                                                         [100%]
+================================== FAILURES ===================================
+_____________ test_payload_is_escaped_and_highlight_still_present _____________
+
+    def test_payload_is_escaped_and_highlight_still_present():
+        text = "a <script>alert(1)</script> b <img src=x onerror=alert(2)> c"
+        s = text.index("<img")
+        html_out = highlight.render_transcript(text, [highlight.Span(s, s + 26, True, "r1")])
+        assert "<script" not in html_out and "<img" not in html_out
+>       assert "&lt;script&gt;" in html_out and "&lt;img src=x onerror=alert(2)&gt;" in html_out
+E       assert ('&lt;script&gt;' in '<div class="transcript" lang="kn">a &lt;script&gt;alert(1)&lt;/script&gt; b <mark class="ev ev-flag" data-rows="r1">&lt;img src=x onerror=alert(2</mark><span class="ev-marker" aria-hidden="true">!</span>)&gt; c</div>' and '&lt;img src=x onerror=alert(2)&gt;' in '<div class="transcript" lang="kn">a &lt;script&gt;alert(1)&lt;/script&gt; b <mark class="ev ev-flag" data-rows="r1">&lt;img src=x onerror=alert(2</mark><span class="ev-marker" aria-hidden="true">!</span>)&gt; c</div>')
+
+m6_ui\tests\test_highlight.py:14: AssertionError
+_________________ test_no_hard_coded_kannada_in_python_files __________________
+
+    def test_no_hard_coded_kannada_in_python_files():
+        offenders = []
+        for py in M6.rglob("*.py"):
+            for n, line in enumerate(py.read_text(encoding="utf-8").splitlines(), 1):
+                if KANNADA.search(line):
+                    offenders.append(f"{py.relative_to(M6)}:{n}")
+>       assert offenders == [], f"hard-coded Kannada found: {offenders}"
+E       AssertionError: hard-coded Kannada found: ['tests\\test_app.py:233']
+E       assert ['tests\\test_app.py:233'] == []
+E         
+E         Left contains one more item: 'tests\\test_app.py:233'
+E         Use -v to get more diff
+
+m6_ui\tests\test_i18n.py:20: AssertionError
+_________________ test_every_literal_key_used_in_code_exists __________________
+
+    def test_every_literal_key_used_in_code_exists():
+        used = set()
+        for py in M6.rglob("*.py"):
+            if "tests" in py.parts:
+                continue
+            used |= set(LITERAL_KEY.findall(py.read_text(encoding="utf-8")))
+>       assert used, "no t('...') calls found"
+E       AssertionError: no t('...') calls found
+E       assert set()
+
+m6_ui\tests\test_i18n.py:55: AssertionError
+=========================== short test summary info ===========================
+FAILED m6_ui/tests/test_highlight.py::test_payload_is_escaped_and_highlight_still_present
+FAILED m6_ui/tests/test_i18n.py::test_no_hard_coded_kannada_in_python_files
+FAILED m6_ui/tests/test_i18n.py::test_every_literal_key_used_in_code_exists
+3 failed, 85 passed in 3.65s

@@ -1,0 +1,35 @@
+# m6_ui Streamlit config. Read only when streamlit is started from inside m6_ui/
+# (module.mk does `cd m6_ui`). module.mk ALSO passes --server.address 127.0.0.1.
+
+[server]
+address = "127.0.0.1"
+headless = true
+enableStaticServing = true
+enableXsrfProtection = true
+enableCORS = true
+maxUploadSize = 25
+runOnSave = false
+
+[browser]
+gatherUsageStats = false
+serverAddress = "127.0.0.1"
+
+[client]
+toolbarMode = "minimal"
+showSidebarNavigation = false
+showErrorDetails = "none"
+
+[theme]
+base = "light"
+primaryColor = "#0B5D5B"
+backgroundColor = "#FBF8F3"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1C1B1A"
+font = "Noto Sans Kannada, sans-serif"
+baseFontSize = 18
+baseRadius = "medium"
+
+[[theme.fontFaces]]
+family = "Noto Sans Kannada"
+url = "app/static/fonts/NotoSansKannada-VF.ttf"
+weight = "100 900"

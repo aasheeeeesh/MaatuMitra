@@ -1,0 +1,64 @@
+{
+  "schema_version": "verdict.v1",
+  "record_id": "rec-m6-xss",
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "flag",
+      "reason": "<script>alert('c3')</script> SECURITY TEST: negation cue near advice",
+      "field_path": "/advice/0/negated"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "<img src=x onerror=alert('reason')> SECURITY TEST: reason text with HTML",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "ok",
+      "field_path": "/"
+    }
+  ],
+  "auto_acceptable": false,
+  "verifier_version": "m6-fixture-v1"
+}
