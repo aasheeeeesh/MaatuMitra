@@ -1,27 +1,27 @@
-level,condition,type,type_name,n,caught,rate,wilson_lo,wilson_hi,caught_at_field,n_unique,unique_caught,unique_rate,unique_wilson_lo,unique_wilson_hi,rule_of_three_upper_if_zero_missed_unique
-record,no_encounter_index,i,wrong patient_ref,200,33,0.165,0.12,0.2227,0,30,5,0.1667,0.0734,0.3356,
-record,with_encounter_index,a,negation drop,200,200,1.0,0.9812,1.0,200,4,4,1.0,0.5101,1.0,0.75
-record,with_encounter_index,b,negation add,200,200,1.0,0.9812,1.0,200,7,7,1.0,0.6457,1.0,0.4286
-record,with_encounter_index,c,digit change,200,200,1.0,0.9812,1.0,200,90,90,1.0,0.9591,1.0,0.0333
-record,with_encounter_index,d,digit-order swap,200,200,1.0,0.9812,1.0,200,3,3,1.0,0.4385,1.0,1.0
-record,with_encounter_index,e,unit change,200,200,1.0,0.9812,1.0,200,15,15,1.0,0.7961,1.0,0.2
-record,with_encounter_index,f,drug swap (confusable),200,200,1.0,0.9812,1.0,200,53,53,1.0,0.9324,1.0,0.0566
-record,with_encounter_index,g,frequency swap,200,200,1.0,0.9812,1.0,200,12,12,1.0,0.7575,1.0,0.25
-record,with_encounter_index,h,duration swap,200,200,1.0,0.9812,1.0,200,12,12,1.0,0.7575,1.0,0.25
-record,with_encounter_index,i,wrong patient_ref,200,200,1.0,0.9812,1.0,200,30,30,1.0,0.8865,1.0,0.1
-transcript,text_only,a,negation drop,200,0,0.0,0.0,0.0188,0,4,0,0.0,0.0,0.4899,
-transcript,text_only,b,negation add,200,28,0.14,0.0987,0.1949,28,7,1,0.1429,0.0257,0.5131,
-transcript,text_only,c,digit change,200,75,0.375,0.3109,0.4439,75,73,29,0.3973,0.2929,0.5119,
-transcript,text_only,d,digit-order swap,200,200,1.0,0.9812,1.0,200,3,3,1.0,0.4385,1.0,1.0
-transcript,text_only,e,unit change,200,200,1.0,0.9812,1.0,200,12,12,1.0,0.7575,1.0,0.25
-transcript,text_only,f,drug swap (confusable),200,91,0.455,0.3875,0.5242,91,56,18,0.3214,0.214,0.4518,
-transcript,text_only,g,frequency swap,200,66,0.33,0.2686,0.3978,66,15,5,0.3333,0.1518,0.5829,
-transcript,text_only,h,duration swap,200,0,0.0,0.0,0.0188,0,16,0,0.0,0.0,0.1936,
-transcript,with_second_transcript,a,negation drop,200,200,1.0,0.9812,1.0,0,4,4,1.0,0.5101,1.0,0.75
-transcript,with_second_transcript,b,negation add,200,200,1.0,0.9812,1.0,28,7,7,1.0,0.6457,1.0,0.4286
-transcript,with_second_transcript,c,digit change,200,200,1.0,0.9812,1.0,75,73,73,1.0,0.95,1.0,0.0411
-transcript,with_second_transcript,d,digit-order swap,200,200,1.0,0.9812,1.0,200,3,3,1.0,0.4385,1.0,1.0
-transcript,with_second_transcript,e,unit change,200,200,1.0,0.9812,1.0,200,12,12,1.0,0.7575,1.0,0.25
-transcript,with_second_transcript,f,drug swap (confusable),200,200,1.0,0.9812,1.0,91,56,56,1.0,0.9358,1.0,0.0536
-transcript,with_second_transcript,g,frequency swap,200,200,1.0,0.9812,1.0,66,15,15,1.0,0.7961,1.0,0.2
-transcript,with_second_transcript,h,duration swap,200,200,1.0,0.9812,1.0,0,16,16,1.0,0.8064,1.0,0.1875
+level,condition,type,type_name,n_unique,caught_at_field_unique,caught_at_field_rate,caught_at_field_wilson_lo,caught_at_field_wilson_hi,detected_unique,detected_rate,detected_wilson_lo,detected_wilson_hi,sent_to_review_unique,sent_to_review_wilson_lo,sent_to_review_wilson_hi,rule_of_three_upper_if_none_missed,unique_with_mixed_outcomes,n_injections,n,caught,unique_caught
+record,no_encounter_index,i,wrong patient_ref,30,0,0.0,0.0,0.1135,0,0.0,0.0,0.1135,0,0.0,0.1135,,0,200,30,0,0
+record,with_encounter_index,a,negation drop,4,4,1.0,0.5101,1.0,4,1.0,0.5101,1.0,4,0.5101,1.0,0.75,0,200,4,4,4
+record,with_encounter_index,b,negation add,7,7,1.0,0.6457,1.0,7,1.0,0.6457,1.0,7,0.6457,1.0,0.4286,0,200,7,7,7
+record,with_encounter_index,c,digit change,90,90,1.0,0.9591,1.0,90,1.0,0.9591,1.0,90,0.9591,1.0,0.0333,0,200,90,90,90
+record,with_encounter_index,d,digit-order swap,3,3,1.0,0.4385,1.0,3,1.0,0.4385,1.0,3,0.4385,1.0,1.0,0,200,3,3,3
+record,with_encounter_index,e,unit change,15,15,1.0,0.7961,1.0,15,1.0,0.7961,1.0,15,0.7961,1.0,0.2,0,200,15,15,15
+record,with_encounter_index,f,drug swap (confusable),4,4,1.0,0.5101,1.0,4,1.0,0.5101,1.0,4,0.5101,1.0,0.75,0,200,4,4,4
+record,with_encounter_index,g,frequency swap,12,12,1.0,0.7575,1.0,12,1.0,0.7575,1.0,12,0.7575,1.0,0.25,0,200,12,12,12
+record,with_encounter_index,h,duration swap,12,12,1.0,0.7575,1.0,12,1.0,0.7575,1.0,12,0.7575,1.0,0.25,0,200,12,12,12
+record,with_encounter_index,i,wrong patient_ref,30,30,1.0,0.8865,1.0,30,1.0,0.8865,1.0,30,0.8865,1.0,0.1,0,200,30,30,30
+transcript,oracle_second_transcript_upper_bound,a,negation drop,4,4,1.0,0.5101,1.0,4,1.0,0.5101,1.0,4,0.5101,1.0,0.75,0,200,4,4,4
+transcript,oracle_second_transcript_upper_bound,b,negation add,7,7,1.0,0.6457,1.0,7,1.0,0.6457,1.0,7,0.6457,1.0,0.4286,0,200,7,7,7
+transcript,oracle_second_transcript_upper_bound,c,digit change,73,73,1.0,0.95,1.0,73,1.0,0.95,1.0,73,0.95,1.0,0.0411,0,200,73,73,73
+transcript,oracle_second_transcript_upper_bound,d,digit-order swap,3,3,1.0,0.4385,1.0,3,1.0,0.4385,1.0,3,0.4385,1.0,1.0,0,200,3,3,3
+transcript,oracle_second_transcript_upper_bound,e,unit change,12,12,1.0,0.7575,1.0,12,1.0,0.7575,1.0,12,0.7575,1.0,0.25,0,200,12,12,12
+transcript,oracle_second_transcript_upper_bound,f,drug swap (confusable),4,4,1.0,0.5101,1.0,4,1.0,0.5101,1.0,4,0.5101,1.0,0.75,0,200,4,4,4
+transcript,oracle_second_transcript_upper_bound,g,frequency swap,15,15,1.0,0.7961,1.0,15,1.0,0.7961,1.0,15,0.7961,1.0,0.2,0,200,15,15,15
+transcript,oracle_second_transcript_upper_bound,h,duration swap,16,16,1.0,0.8064,1.0,16,1.0,0.8064,1.0,16,0.8064,1.0,0.1875,0,200,16,16,16
+transcript,text_only,a,negation drop,4,0,0.0,0.0,0.4899,0,0.0,0.0,0.4899,0,0.0,0.4899,,0,200,4,0,0
+transcript,text_only,b,negation add,7,0,0.0,0.0,0.3543,0,0.0,0.0,0.3543,0,0.0,0.3543,,0,200,7,0,0
+transcript,text_only,c,digit change,73,8,0.1096,0.0566,0.2016,8,0.1096,0.0566,0.2016,8,0.0566,0.2016,,0,200,73,8,8
+transcript,text_only,d,digit-order swap,3,3,1.0,0.4385,1.0,3,1.0,0.4385,1.0,3,0.4385,1.0,1.0,0,200,3,3,3
+transcript,text_only,e,unit change,12,12,1.0,0.7575,1.0,9,0.75,0.4677,0.9111,12,0.7575,1.0,0.25,0,200,12,12,12
+transcript,text_only,f,drug swap (confusable),4,0,0.0,0.0,0.4899,0,0.0,0.0,0.4899,2,0.15,0.85,,0,200,4,0,0
+transcript,text_only,g,frequency swap,15,0,0.0,0.0,0.2039,0,0.0,0.0,0.2039,0,0.0,0.2039,,0,200,15,0,0
+transcript,text_only,h,duration swap,16,0,0.0,0.0,0.1936,0,0.0,0.0,0.1936,0,0.0,0.1936,,0,200,16,0,0

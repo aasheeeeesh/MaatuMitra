@@ -1,0 +1,27 @@
+level,condition,type,type_name,n_unique,caught_at_field_unique,caught_at_field_rate,caught_at_field_wilson_lo,caught_at_field_wilson_hi,detected_unique,detected_rate,detected_wilson_lo,detected_wilson_hi,sent_to_review_unique,sent_to_review_wilson_lo,sent_to_review_wilson_hi,rule_of_three_upper_if_none_missed,unique_with_mixed_outcomes,n_injections,n,caught,unique_caught
+record,no_encounter_index,i,wrong patient_ref,200,0,0.0,0.0,0.0188,0,0.0,0.0,0.0188,103,0.4461,0.5833,,0,200,200,0,0
+record,with_encounter_index,a,negation drop,193,193,1.0,0.9805,1.0,193,1.0,0.9805,1.0,193,0.9805,1.0,0.0155,0,200,193,193,193
+record,with_encounter_index,b,negation add,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+record,with_encounter_index,c,digit change,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+record,with_encounter_index,d,digit-order swap,139,139,1.0,0.9731,1.0,139,1.0,0.9731,1.0,139,0.9731,1.0,0.0216,0,200,139,139,139
+record,with_encounter_index,e,unit change,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+record,with_encounter_index,f,drug swap (confusable),185,185,1.0,0.9797,1.0,185,1.0,0.9797,1.0,185,0.9797,1.0,0.0162,0,200,185,185,185
+record,with_encounter_index,g,frequency swap,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+record,with_encounter_index,h,duration swap,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+record,with_encounter_index,i,wrong patient_ref,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+transcript,oracle_second_transcript_upper_bound,a,negation drop,193,193,1.0,0.9805,1.0,193,1.0,0.9805,1.0,193,0.9805,1.0,0.0155,0,200,193,193,193
+transcript,oracle_second_transcript_upper_bound,b,negation add,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+transcript,oracle_second_transcript_upper_bound,c,digit change,197,197,1.0,0.9809,1.0,197,1.0,0.9809,1.0,197,0.9809,1.0,0.0152,0,200,197,197,197
+transcript,oracle_second_transcript_upper_bound,d,digit-order swap,118,118,1.0,0.9685,1.0,118,1.0,0.9685,1.0,118,0.9685,1.0,0.0254,0,200,118,118,118
+transcript,oracle_second_transcript_upper_bound,e,unit change,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+transcript,oracle_second_transcript_upper_bound,f,drug swap (confusable),183,183,1.0,0.9794,1.0,183,1.0,0.9794,1.0,183,0.9794,1.0,0.0164,0,200,183,183,183
+transcript,oracle_second_transcript_upper_bound,g,frequency swap,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+transcript,oracle_second_transcript_upper_bound,h,duration swap,200,200,1.0,0.9812,1.0,200,1.0,0.9812,1.0,200,0.9812,1.0,0.015,0,200,200,200,200
+transcript,text_only,a,negation drop,193,14,0.0725,0.0437,0.1181,14,0.0725,0.0437,0.1181,75,0.3226,0.4589,,0,200,193,14,14
+transcript,text_only,b,negation add,200,13,0.065,0.0384,0.108,13,0.065,0.0384,0.108,119,0.5258,0.6606,,0,200,200,13,13
+transcript,text_only,c,digit change,197,115,0.5838,0.514,0.6503,52,0.264,0.2073,0.3296,152,0.7081,0.8247,,0,200,197,115,115
+transcript,text_only,d,digit-order swap,118,104,0.8814,0.8107,0.928,79,0.6695,0.5805,0.7478,111,0.8826,0.971,,0,200,118,104,104
+transcript,text_only,e,unit change,200,191,0.955,0.9167,0.9761,131,0.655,0.5868,0.7174,195,0.9428,0.9893,,0,200,200,191,191
+transcript,text_only,f,drug swap (confusable),183,0,0.0,0.0,0.0206,0,0.0,0.0,0.0206,132,0.6523,0.7812,,0,200,183,0,0
+transcript,text_only,g,frequency swap,200,0,0.0,0.0,0.0188,0,0.0,0.0,0.0188,179,0.8448,0.9303,,0,200,200,0,0
+transcript,text_only,h,duration swap,200,0,0.0,0.0,0.0188,0,0.0,0.0,0.0188,179,0.8448,0.9303,,0,200,200,0,0

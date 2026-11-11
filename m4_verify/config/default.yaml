@@ -12,9 +12,22 @@ disabled: []
 c7_conf_threshold: 0.6
 c7_threshold_status: "UNTUNED placeholder (no DEV ASR run yet)"
 
-# The lexicon CSV has no allowed-unit column (contract gap). Default allowed dose units:
-allowed_units: [mg, g, mcg, ml, tablet, capsule, sachet, teaspoon]
-allowed_units_by_drug: {}
+# Allowed dose units per drug (clinical review M4-M3; fix pass 2026-11-11). The lexicon CSV has no
+# unit column (contract gap). Order: this table -> the dosage form named in the lexicon's
+# verified_by note (tablet / capsule / syrup / sachet / powder for injection) -> allowed_units.
+# A unit outside the set is flagged "unit_not_allowed" (CR-ROUTE for injection-only drugs).
+# Default: solid oral forms only. ml / sachet / teaspoon need an explicit row (a liquid needs a
+# known strength; none is in the lexicon, so every ml dose is also "cannot_verify:liquid_strength").
+allowed_units: [mg, g, mcg, tablet, capsule]
+allowed_units_by_drug:
+  # Lexicon note: NLEM 2.1.5 tablet 500/650 mg. ml added because the m1 data gives paracetamol
+  # SYRUP in ml to children (D-104). Syrup strength (mg per 5 ml) was NOT fetched: UNVERIFIED.
+  paracetamol: [mg, g, mcg, tablet, ml]
+  # Lexicon note: iron in mg (elemental), folic acid in mcg, NEVER mg for folic acid. One record
+  # field cannot say which component is meant, so both units are allowed. UNVERIFIED.
+  iron-folic acid: [tablet, mg, mcg]
+  # Lexicon note (WHO diarrhoea fact sheet, fetched by m1): sachet or ml of solution, never mg.
+  ors: [sachet, ml]
 
 # A medication whose lexicon dose range is blank is FLAGGED "no verified range" (fail-closed).
 blank_range_fails_closed: true

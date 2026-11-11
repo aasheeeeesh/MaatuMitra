@@ -37,7 +37,8 @@ on real Kannada text.
 7. **CLI** `uv run python -m m4_verify verify --record R --transcript T [--second-transcript T2]
    [--disable C3] [--config cfg.yaml] [--out verdict.json]`; also `mock`, `planted`, `audit`.
 8. **E4 planted mistakes** (`planted.py`): source gold dir is configurable (fixtures now;
-   data DEV gold later; refuses any path with a `test` component). Types (a)..(i), >= 200 per
+   data DEV gold via the allow-list guard split_guard.py: only dev.txt ids; test ids, families and
+   test.lock hashes refused, fix pass 2026-11-11). Types (a)..(i), >= 200 per
    type, seed 20261109, JSONL injection log (id, type, level, field_path, before, after).
    Record level: mutate the gold-derived record. Transcript level: mutate the transcript text
    and build the record a faithful extractor would produce from it; evaluate text-only and

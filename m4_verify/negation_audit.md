@@ -78,3 +78,24 @@ errors like this are likely in ASR output too.
 - **Known blind spot (most important):** if ASR silently drops the negation word, the transcript and
   the record agree and NO text-only check can see it. E4 measured this: transcript-level negation drop
   caught 0/4 unique cases text-only, 4/4 only when a second, correct transcript is available (C7).
+  Re-measured on m1 DEV gold (2026-11-11, results/m4_verify/dev/e4/summary.md, field-level, unique):
+  text-only 14/193 [0.044, 0.118]; with the ORACLE (perfect) second transcript 193/193 [0.981, 1.0],
+  which is an UPPER BOUND: a real second ASR output has its own errors.
+
+## Re-run after the Kannada-review fix pass (2026-11-11)
+
+Rules changed (findings j..o of reviews/m4_verify/2026-11-10-kannada.md, ai_simulated_review): fused
+ಬೇಡ/ಬೇಡಿ after any letter or sign (ತಗೋಬೇಡಿ, ಕೊಡ್ಬೇಡಿ); whole-word ಬೇಡಾ, ಬೇಡವಾ/ಬೇಡವೇ/ಬೇಡ್ವಾ
+(negative question), ಇಲ್ರೀ/ಇಲ್ರಿ/ಇಲ್ಲರೀ/ಇಲ್ಲಪ್ಪ/ಇಲ್ಲಮ್ಮ; soft cue S-LVA for C+ಲ್ವಾ (negative
+question, always flagged by C8); a clause also ends after a finite predicate (ಇದೆ, ಇಲ್ಲ, -ಿದೆ, -ಿಲ್ಲ)
+when more words follow without punctuation, except before a quotative, tag or address word; no
+split at the dot of an abbreviation (ಎಂ.ಜಿ., ಡಾ.); cross-turn answers may carry address words
+("ಇಲ್ಲ ಅಕ್ಕ", "ಹೌದ್ರೀ").
+
+Command: `uv run python -m m4_verify audit --sentences m4_verify/audit/kn_wikipedia_jvara_sentences.txt`.
+Result: the cue column (line, NEG/---, cues) is IDENTICAL to `audit/kn_wikipedia_jvara_matches.tsv`
+for all 52 sentences (`diff` of columns 1-3 is empty). So the new rules add no false trigger on this
+written text, but this text also contains none of the new spoken forms: the new rules are tested
+only on AI-written sentences (m4_verify/tests/test_negation_fixpass.py), NOT on real speech, and are
+NOT native-validated. A held-out spoken corpus (or a real reviewer filling
+reviews/human_sheets/negation_rules_review_sheet.csv) is still needed.

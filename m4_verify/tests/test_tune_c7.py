@@ -4,10 +4,8 @@ from __future__ import annotations
 
 import json
 
-import pytest
-
 from m4_verify.tests.helpers import FIX
-from m4_verify.tune_c7 import main, tune
+from m4_verify.tune_c7 import tune
 
 T = FIX / "transcript" / "valid"
 
@@ -25,8 +23,4 @@ def test_tune_finds_the_wrong_digit_token():
     assert res["chosen"]["recall"] == 1.0 and res["chosen"]["flag_rate"] <= 0.2
 
 
-def test_tune_refuses_test_split_paths(tmp_path):
-    p = tmp_path / "pairs_test.jsonl"
-    p.write_text("", encoding="utf-8")
-    with pytest.raises(ValueError):
-        main(str(p), 0.2)
+# test-split refusal for tune-c7: m4_verify/tests/test_split_guard.py

@@ -16,7 +16,6 @@ from m4_verify.planted import (
     generate_transcript_level,
     gold_to_pair,
     load_gold_dir,
-    refuse_test_split,
 )
 from m4_verify.tests.helpers import FIX
 from m4_verify.verifier import verify
@@ -119,9 +118,23 @@ def test_transcript_level_negation_drop_needs_second_transcript(tr_level):
     assert all(_caught(i, second=True) for i in items)
 
 
-def test_refuse_test_split_paths(tmp_path):
-    with pytest.raises(ValueError):
-        refuse_test_split(tmp_path / "data" / "splits" / "test")
-    with pytest.raises(ValueError):
-        refuse_test_split(tmp_path / "gold_test.jsonl")
-    refuse_test_split(FIX / "gold" / "valid")  # fixtures are fine
+# ------------------------------------------------------------------ (i) confusable drug swaps (fix pass)
+def _confusable(lex, a, b):
+    da, db = lex.drugs.get(a), lex.drugs.get(b)
+    return (da is not None and b in da.confusable) or (db is not None and a in db.confusable)
+
+
+@pytest.mark.parametrize("lexname", ["fixture", "data"])
+def test_drug_swaps_pick_only_lexicon_confusables(lexname):
+    """Clinical review M4-M4: no random fallback and no drug outside the lexicon."""
+    from m4_verify.config import DATA_LEXICON
+
+    lex = LEX if lexname == "fixture" else load_lexicon(DATA_LEXICON)
+    injs = generate_record_level(GOLDS, lex, n_per_type=40, seed=7)
+    injs += generate_transcript_level(GOLDS, lex, n_per_type=40, seed=7)
+    f = [i for i in injs if i["type"] == "f"]
+    assert f, "no drug swap generated"
+    for i in f:
+        assert i["after"] in lex.drugs, i["after"]
+        assert _confusable(lex, i["before"], i["after"]), (i["before"], i["after"])
+        assert "FALLBACK" not in i["note"]

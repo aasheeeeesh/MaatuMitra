@@ -83,7 +83,7 @@
       "check_id": "C4",
       "name": "dose-range",
       "status": "flag",
-      "reason": "dose 50 mg is outside the lexicon range 250-1000 mg for amoxicillin (lexicon: FIXTURE_ONLY_dose_and_class_UNVERIFIED)",
+      "reason": "out_of_range [CR-DOSE]: dose 50 mg is outside the lexicon range 250-1000 mg for amoxicillin (lexicon: FIXTURE_ONLY_dose_and_class_UNVERIFIED)",
       "field_path": "/medications/0/dose_value"
     },
     {

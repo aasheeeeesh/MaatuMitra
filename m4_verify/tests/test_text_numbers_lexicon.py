@@ -105,3 +105,10 @@ def test_symptom_terms():
     assert not symptom_in("cough", "ಜ್ವರ ಇದೆ")
     assert symptom_in("vomiting", "ವಾಂತಿ ಆಗಿಲ್ಲ")
     assert symptom_in("headache", "ತಲೆನೋವು ಇದೆ")
+
+
+def test_colloquial_divasa_is_a_day_word():
+    """Kannada review section D assumed ದಿವಸ was covered; m1 DEV gold showed it was not (E4 dev clean run)."""
+    assert [(d.value, d.unit) for d in parse_durations("ಐದು ದಿವಸ")] == [(5, "day")]
+    assert [d.value for d in parse_durations("ಹದಿನಾಲ್ಕು ದಿವಸಗಳು")] == [14]
+    assert parse_durations("ಮೂರು ದಿವಸದಿಂದ ಜ್ವರ") == []  # "since three days" is not a duration

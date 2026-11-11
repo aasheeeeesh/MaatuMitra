@@ -4,20 +4,19 @@ Input: JSONL rows {"asr_transcript": path, "gold_transcript": path} for DEV audi
 A critical ASR word (drug / number / unit / negation cue) is "wrong" if its comparison form does
 not occur among the gold transcript's tokens. For each candidate threshold we compute
 recall (wrong critical words below threshold) and flag rate (correct critical words below
-threshold), and pick the HIGHEST recall whose flag rate <= max_flag_rate. Paths containing a
-"test" component are refused. Copy the printed value into the config by hand (with a decision entry).
+threshold), and pick the HIGHEST recall whose flag rate <= max_flag_rate. Every transcript goes
+through m4_verify/split_guard.py (DEV allow-list; test ids, families and test.lock hashes refused). Copy the printed value into the config by hand (with a decision entry).
 """
 
 from __future__ import annotations
 
 import json
-from pathlib import Path
 
 from m4_verify.config import default_config
 from m4_verify.lexicon import UNIT_TOKENS
 from m4_verify.negation import classify_token
 from m4_verify.numbers import word_value
-from m4_verify.planted import refuse_test_split
+from m4_verify.split_guard import guard_bytes, read_guarded_json
 from m4_verify.textnorm import comparison, token_texts
 
 
@@ -62,19 +61,16 @@ def tune(pairs: list[tuple[dict, dict]], max_flag_rate: float = 0.2) -> dict:
 
 
 def main(pairs_path: str, max_flag_rate: float) -> int:
-    refuse_test_split(pairs_path)
+    with open(pairs_path, "rb") as fh:  # builtin open: the guard tests spy on it
+        raw = fh.read()
+    guard_bytes(raw, pairs_path)
     pairs = []
-    for line in Path(pairs_path).read_text(encoding="utf-8").splitlines():
+    for line in raw.decode("utf-8").splitlines():
         if not line.strip():
             continue
         row = json.loads(line)
-        for k in ("asr_transcript", "gold_transcript"):
-            refuse_test_split(row[k])
-        pairs.append(
-            tuple(
-                json.loads(Path(row[k]).read_text(encoding="utf-8"))
-                for k in ("asr_transcript", "gold_transcript")
-            )
-        )
+        # each path is checked by the guard before it is opened
+        docs = [read_guarded_json(row[k]) for k in ("asr_transcript", "gold_transcript")]
+        pairs.append((docs[0], docs[1]))
     print(json.dumps(tune(pairs, max_flag_rate), indent=2))
     return 0

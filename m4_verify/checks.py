@@ -10,11 +10,14 @@ Rule of the module: never return "pass" when the value cannot be confirmed from 
 
 from __future__ import annotations
 
+import difflib
 from collections import Counter
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from functools import cached_property
 from typing import Any
+
+import regex
 
 from m4_verify.config import Config
 from m4_verify.lexicon import (
@@ -22,14 +25,23 @@ from m4_verify.lexicon import (
     SYMPTOMS,
     UNIT_TOKENS,
     Lexicon,
+    child_cues,
     parse_dose_phrases,
     parse_durations,
     parse_frequencies,
     symptom_in,
     symptom_tokens,
 )
-from m4_verify.negation import Analysis, analyze, span_polarity
-from m4_verify.numbers import english_numbers, parse_numbers
+from m4_verify.negation import (
+    ANSWER_NEG,
+    ANSWER_POS,
+    Analysis,
+    analyze,
+    answer_of,
+    classify_token,
+    span_polarity,
+)
+from m4_verify.numbers import english_numbers, parse_numbers, word_value
 from m4_verify.textnorm import nfc, tokens
 
 Result = tuple[str, str, str]
@@ -287,29 +299,95 @@ def c3_negation(ctx: Ctx) -> list[Result]:
 
 
 # --------------------------------------------------------------------------- C4
+# Reason codes (fix pass 2026-11-11, clinical review D-91). Every C4 flag reason starts with
+# "<code> [<severity class from docs/severity.md>]: ...". cannot_verify:* means "the rules cannot
+# check this dose" (it is NOT evidence of an error) and is reported apart from real violations.
+C4_VIOLATIONS = ("span_mismatch", "unit_not_allowed", "out_of_range", "exceeds_max_daily")
+CANNOT_VERIFY = (
+    "cannot_verify:paediatric",  # child cue in the conversation: adult range does not apply
+    "cannot_verify:no_range",  # lexicon range blank
+    "cannot_verify:not_in_lexicon",  # drug unknown to the lexicon
+    "cannot_verify:liquid_strength",  # dose in ml, no verified mg per 5 ml strength
+    "cannot_verify:count_unit",  # dose in tablets/capsules/sachets: strength not stated
+)
+CODE_RE = regex.compile(r"^(check_error|[a-z_]+(?::[a-z_]+)?)(?: \[([A-Z]{2}-[A-Z-]+)\])?:")
+
+
+def reason_code(reason: str) -> str | None:
+    """'out_of_range [CR-DOSE]: ...' -> 'out_of_range'; free text -> None."""
+    m = CODE_RE.match(reason)
+    return m.group(1) if m else None
+
+
+def severity_class(reason: str) -> str | None:
+    """'cannot_verify:paediatric [CR-PAEDIATRIC]: ...' -> 'CR-PAEDIATRIC'."""
+    m = CODE_RE.match(reason)
+    return m.group(2) if m else None
+
+
+def is_cannot_verify(reason: str) -> bool:
+    return (reason_code(reason) or "").startswith("cannot_verify")
+
+
+def _c(code: str, cls: str, msg: str) -> str:
+    return f"{code} [{cls}]: {msg}"
+
+
 def c4_dose_range(ctx: Ctx) -> list[Result]:
     out: list[Result] = []
+    kids = sorted(set(child_cues(ctx.text)))
     for i, it in enumerate(ctx.record["medications"]):
         path = f"/medications/{i}"
         dv, du = it["dose_value"], it["dose_unit"]
         drug = it["drug"].casefold()
         if dv is None:
             if du is not None:
-                out.append(("flag", f"unit '{du}' given without a dose value", f"{path}/dose_unit"))
+                out.append(
+                    (
+                        "flag",
+                        _c("span_mismatch", "CR-DOSE", f"unit '{du}' given without a dose value"),
+                        f"{path}/dose_unit",
+                    )
+                )
             else:
                 out.append(("n/a", "no dose stated", path))
             continue
         if du is None:
-            out.append(("flag", f"dose {_fmt(dv)} has no unit", f"{path}/dose_unit"))
+            out.append(
+                (
+                    "flag",
+                    _c("span_mismatch", "CR-DOSE", f"dose {_fmt(dv)} has no unit"),
+                    f"{path}/dose_unit",
+                )
+            )
             continue
         problems: list[Result] = []
-        _, _, s = ctx.span(it)
-        doses = parse_dose_phrases(s)
-        if not any(_eq(d.value, dv) for d in doses):
+        if kids:  # (e) never pass a child's dose against an adult range
             problems.append(
                 (
                     "flag",
-                    f"dose {_fmt(dv)} {du} does not match the span (span: {', '.join(_fmt(d.value) + ' ' + str(d.unit) for d in doses) or 'no dose phrase'})",
+                    _c(
+                        "cannot_verify:paediatric",
+                        "CR-PAEDIATRIC",
+                        f"child cue in the conversation ({', '.join(kids)}): a child's dose is "
+                        "weight/age-based and the adult lexicon range does not apply; not checkable "
+                        "by rules, a clinician must check it",
+                    ),
+                    f"{path}/dose_value",
+                )
+            )
+        _, _, s = ctx.span(it)
+        doses = parse_dose_phrases(s)
+        if not any(_eq(d.value, dv) for d in doses):
+            said = ", ".join(_fmt(d.value) + " " + str(d.unit) for d in doses) or "no dose phrase"
+            problems.append(
+                (
+                    "flag",
+                    _c(
+                        "span_mismatch",
+                        "CR-DOSE",
+                        f"dose {_fmt(dv)} {du} does not match the span (span: {said})",
+                    ),
                     f"{path}/dose_value",
                 )
             )
@@ -318,7 +396,11 @@ def c4_dose_range(ctx: Ctx) -> list[Result]:
             problems.append(
                 (
                     "flag",
-                    f"unit '{du}' does not match the span (span says {_fmt(dv)} {said[0]})",
+                    _c(
+                        "span_mismatch",
+                        "CR-DOSE",
+                        f"unit '{du}' does not match the span (span says {_fmt(dv)} {said[0]})",
+                    ),
                     f"{path}/dose_unit",
                 )
             )
@@ -327,17 +409,32 @@ def c4_dose_range(ctx: Ctx) -> list[Result]:
             problems.append(
                 (
                     "flag",
-                    f"drug '{drug}' not in the lexicon: no range to check against",
+                    _c(
+                        "cannot_verify:not_in_lexicon",
+                        "CR-DOSE",
+                        f"drug '{drug}' not in the lexicon: no range to check against",
+                    ),
                     f"{path}/dose_value",
                 )
             )
             out += problems
             continue
-        if du not in ctx.config.units_for(drug):
+        allowed = ctx.config.units_for(drug, ctx.lexicon)
+        if du not in allowed:  # (g) allowed units per drug
+            cls = (
+                "CR-ROUTE"
+                if ctx.config.injection_only(drug, ctx.lexicon) and du not in MASS
+                else "CR-DOSE"
+            )
             problems.append(
                 (
                     "flag",
-                    f"unit '{du}' is not an allowed unit for {drug} (config allowed_units)",
+                    _c(
+                        "unit_not_allowed",
+                        cls,
+                        f"unit '{du}' is not an allowed unit for {drug} (allowed: "
+                        f"{', '.join(allowed)}; source: {ctx.config.units_source(drug, ctx.lexicon)})",
+                    ),
                     f"{path}/dose_unit",
                 )
             )
@@ -349,7 +446,11 @@ def c4_dose_range(ctx: Ctx) -> list[Result]:
                     problems.append(
                         (
                             "flag",
-                            f"no verified range for {drug} in the lexicon (blank); fail-closed",
+                            _c(
+                                "cannot_verify:no_range",
+                                "CR-DOSE",
+                                f"no verified range for {drug} in the lexicon (blank); fail-closed",
+                            ),
                             f"{path}/dose_value",
                         )
                     )
@@ -359,30 +460,58 @@ def c4_dose_range(ctx: Ctx) -> list[Result]:
                     problems.append(
                         (
                             "flag",
-                            f"dose {_fmt(mg)} mg is outside the lexicon range {_fmt(lo)}-{_fmt(hi)} mg for {drug} (lexicon: {d.verified_by or 'unverified'})",
+                            _c(
+                                "out_of_range",
+                                "CR-DOSE",
+                                f"dose {_fmt(mg)} mg is outside the lexicon range {_fmt(lo)}-{_fmt(hi)} "
+                                f"mg for {drug} (lexicon: {d.verified_by[:120] or 'unverified'})",
+                            ),
                             f"{path}/dose_value",
                         )
                     )
                 elif d.strengths_mg and mg > max(d.strengths_mg):
                     note = f"; unusual: above the typical strengths {'/'.join(_fmt(x) for x in d.strengths_mg)} mg (soft note)"
-                freq = it["frequency_per_day"]
-                if (
-                    d.max_daily_mg is not None
-                    and freq is not None
-                    and mg * float(freq) > d.max_daily_mg
-                ):
-                    problems.append(
-                        (
-                            "flag",
-                            f"{_fmt(mg)} mg x {_fmt(freq)}/day = {_fmt(mg * float(freq))} mg exceeds the lexicon max daily {_fmt(d.max_daily_mg)} mg",
-                            f"{path}/frequency_per_day",
-                        )
+            freq = it["frequency_per_day"]
+            if (
+                d.max_daily_mg is not None
+                and freq is not None
+                and mg * float(freq) > d.max_daily_mg
+            ):
+                problems.append(  # (h) max daily dose where the lexicon gives it
+                    (
+                        "flag",
+                        _c(
+                            "exceeds_max_daily",
+                            "CR-DOSE",
+                            f"{_fmt(mg)} mg x {_fmt(freq)}/day = {_fmt(mg * float(freq))} mg exceeds "
+                            f"the lexicon max daily {_fmt(d.max_daily_mg)} mg for {drug}",
+                        ),
+                        f"{path}/frequency_per_day",
                     )
+                )
+        elif du == "ml":
+            problems.append(
+                (
+                    "flag",
+                    _c(
+                        "cannot_verify:liquid_strength",
+                        "CR-LIQUID-STRENGTH",
+                        "no verified range for a dose in ml: the lexicon has no mg-per-5 ml "
+                        "strength for this liquid; fail-closed",
+                    ),
+                    f"{path}/dose_value",
+                )
+            )
         else:
             problems.append(
                 (
                     "flag",
-                    f"no verified range for unit '{du}' (lexicon ranges are in mg); fail-closed",
+                    _c(
+                        "cannot_verify:count_unit",
+                        "CR-DOSE",
+                        f"no verified range for a dose in '{du}' (lexicon ranges are in mg and the "
+                        "strength per unit was not stated); fail-closed",
+                    ),
                     f"{path}/dose_value",
                 )
             )
@@ -401,7 +530,8 @@ def c4_dose_range(ctx: Ctx) -> list[Result]:
             out.append(
                 (
                     "pass",
-                    f"{_fmt(dv)} {du} matches the span and lies in {_fmt(lo)}-{_fmt(hi)} mg{note}",
+                    f"{_fmt(dv)} {du} matches the span and lies in {_fmt(lo)}-{_fmt(hi)} mg (adult range; "
+                    f"no child cue in the conversation){note}",
                     f"{path}/dose_value",
                 )
             )
@@ -622,11 +752,68 @@ def _signature(ctx: Ctx, text: str) -> dict[str, Counter]:
         "numbers": Counter(_fmt(n.value) for n in parse_numbers(text)),
         "negation cues": Counter(c.token for cl in an.clauses for c in cl.cues),
         "bare answers": Counter(
-            cl.toks[0].text
-            for cl in an.clauses
-            if len(cl.toks) == 1 and cl.toks[0].text in ("ಇಲ್ಲ", "ಇಲ್ಲಾ", "ಹೌದು")
+            f"{answer_of(cl)}:{cl.toks[0].text}" for cl in an.clauses if answer_of(cl)
         ),
     }
+
+
+def _critical_word(ctx: Ctx, w: str) -> bool:
+    return (
+        w[:1].isdigit()
+        or word_value(w) is not None
+        or w in UNIT_TOKENS
+        or bool(ctx.lexicon.drugs_in(w))
+        or classify_token(w) is not None
+        or w in ANSWER_NEG
+        or w in ANSWER_POS
+    )
+
+
+def _critical_token_ids(ctx: Ctx, text: str, toks: list) -> set[int]:
+    """Indices of critical tokens; a token inside a multi-token drug mention is critical too
+    (amoxicillin-clavulanate vs amoxicillin differ only in "clavulanate")."""
+    spans = [(a, b) for _, a, b in ctx.lexicon.drugs_in(text, toks)]
+    return {
+        k
+        for k, t in enumerate(toks)
+        if _critical_word(ctx, t.text) or any(a <= t.start and t.end <= b for a, b in spans)
+    }
+
+
+def _diff_ranges(ctx: Ctx, other: str) -> list[tuple[int, int, str]]:
+    """Token ranges of the FIRST transcript where the second one differs on a critical word.
+    A word missing in the first transcript gives a zero-width point after the previous token."""
+    ta, tb = tokens(ctx.text), tokens(other)
+    crit_a, crit_b = _critical_token_ids(ctx, ctx.text, ta), _critical_token_ids(ctx, other, tb)
+    sm = difflib.SequenceMatcher(None, [t.text for t in ta], [t.text for t in tb], autojunk=False)
+    out = []
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == "equal":
+            continue
+        wa, wb = [t.text for t in ta[i1:i2]], [t.text for t in tb[j1:j2]]
+        if not (set(range(i1, i2)) & crit_a or set(range(j1, j2)) & crit_b):
+            continue
+        if i1 < i2:
+            lo, hi = ta[i1].start, ta[i2 - 1].end
+        else:
+            lo = hi = ta[i1 - 1].end if i1 > 0 else 0
+        out.append((lo, hi, f"'{' '.join(wa) or '-'}' vs second '{' '.join(wb) or '-'}'"))
+    return out
+
+
+def _item_scope(ctx: Ctx, cs: int, ce: int) -> list[tuple[int, int]]:
+    """Clauses holding the span, plus the answer clause of the next turn for a question clause."""
+    an = ctx.analysis
+    pol = span_polarity(an, cs, ce)
+    scope = []
+    for k in pol.clause_ids:
+        c = an.clauses[k]
+        scope.append((c.start, c.end))
+        if c.is_question:
+            nxt = [x for x in an.clauses if x.turn == c.turn + 1]
+            if nxt:
+                scope.append((nxt[0].start, nxt[0].end))
+    return scope or [(cs, ce)]
 
 
 def c7_asr_risk(ctx: Ctx) -> list[Result]:
@@ -693,6 +880,25 @@ def c7_asr_risk(ctx: Ctx) -> list[Result]:
                     "/",
                 )
             )
+            # attribute each difference to the item(s) whose clause holds it (integrity M4-2)
+            ranges = _diff_ranges(ctx, ctx.second["text"])
+            for path, _, it in ctx.items():
+                cs, ce, _ = ctx.span(it)
+                hit = [
+                    label
+                    for lo, hi, label in ranges
+                    for a, b in _item_scope(ctx, cs, ce)
+                    if (lo < b and a < hi) or (lo == hi and a < lo <= b)
+                ]
+                if hit:
+                    out.append(
+                        (
+                            "flag",
+                            "second transcript differs inside this item's clause: "
+                            + "; ".join(dict.fromkeys(hit)),
+                            path,
+                        )
+                    )
         else:
             out.append(
                 (

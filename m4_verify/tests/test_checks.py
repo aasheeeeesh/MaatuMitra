@@ -351,3 +351,43 @@ def test_deterministic():
     a = run(T_AMOX, rec)
     b = run(T_AMOX, rec)
     assert a == b
+
+
+# ------------------------------------------------------------------ C7 per-item attribution (fix pass)
+def test_c7_second_transcript_disagreement_is_attributed_to_the_item():
+    """Integrity M4-2: a record-level '/' flag cannot show WHICH field is at risk. The diff
+    against the second transcript must also flag the item whose clause holds the difference."""
+    turns = ["ಜ್ವರ ಇದೆ.", "ಕೆಮ್ಮು."]  # first ASR dropped the negation of turn 2
+    other = transcript(["ಜ್ವರ ಇದೆ.", "ಕೆಮ್ಮು ಇಲ್ಲ."], audio_id="t2")
+    rec = record(
+        turns,
+        symptoms=[sym(turns, "ಜ್ವರ", 0, "fever", True), sym(turns, "ಕೆಮ್ಮು", 1, "cough", True)],
+    )
+    v = run(turns, rec, second=other)
+    paths = {c["field_path"] for c in flags(v, "C7")}
+    assert "/symptoms/1" in paths, flags(v, "C7")
+    assert "/symptoms/0" not in paths  # the unchanged clause is not blamed
+
+
+def test_c7_digit_difference_is_attributed_to_the_medication():
+    second = transcript(["ಅಮಾಕ್ಸಿಸಿಲಿನ್ 50 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."], audio_id="t2")
+    v = run(T_AMOX, record(T_AMOX, meds=[amox()]), second=second)
+    assert "/medications/0" in {c["field_path"] for c in flags(v, "C7")}
+
+
+def test_c7_multi_token_drug_difference_is_attributed():
+    """E4 dev (fix pass): amoxicillin vs amoxicillin-clavulanate differs only in the token
+    "clavulanate", which alone is not a drug name; the diff must still count as critical."""
+    from m4_verify.config import DATA_LEXICON
+
+    turns = ["amoxicillin ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."]
+    other = transcript(["amoxicillin-clavulanate ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."], audio_id="t2")
+    rec = record(turns, meds=[med(turns, "amoxicillin", 0, "amoxicillin")])
+    v = verify(
+        rec,
+        transcript(turns),
+        lexicon=load_lexicon(DATA_LEXICON),
+        config=default_config(),
+        second_transcript=other,
+    )
+    assert "/medications/0" in {c["field_path"] for c in flags(v, "C7")}, flags(v, "C7")

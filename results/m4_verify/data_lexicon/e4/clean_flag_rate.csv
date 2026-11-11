@@ -1,3 +1,3 @@
-unit,n,flagged,rate,wilson_lo,wilson_hi
-record,6,1,0.1667,0.0301,0.5635
-field,18,1,0.0556,0.0099,0.2576
+unit,n,flagged,rate,wilson_lo,wilson_hi,flagged_excl_cannot_verify,rate_excl_cannot_verify,excl_wilson_lo,excl_wilson_hi
+record,6,0,0.0,0.0,0.3903,0,0.0,0.0,0.3903
+field,18,0,0.0,0.0,0.1759,0,0.0,0.0,0.1759

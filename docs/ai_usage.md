@@ -123,3 +123,9 @@ What a human must check:
 ## From m1_data (merged 20261110T180301Z)
 
 - m1_data / data-scientist (Claude, 2026-11-10): rewrote child-dose templates, lexicon rows, negation table v2, severity classes, annotation guide examples, tests (m1_data/tests/test_refreeze1.py), regenerated data (REFREEZE-1). All Kannada is AI-composed (wording from the ai_simulated_review reviewer); human must check Kannada, dose ranges and the clinical choices.
+
+## From m4_verify (merged 20261111T141428Z)
+
+| agent | module | what it generated | what a human must check |
+|---|---|---|---|
+| safety-engineer (Claude, m4 fix pass 2026-11-11) | m4_verify | DEV allow-list guard (split_guard.py) and its tests; C4 rewrite (child doses, reason codes, allowed units per drug, max daily); C7 per-item attribution of second-transcript differences; confusable-only drug swaps; new Kannada negation rules (fused ಬೇಡ, ಇಲ್ರೀ/ಇಲ್ಲಪ್ಪ, -ಲ್ವಾ, clause split after predicates, multi-word answers, abbreviation dots) and all their test sentences; E4 reporting (unique N, Wilson CIs, field-level attribution, review burden); E4 dev results; README and handoff text | All Kannada sentences and rules (not native-validated); the child word list; the allowed-units table (UNVERIFIED rows listed in human_todo.md); that the guard really refuses test data on your machine (`uv run pytest m4_verify/tests/test_split_guard.py -q`); that README numbers match results/m4_verify/dev/e4/summary.json |

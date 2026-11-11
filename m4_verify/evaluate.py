@@ -5,11 +5,13 @@ Outputs (out_dir, default results/m4_verify/):
   fixture_per_check.csv                per-check status counts on the fixture records
   e4/clean_verdicts/*.json             verdict.v1 for every clean gold record
   e4/injection_log_{record,transcript}.jsonl   exactly what was injected (id, type, field_path, before, after)
-  e4/injection_results.jsonl           per injection and condition: caught?, which checks flagged
+  e4/injection_results.jsonl           per injection and condition: caught at the field? detected? which checks
   e4/sample_verdicts.jsonl             2 full verdicts per type and condition (all others validated in memory)
-  e4/catch_rates.csv                   per level/condition/type: n, unique, caught, rate, Wilson 95% CI
-  e4/per_check.csv                     per scope and check: flagged count, rate, caught ONLY by this check
-  e4/clean_flag_rate.csv               review burden on error-free records and fields
+  e4/catch_rates.csv                   per level/condition/type, UNIQUE mutations: caught at field, detected,
+                                       sent to review, each k/n with a Wilson 95% CI
+  e4/per_field.csv                     the same per injected field (dose_value, negated, patient_ref, ...)
+  e4/per_check.csv                     per scope and check: unique mutations flagged at the field / detected / only
+  e4/clean_flag_rate.csv               review burden on the SAME error-free records (any flag; excl. cannot_verify)
   e4/summary.json, e4/summary.md
 Every verdict produced is validated with contracts.validate; the count is reported.
 """
@@ -23,17 +25,19 @@ from pathlib import Path
 from typing import Any
 
 from contracts.validate import validate_doc
+from m4_verify.checks import is_cannot_verify, reason_code
 from m4_verify.config import CHECK_IDS, ROOT, Config, default_config
 from m4_verify.lexicon import Lexicon, load_lexicon
 from m4_verify.planted import (
     SEED,
     TYPES,
+    confusables,
     generate_record_level,
     generate_transcript_level,
     gold_to_pair,
-    load_gold_dir,
     log_rows,
 )
+from m4_verify.split_guard import load_gold
 from m4_verify.stats import rule_of_three, wilson
 from m4_verify.verifier import verify
 
@@ -123,6 +127,23 @@ def run_mock(out_dir: Path, lex: Lexicon, cfg: Config) -> dict:
 
 
 # --------------------------------------------------------------------------- E4
+# Integrity review D-90 (fix pass 2026-11-11):
+#  * a planted error counts as CAUGHT only when a flag lands on the injected field (at_field);
+#  * DETECTED is stricter: the flag at the field is not cannot_verify and was not already raised
+#    on the error-free version of the same record (so it is caused by the mutation);
+#  * all headline numbers use UNIQUE mutations (repeats of one mutation are not new trials);
+#  * the second-transcript condition uses the uncorrupted gold text: an ORACLE upper bound.
+ORACLE = "oracle_second_transcript_upper_bound"
+CONDITION_NOTE = {
+    "with_encounter_index": "record-level mutation, encounter index given (patient link checkable)",
+    "no_encounter_index": "record-level wrong patient_ref, no encounter index (known blind spot)",
+    "text_only": "ASR-like transcript edit; record agrees with the corrupted text; text-only checks",
+    ORACLE: "same, plus C7 against the UNCORRUPTED gold text as second transcript: an UPPER BOUND "
+    "(a real second ASR output has its own errors)",
+}
+DOSE_PAIR = {"dose_value", "dose_unit"}
+
+
 def _item_path(field_path: str) -> str:
     parts = field_path.strip("/").split("/")
     return (
@@ -141,6 +162,47 @@ def _record_fields(rec: dict) -> list[str]:
     return f
 
 
+def at_field(flag: dict, inj_path: str) -> bool:
+    """Does this flag concern the injected field? Exact field, the item itself (item-level C7/C8
+    flags), the other half of the dose pair, or a max-daily flag for a dose/frequency error.
+    Record-level '/' flags and flags on OTHER items never count."""
+    fp = flag["field_path"]
+    if inj_path == "/patient_ref":
+        return fp == "/patient_ref"
+    item = _item_path(inj_path)
+    fld = inj_path.rsplit("/", 1)[1]
+    if fp in (inj_path, item):
+        return True
+    if not fp.startswith(item + "/"):
+        return False
+    ffld = fp[len(item) + 1 :].split("/")[0]
+    if fld in DOSE_PAIR and ffld in DOSE_PAIR:
+        return True
+    return fld in ("dose_value", "dose_unit", "frequency_per_day") and (
+        reason_code(flag["reason"]) == "exceeds_max_daily"
+    )
+
+
+def unique_outcomes(rows: list[dict], key: str) -> tuple[int, int, int]:
+    """(k unique mutations with outcome True, n unique mutations, n unique with MIXED outcomes).
+    A mutation whose repeats disagree is counted as NOT caught (conservative)."""
+    seen: dict[str, set[bool]] = defaultdict(set)
+    for r in rows:
+        seen[r["unique_key"]].add(bool(r[key]))
+    k = sum(1 for v in seen.values() if v == {True})
+    mixed = sum(1 for v in seen.values() if len(v) > 1)
+    return k, len(seen), mixed
+
+
+def _ci(k: int, n: int) -> tuple[float | str, float | str]:
+    lo, hi = wilson(k, n)
+    return _r(lo), _r(hi)
+
+
+def _flag_key(c: dict) -> tuple[str, str, str]:
+    return (c["check_id"], c["field_path"], c["reason"])
+
+
 def run_e4(
     gold_dir: Path,
     lex: Lexicon,
@@ -149,15 +211,19 @@ def run_e4(
     n_per_type: int = 200,
     seed: int = SEED,
 ) -> dict:
-    golds = load_gold_dir(gold_dir)
+    gl = load_gold(gold_dir)  # DEV allow-list guard (m4_verify/split_guard.py); raises on TEST data
+    golds = gl.docs
     e4 = out_dir / "e4"
     val = Validated()
 
-    # ---- clean (error-free) records: review burden
+    # ---- clean (error-free) records: review burden, measured on the SAME source records
     clean_rows = []
-    rec_flagged = fields_total = fields_flagged = 0
+    clean_flags: dict[str, set] = {}
+    n_rec = len(golds)
+    rec_any = rec_real = fields_total = f_any = f_real = 0
     per_check_clean_rec: dict[str, int] = defaultdict(int)
     per_check_clean_field: dict[str, int] = defaultdict(int)
+    clean_codes: dict[str, int] = defaultdict(int)
     for g in golds:
         tr, rec = gold_to_pair(g)
         v = val(
@@ -171,13 +237,20 @@ def run_e4(
         )
         _dump(e4 / "clean_verdicts" / f"{rec['record_id']}.json", v)
         flags = [c for c in v["checks"] if c["status"] == "flag"]
-        rec_flagged += int(not v["auto_acceptable"])
+        clean_flags[g["conversation_id"]] = {_flag_key(c) for c in flags}
+        real = [c for c in flags if not is_cannot_verify(c["reason"])]
+        rec_any += int(bool(flags))
+        rec_real += int(bool(real))
+        for c in flags:
+            clean_codes[f"{c['check_id']}:{reason_code(c['reason']) or 'uncoded'}"] += 1
         for cid in {c["check_id"] for c in flags}:
             per_check_clean_rec[cid] += 1
         for fld in _record_fields(rec):
             fields_total += 1
             hit = [c for c in flags if _touches(c["field_path"], fld)]
-            fields_flagged += int(bool(hit))
+            hit_real = [c for c in hit if not is_cannot_verify(c["reason"])]
+            f_any += int(bool(hit))
+            f_real += int(bool(hit_real))
             for cid in {c["check_id"] for c in hit}:
                 per_check_clean_field[cid] += 1
             if hit:
@@ -188,26 +261,26 @@ def run_e4(
                         "flags": [f"{c['check_id']}: {c['reason']}" for c in hit],
                     }
                 )
-    n_rec = len(golds)
-    lo_r, hi_r = wilson(rec_flagged, n_rec)
-    lo_f, hi_f = wilson(fields_flagged, fields_total)
+
+    def _burden(unit, n, k_any, k_real):
+        lo, hi = _ci(k_any, n)
+        lo2, hi2 = _ci(k_real, n)
+        return {
+            "unit": unit,
+            "n": n,
+            "flagged": k_any,
+            "rate": _r(k_any / n if n else float("nan")),
+            "wilson_lo": lo,
+            "wilson_hi": hi,
+            "flagged_excl_cannot_verify": k_real,
+            "rate_excl_cannot_verify": _r(k_real / n if n else float("nan")),
+            "excl_wilson_lo": lo2,
+            "excl_wilson_hi": hi2,
+        }
+
     clean = [
-        {
-            "unit": "record",
-            "n": n_rec,
-            "flagged": rec_flagged,
-            "rate": _r(rec_flagged / n_rec if n_rec else float("nan")),
-            "wilson_lo": _r(lo_r),
-            "wilson_hi": _r(hi_r),
-        },
-        {
-            "unit": "field",
-            "n": fields_total,
-            "flagged": fields_flagged,
-            "rate": _r(fields_flagged / fields_total if fields_total else float("nan")),
-            "wilson_lo": _r(lo_f),
-            "wilson_hi": _r(hi_f),
-        },
+        _burden("record", n_rec, rec_any, rec_real),
+        _burden("field", fields_total, f_any, f_real),
     ]
     _csv(e4 / "clean_flag_rate.csv", clean)
     _jsonl(e4 / "clean_flagged_fields.jsonl", clean_rows)
@@ -222,11 +295,10 @@ def run_e4(
         ("record", "with_encounter_index", rec_inj, False, True),
         ("record", "no_encounter_index", [i for i in rec_inj if i["type"] == "i"], False, False),
         ("transcript", "text_only", tr_inj, False, True),
-        ("transcript", "with_second_transcript", tr_inj, True, True),
+        ("transcript", ORACLE, tr_inj, True, True),
     ]
     results = []
     samples = []
-    agg: dict[tuple, dict] = {}
     for level, cond, injs, second, index in conditions:
         seen_samples: dict[str, int] = defaultdict(int)
         for inj in injs:
@@ -242,89 +314,97 @@ def run_e4(
                 )
             )
             flags = [c for c in v["checks"] if c["status"] == "flag"]
-            item = _item_path(inj["field_path"])
-            caught = not v["auto_acceptable"]
-            at_field = any(
-                c["field_path"] != "/" and _touches(c["field_path"], item) for c in flags
-            )
-            checks = sorted({c["check_id"] for c in flags})
+            fpath = inj["field_path"]
+            hit = [c for c in flags if at_field(c, fpath)]
+            before = clean_flags.get(inj["source_id"], set())
+            new_real = [
+                c for c in hit if not is_cannot_verify(c["reason"]) and _flag_key(c) not in before
+            ]
             results.append(
                 {
                     "id": inj["id"],
                     "level": level,
                     "condition": cond,
                     "type": inj["type"],
-                    "caught": caught,
-                    "caught_at_field": at_field,
-                    "flagged_checks": checks,
+                    "field": fpath.rsplit("/", 1)[1],
+                    "field_path": fpath,
                     "unique_key": inj["unique_key"],
+                    "sent_to_review": not v["auto_acceptable"],
+                    "caught_at_field": bool(hit),
+                    "caught": bool(hit),  # = caught_at_field (key read by m6_ui)
+                    "detected_at_field": bool(new_real),
+                    "flagged_checks": sorted({c["check_id"] for c in flags}),
+                    "at_field_checks": sorted({c["check_id"] for c in hit}),
+                    "detected_checks": sorted({c["check_id"] for c in new_real}),
+                    "at_field_reasons": [f"{c['check_id']}: {c['reason'][:160]}" for c in hit][:4],
                 }
             )
             if seen_samples[inj["type"]] < 2:
                 seen_samples[inj["type"]] += 1
                 samples.append({"injection_id": inj["id"], "condition": cond, "verdict": v})
-            a = agg.setdefault(
-                (level, cond, inj["type"]),
-                {
-                    "n": 0,
-                    "caught": 0,
-                    "at_field": 0,
-                    "uniq": set(),
-                    "uniq_caught": set(),
-                    "uniq_missed": set(),
-                    "checks": defaultdict(int),
-                    "only": defaultdict(int),
-                },
-            )
-            a["n"] += 1
-            a["caught"] += int(caught)
-            a["at_field"] += int(at_field)
-            a["uniq"].add(inj["unique_key"])
-            (a["uniq_caught"] if caught else a["uniq_missed"]).add(inj["unique_key"])
-            for cid in checks:
-                a["checks"][cid] += 1
-            if len(checks) == 1:
-                a["only"][checks[0]] += 1
     _jsonl(e4 / "injection_results.jsonl", results)
     _jsonl(e4 / "sample_verdicts.jsonl", samples)
 
-    catch_rows = []
+    def _row(rows, extra):
+        k_f, n, mixed = unique_outcomes(rows, "caught_at_field")
+        k_d, _, mixed_d = unique_outcomes(rows, "detected_at_field")
+        k_s, _, _ = unique_outcomes(rows, "sent_to_review")
+        lo, hi = _ci(k_f, n)
+        dlo, dhi = _ci(k_d, n)
+        slo, shi = _ci(k_s, n)
+        return {
+            **extra,
+            "n_unique": n,
+            "caught_at_field_unique": k_f,
+            "caught_at_field_rate": _r(k_f / n if n else float("nan")),
+            "caught_at_field_wilson_lo": lo,
+            "caught_at_field_wilson_hi": hi,
+            "detected_unique": k_d,
+            "detected_rate": _r(k_d / n if n else float("nan")),
+            "detected_wilson_lo": dlo,
+            "detected_wilson_hi": dhi,
+            "sent_to_review_unique": k_s,
+            "sent_to_review_wilson_lo": slo,
+            "sent_to_review_wilson_hi": shi,
+            "rule_of_three_upper_if_none_missed": _r(rule_of_three(n)) if k_f == n else "",
+            "unique_with_mixed_outcomes": max(mixed, mixed_d),
+            "n_injections": len(rows),
+            # backward-compatible columns read by m6_ui/failures.py (since the fix pass they hold
+            # the HONEST numbers: unique mutations, caught = flag on the injected field)
+            "n": n,
+            "caught": k_f,
+            "unique_caught": k_f,
+        }
+
+    groups: dict[tuple, list[dict]] = defaultdict(list)
+    fgroups: dict[tuple, list[dict]] = defaultdict(list)
+    for r in results:
+        groups[(r["level"], r["condition"], r["type"])].append(r)
+        fgroups[(r["level"], r["condition"], r["field"])].append(r)
+    catch_rows = [
+        _row(rows, {"level": lv, "condition": c, "type": t, "type_name": TYPES[t]})
+        for (lv, c, t), rows in sorted(groups.items())
+    ]
+    field_rows = [
+        _row(rows, {"level": lv, "condition": c, "field": f})
+        for (lv, c, f), rows in sorted(fgroups.items())
+    ]
+
     per_check_rows = []
-    for (level, cond, t), a in sorted(agg.items()):
-        lo, hi = wilson(a["caught"], a["n"])
-        nu = len(a["uniq"])
-        ulo, uhi = wilson(len(a["uniq_caught"]), nu)
-        catch_rows.append(
-            {
-                "level": level,
-                "condition": cond,
-                "type": t,
-                "type_name": TYPES[t],
-                "n": a["n"],
-                "caught": a["caught"],
-                "rate": _r(a["caught"] / a["n"]),
-                "wilson_lo": _r(lo),
-                "wilson_hi": _r(hi),
-                "caught_at_field": a["at_field"],
-                "n_unique": nu,
-                "unique_caught": len(a["uniq_caught"]),
-                "unique_rate": _r(len(a["uniq_caught"]) / nu),
-                "unique_wilson_lo": _r(ulo),
-                "unique_wilson_hi": _r(uhi),
-                "rule_of_three_upper_if_zero_missed_unique": _r(rule_of_three(nu))
-                if not a["uniq_missed"]
-                else "",
-            }
-        )
+    for (lv, c, t), rows in sorted(groups.items()):
+        n = len({r["unique_key"] for r in rows})
         for cid in CHECK_IDS:
+            at = {r["unique_key"] for r in rows if cid in r["at_field_checks"]}
+            det = {r["unique_key"] for r in rows if cid in r["detected_checks"]}
+            only = {r["unique_key"] for r in rows if r["detected_checks"] == [cid]}
             per_check_rows.append(
                 {
-                    "scope": f"{level}:{cond}:{t}",
+                    "scope": f"{lv}:{c}:{t}",
                     "check_id": cid,
-                    "n": a["n"],
-                    "flagged": a["checks"][cid],
-                    "rate": _r(a["checks"][cid] / a["n"]),
-                    "caught_only_by_this_check": a["only"][cid],
+                    "n_unique": n,
+                    "flag_at_field_unique": len(at),
+                    "detected_unique": len(det),
+                    "detected_only_by_this_check_unique": len(only),
                 }
             )
     for cid in CHECK_IDS:
@@ -332,35 +412,49 @@ def run_e4(
             {
                 "scope": "clean:records",
                 "check_id": cid,
-                "n": n_rec,
-                "flagged": per_check_clean_rec[cid],
-                "rate": _r(per_check_clean_rec[cid] / n_rec if n_rec else float("nan")),
-                "caught_only_by_this_check": "",
+                "n_unique": n_rec,
+                "flag_at_field_unique": per_check_clean_rec[cid],
+                "detected_unique": "",
+                "detected_only_by_this_check_unique": "",
             }
         )
         per_check_rows.append(
             {
                 "scope": "clean:fields",
                 "check_id": cid,
-                "n": fields_total,
-                "flagged": per_check_clean_field[cid],
-                "rate": _r(
-                    per_check_clean_field[cid] / fields_total if fields_total else float("nan")
-                ),
-                "caught_only_by_this_check": "",
+                "n_unique": fields_total,
+                "flag_at_field_unique": per_check_clean_field[cid],
+                "detected_unique": "",
+                "detected_only_by_this_check_unique": "",
             }
         )
-    _csv(e4 / "catch_rates.csv", catch_rows)
+    if catch_rows:
+        _csv(e4 / "catch_rates.csv", catch_rows)
+        _csv(e4 / "per_field.csv", field_rows)
     _csv(e4 / "per_check.csv", per_check_rows)
+    no_conf = sum(
+        1
+        for g in golds
+        for m in g["gold_record"]["medications"]
+        if not confusables(m["drug"].casefold(), lex)
+    )
+    n_meds = sum(len(g["gold_record"]["medications"]) for g in golds)
+
+    def _rel(p):
+        p = Path(p).resolve()
+        return p.relative_to(ROOT).as_posix() if p.is_relative_to(ROOT) else str(p)
 
     summary = {
-        "gold_source": str(Path(gold_dir).resolve().relative_to(ROOT))
-        if Path(gold_dir).resolve().is_relative_to(ROOT)
-        else str(gold_dir),
+        "gold_source": _rel(gold_dir),
+        "gold_load": {
+            "n_loaded": len(golds),
+            "skipped_not_in_dev_txt_never_opened": gl.skipped_not_allowed,
+            "under_data": gl.under_data,
+            "rule": "under data/: only ids in data/splits/dev.txt are opened; test ids, test families "
+            "and test.lock hashes are refused everywhere (m4_verify/split_guard.py)",
+        },
         "n_gold_conversations": n_rec,
-        "lexicon": str(Path(lex.path).resolve().relative_to(ROOT))
-        if Path(lex.path).resolve().is_relative_to(ROOT)
-        else lex.path,
+        "lexicon": _rel(lex.path),
         "seed": seed,
         "n_per_type": n_per_type,
         "c7_threshold": cfg.c7_conf_threshold,
@@ -369,51 +463,113 @@ def run_e4(
         "verdicts_validated": val.n,
         "verdict_validation_errors": val.errors[:20],
         "clean_flag_rate": clean,
+        "clean_flag_codes": dict(sorted(clean_codes.items())),
         "catch_rates": catch_rows,
-        "note": "Planted errors, synthetic fixture gold (not native-validated). Duplicated mutations are not independent: use n_unique for confidence intervals. Never pool with natural errors.",
+        "per_field": field_rows,
+        "drug_swap_coverage": {
+            "medication_items": n_meds,
+            "items_whose_drug_has_no_lexicon_confusable_(never_swapped)": no_conf,
+        },
+        "conditions": CONDITION_NOTE,
+        "definitions": {
+            "caught_at_field": "a flag lands on the injected field, its item (item-level flag), "
+            "the other half of the dose pair, or a max-daily flag; '/' flags and other items do not count",
+            "detected": "caught_at_field by a flag that is NOT cannot_verify and was NOT already raised "
+            "on the error-free version of the same record",
+            "sent_to_review": "the record is not auto_acceptable (any flag anywhere)",
+            "unique": "one mutation = (conversation, field, new value[, edit]); repeats are not new trials",
+        },
+        "note": "PLANTED errors only (never pool with natural errors). Synthetic Kannada text, not "
+        "native-validated. Report detected/caught next to the clean-field flag rate on the SAME records.",
     }
     _dump(e4 / "summary.json", summary)
     (e4 / "summary.md").write_text(_summary_md(summary), encoding="utf-8")
     return summary
 
 
+def _ci_txt(r: dict, k: str, lo: str, hi: str) -> str:
+    return f"{r[k]}/{r['n_unique']} [{r[lo]}, {r[hi]}]"
+
+
 def _summary_md(s: dict) -> str:
+    gl = s["gold_load"]
     L = [
         "# E4 planted-mistake results (m4_verify)",
         "",
-        f"Gold source: `{s['gold_source']}` ({s['n_gold_conversations']} conversations). Lexicon: `{s['lexicon']}`. "
-        f"Seed {s['seed']}, {s['n_per_type']} injections per type. C7 threshold {s['c7_threshold']} ({s['c7_threshold_status']}). "
-        f"Verdicts produced and validated against verdict.v1: {s['verdicts_validated']} (errors: {len(s['verdict_validation_errors'])}).",
+        f"Gold source: `{s['gold_source']}`: {gl['n_loaded']} conversations loaded "
+        f"({gl['skipped_not_in_dev_txt_never_opened']} files not in dev.txt, never opened). "
+        f"Lexicon: `{s['lexicon']}`. Seed {s['seed']}, up to {s['n_per_type']} injections per type "
+        f"(repeats of the same mutation are counted ONCE). C7 threshold {s['c7_threshold']} "
+        f"({s['c7_threshold_status']}). Verdicts validated against verdict.v1: {s['verdicts_validated']} "
+        f"(errors: {len(s['verdict_validation_errors'])}).",
         "",
-        "PLANTED errors on SYNTHETIC fixture text (not native-validated). Many injections repeat the same mutation, "
-        "so the honest sample size is `n_unique`; CIs on `n` overstate certainty.",
+        "PLANTED errors on SYNTHETIC text (not native-validated). Every proportion is k/n over UNIQUE "
+        "mutations with a Wilson 95% CI in brackets. No clinical claim is made.",
         "",
-        "## Review burden on error-free gold",
+        "## Review burden on the SAME error-free records (read this next to every recall number)",
         "",
-        "| unit | n | flagged | rate | Wilson 95% CI |",
-        "|---|---|---|---|---|",
+        "| unit | n | flagged (any) | Wilson 95% CI | flagged excl. cannot_verify | Wilson 95% CI |",
+        "|---|---|---|---|---|---|",
     ]
     for r in s["clean_flag_rate"]:
         L.append(
-            f"| {r['unit']} | {r['n']} | {r['flagged']} | {r['rate']} | {r['wilson_lo']}-{r['wilson_hi']} |"
+            f"| {r['unit']} | {r['n']} | {r['flagged']} ({r['rate']}) | [{r['wilson_lo']}, {r['wilson_hi']}] "
+            f"| {r['flagged_excl_cannot_verify']} ({r['rate_excl_cannot_verify']}) | "
+            f"[{r['excl_wilson_lo']}, {r['excl_wilson_hi']}] |"
         )
     L += [
         "",
-        "## Catch rate (critical-error recall) per type",
+        "Flags on error-free records by check and reason code (cannot_verify = the rules cannot check "
+        "this value; it is not evidence of an error):",
         "",
-        "| level | condition | type | n | caught | rate | n_unique | unique caught | unique Wilson 95% CI |",
-        "|---|---|---|---|---|---|---|---|---|",
+        ", ".join(f"`{k}` {v}" for k, v in s["clean_flag_codes"].items()) or "(none)",
+        "",
+        "## Catch rate per planted type (unique mutations)",
+        "",
+        "`caught` = a flag on the injected field; `detected` = such a flag that is not cannot_verify and "
+        "is new compared with the error-free record; `to review` = any flag anywhere in the record.",
+        "",
+        "| level | condition | type | n_unique | caught at field [CI] | detected [CI] | to review [CI] | injections |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for r in s["catch_rates"]:
         L.append(
-            f"| {r['level']} | {r['condition']} | {r['type']} {r['type_name']} | {r['n']} | {r['caught']} | {r['rate']} | {r['n_unique']} | {r['unique_caught']} | {r['unique_wilson_lo']}-{r['unique_wilson_hi']} |"
+            f"| {r['level']} | {r['condition']} | {r['type']} {r['type_name']} | {r['n_unique']} | "
+            f"{_ci_txt(r, 'caught_at_field_unique', 'caught_at_field_wilson_lo', 'caught_at_field_wilson_hi')} | "
+            f"{_ci_txt(r, 'detected_unique', 'detected_wilson_lo', 'detected_wilson_hi')} | "
+            f"{_ci_txt(r, 'sent_to_review_unique', 'sent_to_review_wilson_lo', 'sent_to_review_wilson_hi')} | "
+            f"{r['n_injections']} |"
         )
     L += [
         "",
-        "Transcript level: `text_only` = what text-only checks can see when the ASR error is consistent with the record; "
-        "`with_second_transcript` = C7 compares against a second, correct transcript (an ASR cross-check). "
-        "Anything caught only in the second condition NEEDS an audio/ASR cross-check. C7 word-confidence was not "
-        "evaluated here: synthetic injections have no real confidences and inventing them would be circular.",
+        "## Per field (unique mutations)",
+        "",
+        "| level | condition | field | n_unique | caught at field [CI] | detected [CI] |",
+        "|---|---|---|---|---|---|",
+    ]
+    for r in s["per_field"]:
+        L.append(
+            f"| {r['level']} | {r['condition']} | {r['field']} | {r['n_unique']} | "
+            f"{_ci_txt(r, 'caught_at_field_unique', 'caught_at_field_wilson_lo', 'caught_at_field_wilson_hi')} | "
+            f"{_ci_txt(r, 'detected_unique', 'detected_wilson_lo', 'detected_wilson_hi')} |"
+        )
+    cov = s["drug_swap_coverage"]
+    L += [
+        "",
+        "## Conditions",
+        "",
+        *[f"- `{k}`: {v}" for k, v in s["conditions"].items()],
+        "",
+        f"Transcript level: `text_only` = detectable by text-only checks; anything caught only under `{ORACLE}` "
+        "NEEDS an audio/ASR cross-check, and that row is an UPPER BOUND (the second transcript is the "
+        "uncorrupted gold text). C7 word confidence was not evaluated: synthetic injections have no real "
+        "confidences and inventing them would be circular.",
+        "",
+        f"Drug swaps (type f) use only lexicon confusable pairs: {cov['items_whose_drug_has_no_lexicon_confusable_(never_swapped)']} "
+        f"of {cov['medication_items']} medication items have a drug with no listed confusable and are never swapped.",
+        "",
+        "Per check: `per_check.csv` (unique mutations where the check flagged at the field / detected / was "
+        "the only detector). Raw rows: `injection_results.jsonl`; logs: `injection_log_*.jsonl`.",
         "",
     ]
     return "\n".join(L)

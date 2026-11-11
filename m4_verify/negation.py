@@ -13,8 +13,14 @@ Rule ids (kept stable for reports):
   V-LLA stem+ಲ್ಲ casual negative, stem in VERB_STEMS (strong)
   SOFT-LLA  C+ಲ್ಲ on an unknown stem: counted as negation but marked soft (C8 flags it)
   C-YAAVUDE ಯಾವುದೇ ... ಇಲ್ಲ "not any" (relabels the ಇಲ್ಲ cue; counts once)
-Clause scope: split at ? ! ; । and at . , when followed by whitespace/end, and at the words
-ಆದರೆ ಮತ್ತು ಹಾಗೂ ಆದ್ದರಿಂದ. Turns are the lines of the transcript text ("\\n").
+  S-LVA     C+ಲ್ವಾ / C+ಲ್ವ colloquial NEGATIVE QUESTION (ಕುಡಿಯಲ್ವಾ? "won't (it) drink?"): soft, so
+            C8 always flags it (fix pass 2026-11-11, Kannada review finding l)
+Clause scope: split at ? ! ; । and at . , when followed by whitespace/end (but NOT at the dot
+of an abbreviation such as ಎಂ.ಜಿ. or ಡಾ.), at the words ಆದರೆ ಮತ್ತು ಹಾಗೂ ಆದ್ದರಿಂದ, and after a
+finite predicate (ಇದೆ, ಇಲ್ಲ, -ಿದೆ, -ಿಲ್ಲ ...) when another clause follows without punctuation
+("ಜ್ವರ ಇದೆ ಕೆಮ್ಮು ಇಲ್ಲ").
+Cross-turn answers: an answer word (ಇಲ್ಲ, ಇಲ್ರೀ, ಹೌದು, ಹೌದ್ರೀ ...) optionally followed by
+address words (ಅಕ್ಕ, ಸರ್, ಮೇಡಂ ...) as the first clause of a turn. Turns are the lines of the transcript text ("\\n").
 """
 
 from __future__ import annotations
@@ -33,6 +39,7 @@ STRONG_WHOLE = {
     "ಇಲ್ಲಾ": "W-ILLAA",
     "ಅಲ್ಲ": "W-ALLA",
     "ಬೇಡ": "W-BEDA",
+    "ಬೇಡಾ": "W-BEDA",  # spoken lengthened form (fix pass, finding k)
     "ಬೇಡಿ": "W-BEDI",
     "ಬಾರದು": "W-BAARADU",
     "ಕೂಡದು": "W-KOODADU",
@@ -43,12 +50,21 @@ STRONG_WHOLE = {
     "ಇಲ್ವಾ": "W-NEGQ",
     "ಇಲ್ವ": "W-NEGQ",
     "ಇಲ್ಲವ": "W-NEGQ",
+    "ಬೇಡವಾ": "W-NEGQ",  # "don't (you) want?" (fix pass, finding k)
+    "ಬೇಡವೇ": "W-NEGQ",
+    "ಬೇಡ್ವಾ": "W-NEGQ",
+    # polite / vocative forms of ಇಲ್ಲ (fix pass, finding k; dialect forms, low confidence)
+    "ಇಲ್ರೀ": "W-ILLA",
+    "ಇಲ್ರಿ": "W-ILLA",
+    "ಇಲ್ಲರೀ": "W-ILLA",
+    "ಇಲ್ಲಪ್ಪ": "W-ILLA",
+    "ಇಲ್ಲಮ್ಮ": "W-ILLA",
     # English inside code-switched Kannada
     "no": "EN-NOT",
     "not": "EN-NOT",
     "never": "EN-NOT",
 }
-NEG_QUESTION_RULES = {"W-NEGQ"}
+NEG_QUESTION_RULES = {"W-NEGQ", "S-LVA"}
 SUFFIX_RULES: list[tuple[str, regex.Pattern]] = [
     ("S-UDILLA", regex.compile(r"ುದಿಲ್ಲಾ?$")),
     ("S-ILLA", regex.compile(r"ಿಲ್ಲಾ?$")),
@@ -56,8 +72,11 @@ SUFFIX_RULES: list[tuple[str, regex.Pattern]] = [
     ("S-DIDRE", regex.compile(rf"{C}ದಿದ್ರೆ$")),
     ("S-BAARADU", regex.compile(r".ಬಾರದು$")),
     ("S-KOODADU", regex.compile(r".ಕೂಡದು$")),
-    ("S-BEDI", regex.compile(rf"{C}ಬೇಡಿ$")),
-    ("S-BEDA", regex.compile(rf"{C}ಬೇಡ$")),
+    # fused prohibitive: ANY letter or sign before ಬೇಡ(ಿ/ಾ), so the spoken contractions
+    # ತಗೋಬೇಡಿ (vowel sign) and ಕೊಡ್ಬೇಡಿ (virama) match too (fix pass, finding j).
+    # The whole tokens ಬೇಡ/ಬೇಡಿ/ಬೇಡಾ are W-* cues; ಬೇಡಿಕೆ ends in ಕೆ and cannot match.
+    ("S-BEDI", regex.compile(r".ಬೇಡಿ$")),
+    ("S-BEDA", regex.compile(r".ಬೇಡಾ?$")),
     # added after the negation audit (negation_audit.md):
     ("S-VALLA", regex.compile(r"ವಲ್ಲಾ?$")),  # noun + ಅಲ್ಲ fused: ರೋಗವಲ್ಲ, ಸಾಮಾನ್ಯವಲ್ಲ
     ("S-DIRU", regex.compile(rf"{C}ದಿರುವುದ[ುೂ]$")),  # negative verbal noun: ಬಾರದಿರುವುದು
@@ -76,13 +95,37 @@ VERB_STEMS = {
     "ನಿಲ್ಲಿಸ", "ಹಾಕ", "ಆಗ", "ನೋಡ", "ಹೇಳ", "ಕೇಳ", "ಬಳಸ", "ಸೇವಿಸ", "ಕುಡಿಸ",
 }  # fmt: skip
 SOFT_RE = regex.compile(rf"{C}ಲ್ಲಾ?$")
+LVA_RE = regex.compile(rf"{C}ಲ್ವಾ?$")  # ಕುಡಿಯಲ್ವಾ, ಬರಲ್ವ; ಅಲ್ವಾ/ಅಲ್ವ start with a vowel: no match
+SOFT_REASON = {
+    "SOFT-LLA": "casual -ಲ್ಲ on a stem not in the verb list",
+    "SOFT-ILLADA": "absence word ಇಲ್ಲದ/ಇಲ್ಲದೆ: scope unclear",
+    "S-LVA": "colloquial negative question -ಲ್ವಾ: polarity uncertain",
+}
 NOT_CUES = {"ಎಲ್ಲ", "ಎಲ್ಲಾ", "ಅಲ್ಲ"}  # ಅಲ್ಲ handled as W-ALLA before the soft rule
 CLAUSE_WORDS = {"ಆದರೆ", "ಮತ್ತು", "ಹಾಗೂ", "ಆದ್ದರಿಂದ"}
 COORD_WORDS = {"ಮತ್ತು", "ಹಾಗೂ", "ಇಲ್ಲವೇ", "ಇಲ್ಲವೆ"}
 ALWAYS_BOUNDARY = set("?!;।॥")
 SPACE_BOUNDARY = set(".,:")
-ANSWER_NEG = {"ಇಲ್ಲ", "ಇಲ್ಲಾ"}
-ANSWER_POS = {"ಹೌದು"}
+ANSWER_NEG = {"ಇಲ್ಲ", "ಇಲ್ಲಾ", "ಇಲ್ರೀ", "ಇಲ್ರಿ", "ಇಲ್ಲರೀ", "ಇಲ್ಲಪ್ಪ", "ಇಲ್ಲಮ್ಮ"}
+ANSWER_POS = {"ಹೌದು", "ಹೌದ್ರೀ", "ಹೌದ್ರಿ", "ಹೌದಪ್ಪ", "ಹೌದಮ್ಮ", "ಹೂಂ"}
+# address / politeness words that may follow a one-word answer ("ಇಲ್ಲ ಅಕ್ಕ", "ಹೌದು ಸರ್")
+ADDRESS_WORDS = {
+    "ಅಕ್ಕ", "ಅಮ್ಮ", "ಅಣ್ಣ", "ಅಪ್ಪ", "ಸರ್", "ಸಾರ್", "ಮೇಡಂ", "ಮೇಡಮ್", "ಡಾಕ್ಟರ್", "ಡಾಕ್ಟ್ರೇ",
+    "ಡಾಕ್ಟರೇ", "ರೀ", "ಸ್ವಾಮಿ", "sir", "madam", "doctor",
+}  # fmt: skip
+# finite predicates that END a clause when more words follow without punctuation (finding m)
+PREDICATE_WORDS = {"ಇದೆ", "ಇವೆ", "ಇತ್ತು"} | ANSWER_NEG
+PREDICATE_RE = regex.compile(r"(ಿದೆ|ಿಲ್ಲಾ?)$")  # ಬಂದಿದೆ, ಆಗಿದೆ, ಆಗಿಲ್ಲ, ಬರಲಿಲ್ಲ
+# ...unless the next word is a quotative, a tag question, "if/means" or an address word
+NO_SPLIT_BEFORE = {
+    "ಅಂತ", "ಅಂತಾ", "ಅಂತೆ", "ಎಂದು", "ಅಂದರು", "ಅಂದ್ರು", "ಎಂದರು", "ಅನ್ನೋದು", "ಅನ್ನುವುದು",
+    "ಅಂದ್ರೆ", "ಎಂದರೆ", "ಅಲ್ವಾ", "ಅಲ್ವ", "ಅಲ್ಲವಾ", "ಅಲ್ಲವೇ", "ತಾನೇ",
+} | ADDRESS_WORDS  # fmt: skip
+# abbreviation tokens: a "." after them is not a sentence end (finding o): ಎಂ.ಜಿ. ಡಾ. ಓ.ಆರ್.ಎಸ್.
+ABBREV_TOKENS = {
+    "ಡಾ", "dr", "ಶ್ರೀ", "ಎಂ", "ಜಿ", "ಎಲ್", "ಎಸ್", "ಆರ್", "ಓ", "ಒ", "ಡಿ", "ಬಿ", "ಸಿ", "ಕೆ", "ಪಿ",
+    "ಟಿ", "ಎನ್", "ಮಿ", "ಗ್ರಾ", "ಕಿ", "ಮೀ",
+}  # fmt: skip
 YAAVUDE = "ಯಾವುದೇ"
 
 
@@ -109,6 +152,8 @@ def classify_token(tok: str) -> Cue | None:
     for rid, rx in SUFFIX_RULES:
         if rx.search(tok):
             return Cue(rid, tok, 0, 0)
+    if LVA_RE.search(tok):
+        return Cue("S-LVA", tok, 0, 0, soft=True)
     if tok not in NOT_CUES and SOFT_RE.search(tok):
         stem = tok[:-4] if tok.endswith("ಲ್ಲಾ") else tok[:-3]
         if stem in VERB_STEMS:
@@ -173,6 +218,29 @@ class Polarity:
     clause_ids: list[int]
 
 
+def _is_predicate(tok: str) -> bool:
+    return tok in PREDICATE_WORDS or bool(PREDICATE_RE.search(tok))
+
+
+def _is_abbrev(tok: Token, text: str) -> bool:
+    """Is the "." right after tok the dot of an abbreviation?"""
+    if tok.text in ABBREV_TOKENS:
+        return True
+    return tok.start >= 2 and text[tok.start - 1] == "." and not text[tok.start - 2].isspace()
+
+
+def answer_of(cl: Clause) -> str | None:
+    """'negative' / 'affirmative' if the clause is a one-word answer (+ address words), else None."""
+    if not cl.toks or any(t.text not in ADDRESS_WORDS for t in cl.toks[1:]):
+        return None
+    w = cl.toks[0].text
+    if w in ANSWER_NEG:
+        return "negative"
+    if w in ANSWER_POS:
+        return "affirmative"
+    return None
+
+
 def _split_clauses(
     text: str, entity_tokens: frozenset[str]
 ) -> tuple[list[Clause], list[tuple[int, int]]]:
@@ -194,12 +262,14 @@ def _split_clauses(
                 clauses[-1].terminator += term
             cur = []
 
-        for t in toks:
+        for k_tok, t in enumerate(toks):
             gap = text[prev_end : t.start]
             punct = [ch for ch in gap if ch in ALWAYS_BOUNDARY or ch in SPACE_BOUNDARY]
             boundary = any(ch in ALWAYS_BOUNDARY for ch in gap) or (
                 any(ch in SPACE_BOUNDARY for ch in gap) and any(ch.isspace() for ch in gap)
             )
+            if boundary and cur and set(punct) == {"."} and _is_abbrev(cur[-1], text):
+                boundary = False  # the dot of ಎಂ.ಜಿ. / ಡಾ. is not a sentence end
             if boundary and cur:
                 close("".join(punct), "punct:" + "".join(punct))
             if t.text in OR_WORDS:
@@ -217,6 +287,17 @@ def _split_clauses(
                 continue
             cur.append(t)
             prev_end = t.end
+            nxt = toks[k_tok + 1] if k_tok + 1 < len(toks) else None
+            if (
+                nxt is not None
+                and _is_predicate(t.text)
+                and nxt.text not in NO_SPLIT_BEFORE
+                and nxt.text not in CLAUSE_WORDS
+                and not any(
+                    ch in ALWAYS_BOUNDARY or ch in SPACE_BOUNDARY for ch in text[t.end : nxt.start]
+                )
+            ):
+                close("", "pred:" + t.text)
         tail = text[prev_end : offset + len(line)]
         close("".join(ch for ch in tail if ch in ALWAYS_BOUNDARY or ch in SPACE_BOUNDARY), "turn")
         if len(clauses) > first_in_turn:
@@ -246,9 +327,8 @@ def _split_clauses(
             )
         for q in found:
             if q.soft:
-                c.ambiguities.append(
-                    f"soft cue '{q.token}' (casual -ಲ್ಲ on a stem not in the verb list); read as negation"
-                )
+                why = SOFT_REASON.get(q.rule_id, "soft cue")
+                c.ambiguities.append(f"soft cue '{q.token}' ({why}); read as negation")
 
     # coordination: a bare entity clause before ಮತ್ತು/ಹಾಗೂ/comma inherits the next clause's negation
     for i in range(len(clauses) - 2, -1, -1):
@@ -279,12 +359,7 @@ def _cross_turn(an: Analysis) -> None:
         if not cl:
             continue
         first = cl[0]
-        ans = None
-        if len(first.toks) == 1:
-            if first.toks[0].text in ANSWER_NEG:
-                ans = "negative"
-            elif first.toks[0].text in ANSWER_POS:
-                ans = "affirmative"
+        ans = answer_of(first)
         if ans is None:
             continue
         prev_q = [c for c in by_turn.get(ti - 1, []) if c.is_question] if ti > 0 else []

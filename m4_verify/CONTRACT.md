@@ -14,7 +14,7 @@
 | lexicon | m1 CSV columns (`generic_en, kn_primary, kn_variants, roman_variants, strengths_mg, adult_dose_range_mg, max_daily_mg, confusable_with, ...`) | default `data/lexicon/drugs.csv` if present, else `fixtures/lexicon/drugs_fixture.csv`; `MODE=mock` forces the fixture |
 | encounter index (optional) | JSON `{audio_id: patient_ref}` | enables the C6 patient-link check |
 | config | YAML, `m4_verify/config/default.yaml` | `disabled`, `c7_conf_threshold` (+ status), `allowed_units`, `allowed_units_by_drug`, `blank_range_fails_closed`, `lexicon_path` |
-| E4 gold | directory of `gold.v1` JSON or a JSONL | DEV only: paths with a `test` component are refused |
+| E4 gold | directory of `gold.v1` JSON or a JSONL | DEV only (m4_verify/split_guard.py): under data/ only ids in data/splits/dev.txt are opened; a test id, test family or test.lock hash is refused anywhere (exit 2) |
 
 ## Outputs (all under `results/m4_verify/`)
 
@@ -39,3 +39,14 @@ Every verdict produced is validated with `contracts.validate.validate_doc("verdi
 - `field_path` `/` = whole record; `/medications` = record-level omission flag.
 - `n/a` never means "checked and fine": read its reason (for example C7 without confidences, or
   C6 `/patient_ref` without an encounter index).
+- C4 flag reasons start with `<code> [<severity class>]: ` (fix pass 2026-11-11). Codes:
+  `span_mismatch`, `unit_not_allowed` (CR-ROUTE or CR-DOSE), `out_of_range`, `exceeds_max_daily`
+  (real violations) and `cannot_verify:{paediatric,no_range,not_in_lexicon,liquid_strength,count_unit}`
+  ("the rules cannot check this value", not evidence of an error; report them separately).
+  Parse with `m4_verify.checks.reason_code()` / `severity_class()`, or the regex
+  `^(check_error|[a-z_]+(?::[a-z_]+)?)(?: \[([A-Z]{2}-[A-Z-]+)\])?:`.
+- C7 with a second transcript flags `/` (summary) AND every item whose clause holds a difference.
+- `results/m4_verify/dev/` = E4 on m1 DEV gold (data/gold filtered by data/splits/dev.txt).
+- E4 `catch_rates.csv` keeps the old column names `n`, `caught`, `unique_caught` for m6_ui, but
+  since the fix pass they mean UNIQUE mutations and CAUGHT AT THE INJECTED FIELD (= `n_unique`,
+  `caught_at_field_unique`). `injection_results.jsonl` `caught` = `caught_at_field`.

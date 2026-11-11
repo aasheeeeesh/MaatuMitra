@@ -1,0 +1,323 @@
+{
+  "schema_version": "verdict.v1",
+  "record_id": "rec-m1-e4-006",
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "source_transcript_id matches the transcript audio_id",
+      "field_path": "/source_transcript_id"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/0/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/1/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/2/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/advice/0/evidence"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'salbutamol' re-derived from the span via the lexicon",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "dose 4 mg re-derived from the span",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'cefuroxime' re-derived from the span via the lexicon",
+      "field_path": "/medications/1/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "dose 500 mg re-derived from the span",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'prednisolone' re-derived from the span via the lexicon",
+      "field_path": "/medications/2/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "dose 1 tablet re-derived from the span",
+      "field_path": "/medications/2/dose_value"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "n/a",
+      "reason": "free-text value: its meaning cannot be re-derived by rules (human review; C3/C6 still apply)",
+      "field_path": "/advice/0/text"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/0/negated"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/1/negated"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/2/negated"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/advice/0/negated"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "cannot_verify:no_range [CR-DOSE]: no verified range for salbutamol in the lexicon (blank); fail-closed",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "pass",
+      "reason": "500 mg matches the span and lies in 250-1000 mg (adult range; no child cue in the conversation)",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "cannot_verify:count_unit [CR-DOSE]: no verified range for a dose in 'tablet' (lexicon ranges are in mg and the strength per unit was not stated); fail-closed",
+      "field_path": "/medications/2/dose_value"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "frequency 3 parsed from the span",
+      "field_path": "/medications/0/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "duration 5 parsed from the span",
+      "field_path": "/medications/0/duration_days"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "frequency 2 parsed from the span",
+      "field_path": "/medications/1/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "duration 7 parsed from the span",
+      "field_path": "/medications/1/duration_days"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "frequency 1 parsed from the span",
+      "field_path": "/medications/2/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "duration 5 parsed from the span",
+      "field_path": "/medications/2/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'salbutamol' is mentioned in its span",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "dose_value 4 occurs in the span",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "frequency_per_day 3 occurs in the span",
+      "field_path": "/medications/0/frequency_per_day"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "duration_days 5 occurs in the span",
+      "field_path": "/medications/0/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'cefuroxime' is mentioned in its span",
+      "field_path": "/medications/1/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "dose_value 500 occurs in the span",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "frequency_per_day 2 occurs in the span",
+      "field_path": "/medications/1/frequency_per_day"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "duration_days 7 occurs in the span",
+      "field_path": "/medications/1/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'prednisolone' is mentioned in its span",
+      "field_path": "/medications/2/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "dose_value 1 occurs in the span",
+      "field_path": "/medications/2/dose_value"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "frequency_per_day 1 occurs in the span",
+      "field_path": "/medications/2/frequency_per_day"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "duration_days 5 occurs in the span",
+      "field_path": "/medications/2/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "every number and drug in the text occurs in the span",
+      "field_path": "/advice/0/text"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "every lexicon drug mentioned in the transcript is in the record",
+      "field_path": "/medications"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "patient_ref matches the encounter index",
+      "field_path": "/patient_ref"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "n/a",
+      "reason": "no word confidences and no second transcript: ASR risk not assessable (limitation; a silently dropped negation is invisible here)",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/0"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/1"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/2"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/advice/0"
+    }
+  ],
+  "auto_acceptable": false,
+  "verifier_version": "m4_verify-1.0.0"
+}

@@ -62,7 +62,7 @@
       "check_id": "C4",
       "name": "dose-range",
       "status": "pass",
-      "reason": "500 mg matches the span and lies in 250-500 mg",
+      "reason": "500 mg matches the span and lies in 250-500 mg (adult range; no child cue in the conversation)",
       "field_path": "/medications/0/dose_value"
     },
     {

@@ -37,15 +37,18 @@ UNIT_TOKENS = {t for seq, _ in UNIT_SEQS for t in seq}
 
 # --------------------------------------------------------------------------- frequency / duration
 FREQ_MARK = {"ಬಾರಿ", "ಸಲ", "ಸಾರಿ", "times", "time"}
-PER_DAY = {"ದಿನಕ್ಕೆ", "ದಿನಾ", "ಪ್ರತಿದಿನ", "ದಿನವೂ", "ದಿನಾಲೂ", "daily", "day", "ದಿನಕ್ಕ"}
+PER_DAY = {"ದಿನಕ್ಕೆ", "ದಿವಸಕ್ಕೆ", "ದಿನಾ", "ಪ್ರತಿದಿನ", "ದಿನವೂ", "ದಿನಾಲೂ", "daily", "day", "ದಿನಕ್ಕ"}
 PER_WEEK = {"ವಾರಕ್ಕೆ", "week"}
 FREQ_WORDS = {"ಒಮ್ಮೆ": 1, "od": 1, "bd": 2, "bid": 2, "tds": 3, "tid": 3, "qid": 4}
 EN_FREQ = {"once": 1, "twice": 2, "thrice": 3}
 DAY_WORDS = {"ದಿನ", "ದಿನಗಳು", "ದಿನಗಳ", "ದಿನಗಳವರೆಗೆ", "ದಿನದವರೆಗೆ", "ದಿನಗಳ ಕಾಲ", "days", "day"}
+# colloquial ದಿವಸ (fix pass 2026-11-11: missing although the Kannada review assumed it; UNVERIFIED)
+DAY_WORDS |= {"ದಿವಸ", "ದಿವಸಗಳು", "ದಿವಸಗಳ", "ದಿವಸದವರೆಗೆ"}
 WEEK_WORDS = {"ವಾರ", "ವಾರಗಳು", "ವಾರಗಳ", "ವಾರದವರೆಗೆ", "ವಾರಗಳವರೆಗೆ", "week", "weeks"}
 MONTH_WORDS = {"ತಿಂಗಳು", "ತಿಂಗಳ", "month", "months"}
 # Words after a number that make it NOT a medication duration
 NOT_DURATION = {"ದಿನಕ್ಕೆ", "ದಿನದಿಂದ", "ದಿನದಲ್ಲಿ", "ದಿನಗಳಿಂದ", "ದಿನಗಳಲ್ಲಿ", "ವಾರದಿಂದ", "ವಾರದಲ್ಲಿ"}
+NOT_DURATION |= {"ದಿವಸಕ್ಕೆ", "ದಿವಸದಿಂದ", "ದಿವಸದಲ್ಲಿ", "ದಿವಸಗಳಿಂದ"}
 
 # --------------------------------------------------------------------------- symptoms
 # canonical English name -> spoken forms. Kannada forms match as token PREFIXES (inflection),
@@ -71,6 +74,62 @@ SYMPTOM_SEQS: list[tuple[tuple[str, ...], str]] = sorted(
     ((tuple(token_texts(f)), name) for name, forms in SYMPTOMS.items() for f in forms),
     key=lambda x: -len(x[0]),
 )
+# --------------------------------------------------------------------------- child cues (C4)
+# A dose for a child is weight/age-based: the adult lexicon range does not apply, so C4 flags it
+# "cannot_verify:paediatric" (clinical review M4-C1, D-91). Kannada forms match as token PREFIXES
+# (ಮಗು -> ಮಗುವಿಗೆ, ಮಗುವಿನ). AI-written, UNVERIFIED, not native-validated. ಮಗ / ಮಗಳು (son /
+# daughter) are NOT cues: an adult son is common; this is a documented gap.
+CHILD_PREFIXES_KN = ("ಮಗು", "ಮಗೂ", "ಮಕ್ಕಳ", "ಕೂಸ", "ಶಿಶು", "ಪಾಪು", "ಹಸುಗೂಸ")
+CHILD_WORDS_EN = {
+    "child", "children", "baby", "babies", "infant", "infants", "kid", "kids", "toddler",
+    "paediatric", "pediatric", "newborn",
+}  # fmt: skip
+
+
+def child_cues(text: str) -> list[str]:
+    """Tokens of text that say the patient is a child (see CHILD_PREFIXES_KN)."""
+    out = []
+    for t in token_texts(text):
+        if t in CHILD_WORDS_EN or any(t.startswith(p) for p in CHILD_PREFIXES_KN):
+            out.append(t)
+    return out
+
+
+# --------------------------------------------------------------------------- dosage forms -> units
+# The drug CSV has no unit column (contract gap). Where the lexicon's verified_by note names the
+# dosage form (copied by m1 from NLEM / WHO pages it fetched), we derive the allowed units from it.
+# Everything else falls back to the m4 config table / default (config.py). Mass units (mg, g, mcg)
+# always go together: the range check then catches an absurd value.
+MASS_UNITS = ("mg", "g", "mcg")
+
+
+def units_from_note(note: str) -> tuple[tuple[str, ...], bool] | None:
+    """(allowed units, injection_only) derived from a lexicon note, or None if it names no form."""
+    n = note.casefold()
+    units: list[str] = []
+    oral = False
+    if "tablet" in n:
+        units += [*MASS_UNITS, "tablet"]
+        oral = True
+    if "capsule" in n:
+        units += [*MASS_UNITS, "capsule"]
+        oral = True
+    if "syrup" in n or "suspension" in n:
+        units += [*MASS_UNITS, "ml"]
+        oral = True
+    if "sachet" in n:
+        units += ["sachet", "ml"]
+        oral = True
+    injection = "injection" in n
+    if injection:
+        units += list(MASS_UNITS)
+    if "never mg" in n:
+        units = [u for u in units if u not in MASS_UNITS]
+    if not units:
+        return None
+    return tuple(dict.fromkeys(units)), injection and not oral
+
+
 # Neutral words that may stand next to an entity in a bare noun phrase ("ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್")
 NP_FILLERS = {"ಸಿರಪ್", "syrup", "ಔಷಧಿ", "ಔಷಧ", "ಮದ್ದು", "ಇಂಜೆಕ್ಷನ್", "injection"}
 

@@ -1,0 +1,197 @@
+{
+  "schema_version": "verdict.v1",
+  "record_id": "rec-m1-g7-013",
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "source_transcript_id matches the transcript audio_id",
+      "field_path": "/source_transcript_id"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/0/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/1/evidence"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'ceftriaxone' re-derived from the span via the lexicon",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "dose 1000 mg re-derived from the span",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'paracetamol' re-derived from the span via the lexicon",
+      "field_path": "/medications/1/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "dose 1 tablet re-derived from the span",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/0/negated"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/1/negated"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "cannot_verify:no_range [CR-DOSE]: no verified range for ceftriaxone in the lexicon (blank); fail-closed",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "cannot_verify:count_unit [CR-DOSE]: no verified range for a dose in 'tablet' (lexicon ranges are in mg and the strength per unit was not stated); fail-closed",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "frequency 1 parsed from the span",
+      "field_path": "/medications/0/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "duration 5 parsed from the span",
+      "field_path": "/medications/0/duration_days"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "frequency 4 parsed from the span",
+      "field_path": "/medications/1/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "no duration in record and none stated in the span",
+      "field_path": "/medications/1/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'ceftriaxone' is mentioned in its span",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "dose_value 1000 occurs in the span",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "frequency_per_day 1 occurs in the span",
+      "field_path": "/medications/0/frequency_per_day"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "duration_days 5 occurs in the span",
+      "field_path": "/medications/0/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'paracetamol' is mentioned in its span",
+      "field_path": "/medications/1/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "dose_value 1 occurs in the span",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "frequency_per_day 4 occurs in the span",
+      "field_path": "/medications/1/frequency_per_day"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "every lexicon drug mentioned in the transcript is in the record",
+      "field_path": "/medications"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "patient_ref matches the encounter index",
+      "field_path": "/patient_ref"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "n/a",
+      "reason": "no word confidences and no second transcript: ASR risk not assessable (limitation; a silently dropped negation is invisible here)",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/0"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/1"
+    }
+  ],
+  "auto_acceptable": false,
+  "verifier_version": "m4_verify-1.0.0"
+}

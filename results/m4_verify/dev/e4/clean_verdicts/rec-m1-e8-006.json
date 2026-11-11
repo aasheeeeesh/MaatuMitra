@@ -1,0 +1,260 @@
+{
+  "schema_version": "verdict.v1",
+  "record_id": "rec-m1-e8-006",
+  "checks": [
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "source_transcript_id matches the transcript audio_id",
+      "field_path": "/source_transcript_id"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/symptoms/0/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/symptoms/1/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/0/evidence"
+    },
+    {
+      "check_id": "C1",
+      "name": "span-exists",
+      "status": "pass",
+      "reason": "span text found at the stated offsets (NFC)",
+      "field_path": "/medications/1/evidence"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "symptom 'vomiting' re-derived from the span",
+      "field_path": "/symptoms/0/name"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "symptom 'fever' re-derived from the span",
+      "field_path": "/symptoms/1/name"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'ors' re-derived from the span via the lexicon",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "no dose in record and none stated in the span",
+      "field_path": "/medications/0/dose_value"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "drug 'paracetamol' re-derived from the span via the lexicon",
+      "field_path": "/medications/1/drug"
+    },
+    {
+      "check_id": "C2",
+      "name": "span-supports-value",
+      "status": "pass",
+      "reason": "dose 10 ml re-derived from the span",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/symptoms/0/present"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/symptoms/1/present"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/0/negated"
+    },
+    {
+      "check_id": "C3",
+      "name": "negation-consistency",
+      "status": "pass",
+      "reason": "negation state agrees (not negated; cues: none)",
+      "field_path": "/medications/1/negated"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "n/a",
+      "reason": "no dose stated",
+      "field_path": "/medications/0"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "cannot_verify:paediatric [CR-PAEDIATRIC]: child cue in the conversation (ಮಗುವಿಗೆ): a child's dose is weight/age-based and the adult lexicon range does not apply; not checkable by rules, a clinician must check it",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C4",
+      "name": "dose-range",
+      "status": "flag",
+      "reason": "cannot_verify:liquid_strength [CR-LIQUID-STRENGTH]: no verified range for a dose in ml: the lexicon has no mg-per-5 ml strength for this liquid; fail-closed",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "no frequency in record and none stated in the span",
+      "field_path": "/medications/0/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "no duration in record and none stated in the span",
+      "field_path": "/medications/0/duration_days"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "frequency 4 parsed from the span",
+      "field_path": "/medications/1/frequency_per_day"
+    },
+    {
+      "check_id": "C5",
+      "name": "frequency-duration-parse",
+      "status": "pass",
+      "reason": "duration 3 parsed from the span",
+      "field_path": "/medications/1/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "symptom 'vomiting' occurs in its span",
+      "field_path": "/symptoms/0/name"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "symptom 'fever' occurs in its span",
+      "field_path": "/symptoms/1/name"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'ors' is mentioned in its span",
+      "field_path": "/medications/0/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "drug 'paracetamol' is mentioned in its span",
+      "field_path": "/medications/1/drug"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "dose_value 10 occurs in the span",
+      "field_path": "/medications/1/dose_value"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "frequency_per_day 4 occurs in the span",
+      "field_path": "/medications/1/frequency_per_day"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "duration_days 3 occurs in the span",
+      "field_path": "/medications/1/duration_days"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "every lexicon drug mentioned in the transcript is in the record",
+      "field_path": "/medications"
+    },
+    {
+      "check_id": "C6",
+      "name": "unsupported-addition",
+      "status": "pass",
+      "reason": "patient_ref matches the encounter index",
+      "field_path": "/patient_ref"
+    },
+    {
+      "check_id": "C7",
+      "name": "asr-risk",
+      "status": "n/a",
+      "reason": "no word confidences and no second transcript: ASR risk not assessable (limitation; a silently dropped negation is invisible here)",
+      "field_path": "/"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/symptoms/0"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/symptoms/1"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/0"
+    },
+    {
+      "check_id": "C8",
+      "name": "ambiguity",
+      "status": "pass",
+      "reason": "no ambiguity found (soft cue, double cue, unresolved answer, conflicting numbers)",
+      "field_path": "/medications/1"
+    }
+  ],
+  "auto_acceptable": false,
+  "verifier_version": "m4_verify-1.0.0"
+}

@@ -5,6 +5,7 @@
                                     [--encounter-index index.json] [--out verdict.json]
   MODE=mock uv run python -m m4_verify mock [--out-dir results/m4_verify]
   uv run python -m m4_verify e4 [--gold-dir DIR_OR_JSONL] [--lexicon CSV] [--n 200] [--seed N] [--out-dir DIR]
+      (DEV only: under data/ only ids in data/splits/dev.txt are opened; test data -> exit 2)
   uv run python -m m4_verify audit --sentences FILE.txt      (prints negation matches per line)
   uv run python -m m4_verify tune-c7 --pairs DEV_PAIRS.jsonl  (DEV only; see tune_c7.py)
 
@@ -127,12 +128,17 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "e4":
         from m4_verify.evaluate import run_e4
         from m4_verify.lexicon import load_lexicon
+        from m4_verify.split_guard import SplitGuardError, SplitRefused
 
         cfg = _cfg(args)
         lex = load_lexicon(cfg.lexicon_path) if cfg.lexicon_path else cfg.lexicon()
-        s = run_e4(
-            Path(args.gold_dir), lex, cfg, Path(args.out_dir), n_per_type=args.n, seed=args.seed
-        )
+        try:
+            s = run_e4(
+                Path(args.gold_dir), lex, cfg, Path(args.out_dir), n_per_type=args.n, seed=args.seed
+            )
+        except (SplitRefused, SplitGuardError) as ex:
+            print(f"error: {ex}", file=sys.stderr)
+            return 2
         _print_e4(s)
         return 1 if s["verdict_validation_errors"] else 0
 
@@ -149,21 +155,41 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.cmd == "tune-c7":
+        from m4_verify.split_guard import SplitGuardError, SplitRefused
         from m4_verify.tune_c7 import main as tune_main
 
-        return tune_main(args.pairs, args.max_flag_rate)
+        try:
+            return tune_main(args.pairs, args.max_flag_rate)
+        except (SplitRefused, SplitGuardError) as ex:
+            print(f"error: {ex}", file=sys.stderr)
+            return 2
     return 2
 
 
 def _print_e4(s: dict) -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
+    gl = s["gold_load"]
     print(
-        f"e4: {s['n_gold_conversations']} gold conversations from {s['gold_source']}; verdicts validated={s['verdicts_validated']} errors={len(s['verdict_validation_errors'])}"
+        f"e4: {gl['n_loaded']} gold conversations from {s['gold_source']} "
+        f"({gl['skipped_not_in_dev_txt_never_opened']} not in dev.txt, never opened); seed {s['seed']}; "
+        f"verdicts validated={s['verdicts_validated']} errors={len(s['verdict_validation_errors'])}"
     )
     for r in s["clean_flag_rate"]:
-        print(f"  clean {r['unit']}: {r['flagged']}/{r['n']} flagged")
+        print(
+            f"  review burden ({r['unit']}s, error-free): {r['flagged']}/{r['n']} flagged "
+            f"[{r['wilson_lo']}, {r['wilson_hi']}]; excl. cannot_verify "
+            f"{r['flagged_excl_cannot_verify']}/{r['n']} [{r['excl_wilson_lo']}, {r['excl_wilson_hi']}]"
+        )
+    print(
+        "  UNIQUE mutations; caught = flag on the injected field; detected = new, not cannot_verify"
+    )
     for r in s["catch_rates"]:
         print(
-            f"  {r['level']:<10} {r['condition']:<22} {r['type']} {r['type_name']:<24} caught {r['caught']}/{r['n']} (unique {r['unique_caught']}/{r['n_unique']})"
+            f"  {r['level']:<10} {r['condition']:<36} {r['type']} {r['type_name']:<24} "
+            f"caught {r['caught_at_field_unique']}/{r['n_unique']} "
+            f"[{r['caught_at_field_wilson_lo']}, {r['caught_at_field_wilson_hi']}] "
+            f"detected {r['detected_unique']}/{r['n_unique']} "
+            f"[{r['detected_wilson_lo']}, {r['detected_wilson_hi']}]"
         )
 
 

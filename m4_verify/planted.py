@@ -2,7 +2,8 @@
 
 Types (PROJECT_BRIEF AGENT 5 step 4):
   a negation drop   b negation add   c digit change   d digit-order swap   e unit change
-  f drug swap (confusable from the lexicon)   g frequency swap   h duration swap   i wrong patient_ref
+  f drug swap (confusable from the lexicon, either direction; NO random fallback)
+  g frequency swap   h duration swap   i wrong patient_ref
 
 RECORD level (tests the verifier): the gold-derived record is mutated; the transcript stays the
 gold transcript. TRANSCRIPT level (simulates an ASR error): the transcript TEXT is mutated and the
@@ -11,15 +12,15 @@ transcript agree with each other. Text-only checks can then only catch it indire
 omission, ambiguity); the second-transcript condition of C7 shows what an ASR cross-check adds.
 Type i has no transcript-level version (a patient link is not spoken audio).
 
-Source gold: a directory of gold.v1 JSON files or a gold.v1 JSONL file. DEV ONLY: any path with a
-"test" component is refused (refuse_test_split). Duplicated mutations are NOT independent trials;
+Source gold: a directory of gold.v1 JSON files or a gold.v1 JSONL file. DEV ONLY through
+m4_verify/split_guard.py: under data/ only ids in data/splits/dev.txt are opened; a test id, test
+family or test.lock hash is refused anywhere (M4-1 fix). Duplicated mutations are NOT independent trials;
 each injection carries `unique_key` so reports can show unique counts next to N.
 """
 
 from __future__ import annotations
 
 import copy
-import json
 import random
 from pathlib import Path
 from typing import Any
@@ -27,8 +28,9 @@ from typing import Any
 import regex
 
 from m4_verify.lexicon import Lexicon, parse_durations, parse_frequencies
-from m4_verify.negation import analyze, span_polarity
+from m4_verify.negation import analyze, answer_of, span_polarity
 from m4_verify.numbers import parse_numbers
+from m4_verify.split_guard import load_gold
 from m4_verify.textnorm import KN_DIGITS, tokens
 
 TYPES = {
@@ -59,39 +61,13 @@ KN_NUM_WORDS = {
     14: "ಹದಿನಾಲ್ಕು",
 }
 ASCII_TO_KN = {v: k for k, v in KN_DIGITS.items()}
-TEST_COMPONENT = regex.compile(r"(^|[_.\-])test([_.\-]|$)", regex.IGNORECASE)
 
 
 # --------------------------------------------------------------------------- inputs
-def refuse_test_split(path: str | Path) -> None:
-    """Raise if the path looks like TEST-split data (PROJECT_BRIEF 6.5: tune/evaluate on DEV only)."""
-    p = Path(path).resolve()
-    root = Path(__file__).resolve().parents[1]
-    try:
-        parts = p.relative_to(root).parts
-    except ValueError:
-        parts = p.parts
-    for part in parts:
-        if TEST_COMPONENT.search(part):
-            raise ValueError(f"refusing to read '{path}': looks like TEST-split data (DEV only)")
-
-
 def load_gold_dir(path: str | Path, ids: set[str] | None = None) -> list[dict[str, Any]]:
-    refuse_test_split(path)
-    p = Path(path)
-    docs: list[dict[str, Any]] = []
-    if p.is_dir():
-        for f in sorted(p.glob("*.json")):
-            docs.append(json.loads(f.read_text(encoding="utf-8")))
-        for f in sorted(p.glob("*.jsonl")):
-            refuse_test_split(f)
-            docs += [json.loads(x) for x in f.read_text(encoding="utf-8").splitlines() if x.strip()]
-    else:
-        docs = [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
-    docs = [d for d in docs if d.get("schema_version") == "gold.v1"]
-    if ids is not None:
-        docs = [d for d in docs if d["conversation_id"] in ids]
-    return sorted(docs, key=lambda d: d["conversation_id"])
+    """DEV-only gold loader: see m4_verify/split_guard.py (allow-list on data/splits/dev.txt;
+    test ids, test families and test.lock hashes are refused everywhere)."""
+    return load_gold(path, ids=ids).docs
 
 
 def _words(text: str) -> list[dict[str, Any]]:
@@ -225,7 +201,7 @@ def _digit_swap(v: float, rng: random.Random, lim: float) -> float | None:
 LIMITS = {"dose_value": 1e7, "frequency_per_day": 24, "duration_days": 365}
 
 
-def _record_candidates(t: str, rec: dict) -> list[str]:
+def _record_candidates(t: str, rec: dict, lex: Lexicon | None = None) -> list[str]:
     c = []
     for path, kind, it in _items(rec):
         if t in "ab":
@@ -243,7 +219,7 @@ def _record_candidates(t: str, rec: dict) -> list[str]:
                         c.append(f"{path}/{f}")
             elif t == "e" and it["dose_unit"] is not None:
                 c.append(f"{path}/dose_unit")
-            elif t == "f":
+            elif t == "f" and (lex is None or confusables(it["drug"], lex)):
                 c.append(f"{path}/drug")
             elif t == "g" and it["frequency_per_day"] is not None:
                 c.append(f"{path}/frequency_per_day")
@@ -254,20 +230,25 @@ def _record_candidates(t: str, rec: dict) -> list[str]:
     return c
 
 
-def _swap_drug(
-    drug: str, lex: Lexicon, rng: random.Random, need_in_lexicon: bool
-) -> tuple[str, str] | None:
-    conf = (
-        [d for d in lex.drugs.get(drug, None).confusable if d != drug] if drug in lex.drugs else []
-    )
-    if need_in_lexicon:
-        conf = [d for d in conf if d in lex.drugs]
-    if conf:
-        return rng.choice(conf), "confusable_with from the lexicon"
-    others = sorted(d for d in lex.drugs if d != drug)
-    if not others:
+def confusables(drug: str, lex: Lexicon) -> list[str]:
+    """Lexicon drugs listed as confusable with `drug`, in EITHER direction (A lists B, or B
+    lists A). Names outside the lexicon (prednisone, fomepizole, ...) are dropped: swapping to them
+    would be caught trivially as "not in lexicon" (clinical review M4-M4)."""
+    out = set()
+    d = lex.drugs.get(drug)
+    if d is not None:
+        out |= {c for c in d.confusable if c in lex.drugs and c != drug}
+    out |= {g for g, x in lex.drugs.items() if drug in x.confusable and g != drug}
+    return sorted(out)
+
+
+def _swap_drug(drug: str, lex: Lexicon, rng: random.Random) -> tuple[str, str] | None:
+    """Pick a confusable drug from the lexicon. No random fallback: a drug without a listed
+    confusable is not swapped (the count of such items is reported as a coverage limit)."""
+    conf = confusables(drug, lex)
+    if not conf:
         return None
-    return rng.choice(others), "FALLBACK: no confusable listed; another lexicon drug"
+    return rng.choice(conf), "confusable_with (lexicon, either direction)"
 
 
 def _mutate_value(
@@ -283,7 +264,7 @@ def _mutate_value(
     if t == "e":
         return rng.choice([u for u in UNITS if u != before]), ""
     if t == "f":
-        r = _swap_drug(before, lex, rng, need_in_lexicon=False)
+        r = _swap_drug(before, lex, rng)
         return (r[0], r[1]) if r else (None, "")
     if t == "g":
         return rng.choice([f for f in FREQS if f != before]), ""
@@ -303,7 +284,9 @@ def generate_record_level(
     out: list[dict] = []
     for t in TYPES:
         rng = random.Random(f"{seed}-record-{t}")  # noqa: S311 (deterministic seeded sampling, not crypto)
-        cands = [(k, p) for k, (_, rec) in enumerate(pairs) for p in _record_candidates(t, rec)]
+        cands = [
+            (k, p) for k, (_, rec) in enumerate(pairs) for p in _record_candidates(t, rec, lex)
+        ]
         if not cands:
             continue
         made = attempts = 0
@@ -399,13 +382,9 @@ def _negation_drop_edit(text: str, cs: int, ce: int) -> tuple[int, int, str, str
     if pol.cross_turn == "negative":
         # the bare answer token in the next turn
         for c in an.clauses:
-            if (
-                c.idx > max(pol.clause_ids)
-                and len(c.toks) == 1
-                and c.toks[0].text in ("ಇಲ್ಲ", "ಇಲ್ಲಾ")
-            ):
+            if c.idx > max(pol.clause_ids) and answer_of(c) == "negative":
                 tk = c.toks[0]
-                return tk.start, tk.end, "ಹೌದು", "bare answer ಇಲ್ಲ -> ಹೌದು"
+                return tk.start, tk.end, "ಹೌದು", f"bare answer {tk.text} -> ಹೌದು"
         return None
     if not pol.cues:
         return None
@@ -449,10 +428,10 @@ def _surface_digits(text: str, a: int, b: int, value: float) -> str:
     return s
 
 
-def _transcript_candidates(t: str, rec: dict) -> list[str]:
+def _transcript_candidates(t: str, rec: dict, lex: Lexicon | None = None) -> list[str]:
     if t == "i":
         return []
-    return _record_candidates(t, rec)
+    return _record_candidates(t, rec, lex)
 
 
 def _transcript_edit(t: str, path: str, tr: dict, rec: dict, lex: Lexicon, rng: random.Random):
@@ -508,7 +487,7 @@ def _transcript_edit(t: str, path: str, tr: dict, rec: dict, lex: Lexicon, rng: 
         return (a, b, rep, f"'{text[a:b]}' -> '{rep}'"), after
     if t == "f":
         mentions = [(d, a, b) for d, a, b in lex.drugs_in(span) if d == before]
-        r = _swap_drug(before, lex, rng, need_in_lexicon=True)
+        r = _swap_drug(before, lex, rng)
         if not mentions or not r:
             return None
         _, a, b = mentions[0]
@@ -543,7 +522,9 @@ def generate_transcript_level(
         if t == "i":
             continue
         rng = random.Random(f"{seed}-transcript-{t}")  # noqa: S311 (deterministic seeded sampling, not crypto)
-        cands = [(k, p) for k, (_, rec) in enumerate(pairs) for p in _transcript_candidates(t, rec)]
+        cands = [
+            (k, p) for k, (_, rec) in enumerate(pairs) for p in _transcript_candidates(t, rec, lex)
+        ]
         if not cands:
             continue
         made = attempts = 0

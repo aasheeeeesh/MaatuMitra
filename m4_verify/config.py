@@ -21,9 +21,13 @@ CHECK_IDS = tuple(f"C{i}" for i in range(1, 9))
 VERIFIER_VERSION = "m4_verify-1.0.0"
 
 # The lexicon has no "allowed units" column (contract gap, see handoff/open_questions.md).
-# Default: oral-dose units are allowed for every drug; IU and drops are not. Per-drug
-# overrides go in the YAML (allowed_units_by_drug).
-DEFAULT_ALLOWED_UNITS = ("mg", "g", "mcg", "ml", "tablet", "capsule", "sachet", "teaspoon")
+# Allowed units per drug, first match wins (clinical review M4-M3, fix pass 2026-11-11):
+#   1. the m4 config table `allowed_units_by_drug` (YAML, each row documented there);
+#   2. units derived from the dosage form named in the lexicon's verified_by note
+#      (lexicon.units_from_note: tablet, capsule, syrup, sachet, powder for injection);
+#   3. this default: solid oral forms only. ml, sachet and teaspoon are NOT allowed by default
+#      (a liquid needs a known strength), nor IU or drops.
+DEFAULT_ALLOWED_UNITS = ("mg", "g", "mcg", "tablet", "capsule")
 
 
 def default_lexicon_path() -> Path:
@@ -48,8 +52,27 @@ class Config:
 
         return load_lexicon(self.lexicon_path or default_lexicon_path())
 
-    def units_for(self, drug: str) -> tuple[str, ...]:
-        return self.allowed_units_by_drug.get(drug, self.allowed_units)
+    def _units(self, drug: str, lex=None) -> tuple[tuple[str, ...], str, bool]:
+        from m4_verify.lexicon import units_from_note
+
+        if drug in self.allowed_units_by_drug:
+            return self.allowed_units_by_drug[drug], "m4 config table allowed_units_by_drug", False
+        d = lex.drugs.get(drug) if lex is not None else None
+        got = units_from_note(d.verified_by) if d is not None else None
+        if got is not None:
+            return got[0], "lexicon verified_by note (dosage form)", got[1]
+        return self.allowed_units, "m4 default allowed_units (UNVERIFIED)", False
+
+    def units_for(self, drug: str, lex=None) -> tuple[str, ...]:
+        """Allowed dose units for a drug (see DEFAULT_ALLOWED_UNITS for the order of sources)."""
+        return self._units(drug, lex)[0]
+
+    def units_source(self, drug: str, lex=None) -> str:
+        return self._units(drug, lex)[1]
+
+    def injection_only(self, drug: str, lex=None) -> bool:
+        """True if the lexicon note names only an injection form (route check, CR-ROUTE)."""
+        return self._units(drug, lex)[2]
 
 
 def _check_ids(ids) -> frozenset[str]:

@@ -1,0 +1,11 @@
+- **Allow-list**: a list of the things that ARE allowed (here: the dev conversation ids in data/splits/dev.txt); anything not on it is refused. Safer than a deny-list, which only refuses what it already knows about.
+- **Field-level attribution**: counting a planted error as "caught" only when a flag points at the exact field that was changed (or its item), not when some unrelated flag anywhere in the record happens to fire.
+- **Detected (E4)**: a stricter "caught": the flag on the changed field is a real-violation flag (not "cannot verify") and it was not already there on the error-free version of the same record.
+- **cannot_verify**: a verifier reason code meaning "the rules cannot check this value" (for example a child's dose, or a drug with no dose range in our list). It sends the item to a human but is NOT evidence that the value is wrong.
+- **Oracle second transcript**: a second transcript that is known to be correct (here: the uncorrupted gold text). Results that use it are an upper bound: a real second speech-recognition output has its own mistakes.
+- **Upper bound**: the best a method could possibly do under ideal conditions; real results will be the same or worse.
+- **Unique mutation**: one distinct planted change (same conversation, same field, same new value). Repeating it 50 times does not give 50 independent trials, so confidence intervals use the unique count.
+- **Confusable drug**: a drug whose name looks or sounds like another one (for example ciprofloxacin and levofloxacin), so it could be swapped by mistake.
+- **Reason code**: a short machine-readable label at the start of a verifier flag (for example `out_of_range [CR-DOSE]:`), so reports can count kinds of flags.
+- **Finite predicate**: the verb that ends a Kannada clause (for example ಇದೆ "is there", ಇಲ್ಲ "is not"). A new clause can start right after it even without a comma.
+- **Negative question**: a question asked in the negative ("won't you drink?", ಕುಡಿಯಲ್ವಾ?). A yes/no answer to it is hard to read, so the verifier flags it.
