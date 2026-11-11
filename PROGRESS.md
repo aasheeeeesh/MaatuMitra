@@ -18,7 +18,7 @@ Status values: todo / in-progress / done / blocked.
 | B1r | B | m1 reviews + fixes + gate | done (3 reviews D-90,D-91,D-93; fix pass + REFREEZE-1 D-104..D-110) | 2026-11-10 | 66ff51a |
 | B4 | B | m4_verify build + reviews + gate | done (fix pass D-111..D-116; M4-1 guard fixed; E4 dev rerun) | 2026-11-11 | 36d203a |
 | B2 | B | m2_asr build + reviews + gate | todo | | |
-| B3 | B | m3_extract build + reviews + gate | in-progress (fix pass done D-117..D-121; clinical review pending) | 2026-11-11 | (this commit) |
+| B3 | B | m3_extract build + reviews + gate | in-progress (fix pass done D-117..D-121; clinical review pending) | 2026-11-11 | 18bb537 |
 | B5 | B | m5_backend build + reviews + gate | done (fix pass verified D-103; open: m4 wiring + m6 adapt in Phase C) | 2026-11-10 | 4f3c5ad |
 | B6 | B | m6_ui build + reviews + gate | in-progress (built; reviews pending: kannada, security) | 2026-11-10 | 67b2234 |
 | B7 | B | m7_eval build + reviews + gate | todo | | |
