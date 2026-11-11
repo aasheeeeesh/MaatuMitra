@@ -258,6 +258,9 @@
 | D-119 | Phase B fix pass / m3_extract | Accept both ORS spellings, ಓ.ಆರ್.ಎಸ್ (data) and ಒ.ಆರ್.ಎಸ್ (ASR) | done | Option 2. |
 | D-120 | Phase B fix pass / m3_extract | Rescore on REFREEZE-1 data, child syrup in ml, honest labels, LLM comparison marked STALE | partly done | Option 2 for the LLM; rescore the rules on all 328 DEV conversations. |
 | D-121 | Phase B / m3_extract | m3 fix pass checked by the orchestrator; dev numbers are in-sample only | done | Option 2. |
+| D-122 | Phase B / m3_extract | Clinical review of m3: the record format cannot hold route, liquid strength or "past vs prescribed" | planned | Option 2 for the critical items and the clearly structural majors; everything else disclosed. Until the bump, every m... |
+| D-123 | Phase B / m6_ui | Security audit of m6: role is only a click, and live mode can save a record the reviewer never saw | planned | Option 2, with these findings as acceptance tests for that pass. |
+| D-124 | Phase B / m6_ui | Kannada review of the m6 screen text: 12 wording fixes, and no text yet for the new safety flags | planned | Option 2, fixed in the same Phase C m6 pass as the security findings. |
 <!-- INDEX-END -->` and `<!-- ENTRIES-END -->` in this file must stay.
 - Status: done
 
@@ -1649,6 +1652,39 @@
 - What else could be done: Rerun the LLM comparison with `mingw32-make m3-run-llm-dev` before the final report; use cluster (per-template) bootstrap intervals in m7.
 - How to change this decision later: m3_extract/rules.py and phrase files; re-score dev; never tune on test.
 - Status: done
+
+### D-122: Clinical review of m3: the record format cannot hold route, liquid strength or "past vs prescribed"   (Phase B / m3_extract / orchestrator / 2026-11-11)
+- What we needed to decide: The simulated clinical reviewer (reviews/m3_extract/2026-11-11-clinical.md, label ai_simulated_review; Sonnet per D-65) found 3 critical, 8 major and 4 minor problems. Most come from the record format (record.v1), not from m3's rules. Where do we fix them?
+- Options we considered: (1) Patch m3 only. Pro: small. Con: m3 cannot output a field the contract does not have (route, strength), so the critical gaps stay. (2) A contract bump to record.v2 by the architect, then m3, m4, m5, m6 and the scorer follow. Pro: fixes the root cause. Con: touches every module; costs one architect run and small follow-ups. (3) Do nothing now and list them as limitations. Pro: free. Con: "0 critical" on dev would hide error kinds the scorer cannot even see.
+- What we chose: Option 2 for the critical items and the clearly structural majors; everything else disclosed. Until the bump, every m3 number must say the scorer cannot produce CR-ROUTE, CR-PAEDIATRIC or CR-LIQUID-STRENGTH.
+- Why: A record that says "ceftriaxone 1000 mg" without "injection", or "10 ml" without the syrup strength, can mislead a prescriber; a missing field is a safety gap, not a style issue.
+- What we actually did: Validated the report (valid review_report.v1) and confirmed the human clinical sheet only gained rows. Accepted for record.v2 (architect, start of Phase C, before m7): route; liquid strength (mg per 5 ml) and patient age band; strength separate from quantity; as-needed and food timing on the medication row; a status field that separates prescribed / already taken / advised against / stopped early (replacing the overloaded negated:true); speaker. Then m3 extracts them and the scorer can emit the three new critical classes. Accepted for docs/severity.md (before any test run): advice and follow-up error codes, with a missed return-precaution considered for CRITICAL. Accepted for m3 later: "once every two days", ಒಂದೂವರೆ, tests for combination products, context for ಚಮಚ and ಪ್ಯಾಕೆಟ್, a symptom duration must not be read as course length, label the stale LLM text. Sent to a human: template e4 says omeprazole "after food" while the fetched openFDA label says before meals (a data change is only allowed before the first test run).
+- What could go wrong / weaknesses: A contract bump late in Phase B can break modules that were already reviewed; integration QA must re-check every boundary. The reviewer had no shell and did not run the extractor; "code read" findings are UNVERIFIED.
+- What else could be done: Keep record.v1 and add an optional "extensions" object instead of a version bump (less clean, but not a breaking change).
+- How to change this decision later: contracts/schemas (record.v1 -> record.v2, architect), then m3_extract, m4_verify, m5_backend, m6_ui and the m7 scorer.
+- Status: planned
+
+### D-123: Security audit of m6: role is only a click, and live mode can save a record the reviewer never saw   (Phase B / m6_ui / orchestrator / 2026-11-11)
+- What we needed to decide: The simulated security auditor (reviews/m6_ui/2026-11-11-security.md, label ai_simulated_review; Opus per D-65) made 31 attempts and found 2 major and 6 minor problems. When do we fix them?
+- Options we considered: (1) A separate m6 security fix pass now. Pro: the gap closes sooner. Con: m6 must change again in Phase C anyway for the new /save body (D-94), so two passes would touch the same code. (2) Fold the fixes into the Phase C m6 adaptation, as one m6 pass together with the Kannada fixes. Pro: one pass, one re-test. Con: the gap stays open a little longer.
+- What we chose: Option 2, with these findings as acceptance tests for that pass.
+- Why: Both major findings are in "live mode", which only matters once m6 talks to the real m5 in Phase C; m5's own database rules (row-level security, the save gate) already stop the worst outcome on the server.
+- What we actually did: Validated the report (valid review_report.v1); confirmed nothing is listening on ports 8501, 8599 or 54329 and no repo file changed. Accepted all findings. F1: each browser user logs in as their own m5 user (one mock token per person); the role comes from the token, never from a click; the ASHA view shows only her own patients. F2: live mode loads the record it shows from m5 by the same id it saves. F3: use /save with the gate and drop the separate /approve call, or make /approve run the same check (small m5 change). F4: disable edit and approve after a save. F5: the mock gate cannot be switched off from the page. F6: reject Unicode bidi control characters (U+202A-202E, U+2066-2069) in record text (validator, with record.v2). F7: the mock verifier needs a minimum drug-name check. F8 (low confidence): add anti-framing headers if Streamlit allows it.
+- What could go wrong / weaknesses: Live mode was only read in code, not run against m5; gitleaks was not installed (a regex scan plus exact matching of .env values was used instead). Both must be run in the final audit (C2) and before the tag.
+- What else could be done: Put a small reverse proxy in front of Streamlit to add headers; out of scope for a local class project.
+- How to change this decision later: m6_ui/app.py and its live client; m5_backend/app/main.py for /approve.
+- Status: planned
+
+### D-124: Kannada review of the m6 screen text: 12 wording fixes, and no text yet for the new safety flags   (Phase B / m6_ui / orchestrator / 2026-11-11)
+- What we needed to decide: The simulated Kannada reviewer (reviews/m6_ui/2026-11-11-kannada.md, label ai_simulated_review; Sonnet per D-65) read all 157 screen strings and found 12 major and 12 minor problems. Which do we accept?
+- Options we considered: (1) Accept everything now. Pro: one round. Con: no web source was fetched; all findings are model knowledge, low confidence. (2) Accept the safety-text majors and the missing keys, and send everything to the native-review sheet. Pro: fixes what could mislead a reviewer. Con: wording may still be imperfect.
+- What we chose: Option 2, fixed in the same Phase C m6 pass as the security findings.
+- Why: Text such as "ಪರಿಶೀಲಕ: ಸರಿ" reads as if the system certifies the record is correct, which the brief forbids us to imply; a negation warning that does not say the meaning may be reversed under-warns.
+- What we actually did: Validated the report (valid review_report.v1); confirmed the Kannada human sheet only gained rows. Accepted for the m6 pass: reason.C3 must say the meaning may be reversed; reason.C4 gets a subject; badge.ok must not sound like a correctness guarantee; one consistent word each for "flagged", "marked" and "speech recognition"; fix approve.ready word order, fail.blind_spot (ಬಿಟ್ಟರೆ; add ಬೇಡ), the mock banner (add "do not use for treatment"), the "open flag" calque; make help.not_clinician and help.clinician clearly different; add keys for child dose, cannot verify, route and max daily (wording checked against the clinical sheet); remove the English word in error.load. Minor wording goes to the native sheet.
+- What could go wrong / weaknesses: Every proposal is model knowledge only; dialects and phone rendering of ZWNJ words are untested.
+- What else could be done: A short session where two native-speaking clinic staff read the screens aloud (in HUMAN_TODO).
+- How to change this decision later: m6_ui/i18n/kn.json and en.json.
+- Status: planned
 
 <!-- ENTRIES-END -->
 

@@ -1,0 +1,3 @@
+- [ ] (m3 clinical review, 2026-11-11) Real clinician: which fields a record needs for child syrup (strength, age, weight); is negated:true acceptable for an unfinished course; which advice items count as CRITICAL; ಚಮಚ = teaspoon or tablespoon; omeprazole "after food" in template e4.
+- [ ] (m6 reviews, 2026-11-11) Native Kannada clinic staff read the m6 screens aloud and check the new m6_ rows in reviews/human_sheets/kannada_review_sheet.csv, especially the safety strings.
+- [ ] (m6 security, 2026-11-11) Run gitleaks (not installed during the audit) and test m6 live mode against m5 in the final security audit.

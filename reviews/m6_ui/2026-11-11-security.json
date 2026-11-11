@@ -1,0 +1,92 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "rv-m6-sec-2026-11-11",
+  "reviewer_agent": "security-auditor",
+  "target": "m6_ui",
+  "date": "2026-11-11",
+  "sample_size": 31,
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "major",
+      "item": "app.py role picker / _page_review / _approve; gate.py HttpGate shared credential",
+      "problem": "The role is a button click with no password and is never checked. Any role (pharmacist, ASHA) sees every patient's record and can approve/save. In live mode every browser user calls m5 as the single M6_API_USER, so m5 RLS, the physician-only save and the audit log see one identity.",
+      "suggested_fix": "Live mode: per-person m5 login, token kept in that session, role taken from the token; hide Approve unless the token role is physician; load the record list from m5 so RLS filters it; drop token and state on role change. Keep click-to-pick roles in MODE=mock only.",
+      "evidence": "RC-1: role=pharmacist approved rec-fx-asha-001 -> (True,'saved'). RC-2/2b: role=asha sees 8 records of 7 patient_refs and opened rec-fx-pharm-003-asr's transcript. RC-3: nurse -> asha with no password, Approve still enabled. Live part is code reading (UNVERIFIED).",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F2",
+      "severity": "major",
+      "item": "data.Catalogue in live mode + HttpGate M6_SERVER_IDS mapping",
+      "problem": "Live mode renders local fixture files but approves/saves the m5 row found through an id-mapping file. The human can approve a server record (possibly another patient's) that they never saw (CR-PATIENT class); reading also bypasses RLS.",
+      "suggested_fix": "Phase C: fetch the record via GET /records/{id} and the verdict via POST /records/{id}/verify, render exactly that JSON, send that verdict_id back; remove the mapping file.",
+      "evidence": "Code reading: data.py always reads fixtures/ and m6_ui/fixtures/; gate.py _post maps record_id -> UUID; m6 never calls GET /records or /verify. Not run live (UNVERIFIED).",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "F3",
+      "severity": "minor",
+      "item": "app.py _approve (approve then save) + m5 POST /records/{id}/approve",
+      "problem": "m6 calls /approve before /save. m5's /approve sets status approved with approved_by and no flag check, so a refused save leaves the server record 'approved' while the UI says NOT saved.",
+      "suggested_fix": "In the Phase C adaptation call only /save (D-94: save = approve); m5 should remove or gate /approve.",
+      "evidence": "G-2b: after refused saves, mock gate status = 'approved'. m5 main.py lines 311-316 read; live behaviour UNVERIFIED.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "F4",
+      "severity": "minor",
+      "item": "app.py result/edit state after a save",
+      "problem": "A second Approve on a saved record shows the red 'NOT saved' box although the record is saved; edit buttons stay active after save, so the screen can show a record different from the saved one.",
+      "suggested_fix": "When gate.status(rid)=='saved' hide Approve and edit buttons and show the saved banner; treat repeat approve as 'already saved' (green).",
+      "evidence": "G-4: first=(True,'saved'), second=(False,'error_other','already saved'), UI shows NOT saved, gate status saved. G-5: 2 edit buttons offered after save.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F5",
+      "severity": "minor",
+      "item": "app.py demo checkbox force_refuse vs env M6_MOCK_GATE_REFUSE (mock only)",
+      "problem": "The env setting documented as 'refuse every save' can be switched off by unticking a checkbox in the browser.",
+      "suggested_fix": "If the env variable is set, render the checkbox disabled (or not at all) and never lower force_refuse below the env value.",
+      "evidence": "G-3: env M6_MOCK_GATE_REFUSE=1, untick checkbox, approve rec-fx-asha-001 -> (True,'saved').",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F6",
+      "severity": "minor",
+      "item": "record.v1 strings + highlight.esc (bidi controls)",
+      "problem": "Unicode bidi override characters (U+202E etc.) pass schema validation and escaping, so a field such as a dose or patient_ref can be displayed reordered to the reviewer (display spoofing).",
+      "suggested_fix": "Reject U+202A-202E and U+2066-2069 in record/transcript strings (contract request) or replace them with a visible marker before rendering; keep ZWJ/ZWNJ.",
+      "evidence": "X-4: record.v1 with U+202E in patient_ref -> 0 schema errors; esc() keeps U+202E. Browser rendering UNVERIFIED.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "F7",
+      "severity": "minor",
+      "item": "verifier.MockVerifier._recheck substring match (mock only)",
+      "problem": "An edited drug passes the mock re-check if it is any substring of the evidence span, so a one-letter drug is accepted and the mock gate saves it.",
+      "suggested_fix": "Whole-token match plus a minimum length or drug-lexicon hit; label mock saves 'saved (MOCK)'.",
+      "evidence": "G-6: rec-fx-asha-002 drug 'paracetamol' edited to 'ಪ' -> C2 pass.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "F8",
+      "severity": "minor",
+      "item": "Streamlit HTTP responses (anti-framing)",
+      "problem": "No X-Frame-Options or CSP frame-ancestors, so a page open in the same browser could frame the unauthenticated app and trick clicks (clickjacking). Cross-origin websocket is blocked.",
+      "suggested_fix": "Put live mode behind a per-user login (F1); optionally serve through a local proxy adding frame-ancestors 'none'.",
+      "evidence": "H-6: GET / on 127.0.0.1:8501 had no anti-framing headers; WS-1: Origin evil.example -> 403. Iframe behaviour in a browser not tested (UNVERIFIED).",
+      "source_urls": [],
+      "confidence": "low"
+    }
+  ],
+  "summary": "Simulated AI security review of m6_ui (Streamlit 1.67.0) at commit 2f2fcfe. 31 concrete attempts: 17 AppTest attacks in mock mode, 10 HTTP/socket probes against two short local runs, 3 secret scans, pip-audit; m6 tests 105 passed. Held: XSS (all data escaped with html.escape before st.html, which also sanitises with DOMPurify; edit-form, server-message and card payloads stayed inert), forged click on a disabled Approve (server-side re-check), unknown/traversal record ids, static path traversal (400), query params ignored, cross-origin websocket (403), 127.0.0.1 binding in both launch paths, token kept server-side and only in the Authorization header, no secrets in tree or history (regex + exact .env match), pip-audit clean. Two major findings: the role is a click with no checks (a pharmacist saved a record; ASHA saw all patients), and live mode would approve a server record through an id map while showing a local file. Six minor: approve-before-save leaves 'approved' on the server, misleading state after save, env refuse flag overridable, bidi controls accepted, mock verifier substring pass, no anti-framing headers. Live mode, gitleaks and browser rendering NOT run (UNVERIFIED). No database started; both servers stopped.",
+  "label": "ai_simulated_review"
+}

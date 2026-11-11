@@ -1,0 +1,252 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m6_ui-kannada-2026-11-11",
+  "reviewer_agent": "kannada-language-reviewer",
+  "target": "m6_ui Kannada UI strings (m6_ui/i18n/kn.json vs en.json, usage in m6_ui/app.py)",
+  "date": "2026-11-11",
+  "sample_size": 157,
+  "findings": [
+    {
+      "id": "M6-K1",
+      "severity": "major",
+      "item": "reason.C4: ಈ ಔಷಧಿಗೆ ಸಾಮಾನ್ಯ ಪ್ರಮಾಣದ ಹೊರಗೆ ಇದೆ.",
+      "problem": "No subject: it is unclear what is outside the range (dose). Safety-critical dose flag explanation is vague; ಪ್ರಮಾಣ is a general word for amount, staff say ಡೋಸ್.",
+      "suggested_fix": "ಈ ಡೋಸ್ ಈ ಔಷಧಿಯ ಸಾಮಾನ್ಯ ಮಿತಿಯ ಹೊರಗೆ ಇದೆ.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K2",
+      "severity": "major",
+      "item": "approve.ready: ... ಸರ್ವರ್ ಆದರೂ ಉಳಿಸಲು ನಿರಾಕರಿಸಬಹುದು.",
+      "problem": "ಆದರೂ ('even so') is placed after ಸರ್ವರ್ so it reads 'even the server'. en.json says 'still'. Unclear who may refuse.",
+      "suggested_fix": "ಗುರುತಿಸಿದ ಎಲ್ಲಕ್ಕೂ ಉತ್ತರ ಕೊಟ್ಟಿದ್ದೀರಿ. ಆದರೂ ಸರ್ವರ್ ಉಳಿಸಲು ನಿರಾಕರಿಸಬಹುದು.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K3",
+      "severity": "major",
+      "item": "badge.ok 'ಪರಿಶೀಲಕ: ಸರಿ' and badge.confirmed 'ನೀವು ಹೇಳಿದ್ದು: ಸರಿ'",
+      "problem": "'Checker: correct' can be read as the system certifying the content is right (implies validation). badge.confirmed ('what you said: correct') is ambiguous: it is the user's own confirmation, not speech.",
+      "suggested_fix": "badge.ok: 'ಪರಿಶೀಲಕ: ಏನೂ ಕಂಡಿಲ್ಲ'. badge.confirmed: 'ನೀವು ಸರಿ ಎಂದಿದ್ದೀರಿ'. Update en.json to 'Checker saw nothing' for parity.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K4",
+      "severity": "major",
+      "item": "Term consistency of ಗುರುತಿಸು (app.subtitle, review.legend, status.flagged, reason.C7, review.summary)",
+      "problem": "One verb is used for three concepts in the same screen: flagged item (ಗುರುತಿಸಿದ ವಿಷಯ), marked/coloured words (review.legend: ಗುರುತಿಸಿದ ಪದಗಳು = ... ಗುರುತಿಸಿದ ವಿಷಯ), and speech recognition (ಧ್ವನಿ ಗುರುತಿಸುವಿಕೆ). A low-literacy reader cannot tell them apart. status.flagged 'ಗುರುತಿಸಲಾಗಿದೆ' also reads 'identified'.",
+      "suggested_fix": "Flagged = 'ಕೆಂಪು ಗುರುತಿನ ವಿಷಯ' / status.flagged 'ಎಚ್ಚರಿಕೆ ಇದೆ'; marked words = 'ಬಣ್ಣ ಹಾಕಿದ ಪದಗಳು'; keep ಗುರುತಿಸುವಿಕೆ only for speech recognition. Decide one glossary and apply to all keys.",
+      "evidence": "Reading of kn.json lines 44, 9, 129, 93. Model knowledge, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K5",
+      "severity": "major",
+      "item": "fail.blind_spot: ... ಧ್ವನಿ ಗುರುತಿಸುವಿಕೆ 'ಇಲ್ಲ' ಪದವನ್ನು ಬಿಟ್ಟರೆ ...",
+      "problem": "ಬಿಟ್ಟರೆ commonly means 'except / other than', not 'if it drops'. The negation blind spot is the key safety message and is ambiguous. It also names only ಇಲ್ಲ, not ಬೇಡ (en.json says 'not').",
+      "suggested_fix": "ಧ್ವನಿಯಿಂದ ಪಠ್ಯ ಮಾಡುವಾಗ 'ಇಲ್ಲ' ಅಥವಾ 'ಬೇಡ' ಪದ ಬಿಟ್ಟುಹೋದರೆ, ಪಠ್ಯ ಮಾತ್ರ ನೋಡುವ ಪರಿಶೀಲನೆಗೆ ಅದು ಗೊತ್ತಾಗುವುದಿಲ್ಲ.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K6",
+      "severity": "major",
+      "item": "reason.C3: 'ಇಲ್ಲ' ಅಥವಾ 'ಬೇಡ' ತಪ್ಪಾಗಿ ಓದಿರಬಹುದು.",
+      "problem": "Does not say who read it, or that the meaning may be reversed (take vs do not take). Negation is the highest-risk error; text is vague.",
+      "suggested_fix": "ಈ ದಾಖಲೆಯಲ್ಲಿ 'ಇಲ್ಲ' / 'ಬೇಡ' ಅರ್ಥ ಉಲ್ಟಾ ಆಗಿರಬಹುದು (ಉದಾ. 'ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ' ಬದಲು 'ತೆಗೆದುಕೊಳ್ಳಿ').",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K7",
+      "severity": "major",
+      "item": "reason.none: ... ಎಲ್ಲವನ್ನೂ ಪರಿಶೀಲಿಸದ್ದು ಎಂದು ತಿಳಿಯಿರಿ.",
+      "problem": "ಪರಿಶೀಲಿಸದ್ದು is a rare, awkward form; the instruction 'treat everything as unchecked' may be read as 'everything is checked'. This is the no-checker-result safety state.",
+      "suggested_fix": "ಪರಿಶೀಲಕದಿಂದ ಯಾವ ಫಲಿತಾಂಶವೂ ಬರಲಿಲ್ಲ. ಎಲ್ಲವನ್ನೂ ನೀವೇ ಪರಿಶೀಲಿಸಬೇಕು.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K8",
+      "severity": "major",
+      "item": "help.not_clinician 'ವೈದ್ಯರು ಪರಿಶೀಲಿಸಿಲ್ಲ.' vs help.clinician 'ವೈದ್ಯರು ಪರಿಶೀಲಿಸಿದ್ದಾರೆ.'",
+      "problem": "The two differ by a few letters; a hurried reader could swap them. The negative (not checked by a doctor) is the safety-relevant one and is low-key.",
+      "suggested_fix": "not_clinician: 'ಇನ್ನೂ ಯಾವ ವೈದ್ಯರೂ ಇದನ್ನು ಪರಿಶೀಲಿಸಿಲ್ಲ. ವೈದ್ಯರ ಸಲಹೆ ಎಂದು ತಿಳಿಯಬೇಡಿ.' Show with a visual icon too.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K9",
+      "severity": "major",
+      "item": "app.mock_banner: ... ಇದು ವೈದ್ಯಕೀಯ ಸಾಧನವಲ್ಲ.",
+      "problem": "'ವೈದ್ಯಕೀಯ ಸಾಧನ' is a literal calque of 'medical device'; staff may not grasp it. ಕಾಲ್ಪನಿಕ is literary. The practical warning (do not use for treatment) is missing.",
+      "suggested_fix": "ಅಭ್ಯಾಸ ಮೋಡ್: ಇದರಲ್ಲಿರುವುದು ಮಾದರಿ ಮಾಹಿತಿ ಮಾತ್ರ. ನಿಜವಾದ ರೋಗಿ ಇಲ್ಲ. ಚಿಕಿತ್ಸೆಗೆ ಇದನ್ನು ಬಳಸಬೇಡಿ.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K10",
+      "severity": "major",
+      "item": "gate.code.refused_unresolved_flags: ... ತೆರೆದ ಗುರುತುಗಳಿರುವ ದಾಖಲೆಯನ್ನು ...",
+      "problem": "'ತೆರೆದ ಗುರುತು' is a calque of 'open flags'; the sentence is long with a semicolon and two ideas. This is the message shown when saving is blocked.",
+      "suggested_fix": "ಪರಿಶೀಲಕ ಈ ದಾಖಲೆಯಲ್ಲಿ ಇನ್ನೂ ಸಮಸ್ಯೆ ತೋರಿಸುತ್ತಿದೆ. ಹಾಗಾಗಿ ಸರ್ವರ್ ಉಳಿಸುವುದಿಲ್ಲ. ಮಾಹಿತಿಯನ್ನು ಸರಿಪಡಿಸಿ, ಅಥವಾ ವೈದ್ಯರನ್ನು ಕೇಳಿ.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K11",
+      "severity": "major",
+      "item": "reason.C6: ... ಅಥವಾ ರೋಗಿ ತಪ್ಪಾಗಿರಬಹುದು.",
+      "problem": "Literally 'the patient may be wrong/mistaken as a person' (no 'what they said'); could blame the patient and confuses the flag meaning.",
+      "suggested_fix": "ಯಾರೂ ಹೇಳದ ವಿಷಯ ದಾಖಲೆಯಲ್ಲಿದೆ, ಅಥವಾ ರೋಗಿ ಹೇಳಿದ್ದು ಸರಿಯಿಲ್ಲದಿರಬಹುದು.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K12",
+      "severity": "major",
+      "item": "Missing keys: child-dose, cannot-verify, route, max-daily messages",
+      "problem": "kn.json and en.json have only reason.C1..C8 and generic fallbacks; no key explains 'cannot verify' (e.g. child dose, route of administration, max daily dose). grep of app.py for cannot_verify/child/route/max_daily found nothing. How those flags reach a Kannada reader is UNVERIFIED; the English raw message (reason.raw) is shown instead.",
+      "suggested_fix": "Add keys, e.g. 'reason.cannot_verify': 'ಈ ಡೋಸ್ ಸರಿಯೇ ಎಂದು ಯಂತ್ರಕ್ಕೆ ಪರಿಶೀಲಿಸಲು ಆಗಲಿಲ್ಲ. ವೈದ್ಯರನ್ನು ಕೇಳಿ.' and a child-dose line 'ಮಗುವಿನ ಡೋಸ್ ತೂಕದ ಮೇಲೆ ಅವಲಂಬಿತ. ವೈದ್ಯರಿಂದ ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ.' Clinical wording needs the clinical reviewer.",
+      "evidence": "Reading of kn.json/en.json and grep of app.py. Model knowledge for wording, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K13",
+      "severity": "minor",
+      "item": "Dose terms: field.dose 'ಪ್ರಮಾಣ', attr.dose_value 'ಮೊತ್ತ', attr.dose_unit 'ಘಟಕ'",
+      "problem": "ಮೊತ್ತ means a sum (money total); ಘಟಕ is textbook; ಪ್ರಮಾಣ is generic. Staff say ಡೋಸ್ and 'ಯೂನಿಟ್'/mg/ml/ಮಾತ್ರೆ.",
+      "suggested_fix": "field.dose 'ಡೋಸ್ (ಪ್ರಮಾಣ)'; attr.dose_value 'ಎಷ್ಟು (ಸಂಖ್ಯೆ)'; attr.dose_unit 'ಅಳತೆ (mg, ml, ಮಾತ್ರೆ)'. Use the same word in reason.C4 and help.ask_doctor_body.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K14",
+      "severity": "minor",
+      "item": "ಮೌಲ್ಯ ('value') in reason.C2, resolve.edit_hint, resolve.invalid",
+      "problem": "ಮೌಲ್ಯ also means worth/ethics; for a clinic worker 'value' of a field is abstract.",
+      "suggested_fix": "ಬರೆದಿರುವುದು / ಸರಿಯಾದ ಮಾಹಿತಿ: 'ಬರೆದಿರುವುದು ಹೇಳಿದ ಪದಗಳಿಗೆ ಹೊಂದುತ್ತಿಲ್ಲ.' 'ಸರಿಯಾದದ್ದನ್ನು ಬರೆಯಿರಿ.' 'ಇದನ್ನು ಬರೆಯಲು ಅನುಮತಿ ಇಲ್ಲ. ಏನೂ ಬದಲಾಗಿಲ್ಲ.'",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K15",
+      "severity": "minor",
+      "item": "reason.C1, C5, C7, C8, reason.title wording",
+      "problem": "C1 'ಪುರಾವೆ' is formal; C5 'ಓದಲಾಗಲಿಲ್ಲ' should be 'ಕೇಳಿಸಲಿಲ್ಲ' (audio); C7 heavy abstract noun 'ಖಚಿತತೆ'; C8 'ಎರಡು ರೀತಿ ಅರ್ಥ ಮಾಡಬಹುದು' is unnatural; reason.title 'ಚಿಂತೆ' personifies and means anxiety.",
+      "suggested_fix": "C1 'ಆಧಾರವಾಗಿ ಕೊಟ್ಟ ಪದಗಳು ಮಾತುಕತೆಯಲ್ಲಿ ಇಲ್ಲ.' C5 'ಎಷ್ಟು ಬಾರಿ ಅಥವಾ ಎಷ್ಟು ದಿನ ಎಂದು ಸ್ಪಷ್ಟವಾಗಿ ಕೇಳಿಸಲಿಲ್ಲ.' C7 'ಈ ಮುಖ್ಯ ಪದ ಸರಿಯಾಗಿ ಕೇಳಿಸಿತೋ ಇಲ್ಲವೋ ಎಂದು ಧ್ವನಿ-ಪಠ್ಯ ವ್ಯವಸ್ಥೆಗೆ ಖಚಿತವಿರಲಿಲ್ಲ.' C8 'ಈ ವಾಕ್ಯಕ್ಕೆ ಎರಡು ಅರ್ಥ ಬರಬಹುದು.' title 'ಪರಿಶೀಲಕ ಯಾಕೆ ಎಚ್ಚರಿಸಿದೆ'.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M6-K16",
+      "severity": "minor",
+      "item": "'ಪರಿಶೀಲಕ' (checker, masculine agent noun) used as a personified actor in many keys",
+      "problem": "Literary agent noun, treated like a person (ಪರಿಶೀಲಕನಿಗೆ ... ಕಾಣಲಿಲ್ಲ). Staff say ಚೆಕ್ ಮಾಡು. It also looks like ಪರಿಶೀಲನೆ (the check), so two terms differ by one letter.",
+      "suggested_fix": "Pick one: 'ಪರಿಶೀಲನಾ ವ್ಯವಸ್ಥೆ' (checking system) or loanword 'ಚೆಕರ್'. Apply in badge, reason, gate, approve keys.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M6-K17",
+      "severity": "minor",
+      "item": "review.summary_flags: '{n} ವಿಷಯ(ಗಳನ್ನು) ನೀವು ಪರಿಶೀಲಿಸಬೇಕು. ಅವು ಮೇಲೆ ಇವೆ.'; approve.blocked '... ಮೊದಲು ಇನ್ನೂ {n} ವಿಷಯ ...'",
+      "problem": "'(ಗಳನ್ನು)' bracket plural is a translation artefact and hard to read aloud; 'ಮೊದಲು ಇನ್ನೂ' is awkward. Placeholder itself is safe (Latin digit, space separated).",
+      "suggested_fix": "'ನೀವು ಪರಿಶೀಲಿಸಬೇಕಾದ ವಿಷಯಗಳು: {n}. ಅವು ಮೇಲೆ ಇವೆ.' and 'ಒಪ್ಪಿಗೆ ಬಟನ್ ಲಾಕ್ ಆಗಿದೆ. ಇನ್ನೂ {n} ವಿಷಯ ಪರಿಶೀಲಿಸಬೇಕು.'",
+      "evidence": "app.py lines 520 and 546 pass n as int. Model knowledge for wording, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M6-K18",
+      "severity": "minor",
+      "item": "Literary words: ಪಠ್ಯ (text), ಕರಡು (draft), ಪದಶಃ (verbatim, visarga form), ಉತ್ತರಿಸಲಾರದು, ಊಹಿಸಬೇಡಿ, ಏಕೆ, ಉದ್ದೇಶಪೂರ್ವಕ (fail.intro)",
+      "problem": "Sanskritised or written-only; staff with low literacy say ಬರಹ, ಡ್ರಾಫ್ಟ್, ಪದಕ್ಕೆ ಪದ, ಉತ್ತರ ಕೊಡಲು ಆಗುವುದಿಲ್ಲ, ಅಂದಾಜು ಮಾಡಬೇಡಿ, ಯಾಕೆ. fail.intro also drops the idea of 'planted' mistakes.",
+      "suggested_fix": "Use the colloquial equivalents listed; fail.intro: 'ಪರೀಕ್ಷೆಗಾಗಿ ಬೇಕೆಂದು ಸೇರಿಸಿದ ತಪ್ಪುಗಳನ್ನು ಸುರಕ್ಷತಾ ಪರಿಶೀಲನೆ ಹಿಡಿಯದ ನಿಜವಾದ ಉದಾಹರಣೆಗಳು. ಹಸಿರು ಗುರುತನ್ನು ಕುರುಡಾಗಿ ನಂಬಬೇಡಿ.'",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M6-K19",
+      "severity": "minor",
+      "item": "role.pharmacist 'ಔಷಧಿ ವಿತರಕರು', encounter.pharmacist_dispensing 'ಔಷಧಾಲಯ', role.current 'ನೀವು: {role}'",
+      "problem": "ವಿತರಕರು suggests a distributor, not pharmacist; staff say ಫಾರ್ಮಸಿಸ್ಟ್ / ಮೆಡಿಕಲ್ ಸ್ಟೋರ್. 'ನೀವು: ನರ್ಸ್' is terse.",
+      "suggested_fix": "role.pharmacist 'ಫಾರ್ಮಸಿಸ್ಟ್ (ಔಷಧಿ ಕೊಡುವವರು)'; encounter 'ಔಷಧಿ ಅಂಗಡಿ / ಫಾರ್ಮಸಿ'; role.current 'ನಿಮ್ಮ ಪಾತ್ರ: {role}'.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M6-K20",
+      "severity": "minor",
+      "item": "gate.code.refused_no_approval 'ಈ ದಾಖಲೆಗೆ ಸರ್ವರ್ ಬಳಿ ಒಪ್ಪಿಗೆ ಇಲ್ಲ.'",
+      "problem": "Ambiguous: whose approval, why. Does not say nothing was saved (title does).",
+      "suggested_fix": "ನೀವು ನೀಡಿದ ಒಪ್ಪಿಗೆ ಸರ್ವರ್‌ಗೆ ತಲುಪಿಲ್ಲ. ಮತ್ತೆ ಒಪ್ಪಿಗೆ ನೀಡಿ.",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M6-K21",
+      "severity": "minor",
+      "item": "error.load 'ತೆರೆಯಲಾಗಲಿಲ್ಲ: {what}' and review.load_errors",
+      "problem": "app.py line 535 passes the English literal 'transcript' for {what}; {errors} are English joined strings. Kannada sentence with English fragment (acceptable for debugging, not for staff).",
+      "suggested_fix": "Pass a translated key for {what} (e.g. t('review.transcript')). Fix is in code, not in kn.json.",
+      "evidence": "app.py lines 517 and 535.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M6-K22",
+      "severity": "minor",
+      "item": "Numerals policy: all UI digits are Latin (1., 2., 127.0.0.1, {n}); fail.caught '{n} ರಲ್ಲಿ {caught}'",
+      "problem": "Consistent and fine for phones and for record IDs. A Kannada case suffix after a digit (8 ರಲ್ಲಿ) is acceptable but spoken forms (ಎಂಟರಲ್ಲಿ) differ. Not a defect; for a native reviewer to decide whether Kannada digits are preferred for counts.",
+      "suggested_fix": "Keep Latin digits; optionally restructure as 'ಒಟ್ಟು {n} ತಪ್ಪುಗಳಲ್ಲಿ {caught} ಹಿಡಿಯಲಾಗಿದೆ' to avoid a suffix after a digit.",
+      "evidence": "app.py lines 628-631; kannada-nlp skill digit policy. Model knowledge, low confidence.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M6-K23",
+      "severity": "minor",
+      "item": "ZWNJ/ZWJ and NFC across kn.json (14 lines contain U+200C/U+200D)",
+      "problem": "Matches the keep-in-stored-text policy (ಆ್ಯಪ್‌ನ, ಅಪ್‌ಲೋಡ್, ಸರ್ವರ್‌ಗೆ). I cannot run code, so NFC and the exact ZWNJ placement are UNVERIFIED by tool. Stray ZWJ would change conjunct shape; a native reviewer must look at each on a real phone (font page).",
+      "suggested_fix": "Run the repo NFC validator and the font page on target phones; no text change proposed.",
+      "evidence": "Grep count of U+200C/U+200D = 14 lines; no shell.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M6-K24",
+      "severity": "minor",
+      "item": "app.live_banner and app.not_native",
+      "problem": "live_banner 'ಉಳಿಸುವಿಕೆ ಸ್ಥಳೀಯ ಸರ್ವರ್‌ಗೆ ಹೋಗುತ್ತದೆ' uses stiff nominal ಉಳಿಸುವಿಕೆ and does not warn that real data may be saved. not_native 'ಮಾತೃಭಾಷಿಕರು' is heavy. The honesty content is good.",
+      "suggested_fix": "live_banner: 'ಲೈವ್ ಮೋಡ್: ನೀವು ಉಳಿಸಿದ ಮಾಹಿತಿ ಈ ಸ್ಥಳೀಯ ಸರ್ವರ್‌ಗೆ ಹೋಗುತ್ತದೆ.' not_native: 'ಈ ಆ್ಯಪ್‌ನ ಕನ್ನಡವನ್ನು ಕಂಪ್ಯೂಟರ್ ಬರೆದಿದೆ; ಕನ್ನಡ ಗೊತ್ತಿರುವ ಯಾರೂ ಇನ್ನೂ ಪರಿಶೀಲಿಸಿಲ್ಲ.'",
+      "evidence": "Model knowledge, low confidence. No external source.",
+      "source_urls": [],
+      "confidence": "low"
+    }
+  ],
+  "summary": "ai_simulated_review of all 157 m6_ui Kannada strings against en.json and app.py usage. Keys and placeholders match; politeness (ನೀವು, -ಇ imperatives) and the ಬೇಡಿ prohibitions are natural and clear. Main risks are safety wording: vague or ambiguous flag explanations (C3 negation, C4 dose, C6, reason.none), 'checker: correct' implying validation, one verb (ಗುರುತಿಸು) used for flag, marked word and speech recognition, a ಬಿಟ್ಟರೆ ambiguity in the negation blind-spot message, near-identical doctor-checked/not-checked lines, and no keys for child-dose, cannot-verify or route messages. Also many literary words (ಮೌಲ್ಯ, ಮೊತ್ತ, ಪಠ್ಯ, ಪರಿಶೀಲಕ). 12 major, 12 minor. No external sources fetched this session; all judgements are model knowledge, low confidence. Not native-validated. The validator was not run (no shell), so schema validity is UNVERIFIED by tool.",
+  "label": "ai_simulated_review"
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": "review_report.v1",
+  "review_id": "m3_extract-clinical-2026-11-11",
+  "reviewer_agent": "clinical-reviewer",
+  "target": "m3_extract rules pipeline (rules.py, units.py, numbers.py, data/phrases.yaml, scoring.py), results/m3_extract dev outputs, docs/severity.md new classes, README claims",
+  "date": "2026-11-11",
+  "sample_size": 15,
+  "findings": [
+    {
+      "id": "M3-C1",
+      "severity": "critical",
+      "item": "m1-g7-000 medications[0] (ceftriaxone): route not extracted",
+      "problem": "'ceftriaxone 1000 ಎಂ.ಜಿ injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ' becomes dose 1000 mg, 1/day, 5 days. The word injection is only in the evidence span; record.v1 has no route field, so a reader can take it as an oral dose.",
+      "suggested_fix": "Add route (oral, injection, drops, topical, inhaled) to record.v2 and gold; until then report CR-ROUTE as not measurable.",
+      "evidence": "Gold and rules output read for m1-g7-000; record.v1 schema dose_unit enum has no route; ceftriaxone is a powder for injection per drugs.csv (NLEM row, not re-fetched).",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-C2",
+      "severity": "critical",
+      "item": "m1-e8-000 and m1-i5-001 medications (paracetamol syrup 2.5 ml, 10 ml)",
+      "problem": "Child syrup volumes are recorded with no mg-per-5-ml strength and no age. 10 ml is 240 mg with the 120 mg/5 ml liquid (age 4-5) but 500 mg with the 250 mg/5 ml liquid (age 10-11). In m1-i5-001 the child's age is never stated.",
+      "suggested_fix": "Add strength and patient_age_band to record.v2; templates should state age or say ask the doctor.",
+      "evidence": "NHS child paracetamol page: infant liquid 120 mg/5 ml 3-5 months 2.5 ml, 4-5 years 10 ml; 6+ liquid 250 mg/5 ml 10-11 years 10 ml; max 4 doses in 24 h.",
+      "source_urls": ["https://www.nhs.uk/medicines/paracetamol-for-children/how-and-when-to-give-paracetamol-for-children/"],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-C3",
+      "severity": "critical",
+      "item": "m3_extract/scoring.py, results/m3_extract/dev_scores.csv, README 'critical 0/2704'",
+      "problem": "The scorer only emits CR-NEG, CR-DRUG, CR-DOSE, CR-FREQ, CR-DUR, CR-UNSUPPORTED. CR-ROUTE, CR-PAEDIATRIC and CR-LIQUID-STRENGTH (added by D-91) can never fire, so 0 critical errors does not cover them and the README does not say so.",
+      "suggested_fix": "Add a README line naming the unmeasured critical classes; add the route, strength and age fields so they become scorable.",
+      "evidence": "scoring.py CR codes read; severity.md lists the three classes; dev_scores.csv has no rows for them.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-M1",
+      "severity": "major",
+      "item": "m1-c3-000 medications[0] cefuroxime negated:true; holdout m1-c5-000..003 (text in failures_dev.md)",
+      "problem": "negated:true means three things: course not finished (c3-000, patient did take some), advised not to take (c5), never taken. A reader may assume no antibiotic exposure. Repeats D-62 / M1-M11 in the extractor output.",
+      "suggested_fix": "Add an adherence or intent field (taken_complete, taken_partial, not_taken, advised_against) in record.v2.",
+      "evidence": "Gold and logic of rules.py cross-turn answer; question 'did you finish cefuroxime' answered 'no' gives negated:true.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-M2",
+      "severity": "major",
+      "item": "m1-a3-000 medications[0] paracetamol; rules.py _advice and _med_mentions (speaker_role unused)",
+      "problem": "A caregiver's past action ('I gave paracetamol syrup last night') is recorded like a prescription (negated:false, no dose). Code read: ADV-NO-ANTIBIOTIC-COLD has a positive gloss 'take antibiotics for a cold', so a patient request could become advice (not run, UNVERIFIED).",
+      "suggested_fix": "Carry speaker role and tense/status into the record; never create advice from non-clinician requests or questions.",
+      "evidence": "Gold m1-a3-000 turn 1; phrases.yaml ADV-NO-ANTIBIOTIC-COLD; rules.py has no speaker handling.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-M3",
+      "severity": "major",
+      "item": "m1-i5-001 and m1-e4-001: as-needed and food timing",
+      "problem": "'Give only if fever' stays as a separate advice string while the medication has frequency null, so the medication row reads as unconditional. No parser for SOS or before-food. 'After food' (said after omeprazole only) becomes one global advice for three drugs; the template also contradicts the omeprazole label.",
+      "suggested_fix": "Add as_needed and food_timing per medication; link advice to the drug in the same clause; fix the omeprazole template.",
+      "evidence": "Gold and rules output m1-i5-001; gold m1-e4-001; omeprazole label: 'Take omeprazole delayed-release capsules before meals.' (first 100000 of 185231 characters read).",
+      "source_urls": ["https://api.fda.gov/drug/label.json?search=id%3A%2256d11df3-a35b-e577-e063-6394a90a9464%22&skip=0&limit=1"],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-M4",
+      "severity": "major",
+      "item": "m3_extract/units.py parse_attributes frequency rule",
+      "problem": "Code read, not run (UNVERIFIED): 'ಎರಡು ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ' (once every two days) matches ದಿನಕ್ಕೆ + ಒಂದು + ಬಾರಿ and gives frequency_per_day 1. Patterns such as 1-0-1, morning-night, every 8 hours, bedtime are unsupported and become null.",
+      "suggested_fix": "Add a test where a number precedes ದಿನಕ್ಕೆ and return null with a note; add common Indian prescription patterns with tests.",
+      "evidence": "units.py lines for PER_DAY handling; M4 sheet row M4-m1 already lists missing patterns.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-M5",
+      "severity": "major",
+      "item": "units.py parse_attributes dose rule (first number+unit wins)",
+      "problem": "Strength and quantity share one field. '500 mg, two tablets' gives 500 mg (1000 mg intended); 'two tablets 500 mg' gives 2 tablet with strength lost. Holdout m1-h6-000 '200 mg ಮಾತ್ರೆ' records the strength as the dose.",
+      "suggested_fix": "Separate strength and quantity; if both present and not combinable, return null and flag.",
+      "evidence": "units.py: a.dose_value is None guard; failures_dev.md example m1-h6-000.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-M6",
+      "severity": "major",
+      "item": "units.py UNIT_PHRASES: ಚಮಚ -> teaspoon, ಪ್ಯಾಕೆಟ್ -> sachet",
+      "problem": "A Kannada spoon may be a 5 ml teaspoon or a 15 ml tablespoon (threefold error); the file marks the mapping UNVERIFIED. ಪ್ಯಾಕೆಟ್ is mapped to sachet in every context, so a packet of tablets would be recorded as sachets. Neither is in the dev gold read.",
+      "suggested_fix": "Map ಚಮಚ to null with a note until a speaker confirms; accept ಪ್ಯಾಕೆಟ್ as sachet only for ORS.",
+      "evidence": "units.py docstring and table; D-93. Spoon size: model knowledge, low confidence.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-M7",
+      "severity": "major",
+      "item": "combination products: amoxicillin-clavulanate alias 625, amox/ಅಮಾಕ್ಸಿ, iron-folic acid",
+      "problem": "Code read, not run (UNVERIFIED): 'amox 625' likely yields two drug mentions (amoxicillin plus amoxicillin-clavulanate); '625 mg' is consumed as the drug name so the dose is lost; the digits 625 elsewhere could add an unsupported drug. IFA has no strengths, so mg cannot be assigned to iron or folic acid (mg versus mcg). No m3 test covers these.",
+      "suggested_fix": "Add tests for 'amoxiclav 625', 'amox 625 mg', 'IFA 1 tablet'; accept 625 only beside a drug stem or an mg unit.",
+      "evidence": "drugs.csv rows drug-01, drug-02, drug-34; grep of m3_extract/tests shows no 625 or IFA case.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-M8",
+      "severity": "major",
+      "item": "scoring.py advice and follow-up codes versus docs/severity.md",
+      "problem": "MA-MISSED-ADVICE, MA-EXTRA-ADVICE, MA-MISSED-FOLLOWUP, MA-EXTRA-FOLLOWUP, MA-WORDING-UNJUDGED are not in severity.md. 40 advice and 8 follow-up items are missed on the holdout (return precautions, do not self-medicate). Inventing advice (rule 3 says worse than omitting) is labelled the same as omitting. Red-flag follow-up or antibiotic-misuse advice that is missed or reversed is more than information lost.",
+      "suggested_fix": "Add the codes to severity.md; treat missed red-flag follow-up, reversed antibiotic-misuse advice and extra advice containing a drug or dose as critical.",
+      "evidence": "scoring.py code list; failures_dev.md MA-MISSED-ADVICE 40, MA-MISSED-FOLLOWUP 8; severity.md rules 3 and 5.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-m1",
+      "severity": "minor",
+      "item": "numbers.py: ಎರಡೂವರೆ, 11/12/16/20/30/100 UNVERIFIED; ಒಂದೂವರೆ, ಕಾಲು, ಐನೂರು, ಸಾವಿರ missing",
+      "problem": "The 2.5 ml child dose depends on an unfetched word; missing half and hundred words make doses null (safe but lossy). A wrong value would be CR-DOSE.",
+      "suggested_fix": "A native speaker confirms the number words; add the missing forms with tests.",
+      "evidence": "numbers.py docstring and NUMBER_WORDS; D-120 admits ಒಂದೂವರೆ is not handled.",
+      "source_urls": [],
+      "confidence": "medium"
+    },
+    {
+      "id": "M3-m2",
+      "severity": "minor",
+      "item": "units.py DURATION_UNITS in the drug clause window",
+      "problem": "Code read, not run: any '<N> ದಿನ|ದಿವಸ|ವಾರ|ತಿಂಗಳು' in the drug's window becomes duration_days, so a symptom duration in the same clause could become a drug course. ತಿಂಗಳು = 30 days is approximate. ದಿನದಿಂದ is correctly ignored.",
+      "suggested_fix": "Add a test for a symptom duration in the same clause as a drug.",
+      "evidence": "units.py lines for duration; gold m1-a3-000 shows ದಿನದಿಂದ not captured.",
+      "source_urls": [],
+      "confidence": "low"
+    },
+    {
+      "id": "M3-m3",
+      "severity": "minor",
+      "item": "m3_extract/failure_analysis.md orphan LLM items 1-6",
+      "problem": "Numbered LLM failure items (invented capsule unit, duration 5 for 7) sit under the STALE section with no heading and read as current rules failures.",
+      "suggested_fix": "Add the heading 'LLM failures (STALE, pre-REFREEZE)'.",
+      "evidence": "failure_analysis.md lines after the LLM STALE paragraph.",
+      "source_urls": [],
+      "confidence": "high"
+    },
+    {
+      "id": "M3-m4",
+      "severity": "minor",
+      "item": "m1 template e4 (m1-e4-001): omeprazole 'after food'",
+      "problem": "The template instructs omeprazole after food; the label says take before meals. The extractor is faithful; the data teaches a wrong instruction.",
+      "suggested_fix": "Change the template or drop the food instruction for omeprazole.",
+      "evidence": "openFDA omeprazole label: 'Take omeprazole delayed-release capsules before meals.' (Section 2.3).",
+      "source_urls": ["https://api.fda.gov/drug/label.json?search=id%3A%2256d11df3-a35b-e577-e063-6394a90a9464%22&skip=0&limit=1"],
+      "confidence": "medium"
+    }
+  ],
+  "summary": "SIMULATED clinical review (not clinical validation); the extractor was not run (no shell), findings marked code read are UNVERIFIED. DEV rules score 0 critical, but only on six error classes. Critical: record.v1 cannot carry route (ceftriaxone injection dropped, m1-g7-000), child syrup ml has no strength or age (m1-e8-000, m1-i5-001; NHS: 10 ml = 240 mg or 500 mg depending on liquid), and CR-ROUTE, CR-PAEDIATRIC, CR-LIQUID-STRENGTH can never fire in the scorer, which the README does not say. Major: negated:true is overloaded (unfinished course versus advised against), no speaker or past-versus-advised status, as-needed and food timing not on the medication, 'every two days' may be read as daily, strength and quantity share one field, spoon and packet unit mappings, untested combination products (625, IFA), and advice or follow-up error codes missing from severity.md. Minor: unverified number words, symptom duration, stale text, omeprazole template. Real clinician must check items listed in the .md.",
+  "label": "ai_simulated_review"
+}

@@ -164,3 +164,9 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] UNVERIFIED (native speaker): confirm the ಜ್ವರವಿಲ್ಲ / ಕೆಮ್ಮಿಲ್ಲ / ವಾಂತಿಯಿಲ್ಲ / ನೋವಿಲ್ಲ spelling rule, ಪ್ಯಾಕೆಟ್ (sachet), ಎರಡೂವರೆ (2.5), ಆಗಿದ್ದರೆ (fever follow-up); use reviews/human_sheets.
 - [ ] Optional (about 25 min, needs Ollama running with qwen3:4b-instruct): `mingw32-make m3-run-llm-dev` to replace the STALE rules-vs-LLM comparison; read holdout-only rows, not pooled ones.
 - [ ] After the first real ASR run: `uv run python -m m3_extract run-rules --transcripts <dir>` and check whether ASR writes the short-vowel ಒ.ಆರ್.ಎಸ್.
+
+## From infra (merged 20261111T145546Z)
+
+- [ ] (m3 clinical review, 2026-11-11) Real clinician: which fields a record needs for child syrup (strength, age, weight); is negated:true acceptable for an unfinished course; which advice items count as CRITICAL; ಚಮಚ = teaspoon or tablespoon; omeprazole "after food" in template e4.
+- [ ] (m6 reviews, 2026-11-11) Native Kannada clinic staff read the m6 screens aloud and check the new m6_ rows in reviews/human_sheets/kannada_review_sheet.csv, especially the safety strings.
+- [ ] (m6 security, 2026-11-11) Run gitleaks (not installed during the audit) and test m6 live mode against m5 in the final security audit.
