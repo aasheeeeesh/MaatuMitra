@@ -30,7 +30,14 @@ from m1_data.render import (
     WordFill,
     render_text,
 )
-from m1_data.split import lock_text, plan_combos, plan_families, seed_int, sha256_bytes
+from m1_data.split import (
+    lock_text,
+    plan_combos,
+    plan_families,
+    seed_int,
+    sha256_bytes,
+    split_audio_tail,
+)
 from m1_data.templates import TEMPLATES_DIR, load_templates
 
 
@@ -441,6 +448,14 @@ def generate(
         "bare drug mentions without a dose may occur in both splits",
     }
     files["data/splits/split_plan.json"] = _dump(plan)
+    # audio rows are written by `m1_data audio-*`; the text generator keeps them untouched
+    old_manifest = out_root / "data" / "manifest.jsonl"
+    if old_manifest.exists():
+        manifest += [
+            json.loads(x)
+            for x in old_manifest.read_text(encoding="utf-8").splitlines()
+            if x.strip() and json.loads(x)["file"].startswith("data/audio/")
+        ]
     manifest.sort(key=lambda r: r["file"])
     files["data/manifest.jsonl"] = _jsonl(manifest)
 
@@ -460,12 +475,15 @@ def generate(
         f"Rebuild only with `--refreeze` + a decision entry.",
     )
     lock_path = out_root / "data" / "splits" / "test.lock"
-    if lock_path.exists() and lock_path.read_text(encoding="utf-8") != new_lock and not refreeze:
-        raise GenerationError(
-            "the regenerated TEST split differs from the frozen data/splits/test.lock. "
-            "Refusing to overwrite. Pass --refreeze only with a decision entry."
-        )
-    files["data/splits/test.lock"] = new_lock.encode("utf-8")
+    audio_tail = ""
+    if lock_path.exists():
+        old_head, audio_tail = split_audio_tail(lock_path.read_bytes().decode("utf-8"))
+        if old_head != new_lock and not refreeze:
+            raise GenerationError(
+                "the regenerated TEST split differs from the frozen data/splits/test.lock. "
+                "Refusing to overwrite. Pass --refreeze only with a decision entry."
+            )
+    files["data/splits/test.lock"] = (new_lock + audio_tail).encode("utf-8")
 
     # write: overwrite changed files only, then remove stale generated files
     for rel, content in files.items():

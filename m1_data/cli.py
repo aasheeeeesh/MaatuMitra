@@ -4,6 +4,10 @@ python -m m1_data build-lexicon          (needs: uv run --extra data)
 python -m m1_data generate [--refreeze]  (writes data/)
 python -m m1_data coverage               (prints + writes results/m1_data/coverage.json)
 python -m m1_data verify-lock            (frozen test split unchanged?)
+python -m m1_data audio-plan             (counts + size estimate, no disk use)
+python -m m1_data audio-build [--limit-convs N] [--min-free-gb 4]   (MMS-TTS audio, resumable)
+python -m m1_data fleurs [--min-free-gb 4]                          (public real speech subset)
+python -m m1_data audio-verify           (manifest sha256 vs files present)
 MODE=mock python -m m1_data mock         (fixtures only -> results/m1_data/mock/)
 """
 
@@ -29,6 +33,14 @@ def main(argv: list[str] | None = None) -> int:
     g.add_argument("--refreeze", action="store_true", help="allow the TEST split to change")
     sub.add_parser("coverage")
     sub.add_parser("verify-lock")
+    sub.add_parser("audio-plan")
+    sub.add_parser("audio-verify")
+    for name in ("audio-build", "fleurs"):
+        q = sub.add_parser(name)
+        q.add_argument("--min-free-gb", type=float, default=4.0)
+        if name == "audio-build":
+            q.add_argument("--limit-convs", type=int, default=None)
+            q.add_argument("--threads", type=int, default=4)
     sub.add_parser("mock")
     a = ap.parse_args(argv)
 
@@ -44,6 +56,19 @@ def main(argv: list[str] | None = None) -> int:
         from m1_data.coverage import write_reports
 
         print(json.dumps(write_reports(), ensure_ascii=False, indent=2))
+    elif a.cmd in ("audio-plan", "audio-verify", "audio-build", "fleurs"):
+        from m1_data import audio_run as ar
+
+        if a.cmd == "audio-plan":
+            res = ar.estimate(ROOT)
+        elif a.cmd == "audio-verify":
+            res = ar.verify(ROOT)
+        elif a.cmd == "audio-build":
+            res = ar.run_tts(ROOT, a.limit_convs, a.min_free_gb, a.threads)
+        else:
+            res = ar.run_fleurs(ROOT, a.min_free_gb)
+        print(json.dumps(res, indent=2))
+        return 1 if res.get("bad") else 0
     elif a.cmd == "verify-lock":
         from m1_data.split import LOCK_PATH, verify_lock
 

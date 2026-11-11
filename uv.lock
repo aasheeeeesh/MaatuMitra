@@ -990,6 +990,8 @@ llm = [
 tts = [
     { name = "librosa" },
     { name = "soundfile" },
+    { name = "torch" },
+    { name = "transformers" },
 ]
 
 [package.metadata]
@@ -1021,6 +1023,8 @@ requires-dist = [
     { name = "soundfile", marker = "extra == 'asr'", specifier = ">=0.12" },
     { name = "soundfile", marker = "extra == 'tts'", specifier = ">=0.12" },
     { name = "streamlit", specifier = ">=1.40" },
+    { name = "torch", marker = "extra == 'tts'", specifier = ">=2.15.0" },
+    { name = "transformers", marker = "extra == 'tts'", specifier = ">=5.22.2" },
     { name = "uvicorn", specifier = ">=0.30" },
 ]
 provides-extras = ["asr", "tts", "llm", "helper", "data"]

@@ -66,6 +66,15 @@ def lock_text(entries: dict[str, str], header: str) -> str:
     return "\n".join(lines) + "\n"
 
 
+AUDIO_LOCK_COMMENT = "# audio files of the test split"
+
+
+def split_audio_tail(text: str) -> tuple[str, str]:
+    """(text part, appended audio tail) of a lock file; the tail starts at the audio comment."""
+    i = text.find(AUDIO_LOCK_COMMENT)
+    return (text, "") if i < 0 else (text[:i], text[i:])
+
+
 def read_lock(lock: Path) -> dict[str, str]:
     out = {}
     for raw in lock.read_text(encoding="utf-8").splitlines():
@@ -83,6 +92,8 @@ def verify_lock(lock: Path, root: Path) -> list[str]:
     for rel, sha in read_lock(lock).items():
         p = root / rel
         if not p.exists():
+            if rel.startswith("data/audio/"):
+                continue  # git-ignored audio, rebuilt by `make m1-audio`; checked when present
             problems.append(f"{rel}: listed in test.lock but missing")
         elif sha256_bytes(p.read_bytes()) != sha:
             problems.append(f"{rel}: CHANGED since the test split was frozen")

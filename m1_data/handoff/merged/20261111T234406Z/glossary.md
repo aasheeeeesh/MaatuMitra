@@ -1,0 +1,8 @@
+- **Gated model**: a Hugging Face repository that only lets you download after you log in and accept its terms; without an access token the download fails with HTTP 401.
+- **MMS-TTS**: Meta's "Massively Multilingual Speech" text-to-speech models; the Kannada one (mms-tts-kan) has a single voice.
+- **Held-out voice**: a synthetic voice used only for the test split, so a model tuned on dev never heard it.
+- **Pitch shift**: changing how high a voice sounds without changing how long it lasts; here it makes a lower-sounding copy of the same synthetic speaker (not a new speaker).
+- **SNR (signal-to-noise ratio)**: how much louder the speech is than the added noise, in dB; 20 dB is mild noise, 5 dB is very noisy.
+- **White noise / pink noise**: random hiss with equal energy at all pitches (white) or more energy in low pitches (pink, like rain or a crowd).
+- **Pagefile**: a hidden Windows file (here about 25 GB) used as spare memory; it grows when RAM is short and only shrinks after a restart, so it can silently eat free disk space.
+- **Streaming extraction**: reading a big archive over the network while it downloads and keeping only the few files you need, so the archive never sits on disk.

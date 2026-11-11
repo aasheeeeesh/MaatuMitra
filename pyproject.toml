@@ -40,6 +40,8 @@ asr = [
 tts = [
     "soundfile>=0.12",
     "librosa>=0.10",
+    "torch>=2.15.0",
+    "transformers>=5.22.2",
 ]
 # m3_extract LLM comparison (E2) through a local Ollama server.
 llm = [
