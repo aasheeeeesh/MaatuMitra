@@ -22,7 +22,7 @@ Status values: todo / in-progress / done / blocked.
 | B5 | B | m5_backend build + reviews + gate | done (fix pass verified D-103; open: m4 wiring + m6 adapt in Phase C) | 2026-11-10 | 4f3c5ad |
 | B6 | B | m6_ui build + reviews + gate | done (reviews D-123 security, D-124 kannada; fixes in the Phase C m6 pass) | 2026-11-11 | 6440bbd |
 | B7 | B | m7_eval build + reviews + gate | todo | | |
-| B8 | B | m8_helper build + reviews + gate | built (H4 not met; D-138..) reviews pending | 2026-11-12 | (this commit) |
+| B8 | B | m8_helper build + reviews + gate | built (H4 not met; D-138..) reviews pending | 2026-11-12 | c7d1cba |
 | C1 | C | Integration boundaries + e2e + fresh-clone make eval | todo | | |
 | C2 | C | Final audits (integrity, security) + fixes | todo | | |
 | C3 | C | make eval-test once (ALLOW_TEST=1) + log | todo | | |
