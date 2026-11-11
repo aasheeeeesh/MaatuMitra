@@ -6,7 +6,7 @@
       "rule": "drug_match",
       "drug": "ors",
       "match_type": "exact",
-      "form": "ಒ ಆರ್ ಎಸ್",
+      "form": "ಓ ಆರ್ ಎಸ್",
       "char_start": 20
     },
     {

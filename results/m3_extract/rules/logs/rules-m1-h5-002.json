@@ -14,8 +14,13 @@
       "item": "vomiting"
     },
     {
+      "rule": "symptom_skipped_conditional",
+      "item": "vomiting",
+      "char_start": 43
+    },
+    {
       "rule": "phrase",
-      "pattern": "FU-VOMIT-STOP",
+      "pattern": "FU-SYMPTOM-IF-COME",
       "negated": false
     }
   ]

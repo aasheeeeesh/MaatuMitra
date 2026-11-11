@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-e8-007",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -42,7 +42,7 @@
       "duration_days": null,
       "negated": false,
       "evidence": {
-        "span_text": "ಒ.ಆರ್.ಎಸ್",
+        "span_text": "ಓ.ಆರ್.ಎಸ್",
         "char_start": 30,
         "char_end": 39,
         "audio_start": null,
@@ -51,15 +51,15 @@
     },
     {
       "drug": "paracetamol",
-      "dose_value": 1,
-      "dose_unit": "tablet",
+      "dose_value": 2.5,
+      "dose_unit": "ml",
       "frequency_per_day": 4,
       "duration_days": 3,
       "negated": false,
       "evidence": {
-        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿವಸ",
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಎರಡೂವರೆ ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
         "char_start": 62,
-        "char_end": 116,
+        "char_end": 124,
         "audio_start": null,
         "audio_end": null
       }

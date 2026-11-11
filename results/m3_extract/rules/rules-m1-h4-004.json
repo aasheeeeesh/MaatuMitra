@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-h4-004",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -25,13 +25,13 @@
   "medications": [
     {
       "drug": "ibuprofen",
-      "dose_value": 400,
+      "dose_value": 200,
       "dose_unit": "mg",
       "frequency_per_day": 3,
       "duration_days": 3,
       "negated": false,
       "evidence": {
-        "span_text": "ಐಬುಪ್ರೋಫೆನ್ 400 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+        "span_text": "ಐಬುಪ್ರೋಫೆನ್ 200 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
         "char_start": 21,
         "char_end": 73,
         "audio_start": null,

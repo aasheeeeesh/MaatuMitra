@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-e4-005",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -42,16 +42,16 @@
       }
     },
     {
-      "drug": "ondansetron",
-      "dose_value": 8,
-      "dose_unit": "mg",
-      "frequency_per_day": 2,
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 4,
       "duration_days": 3,
       "negated": false,
       "evidence": {
-        "span_text": "ಒಂಡನ್ಸಿಟ್ರಾನ್ 8 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ",
+        "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
         "char_start": 133,
-        "char_end": 186,
+        "char_end": 187,
         "audio_start": null,
         "audio_end": null
       }
@@ -63,8 +63,8 @@
       "negated": false,
       "evidence": {
         "span_text": "ಊಟದ ನಂತರ",
-        "char_start": 188,
-        "char_end": 196,
+        "char_start": 189,
+        "char_end": 197,
         "audio_start": null,
         "audio_end": null
       }

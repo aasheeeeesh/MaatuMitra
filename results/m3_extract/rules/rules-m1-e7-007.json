@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-e7-007",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -31,7 +31,7 @@
       "duration_days": null,
       "negated": false,
       "evidence": {
-        "span_text": "ಓ.ಆರ್.ಎಸ್",
+        "span_text": "ಓ ಆರ್ ಎಸ್",
         "char_start": 20,
         "char_end": 29,
         "audio_start": null,

@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-a3-003",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -26,8 +26,8 @@
       "present": true,
       "evidence": {
         "span_text": "ವಾಂತಿ",
-        "char_start": 92,
-        "char_end": 97,
+        "char_start": 91,
+        "char_end": 96,
         "audio_start": null,
         "audio_end": null
       }
@@ -36,15 +36,15 @@
   "medications": [
     {
       "drug": "ibuprofen",
-      "dose_value": 400,
-      "dose_unit": "mg",
+      "dose_value": null,
+      "dose_unit": null,
       "frequency_per_day": null,
       "duration_days": null,
       "negated": false,
       "evidence": {
-        "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್ 400 mg",
+        "span_text": "ಐಬ್ಯುಪ್ರೋಫೆನ್",
         "char_start": 63,
-        "char_end": 83,
+        "char_end": 76,
         "audio_start": null,
         "audio_end": null
       }

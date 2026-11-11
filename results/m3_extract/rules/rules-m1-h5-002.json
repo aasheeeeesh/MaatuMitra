@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-h5-002",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -15,8 +15,8 @@
       "present": true,
       "evidence": {
         "span_text": "ವಾಂತಿ",
-        "char_start": 43,
-        "char_end": 48,
+        "char_start": 0,
+        "char_end": 5,
         "audio_start": null,
         "audio_end": null
       }
@@ -52,9 +52,9 @@
   ],
   "advice": [],
   "follow_up": {
-    "text": "if the vomiting stops, come immediately",
+    "text": "if there is vomiting, come immediately",
     "evidence": {
-      "span_text": "ವಾಂತಿ ನಿಂತರೆ ತಕ್ಷಣ ಬನ್ನಿ",
+      "span_text": "ವಾಂತಿ ಇದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ",
       "char_start": 43,
       "char_end": 67,
       "audio_start": null,

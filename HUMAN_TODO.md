@@ -158,3 +158,9 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] **Confusable drug pairs.** The E4 drug swaps use data/lexicon/drugs.csv confusable_with, which is mostly AI-proposed. A pharmacist should check the pairs or provide a real list (ISMP or Indian equivalent); paracetamol, ibuprofen, zinc, ORS and others have no pair and are never swapped.
 - [ ] **Real second ASR transcript for C7.** When m2 has two ASR outputs for the same DEV audio, run the verifier with `--second-transcript` on DEV records and report the clean-record flag rate; the current E4 C7 row uses a perfect (oracle) transcript and is only an upper bound.
 - [ ] **Never set ALLOW_TEST=1 for m4 commands.** If you ever must, also set PURPOSE="..." and check results/m4_verify/test_access_log.md afterwards.
+
+## From m3_extract (merged 20261111T144008Z)
+
+- [ ] UNVERIFIED (native speaker): confirm the ಜ್ವರವಿಲ್ಲ / ಕೆಮ್ಮಿಲ್ಲ / ವಾಂತಿಯಿಲ್ಲ / ನೋವಿಲ್ಲ spelling rule, ಪ್ಯಾಕೆಟ್ (sachet), ಎರಡೂವರೆ (2.5), ಆಗಿದ್ದರೆ (fever follow-up); use reviews/human_sheets.
+- [ ] Optional (about 25 min, needs Ollama running with qwen3:4b-instruct): `mingw32-make m3-run-llm-dev` to replace the STALE rules-vs-LLM comparison; read holdout-only rows, not pooled ones.
+- [ ] After the first real ASR run: `uv run python -m m3_extract run-rules --transcripts <dir>` and check whether ASR writes the short-vowel ಒ.ಆರ್.ಎಸ್.

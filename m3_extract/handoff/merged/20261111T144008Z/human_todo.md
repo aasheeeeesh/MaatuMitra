@@ -1,0 +1,3 @@
+- [ ] UNVERIFIED (native speaker): confirm the ಜ್ವರವಿಲ್ಲ / ಕೆಮ್ಮಿಲ್ಲ / ವಾಂತಿಯಿಲ್ಲ / ನೋವಿಲ್ಲ spelling rule, ಪ್ಯಾಕೆಟ್ (sachet), ಎರಡೂವರೆ (2.5), ಆಗಿದ್ದರೆ (fever follow-up); use reviews/human_sheets.
+- [ ] Optional (about 25 min, needs Ollama running with qwen3:4b-instruct): `mingw32-make m3-run-llm-dev` to replace the STALE rules-vs-LLM comparison; read holdout-only rows, not pooled ones.
+- [ ] After the first real ASR run: `uv run python -m m3_extract run-rules --transcripts <dir>` and check whether ASR writes the short-vowel ಒ.ಆರ್.ಎಸ್.

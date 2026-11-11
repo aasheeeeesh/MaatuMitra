@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-c3-005",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -32,9 +32,9 @@
       "text": "do not give leftover tablets to others",
       "negated": true,
       "evidence": {
-        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡುವುದು ಬೇಡಿ",
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಬೇರೆಯವರಿಗೆ ಕೊಡ ಬೇಡಿ",
         "char_start": 40,
-        "char_end": 76,
+        "char_end": 71,
         "audio_start": null,
         "audio_end": null
       }

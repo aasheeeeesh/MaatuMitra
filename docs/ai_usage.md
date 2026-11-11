@@ -129,3 +129,9 @@ What a human must check:
 | agent | module | what it generated | what a human must check |
 |---|---|---|---|
 | safety-engineer (Claude, m4 fix pass 2026-11-11) | m4_verify | DEV allow-list guard (split_guard.py) and its tests; C4 rewrite (child doses, reason codes, allowed units per drug, max daily); C7 per-item attribution of second-transcript differences; confusable-only drug swaps; new Kannada negation rules (fused ಬೇಡ, ಇಲ್ರೀ/ಇಲ್ಲಪ್ಪ, -ಲ್ವಾ, clause split after predicates, multi-word answers, abbreviation dots) and all their test sentences; E4 reporting (unique N, Wilson CIs, field-level attribution, review burden); E4 dev results; README and handoff text | All Kannada sentences and rules (not native-validated); the child word list; the allowed-units table (UNVERIFIED rows listed in human_todo.md); that the guard really refuses test data on your machine (`uv run pytest m4_verify/tests/test_split_guard.py -q`); that README numbers match results/m4_verify/dev/e4/summary.json |
+
+## From m3_extract (merged 20261111T144008Z)
+
+## m3_extract fix pass (2026-11-11), nlp-engineer (AI agent)
+Generated: tests (test_no_test_only_words.py and new cases in test_rules, test_lexicon, test_scoring), the fused-symptom, packet, ORS-variant, number (ಎರಡೂವರೆ) and phrase changes, rescored dev results, README and failure_analysis edits, handoff files.
+A human must check: all new Kannada forms (fused ಜ್ವರವಿಲ್ಲ pattern, ಪ್ಯಾಕೆಟ್ = sachet, ಎರಡೂವರೆ = 2.5, short-vowel ಒ.ಆರ್.ಎಸ್ as ASR output, the follow-up "ವಾಂತಿ ಇದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ") with a native speaker; that the guard test list of legitimate sources is acceptable.

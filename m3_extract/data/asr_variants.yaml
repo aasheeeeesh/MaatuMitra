@@ -1,0 +1,8 @@
+# Extra drug-name variants that m3 accepts ON TOP of data/lexicon/drugs.csv (we cannot edit the
+# shared lexicon). Keyed by generic_en; every form is reported as match_type "variant".
+# Written by nlp-engineer (AI) 2026-11-11 for D-110: REFREEZE-1 respelled ORS with the long vowel
+# (ಓ.ಆರ್.ಎಸ್, the spelling in the lexicon and in the data); ASR may write the short-vowel ಒ.
+# Not native-validated; the short-vowel form is a hypothesis about ASR output (no ASR run yet).
+version: 1
+variants:
+  ors: ["ಒ.ಆರ್.ಎಸ್", "ಒ ಆರ್ ಎಸ್"]

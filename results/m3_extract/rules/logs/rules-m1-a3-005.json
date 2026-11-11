@@ -5,14 +5,14 @@
     {
       "rule": "drug_match",
       "drug": "paracetamol",
-      "match_type": "variant",
-      "form": "ಪ್ಯಾರಸಿಟಮೋಲ್",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
       "char_start": 61
     },
     {
       "rule": "cross_turn",
-      "item": "vomiting",
-      "polarity": "affirmative"
+      "item": "diarrhoea",
+      "polarity": "negative"
     }
   ]
 }

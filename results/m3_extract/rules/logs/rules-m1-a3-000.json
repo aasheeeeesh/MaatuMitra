@@ -6,13 +6,13 @@
       "rule": "drug_match",
       "drug": "paracetamol",
       "match_type": "exact",
-      "form": "paracetamol",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
       "char_start": 61
     },
     {
       "rule": "cross_turn",
-      "item": "vomiting",
-      "polarity": "negative"
+      "item": "cold",
+      "polarity": "affirmative"
     }
   ]
 }

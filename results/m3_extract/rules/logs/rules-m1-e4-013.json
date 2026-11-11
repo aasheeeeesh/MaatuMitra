@@ -18,9 +18,9 @@
     },
     {
       "rule": "drug_match",
-      "drug": "levofloxacin",
+      "drug": "metronidazole",
       "match_type": "exact",
-      "form": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "form": "ಮೆಟ್ರೋನಿಡಜೋಲ್",
       "char_start": 132
     },
     {

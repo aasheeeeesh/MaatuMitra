@@ -1,5 +1,3 @@
-import pytest
-
 from m3_extract import textnorm as tn
 
 
@@ -18,15 +16,16 @@ def test_variants(full_lexicon):
     assert find(full_lexicon, "ಮೊಂಟೆಲುಕಾಸ್ಟ್ 10") == [("montelukast", "variant")]
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="REFREEZE-1 respelled ORS with long vowel (ಓ.ಆರ್.ಎಸ್); m3 fix pass must update this test "
-    "and keep accepting the short-vowel ASR form ಒ.ಆರ್.ಎಸ್ (D-110)",
-)
 def test_multi_token_names_longest_match(full_lexicon):
     assert find(full_lexicon, "ಇದು ಐರನ್ ಫೋಲಿಕ್ ಆಸಿಡ್ ಅಲ್ಲ") == [("iron-folic acid", "exact")]
-    assert find(full_lexicon, "ಒ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ") == [("ors", "exact")]
-    assert find(full_lexicon, "ಓ ಆರ್ ಎಸ್ ಸ್ವಲ್ಪ") == [("ors", "variant")]
+    # REFREEZE-1 spelling (long vowel ಓ) is the lexicon's own form
+    assert find(full_lexicon, "ಓ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ") == [("ors", "exact")]
+    # short-vowel ಒ is what ASR may write: accepted as an m3 variant (data/asr_variants.yaml)
+    assert find(full_lexicon, "ಒ.ಆರ್.ಎಸ್ ಆಗಾಗ ಕುಡಿಸಿ") == [("ors", "variant")]
+    assert find(full_lexicon, "ಒ ಆರ್ ಎಸ್ ಸ್ವಲ್ಪ") == [("ors", "variant")]
+    assert find(full_lexicon, "ಓ ಆರ್ ಎಸ್ ಸ್ವಲ್ಪ") == [
+        ("ors", "exact")
+    ]  # same tokens as the dotted form
     assert find(full_lexicon, "oral rehydration salts ಆಗಾಗ") == [("ors", "variant")]
     assert find(full_lexicon, "co-amoxiclav") == [("amoxicillin-clavulanate", "variant")]
 

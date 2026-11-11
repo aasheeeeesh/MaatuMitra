@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-c4-004",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -17,11 +17,11 @@
       "dose_unit": "mg",
       "frequency_per_day": null,
       "duration_days": null,
-      "negated": false,
+      "negated": true,
       "evidence": {
-        "span_text": "ಲೇವೋ 500 mg",
+        "span_text": "ಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ",
         "char_start": 33,
-        "char_end": 44,
+        "char_end": 77,
         "audio_start": null,
         "audio_end": null
       }
@@ -33,8 +33,8 @@
       "negated": true,
       "evidence": {
         "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು",
-        "char_start": 72,
-        "char_end": 98,
+        "char_start": 86,
+        "char_end": 112,
         "audio_start": null,
         "audio_end": null
       }

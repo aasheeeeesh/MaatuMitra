@@ -97,3 +97,28 @@ def test_aggregate_per_1000_with_ci():
     assert crit["errors"] == 1 and crit["n_fields"] == 11
     assert crit["per_1000"] == pytest.approx(1000 / 11)
     assert crit["ci_low_per_1000"] < crit["per_1000"] < crit["ci_high_per_1000"]
+
+
+def test_score_rows_has_per_field_slice():
+    from m3_extract.run import score_rows
+    from m3_extract.scoring import FieldResult
+
+    res = [
+        FieldResult("c1", "medication", "x", "dose_value", None),
+        FieldResult("c1", "medication", "x", "dose_value", "CR-DOSE"),
+        FieldResult("c1", "advice", "a", "text", "MA-MISSED-ADVICE"),
+    ]
+    golds = {
+        "c1": {
+            "template_family_id": "a_x__f1",
+            "tags": {"code_switched": False, "has_negation": False, "cross_turn_negation": False},
+        }
+    }
+    rows = score_rows("rules", "full_dev", res, {}, golds)
+    got = {
+        (r["slice_value"], r["severity"]): (r["errors"], r["n_fields"])
+        for r in rows
+        if r["slice"] == "field"
+    }
+    assert got[("medication.dose_value", "critical")] == (1, 2)
+    assert got[("advice.text", "major")] == (1, 1)

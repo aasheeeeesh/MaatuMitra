@@ -9,7 +9,7 @@ def test_comparison_form_digits_zw_case():
     assert tn.comparison_form("೫೦೦") == "500"
     assert tn.comparison_form("Azithromycin") == "azithromycin"
     # ZWNJ removed only in the comparison copy
-    assert tn.comparison_form("ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು") == "ಆಂಟಿಬಯಾಟಿಕ್ಗಳು"
+    assert tn.comparison_form("ಮಾತ್ರೆ‌ಗಳು") == "ಮಾತ್ರೆಗಳು"
 
 
 def test_normalise_strips_bom_zwsp_and_nfc():
@@ -28,12 +28,12 @@ def test_check_stored_fails_closed():
 
 
 def test_tokenize_keeps_offsets_into_stored_text():
-    text = "ಪ್ಯಾರಸಿಟಮಾಲ್ ೫೦೦ mg, ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು 2.5"
+    text = "ಪ್ಯಾರಸಿಟಮಾಲ್ ೫೦೦ mg, ಮಾತ್ರೆ‌ಗಳು 2.5"
     toks = tn.tokenize(text)
     for t in toks:
         assert text[t.start : t.end] == t.text
     norms = [t.norm for t in toks]
-    assert norms == ["ಪ್ಯಾರಸಿಟಮಾಲ್", "500", "mg", "ಆಂಟಿಬಯಾಟಿಕ್ಗಳು", "2.5"]
+    assert norms == ["ಪ್ಯಾರಸಿಟಮಾಲ್", "500", "mg", "ಮಾತ್ರೆಗಳು", "2.5"]
 
 
 def test_matras_and_virama_do_not_split_words():

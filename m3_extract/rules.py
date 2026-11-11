@@ -39,9 +39,9 @@ PHRASES_PATH = HERE / "data" / "phrases.yaml"
 
 EXIST_WORDS = {"ಇದೆ", "ಇವೆ", "ಬಂದಿದೆ", "ಆಗಿದೆ", "ಆಗುತ್ತಿದೆ", "ಇತ್ತು"}
 HOW_MANY = {"ಎಷ್ಟು"}
-# Conditional verb endings ("if ..."): ಇದ್ದರೆ, ಬಂದರೆ, ...ದಿದ್ದರೆ, spoken ತಗೊಂಡ್ರೆ. Words that merely
+# Conditional verb endings ("if ..."): ಇದ್ದರೆ, ಬಂದರೆ, ...ದಿದ್ದರೆ, spoken ...ದ್ರೆ. Words that merely
 # END in these letters are listed as exceptions (ಆದರೆ "but" is a clause splitter; ತೊಂದರೆ "trouble").
-CONDITIONAL_RE = regex.compile(r"(ದರೆ|ದ್ರೆ|ಡ್ರೆ)$")
+CONDITIONAL_RE = regex.compile(r"(ದರೆ|ದ್ರೆ)$")
 NOT_CONDITIONAL = {"ಆದರೆ", "ತೊಂದರೆ"}
 COORD_SPLITTERS = {"NEG-CL03", "NEG-CL04", ","}  # ಮತ್ತು, ಹಾಗೂ, comma
 
@@ -49,14 +49,34 @@ COORD_SPLITTERS = {"NEG-CL03", "NEG-CL04", ","}  # ಮತ್ತು, ಹಾಗೂ
 # ----------------------------------------------------------------------------- resources
 
 
+def fused_forms(noun: str) -> list[str]:
+    """Kannada noun + ಇಲ್ಲ / ಇದೆ written as ONE word (ಜ್ವರ+ಇಲ್ಲ = ಜ್ವರವಿಲ್ಲ, ವಾಂತಿ+ಇಲ್ಲ = ವಾಂತಿಯಿಲ್ಲ,
+    ಕೆಮ್ಮು+ಇಲ್ಲ = ಕೆಮ್ಮಿಲ್ಲ). Sandhi rule (grammar inference, UNVERIFIED, not native-validated):
+    final ು -> ಿ; final ಿ/ೀ/ೆ -> glide ಯ + ಇ-sign; final consonant -> glide ವ + ಇ-sign."""
+    if regex.fullmatch(r"[\p{Kannada}]+", noun) is None:
+        return []
+    if noun.endswith("ು"):
+        base = noun[:-1] + "ಿ"
+    elif noun[-1] in "ಿೀೆ":
+        base = noun + "ಯಿ"
+    elif noun[-1] in "ೇೈೊೋೌಾೂ":
+        return []
+    else:
+        base = noun + "ವಿ"
+    return [base + "ಲ್ಲ", base + "ಲ್ಲಾ", base + "ದೆ"]
+
+
 @cache
 def load_symptoms(path: str | Path = SYMPTOMS_PATH) -> dict[tuple[str, ...], str]:
-    """Token-sequence form (comparison form) -> canonical symptom name."""
+    """Token-sequence form (comparison form) -> canonical symptom name (incl. fused ಜ್ವರವಿಲ್ಲ)."""
     doc = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
     out: dict[tuple[str, ...], str] = {}
     for name, e in doc["symptoms"].items():
         for form in list(e.get("kn") or []) + list(e.get("latin") or []):
             out[tuple(t.norm for t in tokenize(form))] = name
+        for form in e.get("kn") or []:
+            for fused in fused_forms(form):
+                out.setdefault(tuple(t.norm for t in tokenize(fused)), name)
     return out
 
 
@@ -90,6 +110,7 @@ class Phrase:
     tokens: list[str]
     optional: set[int]
     extend: bool
+    allow_drug_clause: bool
     gloss_pos: str
     gloss_neg: str
 
@@ -114,6 +135,7 @@ def load_phrases(path: str | Path = PHRASES_PATH) -> Phrases:
                     e["tokens"],
                     set(e.get("optional", [])),
                     bool(e.get("extend_to_clause_end")),
+                    bool(e.get("allow_drug_clause")),
                     e["gloss_pos"],
                     e["gloss_neg"],
                 )
@@ -344,7 +366,8 @@ def _symptom_mentions(doc: Doc, lexicon_hits: set[int], table: NegationTable) ->
         # next clause's predicate (ನೆಗಡಿ ಮತ್ತು ಕೆಮ್ಮು ... ಇದೆ)
         pol_ci = ci
         while (
-            all(by_start[x.start] in sym_tok for x in doc.clauses[pol_ci].tokens)
+            not doc.neg[pol_ci].negated  # a fused ಕೆಮ್ಮಿಲ್ಲ carries its own predicate
+            and all(by_start[x.start] in sym_tok for x in doc.clauses[pol_ci].tokens)
             and doc.clauses[pol_ci].splitter_after in COORD_SPLITTERS
             and pol_ci + 1 < len(doc.clauses)
             and doc.clauses[pol_ci + 1].turn == clause.turn
@@ -416,7 +439,9 @@ def _advice(doc: Doc, drug_tok: set[int]) -> tuple[list[Mention], Mention | None
                 if p.extend:
                     last_ci = max(cis)
                     toks = toks + [i for i in idx if doc.clause_of[i] == last_ci and i > toks[-1]]
-                if any(doc.clause_of[i] == ci for ci in cis for i in drug_tok):
+                if not p.allow_drug_clause and any(
+                    doc.clause_of[i] == ci for ci in cis for i in drug_tok
+                ):
                     doc.events.append({"rule": "advice_skipped_drug_clause", "pattern": p.id})
                     continue
                 s, e = doc.tokens[toks[0]].start, doc.tokens[toks[-1]].end

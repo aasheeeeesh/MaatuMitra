@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-e8-008",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -51,13 +51,13 @@
     },
     {
       "drug": "paracetamol",
-      "dose_value": 2,
-      "dose_unit": "tablet",
+      "dose_value": 10,
+      "dose_unit": "ml",
       "frequency_per_day": 4,
       "duration_days": 3,
       "negated": false,
       "evidence": {
-        "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+        "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ 10 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
         "char_start": 56,
         "char_end": 109,
         "audio_start": null,

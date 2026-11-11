@@ -137,3 +137,9 @@ Things nobody has verified yet, with what to check. Builders add items through
 - **UNVERIFIED: new negation forms** (fused ಬೇಡ after a vowel sign or virama; ಇಲ್ರೀ, ಇಲ್ಲಪ್ಪ, ಬೇಡವಾ; negative question -ಲ್ವಾ; clause split after ಇದೆ/ಇಲ್ಲ; address words after an answer). None is native-validated, and none occurs in the real-text audit sentences.
 - **How should an answer to a negative question be labelled?** (ಹೌದು after "ಜ್ವರ ಇಲ್ಲವಾ?"): m4 flags it as ambiguous; the m1 data does not generate it (NEG-S07 generate: false).
 - **Oracle second transcript.** The E4 "second transcript" row uses the uncorrupted text, so it is an upper bound. The clean-record flag rate of C7 with a REAL second ASR output is not measured yet (needs two m2 ASR runs on the same dev audio).
+
+## From m3_extract (merged 20261111T144008Z)
+
+- UNVERIFIED Kannada forms added in the 2026-11-11 fix pass: fused ಜ್ವರವಿಲ್ಲ rule, ಪ್ಯಾಕೆಟ್ = sachet, ಎರಡೂವರೆ = 2.5, ಆಗಿದ್ದರೆ in the fever follow-up, short-vowel ORS as ASR output. Who confirms them?
+- Not done from the Kannada review: ಗುಳಿಗೆ, ಟ್ಯಾಬ್ಲೆಟ್, inflected ಮಾತ್ರೆಯನ್ನು and ಮಾತ್ರೆಗಳನ್ನು as units; half-numbers other than ಎರಡೂವರೆ (for example ಒಂದೂವರೆ).
+- Should m1 add ಒ.ಆರ್.ಎಸ್ to the shared lexicon variants instead of m3 holding it in data/asr_variants.yaml?

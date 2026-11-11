@@ -4,7 +4,7 @@ in mock mode). Match types, logged for every hit:
   variant kn_variants or roman_variants
   edit1   Levenshtein distance 1 on a Latin token of length >= 6 against a single-token Latin
           name, accepted only if exactly ONE drug is that close (else logged as ambiguous, no match)
-Longest token-sequence match wins (iron folic acid, oral rehydration salts, ಒ.ಆರ್.ಎಸ್).
+Longest token-sequence match wins (iron folic acid, oral rehydration salts, ORS; ORS short-vowel ASR variants come from data/asr_variants.yaml).
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import regex
+import yaml
 
 from m3_extract.textnorm import Token, comparison_form, tokenize
 
@@ -91,7 +92,12 @@ def _key(s: str) -> tuple[str, ...]:
     return tuple(t.norm for t in tokenize(s))
 
 
-def load_lexicon(path: str | Path) -> DrugLexicon:
+ASR_VARIANTS_PATH = Path(__file__).resolve().parent / "data" / "asr_variants.yaml"
+
+
+def load_lexicon(
+    path: str | Path, extra_variants: str | Path | None = ASR_VARIANTS_PATH
+) -> DrugLexicon:
     path = Path(path)
     forms: dict[tuple[str, ...], tuple[str, str]] = {}
     latin_single: dict[str, str] = {}
@@ -113,6 +119,16 @@ def load_lexicon(path: str | Path) -> DrugLexicon:
                     forms[k] = (g, mt)
                 if len(k) == 1 and LATIN.match(k[0]):
                     latin_single[k[0]] = g
+    extra = {}
+    if extra_variants is not None and Path(extra_variants).exists():
+        extra = yaml.safe_load(Path(extra_variants).read_text(encoding="utf-8")).get("variants", {})
+    for g, vs in extra.items():
+        if g not in generics:  # fixture lexicon in mock mode may lack the drug: skip silently
+            continue
+        for form in vs:
+            k = _key(form)
+            if k and k not in forms:
+                forms[k] = (g, "variant")
     return DrugLexicon(path, forms, latin_single, max(len(k) for k in forms), generics)
 
 

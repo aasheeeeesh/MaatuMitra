@@ -50,6 +50,7 @@ advice:
     gloss_neg: "do not finish all tablets"
   - id: ADV-ONLY-IF-FEVER
     tokens: ["ಜ್ವರ", "ಇದ್ದರೆ", "ಮಾತ್ರ"]
+    allow_drug_clause: true  # REFREEZE-1 wording puts this condition in the same clause as the drug
     gloss_pos: "only if there is fever"
     gloss_neg: "only if there is no fever"
 follow_up:
@@ -66,8 +67,12 @@ follow_up:
     tokens: ["ವಾಂತಿ", "(ನಿಲ್ಲದಿದ್ದರೆ|ನಿಂತರೆ)", "ತಕ್ಷಣ", "ಬನ್ನಿ"]
     gloss_neg: "if the vomiting does not stop, come immediately"
     gloss_pos: "if the vomiting stops, come immediately"
+  - id: FU-SYMPTOM-IF-COME
+    tokens: ["ವಾಂತಿ", "ಇದ್ದರೆ", "ತಕ್ಷಣ", "ಬನ್ನಿ"]
+    gloss_pos: "if there is vomiting, come immediately"
+    gloss_neg: "if there is no vomiting, come immediately"
   - id: FU-FEVER-DOWN
-    tokens: ["ಜ್ವರ", "ಕಡಿಮೆ", "(ಆಗದಿದ್ದರೆ|ಆದರೆ)", "{N}", "ದಿನದಲ್ಲಿ", "ಮತ್ತೆ", "ಬನ್ನಿ"]
+    tokens: ["ಜ್ವರ", "ಕಡಿಮೆ", "(ಆಗದಿದ್ದರೆ|ಆಗಿದ್ದರೆ|ಆದರೆ)", "{N}", "ದಿನದಲ್ಲಿ", "ಮತ್ತೆ", "ಬನ್ನಿ"]
     gloss_neg: "if the fever does not come down, come back in {N} days"
     gloss_pos: "if the fever comes down, come back in {N} days"
 # Fallback: a non-question sentence whose tokens include one of these words is a follow-up with

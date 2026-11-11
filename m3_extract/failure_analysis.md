@@ -1,18 +1,45 @@
-## Hand-written analysis (nlp-engineer, 2026-11-10; read with the generated examples below)
+## Hand-written analysis (nlp-engineer, rewritten 2026-11-11 for the fix pass; read with the generated examples below)
 
-Numbers: errors / fields, per 1,000 fields, Wilson 95% CI. Source: `results/m3_extract/dev_scores.csv`.
-Gold transcripts only (no ASR yet), synthetic template text, not native-validated.
+Numbers: errors / fields, per 1,000 fields, Wilson 95% CI, N = fields. Source: `results/m3_extract/dev_scores.csv`.
+Gold transcripts only (no ASR yet), synthetic template text from ONE generator, not native-validated.
 
-| run | records | fields | critical /1000 [CI] | major /1000 [CI] | rejected |
-|---|---|---|---|---|---|
-| rules v2, full dev | 328 | 3624 | 0 (0/3624) [0, 1.1] | 13.2 (48) [10.0, 17.5] | 0 |
-| rules v2, dev_tune (IN-SAMPLE) | 240 | 2704 | 0 [0, 1.4] | 0 [0, 1.4] | 0 |
-| rules v2, dev_holdout (CONTAMINATED for the v2 fix) | 88 | 920 | 0 [0, 4.2] | 52.2 (48) [39.6, 68.5] | 0 |
-| **rules v1 (frozen), dev_holdout: honest unseen-wording estimate** | 88 | 920 | **7.6 (7) [3.7, 15.6]** | 52.2 (48) [39.6, 68.5] | 0 |
-| rules v2, LLM subset (40) | 40 | 488 | 0 [0, 7.8] | 8.2 (4) [3.2, 20.9] | 0 |
-| LLM qwen3:4b-instruct, LLM subset (40) | 40 | 508 | 11.8 (6) [5.4, 25.5] | 116.1 (59) [91.1, 146.9] | 4 |
+**These are IN-SAMPLE numbers.** The rules were written while reading DEV conversations, so DEV is
+where they were tuned. Do not read any row below as expected accuracy on new data. The only
+unseen-wording evidence is the pre-REFREEZE v1 holdout line, which is historical.
 
-(The LLM has more fields on the same 40 conversations because every extra item it invents adds a field.)
+Rules after the fix pass (version `rules_v3_frozen`, REFREEZE-1 data), all 328 DEV conversations:
+
+| part | records | fields | critical /1000 [CI] | major /1000 [CI] |
+|---|---|---|---|---|
+| dev_tune (IN-SAMPLE) | 240 | 2704 | 0 (0) [0, 1.4] | 0 (0) [0, 1.4] |
+| dev_holdout (CONTAMINATED: 9 holdout templates were looked at while fixing v2 and v3) | 88 | 920 | 0 (0) [0, 4.2] | 52.2 (48) [39.6, 68.5] |
+| all dev (pooled, NOT an accuracy estimate) | 328 | 3624 | 0 (0) [0, 1.1] | 13.2 (48) [10.0, 17.5] |
+| historical: rules v1, dev_holdout, PRE-REFREEZE data (the only unseen-wording figure) | 88 | 920 | 7.6 (7) [3.7, 15.6] | 52.2 (48) [39.6, 68.5] |
+
+Errors are clustered (the 7 v1 critical errors came from one template, c5), so the Wilson intervals
+are too narrow; a per-template bootstrap would be wider (not done).
+
+Per field, all 328 DEV conversations (rules v3, IN-SAMPLE; field rows depend on how many gold items exist):
+
+| field | N | critical errors /1000 [CI] | major errors /1000 [CI] |
+|---|---|---|---|
+| medication.drug / dose_value / dose_unit / frequency_per_day / duration_days / negated (each) | 408 | 0 [0, 9.3] | 0 [0, 9.3] |
+| symptom.name / symptom.present (each) | 304 | 0 [0, 12.5] | 0 [0, 12.5] |
+| advice.text | 120 | 0 [0, 31.0] | 40 (333.3) [255.3, 421.7] |
+| advice.negated | 120 | 0 [0, 31.0] | 0 [0, 31.0] |
+| follow_up.text | 328 | 0 [0, 11.6] | 8 (24.4) [12.4, 47.4] |
+
+The 32-of-40 caveat: the old rules-vs-LLM subset (40 conversations) has 32 dev_tune ids, which the
+rules were written against, and only 8 dev_holdout ids. Rules numbers on that subset are 80%
+in-sample and must not be used to say the rules beat the LLM.
+
+### Changes in the fix pass (2026-11-11)
+
+- Removed the test-only branch `ಡ್ರೆ` and test-only words (D-90). Added fused symptoms (ಜ್ವರವಿಲ್ಲ),
+  ಆಗಿದ್ದರೆ in the fever follow-up, ಪ್ಯಾಕೆಟ್ as sachet (D-93), short-vowel ORS variant, ಎರಡೂವರೆ = 2.5.
+- REFREEZE-1 made dev_tune worse at first: 9 errors (child-syrup 2.5 ml unreadable, 8 conversations of
+  template i5 with the fever condition in the drug clause, 1 follow-up wording). Fixed with
+  dev-informed additions (in-sample, disclosed). Critical errors on DEV fell from 10 to 0.
 
 ### Rules pipeline: what fails and why
 
@@ -31,7 +58,16 @@ Gold transcripts only (no ASR yet), synthetic template text, not native-validate
    symptom words and number/frequency phrasing as dev_tune (one generator), so this does not show
    robustness to real speech, dialects or ASR errors.
 
-### LLM pipeline (E2): what fails and why
+### LLM pipeline (E2): STALE (computed on PRE-REFREEZE data; not rerun)
+
+The comparison below was run before commit 66ff51a regenerated the data (new lexicon ranges, ORS
+spelling, child syrup doses). A full rerun on the 40-conversation subset takes about 25 minutes
+(median 47 s per conversation), above the 15-minute limit set for this fix pass, so it was NOT rerun.
+Its outputs are kept in `results/m3_extract/llm_STALE_pre_refreeze/` and are no longer scored.
+The old LLM numbers (kept only as history): critical 11.8/1000 (6 of 508 fields) [5.4, 25.5],
+major 116.1/1000 (59) [91.1, 146.9], 4 records rejected by the evidence check. The matching rules
+row was on 80% in-sample conversations, so no ranking of rules versus LLM follows from it.
+
 
 1. **Unit invented (CR-DOSE x4):** `ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್ ಒಂದು ಮಾತ್ರೆ ...` -> dose_unit "capsule" (gold "tablet");
    the same for zinc and azithromycin. In `m1-e4-001` the next line says ಕ್ಯಾಪ್ಸೂಲ್ and the unit leaked
@@ -49,6 +85,7 @@ Gold transcripts only (no ASR yet), synthetic template text, not native-validate
    count as MAJOR (severity rule 5). Read the LLM major rate with this in mind.
 6. Latency: p50 47 s, p95 253 s per conversation (Ollama runs the model 45% CPU / 55% GPU on the
    4 GB card; the two looping outputs dominate p95).
+
 
 ### Blind spots shared by both pipelines
 

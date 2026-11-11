@@ -132,4 +132,6 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Reason code**: a short machine-readable label at the start of a verifier flag (for example `out_of_range [CR-DOSE]:`), so reports can count kinds of flags.
 - **Finite predicate**: the verb that ends a Kannada clause (for example ಇದೆ "is there", ಇಲ್ಲ "is not"). A new clause can start right after it even without a comma.
 - **Negative question**: a question asked in the negative ("won't you drink?", ಕುಡಿಯಲ್ವಾ?). A yes/no answer to it is hard to read, so the verifier flags it.
+- **Fused symptom word**: a Kannada noun and its ending written as one word, for example ಜ್ವರವಿಲ್ಲ = ಜ್ವರ (fever) + ಇಲ್ಲ (not). m3 builds these forms with a grammar rule no native speaker has checked.
+- **STALE result**: a saved result made on data or code that has since changed; kept for history, not scored or quoted as current.
 <!-- GLOSSARY-END -->

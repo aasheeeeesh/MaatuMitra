@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-g5-000",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -19,9 +19,9 @@
       "duration_days": 7,
       "negated": false,
       "evidence": {
-        "span_text": "levo ೫೦೦ mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಒಂದು ವಾರ",
+        "span_text": "Levofloxacin 500 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಏಳು ದಿವಸ",
         "char_start": 7,
-        "char_end": 45,
+        "char_end": 53,
         "audio_start": null,
         "audio_end": null
       }
@@ -35,8 +35,8 @@
       "negated": false,
       "evidence": {
         "span_text": "paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
-        "char_start": 47,
-        "char_end": 90,
+        "char_start": 55,
+        "char_end": 98,
         "audio_start": null,
         "audio_end": null
       }

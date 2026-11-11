@@ -27,10 +27,23 @@ mingw32-make m3-score         # recompute scores from saved outputs
 
 ASR input (when m2 publishes transcripts): `uv run python -m m3_extract run-rules --transcripts <dir>`.
 
-## Dev results
+## Dev results (read the honesty labels first)
 
-See `results/m3_extract/dev_scores.csv` (all slices, Wilson 95% CIs) and
-`results/m3_extract/failures_dev.md` (examples with input, output, gold and cause). Summary table:
-`m3_extract/failure_analysis.md`. The dev_tune score is in-sample (rules were written while reading
-those conversations); dev_holdout is the honest estimate for unseen wording; the frozen TEST split
-is only touched by `make eval-test`.
+See `results/m3_extract/dev_scores.csv` (all slices incl. per-field, Wilson 95% CIs, N) and
+`results/m3_extract/failures_dev.md`; hand-written analysis in `m3_extract/failure_analysis.md`.
+
+- **Everything here is in-sample.** DEV is where the rules were written. dev_tune (240 records) was
+  read while writing; dev_holdout (88) is contaminated (looked at while fixing v2 and v3). No number
+  is an estimate of accuracy on new data. The frozen TEST split has not been touched.
+- Rules v3 (`results/m3_extract/rules_v3_frozen/`, REFREEZE-1 data): dev_tune critical 0/2704
+  [0, 1.4] per 1000, major 0/2704; dev_holdout critical 0/920 [0, 4.2], major 48/920 = 52.2 per 1000
+  [39.6, 68.5] (all missed advice / follow-up wording). The pooled "0 critical on full dev" line is
+  NOT quoted as a result. Per-field rows: `failure_analysis.md`.
+- The only unseen-wording figure is historical: rules v1 on the holdout before REFREEZE-1, critical
+  7/920 = 7.6 per 1000 [3.7, 15.6] (`results/m3_extract/rules_v1_frozen/`).
+- **Rules vs LLM comparison: STALE.** It was run on pre-REFREEZE data and not rerun (about 25 min for
+  40 conversations, over the 15-minute limit). 32 of its 40 conversations are in-sample for the rules
+  (seen during rule writing), so it never showed that the rules beat the LLM. Old outputs:
+  `results/m3_extract/llm_STALE_pre_refreeze/`. To refresh: `mingw32-make m3-run-llm-dev` (writes
+  `results/m3_extract/llm/`).
+- No ASR output has been scored yet.

@@ -29,6 +29,7 @@ NUMBER_WORDS: dict[str, float] = {
     "ಹದಿನಾಲ್ಕು": 14,
     "ಹದಿನೈದು": 15,
     "ಅರ್ಧ": 0.5,
+    "ಎರಡೂವರೆ": 2.5,  # "two and a half" (child syrup dose); UNVERIFIED: not fetched by us
     # UNVERIFIED (see module docstring)
     "ಹನ್ನೊಂದು": 11,
     "ಹನ್ನೆರಡು": 12,

@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-b7-002",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -17,11 +17,11 @@
       "dose_unit": null,
       "frequency_per_day": null,
       "duration_days": null,
-      "negated": true,
+      "negated": false,
       "evidence": {
-        "span_text": "levo ಮಾತ್ರೆ ಮಗು ತಿನ್ನಲ್ಲ",
+        "span_text": "levoflox",
         "char_start": 33,
-        "char_end": 57,
+        "char_end": 41,
         "audio_start": null,
         "audio_end": null
       }
@@ -33,8 +33,8 @@
       "negated": false,
       "evidence": {
         "span_text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ",
-        "char_start": 59,
-        "char_end": 93,
+        "char_start": 65,
+        "char_end": 99,
         "audio_start": null,
         "audio_end": null
       }

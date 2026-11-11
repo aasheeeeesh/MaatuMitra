@@ -7,12 +7,12 @@
       "drug": "paracetamol",
       "match_type": "variant",
       "form": "ಪ್ಯಾರಸಿಟಮೋಲ್",
-      "char_start": 21
+      "char_start": 39
     },
     {
       "rule": "symptom_skipped_conditional",
       "item": "fever",
-      "char_start": 52
+      "char_start": 21
     },
     {
       "rule": "phrase",

@@ -1,0 +1,3 @@
+- UNVERIFIED Kannada forms added in the 2026-11-11 fix pass: fused ಜ್ವರವಿಲ್ಲ rule, ಪ್ಯಾಕೆಟ್ = sachet, ಎರಡೂವರೆ = 2.5, ಆಗಿದ್ದರೆ in the fever follow-up, short-vowel ORS as ASR output. Who confirms them?
+- Not done from the Kannada review: ಗುಳಿಗೆ, ಟ್ಯಾಬ್ಲೆಟ್, inflected ಮಾತ್ರೆಯನ್ನು and ಮಾತ್ರೆಗಳನ್ನು as units; half-numbers other than ಎರಡೂವರೆ (for example ಒಂದೂವರೆ).
+- Should m1 add ಒ.ಆರ್.ಎಸ್ to the shared lexicon variants instead of m3 holding it in data/asr_variants.yaml?

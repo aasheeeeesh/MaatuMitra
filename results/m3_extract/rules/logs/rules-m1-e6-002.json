@@ -11,9 +11,9 @@
     },
     {
       "rule": "drug_match",
-      "drug": "clindamycin",
+      "drug": "dexamethasone",
       "match_type": "exact",
-      "form": "clindamycin",
+      "form": "dexamethasone",
       "char_start": 88
     }
   ]

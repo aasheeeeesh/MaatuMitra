@@ -173,3 +173,83 @@ def test_listed_nouns_in_question_stay_question(full_lexicon):
         ("cold", False),
         ("tiredness", False),
     ]
+
+
+# ---- fix pass 2026-11-11 (D-93 Kannada review findings) ----
+
+
+def test_fever_follow_up_accepts_aagiddare(full_lexicon):
+    rec, _ = run("ಜ್ವರ ಕಡಿಮೆ ಆಗಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ.", full_lexicon)
+    assert rec["follow_up"]["text"] == "if the fever comes down, come back in two days"
+    rec, _ = run("ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಎರಡು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ.", full_lexicon)
+    assert rec["follow_up"]["text"] == "if the fever does not come down, come back in two days"
+
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        ("ಜ್ವರವಿಲ್ಲ.", [("fever", False)]),
+        ("ಕೆಮ್ಮಿಲ್ಲ, ತಲೆನೋವಿದೆ.", [("cough", False), ("headache", True)]),
+        ("ವಾಂತಿಯಿಲ್ಲ.", [("vomiting", False)]),
+        ("ಜ್ವರವಿದೆ.", [("fever", True)]),
+    ],
+)
+def test_fused_symptom_with_ila_or_ide(full_lexicon, text, expected):
+    rec, _ = run(text, full_lexicon)
+    assert sorted((s["name"], s["present"]) for s in rec["symptoms"]) == sorted(expected)
+
+
+def test_fused_symptom_evidence_is_the_fused_token(full_lexicon):
+    rec, _ = run("ಜ್ವರವಿಲ್ಲ.", full_lexicon)
+    assert rec["symptoms"][0]["evidence"]["span_text"] == "ಜ್ವರವಿಲ್ಲ"
+
+
+def test_packet_is_a_sachet_unit(full_lexicon):
+    rec, _ = run("ಓ.ಆರ್.ಎಸ್ ಒಂದು ಪ್ಯಾಕೆಟ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕುಡಿಯಿರಿ.", full_lexicon)
+    (m,) = rec["medications"]
+    assert (m["drug"], m["dose_value"], m["dose_unit"], m["frequency_per_day"]) == (
+        "ors",
+        1,
+        "sachet",
+        3,
+    )
+
+
+# ---- child paracetamol syrup in ml (REFREEZE-1, D-110) ----
+
+
+@pytest.mark.parametrize(
+    "text,value",
+    [
+        ("ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಎರಡೂವರೆ ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ.", 2.5),
+        ("ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 2.5 ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ.", 2.5),
+        ("ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 10 ml ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೊಡಿ.", 10),
+        ("ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಹತ್ತು ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೊಡಿ.", 10),
+    ],
+)
+def test_child_syrup_ml_dose(full_lexicon, text, value):
+    rec, _ = run("ಮಗುವಿಗೆ ಜ್ವರ ಇದೆ. " + text, full_lexicon)
+    (m,) = rec["medications"]
+    assert (m["drug"], m["dose_value"], m["dose_unit"]) == ("paracetamol", value, "ml")
+
+
+def test_child_turn_without_dose_gets_no_invented_tablet_dose(full_lexicon):
+    rec, _ = run("ಮಗುವಿಗೆ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಡಿ.", full_lexicon)
+    (m,) = rec["medications"]
+    assert (m["dose_value"], m["dose_unit"]) == (None, None)
+
+
+# ---- REFREEZE-1 wording regressions seen on dev_tune (in-sample additions, disclosed) ----
+
+
+def test_only_if_fever_condition_inside_a_drug_clause(full_lexicon):
+    rec, _ = run("ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ ಎರಡೂವರೆ ಎಂ.ಎಲ್ ಕೊಡಿ.", full_lexicon)
+    assert [a["text"] for a in rec["advice"]] == ["only if there is fever"]
+    (m,) = rec["medications"]
+    assert (m["dose_value"], m["dose_unit"]) == (2.5, "ml")
+    assert rec["symptoms"] == []  # the fever sits inside an "if" clause
+
+
+def test_vomiting_if_come_immediately_follow_up(full_lexicon):
+    rec, _ = run("ವಾಂತಿ ಇದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ.", full_lexicon)
+    assert rec["follow_up"]["text"] == "if there is vomiting, come immediately"

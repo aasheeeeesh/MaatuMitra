@@ -171,7 +171,7 @@ Rules:
 - Only include items that were actually spoken. Do not invent drugs, doses, numbers or symptoms.
 - "quote": copy the supporting words EXACTLY from the transcript (same script, same spelling, contiguous, from one line). Never paraphrase or translate a quote.
 - medications: "drug" is the English generic name from the drug list. dose_value + dose_unit is the amount per dose as spoken (500 mg -> 500, "mg"; ಒಂದು ಮಾತ್ರೆ -> 1, "tablet"; ಕ್ಯಾಪ್ಸೂಲ್ -> "capsule"). frequency_per_day from "ದಿನಕ್ಕೆ N ಬಾರಿ/ಸಾರಿ". duration_days from "N ದಿನ/ದಿವಸ" (ಒಂದು ವಾರ = 7). Use null when not spoken. Kannada digits ೦-೯ are numbers. One entry per drug.
-- negated=true when the drug is refused, not taken, not to be taken, "this is not X" (ಅಲ್ಲ), or stopped without finishing (ಮುಗಿಸದೆ, ತೆಗೆದುಕೊಳ್ಳದೆ).
+- negated=true when the drug is refused, not taken, not to be taken, "this is not X" (ಅಲ್ಲ), or not taken (ತೆಗೆದುಕೊಳ್ಳದೆ).
 - symptoms: "name" from the symptom list; present=false when denied (ಇಲ್ಲ, ಇಲ್ಲಾ, ಆಗಿಲ್ಲ, ಯಾವುದೇ ... ಇಲ್ಲ).
 - If a turn is only "ಇಲ್ಲ."/"ಇಲ್ಲಾ." it answers the previous question: the item asked about is negated/absent; "ಹೌದು." means yes. Quote the item from the QUESTION line.
 - Do not treat these as negation: ಎಲ್ಲ, ಎಲ್ಲಾ (all), ಇಲ್ಲಿ (here), ಅಲ್ಲಿ (there), ಅಲ್ವಾ/ಅಲ್ವ (right?), ಮಾತ್ರ (only), ಮಾತ್ರೆ (tablet), ಇದೆ, ಬಂದಿದೆ, ಇದ್ದರೆ.

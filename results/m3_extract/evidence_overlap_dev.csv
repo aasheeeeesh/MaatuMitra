@@ -1,13 +1,9 @@
 pipeline,subset,kind,matched_items,evidence_overlaps_gold_span
 rules,full_dev,medication,408,408
-rules,full_dev,symptom,304,303
+rules,full_dev,symptom,304,304
 rules,full_dev,advice,80,80
 rules,full_dev,follow_up,32,32
 rules,llm_subset,medication,55,55
 rules,llm_subset,symptom,45,45
 rules,llm_subset,advice,11,11
 rules,llm_subset,follow_up,8,8
-llm,llm_subset,medication,40,40
-llm,llm_subset,symptom,41,40
-llm,llm_subset,advice,10,10
-llm,llm_subset,follow_up,6,6

@@ -6,7 +6,7 @@
       "rule": "drug_match",
       "drug": "levofloxacin",
       "match_type": "variant",
-      "form": "levo",
+      "form": "levoflox",
       "char_start": 33
     },
     {

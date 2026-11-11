@@ -18,9 +18,9 @@
     },
     {
       "rule": "drug_match",
-      "drug": "zinc",
+      "drug": "paracetamol",
       "match_type": "exact",
-      "form": "zinc",
+      "form": "paracetamol",
       "char_start": 132
     },
     {

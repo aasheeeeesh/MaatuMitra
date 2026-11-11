@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-e4-008",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -27,31 +27,31 @@
       }
     },
     {
-      "drug": "paracetamol",
-      "dose_value": 1,
-      "dose_unit": "tablet",
-      "frequency_per_day": 3,
-      "duration_days": 3,
+      "drug": "prednisolone",
+      "dose_value": 5,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
       "negated": false,
       "evidence": {
-        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+        "span_text": "ಪ್ರೆಡ್ನಿಸೋಲೋನ್ 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
         "char_start": 78,
-        "char_end": 129,
+        "char_end": 130,
         "audio_start": null,
         "audio_end": null
       }
     },
     {
-      "drug": "dexamethasone",
+      "drug": "zinc",
       "dose_value": 1,
       "dose_unit": "tablet",
       "frequency_per_day": 1,
-      "duration_days": 5,
+      "duration_days": 14,
       "negated": false,
       "evidence": {
-        "span_text": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
-        "char_start": 131,
-        "char_end": 183,
+        "span_text": "ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+        "char_start": 132,
+        "char_end": 181,
         "audio_start": null,
         "audio_end": null
       }
@@ -63,8 +63,8 @@
       "negated": false,
       "evidence": {
         "span_text": "ಊಟದ ನಂತರ",
-        "char_start": 185,
-        "char_end": 193,
+        "char_start": 183,
+        "char_end": 191,
         "audio_start": null,
         "audio_end": null
       }

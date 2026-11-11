@@ -40,6 +40,7 @@ UNIT_PHRASES: list[tuple[tuple[str, ...], str]] = [
     (("ಕ್ಯಾಪ್ಸೂಲ್",), "capsule"),
     (("capsule",), "capsule"),
     (("ಸ್ಯಾಚೆಟ್",), "sachet"),
+    (("ಪ್ಯಾಕೆಟ್",), "sachet"),  # D-93: the spoken word for an ORS sachet; UNVERIFIED mapping
     (("sachet",), "sachet"),
     (("ಹನಿ",), "drop"),
     (("drop",), "drop"),

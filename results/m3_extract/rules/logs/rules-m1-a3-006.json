@@ -5,13 +5,13 @@
     {
       "rule": "drug_match",
       "drug": "paracetamol",
-      "match_type": "exact",
-      "form": "paracetamol",
+      "match_type": "variant",
+      "form": "ಪ್ಯಾರಾಸಿಟಮಾಲ್",
       "char_start": 61
     },
     {
       "rule": "cross_turn",
-      "item": "cough",
+      "item": "cold",
       "polarity": "negative"
     }
   ]

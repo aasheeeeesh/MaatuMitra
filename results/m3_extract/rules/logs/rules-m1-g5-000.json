@@ -5,8 +5,8 @@
     {
       "rule": "drug_match",
       "drug": "levofloxacin",
-      "match_type": "variant",
-      "form": "levo",
+      "match_type": "exact",
+      "form": "levofloxacin",
       "char_start": 7
     },
     {
@@ -14,12 +14,12 @@
       "drug": "paracetamol",
       "match_type": "exact",
       "form": "paracetamol",
-      "char_start": 47
+      "char_start": 55
     },
     {
       "rule": "symptom_skipped_conditional",
       "item": "fever",
-      "char_start": 98
+      "char_start": 106
     }
   ]
 }

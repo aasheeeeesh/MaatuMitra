@@ -18,9 +18,9 @@
     },
     {
       "rule": "drug_match",
-      "drug": "ondansetron",
+      "drug": "paracetamol",
       "match_type": "variant",
-      "form": "ಒಂಡನ್ಸಿಟ್ರಾನ್",
+      "form": "ಪ್ಯಾರಾಸಿಟಮಾಲ್",
       "char_start": 133
     },
     {

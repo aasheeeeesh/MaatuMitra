@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-a3-006",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -22,12 +22,12 @@
       }
     },
     {
-      "name": "cough",
+      "name": "cold",
       "present": false,
       "evidence": {
-        "span_text": "ಕೆಮ್ಮು",
-        "char_start": 93,
-        "char_end": 99,
+        "span_text": "ನೆಗಡಿ",
+        "char_start": 89,
+        "char_end": 94,
         "audio_start": null,
         "audio_end": null
       }
@@ -36,15 +36,15 @@
   "medications": [
     {
       "drug": "paracetamol",
-      "dose_value": 1,
-      "dose_unit": "tablet",
+      "dose_value": null,
+      "dose_unit": null,
       "frequency_per_day": null,
       "duration_days": null,
       "negated": false,
       "evidence": {
-        "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ",
+        "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್",
         "char_start": 61,
-        "char_end": 84,
+        "char_end": 74,
         "audio_start": null,
         "audio_end": null
       }

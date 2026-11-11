@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-e6-007",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -28,13 +28,13 @@
     },
     {
       "drug": "ondansetron",
-      "dose_value": 8,
+      "dose_value": 4,
       "dose_unit": "mg",
       "frequency_per_day": 2,
       "duration_days": 3,
       "negated": false,
       "evidence": {
-        "span_text": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್ ೮ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಮೂರು ದಿನ",
+        "span_text": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಮೂರು ದಿನ",
         "char_start": 100,
         "char_end": 153,
         "audio_start": null,

@@ -6,12 +6,12 @@
       "rule": "drug_match",
       "drug": "paracetamol",
       "match_type": "exact",
-      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "form": "paracetamol",
       "char_start": 61
     },
     {
       "rule": "cross_turn",
-      "item": "diarrhoea",
+      "item": "cough",
       "polarity": "negative"
     }
   ]

@@ -17,7 +17,7 @@ _KN_DIGITS = {chr(0x0CE6 + i): str(i) for i in range(10)}
 _DIGIT_TRANS = str.maketrans(_KN_DIGITS)
 
 # A word = letters/marks/numbers; ZWJ/ZWNJ may sit INSIDE a word (removed only in the comparison
-# form), so a ZWNJ does not split ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು. Decimal numbers (2.5, ೦.೫) are one token.
+# form), so a ZWNJ does not split ಮಾತ್ರೆ‌ಗಳು. Decimal numbers (2.5, ೦.೫) are one token.
 TOKEN_RE = regex.compile(
     r"[0-9೦-೯]+\.[0-9೦-೯]+"
     r"|[\p{L}\p{M}\p{N}](?:[\p{L}\p{M}\p{N}‌‍]*[\p{L}\p{M}\p{N}])?"

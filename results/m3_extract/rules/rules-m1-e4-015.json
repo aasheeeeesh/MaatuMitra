@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-e4-015",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -42,16 +42,16 @@
       }
     },
     {
-      "drug": "zinc",
-      "dose_value": 1,
+      "drug": "paracetamol",
+      "dose_value": 2,
       "dose_unit": "tablet",
-      "frequency_per_day": 1,
-      "duration_days": 14,
+      "frequency_per_day": 4,
+      "duration_days": 3,
       "negated": false,
       "evidence": {
-        "span_text": "Zinc ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+        "span_text": "Paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
         "char_start": 132,
-        "char_end": 180,
+        "char_end": 184,
         "audio_start": null,
         "audio_end": null
       }
@@ -63,8 +63,8 @@
       "negated": false,
       "evidence": {
         "span_text": "ಊಟದ ನಂತರ",
-        "char_start": 182,
-        "char_end": 190,
+        "char_start": 186,
+        "char_end": 194,
         "audio_start": null,
         "audio_end": null
       }

@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-g5-007",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [],
@@ -28,13 +28,13 @@
     },
     {
       "drug": "ibuprofen",
-      "dose_value": 400,
+      "dose_value": 200,
       "dose_unit": "mg",
       "frequency_per_day": 3,
       "duration_days": null,
       "negated": false,
       "evidence": {
-        "span_text": "ibuprofen ೪೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+        "span_text": "ibuprofen ೨೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
         "char_start": 64,
         "char_end": 98,
         "audio_start": null,

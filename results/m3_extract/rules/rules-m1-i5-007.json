@@ -6,7 +6,7 @@
   "source_transcript_id": "m1-i5-007",
   "extractor": {
     "name": "m3-rules",
-    "version": "0.2.0+negtable-v1+drugs.csv"
+    "version": "0.2.0+negtable-v2+drugs.csv"
   },
   "status": "draft",
   "symptoms": [
@@ -25,15 +25,15 @@
   "medications": [
     {
       "drug": "paracetamol",
-      "dose_value": 2,
-      "dose_unit": "tablet",
+      "dose_value": 10,
+      "dose_unit": "ml",
       "frequency_per_day": null,
       "duration_days": null,
       "negated": false,
       "evidence": {
-        "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಎರಡು ಮಾತ್ರೆ",
-        "char_start": 21,
-        "char_end": 45,
+        "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ 10 ml",
+        "char_start": 39,
+        "char_end": 63,
         "audio_start": null,
         "audio_end": null
       }
@@ -45,8 +45,8 @@
       "negated": false,
       "evidence": {
         "span_text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ",
-        "char_start": 52,
-        "char_end": 69,
+        "char_start": 21,
+        "char_end": 38,
         "audio_start": null,
         "audio_end": null
       }

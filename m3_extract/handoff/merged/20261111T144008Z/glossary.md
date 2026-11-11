@@ -1,0 +1,3 @@
+- **Fused symptom word**: a Kannada noun and its ending written as one word, for example ಜ್ವರವಿಲ್ಲ = ಜ್ವರ (fever) + ಇಲ್ಲ (not). m3 builds these forms with a grammar rule no native speaker has checked.
+- **In-sample score**: a score measured on the same data that was used to write or tune the rules, so it overstates accuracy on new data.
+- **STALE result**: a saved result made on data or code that has since changed; kept for history, not scored or quoted as current.

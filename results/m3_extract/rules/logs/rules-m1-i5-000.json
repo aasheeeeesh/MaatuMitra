@@ -7,12 +7,12 @@
       "drug": "paracetamol",
       "match_type": "exact",
       "form": "paracetamol",
-      "char_start": 21
+      "char_start": 39
     },
     {
       "rule": "symptom_skipped_conditional",
       "item": "fever",
-      "char_start": 51
+      "char_start": 21
     },
     {
       "rule": "phrase",
