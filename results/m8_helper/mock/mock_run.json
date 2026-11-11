@@ -1,0 +1,35 @@
+[
+  {
+    "question": "Are antibiotics needed for a common cold?",
+    "abstain": false,
+    "reason": "card_match",
+    "card_id": "card-cold-no-antibiotic",
+    "source_url": "https://example.org/fixture/card-cold-no-antibiotic",
+    "score": 0.34256039548606276,
+    "label": "DRAFT demo answer: card written by an AI from a WHO page, not clinically approved, Kannada not native-validated.",
+    "kn_text": "ನೆಗಡಿ ಮತ್ತು ಸಾಮಾನ್ಯ ಶೀತಕ್ಕೆ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಡ. ಸಂದೇಹವಿದ್ದರೆ ವೈದ್ಯರನ್ನು ಕೇಳಿ.",
+    "en_text": "FIXTURE: Antibiotics are not needed for a common cold. If unsure, ask a doctor."
+  },
+  {
+    "question": "How tall is Mount Everest?",
+    "abstain": true,
+    "reason": "low_similarity",
+    "card_id": null,
+    "source_url": null,
+    "score": 0,
+    "label": "",
+    "kn_text": "ಖಚಿತವಿಲ್ಲ. ದಯವಿಟ್ಟು ವೈದ್ಯರನ್ನು ಅಥವಾ ಆರೋಗ್ಯ ಕಾರ್ಯಕರ್ತರನ್ನು ಕೇಳಿ.",
+    "en_text": "I am not sure. Please ask a doctor or health worker."
+  },
+  {
+    "question": "What dose of amoxicillin should I take?",
+    "abstain": true,
+    "reason": "unsafe:dosing",
+    "card_id": null,
+    "source_url": null,
+    "score": null,
+    "label": "",
+    "kn_text": "ಖಚಿತವಿಲ್ಲ. ದಯವಿಟ್ಟು ವೈದ್ಯರನ್ನು ಅಥವಾ ಆರೋಗ್ಯ ಕಾರ್ಯಕರ್ತರನ್ನು ಕೇಳಿ.",
+    "en_text": "I am not sure. Please ask a doctor or health worker."
+  }
+]

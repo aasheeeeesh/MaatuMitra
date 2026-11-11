@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "amr-misuse-main-driver",
+  "topic": "misuse of antibiotics causes resistance",
+  "kn_text": "ಆಂಟಿಬಯಾಟಿಕ್ ಔಷಧಿಗಳನ್ನು ಅಗತ್ಯವಿಲ್ಲದಾಗ ತೆಗೆದುಕೊಳ್ಳುವುದು ಅಥವಾ ತಪ್ಪು ಬಗೆಯ ಆಂಟಿಬಯಾಟಿಕ್ ತೆಗೆದುಕೊಳ್ಳುವುದು, ಆಂಟಿಬಯಾಟಿಕ್ ಕೆಲಸ ಮಾಡದಿರಲು ಮುಖ್ಯ ಕಾರಣಗಳಲ್ಲಿ ಒಂದು.",
+  "en_text": "Taking antibiotics when they are not needed, or taking the wrong type, is one of the main reasons that antibiotics stop working.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

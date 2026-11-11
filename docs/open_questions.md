@@ -161,3 +161,10 @@ Things nobody has verified yet, with what to check. Builders add items through
 3. Disk: free space fell from 13.6 GB to about 4.0 GB during this task while the Windows pagefile grew to 24.8 GB (modified 04:46). The 4 GB floor and the >= 9 GB final target cannot both be met until the machine is restarted or space is freed. Who frees space (restart, delete caches such as ~/.cache/codex-runtimes 1.8 GB, uv cache 5.7 GB)?
 4. Common Voice Kannada: not on HF any more as a normal dataset (API returned nothing). Need a human to check Mozilla Data Collective licence and access.
 5. The held-out voice rule is only weakly satisfied by the pitch-shifted MMS voice (same speaker model). Is that enough for the E1 protocol or must we wait for real second speakers?
+
+## From m8_helper (merged 20261111T234650Z)
+
+- card.v1 has no "approved" field. We use clinician_reviewed=true as "approved". Should the contract get an explicit review status?
+- UNVERIFIED: does official Kannada text for these topics exist on ICMR/NCDC/MoHFW sites? Not fetched.
+- UNVERIFIED: Kannada quality of nomic-embed-text beyond these 80 questions.
+- The brief example topics (finish the course, leftovers, colds) are not stated in the fetched WHO pages; cards for them need other sources.

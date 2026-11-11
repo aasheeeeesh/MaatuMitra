@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "pneumonia-hygiene-air",
+  "topic": "hand washing and indoor air pollution",
+  "kn_text": "ಸೋಪಿನಿಂದ ಕೈ ತೊಳೆಯುವುದು, ಜನಸಂದಣಿ ಇರುವ ಮನೆಗಳಲ್ಲಿ ಸ್ವಚ್ಛತೆ ಕಾಪಾಡುವುದು ಮತ್ತು ಮನೆಯೊಳಗಿನ ಹೊಗೆ ಕಡಿಮೆ ಮಾಡುವುದು (ಉದಾಹರಣೆಗೆ ಶುದ್ಧ ಒಲೆ ಬಳಸುವುದು) ನ್ಯುಮೋನಿಯಾ ಬರುವ ಮಕ್ಕಳ ಸಂಖ್ಯೆಯನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ.",
+  "en_text": "Hand washing with soap, good hygiene in crowded homes and reducing indoor air pollution (for example with clean stoves) help to reduce the number of children who fall ill with pneumonia.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/pneumonia",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

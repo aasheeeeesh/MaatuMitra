@@ -40,4 +40,6 @@ The licence of THIS repository is not chosen yet (LICENSE_PLACEHOLDER.md).
 | sulabhkatiyar/indic-tiny-tts-kannada (considered, NOT run: third-party repo code needs approval) | model | CC-BY-4.0 weights, MIT code (LICENSE.md, fetched 2026-11-11) | https://huggingface.co/sulabhkatiyar/indic-tiny-tts-kannada | UNVERIFIED (not used) |
 | torch 2.15.0 (CPU) and transformers 5.22.2 | libraries | UNVERIFIED (believed BSD-3-Clause and Apache-2.0) | UNVERIFIED | UNVERIFIED |
 | ffmpeg (N-124279 build on PATH; speed and pitch changes) | tool | UNVERIFIED (LGPL or GPL depending on the build) | UNVERIFIED | UNVERIFIED |
+| WHO fact sheets: antimicrobial resistance, pneumonia, diarrhoeal disease (paraphrased into cards) | web text | UNVERIFIED: WHO site terms not read; text paraphrased, source URL on each card | https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance ; .../pneumonia ; .../diarrhoeal-disease (fetched 2026-11-12) | yes with attribution (terms UNVERIFIED) |
+| nomic-embed-text via Ollama | embedding model | UNVERIFIED (not read this session) | n/a (already installed) | yes, local use |
 <!-- LICENCES-END -->

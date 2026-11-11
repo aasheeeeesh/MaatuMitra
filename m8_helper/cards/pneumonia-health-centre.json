@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "pneumonia-health-centre",
+  "topic": "pneumonia treatment is by prescription at a health centre",
+  "kn_text": "ಹೆಚ್ಚಿನ ನ್ಯುಮೋನಿಯಾ ಪ್ರಕರಣಗಳಿಗೆ ಬಾಯಿಯ ಮೂಲಕ ತೆಗೆದುಕೊಳ್ಳುವ ಆಂಟಿಬಯಾಟಿಕ್ ಬೇಕಾಗುತ್ತದೆ; ಇದನ್ನು ಹೆಚ್ಚಾಗಿ ಆರೋಗ್ಯ ಕೇಂದ್ರದಲ್ಲಿ ಬರೆದುಕೊಡುತ್ತಾರೆ. ಆಸ್ಪತ್ರೆ ಚಿಕಿತ್ಸೆ ತೀವ್ರ ಪ್ರಕರಣಗಳಿಗೆ ಮಾತ್ರ ಶಿಫಾರಸು.",
+  "en_text": "Most cases of pneumonia need oral antibiotics, which are often prescribed at a health centre. Hospital care is recommended only for severe cases.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/pneumonia",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

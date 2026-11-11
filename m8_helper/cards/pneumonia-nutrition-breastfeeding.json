@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "pneumonia-nutrition-breastfeeding",
+  "topic": "nutrition and breastfeeding protect children",
+  "kn_text": "ಸರಿಯಾದ ಪೋಷಣೆ ಮಕ್ಕಳ ಸಹಜ ರೋಗ ನಿರೋಧಕ ಶಕ್ತಿಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ; ಮೊದಲ 6 ತಿಂಗಳು ಕೇವಲ ಎದೆಹಾಲು ನೀಡುವುದರಿಂದ ಇದು ಆರಂಭವಾಗುತ್ತದೆ. ಮಗು ಅನಾರೋಗ್ಯಕ್ಕೆ ಒಳಗಾದರೆ ಅನಾರೋಗ್ಯದ ಅವಧಿ ಕಡಿಮೆಯಾಗಲೂ ಇದು ಸಹಾಯ ಮಾಡುತ್ತದೆ.",
+  "en_text": "Good nutrition helps children's natural defences, starting with exclusive breastfeeding for the first 6 months of life. It also helps to shorten the illness if a child does become ill.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/pneumonia",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

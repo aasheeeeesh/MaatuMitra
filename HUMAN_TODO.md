@@ -187,3 +187,10 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] (m1, audio) Listen to 10 clean files of each voice (data/audio/tts/test/mms_kan_base/clean/*.wav and mms_kan_pitch084/clean/*.wav) and 5 FLEURS files; write down any file where a drug name or a negation word is not audible. The Kannada spellings used for the English drug words are in m1_data/tts_pronounce.py and are not native-validated.
 - [ ] (m1, licences) Open https://huggingface.co/facebook/mms-tts-kan and https://huggingface.co/datasets/google/fleurs and confirm the licence boxes (CC-BY-NC-4.0 and CC-BY-4.0). Ask the supervisor whether CC-BY-NC audio may be redistributed with the coursework report.
 - [ ] (m1, optional) Common Voice Kannada, IndicVoices and Kathbath need a login or an agreement click; if wanted, accept the licences on their official pages and give a token.
+
+## From m8_helper (merged 20261111T234650Z)
+
+- [ ] A real clinician reviews all 16 cards in m8_helper/cards/ against the WHO URL in each card. Only then set clinician_reviewed=true for approved ones; normal mode serves nothing until then.
+- [ ] A native Kannada speaker checks kn_text of every card, ABSTAIN_KN in m8_helper/helper.py, the Kannada questions in m8_helper/eval/questions.jsonl and the Kannada gate patterns (UNVERIFIED).
+- [ ] Fetch ICMR / NCDC / MoHFW pages (and any official Kannada leaflet) for the missing topics (finish the course, leftovers, colds, when to see a doctor) and extend to 20-30 cards; none were fetched here.
+- [ ] Optional: run `mingw32-make m8-eval` with a multilingual embedding model (multilingual-e5 or BGE-M3, licence to verify) when disk allows and compare on dev.

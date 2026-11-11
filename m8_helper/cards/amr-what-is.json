@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "amr-what-is",
+  "topic": "what is antimicrobial (drug) resistance",
+  "kn_text": "ಔಷಧ ನಿರೋಧಕತೆ (AMR) ಎಂದರೆ ಬ್ಯಾಕ್ಟೀರಿಯಾ, ವೈರಸ್, ಶಿಲೀಂಧ್ರ ಮತ್ತು ಪರಾವಲಂಬಿ ಜೀವಿಗಳ ಮೇಲೆ ಔಷಧಿ ಕೆಲಸ ಮಾಡದಿರುವುದು. ಆಗ ಸೋಂಕುಗಳಿಗೆ ಚಿಕಿತ್ಸೆ ನೀಡುವುದು ಕಷ್ಟ ಅಥವಾ ಅಸಾಧ್ಯವಾಗುತ್ತದೆ.",
+  "en_text": "Antimicrobial resistance (AMR) happens when bacteria, viruses, fungi and parasites stop responding to medicines. Infections then become difficult or impossible to treat.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

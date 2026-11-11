@@ -152,4 +152,10 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **White noise / pink noise**: random hiss with equal energy at all pitches (white) or more energy in low pitches (pink, like rain or a crowd).
 - **Pagefile**: a hidden Windows file (here about 25 GB) used as spare memory; it grows when RAM is short and only shrinks after a restart, so it can silently eat free disk space.
 - **Streaming extraction**: reading a big archive over the network while it downloads and keeping only the few files you need, so the archive never sits on disk.
+- **Abstain**: the helper refuses to answer and says "not sure, ask a doctor".
+- **Safety gate**: hand-written rules that block dose, pregnancy, diagnosis, child-drug and similar questions before any card is looked up.
+- **TF-IDF**: a word-counting score that gives rare words more weight; cosine similarity then compares two such count vectors.
+- **Embedding**: a list of numbers standing for the meaning of a text, so similar texts get similar lists.
+- **Demo mode**: helper mode that shows unreviewed draft cards with a visible DRAFT label.
+- **Held-out (test) split**: questions never used to choose the threshold.
 <!-- GLOSSARY-END -->

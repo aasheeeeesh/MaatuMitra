@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "diarrhoea-see-health-professional",
+  "topic": "when to see a health professional for diarrhoea",
+  "kn_text": "ಅತಿಸಾರ ಮುಂದುವರಿದರೆ, ಮಲದಲ್ಲಿ ರಕ್ತ ಇದ್ದರೆ ಅಥವಾ ದೇಹದಲ್ಲಿ ನೀರಿನ ಕೊರತೆಯ ಲಕ್ಷಣಗಳಿದ್ದರೆ ಆರೋಗ್ಯ ಕಾರ್ಯಕರ್ತರನ್ನು ಅಥವಾ ವೈದ್ಯರನ್ನು ಭೇಟಿ ಮಾಡಿ.",
+  "en_text": "See a health professional if diarrhoea persists, if there is blood in the stool, or if there are signs of dehydration.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

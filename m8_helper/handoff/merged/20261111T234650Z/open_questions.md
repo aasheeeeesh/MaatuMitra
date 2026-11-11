@@ -1,0 +1,4 @@
+- card.v1 has no "approved" field. We use clinician_reviewed=true as "approved". Should the contract get an explicit review status?
+- UNVERIFIED: does official Kannada text for these topics exist on ICMR/NCDC/MoHFW sites? Not fetched.
+- UNVERIFIED: Kannada quality of nomic-embed-text beyond these 80 questions.
+- The brief example topics (finish the course, leftovers, colds) are not stated in the fetched WHO pages; cards for them need other sources.

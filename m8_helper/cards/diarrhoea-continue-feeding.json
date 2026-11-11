@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "diarrhoea-continue-feeding",
+  "topic": "keep eating and breastfeeding during diarrhoea",
+  "kn_text": "ಅತಿಸಾರ ಇರುವಾಗಲೂ ಎದೆಹಾಲು ಸೇರಿದಂತೆ ಪೌಷ್ಟಿಕ ಆಹಾರವನ್ನು ಮುಂದುವರಿಸಿ ನೀಡಿ.",
+  "en_text": "Continue giving nutrient-rich foods, including breast milk, during a diarrhoea episode.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "amr-causes-water-hygiene",
+  "topic": "other causes of resistance: water, sanitation, hygiene, vaccines",
+  "kn_text": "ಆಂಟಿಬಯಾಟಿಕ್ ಅನ್ನು ಸರಿಯಲ್ಲದ ರೀತಿಯಲ್ಲಿ ಬಳಸುವುದರ ಜೊತೆಗೆ, ಶುದ್ಧ ನೀರು, ನೈರ್ಮಲ್ಯ ಮತ್ತು ಸ್ವಚ್ಛತೆ ಕೊರತೆ, ಮನೆ, ಆಸ್ಪತ್ರೆ ಮತ್ತು ಕೃಷಿ ಸ್ಥಳಗಳಲ್ಲಿ ಸೋಂಕು ತಡೆಯುವ ಕ್ರಮಗಳ ಕೊರತೆ, ಹಾಗೂ ಲಸಿಕೆ ಮತ್ತು ಔಷಧಿಗಳು ಸಿಗದಿರುವುದರಿಂದ ನಿರೋಧಕತೆ ಹರಡುತ್ತದೆ.",
+  "en_text": "Besides inappropriate use of antibiotics, resistance spreads when clean water, sanitation and hygiene are poor, when infection prevention and control is inadequate at home, in health facilities and on farms, and when access to vaccines, diagnostics and medicines is limited.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

@@ -1,0 +1,4 @@
+- [ ] A real clinician reviews all 16 cards in m8_helper/cards/ against the WHO URL in each card. Only then set clinician_reviewed=true for approved ones; normal mode serves nothing until then.
+- [ ] A native Kannada speaker checks kn_text of every card, ABSTAIN_KN in m8_helper/helper.py, the Kannada questions in m8_helper/eval/questions.jsonl and the Kannada gate patterns (UNVERIFIED).
+- [ ] Fetch ICMR / NCDC / MoHFW pages (and any official Kannada leaflet) for the missing topics (finish the course, leftovers, colds, when to see a doctor) and extend to 20-30 cards; none were fetched here.
+- [ ] Optional: run `mingw32-make m8-eval` with a multilingual embedding model (multilingual-e5 or BGE-M3, licence to verify) when disk allows and compare on dev.

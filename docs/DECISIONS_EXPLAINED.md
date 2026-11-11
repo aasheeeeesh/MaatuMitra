@@ -274,6 +274,11 @@
 | D-135 | Phase B / m1_data | Public real speech: Kannada FLEURS test split, streamed, split by sentence | partly done | Option 2. 838 utterances in the official test split, 344 sentences. Seeded selection by whole sentence until at least... |
 | D-136 | Phase B / m1_data | Test lock may only gain lines; the text generator keeps audio rows | done (code); lines will appear when t... | Option 2. |
 | D-137 | Phase B / m1_data | Reproducibility of audio hashes | partly done | Deterministic design: one torch seed per utterance, CPU only, noise from numpy with a per-file seed, ffmpeg with -bit... |
+| D-138 | Phase C / m8_helper | Retrieval method: Ollama nomic-embed-text with a lexical fallback, no generation | partly done | Options 2 and 3 side by side; the answer is always the stored card text. Option 4 not built. |
+| D-139 | Phase C / m8_helper | Abstain rule: safety gate first, then a similarity threshold tuned on dev only | done | Option 2. Gate categories: dosing, pregnancy, diagnosis or symptom report, stop-early, requesting a drug, child plus... |
+| D-140 | Phase C / m8_helper | Cards are AI-authored drafts; normal mode serves none | needs human | Option 2, only statements found in the three fetched pages (curl 2026-11-12: who.int antimicrobial-resistance, pneumo... |
+| D-141 | Phase C / m8_helper | Evaluation design for the helper | done | Option 2. 80 AI-written questions: 30 in-scope, 30 out-of-scope, 20 adversarial; English, Kannada, romanised Kannada.... |
+| D-142 | Phase B / m8_helper | m8 helper accepted as a safe-but-weak first version; H4 is not met and its own test questions are not pristine | done | Option 1. |
 <!-- INDEX-END -->` and `<!-- ENTRIES-END -->` in this file must stay.
 - Status: done
 
@@ -1859,6 +1864,73 @@
 - What else could be done: lock the 16 kHz clean turn files' decoded samples with a tolerance instead of a byte hash.
 - How to change this decision later: m1_data/audio_build.py (seeds), `mingw32-make m1-audio-verify`.
 - Status: partly done
+
+### D-138: Retrieval method: Ollama nomic-embed-text with a lexical fallback, no generation   (Phase C / m8_helper / counselling-helper-engineer / 2026-11-12)
+- What we needed to decide: How to find the right card for a question, locally, without downloading a new model, and without letting a model write medical advice.
+- Options we considered:
+  1. multilingual-e5 / LaBSE / BGE-M3 (named in the brief). Pro: built for many languages. Con: needs a new download; disk is tight; not allowed in this task.
+  2. Ollama nomic-embed-text (already installed). Pro: no download, local. Con: mainly English, so Kannada quality is doubtful.
+  3. Our own TF-IDF (word counts) with Kannada 3-letter pieces. Pro: no model, runs anywhere, used for mock mode and tests. Con: weak on meaning, noisy on Kannada word endings.
+  4. Let qwen3 paraphrase the card. Pro: friendlier text. Con: new risk of unsupported sentences; not required.
+- What we chose: Options 2 and 3 side by side; the answer is always the stored card text. Option 4 not built.
+- Why: Option 2 scored better on the dev questions (10 of 20 in-scope answered vs 7 of 20); option 3 works with no daemon. Quoting the card verbatim means no sentence can be unsupported.
+- What we actually did: `m8_helper/helper.py` (TfidfRetriever, OllamaRetriever), `m8_helper/evaluate.py`. Re-run: `mingw32-make m8-eval`.
+- What could go wrong / weaknesses: Only about half of in-scope questions get answered, far below the 90% target (H4). Kannada embedding quality is UNVERIFIED beyond these 80 questions. Option 1 was not tried.
+- What else could be done: try multilingual-e5 or BGE-M3 when disk allows; add card paraphrases; native-written questions.
+- How to change this decision later: `make_retriever` in `evaluate.py`, `build` and THRESHOLDS in `__main__.py`.
+- Status: partly done
+
+### D-139: Abstain rule: safety gate first, then a similarity threshold tuned on dev only   (Phase C / m8_helper / counselling-helper-engineer / 2026-11-12)
+- What we needed to decide: When must the helper refuse, and what number is the similarity cut-off.
+- Options we considered:
+  1. Threshold only. Pro: simple. Con: a dose question naming "amoxicillin" can still match a card strongly.
+  2. Safety gate (regex rules) before retrieval, then threshold. Pro: unsafe questions never reach a card, even at threshold 0. Con: hand-written rules can miss new wording.
+  3. An LLM judge. Pro: flexible. Con: another unverified model inside a safety path.
+- What we chose: Option 2. Gate categories: dosing, pregnancy, diagnosis or symptom report, stop-early, requesting a drug, child plus drug, leftover or sharing tablets, prompt injection. Threshold: the highest value with zero wrong dev answers that maximises correct dev answers: tfidf 0.28, ollama 0.75.
+- Why: The brief says 100% of dosing and diagnosis requests abstain; a gate gives that by construction, a threshold cannot. The gate also over-blocks (for example any "can I take ...?"); we accept that.
+- What we actually did: `safety_gate` in `m8_helper/helper.py`; tests in `m8_helper/tests/test_helper.py` check abstention even at threshold 0. Results: `results/m8_helper/eval_*.json`.
+- What could go wrong / weaknesses: Rules were written knowing the adversarial categories, so the test split measures new wording only. Kannada and romanised-Kannada rules are not native-validated. The Kannada stop-word list was chosen after printing scores for ALL rows (including test), so test is not pristine for that choice.
+- What else could be done: native Kannada reviewer pass on the rules; more adversarial wording.
+- How to change this decision later: `_RULES` in `helper.py`; re-run `mingw32-make m8-eval` and update THRESHOLDS.
+- Status: done
+
+### D-140: Cards are AI-authored drafts; normal mode serves none   (Phase C / m8_helper / counselling-helper-engineer / 2026-11-12)
+- What we needed to decide: Where card text comes from and which cards may be shown.
+- Options we considered:
+  1. Wait for clinician-written cards. Pro: safest. Con: nothing to demo.
+  2. AI-write cards from fetched WHO pages and mark them draft. Pro: demoable and traceable. Con: still unreviewed.
+  3. Write the brief example topics (finish the course, no antibiotics for colds) from memory. Con: breaks the rule against unfetched claims.
+- What we chose: Option 2, only statements found in the three fetched pages (curl 2026-11-12: who.int antimicrobial-resistance, pneumonia, diarrhoeal-disease). card.v1 has no "approved" field, so approved means clinician_reviewed=true. Normal mode serves only those (none exist); demo mode (explicit flag) serves drafts with a DRAFT label.
+- Why: Honest and safe by default; the demo still works.
+- What we actually did: 16 cards in `m8_helper/cards/` (the brief asked for 20 to 30). Generator `m8_helper/author_cards.py`. Validated: 16/16 against card.v1.
+- What could go wrong / weaknesses: Brief topics NOT covered because the fetched pages do not state them: finishing a course, never using leftovers, "antibiotics do not treat colds", when to see a doctor for a fever. Nothing was fetched from ICMR, NCDC or MoHFW, and no official Kannada page was found or looked for (UNVERIFIED whether one exists), so all Kannada is machine-drafted, not native-validated.
+- What else could be done: fetch ICMR/MoHFW/NCDC pages and an official Kannada leaflet; clinician review; add the missing topics.
+- How to change this decision later: edit `author_cards.py`, regenerate, re-run eval; set clinician_reviewed=true only after a real clinician signs.
+- Status: needs human
+
+### D-141: Evaluation design for the helper   (Phase C / m8_helper / counselling-helper-engineer / 2026-11-12)
+- What we needed to decide: How to measure answering and abstaining honestly with a small set.
+- Options we considered:
+  1. One pooled accuracy. Pro: one number. Con: hides unsafe answers.
+  2. Separate rates with Wilson intervals and a dev/test split by topic. Pro: honest about small N. Con: wide intervals.
+- What we chose: Option 2. 80 AI-written questions: 30 in-scope, 30 out-of-scope, 20 adversarial; English, Kannada, romanised Kannada. Dev topics tune the threshold; test topics (diarrhoea, dengue, cancer, fever, skin, pregnancy, diagnosis, stop, request, leftover) are scored once at the frozen threshold.
+- Why: The split is by topic as the brief asks; N and intervals show how little 80 questions prove.
+- What we actually did: `m8_helper/eval/build_eval.py`, `m8_helper/evaluate.py`, results in `results/m8_helper/`. Wilson 95% results: tfidf dev unsafe answered 0/8 [0, 0.32], test 0/10 [0, 0.28]; wrong answers dev 0/46, test 0/34; in-scope answered with the right card dev 7/20, test 6/10. ollama: dev 10/20, test 6/10, same zero wrong answers. Abstain recall 26/26 dev and 24/24 test (both backends).
+- What could go wrong / weaknesses: "0 of 10" only bounds the unsafe-answer rate near 30%. Questions are not from real users. H4 (answer 90% of in-scope) is NOT met. No clinical or educational impact is claimed.
+- What else could be done: more questions from a native speaker; real user wording.
+- How to change this decision later: `eval/build_eval.py` then `mingw32-make m8-eval`.
+- Status: done
+
+### D-142: m8 helper accepted as a safe-but-weak first version; H4 is not met and its own test questions are not pristine   (Phase B / m8_helper / orchestrator / 2026-11-12)
+- What we needed to decide: The m8 builder (Sonnet) delivered a helper that only quotes a card or abstains. It answers about half of in-scope questions, below the 90% target in hypothesis H4, and it chose Kannada stop-words after seeing scores that included its own held-out questions. Accept, rebuild, or cut?
+- Options we considered: (1) Accept as it is and report H4 as not met. Pro: honest; the safety part (0 unsafe answers) holds; m8 is first on the brief's scope-cut list anyway. Con: weak coverage. (2) Rebuild with more cards and a stronger multilingual embedding model. Pro: better coverage. Con: needs new downloads (disk is nearly full) and fetched sources for topics like "finish the course", which we do not have yet. (3) Cut m8. Pro: saves effort. Con: loses a working, safe component.
+- What we chose: Option 1.
+- Why: The brief puts m8 first in the scope-cut order; a helper that abstains safely is better than one that answers more by guessing.
+- What we actually did: Re-ran the checks myself: `pytest m8_helper` 34 passed; 16/16 cards valid against card.v1; ruff clean; only m8_helper and results/m8_helper changed; 0 cards are clinician-reviewed, so normal mode abstains on everything and demo mode shows DRAFT cards. Builder's numbers (80 AI-written questions, Wilson 95%): unsafe questions answered 0/8 dev and 0/10 held-out; wrong answers 0/46 and 0/34; in-scope answered with the right card 7/20 and 6/10 (TF-IDF), 10/20 and 6/10 (Ollama embeddings).
+- What could go wrong / weaknesses: H4 (90% in-scope coverage) is NOT met. The helper's held-out questions are contaminated: stop-words were chosen after printing scores for all rows, and the safety rules were written knowing the attack categories; the report must say so. This m8 split is separate from the frozen data test split (data/splits), which m8 never read. Cards are AI-written from three WHO fact sheets fetched 2026-11-12; WHO site terms and the nomic-embed-text licence are UNVERIFIED.
+- What else could be done: Fetch an official source for course completion and leftovers, write a fresh held-out question set nobody has looked at, and get a clinician to approve the cards.
+- How to change this decision later: m8_helper/cards, m8_helper/helper.py thresholds (dev only), m8_helper/eval.
+- Status: done
 
 <!-- ENTRIES-END -->
 

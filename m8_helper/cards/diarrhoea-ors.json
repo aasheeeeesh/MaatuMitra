@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "diarrhoea-ors",
+  "topic": "ORS for diarrhoea",
+  "kn_text": "ಓಆರ್ಎಸ್ (ಬಾಯಿಯ ಮೂಲಕ ನೀರಿನ ಅಂಶ ತುಂಬುವ ಲವಣ) ದ್ರಾವಣ ಶುದ್ಧ ನೀರು, ಉಪ್ಪು ಮತ್ತು ಸಕ್ಕರೆಯ ಮಿಶ್ರಣ. ಇದು ಮಲದಲ್ಲಿ ಕಳೆದುಹೋದ ನೀರು ಮತ್ತು ಲವಣಗಳನ್ನು ಮರಳಿ ತುಂಬುತ್ತದೆ; ಅತಿಸಾರದ ಮುಖ್ಯ ಚಿಕಿತ್ಸೆ.",
+  "en_text": "Oral rehydration salts (ORS) solution is a mixture of clean water, salt and sugar. It replaces the water and salts lost in the stool and is a key treatment for diarrhoea.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

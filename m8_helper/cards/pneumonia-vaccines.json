@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "pneumonia-vaccines",
+  "topic": "vaccines that prevent pneumonia",
+  "kn_text": "ಹಿಬ್, ನ್ಯುಮೋಕೊಕಸ್, ದಡಾರ ಮತ್ತು ಕೆಮ್ಮು ಕಫ (ಕಾಳು ಕೆಮ್ಮು) ವಿರುದ್ಧ ಲಸಿಕೆ ಹಾಕಿಸುವುದು ನ್ಯುಮೋನಿಯಾ ತಡೆಯಲು ಅತ್ಯಂತ ಪರಿಣಾಮಕಾರಿ ದಾರಿ.",
+  "en_text": "Immunization against Hib, pneumococcus, measles and whooping cough (pertussis) is the most effective way to prevent pneumonia.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/pneumonia",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

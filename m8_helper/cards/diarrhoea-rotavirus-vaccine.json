@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "diarrhoea-rotavirus-vaccine",
+  "topic": "rotavirus vaccine",
+  "kn_text": "ರೋಟಾವೈರಸ್ ಲಸಿಕೆ ಅತಿಸಾರ ತಡೆಯುವ ಮುಖ್ಯ ಕ್ರಮಗಳಲ್ಲಿ ಒಂದು.",
+  "en_text": "Rotavirus vaccination is one of the key measures to prevent diarrhoea.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

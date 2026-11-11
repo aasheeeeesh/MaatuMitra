@@ -1,19 +1,20 @@
 # m8_helper make targets. Owned by the counselling-helper-engineer builder.
-# Architect stub: passes while the module has only the skipped placeholder test.
-# Builders: keep target names; add more targets freely (prefix them with m8-).
+#   m8-test    unit tests (no Ollama needed)
+#   m8-mock    MODE=mock: fixture cards, lexical backend, results/m8_helper/mock/
+#   m8-cards   validate m8_helper/cards against card.v1
+#   m8-eval    dev-tuned threshold + held-out report -> results/m8_helper/ (ollama needs the daemon)
 
-.PHONY: m8-test m8-mock
+.PHONY: m8-test m8-mock m8-cards m8-eval
 
 m8-test:
 	$(UV) run pytest m8_helper/tests
 
-m8-mock:
-	@echo "m8-mock: no mock run yet (m8_helper builder replaces this with a MODE=mock run on fixtures/)"
+m8-cards:
+	$(UV) run python -m contracts.validate card.v1 m8_helper/cards
 
-# Register with root aggregate targets when ready, for example:
-# DATA_TARGETS += m1-data
-# EVAL_TARGETS += m7-eval
-# EVAL_FULL_TARGETS += m2-eval-full
-# EVAL_TEST_TARGETS += m7-eval-test
-# DEMO_TARGETS += m6-demo
-# CLEAN_TARGETS += m8-clean
+m8-mock: m8-cards
+	$(UV) run python -m m8_helper mock
+
+m8-eval:
+	$(UV) run python -m m8_helper.evaluate --backend tfidf
+	-$(UV) run python -m m8_helper.evaluate --backend ollama

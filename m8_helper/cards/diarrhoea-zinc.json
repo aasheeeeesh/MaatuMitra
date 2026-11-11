@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "diarrhoea-zinc",
+  "topic": "zinc supplements for diarrhoea",
+  "kn_text": "ಜಿಂಕ್ ಪೂರಕಗಳು ಅತಿಸಾರದ ಅವಧಿಯನ್ನು ಶೇಕಡಾ 25ರಷ್ಟು ಕಡಿಮೆ ಮಾಡುತ್ತವೆ ಮತ್ತು ಮಲದ ಪ್ರಮಾಣ ಶೇಕಡಾ 30ರಷ್ಟು ಕಡಿಮೆಯಾಗಲು ಸಂಬಂಧಿಸಿವೆ.",
+  "en_text": "Zinc supplements reduce how long a diarrhoea episode lasts by 25% and are associated with a 30% reduction in stool volume.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

@@ -1,0 +1,6 @@
+- **Abstain**: the helper refuses to answer and says "not sure, ask a doctor".
+- **Safety gate**: hand-written rules that block dose, pregnancy, diagnosis, child-drug and similar questions before any card is looked up.
+- **TF-IDF**: a word-counting score that gives rare words more weight; cosine similarity then compares two such count vectors.
+- **Embedding**: a list of numbers standing for the meaning of a text, so similar texts get similar lists.
+- **Demo mode**: helper mode that shows unreviewed draft cards with a visible DRAFT label.
+- **Held-out (test) split**: questions never used to choose the threshold.

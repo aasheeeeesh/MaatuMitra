@@ -143,3 +143,7 @@ A human must check: all new Kannada forms (fused ಜ್ವರವಿಲ್ಲ pat
 ## From m1_data (merged 20261111T234406Z)
 
 - Agent: m1_data AUDIO builder (task B1b), Claude, 2026-11-12. Generated: m1_data/audio_dsp.py, audio_build.py, audio_run.py, fleurs.py, tts_model.py, tts_pronounce.py, their tests, CLI/Make hooks, the generate.py/split.py changes that preserve audio rows and the appended test.lock tail, and these handoff notes. The Kannada respellings of English words in m1_data/tts_pronounce.py (WORDS table) are AI-composed guesses at spoken forms and are NOT native-validated. A human must check: (1) that the licence rows are right on the official pages (all were read from the Hugging Face API, not from the licence texts), (2) that MMS-TTS audio is acceptable to use under CC-BY-NC for coursework, (3) the audio itself (listen to 10 files per voice).
+
+## From m8_helper (merged 20261111T234650Z)
+
+- Agent counselling-helper-engineer, module m8_helper (2026-11-12): generated the 16 cards (English paraphrased from three fetched WHO pages; Kannada drafted by the AI), the 80 evaluation questions, the safety-gate rules, retrieval and evaluation code, and tests. A human must check: clinician review of every card; native Kannada check of card text, the abstain message, the questions and the gate patterns; that each English card matches its WHO page.

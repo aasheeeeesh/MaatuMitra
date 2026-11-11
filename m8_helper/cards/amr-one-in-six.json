@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "amr-one-in-six",
+  "topic": "how common is antibiotic resistance",
+  "kn_text": "2023ರಲ್ಲಿ ಪ್ರಪಂಚದಾದ್ಯಂತ ಪ್ರಯೋಗಾಲಯದಲ್ಲಿ ದೃಢಪಟ್ಟ ಬ್ಯಾಕ್ಟೀರಿಯಾ ಸೋಂಕುಗಳಲ್ಲಿ ಸುಮಾರು 6ರಲ್ಲಿ 1 ಆಂಟಿಬಯಾಟಿಕ್ ಚಿಕಿತ್ಸೆಗೆ ನಿರೋಧಕವಾಗಿತ್ತು. ಆಗ್ನೇಯ ಏಷ್ಯಾ ಮತ್ತು ಪೂರ್ವ ಮೆಡಿಟರೇನಿಯನ್ ಪ್ರದೇಶಗಳಲ್ಲಿ ಸುಮಾರು 3ರಲ್ಲಿ 1 ಸೋಂಕು ನಿರೋಧಕವಾಗಿತ್ತು ಎಂದು ವಿಶ್ವ ಆರೋಗ್ಯ ಸಂಸ್ಥೆ ಅಂದಾಜಿಸಿದೆ.",
+  "en_text": "In 2023, about 1 in 6 laboratory-confirmed bacterial infections worldwide was resistant to antibiotic treatment. WHO estimates that in the WHO South-East Asia and Eastern Mediterranean Regions about 1 in 3 reported infections were resistant.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

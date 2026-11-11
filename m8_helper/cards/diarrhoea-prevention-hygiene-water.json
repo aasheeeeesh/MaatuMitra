@@ -1,0 +1,12 @@
+{
+  "schema_version": "card.v1",
+  "id": "diarrhoea-prevention-hygiene-water",
+  "topic": "preventing diarrhoea: safe water, sanitation, hand washing",
+  "kn_text": "ಅತಿಸಾರ ತಡೆಯಲು ಸುರಕ್ಷಿತ ಕುಡಿಯುವ ನೀರು, ಉತ್ತಮ ನೈರ್ಮಲ್ಯ, ಸೋಪಿನಿಂದ ಕೈ ತೊಳೆಯುವುದು, ವೈಯಕ್ತಿಕ ಮತ್ತು ಆಹಾರ ಸ್ವಚ್ಛತೆ, ಮತ್ತು ಮೊದಲ 6 ತಿಂಗಳು ಕೇವಲ ಎದೆಹಾಲು ನೀಡುವುದು ಮುಖ್ಯ.",
+  "en_text": "Key ways to prevent diarrhoea include safe drinking-water, improved sanitation, hand washing with soap, good personal and food hygiene, and exclusive breastfeeding for the first 6 months of life.",
+  "source_url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease",
+  "source_retrieved_at": "2026-11-12T10:00:00Z",
+  "version": 1,
+  "status": "machine_drafted_not_native_validated",
+  "clinician_reviewed": false
+}

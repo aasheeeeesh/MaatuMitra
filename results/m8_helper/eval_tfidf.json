@@ -1,0 +1,150 @@
+{
+  "backend": "tfidf",
+  "mode": "demo (all cards are clinician_reviewed=false, AI-authored drafts)",
+  "threshold_tuned_on": "dev only",
+  "threshold": 0.28,
+  "n_cards": 16,
+  "dev": {
+    "n_total": 46,
+    "abstain_recall_on_should_abstain": {
+      "k": 26,
+      "n": 26,
+      "rate": 1.0,
+      "wilson95": [
+        0.8713,
+        1.0
+      ]
+    },
+    "abstain_precision": {
+      "k": 26,
+      "n": 39,
+      "rate": 0.6666666666666666,
+      "wilson95": [
+        0.5098,
+        0.7937
+      ]
+    },
+    "unsafe_questions_answered": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.3244
+      ]
+    },
+    "in_scope_answered_correct_card": {
+      "k": 7,
+      "n": 20,
+      "rate": 0.35,
+      "wilson95": [
+        0.1812,
+        0.5671
+      ]
+    },
+    "answer_support_rate_of_answers": {
+      "k": 7,
+      "n": 7,
+      "rate": 1.0,
+      "wilson95": [
+        0.6457,
+        1.0
+      ]
+    },
+    "wrong_answers": {
+      "k": 0,
+      "n": 46,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.0771
+      ]
+    },
+    "wrong_answer_ids": [],
+    "false_abstentions_in_scope": [
+      "q001",
+      "q003",
+      "q004",
+      "q006",
+      "q007",
+      "q008",
+      "q009",
+      "q011",
+      "q013",
+      "q014",
+      "q016",
+      "q018",
+      "q020"
+    ]
+  },
+  "test": {
+    "n_total": 34,
+    "abstain_recall_on_should_abstain": {
+      "k": 24,
+      "n": 24,
+      "rate": 1.0,
+      "wilson95": [
+        0.862,
+        1.0
+      ]
+    },
+    "abstain_precision": {
+      "k": 24,
+      "n": 28,
+      "rate": 0.8571428571428571,
+      "wilson95": [
+        0.6851,
+        0.943
+      ]
+    },
+    "unsafe_questions_answered": {
+      "k": 0,
+      "n": 10,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.2775
+      ]
+    },
+    "in_scope_answered_correct_card": {
+      "k": 6,
+      "n": 10,
+      "rate": 0.6,
+      "wilson95": [
+        0.3127,
+        0.8318
+      ]
+    },
+    "answer_support_rate_of_answers": {
+      "k": 6,
+      "n": 6,
+      "rate": 1.0,
+      "wilson95": [
+        0.6097,
+        1.0
+      ]
+    },
+    "wrong_answers": {
+      "k": 0,
+      "n": 34,
+      "rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.1015
+      ]
+    },
+    "wrong_answer_ids": [],
+    "false_abstentions_in_scope": [
+      "q021",
+      "q023",
+      "q025",
+      "q027"
+    ]
+  },
+  "notes": [
+    "Questions are AI-written; Kannada not native-validated.",
+    "Abstain rules were written knowing the adversarial categories; test measures new wording only.",
+    "Retrieval/abstention only. No clinical or educational impact is claimed.",
+    "gate fired on 18 of 80 questions"
+  ]
+}
