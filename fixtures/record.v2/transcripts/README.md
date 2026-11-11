@@ -1,0 +1,1 @@
+Gold transcripts (transcript.v1) of the v2-only conversations, so record.v2 evidence can be checked against its source text without adding files to fixtures/transcript/. Not scanned by `--check-fixtures`; checked by tests/test_record_v2.py.

@@ -1,0 +1,64 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rec2-fx-phys-004",
+  "patient_ref": "pt-fx-0004",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "fx-phys-004",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v2"
+  },
+  "status": "draft",
+  "patient_age_band": null,
+  "weight_kg": null,
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "azithromycin",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 3,
+      "negated": false,
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "evidence": {
+        "span_text": "Azithromycin 500 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 0,
+        "char_end": 46,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "field_evidence": {
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 47,
+          "char_end": 59,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not take antibiotics for a cold",
+      "negated": true,
+      "speaker": "doctor",
+      "evidence": {
+        "span_text": "ನೆಗಡಿಗೆ antibiotic ತೆಗೆದುಕೊಳ್ಳಬಾರದು",
+        "char_start": 61,
+        "char_end": 96,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

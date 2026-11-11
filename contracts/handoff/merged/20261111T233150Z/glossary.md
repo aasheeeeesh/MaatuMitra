@@ -1,0 +1,10 @@
+- **Additive versioning**: adding a new version of a format (record.v2) next to the old one (record.v1) instead of changing the old one, so programs that use the old one keep working.
+- **Route of administration**: how a medicine enters the body: by mouth (oral), into a vein (IV), into a muscle (IM), under the skin (SC), on the skin (topical), breathed in (inhaled), rectal.
+- **Strength (of a medicine)**: how much drug is in one unit of the product, for example 500 mg per tablet or 120 mg per 5 ml of syrup. Different from the dose, which is how much is given each time (1 tablet, 5 ml).
+- **Formulation**: the physical form of a medicine: tablet, capsule, syrup, suspension, drops, injection, sachet.
+- **As needed (PRN)**: a medicine given only when a symptom is present ("only if there is fever"), not on a fixed schedule.
+- **Medication status**: in record.v2, what the record claims about a drug: prescribed now, already taken, not taken, advised against, stopped early, continue an existing drug, or unknown.
+- **Field evidence**: in record.v2, a separate evidence span (the exact words in the transcript) for each new field that is filled in, such as the word "injection" for the route.
+- **Bidi control character**: an invisible Unicode character (U+202A..U+202E, U+2066..U+2069) that changes the direction in which text is displayed; it can make shown text differ from stored text.
+- **Migration (of data)**: converting documents from an old format version to a new one with a program (here contracts/migrate_v1_to_v2.py).
+- **Age band**: a coarse age group (infant, child, adolescent, adult, older adult) used instead of an exact age.

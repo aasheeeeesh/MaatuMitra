@@ -1,0 +1,74 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "fx-inj-008",
+  "template_family_id": "v2_injection_route",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Ceftriaxone 1000 mg injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಸರಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-fx-0008",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ceftriaxone",
+        "dose_value": 1000,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Ceftriaxone 1000 mg injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 55
+        },
+        "route": "intramuscular",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "injection",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "injection",
+            "char_start": 20,
+            "char_end": 29
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "injection",
+            "char_start": 20,
+            "char_end": 29
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ಕೊಡಿ",
+            "char_start": 56,
+            "char_end": 60
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -25,6 +25,21 @@ docs/DECISIONS_EXPLAINED.md:
   * access_case: authentication/GUC attacks must expect "deny"
   * card: kn_text must contain Kannada script (U+0C80..U+0CFF)
   * review_report: finding ids unique
+
+Version 2 (additive, Phase C; record.v1 / gold.v1 unchanged and still the default for the bare
+names "record" / "gold"):
+  * record.v2 / gold.v2: every non-null new medication field (route, strength, formulation,
+    as_needed, food_timing, status other than "unknown") has its own evidence span in
+    field_evidence / gold_field_spans, and no span exists for a null field; strength_value and
+    strength_unit are both set or both null; age band / weight carry evidence; all spans pass the
+    v1 span rules
+  * gold.v2: medications[].speaker / advice[].speaker equal the role of the turn of the main span
+  * record.v2 / gold.v2: no Unicode bidi control characters (U+202A..U+202E, U+2066..U+2069) in
+    any string (D-123 F6). For v1 this is OPT-IN: bidi_errors(doc) or
+    validate_doc(..., reject_bidi=True)
+  * opt-in for record.v1 and record.v2: validate_doc(..., transcript_text=text) or
+    record_spans_match_transcript(rec, text) checks every span against the transcript text
+  * NOT checked here (verifier's job, m4): a liquid formulation with a dose in ml and no strength
 """
 
 from __future__ import annotations
@@ -45,6 +60,28 @@ SCHEMA_DIR = Path(__file__).resolve().parent / "schemas"
 FORBIDDEN_CHARS = {"﻿": "BOM U+FEFF", "​": "zero-width space U+200B"}
 TIMESTAMP_FIELDS = {"created_at", "retrieved_at", "source_retrieved_at"}
 AUTH_ATTACKS_MUST_DENY = {"tampered_jwt", "expired_jwt", "alg_none", "wrong_aud", "guc_tamper"}
+# Unicode bidi embedding/override (U+202A..U+202E) and isolate (U+2066..U+2069) controls: they can
+# make displayed text read differently from the stored text (Trojan-Source style; D-123 F6).
+BIDI_CONTROLS = frozenset(chr(c) for c in (*range(0x202A, 0x202F), *range(0x2066, 0x206A)))
+BIDI_STRICT = {"record.v2", "gold.v2"}
+# record.v2 / gold.v2: field_evidence key -> the medication fields it supports
+V2_FIELD_KEYS = {
+    "route": ("route",),
+    "strength": ("strength_value", "strength_unit"),
+    "formulation": ("formulation",),
+    "as_needed": ("as_needed",),
+    "food_timing": ("food_timing",),
+    "status": ("status",),
+}
+# gold turn speaker_role -> record.v2 speaker
+SPEAKER_FROM_ROLE = {
+    "asha": "asha",
+    "nurse": "nurse",
+    "physician": "doctor",
+    "pharmacist": "pharmacist",
+    "patient": "patient",
+    "caregiver": "caregiver",
+}
 
 
 # ---------------------------------------------------------------- schema access
@@ -231,6 +268,127 @@ def _sem_gold(doc: dict[str, Any]) -> list[str]:
     return errs
 
 
+# ---------------------------------------------------------------- version 2 rules
+
+
+def bidi_errors(doc: Any) -> list[str]:
+    """Errors for every string containing a Unicode bidi control (U+202A..U+202E, U+2066..U+2069).
+
+    Always applied to record.v2 / gold.v2. OPT-IN for any other document (e.g. record.v1 in
+    m5/m6): call this function or validate_doc(..., reject_bidi=True)."""
+    errs = []
+    for path, s in _walk_strings(doc):
+        found = sorted({f"U+{ord(ch):04X}" for ch in s if ch in BIDI_CONTROLS})
+        if found:
+            errs.append(f"{path}: contains Unicode bidi control character(s) {', '.join(found)}")
+    return errs
+
+
+def _field_value_set(item: dict[str, Any], key: str) -> bool:
+    vals = [item.get(f) for f in V2_FIELD_KEYS[key]]
+    if key == "status":
+        return vals[0] not in (None, "unknown")
+    return any(v is not None for v in vals)
+
+
+def _v2_field_rules(item: dict[str, Any], spans: dict[str, Any], path: str, fe: str) -> list[str]:
+    """Every non-null new field has a span in `fe`; no span for a null field; strength is a pair."""
+    errs = []
+    if (item["strength_value"] is None) != (item["strength_unit"] is None):
+        errs.append(f"{path}: strength_value and strength_unit must both be set or both be null")
+    for key in V2_FIELD_KEYS:
+        has_value = _field_value_set(item, key)
+        if has_value and key not in spans:
+            errs.append(f"{path}/{key}: non-null field has no evidence in {fe}")
+        if key in spans and not has_value and not (key == "status" and item["status"] == "unknown"):
+            errs.append(f"{path}/{fe}/{key}: evidence given for a null field")
+    return errs
+
+
+def _all_evidence(rec: dict[str, Any]) -> Iterator[tuple[str, dict[str, Any]]]:
+    """(path, evidence) for every evidence span of a record.v1 or record.v2."""
+    for path, item in _record_items(rec, "evidence"):
+        yield f"{path}/evidence", item["evidence"]
+        for key, ev in item.get("field_evidence", {}).items():
+            yield f"{path}/field_evidence/{key}", ev
+    for key in ("patient_age_band", "weight_kg"):
+        if rec.get(key) is not None:
+            yield f"/{key}/evidence", rec[key]["evidence"]
+
+
+def record_spans_match_transcript(rec: dict[str, Any], text: str) -> list[str]:
+    """Check that every evidence span of a record (v1 or v2) is text[char_start:char_end]."""
+    errs = []
+    for path, ev in _all_evidence(rec):
+        cs, ce = ev["char_start"], ev["char_end"]
+        if ce > len(text):
+            errs.append(f"{path}: char_end {ce} beyond transcript length {len(text)}")
+        elif text[cs:ce] != ev["span_text"]:
+            errs.append(f"{path}: transcript slice {text[cs:ce]!r} != span_text")
+    return errs
+
+
+def _sem_record_v2(doc: dict[str, Any]) -> list[str]:
+    errs = []
+    for path, ev in _all_evidence(doc):
+        errs += _span_basic(ev, path, audio=True)
+    for i, med in enumerate(doc["medications"]):
+        errs += _v2_field_rules(med, med["field_evidence"], f"/medications/{i}", "field_evidence")
+    return errs
+
+
+def _sem_gold_v2(doc: dict[str, Any]) -> list[str]:
+    errs = []
+    turns = doc["turns"]
+    text = conversation_text(turns)
+    bounds, pos = [], 0
+    for t in turns:
+        bounds.append((pos, pos + len(t["text"])))
+        pos += len(t["text"]) + 1
+    gr = doc["gold_record"]
+
+    def check_span(sp: dict[str, Any], p: str) -> None:
+        errs.extend(_span_basic(sp, p, audio=False))
+        ti = sp["turn_index"]
+        if ti >= len(turns):
+            errs.append(f"{p}: turn_index {ti} out of range")
+            return
+        lo, hi = bounds[ti]
+        if not (lo <= sp["char_start"] and sp["char_end"] <= hi):
+            errs.append(f"{p}: span [{sp['char_start']},{sp['char_end']}) not inside turn {ti}")
+        elif text[sp["char_start"] : sp["char_end"]] != sp["span_text"]:
+            got = text[sp["char_start"] : sp["char_end"]]
+            errs.append(f"{p}: conversation text slice {got!r} != span_text")
+
+    negated_any = False
+    for path, item in _record_items(gr, "gold_span"):
+        check_span(item["gold_span"], f"/gold_record{path}/gold_span")
+        for key, sp in item.get("gold_field_spans", {}).items():
+            check_span(sp, f"/gold_record{path}/gold_field_spans/{key}")
+        if "speaker" in item and item["gold_span"]["turn_index"] < len(turns):
+            role = turns[item["gold_span"]["turn_index"]]["speaker_role"]
+            if item["speaker"] != SPEAKER_FROM_ROLE[role]:
+                errs.append(
+                    f"/gold_record{path}/speaker: {item['speaker']!r} but the span is in a "
+                    f"{role!r} turn (expected {SPEAKER_FROM_ROLE[role]!r})"
+                )
+        if item.get("negated") is True or item.get("present") is False:
+            negated_any = True
+    for key in ("patient_age_band", "weight_kg"):
+        if gr[key] is not None:
+            check_span(gr[key]["gold_span"], f"/gold_record/{key}/gold_span")
+    for i, med in enumerate(gr["medications"]):
+        errs += _v2_field_rules(
+            med, med["gold_field_spans"], f"/gold_record/medications/{i}", "gold_field_spans"
+        )
+    tags = doc["tags"]
+    if negated_any and not tags["has_negation"]:
+        errs.append("/tags/has_negation: must be true (a gold item is negated or absent)")
+    if tags["cross_turn_negation"] and not tags["has_negation"]:
+        errs.append("/tags/has_negation: must be true when cross_turn_negation is true")
+    return errs
+
+
 def _sem_manifest(doc: dict[str, Any]) -> list[str]:
     errs = []
     if doc["file"].startswith("/"):
@@ -268,23 +426,44 @@ SEMANTIC: dict[str, Callable[[dict[str, Any]], list[str]]] = {
     "access_case.v1": _sem_access_case,
     "card.v1": _sem_card,
     "review_report.v1": _sem_review_report,
+    "record.v2": _sem_record_v2,
+    "gold.v2": _sem_gold_v2,
 }
 
 
 # ---------------------------------------------------------------- public API
 
 
-def validate_doc(schema_name: str, doc: Any) -> list[str]:
-    """Return a list of human-readable errors (empty list = valid)."""
+def validate_doc(
+    schema_name: str,
+    doc: Any,
+    *,
+    transcript_text: str | None = None,
+    reject_bidi: bool = False,
+) -> list[str]:
+    """Return a list of human-readable errors (empty list = valid).
+
+    Optional, keyword-only (defaults keep the v1 behaviour unchanged):
+      transcript_text: for record.v1 / record.v2, also check that every evidence span equals
+          transcript_text[char_start:char_end] (the text of the source transcript.v1).
+      reject_bidi: also reject Unicode bidi control characters in any string (always on for
+          record.v2 and gold.v2).
+    """
     name = _canonical(schema_name)
+    if transcript_text is not None and not name.startswith("record."):
+        raise ValueError("transcript_text only applies to record documents")
+    bidi = bidi_errors(doc) if (reject_bidi or name in BIDI_STRICT) else []
     errs = [
         f"{'/' + '/'.join(map(str, e.absolute_path))}: {e.message}"
         for e in sorted(_validator(name).iter_errors(doc), key=lambda e: list(e.absolute_path))
     ]
     if errs:  # semantic rules assume the structure is right
-        return errs + _common(doc)
+        return errs + _common(doc) + bidi
     try:
-        return _common(doc) + SEMANTIC[name](doc)
+        out = _common(doc) + bidi + SEMANTIC[name](doc)
+        if transcript_text is not None:
+            out += record_spans_match_transcript(doc, transcript_text)
+        return out
     except Exception as exc:  # fail closed: a crash in a rule is an error, never a pass
         return [f"semantic validator error: {type(exc).__name__}: {exc}"]
 

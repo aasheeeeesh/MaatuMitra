@@ -1,0 +1,65 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rec2-fx-inj-008",
+  "patient_ref": "pt-fx-0008",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "fx-inj-008",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v2"
+  },
+  "status": "draft",
+  "patient_age_band": null,
+  "weight_kg": null,
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "ceftriaxone\u2066",
+      "dose_value": 1000,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "route": "injection_unspecified",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "injection",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "evidence": {
+        "span_text": "Ceftriaxone 1000 mg injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 0,
+        "char_end": 55,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "field_evidence": {
+        "route": {
+          "span_text": "injection",
+          "char_start": 20,
+          "char_end": 29,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "injection",
+          "char_start": 20,
+          "char_end": 29,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕೊಡಿ",
+          "char_start": 56,
+          "char_end": 60,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

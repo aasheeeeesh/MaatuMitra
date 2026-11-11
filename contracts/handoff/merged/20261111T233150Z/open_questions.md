@@ -1,0 +1,6 @@
+- record.v2 age-band cut-offs and "ಮಗು = child" are an architect choice (UNVERIFIED); should they follow a WHO / national definition? (also in HUMAN_TODO)
+- Strength versus dose convention for "500 mg tablet" with no count (UNVERIFIED, clinician to confirm).
+- Should a "partly taken" status exist separately from "stopped_early"? (D-122 finding M3-M1 mentioned taken_partial.)
+- Should U+200E / U+200F (direction marks) and U+061C also be rejected? They are not in the D-123 F6 list and are currently allowed.
+- transcript.v1 has no speaker roles, so an extractor working from an ASR transcript can only write speaker "unknown". Does Phase C need a transcript.v2 with turn roles (or diarisation), or is speaker only meaningful on gold-text input?
+- The validator cannot check that a ml dose of a liquid has a strength (it is a clinical rule left to m4). Confirm m4 owns this flag (CR-LIQUID-STRENGTH).

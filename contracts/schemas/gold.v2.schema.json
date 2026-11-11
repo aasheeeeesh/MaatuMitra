@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:maatumitra:contract:gold.v2",
+  "title": "gold.v2",
+  "description": "gold.v1 plus the record.v2 fields (D-122), so the scorer can emit CR-ROUTE, CR-PAEDIATRIC and CR-LIQUID-STRENGTH. ADDITIVE: gold.v1 is unchanged and stays the default for the bare name 'gold'. CONVERSATION TEXT = the turn texts joined with one newline (U+000A), as in v1. Every gold span (main gold_span, gold_field_spans, patient_age_band, weight_kg) uses offsets into that text and must lie inside its turn. Rules beyond JSON Schema (contracts/validate.py): every non-null new field has a span in gold_field_spans (status 'unknown' needs none) and no span exists for a null field; strength_value/strength_unit are a pair; medications[].speaker and advice[].speaker equal the role of the turn of their main gold_span (physician -> doctor); no bidi control characters in any string; tags.has_negation true if any item is negated or absent. Field meanings: see record.v2.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "conversation_id", "template_family_id", "turns", "gold_record", "tags"],
+  "properties": {
+    "schema_version": {"const": "gold.v2"},
+    "conversation_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.\\-]*$", "maxLength": 200},
+    "template_family_id": {"type": "string", "minLength": 1},
+    "turns": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["speaker_role", "text"],
+        "properties": {
+          "speaker_role": {"enum": ["asha", "nurse", "physician", "pharmacist", "patient", "caregiver"]},
+          "text": {"type": "string", "minLength": 1, "pattern": "^[^\\n]*$"}
+        }
+      }
+    },
+    "gold_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["patient_ref", "encounter_type", "patient_age_band", "weight_kg", "symptoms", "medications", "advice", "follow_up"],
+      "properties": {
+        "patient_ref": {"type": "string", "minLength": 1},
+        "encounter_type": {"enum": ["asha_household_visit", "nurse_consult", "physician_consult", "pharmacist_dispensing"]},
+        "patient_age_band": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["band", "gold_span"],
+              "properties": {
+                "band": {"enum": ["infant", "child", "adolescent", "adult", "older_adult", "unknown"]},
+                "gold_span": {"$ref": "#/$defs/gold_span"}
+              }
+            }
+          ]
+        },
+        "weight_kg": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["value", "gold_span"],
+              "properties": {
+                "value": {"type": "number", "exclusiveMinimum": 0, "maximum": 300},
+                "gold_span": {"$ref": "#/$defs/gold_span"}
+              }
+            }
+          ]
+        },
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "present", "gold_span"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "present": {"type": "boolean"},
+              "gold_span": {"$ref": "#/$defs/gold_span"}
+            }
+          }
+        },
+        "medications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["drug", "dose_value", "dose_unit", "frequency_per_day", "duration_days", "negated", "gold_span", "route", "strength_value", "strength_unit", "formulation", "as_needed", "food_timing", "status", "speaker", "gold_field_spans"],
+            "properties": {
+              "drug": {"type": "string", "minLength": 1},
+              "dose_value": {"type": ["number", "null"], "exclusiveMinimum": 0},
+              "dose_unit": {"enum": ["mg", "g", "mcg", "ml", "tablet", "capsule", "sachet", "drop", "teaspoon", "IU", null]},
+              "frequency_per_day": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 24},
+              "duration_days": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 365},
+              "negated": {"type": "boolean"},
+              "gold_span": {"$ref": "#/$defs/gold_span"},
+              "route": {"enum": ["oral", "iv", "im", "sc", "topical", "inhaled", "rectal", "injection_unspecified", "other", "unknown", null]},
+              "strength_value": {"type": ["number", "null"], "exclusiveMinimum": 0},
+              "strength_unit": {"enum": ["mg", "g", "mcg", "IU", "mg/ml", "mg/5ml", "mcg/ml", "IU/ml", "%", null]},
+              "formulation": {"enum": ["tablet", "capsule", "syrup", "suspension", "drops", "injection", "sachet", "other", null]},
+              "as_needed": {"type": ["boolean", "null"]},
+              "food_timing": {"enum": ["before_food", "after_food", "with_food", "empty_stomach", null]},
+              "status": {"enum": ["prescribed", "already_taken", "not_taken", "advised_against", "stopped_early", "continue_existing", "unknown"]},
+              "speaker": {"enum": ["doctor", "nurse", "asha", "pharmacist", "patient", "caregiver", "unknown"]},
+              "gold_field_spans": {"$ref": "#/$defs/gold_field_spans"}
+            }
+          }
+        },
+        "advice": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["text", "negated", "gold_span", "speaker"],
+            "properties": {
+              "text": {"type": "string", "minLength": 1},
+              "negated": {"type": "boolean"},
+              "gold_span": {"$ref": "#/$defs/gold_span"},
+              "speaker": {"enum": ["doctor", "nurse", "asha", "pharmacist", "patient", "caregiver", "unknown"]}
+            }
+          }
+        },
+        "follow_up": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text", "gold_span"],
+              "properties": {
+                "text": {"type": "string", "minLength": 1},
+                "gold_span": {"$ref": "#/$defs/gold_span"}
+              }
+            }
+          ]
+        }
+      }
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["has_negation", "trap_tokens", "code_switched", "cross_turn_negation"],
+      "properties": {
+        "has_negation": {"type": "boolean"},
+        "trap_tokens": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "code_switched": {"type": "boolean"},
+        "cross_turn_negation": {"type": "boolean"}
+      }
+    }
+  },
+  "$defs": {
+    "gold_span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["turn_index", "span_text", "char_start", "char_end"],
+      "properties": {
+        "turn_index": {"type": "integer", "minimum": 0},
+        "span_text": {"type": "string", "minLength": 1},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 1}
+      }
+    },
+    "gold_field_spans": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "route": {"$ref": "#/$defs/gold_span"},
+        "strength": {"$ref": "#/$defs/gold_span"},
+        "formulation": {"$ref": "#/$defs/gold_span"},
+        "as_needed": {"$ref": "#/$defs/gold_span"},
+        "food_timing": {"$ref": "#/$defs/gold_span"},
+        "status": {"$ref": "#/$defs/gold_span"}
+      }
+    }
+  }
+}

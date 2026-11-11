@@ -143,3 +143,12 @@ Things nobody has verified yet, with what to check. Builders add items through
 - UNVERIFIED Kannada forms added in the 2026-11-11 fix pass: fused ಜ್ವರವಿಲ್ಲ rule, ಪ್ಯಾಕೆಟ್ = sachet, ಎರಡೂವರೆ = 2.5, ಆಗಿದ್ದರೆ in the fever follow-up, short-vowel ORS as ASR output. Who confirms them?
 - Not done from the Kannada review: ಗುಳಿಗೆ, ಟ್ಯಾಬ್ಲೆಟ್, inflected ಮಾತ್ರೆಯನ್ನು and ಮಾತ್ರೆಗಳನ್ನು as units; half-numbers other than ಎರಡೂವರೆ (for example ಒಂದೂವರೆ).
 - Should m1 add ಒ.ಆರ್.ಎಸ್ to the shared lexicon variants instead of m3 holding it in data/asr_variants.yaml?
+
+## From contracts (merged 20261111T233150Z)
+
+- record.v2 age-band cut-offs and "ಮಗು = child" are an architect choice (UNVERIFIED); should they follow a WHO / national definition? (also in HUMAN_TODO)
+- Strength versus dose convention for "500 mg tablet" with no count (UNVERIFIED, clinician to confirm).
+- Should a "partly taken" status exist separately from "stopped_early"? (D-122 finding M3-M1 mentioned taken_partial.)
+- Should U+200E / U+200F (direction marks) and U+061C also be rejected? They are not in the D-123 F6 list and are currently allowed.
+- transcript.v1 has no speaker roles, so an extractor working from an ASR transcript can only write speaker "unknown". Does Phase C need a transcript.v2 with turn roles (or diarisation), or is speaker only meaningful on gold-text input?
+- The validator cannot check that a ml dose of a liquid has a strength (it is a clinical rule left to m4). Confirm m4 owns this flag (CR-LIQUID-STRENGTH).

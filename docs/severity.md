@@ -29,6 +29,24 @@ split has been evaluated yet (`results/test_access_log.md` does not exist), so p
 is unchanged for every other class. In reports these three count as CRITICAL, in addition to
 CR-DOSE when the unit also differs.*
 
+*Mapping note for record.v2 / gold.v2, added before any test run (2026-11-12, architect, Phase C;
+`results/test_access_log.md` does not exist). No class is added or removed; this only says which
+v2 field feeds which existing class:*
+- *`route` mismatch, or `formulation` injection versus a non-injectable form: CR-ROUTE.*
+- *`strength_value` / `strength_unit` mismatch, or a liquid (syrup, suspension, drops) dose in ml
+  whose strength is missing in the record but present in gold: CR-LIQUID-STRENGTH.*
+- *`patient_age_band` child/infant/adolescent recorded as adult (or missing when gold has it) for
+  a record with a medication dose: CR-PAEDIATRIC.*
+- *medication `status` that flips "given" (prescribed, already_taken, continue_existing) versus
+  "not given" (not_taken, advised_against): CR-NEG. Any other status mismatch (for example
+  stopped_early versus already_taken, or unknown versus a known status): MAJOR, code
+  MA-STATUS.*
+- *`as_needed`, `food_timing`, `formulation` (other than the injection case), `speaker` and
+  `weight_kg` mismatches: MAJOR, code MA-MED-ATTRIBUTE, reported per field. When unsure, rule 5
+  applies (MAJOR, never MINOR).*
+- *A v1 record migrated to v2 has these fields null/unknown: the classes above are reported as
+  "not measurable" for it, never as zero errors.*
+
 ## MAJOR (important information lost or invented, not directly a dosing error)
 
 | code | error |

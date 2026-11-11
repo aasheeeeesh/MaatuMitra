@@ -170,3 +170,12 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] (m3 clinical review, 2026-11-11) Real clinician: which fields a record needs for child syrup (strength, age, weight); is negated:true acceptable for an unfinished course; which advice items count as CRITICAL; ಚಮಚ = teaspoon or tablespoon; omeprazole "after food" in template e4.
 - [ ] (m6 reviews, 2026-11-11) Native Kannada clinic staff read the m6 screens aloud and check the new m6_ rows in reviews/human_sheets/kannada_review_sheet.csv, especially the safety strings.
 - [ ] (m6 security, 2026-11-11) Run gitleaks (not installed during the audit) and test m6 live mode against m5 in the final security audit.
+
+## From contracts (merged 20261111T233150Z)
+
+- [ ] Clinician: confirm the record.v2 age bands (infant < 1 y, child 1-9 y, adolescent 10-17 y, adult 18-64 y, older_adult >= 65 y) and the rule "ಮಗು without an age = child". Edit contracts/README.md "Annotation conventions" and, if they change, bump to record.v3. (UNVERIFIED: no source fetched.)
+- [ ] Clinician or pharmacist: confirm the strength-versus-dose convention ("500 mg ಮಾತ್ರೆ" with no count -> dose 500 mg, strength null; "500 mg, ಎರಡು ಮಾತ್ರೆ" -> dose 2 tablet, strength 500 mg). See contracts/README.md.
+- [ ] Clinician: confirm the docs/severity.md record.v2 mapping note (status "given" vs "not given" flip = CR-NEG; other status and attribute mismatches = MAJOR) BEFORE the first `make eval-test`.
+- [ ] Native Kannada speaker: check the three new fixture sentences in fixtures/build_fixtures.py (CONVS_V2_NEW: fx-child-007, fx-inj-008, fx-past-009), especially "ಮಗುವಿಗೆ ಒಂದು ವರ್ಷ, ತೂಕ 10 kg" and "Ibuprofen ಕೊಡಬೇಡಿ". Not native-validated.
+- [ ] Check the child syrup fixture (1 year, 10 kg, paracetamol 120 mg/5 ml, 5 ml) against a fetched paediatric dosing source; it currently follows the NHS page quoted in reviews/m3_extract/2026-11-11-clinical.md (fetched by the simulated reviewer, not re-fetched by the architect).
+- [ ] Orchestrator: after this merge, schedule the Phase C module migrations listed in contracts/README.md ("What each module must change"): m3, m4, m5, m6, m7, m1 gold.v2.

@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:maatumitra:contract:record.v2",
+  "title": "record.v2",
+  "description": "record.v1 plus the clinical fields asked for by the simulated clinical review of m3 (D-122): per medication route, strength (separate from the dose quantity), formulation, as_needed, food_timing, status, speaker and per-field evidence; per record patient_age_band and weight_kg. ADDITIVE: record.v1 is unchanged and stays the default for the bare name 'record'. Rules beyond JSON Schema (contracts/validate.py): every non-null new field has evidence in field_evidence (status 'unknown' needs none) and no evidence exists for a null field; strength_value and strength_unit are both set or both null; no Unicode bidi control characters (U+202A..U+202E, U+2066..U+2069) in any string; optional check that every span points into the transcript text. 'negated' keeps ONLY its sentence-level meaning (the spoken sentence about this drug is negated); the clinical meaning (prescribed, taken, advised against...) is in 'status'. A liquid formulation with a dose in ml and no strength is structurally VALID; the verifier (m4) must flag it (CR-LIQUID-STRENGTH). All records are synthetic. Like record.v1 there is no approver field: the save gate lives in m5_backend.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_id", "patient_ref", "encounter_type", "source_transcript_id", "extractor", "status", "patient_age_band", "weight_kg", "symptoms", "medications", "advice", "follow_up"],
+  "properties": {
+    "schema_version": {"const": "record.v2"},
+    "record_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.\\-]*$", "maxLength": 200},
+    "patient_ref": {"type": "string", "minLength": 1, "maxLength": 200, "description": "Synthetic patient reference (never a real identifier)."},
+    "encounter_type": {"enum": ["asha_household_visit", "nurse_consult", "physician_consult", "pharmacist_dispensing"]},
+    "source_transcript_id": {"type": "string", "minLength": 1, "description": "audio_id of the transcript.v1 this record was extracted from."},
+    "extractor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1}
+      }
+    },
+    "status": {"enum": ["draft", "flagged", "approved", "saved"], "description": "Workflow status of the whole RECORD (unchanged from v1). Not the same as medications[].status."},
+    "patient_age_band": {
+      "description": "null = no age was said. Bands (architect choice, UNVERIFIED, to be confirmed by a clinician): infant < 1 year; child 1-9 years; adolescent 10-17 years; adult 18-64 years; older_adult >= 65 years; unknown = something about age was said but it cannot be placed in a band. Convention: a word for child (e.g. 'ಮಗು') with no age is 'child' (it may really be an infant; the verifier must treat every non-adult band as not checkable against adult dose ranges).",
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["band", "evidence"],
+          "properties": {
+            "band": {"enum": ["infant", "child", "adolescent", "adult", "older_adult", "unknown"]},
+            "evidence": {"$ref": "#/$defs/evidence"}
+          }
+        }
+      ]
+    },
+    "weight_kg": {
+      "description": "null = no weight was said. value is in kilograms.",
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "evidence"],
+          "properties": {
+            "value": {"type": "number", "exclusiveMinimum": 0, "maximum": 300},
+            "evidence": {"$ref": "#/$defs/evidence"}
+          }
+        }
+      ]
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "present", "evidence"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1, "description": "Canonical English symptom name, lower case (e.g. 'fever')."},
+          "present": {"type": "boolean"},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["drug", "dose_value", "dose_unit", "frequency_per_day", "duration_days", "negated", "evidence", "route", "strength_value", "strength_unit", "formulation", "as_needed", "food_timing", "status", "speaker", "field_evidence"],
+        "properties": {
+          "drug": {"type": "string", "minLength": 1, "description": "Lexicon generic_en name (Latin script, lower case)."},
+          "dose_value": {"type": ["number", "null"], "exclusiveMinimum": 0, "description": "Amount given PER ADMINISTRATION as spoken (5 ml, 1 tablet, 500 mg). Same meaning as v1."},
+          "dose_unit": {"enum": ["mg", "g", "mcg", "ml", "tablet", "capsule", "sachet", "drop", "teaspoon", "IU", null]},
+          "frequency_per_day": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 24},
+          "duration_days": {"type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 365},
+          "negated": {"type": "boolean", "description": "ONLY: the spoken sentence about this drug is grammatically negated (a negation cue applies to it). It no longer says what happened clinically; use status for that."},
+          "evidence": {"$ref": "#/$defs/evidence", "description": "Main span: the drug mention and the v1 values (dose, frequency, duration), as in v1."},
+          "route": {"enum": ["oral", "iv", "im", "sc", "topical", "inhaled", "rectal", "injection_unspecified", "other", "unknown", null], "description": "null = not said. injection_unspecified = 'injection' was said without IV/IM/SC."},
+          "strength_value": {"type": ["number", "null"], "exclusiveMinimum": 0, "description": "Strength of the PRODUCT (500 for a 500 mg tablet; 120 for 120 mg/5 ml syrup), separate from the dose quantity."},
+          "strength_unit": {"enum": ["mg", "g", "mcg", "IU", "mg/ml", "mg/5ml", "mcg/ml", "IU/ml", "%", null]},
+          "formulation": {"enum": ["tablet", "capsule", "syrup", "suspension", "drops", "injection", "sachet", "other", null], "description": "null = not said. Liquid formulations: syrup, suspension, drops."},
+          "as_needed": {"type": ["boolean", "null"], "description": "true = only when needed (e.g. 'only if fever'); false = explicitly regular; null = not said."},
+          "food_timing": {"enum": ["before_food", "after_food", "with_food", "empty_stomach", null]},
+          "status": {"enum": ["prescribed", "already_taken", "not_taken", "advised_against", "stopped_early", "continue_existing", "unknown"], "description": "What the record claims about this drug: prescribed now; already taken before this encounter; not taken (a denied past exposure); advised against; stopped early (course not finished); continue an existing drug; unknown (cannot tell, or migrated from v1)."},
+          "speaker": {"enum": ["doctor", "nurse", "asha", "pharmacist", "patient", "caregiver", "unknown"], "description": "Role of the person who spoke the MAIN evidence span (gold speaker_role 'physician' maps to 'doctor'). transcript.v1 has no roles, so an extractor without turn roles writes 'unknown'."},
+          "field_evidence": {"$ref": "#/$defs/field_evidence"}
+        }
+      }
+    },
+    "advice": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "negated", "evidence", "speaker"],
+        "properties": {
+          "text": {"type": "string", "minLength": 1},
+          "negated": {"type": "boolean"},
+          "evidence": {"$ref": "#/$defs/evidence"},
+          "speaker": {"enum": ["doctor", "nurse", "asha", "pharmacist", "patient", "caregiver", "unknown"], "description": "Role of the person who spoke the evidence span: a request from a patient or caregiver is not clinical advice (D-122, finding M3-M2)."}
+        }
+      }
+    },
+    "follow_up": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["text", "evidence"],
+          "properties": {
+            "text": {"type": "string", "minLength": 1},
+            "evidence": {"$ref": "#/$defs/evidence"}
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["span_text", "char_start", "char_end", "audio_start", "audio_end"],
+      "properties": {
+        "span_text": {"type": "string", "minLength": 1},
+        "char_start": {"type": "integer", "minimum": 0},
+        "char_end": {"type": "integer", "minimum": 1},
+        "audio_start": {"type": ["number", "null"], "minimum": 0},
+        "audio_end": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "field_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One evidence span per NEW field that is not null. Key 'strength' covers strength_value + strength_unit. A status of 'unknown' needs no evidence. The span may be in another turn than the main evidence (e.g. 'after food' said later, or a cross-turn 'no').",
+      "properties": {
+        "route": {"$ref": "#/$defs/evidence"},
+        "strength": {"$ref": "#/$defs/evidence"},
+        "formulation": {"$ref": "#/$defs/evidence"},
+        "as_needed": {"$ref": "#/$defs/evidence"},
+        "food_timing": {"$ref": "#/$defs/evidence"},
+        "status": {"$ref": "#/$defs/evidence"}
+      }
+    }
+  }
+}

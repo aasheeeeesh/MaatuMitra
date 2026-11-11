@@ -1,0 +1,98 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "fx-past-009",
+  "template_family_id": "v2_already_taken_vs_advised_against",
+  "turns": [
+    {
+      "speaker_role": "caregiver",
+      "text": "ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಸರಿ. Ibuprofen ಕೊಡಬೇಡಿ.\u2067"
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-fx-0009",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್",
+          "char_start": 14,
+          "char_end": 32
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "syrup",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "already_taken",
+        "speaker": "caregiver",
+        "gold_field_spans": {
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 27,
+            "char_end": 32
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ",
+            "char_start": 0,
+            "char_end": 39
+          }
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Ibuprofen ಕೊಡಬೇಡಿ",
+          "char_start": 46,
+          "char_end": 63
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "advised_against",
+        "speaker": "asha",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಕೊಡಬೇಡಿ",
+            "char_start": 56,
+            "char_end": 63
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rec2-fx-pharm-003",
+  "patient_ref": "pt-fx-0003",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "fx-pharm-003",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v2"
+  },
+  "status": "approved",
+  "patient_age_band": null,
+  "weight_kg": null,
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amoxicillin",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 3,
+      "duration_days": 5,
+      "negated": false,
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": "after_food",
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "evidence": {
+        "span_text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 0,
+        "char_end": 53,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "field_evidence": {
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 21,
+          "char_end": 27,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "food_timing": {
+          "span_text": "ಊಟದ ನಂತರ",
+          "char_start": 105,
+          "char_end": 113,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 54,
+          "char_end": 66,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take \u202edoof retfa\u202c after food",
+      "negated": false,
+      "speaker": "pharmacist",
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 105,
+        "char_end": 113,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "text": "finish all tablets",
+      "negated": false,
+      "speaker": "pharmacist",
+      "evidence": {
+        "span_text": "ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ",
+        "char_start": 115,
+        "char_end": 133,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "follow_up": null
+}

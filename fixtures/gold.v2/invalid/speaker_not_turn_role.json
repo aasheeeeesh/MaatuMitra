@@ -1,0 +1,104 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "fx-pharm-003",
+  "template_family_id": "e_pharmacist_dispensing",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಹೌದು, ಊಟದ ನಂತರ. ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-fx-0003",
+    "encounter_type": "pharmacist_dispensing",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "amoxicillin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 53
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "caregiver",
+        "gold_field_spans": {
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 21,
+            "char_end": 27
+          },
+          "food_timing": {
+            "turn_index": 2,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 105,
+            "char_end": 113
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 54,
+            "char_end": 66
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "take after food",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಊಟದ ನಂತರ",
+          "char_start": 105,
+          "char_end": 113
+        },
+        "speaker": "pharmacist"
+      },
+      {
+        "text": "finish all tablets",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ",
+          "char_start": 115,
+          "char_end": 133
+        },
+        "speaker": "pharmacist"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಎಲ್ಲ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

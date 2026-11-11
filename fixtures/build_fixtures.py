@@ -17,7 +17,6 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
-import shutil
 from pathlib import Path
 
 import regex
@@ -818,12 +817,417 @@ def build_invalid(valid):
     return inv
 
 
+# --------------------------------------------------------------------------- record.v2 / gold.v2
+# Added in Phase C (D-122). v1 fixtures above are untouched. Three NEW conversations (child syrup,
+# injection, past-tense "already taken") exist only for v2; their gold transcripts (transcript.v1)
+# are written to fixtures/record.v2/transcripts/ so the v1 fixture folders do not change.
+# Doses are illustrative only and UNVERIFIED. The child syrup example (1 year, 5 ml of 120 mg/5 ml)
+# follows the NHS page quoted by the simulated clinical reviewer (reviews/m3_extract/
+# 2026-11-11-clinical.md, source U1); the architect did not re-fetch it.
+
+SPEAKER_FROM_ROLE = {  # copy of contracts.validate.SPEAKER_FROM_ROLE (tests check they agree)
+    "asha": "asha",
+    "nurse": "nurse",
+    "physician": "doctor",
+    "pharmacist": "pharmacist",
+    "patient": "patient",
+    "caregiver": "caregiver",
+}
+NEW_MED_NULLS = dict(
+    route=None,
+    strength_value=None,
+    strength_unit=None,
+    formulation=None,
+    as_needed=None,
+    food_timing=None,
+)
+BIDI_CONTROLS = [chr(c) for c in (*range(0x202A, 0x202F), *range(0x2066, 0x206A))]
+
+
+def _med(drug, dose_value=None, dose_unit=None, freq=None, dur=None, negated=False):
+    return {
+        "drug": drug,
+        "dose_value": dose_value,
+        "dose_unit": dose_unit,
+        "frequency_per_day": freq,
+        "duration_days": dur,
+        "negated": negated,
+    }
+
+
+CONVS_V2_NEW = [
+    dict(
+        cid="fx-child-007",
+        family="v2_child_syrup_strength",
+        enc="physician_consult",
+        patient="pt-fx-0007",
+        turns=[
+            ("caregiver", "ಮಗುವಿಗೆ ಒಂದು ವರ್ಷ, ತೂಕ 10 kg. ಜ್ವರ ಇದೆ."),
+            ("physician", "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 120 mg/5 ml, 5 ml ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ ಕೊಡಿ."),
+        ],
+        items=[
+            ("symptoms", {"name": "fever", "present": True}, 0, "ಜ್ವರ ಇದೆ"),
+            (
+                "medications",
+                _med("paracetamol", 5, "ml"),
+                1,
+                "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 120 mg/5 ml, 5 ml",
+            ),
+        ],
+        follow_up=None,
+        tags=dict(
+            has_negation=False, trap_tokens=["ಮಾತ್ರ"], code_switched=True, cross_turn_negation=False
+        ),
+        status="draft",
+    ),
+    dict(
+        cid="fx-inj-008",
+        family="v2_injection_route",
+        enc="physician_consult",
+        patient="pt-fx-0008",
+        turns=[
+            ("physician", "Ceftriaxone 1000 mg injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಕೊಡಿ."),
+            ("nurse", "ಸರಿ."),
+        ],
+        items=[
+            (
+                "medications",
+                _med("ceftriaxone", 1000, "mg", 1, 5),
+                0,
+                "Ceftriaxone 1000 mg injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+            ),
+        ],
+        follow_up=None,
+        tags=dict(
+            has_negation=False, trap_tokens=[], code_switched=True, cross_turn_negation=False
+        ),
+        status="draft",
+    ),
+    dict(
+        cid="fx-past-009",
+        family="v2_already_taken_vs_advised_against",
+        enc="asha_household_visit",
+        patient="pt-fx-0009",
+        turns=[
+            ("caregiver", "ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ."),
+            ("asha", "ಸರಿ. Ibuprofen ಕೊಡಬೇಡಿ."),
+        ],
+        items=[
+            ("medications", _med("paracetamol"), 0, "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್"),
+            ("medications", _med("ibuprofen", negated=True), 1, "Ibuprofen ಕೊಡಬೇಡಿ"),
+        ],
+        follow_up=None,
+        tags=dict(has_negation=True, trap_tokens=[], code_switched=True, cross_turn_negation=False),
+        status="flagged",
+    ),
+]
+
+# Per conversation: age band, weight, and per drug the new medication fields + their spans.
+# spans: field_evidence key -> (turn_index, span_text). Medications not listed keep status unknown.
+V2_EXTRA = {
+    "fx-asha-001": dict(age=("child", 0, "ಮಗುವಿಗೆ")),
+    "fx-asha-002": dict(
+        age=("child", 0, "ಮಗು"),
+        meds={
+            "paracetamol": dict(
+                fields=dict(formulation="syrup", status="not_taken"),
+                spans=dict(formulation=(0, "ಸಿರಪ್"), status=(1, "ಇಲ್ಲ")),
+            )
+        },
+    ),
+    "fx-pharm-003": dict(
+        meds={
+            "amoxicillin": dict(
+                fields=dict(formulation="tablet", food_timing="after_food", status="prescribed"),
+                spans=dict(
+                    formulation=(0, "ಮಾತ್ರೆ"),
+                    food_timing=(2, "ಊಟದ ನಂತರ"),
+                    status=(0, "ತೆಗೆದುಕೊಳ್ಳಿ"),
+                ),
+            )
+        },
+    ),
+    "fx-phys-004": dict(
+        meds={
+            "azithromycin": dict(
+                fields=dict(status="prescribed"), spans=dict(status=(0, "ತೆಗೆದುಕೊಳ್ಳಿ"))
+            )
+        },
+    ),
+    "fx-nurse-005": dict(),
+    "fx-trap-006": dict(
+        meds={
+            "paracetamol": dict(fields=dict(status="prescribed"), spans=dict(status=(0, "ತೆಗೆದುಕೊಳ್ಳಿ")))
+        },
+    ),
+    "fx-child-007": dict(
+        age=("child", 0, "ಮಗುವಿಗೆ ಒಂದು ವರ್ಷ"),
+        weight=(10, 0, "ತೂಕ 10 kg"),
+        meds={
+            "paracetamol": dict(
+                fields=dict(
+                    strength_value=120,
+                    strength_unit="mg/5ml",
+                    formulation="syrup",
+                    as_needed=True,
+                    status="prescribed",
+                ),
+                spans=dict(
+                    strength=(1, "120 mg/5 ml"),
+                    formulation=(1, "ಸಿರಪ್"),
+                    as_needed=(1, "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ"),
+                    status=(1, "ಕೊಡಿ"),
+                ),
+            )
+        },
+    ),
+    "fx-inj-008": dict(
+        meds={
+            "ceftriaxone": dict(
+                fields=dict(
+                    route="injection_unspecified", formulation="injection", status="prescribed"
+                ),
+                spans=dict(route=(0, "injection"), formulation=(0, "injection"), status=(0, "ಕೊಡಿ")),
+            )
+        },
+    ),
+    "fx-past-009": dict(
+        meds={
+            "paracetamol": dict(
+                fields=dict(formulation="syrup", status="already_taken"),
+                spans=dict(
+                    formulation=(0, "ಸಿರಪ್"),
+                    status=(0, "ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ"),
+                ),
+            ),
+            "ibuprofen": dict(
+                fields=dict(status="advised_against"), spans=dict(status=(1, "ಕೊಡಬೇಡಿ"))
+            ),
+        },
+    ),
+}
+
+
+def _gold_span(turns, ti, span):
+    cs, ce = locate(turns, ti, span)
+    return {"turn_index": ti, "span_text": span, "char_start": cs, "char_end": ce}
+
+
+def gold2_doc(c):
+    g = gold_doc(c)
+    g["schema_version"] = "gold.v2"
+    x = V2_EXTRA[c["cid"]]
+    turns = c["turns"]
+    gr = g["gold_record"]
+    age = x.get("age")
+    weight = x.get("weight")
+    meds = []
+    for m in gr["medications"]:
+        extra = x.get("meds", {}).get(m["drug"], {})
+        role = turns[m["gold_span"]["turn_index"]][0]
+        new = {**NEW_MED_NULLS, "status": "unknown", **extra.get("fields", {})}
+        spans = {k: _gold_span(turns, ti, s) for k, (ti, s) in extra.get("spans", {}).items()}
+        meds.append({**m, **new, "speaker": SPEAKER_FROM_ROLE[role], "gold_field_spans": spans})
+    advice = [
+        {**a, "speaker": SPEAKER_FROM_ROLE[turns[a["gold_span"]["turn_index"]][0]]}
+        for a in gr["advice"]
+    ]
+    g["gold_record"] = {
+        "patient_ref": gr["patient_ref"],
+        "encounter_type": gr["encounter_type"],
+        "patient_age_band": (
+            None if age is None else {"band": age[0], "gold_span": _gold_span(turns, *age[1:])}
+        ),
+        "weight_kg": (
+            None
+            if weight is None
+            else {"value": weight[0], "gold_span": _gold_span(turns, *weight[1:])}
+        ),
+        "symptoms": gr["symptoms"],
+        "medications": meds,
+        "advice": advice,
+        "follow_up": gr["follow_up"],
+    }
+    return g
+
+
+def record2_from_gold2(g, transcript, status):
+    """record.v2 = gold.v2 values with record-style evidence (gold transcript: no audio times)."""
+    assert transcript["text"] == "\n".join(t["text"] for t in g["turns"])
+    gr = g["gold_record"]
+
+    def ev(sp):
+        return {
+            "span_text": sp["span_text"],
+            "char_start": sp["char_start"],
+            "char_end": sp["char_end"],
+            "audio_start": None,
+            "audio_end": None,
+        }
+
+    def item(d):
+        out = {k: v for k, v in d.items() if k not in ("gold_span", "gold_field_spans")}
+        out["evidence"] = ev(d["gold_span"])
+        if "gold_field_spans" in d:
+            out["field_evidence"] = {k: ev(s) for k, s in d["gold_field_spans"].items()}
+        return out
+
+    def scalar(d, key):
+        return None if d is None else {key: d[key], "evidence": ev(d["gold_span"])}
+
+    return {
+        "schema_version": "record.v2",
+        "record_id": f"rec2-{g['conversation_id']}",
+        "patient_ref": gr["patient_ref"],
+        "encounter_type": gr["encounter_type"],
+        "source_transcript_id": transcript["audio_id"],
+        "extractor": {"name": "fixture-hand-made", "version": "fixtures-v2"},
+        "status": status,
+        "patient_age_band": scalar(gr["patient_age_band"], "band"),
+        "weight_kg": scalar(gr["weight_kg"], "value"),
+        "symptoms": [item(s) for s in gr["symptoms"]],
+        "medications": [item(m) for m in gr["medications"]],
+        "advice": [item(a) for a in gr["advice"]],
+        "follow_up": None if gr["follow_up"] is None else item(gr["follow_up"]),
+    }
+
+
+def build_v2(valid_v1):
+    """Return (valid, names, invalid, transcripts) for record.v2 and gold.v2."""
+    import sys
+
+    sys.path.insert(0, str(ROOT.parent))
+    from contracts.migrate_v1_to_v2 import migrate_record  # contract tool, not module code
+
+    valid = {"record.v2": [], "gold.v2": []}
+    names = {"record.v2": [], "gold.v2": []}
+    transcripts = {}
+    v1_tr = {t["audio_id"]: t for t in valid_v1["transcript"]}
+    for c in CONVS + CONVS_V2_NEW:
+        g = gold2_doc(c)
+        valid["gold.v2"].append(g)
+        names["gold.v2"].append(c["cid"])
+        tr = v1_tr.get(c["cid"])
+        if tr is None:  # new v2-only conversation: its gold transcript lives next to record.v2
+            tr = transcript_doc(c["cid"], conv_text(c["turns"]), gold=True, source="template_text")
+            transcripts[f"{c['cid']}__gold"] = tr
+        rec = record2_from_gold2(g, tr, c["status"])
+        valid["record.v2"].append(rec)
+        names["record.v2"].append(rec["record_id"])
+
+    recs = {r["record_id"]: r for r in valid["record.v2"]}
+    golds = {g["conversation_id"]: g for g in valid["gold.v2"]}
+
+    r = copy.deepcopy(recs["rec2-fx-child-007"])
+    r["record_id"] = "rec2-fx-child-007-no-strength"
+    m = r["medications"][0]
+    m["strength_value"] = m["strength_unit"] = None
+    del m["field_evidence"]["strength"]
+    r["status"] = "flagged"
+    valid["record.v2"].append(r)  # VALID structure; the verifier (m4) must flag it
+    names["record.v2"].append(r["record_id"])
+
+    asr = next(x for x in valid_v1["record"] if x["record_id"] == "rec-fx-pharm-003-asr")
+    valid["record.v2"].append(migrate_record(asr))
+    names["record.v2"].append("rec-fx-pharm-003-asr__migrated_from_v1")
+
+    inv = {"record.v2": {}, "gold.v2": {}}
+    ir = inv["record.v2"]
+    rlo, pdf, lri, rli = chr(0x202E), chr(0x202C), chr(0x2066), chr(0x2067)
+    r = copy.deepcopy(recs["rec2-fx-pharm-003"])
+    r["advice"][0]["text"] = f"take {rlo}doof retfa{pdf} after food"
+    ir["bidi_override_in_advice_text.json"] = (
+        r,
+        "advice text contains U+202E RIGHT-TO-LEFT OVERRIDE (displayed text differs from stored "
+        "text; D-123 F6)",
+    )
+    r = copy.deepcopy(recs["rec2-fx-inj-008"])
+    r["medications"][0]["drug"] = f"ceftriaxone{lri}"
+    ir["bidi_isolate_in_drug.json"] = (r, "drug name contains U+2066 LEFT-TO-RIGHT ISOLATE")
+    r = copy.deepcopy(recs["rec2-fx-inj-008"])
+    del r["medications"][0]["field_evidence"]["route"]
+    ir["route_without_evidence.json"] = (r, "route is set but field_evidence has no 'route' span")
+    r = copy.deepcopy(recs["rec2-fx-child-007"])
+    r["medications"][0]["strength_unit"] = None
+    ir["strength_value_without_unit.json"] = (r, "strength_value 120 but strength_unit null")
+    r = copy.deepcopy(recs["rec2-fx-child-007"])
+    r["medications"][0]["status"] = "negated"
+    ir["status_negated_not_in_enum.json"] = (
+        r,
+        "'negated' is not a status (use advised_against, not_taken or unknown)",
+    )
+    r = copy.deepcopy(recs["rec2-fx-child-007"])
+    r["medications"][0]["field_evidence"]["route"] = copy.deepcopy(r["medications"][0]["evidence"])
+    ir["evidence_for_null_route.json"] = (r, "field_evidence.route given but route is null")
+    r = copy.deepcopy(recs["rec2-fx-child-007"])
+    r["weight_kg"]["value"] = 0
+    ir["weight_kg_zero.json"] = (r, "weight_kg.value must be > 0")
+    r = copy.deepcopy(recs["rec2-fx-child-007"])
+    del r["patient_age_band"]["evidence"]
+    ir["age_band_without_evidence.json"] = (r, "patient_age_band has no evidence")
+    r = copy.deepcopy(recs["rec2-fx-pharm-003"])
+    drop = (*NEW_MED_NULLS, "status")
+    r["medications"][0] = {k: v for k, v in r["medications"][0].items() if k not in drop}
+    ir["v1_style_medication_row.json"] = (
+        r,
+        "medication row lacks the v2 fields (route, strength, formulation, as_needed, "
+        "food_timing, status)",
+    )
+
+    ig = inv["gold.v2"]
+    g = copy.deepcopy(golds["fx-pharm-003"])
+    g["gold_record"]["medications"][0]["speaker"] = "caregiver"
+    ig["speaker_not_turn_role.json"] = (
+        g,
+        "medication speaker 'caregiver' but its span is in a pharmacist turn",
+    )
+    g = copy.deepcopy(golds["fx-child-007"])
+    sp = g["gold_record"]["medications"][0]["gold_field_spans"]["strength"]
+    sp["char_start"] += 1
+    sp["char_end"] += 1
+    ig["strength_span_offset_mismatch.json"] = (g, "strength span shifted: slice != span_text")
+    g = copy.deepcopy(golds["fx-past-009"])
+    g["turns"][-1]["text"] += rli
+    ig["bidi_isolate_in_turn_text.json"] = (g, "turn text ends with U+2067 RIGHT-TO-LEFT ISOLATE")
+    g = copy.deepcopy(golds["fx-child-007"])
+    del g["gold_record"]["medications"][0]["gold_field_spans"]["status"]
+    ig["status_without_span.json"] = (g, "status 'prescribed' has no gold_field_spans.status")
+    g = copy.deepcopy(golds["fx-inj-008"])
+    g["gold_record"]["medications"][0]["route"] = "intramuscular"
+    ig["route_not_in_enum.json"] = (g, "route 'intramuscular' not in the enum (use 'im')")
+    return valid, names, inv, transcripts
+
+
 # --------------------------------------------------------------------------- main
 
 
-def write(path: Path, doc):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+def dump(doc) -> str:
+    """JSON text. Bidi control characters (attack fixtures only) are written as \\uXXXX escapes
+    so the file itself displays honestly; the parsed document still contains them."""
+    text = json.dumps(doc, ensure_ascii=False, indent=2) + "\n"
+    for ch in BIDI_CONTROLS:
+        text = text.replace(ch, f"\\u{ord(ch):04x}")
+    return text
+
+
+def sync_dir(d: Path, files: dict[str, str]) -> int:
+    """Make folder d contain exactly `files` (relative POSIX path -> text).
+
+    Writes only files whose content changed and never deletes the folder itself: other agents
+    may read fixtures while this runs (the old version deleted and rewrote every folder)."""
+    changed = 0
+    for rel, text in files.items():
+        path = d / rel
+        if not path.exists() or path.read_text(encoding="utf-8") != text:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
+            changed += 1
+    if d.exists():
+        for path in sorted(d.rglob("*")):
+            if path.is_file() and path.relative_to(d).as_posix() not in files:
+                path.unlink()
+                changed += 1
+    return changed
 
 
 def main():
@@ -941,13 +1345,17 @@ def main():
     names["review_report"] = [r["review_id"] for r in valid["review_report"]]
 
     invalid = build_invalid(valid)
+    v2_valid, v2_names, v2_invalid, v2_transcripts = build_v2(valid)
+    valid.update(v2_valid)
+    names.update(v2_names)
+    invalid.update(v2_invalid)
 
+    changed = 0
     for contract in valid:
-        d = ROOT / contract
-        if d.exists():
-            shutil.rmtree(d)
+        schema = contract if ".v" in contract else f"{contract}.v1"
+        files: dict[str, str] = {}
         for name, doc in zip(names[contract], valid[contract], strict=True):
-            write(d / "valid" / f"{name}.json", doc)
+            files[f"valid/{name}.json"] = dump(doc)
         lines = [
             f"# Invalid {contract} fixtures",
             "",
@@ -957,22 +1365,30 @@ def main():
             "|---|---|",
         ]
         for fname, (doc, why) in sorted(invalid[contract].items()):
-            write(d / "invalid" / fname, doc)
+            files[f"invalid/{fname}"] = dump(doc)
             lines.append(f"| {fname} | {why} |")
-        (d / "invalid" / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-        (d / "README.md").write_text(
-            f"# fixtures/{contract}\n\nExamples of `{contract}.v1` (schema: "
-            f"contracts/schemas/{contract}.v1.schema.json). Generated by "
+        files["invalid/README.md"] = "\n".join(lines) + "\n"
+        files["README.md"] = (
+            f"# fixtures/{contract}\n\nExamples of `{schema}` (schema: "
+            f"contracts/schemas/{schema}.schema.json). Generated by "
             "fixtures/build_fixtures.py. FIXTURE ONLY: Kannada not native-validated, "
-            "numbers hand-made.\n",
-            encoding="utf-8",
+            "numbers hand-made.\n"
         )
-        (d / "valid" / "README.md").write_text(
+        files["valid/README.md"] = (
             f"Every file here must PASS `uv run python -m contracts.validate {contract} "
-            f"fixtures/{contract}/valid`.\n",
-            encoding="utf-8",
+            f"fixtures/{contract}/valid`.\n"
         )
-    print("fixtures written:", {k: len(v) for k, v in valid.items()})
+        if contract == "record.v2":
+            for name, doc in v2_transcripts.items():
+                files[f"transcripts/{name}.json"] = dump(doc)
+            files["transcripts/README.md"] = (
+                "Gold transcripts (transcript.v1) of the v2-only conversations, so record.v2 "
+                "evidence can be checked against its source text without adding files to "
+                "fixtures/transcript/. Not scanned by `--check-fixtures`; checked by "
+                "tests/test_record_v2.py.\n"
+            )
+        changed += sync_dir(ROOT / contract, files)
+    print("fixtures written:", {k: len(v) for k, v in valid.items()}, "files changed:", changed)
 
 
 if __name__ == "__main__":

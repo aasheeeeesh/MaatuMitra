@@ -1,0 +1,90 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rec2-fx-past-009",
+  "patient_ref": "pt-fx-0009",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "fx-past-009",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v2"
+  },
+  "status": "flagged",
+  "patient_age_band": null,
+  "weight_kg": null,
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "syrup",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "already_taken",
+      "speaker": "caregiver",
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್",
+        "char_start": 14,
+        "char_end": 32,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "field_evidence": {
+        "formulation": {
+          "span_text": "ಸಿರಪ್",
+          "char_start": 27,
+          "char_end": 32,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ",
+          "char_start": 0,
+          "char_end": 39,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "ibuprofen",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "advised_against",
+      "speaker": "asha",
+      "evidence": {
+        "span_text": "Ibuprofen ಕೊಡಬೇಡಿ",
+        "char_start": 46,
+        "char_end": 63,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "field_evidence": {
+        "status": {
+          "span_text": "ಕೊಡಬೇಡಿ",
+          "char_start": 56,
+          "char_end": 63,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}

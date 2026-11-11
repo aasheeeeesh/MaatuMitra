@@ -39,7 +39,12 @@ def _load(p: Path):
 
 def test_all_eight_schemas_exist_and_are_valid_2020_12():
     names = V.list_schemas()
-    assert sorted(names) == sorted(f"{c}.v1" for c in CONTRACTS)
+    # All eight v1 contracts stay. Later versions are additive (record.v2 / gold.v2, Phase C):
+    # each extra schema must be a numbered version of one of the eight contracts.
+    assert {f"{c}.v1" for c in CONTRACTS} <= set(names)
+    for n in names:
+        base, _, ver = n.rpartition(".v")
+        assert base in CONTRACTS and ver.isdigit() and int(ver) >= 1, n
     for n in names:
         schema = V.load_schema(n)
         assert schema["$schema"] == "https://json-schema.org/draft/2020-12/schema"

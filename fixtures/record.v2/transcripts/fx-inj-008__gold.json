@@ -1,0 +1,104 @@
+{
+  "schema_version": "transcript.v1",
+  "audio_id": "fx-inj-008",
+  "source": "template_text",
+  "model": {
+    "name": "gold",
+    "revision": "fixtures-v1"
+  },
+  "text": "Ceftriaxone 1000 mg injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಕೊಡಿ.\nಸರಿ.",
+  "words": [
+    {
+      "w": "Ceftriaxone",
+      "char_start": 0,
+      "char_end": 11,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "1000",
+      "char_start": 12,
+      "char_end": 16,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "mg",
+      "char_start": 17,
+      "char_end": 19,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "injection",
+      "char_start": 20,
+      "char_end": 29,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನಕ್ಕೆ",
+      "char_start": 30,
+      "char_end": 37,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಒಂದು",
+      "char_start": 38,
+      "char_end": 42,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಬಾರಿ",
+      "char_start": 43,
+      "char_end": 47,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಐದು",
+      "char_start": 48,
+      "char_end": 51,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ದಿನ",
+      "char_start": 52,
+      "char_end": 55,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಕೊಡಿ",
+      "char_start": 56,
+      "char_end": 60,
+      "start": null,
+      "end": null,
+      "conf": null
+    },
+    {
+      "w": "ಸರಿ",
+      "char_start": 62,
+      "char_end": 65,
+      "start": null,
+      "end": null,
+      "conf": null
+    }
+  ],
+  "latency_ms": null,
+  "audio_duration_s": null,
+  "hardware": null,
+  "created_at": "2026-11-09T12:00:00Z"
+}

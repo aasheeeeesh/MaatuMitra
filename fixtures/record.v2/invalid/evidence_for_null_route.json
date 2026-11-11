@@ -1,0 +1,109 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rec2-fx-child-007",
+  "patient_ref": "pt-fx-0007",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "fx-child-007",
+  "extractor": {
+    "name": "fixture-hand-made",
+    "version": "fixtures-v2"
+  },
+  "status": "draft",
+  "patient_age_band": {
+    "band": "child",
+    "evidence": {
+      "span_text": "ಮಗುವಿಗೆ ಒಂದು ವರ್ಷ",
+      "char_start": 0,
+      "char_end": 17,
+      "audio_start": null,
+      "audio_end": null
+    }
+  },
+  "weight_kg": {
+    "value": 10,
+    "evidence": {
+      "span_text": "ತೂಕ 10 kg",
+      "char_start": 19,
+      "char_end": 28,
+      "audio_start": null,
+      "audio_end": null
+    }
+  },
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 30,
+        "char_end": 38,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 5,
+      "dose_unit": "ml",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "route": null,
+      "strength_value": 120,
+      "strength_unit": "mg/5ml",
+      "formulation": "syrup",
+      "as_needed": true,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 120 mg/5 ml, 5 ml",
+        "char_start": 40,
+        "char_end": 76,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "field_evidence": {
+        "strength": {
+          "span_text": "120 mg/5 ml",
+          "char_start": 59,
+          "char_end": 70,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಸಿರಪ್",
+          "char_start": 53,
+          "char_end": 58,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "as_needed": {
+          "span_text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 77,
+          "char_end": 94,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕೊಡಿ",
+          "char_start": 95,
+          "char_end": 99,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "route": {
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ 120 mg/5 ml, 5 ml",
+          "char_start": 40,
+          "char_end": 76,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null
+}
