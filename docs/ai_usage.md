@@ -177,3 +177,7 @@ Human must check: all Kannada strings (esp. reason.code.*, gate.code.*, reason.C
 ## m5_backend Phase C follow-ups (backend-security-engineer, 2026-11-12)
 - Generated: removal of /approve, GET /records, GET /records/{id}/transcript, load_verifier, record.v2 acceptance, new matrix cases and tests (m5_backend/tests/test_followups.py).
 - A human must check: the hand-written `endpoints` expectations in tests/access_matrix_expected.yaml; that no client still calls /approve; that the transcript folder is not world-readable.
+
+## From integration (merged 20261112T013023Z)
+
+- integration-qa (AI), module integration: generated verifier_adapter.py, boundary.py, e2e.py, pipeline.py, apiserver.py and the tests in integration/tests. A human must check: that the access expectations in e2e.py (READERS, EXPECT_BEFORE, EXPECT_AFTER) match the intended policy and not only the current SQL; that "confirm every flag" is only a test policy; that mock ASR means gold text.

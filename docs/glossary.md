@@ -172,4 +172,7 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Clickjacking**: tricking a user into clicking a page that is hidden inside another page's frame.
 - **Import path**: text like `package.module:function` that tells Python which function to load by name.
 - **Pagination**: returning a long list in small pages (`limit` = page size, `offset` = rows skipped).
+- **Adapter**: a small function that lets two modules work together without importing each other.
+- **Fail closed**: when a check cannot run, the answer is "flag it for a human", never "looks fine".
+- **Boundary check**: validating a real output of one module against the agreed format before the next module reads it.
 <!-- GLOSSARY-END -->

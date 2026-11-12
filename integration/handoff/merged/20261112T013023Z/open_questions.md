@@ -1,0 +1,4 @@
+- Should m5's verifier hook receive the encounter id so the transcript is bound to the encounter, not to a record field?
+- Should a saved record be readable in m6 live (load without verify)? Today m6 cannot reopen it.
+- Should the nurse keep read access to a record after it is saved? Today no (policy: draft/flagged only).
+- Integration with real ASR and with record.v2 is UNVERIFIED.

@@ -1,0 +1,4 @@
+- **Adapter**: a small function that lets two modules work together without importing each other.
+- **Fail closed**: when a check cannot run, the answer is "flag it for a human", never "looks fine".
+- **Stale verdict**: a safety result that is no longer the newest one stored for a record, so the server refuses to save with it.
+- **Boundary check**: validating a real output of one module against the agreed format before the next module reads it.

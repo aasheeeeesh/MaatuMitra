@@ -1,0 +1,651 @@
+{
+ "ids": [
+  "m1-e4-003",
+  "m1-g7-010",
+  "m1-e4-001",
+  "m1-f2-003",
+  "m1-e5-007",
+  "m1-i3-005",
+  "m1-b7-003",
+  "m1-e5-004",
+  "m1-g5-006",
+  "m1-e8-013"
+ ],
+ "rows": [
+  {
+   "id": "m1-e4-003",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "m6": {
+    "login": true,
+    "loaded": true,
+    "case_errors": []
+   },
+   "asha_flags": 1,
+   "flags": [
+    "C4/medications/2/dose_value"
+   ],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": false,
+   "reasons": [
+    "C4 cannot_verify:count_unit"
+   ],
+   "save_without_resolution": 409,
+   "resolutions": [
+    "confirmed:C4/medications/2/dose_value"
+   ],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "f3be64bc-bd55-4119-a7e8-3dc02b6e0a45",
+   "encounter_id": "88f9568e-939e-46af-9133-cdd884327616",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404,
+   "m6_reload_after_save": false
+  },
+  {
+   "id": "m1-g7-010",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "m6": {
+    "login": true,
+    "loaded": true,
+    "case_errors": []
+   },
+   "asha_flags": 2,
+   "flags": [
+    "C4/medications/0/dose_value",
+    "C4/medications/1/dose_value"
+   ],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": false,
+   "reasons": [
+    "C4 cannot_verify:count_unit",
+    "C4 cannot_verify:no_range"
+   ],
+   "save_without_resolution": 409,
+   "resolutions": [
+    "confirmed:C4/medications/0/dose_value",
+    "confirmed:C4/medications/1/dose_value"
+   ],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "a8253294-93d9-4a0a-bea5-4eba1481cf39",
+   "encounter_id": "273a335d-fde1-4de7-8405-e88e590be4e3",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404,
+   "m6_reload_after_save": false
+  },
+  {
+   "id": "m1-e4-001",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "m6": {
+    "login": true,
+    "loaded": true,
+    "case_errors": []
+   },
+   "asha_flags": 3,
+   "flags": [
+    "C4/medications/0/dose_value",
+    "C4/medications/1/dose_value",
+    "C4/medications/2/dose_value"
+   ],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": false,
+   "reasons": [
+    "C4 cannot_verify:count_unit"
+   ],
+   "save_without_resolution": 409,
+   "resolutions": [
+    "confirmed:C4/medications/0/dose_value",
+    "confirmed:C4/medications/1/dose_value",
+    "confirmed:C4/medications/2/dose_value"
+   ],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "2bb3e556-881f-4788-8ba4-41d3dc13c823",
+   "encounter_id": "ca62b9db-3bad-48a0-871d-50e8d3cd0096",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404,
+   "m6_reload_after_save": false
+  },
+  {
+   "id": "m1-f2-003",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 0,
+   "flags": [],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": true,
+   "reasons": [],
+   "save_without_resolution": 200,
+   "resolutions": [],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "248e782f-5a4e-40c9-ab3b-1232e2e5523d",
+   "encounter_id": "3343678b-19d9-4b30-b7a8-8bbe7bad17b7",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  },
+  {
+   "id": "m1-e5-007",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 0,
+   "flags": [],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": true,
+   "reasons": [],
+   "save_without_resolution": 200,
+   "resolutions": [],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "65f080f2-2403-4817-8b90-06c87723f466",
+   "encounter_id": "05b83945-873d-4482-93eb-c1cd033c208c",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  },
+  {
+   "id": "m1-i3-005",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 1,
+   "flags": [
+    "C4/medications/0/dose_value"
+   ],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": false,
+   "reasons": [
+    "C4 cannot_verify:count_unit"
+   ],
+   "save_without_resolution": 409,
+   "resolutions": [
+    "confirmed:C4/medications/0/dose_value"
+   ],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "a15fe861-6841-4a76-9310-9e0d3952c5ea",
+   "encounter_id": "ba0e1011-cd2e-402d-969d-90354eb29947",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  },
+  {
+   "id": "m1-b7-003",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 0,
+   "flags": [],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": true,
+   "reasons": [],
+   "save_without_resolution": 200,
+   "resolutions": [],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "9d06a7aa-fa81-401d-b955-5f553dbdfa52",
+   "encounter_id": "ece5d5e6-e07f-45a1-93c6-a2b26cecbe45",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  },
+  {
+   "id": "m1-e5-004",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 0,
+   "flags": [],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": true,
+   "reasons": [],
+   "save_without_resolution": 200,
+   "resolutions": [],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "ddaf1936-6467-4537-981e-1c1b86d55c04",
+   "encounter_id": "367fb026-e89d-48c0-abc9-75b768029d68",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  },
+  {
+   "id": "m1-g5-006",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 0,
+   "flags": [],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": true,
+   "reasons": [],
+   "save_without_resolution": 200,
+   "resolutions": [],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "f470f7bf-64fe-416c-a535-91500087b57c",
+   "encounter_id": "b4bd5e60-7bc1-460b-8750-6e14969068bf",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  },
+  {
+   "id": "m1-e8-013",
+   "kind": "natural",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 1,
+   "flags": [
+    "C4/medications/1/dose_value"
+   ],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": false,
+   "reasons": [
+    "C4 cannot_verify:liquid_strength",
+    "C4 cannot_verify:paediatric"
+   ],
+   "save_without_resolution": 409,
+   "resolutions": [
+    "confirmed:C4/medications/1/dose_value"
+   ],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "b3e60515-287b-4fda-8fcc-ac51d548d1bb",
+   "encounter_id": "a6e147ea-8616-4e4a-ab31-c21a173d973e",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  }
+ ],
+ "planted": [
+  {
+   "id": "m1-f2-003",
+   "kind": "planted",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 1,
+   "flags": [
+    "C3/symptoms/0/present"
+   ],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": false,
+   "reasons": [
+    "C3 transcript"
+   ],
+   "save_without_resolution": 409,
+   "flags_after_edit": 0,
+   "resolutions": [
+    "edited:C3/symptoms/0/present"
+   ],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "c30b5f29-ecc1-4e7a-8a06-57526a47f5b8",
+   "encounter_id": "913279d0-7bde-4ac4-8a4b-1e5db0158a51",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  },
+  {
+   "id": "m1-e5-007",
+   "kind": "planted",
+   "before": {
+    "A1": 200,
+    "N1": 200,
+    "N2": 200,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "asha_flags": 1,
+   "flags": [
+    "C3/medications/0/negated"
+   ],
+   "verifier_version": "m4_verify-1.0.0",
+   "auto": false,
+   "reasons": [
+    "C3 transcript"
+   ],
+   "save_without_resolution": 409,
+   "flags_after_edit": 0,
+   "resolutions": [
+    "edited:C3/medications/0/negated"
+   ],
+   "save_status": 200,
+   "final_status": "saved",
+   "approved_by_physician": true,
+   "after": {
+    "A1": 200,
+    "N1": 404,
+    "N2": 404,
+    "P1": 200,
+    "P2": 200,
+    "A2": 404,
+    "A3": 404,
+    "N3": 404,
+    "P3": 404,
+    "Ph1": 403,
+    "R1": 403
+   },
+   "transcript_ok": true,
+   "record_id": "af3c9e53-f85e-4e86-9326-27151e475672",
+   "encounter_id": "c8357a47-6259-4e31-8c6e-7ee0de7b4c64",
+   "roundtrip_json_equal": true,
+   "verify_after_save": 404
+  }
+ ],
+ "m6": [
+  {
+   "id": "m1-e4-003",
+   "login": true,
+   "loaded": true,
+   "case_errors": [],
+   "reload_after_save": false
+  },
+  {
+   "id": "m1-g7-010",
+   "login": true,
+   "loaded": true,
+   "case_errors": [],
+   "reload_after_save": false
+  },
+  {
+   "id": "m1-e4-001",
+   "login": true,
+   "loaded": true,
+   "case_errors": [],
+   "reload_after_save": false
+  }
+ ]
+}

@@ -201,3 +201,10 @@ Things nobody has verified yet, with what to check. Builders add items through
 - Where do real transcripts come from? m5 serves only files named `<encounter uuid>.json` placed by the operator or the seed. Integration (ASR) must write them there, or we add a transcripts table.
 - Should status "approved" be removed from the schema now that only /save approves? (needs a migration)
 - UNVERIFIED: MAATUMITRA_VERIFIER pointed at the real m4 verifier (Phase C integration).
+
+## From integration (merged 20261112T013023Z)
+
+- Should m5's verifier hook receive the encounter id so the transcript is bound to the encounter, not to a record field?
+- Should a saved record be readable in m6 live (load without verify)? Today m6 cannot reopen it.
+- Should the nurse keep read access to a record after it is saved? Today no (policy: draft/flagged only).
+- Integration with real ASR and with record.v2 is UNVERIFIED.

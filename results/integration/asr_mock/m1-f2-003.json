@@ -1,0 +1,72 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-f2-003",
+ "source": "template_text",
+ "model": {
+  "name": "mock",
+  "revision": "mock-1"
+ },
+ "text": "ಏನು ತೊಂದರೆ? ಅತಿಸಾರ ಇಲ್ಲ ಮತ್ತು ಜ್ವರ ಇದೆ.",
+ "words": [
+  {
+   "w": "ಏನು",
+   "char_start": 0,
+   "char_end": 3,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೊಂದರೆ?",
+   "char_start": 4,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತಿಸಾರ",
+   "char_start": 12,
+   "char_end": 18,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲ",
+   "char_start": 19,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 24,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜ್ವರ",
+   "char_start": 30,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆ.",
+   "char_start": 35,
+   "char_end": 39,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": null,
+ "audio_duration_s": null,
+ "hardware": "none (mock)",
+ "created_at": "2026-11-12T01:29:51Z"
+}

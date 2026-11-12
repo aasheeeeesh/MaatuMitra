@@ -1,0 +1,3 @@
+- [ ] UNVERIFIED: only run on this laptop. Repeat: `bash m5_backend/scripts/db_up.sh`, then `uv run pytest integration -q`, then `bash m5_backend/scripts/db_down.sh`.
+- [ ] UNVERIFIED: integration with real ASR text for template ids (none exists yet) and with record.v2 (m3/m4 not migrated).
+- [ ] Decide who fixes the stale-verdict behaviour (m5 or m6); see decisions.md finding 1.

@@ -219,3 +219,9 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 
 - [ ] Phase C integration: set `MAATUMITRA_VERIFIER=<m4 adapter module>:<function>` in .env, start the API, call `POST /records/{id}/verify` on a record and check `verifier_version` in the response (UNVERIFIED).
 - [ ] Check that M5_AUDIO_DIR and M5_TRANSCRIPT_DIR are not readable by other OS users (UNVERIFIED, outside the database).
+
+## From integration (merged 20261112T013023Z)
+
+- [ ] UNVERIFIED: only run on this laptop. Repeat: `bash m5_backend/scripts/db_up.sh`, then `uv run pytest integration -q`, then `bash m5_backend/scripts/db_down.sh`.
+- [ ] UNVERIFIED: integration with real ASR text for template ids (none exists yet) and with record.v2 (m3/m4 not migrated).
+- [ ] Decide who fixes the stale-verdict behaviour (m5 or m6); see decisions.md finding 1.
