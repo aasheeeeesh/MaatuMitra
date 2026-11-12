@@ -1,6 +1,6 @@
 # PROGRESS
 
-NEXT STEP (2026-11-12): m2 DONE on dev (vaani-kannada CER 0.155 real / 0.249 TTS). Next: (1) record.v2 migration of m3 (Sonnet) + m4 (Opus) + adapter; (2) m7 fix (FLEURS 'file' key) + E1 refresh + LLM comparison rerun after m3 migration; m2 test-run command for eval-test (re-download pinned vaani, batch materialise, delete); (3) C2 final audits (integrity Opus, security Opus incl. gitleaks); (4) fresh-clone make eval; (5) C3 make eval-test ONCE; (6) C4 report + demo; Phase D. Max 2 agents.
+NEXT STEP (2026-11-12, STOPPED by user): m4 v2 committed d8f22cb. UNCOMMITTED in working tree: m3 record.v2 migration (m3_extract/*, results/m3_extract/*), agent stopped while waiting for its full-suite run - verify (pytest m3_extract, validate record.v2 on dev outputs, no-test-words test, ruff) before committing or discard with git checkout/clean. m2 test-run command (m2-eval-test, dry run only) NOT done (agent stalled, stopped). Then: m7 fix ('file' vs 'file_name') + scorer v2 + E1/E2 refresh + LLM comparison rerun; integration boundary check for v2; C2 final audits; fresh-clone make eval; C3 make eval-test ONCE; C4 report; Phase D. Auto-resume cron deleted.
 
 NOTE: on Windows set `export UV_PROJECT_ENVIRONMENT=$USERPROFILE/.venvs/maatumitra` before `uv run` (path-length limit, D-3). Use `mingw32-make` for make.
 MODEL POLICY (D-65, user request 2026-11-10): Sonnet for kannada-language-reviewer, clinical-reviewer and fix passes (except m4); Opus for m4_verify work, scientific-integrity-auditor, security-auditor.
