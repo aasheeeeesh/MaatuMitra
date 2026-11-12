@@ -11,11 +11,35 @@ the real one: `create_app(..., verifier=my_m4_adapter)`. Until then the default 
 from __future__ import annotations
 
 import importlib
+import inspect
 import re
 from collections.abc import Callable
 from typing import Any
 
-Verifier = Callable[[dict[str, Any]], dict[str, Any]]
+Verifier = Callable[..., dict[str, Any]]
+
+
+def call_verifier(
+    fn: Verifier, record: dict[str, Any], encounter_id: str, transcript: dict[str, Any] | None
+) -> dict[str, Any]:
+    """Hook signature (Phase C): `fn(record, *, encounter_id, transcript)`.
+
+    `encounter_id` and `transcript` are read by m5 from the DATABASE encounter of the stored record
+    (never from fields inside the editable record JSON). `transcript` is a validated transcript.v1
+    dict, or None when m5 has none (the verifier must then fail closed). Backward compatible:
+    a legacy `fn(record)` is still called with the record only.
+    """
+    try:
+        params = inspect.signature(fn).parameters
+    except (TypeError, ValueError):
+        return fn(record)
+    takes_any = any(p.kind is inspect.Parameter.VAR_KEYWORD for p in params.values())
+    kw = {
+        k: v
+        for k, v in (("encounter_id", encounter_id), ("transcript", transcript))
+        if takes_any or k in params
+    }
+    return fn(record, **kw)
 
 
 def manual_review_verifier(record: dict[str, Any]) -> dict[str, Any]:

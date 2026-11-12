@@ -225,3 +225,9 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] UNVERIFIED: only run on this laptop. Repeat: `bash m5_backend/scripts/db_up.sh`, then `uv run pytest integration -q`, then `bash m5_backend/scripts/db_down.sh`.
 - [ ] UNVERIFIED: integration with real ASR text for template ids (none exists yet) and with record.v2 (m3/m4 not migrated).
 - [ ] Decide who fixes the stale-verdict behaviour (m5 or m6); see decisions.md finding 1.
+
+## From m5_backend (merged 20261112T014107Z)
+
+- [ ] UNVERIFIED: run the live m6 screen against the new API. Reopen a saved record (it must call GET /records/{id}/review, not POST /verify). Press verify in two tabs on the same record, then save from the first tab.
+- [ ] Read the new trigger in m5_backend/sql/050_gate.sql (function app.records_saved_gate) and the unique index. Rebuild any existing dev database with `bash m5_backend/scripts/db_up.sh`.
+- [ ] (Phase C, 2026-11-12) Integration tests rewrite timestamps in tracked results/integration/asr_mock/*.json on every run; make them write to a temp folder or fix the timestamp (integration-qa, before the fresh-clone check).

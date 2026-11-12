@@ -55,6 +55,11 @@ REVOKE ALL ON FUNCTION app.verdict_bind() FROM PUBLIC;
 CREATE TRIGGER verdicts_bind BEFORE INSERT ON clinic.verdicts
   FOR EACH ROW EXECUTE FUNCTION app.verdict_bind();
 
+-- One verdict per record CONTENT (Phase C fix a): a later verify of identical content returns the
+-- existing verdict instead of adding a newer one, so it cannot make an earlier verdict stale.
+-- (record_hash is filled by the trigger above before this index is checked.)
+CREATE UNIQUE INDEX verdicts_one_per_content ON clinic.verdicts (record_id, record_hash);
+
 CREATE FUNCTION app.records_saved_gate() RETURNS trigger
   LANGUAGE plpgsql
   SET search_path = pg_catalog, pg_temp
@@ -64,7 +69,14 @@ DECLARE
   v_checks jsonb;
   v_unresolved int;
 BEGIN
-  IF NEW.status <> 'saved' OR (TG_OP = 'UPDATE' AND OLD.status = 'saved') OR current_user = 'maint_role' THEN
+  -- Phase C fix d: EVERY final status ('approved' and 'saved') needs the gate, on insert and on
+  -- any update that changes status, content or approver. Only an untouched final row passes.
+  IF NEW.status NOT IN ('approved', 'saved') OR current_user = 'maint_role' THEN
+    RETURN NEW;
+  END IF;
+  IF TG_OP = 'UPDATE' AND OLD.status = NEW.status AND OLD.json = NEW.json
+     AND OLD.approved_by IS NOT DISTINCT FROM NEW.approved_by
+     AND OLD.approved_at IS NOT DISTINCT FROM NEW.approved_at THEN
     RETURN NEW;
   END IF;
   SELECT v.verdict->'checks' INTO v_checks

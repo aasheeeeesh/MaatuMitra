@@ -181,3 +181,7 @@ Human must check: all Kannada strings (esp. reason.code.*, gate.code.*, reason.C
 ## From integration (merged 20261112T013023Z)
 
 - integration-qa (AI), module integration: generated verifier_adapter.py, boundary.py, e2e.py, pipeline.py, apiserver.py and the tests in integration/tests. A human must check: that the access expectations in e2e.py (READERS, EXPECT_BEFORE, EXPECT_AFTER) match the intended policy and not only the current SQL; that "confirm every flag" is only a test policy; that mock ASR means gold text.
+
+## From m5_backend (merged 20261112T014107Z)
+
+- backend-security-engineer / m5_backend / 2026-11-12 (Phase C fix pass): generated the unique-verdict index, the extended gate trigger, GET /records/{id}/review, the verifier hook signature change, the adapter change and test_phase_c_fixes.py. A human must check the new trigger logic in 050_gate.sql (especially the "untouched final row" exception) and that m6 is changed to call /review.

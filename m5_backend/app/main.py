@@ -33,7 +33,7 @@ from .config import Settings, load_settings
 from .db import Database, audit
 from .directory import Directory, load_directory
 from .ratelimit import LoginRateLimiter
-from .verifier import Verifier, load_verifier
+from .verifier import Verifier, call_verifier, load_verifier
 
 GENERIC = {
     400: "bad request",
@@ -327,6 +327,17 @@ def create_app(
             "next_offset": offset + limit if more else None,
         }
 
+    def _encounter_transcript(encounter_id: uuid.UUID) -> dict | None:
+        """transcript.v1 of a DATABASE encounter, or None (missing / unreadable / invalid)."""
+        path = (transcript_root / f"{encounter_id}.json").resolve()
+        if path.parent != transcript_root or not path.is_file():
+            return None
+        try:
+            doc = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return None
+        return None if validate_doc("transcript.v1", doc) else doc
+
     @app.get("/records/{record_id}/transcript")
     def get_transcript(record_id: uuid.UUID, p: Auth):
         """Transcript of the record's ENCOUNTER, served only if the record is visible to the caller
@@ -337,11 +348,8 @@ def create_app(
         path = (transcript_root / f"{enc['encounter_id']}.json").resolve()
         if path.parent != transcript_root or not path.is_file():
             raise ApiError(404)
-        try:
-            doc = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            raise ApiError(500) from None
-        if validate_doc("transcript.v1", doc):
+        doc = _encounter_transcript(enc["encounter_id"])
+        if doc is None:
             raise ApiError(500)
         return doc
 
@@ -373,6 +381,54 @@ def create_app(
             (c["check_id"], c["field_path"]) for c in verdict["checks"] if c["status"] == "flag"
         }
 
+    def _verify_out(vid, record_id, record_hash, verdict) -> dict:
+        return {
+            "verdict_id": vid,
+            "record_id": record_id,
+            "record_hash": record_hash,
+            "verdict": verdict,
+            "unresolved": [
+                {"check_id": k, "field_path": f} for k, f in sorted(_flag_keys(verdict))
+            ],
+        }
+
+    @app.get("/records/{record_id}/review")
+    def review_record(record_id: uuid.UUID, p: Auth):
+        """Read-only reopen (Phase C fix b): the record's stored verdict for its CURRENT content
+        and, for a physician, the resolutions recorded with it. Never runs the verifier and never
+        writes a verdict, so a saved record cannot change. RLS decides who can see the record."""
+
+        def do(c: psycopg.Cursor):
+            rec = one(c, "SELECT status, approved_by, approved_at, app.record_hash(json) AS h"
+                         " FROM clinic.records WHERE id = %s", (record_id,))  # fmt: skip
+            v = _row(c, c.execute(
+                "SELECT id, record_hash, verdict FROM clinic.verdicts WHERE record_id = %s AND record_hash = %s",
+                (record_id, rec["h"])).fetchone())  # fmt: skip
+            res: list[dict] = []
+            if (
+                v is not None and p.role == "physician"
+            ):  # only physicians hold SELECT on resolutions
+                res = all_rows(c, "SELECT check_id, field_path, action, resolved_by, resolved_at"
+                                  " FROM clinic.record_resolutions WHERE record_id = %s AND record_hash = %s"
+                                  " ORDER BY check_id, field_path", (record_id, rec["h"]))  # fmt: skip
+            return {
+                "record_id": record_id,
+                "status": rec["status"],
+                "approved_by": rec["approved_by"],
+                "approved_at": rec["approved_at"],
+                "verdict_id": v["id"] if v else None,
+                "record_hash": rec["h"],
+                "verdict": v["verdict"] if v else None,
+                "unresolved": (
+                    [{"check_id": k, "field_path": f} for k, f in sorted(_flag_keys(v["verdict"]))]
+                    if v and rec["status"] != "saved"
+                    else []
+                ),
+                "resolutions": res,
+            }
+
+        return run(p, "select", "records", record_id, do)
+
     @app.post("/records/{record_id}/verify", status_code=201)
     def verify_record(record_id: uuid.UUID, body: models.VerifyIn, p: Auth):
         """The SERVER runs the verifier on the STORED record and stores the verdict itself."""
@@ -380,27 +436,34 @@ def create_app(
             raise ApiError(403)
 
         def do(c: psycopg.Cursor):
-            r = one(c, "SELECT json, app.record_hash(json) AS h FROM clinic.records"
+            r = one(c, "SELECT encounter_id, json, app.record_hash(json) AS h FROM clinic.records"
                        " WHERE id = %s AND status IN ('draft', 'flagged', 'approved')", (record_id,))  # fmt: skip
+            # Phase C fix a: same content -> the verdict that already exists (no newer one that
+            # would make an earlier verdict stale).
+            old = _row(c, c.execute(
+                "SELECT id, record_hash, verdict FROM clinic.verdicts WHERE record_id = %s AND record_hash = %s",
+                (record_id, r["h"])).fetchone())  # fmt: skip
+            if old is not None:
+                return _verify_out(old["id"], record_id, old["record_hash"], old["verdict"])
             try:
-                verdict = verifier(r["json"])
+                # Phase C fix c: encounter + transcript come from the DATABASE encounter
+                verdict = call_verifier(verifier, r["json"], str(r["encounter_id"]),
+                                        _encounter_transcript(r["encounter_id"]))  # fmt: skip
             except Exception:
                 raise ApiError(500) from None  # fail closed; details never reach the client
             if not isinstance(verdict, dict) or validate_doc("verdict.v1", verdict):
                 raise ApiError(500)
-            row = one(c, "INSERT INTO clinic.verdicts (record_id, record_hash, facility_id, verdict, created_by)"
-                         " VALUES (%s, 'set-by-trigger', %s, %s, %s) RETURNING id, record_hash",
-                      (record_id, p.facility_id, Jsonb(verdict), p.user_id))  # fmt: skip
-            c.execute("SELECT app.audit_write('verify', 'verdicts', %s, 'allow')", (row["id"],))
-            return {
-                "verdict_id": row["id"],
-                "record_id": record_id,
-                "record_hash": row["record_hash"],
-                "verdict": verdict,
-                "unresolved": [
-                    {"check_id": k, "field_path": f} for k, f in sorted(_flag_keys(verdict))
-                ],
-            }
+            row = _row(c, c.execute(
+                "INSERT INTO clinic.verdicts (record_id, record_hash, facility_id, verdict, created_by)"
+                " VALUES (%s, 'set-by-trigger', %s, %s, %s) ON CONFLICT (record_id, record_hash) DO NOTHING"
+                " RETURNING id, record_hash, verdict",
+                (record_id, p.facility_id, Jsonb(verdict), p.user_id)).fetchone())  # fmt: skip
+            if row is None:  # a concurrent verify of the same content won: return its verdict
+                row = one(c, "SELECT id, record_hash, verdict FROM clinic.verdicts"
+                             " WHERE record_id = %s AND record_hash = %s", (record_id, r["h"]))  # fmt: skip
+            else:
+                c.execute("SELECT app.audit_write('verify', 'verdicts', %s, 'allow')", (row["id"],))
+            return _verify_out(row["id"], record_id, row["record_hash"], row["verdict"])
 
         return run(p, "verify", "records", record_id, do)
 
@@ -447,7 +510,9 @@ def create_app(
                 # only contain flags the physician explicitly confirmed (no new flags)
                 if v["record_hash"] == cur_hash or not flags_now <= confirmed:
                     raise ApiError(409, "edited record is not cleanly re-verified")
-            elif v["record_hash"] != cur_hash or latest["id"] != v["id"]:
+            elif (
+                v["record_hash"] != cur_hash
+            ):  # verdicts are per content: only a content change stales
                 raise ApiError(409, "verdict is stale")
             for r in body.resolutions:
                 rid = one(c, "INSERT INTO clinic.record_resolutions (record_id, verdict_id, record_hash,"

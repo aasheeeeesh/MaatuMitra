@@ -214,7 +214,8 @@ def test_nurse_cannot_approve_or_see_saved_records(env):
 
 def test_physician_cannot_approve_in_someone_elses_name(env):
     ids = env.seed
-    with pytest.raises(psycopg.errors.InsufficientPrivilege):
+    # refused either by RLS WITH CHECK (42501) or, since Phase C fix d, first by the gate trigger
+    with pytest.raises((psycopg.errors.InsufficientPrivilege, psycopg.errors.CheckViolation)):
         with env.api_db.request_tx(p(env, "P1"), commit=False) as cur:
             cur.execute(
                 "UPDATE clinic.records SET status = 'approved', approved_by = %s, approved_at = now() WHERE id = %s",

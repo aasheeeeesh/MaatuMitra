@@ -1,0 +1,2 @@
+- **Content hash**: a fingerprint (SHA-256) of a record's exact JSON text, computed by the database; a verdict is only valid for the content with the same fingerprint.
+- **Unique index**: a database rule that refuses a second row with the same key (here: a second verdict for the same record content).

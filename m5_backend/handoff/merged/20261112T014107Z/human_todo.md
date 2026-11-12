@@ -1,0 +1,2 @@
+- [ ] UNVERIFIED: run the live m6 screen against the new API. Reopen a saved record (it must call GET /records/{id}/review, not POST /verify). Press verify in two tabs on the same record, then save from the first tab.
+- [ ] Read the new trigger in m5_backend/sql/050_gate.sql (function app.records_saved_gate) and the unique index. Rebuild any existing dev database with `bash m5_backend/scripts/db_up.sh`.

@@ -80,3 +80,40 @@ def test_edited_span_that_no_longer_matches_is_flagged(clean_record):
     rec["medications"][0]["evidence"]["char_end"] += 1
     v = verify_record(rec)
     assert v["auto_acceptable"] is False and flagged(v)
+
+
+# ---- Phase C hook signature: fn(record, *, encounter_id, transcript) from the DATABASE encounter
+def test_hook_uses_the_transcript_m5_passes(clean_record):
+    tr = pipeline.mock_asr(CLEAN_ID)
+    v = verify_record(
+        copy.deepcopy(clean_record),
+        encounter_id="00000000-0000-0000-0000-000000000001",
+        transcript=tr,
+    )
+    assert validate_doc("verdict", v) == []
+    assert flagged(v) == set() and v["auto_acceptable"] is True
+
+
+def test_hook_forged_source_transcript_id_is_not_followed_and_is_flagged(clean_record):
+    tr = pipeline.mock_asr(CLEAN_ID)
+    rec = copy.deepcopy(clean_record)
+    rec["source_transcript_id"] = "no-such-conversation"  # editable field: ignored for the lookup
+    v = verify_record(rec, encounter_id="e", transcript=tr)
+    assert validate_doc("verdict", v) == [] and v["auto_acceptable"] is False
+    assert ("C1", "/source_transcript_id") in flagged(v)  # m4 itself notices the mismatch
+
+
+def test_hook_without_transcript_fails_closed_even_if_source_id_resolves(clean_record):
+    # hook mode (encounter_id given) + no transcript: no fallback to the record's own field
+    v = verify_record(copy.deepcopy(clean_record), encounter_id="e", transcript=None)
+    assert v["auto_acceptable"] is False and len(flagged(v)) == 1
+
+
+def test_call_verifier_passes_kwargs_to_adapter(clean_record):
+    from m5_backend.app.verifier import call_verifier
+
+    tr = pipeline.mock_asr(CLEAN_ID)
+    v = call_verifier(verify_record, copy.deepcopy(clean_record), "enc-1", tr)
+    assert v["auto_acceptable"] is True
+    v = call_verifier(verify_record, copy.deepcopy(clean_record), "enc-1", None)  # no transcript
+    assert v["auto_acceptable"] is False and len(flagged(v)) == 1

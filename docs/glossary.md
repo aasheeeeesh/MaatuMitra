@@ -175,4 +175,6 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Adapter**: a small function that lets two modules work together without importing each other.
 - **Fail closed**: when a check cannot run, the answer is "flag it for a human", never "looks fine".
 - **Boundary check**: validating a real output of one module against the agreed format before the next module reads it.
+- **Content hash**: a fingerprint (SHA-256) of a record's exact JSON text, computed by the database; a verdict is only valid for the content with the same fingerprint.
+- **Unique index**: a database rule that refuses a second row with the same key (here: a second verdict for the same record content).
 <!-- GLOSSARY-END -->

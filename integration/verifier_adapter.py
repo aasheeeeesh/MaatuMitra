@@ -1,6 +1,6 @@
 """Glue between m5 (access + save gate) and m4 (safety verifier).
 
-m5 calls `fn(record_json) -> verdict dict` on the STORED record (it never imports m4). m4 needs
+m5 calls `fn(record_json, *, encounter_id, transcript) -> verdict dict` on the STORED record (never imports m4). m4 needs
 the transcript as well. The record names its transcript in `source_transcript_id`, so this adapter
 finds `<id>.json` or `<id>__*.json` in the directories listed in MAATUMITRA_TRANSCRIPT_DIRS
 (os.pathsep separated; default `data/transcripts/gold`).
@@ -11,9 +11,11 @@ Fail closed: anything that stops m4 from really checking (no transcript, unsuppo
 a crash, an invalid verdict) returns a valid verdict.v1 with ONE flag, so a physician must
 resolve it explicitly. It never returns a clean verdict by accident.
 
-Weakness (reported, not fixed here): the transcript is chosen by a field INSIDE the record, which
-the author can edit. m4 still checks every evidence span against the transcript it was given, but
-m5's hook should pass the encounter id so the transcript is bound to the encounter instead.
+PHASE C HOOK SIGNATURE: m5 calls `fn(record, *, encounter_id, transcript)`. The transcript is
+loaded by m5 from the DATABASE encounter of the record (as GET /records/{id}/transcript does),
+never from `source_transcript_id` inside the editable record. transcript=None -> fail closed.
+Legacy `verify_record(record)` (no encounter_id) still looks the transcript up by
+`source_transcript_id`; that old weakness remains only in that offline mode.
 """
 
 from __future__ import annotations
@@ -78,16 +80,22 @@ def _closed(record: Any, reason: str) -> dict[str, Any]:
     }
 
 
-def verify_record(record: dict[str, Any]) -> dict[str, Any]:
-    """The function m5 expects: record JSON in, verdict.v1 dict out."""
+_LEGACY: Any = object()
+
+
+def verify_record(
+    record: dict[str, Any], *, encounter_id: Any = _LEGACY, transcript: Any = None
+) -> dict[str, Any]:
+    """The function m5 expects: record JSON (+ DB encounter id and transcript) in, verdict.v1 out."""
     try:
         if not isinstance(record, dict):
             return _closed(record, "record is not an object")
         if record.get("schema_version") != "record.v1":
             return _closed(record, f"m4 does not accept {record.get('schema_version')!r} yet")
-        transcript = find_transcript(record.get("source_transcript_id"))
-        if transcript is None:
-            return _closed(record, "transcript not found for source_transcript_id")
+        if encounter_id is _LEGACY:  # legacy call without the hook arguments
+            transcript = find_transcript(record.get("source_transcript_id"))
+        if not isinstance(transcript, dict):
+            return _closed(record, "no transcript for the encounter")
         from m4_verify.verifier import verify
 
         verdict = verify(record, transcript, encounter_index=_encounter_index())

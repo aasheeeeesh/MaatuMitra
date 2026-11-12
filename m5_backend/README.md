@@ -67,9 +67,18 @@ is UNVERIFIED (never run on this laptop).
    NEW verdict has no flag the physician did not confirm. Resolutions, status, `approved_by`,
    `approved_at` and audit rows commit in one transaction. The trigger `records_saved_gate`
    repeats the core rule inside the database, so direct SQL cannot skip it either.
-3. Verifier: m5 never imports m4. `create_app(..., verifier=fn)` takes `fn(record_json) ->
-   verdict dict` (integration wires m4 here). The built-in default flags the whole record
+3. Verifier: m5 never imports m4. `create_app(..., verifier=fn)` takes `fn(record_json, *,
+   encounter_id, transcript) -> verdict dict` (Phase C: both read from the DATABASE encounter; a
+   one-argument `fn(record_json)` still works) (integration wires m4 here). The built-in default flags the whole record
    (`manual_review_verifier`), so a physician must confirm explicitly. It is NOT a safety check.
+
+## Phase C fix pass (2026-11-12)
+
+(a) verdicts are per record content (unique index; second verify returns the same verdict);
+(b) `GET /records/{id}/review` reopens saved records read-only; (c) verifier hook gets the DB
+encounter id + transcript; (d) the trigger gates `approved` as well as `saved`, on insert and on
+any change of status/content/approver. Tests: `m5_backend/tests/test_phase_c_fixes.py`.
+Matrix after the pass: unauthorized successes 0 of 1642 deny-expected (1757 cases), bound 3/1642.
 
 ## Result (2026-11-10, local PostgreSQL 16.15, after the fix pass)
 

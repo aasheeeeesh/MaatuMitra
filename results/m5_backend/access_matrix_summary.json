@@ -23,6 +23,6 @@
     "db": 905,
     "api": 852
   },
-  "runtime_s": 10.4,
+  "runtime_s": 10.1,
   "line": "unauthorized successes: 0 of 1642 deny-expected cases (1757 cases total); 95% upper bound (rule of three) 3/1642 = 0.0018"
 }
