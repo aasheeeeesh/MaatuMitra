@@ -21,7 +21,7 @@ Status values: todo / in-progress / done / blocked.
 | B3 | B | m3_extract build + reviews + gate | done (fix pass D-117..D-121; clinical review D-122 -> record.v2 in Phase C) | 2026-11-11 | 18bb537 |
 | B5 | B | m5_backend build + reviews + gate | done (fix pass verified D-103; open: m4 wiring + m6 adapt in Phase C) | 2026-11-10 | 4f3c5ad |
 | B6 | B | m6_ui build + reviews + gate | done (reviews D-123 security, D-124 kannada; fixes in the Phase C m6 pass) | 2026-11-11 | 6440bbd |
-| B7 | B | m7_eval build + reviews + gate | built (make eval on dev; E1 waits for m2; LLM comparison stale) reviews in C2 | 2026-11-12 | (this commit) |
+| B7 | B | m7_eval build + reviews + gate | built (make eval on dev; E1 waits for m2; LLM comparison stale) reviews in C2 | 2026-11-12 | 38e4034 |
 | B8 | B | m8_helper build + reviews + gate | built (H4 not met; D-138..) reviews pending | 2026-11-12 | c7d1cba |
 | C1 | C | Integration boundaries + e2e + fresh-clone make eval | todo | | |
 | C2 | C | Final audits (integrity, security) + fixes | todo | | |
