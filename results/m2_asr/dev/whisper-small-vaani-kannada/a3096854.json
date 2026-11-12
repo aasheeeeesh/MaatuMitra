@@ -1,0 +1,184 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-g7-000__mms_kan_base__speed1.1",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸೆಟ್ಟ ತ್ರಳಿಯಾಕ್ ಸೋನ್ ಪ್ರಸಾರ ಎನ್ಜೀ ಇಂಜೆಕ್ಷನ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ಕೊಡುತ್ತೇವೆ ಯಾರ ಸಿಟಮಾಲು ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಭಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ ಸರಿಡಾತ",
+ "words": [
+  {
+   "w": "ಸೆಟ್ಟ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತ್ರಳಿಯಾಕ್",
+   "char_start": 6,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೋನ್",
+   "char_start": 16,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಸಾರ",
+   "char_start": 21,
+   "char_end": 27,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎನ್ಜೀ",
+   "char_start": 28,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಂಜೆಕ್ಷನ್",
+   "char_start": 34,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 44,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 52,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 57,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐದು",
+   "char_start": 62,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿವಸ",
+   "char_start": 66,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡುತ್ತೇವೆ",
+   "char_start": 71,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾರ",
+   "char_start": 82,
+   "char_end": 85,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಟಮಾಲು",
+   "char_start": 86,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 94,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 99,
+   "char_end": 105,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 106,
+   "char_end": 113,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 114,
+   "char_end": 118,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭಾರಿ",
+   "char_start": 119,
+   "char_end": 123,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 124,
+   "char_end": 136,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಿಡಾತ",
+   "char_start": 137,
+   "char_end": 143,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 4409.0,
+ "audio_duration_s": 16.41,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:53:09Z"
+}

@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-a2-006__mms_kan_base__white_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮಗುವಿಗೆ ಕೆಮ್ಮು ಇದೆಯಾ ಎಷ್ಟು ದಿನದಿಲ್ಲ ಹೌದು ಕೆಮ್ಮು ಎರಡು ದಿನದಿಂದ ಇದೆ ವಾಂತಿಗಿಲ್ಲ",
+ "words": [
+  {
+   "w": "ಮಗುವಿಗೆ",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಮ್ಮು",
+   "char_start": 8,
+   "char_end": 14,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆಯಾ",
+   "char_start": 15,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಷ್ಟು",
+   "char_start": 21,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನದಿಲ್ಲ",
+   "char_start": 27,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೌದು",
+   "char_start": 36,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಮ್ಮು",
+   "char_start": 41,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 48,
+   "char_end": 52,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನದಿಂದ",
+   "char_start": 53,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆ",
+   "char_start": 61,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂತಿಗಿಲ್ಲ",
+   "char_start": 65,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1904.8,
+ "audio_duration_s": 9.22,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:37:19Z"
+}

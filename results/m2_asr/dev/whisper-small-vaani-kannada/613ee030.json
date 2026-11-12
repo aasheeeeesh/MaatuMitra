@@ -1,0 +1,136 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "11609918636102919439",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮಾವ್ ಆಂದುಲನವು ಆಯುಜಿಸಿದ್ದ ಸ್ವತಂತ್ರ ಸ್ವಂಗ್ರಾಮದ ಹೋರಾಟದಲ್ಲಿ ಪಟ್ಟಣದಲ್ಲಿನ ಒಂದು ಶಾಂತಿಯುತ ಮೆರವಣಿಗೆ ಸರ್ವಶ್ರೇಷ್ಠ ಮುಖ್ಯಸ್ಥ ಟುಪುವಾ ತಮಾಸೆಸ್ ಲಿಯೋಟೋ",
+ "words": [
+  {
+   "w": "ಮಾವ್",
+   "char_start": 0,
+   "char_end": 4,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಂದುಲನವು",
+   "char_start": 5,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಯುಜಿಸಿದ್ದ",
+   "char_start": 14,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವತಂತ್ರ",
+   "char_start": 25,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವಂಗ್ರಾಮದ",
+   "char_start": 34,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೋರಾಟದಲ್ಲಿ",
+   "char_start": 45,
+   "char_end": 55,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪಟ್ಟಣದಲ್ಲಿನ",
+   "char_start": 56,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 68,
+   "char_end": 72,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಶಾಂತಿಯುತ",
+   "char_start": 73,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೆರವಣಿಗೆ",
+   "char_start": 82,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರ್ವಶ್ರೇಷ್ಠ",
+   "char_start": 91,
+   "char_end": 102,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮುಖ್ಯಸ್ಥ",
+   "char_start": 103,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಟುಪುವಾ",
+   "char_start": 112,
+   "char_end": 118,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಮಾಸೆಸ್",
+   "char_start": 119,
+   "char_end": 126,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲಿಯೋಟೋ",
+   "char_start": 127,
+   "char_end": 133,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2643.4,
+ "audio_duration_s": 17.46,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:35Z"
+}

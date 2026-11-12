@@ -1,0 +1,160 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "6700524980732397483",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಈ ದಸಾವಯವಿಜ್ಯು ಸೋರಿಕೆ ಮಾಡಿದವರ ಪ್ರಕಾರ ಗಡಿ ವಿವಾದವನ್ನು ವಿವರಿಸುತ್ತದೆ ಇದು ಸಾವಿರದ ಒಂಬೈನೂರ ಅರವತ್ತೇಳರ ಮಧ್ಯ ಪ್ರಾಚ್ಯದ ಯುದ್ಧದ ಮೊದಲಿದ್ದ ಗಡಿಗಳ ಆಧಾರ�",
+ "words": [
+  {
+   "w": "ಈ",
+   "char_start": 0,
+   "char_end": 1,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಸಾವಯವಿಜ್ಯು",
+   "char_start": 2,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೋರಿಕೆ",
+   "char_start": 14,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಿದವರ",
+   "char_start": 21,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಕಾರ",
+   "char_start": 29,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗಡಿ",
+   "char_start": 36,
+   "char_end": 39,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿವಾದವನ್ನು",
+   "char_start": 40,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿವರಿಸುತ್ತದೆ",
+   "char_start": 51,
+   "char_end": 63,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದು",
+   "char_start": 64,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾವಿರದ",
+   "char_start": 68,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂಬೈನೂರ",
+   "char_start": 75,
+   "char_end": 82,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅರವತ್ತೇಳರ",
+   "char_start": 83,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಧ್ಯ",
+   "char_start": 93,
+   "char_end": 97,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಾಚ್ಯದ",
+   "char_start": 98,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯುದ್ಧದ",
+   "char_start": 107,
+   "char_end": 113,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೊದಲಿದ್ದ",
+   "char_start": 114,
+   "char_end": 122,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗಡಿಗಳ",
+   "char_start": 123,
+   "char_end": 128,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಧಾರ�",
+   "char_start": 129,
+   "char_end": 134,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2796.8,
+ "audio_duration_s": 17.94,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:37Z"
+}

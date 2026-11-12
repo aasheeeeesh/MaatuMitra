@@ -1,0 +1,168 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "10332300909659383666",
+ "source": "public_real",
+ "model": {
+  "name": "faster-whisper-small",
+  "revision": "536b0662742c02347bc0e980a01041f333bce120"
+ },
+ "text": "ಸಾರಿಕಲಿ ಸಿರಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ ಸಿಕಾರಿ �",
+ "words": [
+  {
+   "w": "ಸಾರಿಕಲಿ",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿರಿಕಾರಿ",
+   "char_start": 8,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 17,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 24,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 31,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 38,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 45,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 52,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 59,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 66,
+   "char_end": 72,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 73,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 80,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 87,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 94,
+   "char_end": 100,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 101,
+   "char_end": 107,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 108,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 115,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಕಾರಿ",
+   "char_start": 122,
+   "char_end": 128,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "�",
+   "char_start": 129,
+   "char_end": 130,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2631.0,
+ "audio_duration_s": 17.7,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:11:33Z"
+}

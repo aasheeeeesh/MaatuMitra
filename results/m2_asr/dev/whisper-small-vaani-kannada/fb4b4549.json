@@ -1,0 +1,120 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "6507299438252499298",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಾರ್ಟ್ವೇರ್ನಲ್ಲಿ ವರ್ಚುವಲ್ ಸ್ಕ್ಯಾಪ್ ಫೋಲ್ಡನ್ನು ಆಂತರಿಕಗೊಳಿಸಲಾಗಿದ್ದು ಅವನ್ನು ಪ್ರಶ್ನಿಸಲು ಉತ್ತೇಜಿಸಲು ಮತ್ತು ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಸ್ವತಃ ಅರ್ಥ ಮಾಡಿಕೊಳ್�",
+ "words": [
+  {
+   "w": "ಸಾರ್ಟ್ವೇರ್ನಲ್ಲಿ",
+   "char_start": 0,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವರ್ಚುವಲ್",
+   "char_start": 16,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಕ್ಯಾಪ್",
+   "char_start": 25,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಫೋಲ್ಡನ್ನು",
+   "char_start": 34,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಂತರಿಕಗೊಳಿಸಲಾಗಿದ್ದು",
+   "char_start": 44,
+   "char_end": 63,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅವನ್ನು",
+   "char_start": 64,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಶ್ನಿಸಲು",
+   "char_start": 71,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉತ್ತೇಜಿಸಲು",
+   "char_start": 82,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 93,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ",
+   "char_start": 99,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವತಃ",
+   "char_start": 115,
+   "char_end": 120,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅರ್ಥ",
+   "char_start": 121,
+   "char_end": 125,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಿಕೊಳ್�",
+   "char_start": 126,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2773.3,
+ "audio_duration_s": 15.6,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:26Z"
+}

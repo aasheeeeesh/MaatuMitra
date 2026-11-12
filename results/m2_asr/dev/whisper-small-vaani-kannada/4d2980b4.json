@@ -1,0 +1,320 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-g5-012__mms_kan_base__clean",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಇಟ್ಟಿಯಬ್ಲೆಟ್ ದಾರ್ಸಿಸಕಿಯಿಂದ ಒಂದು ಕ್ಯಾಪ್ ಸುಲ್ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಏಳುದೆಯೇ ಯಾ ರಸಿತಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮಾತ್ರ ಅತ್ತಿವರ್ ಇದ್ದರೆ ಮಾತ್ರ ಲೇಹ್ನ್ಸ್ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂತ ಅಂ",
+ "words": [
+  {
+   "w": "ಇಟ್ಟಿಯಬ್ಲೆಟ್",
+   "char_start": 0,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಾರ್ಸಿಸಕಿಯಿಂದ",
+   "char_start": 13,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 27,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಪ್",
+   "char_start": 32,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸುಲ್",
+   "char_start": 39,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 44,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 52,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾರಿ",
+   "char_start": 57,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಏಳುದೆಯೇ",
+   "char_start": 62,
+   "char_end": 69,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾ",
+   "char_start": 70,
+   "char_end": 72,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಸಿತಮಾಲ್",
+   "char_start": 73,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 82,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 87,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 94,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 102,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾರಿ",
+   "char_start": 107,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 112,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತ್ತಿವರ್",
+   "char_start": 118,
+   "char_end": 126,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದ್ದರೆ",
+   "char_start": 127,
+   "char_end": 133,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 134,
+   "char_end": 139,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೇಹ್ನ್ಸ್",
+   "char_start": 140,
+   "char_end": 148,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 149,
+   "char_end": 152,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 153,
+   "char_end": 156,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 157,
+   "char_end": 160,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 161,
+   "char_end": 164,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 165,
+   "char_end": 168,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 169,
+   "char_end": 172,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 173,
+   "char_end": 176,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 177,
+   "char_end": 180,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 181,
+   "char_end": 184,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 185,
+   "char_end": 188,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 189,
+   "char_end": 192,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 193,
+   "char_end": 196,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 197,
+   "char_end": 200,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 201,
+   "char_end": 204,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 205,
+   "char_end": 208,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂತ",
+   "char_start": 209,
+   "char_end": 212,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂ",
+   "char_start": 213,
+   "char_end": 215,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 5272.0,
+ "audio_duration_s": 14.408,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:43:33Z"
+}

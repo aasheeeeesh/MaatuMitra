@@ -1,0 +1,232 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-e6-008__mms_kan_base__pink_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸತ್ಲಿಕ್ಸಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸುಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಅಲ್ಲು ಆ ಹೌದು ಸೆರ್ಪಾರ್ಟ್ದು ರೋಗ್ಸಿಲಿ ತದ ಎನ್ ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐರದು ದಿನ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ",
+ "words": [
+  {
+   "w": "ಸತ್ಲಿಕ್ಸಿನ್",
+   "char_start": 0,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 12,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಪ್ಸುಲ್",
+   "char_start": 17,
+   "char_end": 27,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 28,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾಲ್ಕು",
+   "char_start": 36,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 43,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 48,
+   "char_end": 53,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 54,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 67,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾಲ್ಕು",
+   "char_start": 75,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 82,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಲ್ಲು",
+   "char_start": 87,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆ",
+   "char_start": 93,
+   "char_end": 94,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೌದು",
+   "char_start": 95,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೆರ್ಪಾರ್ಟ್ದು",
+   "char_start": 100,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೋಗ್ಸಿಲಿ",
+   "char_start": 113,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತದ",
+   "char_start": 122,
+   "char_end": 124,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎನ್",
+   "char_start": 125,
+   "char_end": 128,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಿ",
+   "char_start": 129,
+   "char_end": 131,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 132,
+   "char_end": 138,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 139,
+   "char_end": 146,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 147,
+   "char_end": 151,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 152,
+   "char_end": 156,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐರದು",
+   "char_start": 157,
+   "char_end": 161,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನ",
+   "char_start": 162,
+   "char_end": 165,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡ",
+   "char_start": 166,
+   "char_end": 169,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 170,
+   "char_end": 182,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 5545.5,
+ "audio_duration_s": 20.328,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:41:13Z"
+}

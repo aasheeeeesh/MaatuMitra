@@ -208,3 +208,15 @@ Things nobody has verified yet, with what to check. Builders add items through
 - Should a saved record be readable in m6 live (load without verify)? Today m6 cannot reopen it.
 - Should the nurse keep read access to a record after it is saved? Today no (policy: draft/flagged only).
 - Integration with real ASR and with record.v2 is UNVERIFIED.
+
+## From m2_asr (merged 20261112T020635Z)
+
+- (m2, UNVERIFIED) Model card of ARTPARK-IISc/whisper-small-vaani-kannada says `language: hi` in metadata and uses code `ka` in its usage example. A 6-clip dev check gave nearly identical CER with `kn` and `ka`; we used `kn`. Ask the authors which token was used in training.
+- (m2, UNVERIFIED) Possible training-data overlap between the Vaani Kannada fine-tune (card lists FLEURS among training/evaluation data) and our FLEURS public_real clips. If overlapping, its public_real CER is optimistic. Not checked.
+- (m2) m7_eval/experiments.py reads `r["file_name"]` from data/public_real/fleurs_kn_in_test_subset.jsonl, but that file has the key `file` (not `file_name`). If E1 crashes on public_real rows, m7 (or m1) needs to align the key. m2 writes audio_id = file stem for public_real, as m7 documents.
+- (m2) The FLEURS subset file is named `..._test_subset.jsonl` but carries a per-row `split` (dev/test, m1's sentence-level split). m2 only reads rows with split == dev. Suggest m1 renames the file or documents this.
+- (m2) m7 E1 groups by the run directory name. m2 writes `results/m2_asr/<model>/dev/transcripts.jsonl` (+ run.json) and also `results/m2_asr/dev/<model>/<hash8>.json` (one transcript.v1 per file). The folder `results/m2_asr/dev` therefore looks like a "run" named `dev` to m7 and is skipped (it has no `dev/transcripts.jsonl`).
+- (m2) Per-file JSON names are 8 hex chars of sha1(audio_id) because the repo sits in a deep path and Windows MAX_PATH is 260 (LongPathsEnabled = 0). The real audio_id is inside each JSON.
+- (m2) The baseline H2 comparison in m7 matches the run name substring `faster-whisper-small`; that run name is used.
+- (m2, contract) transcript.v1 has no field for decoding settings; they are stored in `results/m2_asr/<model>/run.json`. A `settings` field in a transcript.v2 would help.
+- (m2) Exact-token critical-term recall (shared definition with m7) undercounts: ref 'ಇಲ್ಲ' vs hyp 'ಇಲ್ಲಾ' is a miss. A spelling-variant-tolerant version needs a Kannada reviewer-approved variant list (see human_todo).

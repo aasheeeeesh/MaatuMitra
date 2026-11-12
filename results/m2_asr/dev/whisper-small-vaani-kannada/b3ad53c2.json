@@ -1,0 +1,136 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "16179333959017928959",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಕತ್ರಿನ ಚಂಡಮಾರುತದ ಹಾವಳಿಯಿಂದಾದ ಹಾನಿಗೆ ಪರಿಹಾರ ಮತ್ತು ಪುನನಿರ್ಮಾಣಕ್ಕಾಗಿ ಖರ್ಚು ಮಾಡುವ ವಿವಾದದಿಂದಲೇ ಚರ್ಚೆಯು ಹುಟ್ಟಿಕೊಂಡಿತು ಕೆಲವು ಹಣಕಾಸಿನ ಸಂಪ",
+ "words": [
+  {
+   "w": "ಕತ್ರಿನ",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಂಡಮಾರುತದ",
+   "char_start": 7,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾವಳಿಯಿಂದಾದ",
+   "char_start": 17,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾನಿಗೆ",
+   "char_start": 29,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪರಿಹಾರ",
+   "char_start": 36,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 43,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪುನನಿರ್ಮಾಣಕ್ಕಾಗಿ",
+   "char_start": 49,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಖರ್ಚು",
+   "char_start": 66,
+   "char_end": 71,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುವ",
+   "char_start": 72,
+   "char_end": 77,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿವಾದದಿಂದಲೇ",
+   "char_start": 78,
+   "char_end": 89,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚರ್ಚೆಯು",
+   "char_start": 90,
+   "char_end": 97,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹುಟ್ಟಿಕೊಂಡಿತು",
+   "char_start": 98,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಲವು",
+   "char_start": 112,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಣಕಾಸಿನ",
+   "char_start": 118,
+   "char_end": 125,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಪ",
+   "char_start": 126,
+   "char_end": 129,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2885.0,
+ "audio_duration_s": 21.72,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:45:54Z"
+}

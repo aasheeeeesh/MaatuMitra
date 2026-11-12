@@ -178,4 +178,10 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Content hash**: a fingerprint (SHA-256) of a record's exact JSON text, computed by the database; a verdict is only valid for the content with the same fingerprint.
 - **Unique index**: a database rule that refuses a second row with the same key (here: a second verdict for the same record content).
 - **Read-only reopen**: opening an already saved record to look at it, with no way to change it or run the checker again.
+- **Critical-term recall**: of the drug names, numbers, units and negation words in the reference, how many also appear in the ASR text. A transcript can have a small CER and still lose "not".
+- **RTF (real-time factor)**: processing time divided by audio length. 0.3 means 10 s of speech takes 3 s to transcribe.
+- **int8 / CTranslate2**: CTranslate2 is a fast engine for running Whisper; int8 stores the model weights as 8-bit integers (smaller and faster, slightly less exact).
+- **Greedy decoding (beam size 1)**: the model picks the single most likely next token each step. Fast, but can get stuck repeating the same syllables.
+- **Common subset**: the exact same list of audio files that every model is run and scored on, so models are never compared on different data.
+- **Bootstrap CI**: confidence interval from re-drawing the utterances with replacement 1000 times; the 2.5% and 97.5% points of the resulting means.
 <!-- GLOSSARY-END -->

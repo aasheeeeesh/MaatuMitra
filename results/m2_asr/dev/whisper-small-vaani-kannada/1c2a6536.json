@@ -1,0 +1,128 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "15230301241448090337",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಮಾರಂಭವನ್ನು ಜನರು ವೀಕ್ಷಿಸಲು ಅನುಭವ ಮಾಡಿಕೊಡುವ ನಿಟ್ಟಿನಲ್ಲಿ ರೋಮ್ನ ವಿವಿಧ ಬೀದಿಗಳಲ್ಲಿ ಹಲವಾರು ದೊಡ್ಡ ದೂರದರ್ಶನ ಪ್ರತೆಗಳನ್ನು ಸ್ಥಾಪಿಸಲಾಯಿತು",
+ "words": [
+  {
+   "w": "ಸಮಾರಂಭವನ್ನು",
+   "char_start": 0,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನರು",
+   "char_start": 12,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವೀಕ್ಷಿಸಲು",
+   "char_start": 17,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅನುಭವ",
+   "char_start": 27,
+   "char_end": 32,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಿಕೊಡುವ",
+   "char_start": 33,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿಟ್ಟಿನಲ್ಲಿ",
+   "char_start": 43,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೋಮ್ನ",
+   "char_start": 55,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿವಿಧ",
+   "char_start": 61,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬೀದಿಗಳಲ್ಲಿ",
+   "char_start": 67,
+   "char_end": 77,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಲವಾರು",
+   "char_start": 78,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದೊಡ್ಡ",
+   "char_start": 85,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದೂರದರ್ಶನ",
+   "char_start": 91,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರತೆಗಳನ್ನು",
+   "char_start": 100,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಥಾಪಿಸಲಾಯಿತು",
+   "char_start": 112,
+   "char_end": 125,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2717.9,
+ "audio_duration_s": 11.88,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:45:30Z"
+}

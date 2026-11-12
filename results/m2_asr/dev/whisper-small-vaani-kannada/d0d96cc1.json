@@ -1,0 +1,208 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-e6-014__mms_kan_base__speed0.9",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಹೊವನೆ ಪ್ರಜೋಲ್ ಒಂದು ಕ್ಯಾಪ್ಸುನ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಅಲ್ವಾ ಹೌದು ಹೊಂಡಾರ್ಸೆಕ್ರಾ ಮಿಲಿಕ್ರಾನ್ ಮಾತ್ರ ದಿನಕ್ಕೆ ಎರಡು ಬಾರೆ ಮೂರು ದಿವಸ ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ",
+ "words": [
+  {
+   "w": "ಹೊವನೆ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಜೋಲ್",
+   "char_start": 6,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 14,
+   "char_end": 18,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಪ್ಸುನ್",
+   "char_start": 19,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 30,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 38,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 43,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 48,
+   "char_end": 53,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 54,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 67,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 75,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 80,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಲ್ವಾ",
+   "char_start": 85,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೌದು",
+   "char_start": 91,
+   "char_end": 95,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೊಂಡಾರ್ಸೆಕ್ರಾ",
+   "char_start": 96,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಿಲಿಕ್ರಾನ್",
+   "char_start": 110,
+   "char_end": 120,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 121,
+   "char_end": 126,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 127,
+   "char_end": 134,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 135,
+   "char_end": 139,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರೆ",
+   "char_start": 140,
+   "char_end": 144,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 145,
+   "char_end": 149,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿವಸ",
+   "char_start": 150,
+   "char_end": 154,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡ",
+   "char_start": 155,
+   "char_end": 158,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 159,
+   "char_end": 171,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 5014.0,
+ "audio_duration_s": 21.619,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:51:01Z"
+}

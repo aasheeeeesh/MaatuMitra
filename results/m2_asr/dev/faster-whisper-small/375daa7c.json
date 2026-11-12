@@ -1,0 +1,24 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-h4-006__mms_kan_base__pink_snr10",
+ "source": "tts",
+ "model": {
+  "name": "faster-whisper-small",
+  "revision": "536b0662742c02347bc0e980a01041f333bce120"
+ },
+ "text": "ಮಾರಿಕಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತ�",
+ "words": [
+  {
+   "w": "ಮಾರಿಕಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತಿತ�",
+   "char_start": 0,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2689.6,
+ "audio_duration_s": 16.108,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:21:33Z"
+}

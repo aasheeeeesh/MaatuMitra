@@ -1,0 +1,80 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-b3-006__mms_kan_base__speed1.1",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಈ ವಾರ ಅಮಾಕ್ ಸೆಕ್ಟಾ ತೆಗೆದುಕೊಂಡಿದ್ದೆಯೇ ಇಲ್ಲಾ ವಾಂತಿಗಿದೆಯಾ ಕಲುವು",
+ "words": [
+  {
+   "w": "ಈ",
+   "char_start": 0,
+   "char_end": 1,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾರ",
+   "char_start": 2,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಮಾಕ್",
+   "char_start": 6,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೆಕ್ಟಾ",
+   "char_start": 12,
+   "char_end": 18,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಂಡಿದ್ದೆಯೇ",
+   "char_start": 19,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲಾ",
+   "char_start": 37,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂತಿಗಿದೆಯಾ",
+   "char_start": 43,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಲುವು",
+   "char_start": 55,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2019.3,
+ "audio_duration_s": 7.93,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:54Z"
+}

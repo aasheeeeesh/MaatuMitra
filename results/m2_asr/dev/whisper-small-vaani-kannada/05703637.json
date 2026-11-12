@@ -1,0 +1,120 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "17084435675758943230",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಅತ್ಯಂತ ಆಸೂನಿಕ ಪರಿಶೋಧಕ ದೂರದರ್ಶಕಗಳು ಗ್ರಾಮೀಣ ಪ್ರದೇಶದಲ್ಲಿ ಭಾರೀ ಸೌಲಭ್ಯಗಳಾಗಿದ್ದು ಅನುಕೂಲಕರ ಹವಾಮಾನ ಪರಿಸ್ಥಿತಿಗಳಲ್ಲಿ ಕಾರ್ಯ ನಿರ್ವಹಿಸುತ್ತವೆ",
+ "words": [
+  {
+   "w": "ಅತ್ಯಂತ",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಸೂನಿಕ",
+   "char_start": 7,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪರಿಶೋಧಕ",
+   "char_start": 14,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದೂರದರ್ಶಕಗಳು",
+   "char_start": 22,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗ್ರಾಮೀಣ",
+   "char_start": 34,
+   "char_end": 41,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರದೇಶದಲ್ಲಿ",
+   "char_start": 42,
+   "char_end": 53,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭಾರೀ",
+   "char_start": 54,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೌಲಭ್ಯಗಳಾಗಿದ್ದು",
+   "char_start": 59,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅನುಕೂಲಕರ",
+   "char_start": 75,
+   "char_end": 83,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹವಾಮಾನ",
+   "char_start": 84,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪರಿಸ್ಥಿತಿಗಳಲ್ಲಿ",
+   "char_start": 91,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾರ್ಯ",
+   "char_start": 107,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿರ್ವಹಿಸುತ್ತವೆ",
+   "char_start": 113,
+   "char_end": 127,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2701.1,
+ "audio_duration_s": 11.64,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:46:12Z"
+}

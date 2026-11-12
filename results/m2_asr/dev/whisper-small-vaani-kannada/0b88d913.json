@@ -1,0 +1,176 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "6674534570568354294",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಎರಡು ಸಾವಿರದ ಎರಡರಲ್ಲಿ ಸ್ಪೋಟಿಸಿದ ನೈರಾಗೋಂಗೋ ಜ್ವಾಲಾ ಮುಖಿಯಿಂದ ಹರಿದ ಲಾವಾ ಗೋಮಾ ನಗರವನ್ನು ನಾಶ ಮಾಡಿತು ಅದು ಆ ನಗರದ ಬಹುತೇಕ ರಸ್ತೆಗಳನ್ನು ವಿಶೇಷವಾಗಿ ಅ�",
+ "words": [
+  {
+   "w": "ಎರಡು",
+   "char_start": 0,
+   "char_end": 4,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾವಿರದ",
+   "char_start": 5,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡರಲ್ಲಿ",
+   "char_start": 12,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಪೋಟಿಸಿದ",
+   "char_start": 21,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೈರಾಗೋಂಗೋ",
+   "char_start": 31,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜ್ವಾಲಾ",
+   "char_start": 41,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮುಖಿಯಿಂದ",
+   "char_start": 48,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹರಿದ",
+   "char_start": 57,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲಾವಾ",
+   "char_start": 62,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗೋಮಾ",
+   "char_start": 67,
+   "char_end": 71,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಗರವನ್ನು",
+   "char_start": 72,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾಶ",
+   "char_start": 81,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಿತು",
+   "char_start": 85,
+   "char_end": 91,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದು",
+   "char_start": 92,
+   "char_end": 95,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆ",
+   "char_start": 96,
+   "char_end": 97,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಗರದ",
+   "char_start": 98,
+   "char_end": 102,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಹುತೇಕ",
+   "char_start": 103,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಸ್ತೆಗಳನ್ನು",
+   "char_start": 110,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಶೇಷವಾಗಿ",
+   "char_start": 122,
+   "char_end": 131,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅ�",
+   "char_start": 132,
+   "char_end": 134,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2765.9,
+ "audio_duration_s": 16.26,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:31Z"
+}

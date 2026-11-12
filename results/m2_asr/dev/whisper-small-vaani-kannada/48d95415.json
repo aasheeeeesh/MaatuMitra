@@ -1,0 +1,200 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-g5-012__mms_kan_base__pink_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಇತ್ಯಾವ್ಬ್ಲೆಟ್ಟ್ ದಾರ್ಶಿ ಸೈಕ್ ಇಂದ ಒಂದು ಕ್ಯಾಪ್ ಸುಲ್ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಏಳುದೆಯೇ ಯಾರಸಿ ತಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮಾತ್ರ ಅತ್ತಿವರ್ ಇದ್ದರೆ ಮಾತ್ರ ಲೇ",
+ "words": [
+  {
+   "w": "ಇತ್ಯಾವ್ಬ್ಲೆಟ್ಟ್",
+   "char_start": 0,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಾರ್ಶಿ",
+   "char_start": 16,
+   "char_end": 22,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೈಕ್",
+   "char_start": 23,
+   "char_end": 27,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಂದ",
+   "char_start": 28,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 32,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಪ್",
+   "char_start": 37,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸುಲ್",
+   "char_start": 44,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 49,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 57,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾರಿ",
+   "char_start": 62,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಏಳುದೆಯೇ",
+   "char_start": 67,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾರಸಿ",
+   "char_start": 75,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಮಾಲ್",
+   "char_start": 81,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 87,
+   "char_end": 91,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 92,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 99,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 107,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾರಿ",
+   "char_start": 112,
+   "char_end": 116,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 117,
+   "char_end": 122,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತ್ತಿವರ್",
+   "char_start": 123,
+   "char_end": 131,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದ್ದರೆ",
+   "char_start": 132,
+   "char_end": 138,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 139,
+   "char_end": 144,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೇ",
+   "char_start": 145,
+   "char_end": 147,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 4908.4,
+ "audio_duration_s": 14.408,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:52:20Z"
+}

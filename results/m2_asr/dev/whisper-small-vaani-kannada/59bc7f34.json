@@ -1,0 +1,128 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9798751690827217641",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮಿಷ್ರ ಲೋಹಗಳು ಸಾಮಾನ್ಯವಾಗಿ ಎರಡು ಅಥವಾ ಹೆಚ್ಚಿನ ಲೋಹಗಳ ಮಿಶ್ರಣವಾಗಿದೆ ಆರ್ವರ್ತಕ ಕೋಷ್ಠಕದಲ್ಲಿ ಹಲವಾರು ಅಂಶಗಳಿವೆ ಎಂಬುದನ್ನು ಮರೆಯಬೇಡಿ",
+ "words": [
+  {
+   "w": "ಮಿಷ್ರ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೋಹಗಳು",
+   "char_start": 6,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಮಾನ್ಯವಾಗಿ",
+   "char_start": 13,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 25,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಥವಾ",
+   "char_start": 30,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೆಚ್ಚಿನ",
+   "char_start": 35,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೋಹಗಳ",
+   "char_start": 43,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಿಶ್ರಣವಾಗಿದೆ",
+   "char_start": 49,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆರ್ವರ್ತಕ",
+   "char_start": 62,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೋಷ್ಠಕದಲ್ಲಿ",
+   "char_start": 71,
+   "char_end": 82,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಲವಾರು",
+   "char_start": 83,
+   "char_end": 89,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂಶಗಳಿವೆ",
+   "char_start": 90,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಬುದನ್ನು",
+   "char_start": 99,
+   "char_end": 108,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮರೆಯಬೇಡಿ",
+   "char_start": 109,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2710.5,
+ "audio_duration_s": 10.68,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:36Z"
+}

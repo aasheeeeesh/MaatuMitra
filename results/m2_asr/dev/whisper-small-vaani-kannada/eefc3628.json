@@ -1,0 +1,184 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-g7-002__mms_kan_base__pink_snr5",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸೇತಾ ಜೋಲಿನ್ ತುಳಿತರಳ ಮೇಲಿಗಾನ್ ಇಂಜೆಕ್ಷನ್ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಐದು ದಿನ ಕೊಡುತ್ತೇವೆ ಯಾರ ಸಿಗಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಭಾರಿ ತೆಗೆದುಕುಳ್ಳಿ ಸರಿ ಡ�",
+ "words": [
+  {
+   "w": "ಸೇತಾ",
+   "char_start": 0,
+   "char_end": 4,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜೋಲಿನ್",
+   "char_start": 5,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತುಳಿತರಳ",
+   "char_start": 12,
+   "char_end": 19,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೇಲಿಗಾನ್",
+   "char_start": 20,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಂಜೆಕ್ಷನ್",
+   "char_start": 29,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 39,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 47,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾರಿ",
+   "char_start": 52,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐದು",
+   "char_start": 57,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನ",
+   "char_start": 61,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡುತ್ತೇವೆ",
+   "char_start": 65,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾರ",
+   "char_start": 76,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಗಮಾಲ್",
+   "char_start": 80,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 88,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 93,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 100,
+   "char_end": 107,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 108,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭಾರಿ",
+   "char_start": 113,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕುಳ್ಳಿ",
+   "char_start": 118,
+   "char_end": 130,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಿ",
+   "char_start": 131,
+   "char_end": 134,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಡ�",
+   "char_start": 135,
+   "char_end": 137,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2593.6,
+ "audio_duration_s": 17.176,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:53:30Z"
+}

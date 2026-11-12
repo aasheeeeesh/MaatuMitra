@@ -1,0 +1,120 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "13245545801951640667",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಹಾಂಗ್ ಕಾಂಗ್ನ ಉತ್ತಮ ನೋಟಗಳನ್ನು ನೋಡಲು ದ್ವೀಪವನ್ನು ಬಿಡಿ ಮತ್ತು ಕೋಲುನ ವಾಟರ್ ಫ್ರೆಂಡ್ ವಿರುದ್ಧವಾಗಿ ನಡೆಯಿರಿ",
+ "words": [
+  {
+   "w": "ಹಾಂಗ್",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾಂಗ್ನ",
+   "char_start": 6,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉತ್ತಮ",
+   "char_start": 13,
+   "char_end": 18,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೋಟಗಳನ್ನು",
+   "char_start": 19,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೋಡಲು",
+   "char_start": 29,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದ್ವೀಪವನ್ನು",
+   "char_start": 35,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಿಡಿ",
+   "char_start": 46,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 51,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೋಲುನ",
+   "char_start": 57,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಟರ್",
+   "char_start": 63,
+   "char_end": 68,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಫ್ರೆಂಡ್",
+   "char_start": 69,
+   "char_end": 76,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿರುದ್ಧವಾಗಿ",
+   "char_start": 77,
+   "char_end": 88,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಡೆಯಿರಿ",
+   "char_start": 89,
+   "char_end": 96,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2248.6,
+ "audio_duration_s": 10.44,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:58Z"
+}

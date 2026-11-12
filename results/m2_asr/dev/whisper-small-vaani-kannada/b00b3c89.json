@@ -1,0 +1,112 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "15227829082498111885",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಇದನ್ನು ರಾಸಾಯನಿಕದ ಪಿಹೆಚ್ ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ ನೀವು ಕೆಂಪು ಎಲೆಗೂಸು ರಸವನ್ನು ಬಳಸಿಕೊಂಡು ಸೂಚಕವನ್ನು ಮಾಡಬಹುದು",
+ "words": [
+  {
+   "w": "ಇದನ್ನು",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾಸಾಯನಿಕದ",
+   "char_start": 7,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪಿಹೆಚ್",
+   "char_start": 17,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂದು",
+   "char_start": 24,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕರೆಯಲಾಗುತ್ತದೆ",
+   "char_start": 29,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೀವು",
+   "char_start": 43,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಂಪು",
+   "char_start": 48,
+   "char_end": 53,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಲೆಗೂಸು",
+   "char_start": 54,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಸವನ್ನು",
+   "char_start": 62,
+   "char_end": 69,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಳಸಿಕೊಂಡು",
+   "char_start": 70,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೂಚಕವನ್ನು",
+   "char_start": 80,
+   "char_end": 89,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಬಹುದು",
+   "char_start": 90,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2432.6,
+ "audio_duration_s": 9.18,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:45:27Z"
+}

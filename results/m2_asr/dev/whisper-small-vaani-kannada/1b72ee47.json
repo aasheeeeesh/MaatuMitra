@@ -1,0 +1,168 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "4615327319768033482",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಪೆರ್ರಿ ತಾವು ಇಂದು ರಾತ್ರಿಯ ಸ್ಥಳೀಯ ಸಮಿತಿ ಫಲಿತಾಂಶಗಳನ್ನು ನಿರ್ಣಯ ಮಾಡಲು ಟೆಕ್ಸಾಲ್ಸ್ ಗೆ ಮರಳಿ ಬರುತ್ತೇನೆ ಮತ್ತು ಈ ಸ್ಪರ್ಧೆಯಲ್ಲಿ ಮುನ್ನಡೆಯಲು ತನಗಾಗಿ ಒಂದ",
+ "words": [
+  {
+   "w": "ಪೆರ್ರಿ",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಾವು",
+   "char_start": 7,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಂದು",
+   "char_start": 12,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾತ್ರಿಯ",
+   "char_start": 17,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಥಳೀಯ",
+   "char_start": 25,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಮಿತಿ",
+   "char_start": 32,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಫಲಿತಾಂಶಗಳನ್ನು",
+   "char_start": 38,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿರ್ಣಯ",
+   "char_start": 52,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಲು",
+   "char_start": 59,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಟೆಕ್ಸಾಲ್ಸ್",
+   "char_start": 65,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗೆ",
+   "char_start": 76,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮರಳಿ",
+   "char_start": 79,
+   "char_end": 83,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರುತ್ತೇನೆ",
+   "char_start": 84,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 94,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಈ",
+   "char_start": 100,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಪರ್ಧೆಯಲ್ಲಿ",
+   "char_start": 102,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮುನ್ನಡೆಯಲು",
+   "char_start": 115,
+   "char_end": 125,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತನಗಾಗಿ",
+   "char_start": 126,
+   "char_end": 132,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದ",
+   "char_start": 133,
+   "char_end": 136,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2702.1,
+ "audio_duration_s": 27.6,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:47:44Z"
+}

@@ -1,0 +1,120 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "2233891513165167066",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸ್ಕಾಟ್ಬರ್ಗ್ ಬಸ್ ನಾನ್ನೂರು ಮೂರು ನಿಯಮಿತವಾಗಿ ಸಿಂಟ್ರಾ ನಗರಕ್ಕೆ ಸಂಚರಿಸಲಿದ್ದು ಕ್ಯಾಬೋಡಾ ರೋಕಾದಲ್ಲಿ ಮಾತ್ರ ಸ್ಟಾಪ್ ನೀಡುತ್ತದೆ",
+ "words": [
+  {
+   "w": "ಸ್ಕಾಟ್ಬರ್ಗ್",
+   "char_start": 0,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಸ್",
+   "char_start": 12,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾನ್ನೂರು",
+   "char_start": 16,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 25,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿಯಮಿತವಾಗಿ",
+   "char_start": 30,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಂಟ್ರಾ",
+   "char_start": 41,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಗರಕ್ಕೆ",
+   "char_start": 49,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಚರಿಸಲಿದ್ದು",
+   "char_start": 57,
+   "char_end": 69,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಬೋಡಾ",
+   "char_start": 70,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೋಕಾದಲ್ಲಿ",
+   "char_start": 79,
+   "char_end": 88,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 89,
+   "char_end": 94,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಟಾಪ್",
+   "char_start": 95,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೀಡುತ್ತದೆ",
+   "char_start": 102,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2480.6,
+ "audio_duration_s": 13.98,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:46:52Z"
+}

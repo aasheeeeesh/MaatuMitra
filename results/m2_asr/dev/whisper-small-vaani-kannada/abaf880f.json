@@ -1,0 +1,88 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "620769325408767325",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮೆಕ್ಕದ ಉತ್ತರದ ಪರ್ವತಗಳ ಮೇಲ್ಭಾಗದಲ್ಲಿರುವ ಈಗುಹೆ ಪ್ರಪಂಚದ ಉಳಿದ ಭಾಗಗಳಿಗಿಂತ ಭಿನ್ನವಾಗಿದೆ",
+ "words": [
+  {
+   "w": "ಮೆಕ್ಕದ",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉತ್ತರದ",
+   "char_start": 7,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪರ್ವತಗಳ",
+   "char_start": 14,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೇಲ್ಭಾಗದಲ್ಲಿರುವ",
+   "char_start": 22,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಈಗುಹೆ",
+   "char_start": 38,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಪಂಚದ",
+   "char_start": 44,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಳಿದ",
+   "char_start": 52,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭಾಗಗಳಿಗಿಂತ",
+   "char_start": 57,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭಿನ್ನವಾಗಿದೆ",
+   "char_start": 68,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2170.1,
+ "audio_duration_s": 9.96,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:08Z"
+}

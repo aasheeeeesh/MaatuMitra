@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-b3-006__mms_kan_base__white_snr5",
+ "source": "tts",
+ "model": {
+  "name": "faster-whisper-small",
+  "revision": "536b0662742c02347bc0e980a01041f333bce120"
+ },
+ "text": "यी वारा आमाक्ते क्ताद शगेड़ो कंदिखे ये येल्या वांती येदेया पूं",
+ "words": [
+  {
+   "w": "यी",
+   "char_start": 0,
+   "char_end": 2,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "वारा",
+   "char_start": 3,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "आमाक्ते",
+   "char_start": 8,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "क्ताद",
+   "char_start": 16,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "शगेड़ो",
+   "char_start": 22,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "कंदिखे",
+   "char_start": 29,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ये",
+   "char_start": 36,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "येल्या",
+   "char_start": 39,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "वांती",
+   "char_start": 46,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "येदेया",
+   "char_start": 52,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "पूं",
+   "char_start": 59,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1824.0,
+ "audio_duration_s": 8.7,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:05:00Z"
+}

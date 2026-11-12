@@ -82,3 +82,14 @@ None yet (2026-11-09). Cloud spend so far: $0.
 
 (m2_asr and others append rows: date, what, where (local GPU / CPU / Colab / Kaggle),
 hours, model + revision, outcome.)
+
+### m2_asr compute rows (2026-11-12, ml-engineer-asr)
+
+| date | what | where | wall time | model + revision | outcome |
+|---|---|---|---|---|---|
+| 2026-11-12 | ASR dev run, 448 files (324 TTS + 124 FLEURS), greedy, language kn | local CPU only (i7-12650H, 8 threads, int8; GPU NOT used: torch is CPU-only and the CUDA runtime for CTranslate2 is not installed) | 1235 s | faster-whisper-small, Systran/faster-whisper-small @ 536b0662742c02347bc0e980a01041f333bce120 | ran, 0 failures |
+| 2026-11-12 | same 448 files, same settings | local CPU only | 1256 s | ARTPARK-IISc/whisper-small-vaani-kannada @ 65a803da247c0727bbd254b3c421046a60dd140b, converted to CTranslate2 int8 on this machine | ran, 0 failures |
+
+- Colab / Kaggle: no tool to run notebooks there was available in this session, so none was used (nothing to log under section 4).
+- Not run (reasons in `results/m2_asr/summary.csv` and `m2_asr/README.md`): ai4bharat/indic-conformer-600m-multilingual (gated, 2.56 GB), ekacare/parrotlet-a-en-5b (gated, English only, ~10 GB), facebook/mms-1b-all (3.86 GB, disk), IndicWhisper (no HF repo found), whisper-large-v3 (needs GPU runtime).
+- Disk: free space on C: was 2.7 GB at the start and 2.4 GB at the end; one model cache at a time, each deleted after use (Systran 486 MB, ARTPARK 969 MB).

@@ -1,0 +1,120 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "15668325581070014059",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಕಡಿಮೆ ಒತ್ತಡ ಅಸ್ತಿತ್ವದ ಚೈತನ್ಯವು ಬಲವಾಗಿರುತ್ತದೆ ಪ್ರತಿಯೊಬ್ಬರಿಗೂ ಸಂಪೂರ್ಣ ಶಾಂತಿ ಮತ್ತು ಸಂತೃತ್ತಿಯನ್ನು ಕಂಡು ಕಂಡುಹಿಡಿಯುವ ಸಾಮರ್ಥ್ಯವಿದೆ",
+ "words": [
+  {
+   "w": "ಕಡಿಮೆ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒತ್ತಡ",
+   "char_start": 6,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಸ್ತಿತ್ವದ",
+   "char_start": 12,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚೈತನ್ಯವು",
+   "char_start": 22,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಲವಾಗಿರುತ್ತದೆ",
+   "char_start": 31,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರತಿಯೊಬ್ಬರಿಗೂ",
+   "char_start": 45,
+   "char_end": 59,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಪೂರ್ಣ",
+   "char_start": 60,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಶಾಂತಿ",
+   "char_start": 68,
+   "char_end": 73,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 74,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂತೃತ್ತಿಯನ್ನು",
+   "char_start": 80,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಂಡು",
+   "char_start": 94,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಂಡುಹಿಡಿಯುವ",
+   "char_start": 99,
+   "char_end": 110,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಮರ್ಥ್ಯವಿದೆ",
+   "char_start": 111,
+   "char_end": 123,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2698.2,
+ "audio_duration_s": 10.62,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:45:43Z"
+}

@@ -1,0 +1,112 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "949948654223686645",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಕ್ರಸ್ಟ್ ಹತ್ತಿರದಲ್ಲಿ ಎಪ್ಪತ್ತು ಕಿಲೋಮೀಟರ್ ದಪ್ಪ ಮತ್ತು ದೂರದ ಬದಿಯಲ್ಲಿ ನೂರು ಕಿಲೋಮೀಟರ್ ದಪ್ಪವಾಗಿ ಕಾಣಿಸುತ್ತದೆ",
+ "words": [
+  {
+   "w": "ಕ್ರಸ್ಟ್",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹತ್ತಿರದಲ್ಲಿ",
+   "char_start": 8,
+   "char_end": 19,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಪ್ಪತ್ತು",
+   "char_start": 20,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಿಲೋಮೀಟರ್",
+   "char_start": 29,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಪ್ಪ",
+   "char_start": 39,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 44,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದೂರದ",
+   "char_start": 50,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬದಿಯಲ್ಲಿ",
+   "char_start": 55,
+   "char_end": 63,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೂರು",
+   "char_start": 64,
+   "char_end": 68,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಿಲೋಮೀಟರ್",
+   "char_start": 69,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಪ್ಪವಾಗಿ",
+   "char_start": 79,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾಣಿಸುತ್ತದೆ",
+   "char_start": 88,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2306.3,
+ "audio_duration_s": 7.2,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:17Z"
+}

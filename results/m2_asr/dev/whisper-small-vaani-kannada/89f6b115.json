@@ -1,0 +1,88 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-b3-006__mms_kan_base__pink_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಈ ವಾರ ಅಮಾಕ್ಷಿ ಚಾರ್ಜ್ ತೆಗೆದುಕೊಂಡಿದ್ದೆಯೇ ಇಲ್ಲ ವಾಂತಿ ಇದೆಯಾ ಕರುವು",
+ "words": [
+  {
+   "w": "ಈ",
+   "char_start": 0,
+   "char_end": 1,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾರ",
+   "char_start": 2,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಮಾಕ್ಷಿ",
+   "char_start": 6,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಾರ್ಜ್",
+   "char_start": 14,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಂಡಿದ್ದೆಯೇ",
+   "char_start": 21,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲ",
+   "char_start": 39,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂತಿ",
+   "char_start": 44,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆಯಾ",
+   "char_start": 50,
+   "char_end": 55,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕರುವು",
+   "char_start": 56,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1892.8,
+ "audio_duration_s": 8.7,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:37:48Z"
+}

@@ -1,0 +1,208 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-e8-008__mms_kan_base__pink_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮಗುವಿಗೆ ವಾಂತಿ ಮತ್ತು ಜ್ವರ ಇನ್ನೇ ಓ ಆರ್ ಎಸ್ ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ ತ್ಯಾರಸಿ ತಮೂಲ್ ಸೀರಾ ಹಾ ಮಿಲಿ ಲೀಟರ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ಕೊಡಿ ಪ್ಲೇನ್",
+ "words": [
+  {
+   "w": "ಮಗುವಿಗೆ",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂತಿ",
+   "char_start": 8,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 14,
+   "char_end": 19,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜ್ವರ",
+   "char_start": 20,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇನ್ನೇ",
+   "char_start": 25,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಓ",
+   "char_start": 31,
+   "char_end": 32,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆರ್",
+   "char_start": 33,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಸ್",
+   "char_start": 37,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವಲ್ಪ",
+   "char_start": 41,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವಲ್ಪ",
+   "char_start": 48,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕುಡಿಸಿ",
+   "char_start": 55,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತ್ಯಾರಸಿ",
+   "char_start": 62,
+   "char_end": 69,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಮೂಲ್",
+   "char_start": 70,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೀರಾ",
+   "char_start": 76,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾ",
+   "char_start": 81,
+   "char_end": 83,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಿಲಿ",
+   "char_start": 84,
+   "char_end": 88,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೀಟರ್",
+   "char_start": 89,
+   "char_end": 94,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 95,
+   "char_end": 102,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾಲ್ಕು",
+   "char_start": 103,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 110,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 115,
+   "char_end": 119,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನ",
+   "char_start": 120,
+   "char_end": 123,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡಿ",
+   "char_start": 124,
+   "char_end": 128,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ಲೇನ್",
+   "char_start": 129,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 4620.2,
+ "audio_duration_s": 16.62,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:42:35Z"
+}

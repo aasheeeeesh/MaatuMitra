@@ -1,0 +1,160 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "15294469455792717680",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಫುಟ್ಬಾಲ್ ಬಾಸ್ಕೆಟ್ಬಾಲ್ ವಾಲಿಬಾಲ್ ವಾಟರ್ಪೋಲೋ ಪೆನ್ಸಿಂಗ್ ರಗ್ಬಿ ಸೈಕ್ಲಿಂಗ್ ಐಸ್ ಹಾಕಿ ರೋಲರ್ ಹಾಕಿ ಮತ್ತು ಎಫ್ಮನ್ ಮೋಟರ್ ರೈಸಿಂಗ್ ಜನಪ್ರಿಯೆ ಕ್ರೀಡೆಗಳಲ್ಲಿ ಸೇರ�",
+ "words": [
+  {
+   "w": "ಫುಟ್ಬಾಲ್",
+   "char_start": 0,
+   "char_end": 8,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾಸ್ಕೆಟ್ಬಾಲ್",
+   "char_start": 9,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಲಿಬಾಲ್",
+   "char_start": 22,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಟರ್ಪೋಲೋ",
+   "char_start": 31,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪೆನ್ಸಿಂಗ್",
+   "char_start": 41,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಗ್ಬಿ",
+   "char_start": 51,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೈಕ್ಲಿಂಗ್",
+   "char_start": 57,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐಸ್",
+   "char_start": 67,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾಕಿ",
+   "char_start": 71,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೋಲರ್",
+   "char_start": 76,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾಕಿ",
+   "char_start": 82,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 87,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಫ್ಮನ್",
+   "char_start": 93,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೋಟರ್",
+   "char_start": 100,
+   "char_end": 105,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೈಸಿಂಗ್",
+   "char_start": 106,
+   "char_end": 113,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನಪ್ರಿಯೆ",
+   "char_start": 114,
+   "char_end": 122,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ರೀಡೆಗಳಲ್ಲಿ",
+   "char_start": 123,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೇರ�",
+   "char_start": 136,
+   "char_end": 140,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2813.0,
+ "audio_duration_s": 13.14,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:45:38Z"
+}

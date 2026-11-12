@@ -1,0 +1,136 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-i4-003__mms_kan_base__white_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಈ ಮಾತ್ರೆ ಎಷ್ಟು ಸಲ ತೆಗೆದುಕೊಳ್ಳಬೇಕು ಸೀತಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು ದಿಕ್ಕೋಸೆನಾ ಒಂದು ಮಾತ್ರ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ",
+ "words": [
+  {
+   "w": "ಈ",
+   "char_start": 0,
+   "char_end": 1,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 2,
+   "char_end": 8,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಷ್ಟು",
+   "char_start": 9,
+   "char_end": 14,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಲ",
+   "char_start": 15,
+   "char_end": 17,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಬೇಕು",
+   "char_start": 18,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೀತಿ",
+   "char_start": 34,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಓದಿದ್ದರೆ",
+   "char_start": 39,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗೊತ್ತಾಗುತ್ತಿತ್ತು",
+   "char_start": 48,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿಕ್ಕೋಸೆನಾ",
+   "char_start": 65,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 76,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 81,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 87,
+   "char_end": 94,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 95,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 100,
+   "char_end": 104,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 105,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 4573.4,
+ "audio_duration_s": 13.492,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:57:37Z"
+}

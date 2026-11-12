@@ -1,0 +1,184 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-d1-004__mms_kan_base__speed1.1",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ನೆಗಡಿ ಮತ್ತು ಕೆಂಬು ನಾಲ್ಕು ದಿನದಿಂದ ಇದೆ ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಿ ನೆಗಡಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್ ತೆಗೆದುಕೊಳ್ಳಬಾದು ಯಾರ ಸಿಗಮಾರ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ",
+ "words": [
+  {
+   "w": "ನೆಗಡಿ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 6,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಂಬು",
+   "char_start": 12,
+   "char_end": 17,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾಲ್ಕು",
+   "char_start": 18,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನದಿಂದ",
+   "char_start": 25,
+   "char_end": 32,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆ",
+   "char_start": 33,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಂಟಿಬಯಾಟಿಕ್",
+   "char_start": 37,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡಿ",
+   "char_start": 49,
+   "char_end": 53,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೆಗಡಿಗೆ",
+   "char_start": 54,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಂಟಿಬಯಾಟಿಕ್",
+   "char_start": 62,
+   "char_end": 73,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಬಾದು",
+   "char_start": 74,
+   "char_end": 89,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾರ",
+   "char_start": 90,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಗಮಾರ್",
+   "char_start": 94,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 102,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 107,
+   "char_end": 113,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 114,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 122,
+   "char_end": 126,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 127,
+   "char_end": 131,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 132,
+   "char_end": 136,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿವಸ",
+   "char_start": 137,
+   "char_end": 141,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 142,
+   "char_end": 154,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 4621.5,
+ "audio_duration_s": 17.772,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:50:43Z"
+}

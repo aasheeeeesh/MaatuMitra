@@ -1,0 +1,136 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-h6-005__mms_kan_base__pink_snr10",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮೆತ್ರು ವನಿಧ ಜೋಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ ಲಕ್ಷಣಗಳು ಮುಂದುವರಿದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ",
+ "words": [
+  {
+   "w": "ಮೆತ್ರು",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವನಿಧ",
+   "char_start": 7,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜೋಲ್",
+   "char_start": 12,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 17,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 22,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 29,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 37,
+   "char_end": 41,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 42,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐದು",
+   "char_start": 47,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನ",
+   "char_start": 51,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 55,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲಕ್ಷಣಗಳು",
+   "char_start": 68,
+   "char_end": 76,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮುಂದುವರಿದರೆ",
+   "char_start": 77,
+   "char_end": 88,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವೈದ್ಯರನ್ನು",
+   "char_start": 89,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಪರ್ಕಿಸಿ",
+   "char_start": 100,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2373.7,
+ "audio_duration_s": 11.892,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:55:33Z"
+}

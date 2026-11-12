@@ -1,0 +1,96 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9582954155900514454",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಹಾರ್ಟ್ ಚಾಕೊಲೇಟ್ ಬೆಲ್ಜಿಯಂನ ಉತ್ಕೃಷ್ಟ ಗುಣಮಟ್ಟಕ್ಕೆ ಸರಿಸಾಟಿಯಾಗಿದೆ ಹಣ್ಣಿನ ರಸಬಹಳ ದುಬಾರಿಯನ್ನಿಸಿದರು ಶ್ರೇಷ್ಠವಾಗಿದೆ",
+ "words": [
+  {
+   "w": "ಹಾರ್ಟ್",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಾಕೊಲೇಟ್",
+   "char_start": 7,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬೆಲ್ಜಿಯಂನ",
+   "char_start": 16,
+   "char_end": 25,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉತ್ಕೃಷ್ಟ",
+   "char_start": 26,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗುಣಮಟ್ಟಕ್ಕೆ",
+   "char_start": 35,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಿಸಾಟಿಯಾಗಿದೆ",
+   "char_start": 47,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಣ್ಣಿನ",
+   "char_start": 61,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಸಬಹಳ",
+   "char_start": 68,
+   "char_end": 73,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದುಬಾರಿಯನ್ನಿಸಿದರು",
+   "char_start": 74,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಶ್ರೇಷ್ಠವಾಗಿದೆ",
+   "char_start": 91,
+   "char_end": 104,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2390.8,
+ "audio_duration_s": 9.12,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:22Z"
+}

@@ -1,0 +1,176 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-b3-006__mms_kan_base__pink_snr5",
+ "source": "tts",
+ "model": {
+  "name": "faster-whisper-small",
+  "revision": "536b0662742c02347bc0e980a01041f333bce120"
+ },
+ "text": "भी वारा अमाक्ते क्ता सेगे दो कुन्टे दे ये ये लिए वां दिगिदे या कुमि ये वां दिगिदे या कुमि",
+ "words": [
+  {
+   "w": "भी",
+   "char_start": 0,
+   "char_end": 2,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "वारा",
+   "char_start": 3,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "अमाक्ते",
+   "char_start": 8,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "क्ता",
+   "char_start": 16,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "सेगे",
+   "char_start": 21,
+   "char_end": 25,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "दो",
+   "char_start": 26,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "कुन्टे",
+   "char_start": 29,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "दे",
+   "char_start": 36,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ये",
+   "char_start": 39,
+   "char_end": 41,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ये",
+   "char_start": 42,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "लिए",
+   "char_start": 45,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "वां",
+   "char_start": 49,
+   "char_end": 52,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "दिगिदे",
+   "char_start": 53,
+   "char_end": 59,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "या",
+   "char_start": 60,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "कुमि",
+   "char_start": 63,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ये",
+   "char_start": 68,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "वां",
+   "char_start": 71,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "दिगिदे",
+   "char_start": 75,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "या",
+   "char_start": 82,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "कुमि",
+   "char_start": 85,
+   "char_end": 89,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1854.4,
+ "audio_duration_s": 8.7,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:04:52Z"
+}

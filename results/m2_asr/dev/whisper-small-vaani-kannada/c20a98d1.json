@@ -1,0 +1,152 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9410492005022246210",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ವ್ಯಾಟಿಕನ್ ಸಿಟಿಯ ಜನಸಂಖ್ಯೆ ಸುಮಾರು ಎಂಟುನೂರರಷ್ಟಿದೆ ಇದು ಅದು ಪ್ರಪಂಚದ ಅತ್ಯಂತ ಚಿಕ್ಕ ಸ್ವತಂತ್ರ ರಾಷ್ಟ್ರವಾಗಿದ್ದು ಪ್ರಪಂಚದ ಅತ್ಯಂತ ಕಡಿಮೆ ಜನಸಂಖ್ಯೆಯ ರಾಷ",
+ "words": [
+  {
+   "w": "ವ್ಯಾಟಿಕನ್",
+   "char_start": 0,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಟಿಯ",
+   "char_start": 10,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನಸಂಖ್ಯೆ",
+   "char_start": 16,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸುಮಾರು",
+   "char_start": 25,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಟುನೂರರಷ್ಟಿದೆ",
+   "char_start": 32,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದು",
+   "char_start": 47,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದು",
+   "char_start": 51,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಪಂಚದ",
+   "char_start": 55,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತ್ಯಂತ",
+   "char_start": 63,
+   "char_end": 69,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಿಕ್ಕ",
+   "char_start": 70,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವತಂತ್ರ",
+   "char_start": 76,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾಷ್ಟ್ರವಾಗಿದ್ದು",
+   "char_start": 85,
+   "char_end": 100,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಪಂಚದ",
+   "char_start": 101,
+   "char_end": 108,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತ್ಯಂತ",
+   "char_start": 109,
+   "char_end": 115,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಡಿಮೆ",
+   "char_start": 116,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನಸಂಖ್ಯೆಯ",
+   "char_start": 122,
+   "char_end": 131,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾಷ",
+   "char_start": 132,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2642.7,
+ "audio_duration_s": 17.34,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:12Z"
+}

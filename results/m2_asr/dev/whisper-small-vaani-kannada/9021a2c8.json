@@ -1,0 +1,128 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "17151932213310755474",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಫಾರಿ ಪದದ ಜನಪ್ರಿಯ ಉಪಯೋಗ ಭೂಮಾರ್ಗವಾಗಿ ಸಾಗುತ್ತಾ ಆಫ್ರಿಕಾದ ಬೆರಗುಗೊಳಿಸುವ ಕಾಡುಬುಗಗಳ ವೀಕ್ಷಣೆ ಮಾಡುವುದು ಅದರಲ್ಲೂ ಹುಲ್ಲುಗಾವನೆಯಲ್ಲಿ ಎಂಬುದಾಗುತ್",
+ "words": [
+  {
+   "w": "ಸಫಾರಿ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪದದ",
+   "char_start": 6,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನಪ್ರಿಯ",
+   "char_start": 10,
+   "char_end": 17,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಪಯೋಗ",
+   "char_start": 18,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭೂಮಾರ್ಗವಾಗಿ",
+   "char_start": 24,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಗುತ್ತಾ",
+   "char_start": 36,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಫ್ರಿಕಾದ",
+   "char_start": 45,
+   "char_end": 53,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬೆರಗುಗೊಳಿಸುವ",
+   "char_start": 54,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾಡುಬುಗಗಳ",
+   "char_start": 67,
+   "char_end": 76,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವೀಕ್ಷಣೆ",
+   "char_start": 77,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುವುದು",
+   "char_start": 85,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದರಲ್ಲೂ",
+   "char_start": 94,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹುಲ್ಲುಗಾವನೆಯಲ್ಲಿ",
+   "char_start": 102,
+   "char_end": 118,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಬುದಾಗುತ್",
+   "char_start": 119,
+   "char_end": 129,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2813.4,
+ "audio_duration_s": 13.32,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:46:15Z"
+}

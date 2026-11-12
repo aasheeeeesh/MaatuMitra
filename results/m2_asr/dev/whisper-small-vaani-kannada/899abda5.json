@@ -1,0 +1,176 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "6635953075706199374",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಾವಿರದ ಒಂಬೈನೂರ ಅರವತ್ತರ ಉದ್ದಕ್ಕೂ ಬ್ರೆಜೆನ್ಸಿಕ್ ಜಾನ್ ಎಫ್ ಕೆನಡಿಯಾ ಸಲಹೆಕಾರನಾಗಿ ಕೆಲಸ ಮಾಡಿದರು ಮತ್ತು ಅನಂತರ ಲಿಂಡನ್ ಬಿ ಜಾನ್ ಸನ್ ಆಡಳಿತದಲ್ಲಿ ಕೆಲಸ ಮಾಡ",
+ "words": [
+  {
+   "w": "ಸಾವಿರದ",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂಬೈನೂರ",
+   "char_start": 7,
+   "char_end": 14,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅರವತ್ತರ",
+   "char_start": 15,
+   "char_end": 22,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉದ್ದಕ್ಕೂ",
+   "char_start": 23,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬ್ರೆಜೆನ್ಸಿಕ್",
+   "char_start": 32,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಾನ್",
+   "char_start": 45,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಫ್",
+   "char_start": 50,
+   "char_end": 53,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆನಡಿಯಾ",
+   "char_start": 54,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಲಹೆಕಾರನಾಗಿ",
+   "char_start": 62,
+   "char_end": 73,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಲಸ",
+   "char_start": 74,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಿದರು",
+   "char_start": 79,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 87,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅನಂತರ",
+   "char_start": 93,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲಿಂಡನ್",
+   "char_start": 99,
+   "char_end": 105,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಿ",
+   "char_start": 106,
+   "char_end": 108,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಾನ್",
+   "char_start": 109,
+   "char_end": 113,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸನ್",
+   "char_start": 114,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಡಳಿತದಲ್ಲಿ",
+   "char_start": 118,
+   "char_end": 128,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಲಸ",
+   "char_start": 129,
+   "char_end": 133,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡ",
+   "char_start": 134,
+   "char_end": 137,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2779.7,
+ "audio_duration_s": 15.48,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:28Z"
+}

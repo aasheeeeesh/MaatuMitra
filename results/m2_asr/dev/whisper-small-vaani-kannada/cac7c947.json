@@ -1,0 +1,136 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9753269993132310761",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಅದು ನೀರಿನೊಳಗೆ ಇಳಿದ ಯಾವುದೇ ಪ್ರಾಣಿಯ ಮೇಲಾದರೂ ಆಕ್ರಮಣ ಮಾಡುತ್ತಿತ್ತು ಅತಿ ದೈತ್ಯಾಕಾರದ ಟೀ ರೆಕ್ಸ್ ಕೂಡಾ ಅದಕ್ಕೆ ಸರಿಸಾಟಿಯಾಗುತ್ತಿರಲಿಲ್ಲ",
+ "words": [
+  {
+   "w": "ಅದು",
+   "char_start": 0,
+   "char_end": 3,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೀರಿನೊಳಗೆ",
+   "char_start": 4,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಳಿದ",
+   "char_start": 14,
+   "char_end": 18,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾವುದೇ",
+   "char_start": 19,
+   "char_end": 25,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಾಣಿಯ",
+   "char_start": 26,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೇಲಾದರೂ",
+   "char_start": 34,
+   "char_end": 41,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಕ್ರಮಣ",
+   "char_start": 42,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುತ್ತಿತ್ತು",
+   "char_start": 49,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತಿ",
+   "char_start": 62,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದೈತ್ಯಾಕಾರದ",
+   "char_start": 66,
+   "char_end": 76,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಟೀ",
+   "char_start": 77,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೆಕ್ಸ್",
+   "char_start": 80,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡಾ",
+   "char_start": 87,
+   "char_end": 91,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದಕ್ಕೆ",
+   "char_start": 92,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಿಸಾಟಿಯಾಗುತ್ತಿರಲಿಲ್ಲ",
+   "char_start": 99,
+   "char_end": 120,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2628.3,
+ "audio_duration_s": 10.8,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:33Z"
+}

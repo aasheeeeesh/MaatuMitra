@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-i5-004__mms_kan_base__speed0.9",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮಗುವಿಗೆ ಧ್ವರ ಬಂದಿನೆ ಧ್ವರ ಇದ್ದರೆ ಮಾತ್ರ ತ್ಯಾರಿಸಿಟ ಮಾಲ್ಸಿಯಪ್ಪ ಎರಡುವರೆ ಎನ್ಲೆಲ್ಲಿ ಕೊಡಿ",
+ "words": [
+  {
+   "w": "ಮಗುವಿಗೆ",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಧ್ವರ",
+   "char_start": 8,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಂದಿನೆ",
+   "char_start": 13,
+   "char_end": 19,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಧ್ವರ",
+   "char_start": 20,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದ್ದರೆ",
+   "char_start": 25,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 32,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತ್ಯಾರಿಸಿಟ",
+   "char_start": 38,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಲ್ಸಿಯಪ್ಪ",
+   "char_start": 48,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡುವರೆ",
+   "char_start": 59,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎನ್ಲೆಲ್ಲಿ",
+   "char_start": 67,
+   "char_end": 76,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡಿ",
+   "char_start": 77,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2011.3,
+ "audio_duration_s": 8.853,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:57:50Z"
+}

@@ -1,0 +1,128 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "7339342373199747257",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸ್ಕಾಟ್ಬರ್ಗ್ ಬಸ್ ನಾನ್ನೂರ ಮೂರು ನಿಯಮಿತವಾಗಿ ಸಿಂಟ್ರಾ ನಗರಕ್ಕೆ ಸಂಚರಿಸಲಿದ್ದು ಕ್ಯಾಬೋ ಡಾ ರೊಕ್ಕಾದಲ್ಲಿ ಮಾತ್ರ ಸ್ಟಾಪ್ ನೀಡುತ್ತದೆ",
+ "words": [
+  {
+   "w": "ಸ್ಕಾಟ್ಬರ್ಗ್",
+   "char_start": 0,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಸ್",
+   "char_start": 12,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾನ್ನೂರ",
+   "char_start": 16,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 24,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿಯಮಿತವಾಗಿ",
+   "char_start": 29,
+   "char_end": 39,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಂಟ್ರಾ",
+   "char_start": 40,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಗರಕ್ಕೆ",
+   "char_start": 48,
+   "char_end": 55,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಚರಿಸಲಿದ್ದು",
+   "char_start": 56,
+   "char_end": 68,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಬೋ",
+   "char_start": 69,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಡಾ",
+   "char_start": 76,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೊಕ್ಕಾದಲ್ಲಿ",
+   "char_start": 79,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 91,
+   "char_end": 96,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಟಾಪ್",
+   "char_start": 97,
+   "char_end": 103,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೀಡುತ್ತದೆ",
+   "char_start": 104,
+   "char_end": 113,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2506.7,
+ "audio_duration_s": 8.76,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:44Z"
+}

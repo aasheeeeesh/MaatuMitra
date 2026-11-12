@@ -1,0 +1,96 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9481659641481667864",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ತಮ್ಮ ರೆಕ್ಕೆಗಳನ್ನು ಹಿಂದಕ್ಕೆ ಮಡಚಲಾಗದ ಕೀಟಗಳೆಂದರೆ ಡ್ರ್ಯಾಗನ್ ಒಣಗಳು ಮತ್ತು ಮೇ ಪ್ಲೇಸ್",
+ "words": [
+  {
+   "w": "ತಮ್ಮ",
+   "char_start": 0,
+   "char_end": 4,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೆಕ್ಕೆಗಳನ್ನು",
+   "char_start": 5,
+   "char_end": 17,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಿಂದಕ್ಕೆ",
+   "char_start": 18,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಡಚಲಾಗದ",
+   "char_start": 27,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೀಟಗಳೆಂದರೆ",
+   "char_start": 35,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಡ್ರ್ಯಾಗನ್",
+   "char_start": 46,
+   "char_end": 55,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಣಗಳು",
+   "char_start": 56,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 62,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೇ",
+   "char_start": 68,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ಲೇಸ್",
+   "char_start": 71,
+   "char_end": 77,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2490.9,
+ "audio_duration_s": 7.32,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:14Z"
+}

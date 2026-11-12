@@ -1,0 +1,144 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "13053490214293446160",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಆದ್ದರಿಂದ ಈ ಫಾರ್ಮ್ಯಾಟ್ನ ಆಸ್ಪೆಕ್ಟ್ ಅನುಪಾತವು ಸರಳ ಪೂರ್ಣಾಂಕ ಅನುಪಾತ ಬರುವುದಕ್ಕಾಗಿ ಹನ್ನೆರಡರಿಂದ ಬಾಗಿಸುವಿಕೆ ಮೂರು ಇಷ್ಟು ಎರಡು ಎಂದು ಹೇಳಲಾಗಿದೆ",
+ "words": [
+  {
+   "w": "ಆದ್ದರಿಂದ",
+   "char_start": 0,
+   "char_end": 8,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಈ",
+   "char_start": 9,
+   "char_end": 10,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಫಾರ್ಮ್ಯಾಟ್ನ",
+   "char_start": 11,
+   "char_end": 22,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಸ್ಪೆಕ್ಟ್",
+   "char_start": 23,
+   "char_end": 32,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅನುಪಾತವು",
+   "char_start": 33,
+   "char_end": 41,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಳ",
+   "char_start": 42,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪೂರ್ಣಾಂಕ",
+   "char_start": 46,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅನುಪಾತ",
+   "char_start": 55,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರುವುದಕ್ಕಾಗಿ",
+   "char_start": 62,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹನ್ನೆರಡರಿಂದ",
+   "char_start": 75,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾಗಿಸುವಿಕೆ",
+   "char_start": 87,
+   "char_end": 97,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 98,
+   "char_end": 102,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಷ್ಟು",
+   "char_start": 103,
+   "char_end": 108,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 109,
+   "char_end": 113,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂದು",
+   "char_start": 114,
+   "char_end": 118,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೇಳಲಾಗಿದೆ",
+   "char_start": 119,
+   "char_end": 128,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2841.5,
+ "audio_duration_s": 14.16,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:55Z"
+}

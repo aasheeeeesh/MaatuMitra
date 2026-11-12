@@ -1,0 +1,144 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "3772507231228073398",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಆಡುಗಳನ್ನು ಸುಮಾರು ಹತ್ತು ಸಾವಿರ ವರ್ಷಗಳ ಹಿಂದೆ ಇರಾನ್ನ ಜಾಗ್ರೋಸ್ ಮೌಂಟೇನ್ನಲ್ಲಿ ಮೊದಲ ಬಾರಿಗೆ ಸಾಕಲು ಬಳಗೆಸಲಾಯಿತು ಎಂದು ತಿಳಿದು ಬರುತ್ತದೆ",
+ "words": [
+  {
+   "w": "ಆಡುಗಳನ್ನು",
+   "char_start": 0,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸುಮಾರು",
+   "char_start": 10,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹತ್ತು",
+   "char_start": 17,
+   "char_end": 22,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾವಿರ",
+   "char_start": 23,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವರ್ಷಗಳ",
+   "char_start": 29,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಿಂದೆ",
+   "char_start": 36,
+   "char_end": 41,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇರಾನ್ನ",
+   "char_start": 42,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಾಗ್ರೋಸ್",
+   "char_start": 49,
+   "char_end": 57,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೌಂಟೇನ್ನಲ್ಲಿ",
+   "char_start": 58,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೊದಲ",
+   "char_start": 71,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿಗೆ",
+   "char_start": 76,
+   "char_end": 82,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಕಲು",
+   "char_start": 83,
+   "char_end": 88,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಳಗೆಸಲಾಯಿತು",
+   "char_start": 89,
+   "char_end": 100,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂದು",
+   "char_start": 101,
+   "char_end": 105,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಿಳಿದು",
+   "char_start": 106,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರುತ್ತದೆ",
+   "char_start": 113,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2534.6,
+ "audio_duration_s": 10.08,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:47:33Z"
+}

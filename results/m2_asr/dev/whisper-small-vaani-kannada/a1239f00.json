@@ -1,0 +1,96 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-c3-007__mms_kan_base__white_snr5",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಅಮಾತ್ ಸಿಟ್ಟಾಂ ಎಲ್ಲಾ ಮುಜಿಸಿಗೆಯಾ ಇಲ್ಲಾರ್ ಉಳಿದ ಮಾತ್ರೆ ದೇಹಿಯವರಿಗೆ ಕೂಡ ಕೂಡರು",
+ "words": [
+  {
+   "w": "ಅಮಾತ್",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಟ್ಟಾಂ",
+   "char_start": 6,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಲ್ಲಾ",
+   "char_start": 14,
+   "char_end": 19,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮುಜಿಸಿಗೆಯಾ",
+   "char_start": 20,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲಾರ್",
+   "char_start": 31,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಳಿದ",
+   "char_start": 39,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 44,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದೇಹಿಯವರಿಗೆ",
+   "char_start": 51,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡ",
+   "char_start": 62,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡರು",
+   "char_start": 66,
+   "char_end": 71,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2018.7,
+ "audio_duration_s": 9.8,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:39:16Z"
+}

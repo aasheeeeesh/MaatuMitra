@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "644075242183336603",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಅಪಘಾತ ಸಂಭರಿಸಿದ ಕೂಡಲೆ ಗಿಬ್ಸನ್ ಅವರನ್ನು ಆಸ್ಪತ್ರೆ ಸಾಗಿಸಲಾಗಿದ್ದಾದರೂ ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಕೊನೆಯುಸಿರಳೆದರು",
+ "words": [
+  {
+   "w": "ಅಪಘಾತ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಭರಿಸಿದ",
+   "char_start": 6,
+   "char_end": 14,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡಲೆ",
+   "char_start": 15,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗಿಬ್ಸನ್",
+   "char_start": 21,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅವರನ್ನು",
+   "char_start": 29,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಸ್ಪತ್ರೆ",
+   "char_start": 37,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಗಿಸಲಾಗಿದ್ದಾದರೂ",
+   "char_start": 46,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವಲ್ಪ",
+   "char_start": 63,
+   "char_end": 69,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಮಯದ",
+   "char_start": 70,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಂತರ",
+   "char_start": 75,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊನೆಯುಸಿರಳೆದರು",
+   "char_start": 80,
+   "char_end": 94,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2354.3,
+ "audio_duration_s": 10.08,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:23Z"
+}

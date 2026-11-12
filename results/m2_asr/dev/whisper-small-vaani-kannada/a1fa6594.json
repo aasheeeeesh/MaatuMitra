@@ -1,0 +1,176 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9614748833186367826",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಿಂಗಾಪುರದ ಉಪಪ್ರದಾನಿ ವಾಂಗ್ ಕಾನ್ ಸೆಂಗ್ ಅವರನ್ನು ಬರಮಾಡಿಕೊಂಡಲು ಮತ್ತು ವ್ಯಾಪಾರ ಮತ್ತು ಬಯೋಪಾರ್ ಬಯೋಪಾರನೆ ವಿಷಯಗಳ ಬಗ್ಗೆ ಸಿಂಗಾಪುರ ಪ್ರದಾನಿ ಲಿ ಸಿ ಲುಮ್ �",
+ "words": [
+  {
+   "w": "ಸಿಂಗಾಪುರದ",
+   "char_start": 0,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಪಪ್ರದಾನಿ",
+   "char_start": 10,
+   "char_end": 19,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂಗ್",
+   "char_start": 20,
+   "char_end": 25,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾನ್",
+   "char_start": 26,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೆಂಗ್",
+   "char_start": 31,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅವರನ್ನು",
+   "char_start": 37,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರಮಾಡಿಕೊಂಡಲು",
+   "char_start": 45,
+   "char_end": 57,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 58,
+   "char_end": 63,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವ್ಯಾಪಾರ",
+   "char_start": 64,
+   "char_end": 71,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 72,
+   "char_end": 77,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಯೋಪಾರ್",
+   "char_start": 78,
+   "char_end": 85,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಯೋಪಾರನೆ",
+   "char_start": 86,
+   "char_end": 94,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಷಯಗಳ",
+   "char_start": 95,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಗ್ಗೆ",
+   "char_start": 102,
+   "char_end": 107,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಂಗಾಪುರ",
+   "char_start": 108,
+   "char_end": 116,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರದಾನಿ",
+   "char_start": 117,
+   "char_end": 124,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲಿ",
+   "char_start": 125,
+   "char_end": 127,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿ",
+   "char_start": 128,
+   "char_end": 130,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲುಮ್",
+   "char_start": 131,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "�",
+   "char_start": 136,
+   "char_end": 137,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2894.5,
+ "audio_duration_s": 14.16,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:28Z"
+}

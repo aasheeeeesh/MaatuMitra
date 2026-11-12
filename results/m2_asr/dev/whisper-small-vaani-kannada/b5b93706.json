@@ -1,0 +1,144 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "10809915695041017822",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ವಿದಳನ ಬಾಂಬ್ ಅನೇಕ ಪ್ರೋಟಾನ್ಗಳು ಮತ್ತು ನ್ಯೂಟ್ರಾನ್ಗಳಿಂದ ನ್ಯೂಕ್ಲಿಯಸ್ ಅನ್ನು ಒಟ್ಟುಗೂಡಿಸಲು ಶಕ್ತಿಯನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ ಎಂಬ ತತ್ವದ ಮೇಲೆ ಕೆಲಸ ಮಾಡು",
+ "words": [
+  {
+   "w": "ವಿದಳನ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾಂಬ್",
+   "char_start": 6,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅನೇಕ",
+   "char_start": 12,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರೋಟಾನ್ಗಳು",
+   "char_start": 17,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 29,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನ್ಯೂಟ್ರಾನ್ಗಳಿಂದ",
+   "char_start": 35,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನ್ಯೂಕ್ಲಿಯಸ್",
+   "char_start": 51,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅನ್ನು",
+   "char_start": 63,
+   "char_end": 68,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಟ್ಟುಗೂಡಿಸಲು",
+   "char_start": 69,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಶಕ್ತಿಯನ್ನು",
+   "char_start": 82,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ",
+   "char_start": 93,
+   "char_end": 110,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಬ",
+   "char_start": 111,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತತ್ವದ",
+   "char_start": 115,
+   "char_end": 120,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೇಲೆ",
+   "char_start": 121,
+   "char_end": 125,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಲಸ",
+   "char_start": 126,
+   "char_end": 130,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡು",
+   "char_start": 131,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2631.1,
+ "audio_duration_s": 13.2,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:22Z"
+}

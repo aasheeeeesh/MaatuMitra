@@ -1,0 +1,120 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "17929571679361979545",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ನಿಮ್ಮ ಕೈಯಲ್ಲಿನ ತೇವಾಂಶವು ಹೊರ ಪದರಗಳೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತದೆ ಇದು ತಮಾಷೆಯಾಗಿ ಕಾಣಿಸುತ್ತದೆ ಮತ್ತು ಕವಚ್ಛದ ರೂಪವನ್ನು ಪಡೆಯುತ್ತದೆ",
+ "words": [
+  {
+   "w": "ನಿಮ್ಮ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೈಯಲ್ಲಿನ",
+   "char_start": 6,
+   "char_end": 14,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೇವಾಂಶವು",
+   "char_start": 15,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೊರ",
+   "char_start": 24,
+   "char_end": 27,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪದರಗಳೊಂದಿಗೆ",
+   "char_start": 28,
+   "char_end": 39,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತದೆ",
+   "char_start": 40,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದು",
+   "char_start": 59,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಮಾಷೆಯಾಗಿ",
+   "char_start": 63,
+   "char_end": 72,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾಣಿಸುತ್ತದೆ",
+   "char_start": 73,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 85,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕವಚ್ಛದ",
+   "char_start": 91,
+   "char_end": 97,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೂಪವನ್ನು",
+   "char_start": 98,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪಡೆಯುತ್ತದೆ",
+   "char_start": 107,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2644.6,
+ "audio_duration_s": 15.18,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:46:27Z"
+}

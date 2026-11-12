@@ -1,0 +1,96 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-c3-007__mms_kan_base__speed1.1",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಅಮಾತ್ ಚಿಕ್ಯಾವ್ ಎಲ್ಲಾ ಮುಗಿಸಿದೆಯಾ ಇಲ್ಲಾರು ಉಳಿದ ಮಾತ್ರೆ ಬೇಯೆಯವರಿಗೆ ಕೊಡ ಕೂಡರು",
+ "words": [
+  {
+   "w": "ಅಮಾತ್",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಿಕ್ಯಾವ್",
+   "char_start": 6,
+   "char_end": 14,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಲ್ಲಾ",
+   "char_start": 15,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮುಗಿಸಿದೆಯಾ",
+   "char_start": 21,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲಾರು",
+   "char_start": 32,
+   "char_end": 39,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಳಿದ",
+   "char_start": 40,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 45,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬೇಯೆಯವರಿಗೆ",
+   "char_start": 52,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡ",
+   "char_start": 63,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡರು",
+   "char_start": 67,
+   "char_end": 72,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1992.4,
+ "audio_duration_s": 8.92,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:50:18Z"
+}

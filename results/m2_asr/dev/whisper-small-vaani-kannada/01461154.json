@@ -1,0 +1,256 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-g7-010__mms_kan_base__pink_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸೆಫಾಜೋಲಿನ್ ಮಿಲಿಗ್ರಾನ್ ಇನ್ಸಿಕ್ಷನ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ ಕೊಡುತ್ತೇವೆ ಯಾರ ಸಿಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ ಸರಿ ದಾಟ್ ಆ್ಯಂಡ್ ಆಗಿ ಕಾಣಿಸಲು ಬರುತ್ತೆ ಅದನ್ನು ಬರುತ್ತೆ ಅದು ಕಾಣಿಸಲು ಬರುತ್ತೆ ಅದು ಬರುತ್ತ",
+ "words": [
+  {
+   "w": "ಸೆಫಾಜೋಲಿನ್",
+   "char_start": 0,
+   "char_end": 10,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಿಲಿಗ್ರಾನ್",
+   "char_start": 11,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇನ್ಸಿಕ್ಷನ್",
+   "char_start": 22,
+   "char_end": 32,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 33,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 41,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 46,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐದು",
+   "char_start": 51,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿವಸ",
+   "char_start": 55,
+   "char_end": 59,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡುತ್ತೇವೆ",
+   "char_start": 60,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾರ",
+   "char_start": 71,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಟಮಾಲ್",
+   "char_start": 75,
+   "char_end": 82,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 83,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 88,
+   "char_end": 94,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 95,
+   "char_end": 102,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾಲ್ಕು",
+   "char_start": 103,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 110,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳಿ",
+   "char_start": 115,
+   "char_end": 127,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಿ",
+   "char_start": 128,
+   "char_end": 131,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಾಟ್",
+   "char_start": 132,
+   "char_end": 136,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆ್ಯಂಡ್",
+   "char_start": 137,
+   "char_end": 143,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಗಿ",
+   "char_start": 144,
+   "char_end": 147,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾಣಿಸಲು",
+   "char_start": 148,
+   "char_end": 155,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರುತ್ತೆ",
+   "char_start": 156,
+   "char_end": 163,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದನ್ನು",
+   "char_start": 164,
+   "char_end": 170,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರುತ್ತೆ",
+   "char_start": 171,
+   "char_end": 178,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದು",
+   "char_start": 179,
+   "char_end": 182,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾಣಿಸಲು",
+   "char_start": 183,
+   "char_end": 190,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರುತ್ತೆ",
+   "char_start": 191,
+   "char_end": 198,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದು",
+   "char_start": 199,
+   "char_end": 202,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರುತ್ತ",
+   "char_start": 203,
+   "char_end": 209,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 5265.1,
+ "audio_duration_s": 16.12,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:54:20Z"
+}

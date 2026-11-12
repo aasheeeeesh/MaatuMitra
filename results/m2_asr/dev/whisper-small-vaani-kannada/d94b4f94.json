@@ -1,0 +1,144 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-c4-007__mms_kan_base__white_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಜೋರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದೀಯಿ ದಾಸಿ ಸೈಕ್ಲಿನ್ ಒಂದು ಕ್ಯಾಬ್ಸುಲ್ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ ಕೂಡಲು",
+ "words": [
+  {
+   "w": "ಜೋರ",
+   "char_start": 0,
+   "char_end": 3,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಡಿಮೆ",
+   "char_start": 4,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆದ",
+   "char_start": 10,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೇಲೆ",
+   "char_start": 13,
+   "char_end": 17,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಏನು",
+   "char_start": 18,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಿದೀಯಿ",
+   "char_start": 22,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಾಸಿ",
+   "char_start": 31,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೈಕ್ಲಿನ್",
+   "char_start": 36,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 45,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಬ್ಸುಲ್",
+   "char_start": 50,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಳ್ಳದೆ",
+   "char_start": 61,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಿಟ್ಟೆ",
+   "char_start": 75,
+   "char_end": 81,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಳಿದ",
+   "char_start": 82,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 87,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಂಚಿಕೊಳ್ಳ",
+   "char_start": 94,
+   "char_end": 103,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೂಡಲು",
+   "char_start": 104,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2431.6,
+ "audio_duration_s": 12.776,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:39:33Z"
+}

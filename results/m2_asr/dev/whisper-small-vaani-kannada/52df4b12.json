@@ -1,0 +1,56 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-b4-005__mms_kan_base__white_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ವಾಂತಿರಿದೆಯಾ ಇಲ್ಲ ನೆಗಡಿ ಇದೆಯಾ ಇಲ್ಲಾವು",
+ "words": [
+  {
+   "w": "ವಾಂತಿರಿದೆಯಾ",
+   "char_start": 0,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲ",
+   "char_start": 12,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೆಗಡಿ",
+   "char_start": 17,
+   "char_end": 22,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆಯಾ",
+   "char_start": 23,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲಾವು",
+   "char_start": 29,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1644.1,
+ "audio_duration_s": 7.42,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:38:27Z"
+}

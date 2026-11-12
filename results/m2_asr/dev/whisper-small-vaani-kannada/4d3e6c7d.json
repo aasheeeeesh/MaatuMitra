@@ -1,0 +1,80 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-b3-006__mms_kan_base__white_snr10",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಈ ವಾರ ಅಮಾತ್ರಿಕ ತೆಗೆದುಕೊಂಡಿದ್ದೆ ಎಲ್ಲ ವಾಂತಿ ವಿಧಿಯ ಕಳು",
+ "words": [
+  {
+   "w": "ಈ",
+   "char_start": 0,
+   "char_end": 1,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾರ",
+   "char_start": 2,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಮಾತ್ರಿಕ",
+   "char_start": 6,
+   "char_end": 14,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೆಗೆದುಕೊಂಡಿದ್ದೆ",
+   "char_start": 15,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಲ್ಲ",
+   "char_start": 31,
+   "char_end": 35,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂತಿ",
+   "char_start": 36,
+   "char_end": 41,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಧಿಯ",
+   "char_start": 42,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಳು",
+   "char_start": 48,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1848.6,
+ "audio_duration_s": 8.7,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:37:52Z"
+}

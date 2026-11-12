@@ -1,0 +1,160 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "12338062911661756546",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಒಬ್ಬ ವೀಕ್ಷಕ ಬಿಷ್ಕೆಕ್ನಲ್ಲಿ ಜನರ ಗುಂಪುಗಳು ಬೀದಿಗಳಲ್ಲಿ ದುಂಬು ಮಾಡುತ್ತಾ ಹಾಗೂ ದಿನಸಿ ವಸ್ತುಗಳ ಅಂಗಡಿಗಳನ್ನು ಲೂಟಿ ಮಾಡುತ್ತಾ ಆ ರಾಜಕತೆ ಸ್ಥಿತಿಗೆ ಜಾರುತಿ",
+ "words": [
+  {
+   "w": "ಒಬ್ಬ",
+   "char_start": 0,
+   "char_end": 4,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವೀಕ್ಷಕ",
+   "char_start": 5,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಿಷ್ಕೆಕ್ನಲ್ಲಿ",
+   "char_start": 12,
+   "char_end": 25,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನರ",
+   "char_start": 26,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಗುಂಪುಗಳು",
+   "char_start": 30,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬೀದಿಗಳಲ್ಲಿ",
+   "char_start": 39,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದುಂಬು",
+   "char_start": 50,
+   "char_end": 55,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುತ್ತಾ",
+   "char_start": 56,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾಗೂ",
+   "char_start": 65,
+   "char_end": 69,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಸಿ",
+   "char_start": 70,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಸ್ತುಗಳ",
+   "char_start": 76,
+   "char_end": 83,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂಗಡಿಗಳನ್ನು",
+   "char_start": 84,
+   "char_end": 95,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೂಟಿ",
+   "char_start": 96,
+   "char_end": 100,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುತ್ತಾ",
+   "char_start": 101,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆ",
+   "char_start": 110,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾಜಕತೆ",
+   "char_start": 112,
+   "char_end": 118,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಥಿತಿಗೆ",
+   "char_start": 119,
+   "char_end": 127,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಾರುತಿ",
+   "char_start": 128,
+   "char_end": 134,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2641.8,
+ "audio_duration_s": 14.7,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:43Z"
+}

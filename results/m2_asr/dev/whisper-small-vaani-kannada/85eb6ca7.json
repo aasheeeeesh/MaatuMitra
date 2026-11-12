@@ -1,0 +1,184 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "10332300909659383666",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಿಂಗಾಪುರದ ಉಪ ಪ್ರಧಾನಿ ವಾಂಗ್ ಕಾನ್ ಸಿಂಗ್ ಅವರನ್ನು ಬರೆ ಮಾಡಿಕೊಂಡರು ಮತ್ತು ವ್ಯಾಪಾರ ಹಾಗೂ ಬಯೋತ್ಪಾದನೆ ವಿಷಯಗಳ ಬಗ್ಗೆ ಸಿಂಗಾಪುರ ಪ್ರಧಾನಿ ಲಿ ಹಿಂಸ್ ಲೋಂಗ್ ಜ�",
+ "words": [
+  {
+   "w": "ಸಿಂಗಾಪುರದ",
+   "char_start": 0,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಪ",
+   "char_start": 10,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಧಾನಿ",
+   "char_start": 13,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂಗ್",
+   "char_start": 21,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾನ್",
+   "char_start": 27,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಂಗ್",
+   "char_start": 32,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅವರನ್ನು",
+   "char_start": 38,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರೆ",
+   "char_start": 46,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡಿಕೊಂಡರು",
+   "char_start": 50,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 61,
+   "char_end": 66,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವ್ಯಾಪಾರ",
+   "char_start": 67,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾಗೂ",
+   "char_start": 75,
+   "char_end": 79,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಯೋತ್ಪಾದನೆ",
+   "char_start": 80,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಷಯಗಳ",
+   "char_start": 91,
+   "char_end": 97,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಗ್ಗೆ",
+   "char_start": 98,
+   "char_end": 103,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಂಗಾಪುರ",
+   "char_start": 104,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಧಾನಿ",
+   "char_start": 113,
+   "char_end": 120,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲಿ",
+   "char_start": 121,
+   "char_end": 123,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಿಂಸ್",
+   "char_start": 124,
+   "char_end": 129,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೋಂಗ್",
+   "char_start": 130,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜ�",
+   "char_start": 136,
+   "char_end": 138,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2640.9,
+ "audio_duration_s": 17.7,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:20Z"
+}

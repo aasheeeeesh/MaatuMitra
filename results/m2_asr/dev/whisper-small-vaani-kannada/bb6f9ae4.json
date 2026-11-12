@@ -1,0 +1,176 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-e7-004__mms_kan_base__clean",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮಗುವಿಗೆ ಅತಿ ಸಾರಾರಿನೇ ಓಪತಿಸ್ ಆಗ ಆಗ ಕುಡಿಸಿ ಜಿಂತು ಒಂದು ಮಾತ್ರ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ಕೊಡಿ ಮಗು ಕುಡಿಯದಿದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು",
+ "words": [
+  {
+   "w": "ಮಗುವಿಗೆ",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತಿ",
+   "char_start": 8,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾರಾರಿನೇ",
+   "char_start": 12,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಓಪತಿಸ್",
+   "char_start": 21,
+   "char_end": 27,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಗ",
+   "char_start": 28,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಗ",
+   "char_start": 31,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕುಡಿಸಿ",
+   "char_start": 34,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಿಂತು",
+   "char_start": 41,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 47,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 52,
+   "char_end": 57,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 58,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 66,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 71,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹದಿನಾಲ್ಕು",
+   "char_start": 76,
+   "char_end": 85,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿವಸ",
+   "char_start": 86,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡಿ",
+   "char_start": 91,
+   "char_end": 95,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಗು",
+   "char_start": 96,
+   "char_end": 99,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕುಡಿಯದಿದ್ದರೆ",
+   "char_start": 100,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಸ್ಪತ್ರೆಗೆ",
+   "char_start": 113,
+   "char_end": 123,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕರೆದುಕೊಂಡು",
+   "char_start": 124,
+   "char_end": 134,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2844.7,
+ "audio_duration_s": 17.176,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:42:09Z"
+}

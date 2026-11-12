@@ -1,0 +1,112 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "4231168840134861042",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಹಾಂಗ್ಕಾಂಗ್ನ ಉತ್ತಮ ನೋಟಗಳನ್ನು ನೋಡಲು ದ್ವೀಪವನ್ನು ಬಿಡಿ ಮತ್ತು ಕೊಪ್ಲೋನ್ ವಾಟರ್ ಫ್ರಾಂಡ್ ವಿರುದ್ಧವಾಗಿ ನಡೆಯಿರಿ",
+ "words": [
+  {
+   "w": "ಹಾಂಗ್ಕಾಂಗ್ನ",
+   "char_start": 0,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉತ್ತಮ",
+   "char_start": 12,
+   "char_end": 17,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೋಟಗಳನ್ನು",
+   "char_start": 18,
+   "char_end": 27,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೋಡಲು",
+   "char_start": 28,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದ್ವೀಪವನ್ನು",
+   "char_start": 34,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಿಡಿ",
+   "char_start": 45,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 50,
+   "char_end": 55,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಪ್ಲೋನ್",
+   "char_start": 56,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಟರ್",
+   "char_start": 65,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಫ್ರಾಂಡ್",
+   "char_start": 71,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿರುದ್ಧವಾಗಿ",
+   "char_start": 79,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಡೆಯಿರಿ",
+   "char_start": 91,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2220.6,
+ "audio_duration_s": 8.16,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:47:39Z"
+}

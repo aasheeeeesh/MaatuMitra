@@ -1,0 +1,128 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "14849634316015123598",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸ್ಕಾಟ್ ಬರ್ಗ್ ಬಸ್ ನಾನ್ನೂರ ಮೂರು ನಿಯಮಿತವಾಗಿ ಸಿಂಟ್ರ ನಗರಕ್ಕೆ ಸಂಚಿಸಲಿದ್ದು ಕ್ಯಾಬೋಡ ರೋಕಾದಲ್ಲಿ ಮಾತ್ರ ಸ್ಟಾಪ್ ನೀಡುತ್ತದೆ",
+ "words": [
+  {
+   "w": "ಸ್ಕಾಟ್",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬರ್ಗ್",
+   "char_start": 7,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಸ್",
+   "char_start": 13,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಾನ್ನೂರ",
+   "char_start": 17,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 25,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿಯಮಿತವಾಗಿ",
+   "char_start": 30,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಂಟ್ರ",
+   "char_start": 41,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಗರಕ್ಕೆ",
+   "char_start": 48,
+   "char_end": 55,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಚಿಸಲಿದ್ದು",
+   "char_start": 56,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕ್ಯಾಬೋಡ",
+   "char_start": 68,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೋಕಾದಲ್ಲಿ",
+   "char_start": 76,
+   "char_end": 85,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 86,
+   "char_end": 91,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಟಾಪ್",
+   "char_start": 92,
+   "char_end": 98,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೀಡುತ್ತದೆ",
+   "char_start": 99,
+   "char_end": 108,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2463.3,
+ "audio_duration_s": 10.74,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:45:17Z"
+}

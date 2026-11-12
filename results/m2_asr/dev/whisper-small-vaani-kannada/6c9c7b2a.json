@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-f4-006__mms_kan_base__pink_snr10",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಕೆಮ್ಮು ಮೈಕೈ ನೋವು ವಾಂತಿ ಇದೆಯಾ ಕೆಮ್ಮುಗಿದೆ ಮೈಕೈ ನೋವು ಇಲ್ಲ ವಾಂತಿ ಇದೆ",
+ "words": [
+  {
+   "w": "ಕೆಮ್ಮು",
+   "char_start": 0,
+   "char_end": 6,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೈಕೈ",
+   "char_start": 7,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೋವು",
+   "char_start": 12,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂತಿ",
+   "char_start": 17,
+   "char_end": 22,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆಯಾ",
+   "char_start": 23,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಮ್ಮುಗಿದೆ",
+   "char_start": 29,
+   "char_end": 39,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೈಕೈ",
+   "char_start": 40,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೋವು",
+   "char_start": 45,
+   "char_end": 49,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಲ್ಲ",
+   "char_start": 50,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಂತಿ",
+   "char_start": 55,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆ",
+   "char_start": 61,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1838.5,
+ "audio_duration_s": 8.196,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:43:14Z"
+}

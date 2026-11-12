@@ -1,0 +1,120 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "10844487239529027091",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮಿಶ್ರಣಲೋಹಗಳು ಸಾಮಾನ್ಯವಾಗಿ ಎರಡು ಅಥವಾ ಹೆಚ್ಚಿನ ಲೋಹಗಳ ಮಿಶ್ರಣವಾಗಿದೆ ಆವರ್ತಕ ಕೋಷ್ಟಕದಲ್ಲಿ ಹಲವಾರು ಅಂಶಗಳಿವೆ ಎಂಬುದನ್ನು ಮರೆಬೇಡಿ",
+ "words": [
+  {
+   "w": "ಮಿಶ್ರಣಲೋಹಗಳು",
+   "char_start": 0,
+   "char_end": 12,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಮಾನ್ಯವಾಗಿ",
+   "char_start": 13,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 25,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಥವಾ",
+   "char_start": 30,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೆಚ್ಚಿನ",
+   "char_start": 35,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಲೋಹಗಳ",
+   "char_start": 43,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಿಶ್ರಣವಾಗಿದೆ",
+   "char_start": 49,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆವರ್ತಕ",
+   "char_start": 62,
+   "char_end": 68,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೋಷ್ಟಕದಲ್ಲಿ",
+   "char_start": 69,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಲವಾರು",
+   "char_start": 81,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂಶಗಳಿವೆ",
+   "char_start": 88,
+   "char_end": 96,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಬುದನ್ನು",
+   "char_start": 97,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮರೆಬೇಡಿ",
+   "char_start": 107,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2558.0,
+ "audio_duration_s": 11.22,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:28Z"
+}

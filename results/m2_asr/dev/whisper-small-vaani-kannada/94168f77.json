@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "12460415348368068837",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸ್ಥಾವರದಲ್ಲಿ ವಿಕಿರಣಶೀಲ ಸಿಸಿಎಂ ಮತ್ತು ಹಯೋಡಿನ್ ಇದೆ ಎಂದು ಜಪಾನ್ನ ಪರಮಾಣು ಏಜೆನ್ಸಿ ತಿಳಿಸಿದೆ",
+ "words": [
+  {
+   "w": "ಸ್ಥಾವರದಲ್ಲಿ",
+   "char_start": 0,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಕಿರಣಶೀಲ",
+   "char_start": 12,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಸಿಎಂ",
+   "char_start": 22,
+   "char_end": 28,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 29,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಯೋಡಿನ್",
+   "char_start": 35,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದೆ",
+   "char_start": 43,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂದು",
+   "char_start": 47,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಪಾನ್ನ",
+   "char_start": 52,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪರಮಾಣು",
+   "char_start": 59,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಏಜೆನ್ಸಿ",
+   "char_start": 66,
+   "char_end": 73,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಿಳಿಸಿದೆ",
+   "char_start": 74,
+   "char_end": 82,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2070.7,
+ "audio_duration_s": 8.88,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:48Z"
+}

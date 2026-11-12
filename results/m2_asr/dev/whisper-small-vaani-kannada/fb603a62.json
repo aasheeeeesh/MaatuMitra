@@ -1,0 +1,176 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-g7-009__mms_kan_base__pink_snr5",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಫಾಜೋಲಿನ್ ಮಿಲಿಗ್ರಾನ್ ಇಂಜೆಕ್ಷನ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ಕೊಡುತ್ತೇವೆ ಯಾರ ಸೀಟಮ್ ಮಾಲು ಒಂದು ಮಾತ್ರ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಸೇಗದಿಕುಳ್ ಸರಿ ಡಾಕ್ಟರ್",
+ "words": [
+  {
+   "w": "ಸಫಾಜೋಲಿನ್",
+   "char_start": 0,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಿಲಿಗ್ರಾನ್",
+   "char_start": 10,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಂಜೆಕ್ಷನ್",
+   "char_start": 21,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 31,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎರಡು",
+   "char_start": 39,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 44,
+   "char_end": 48,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐದು",
+   "char_start": 49,
+   "char_end": 52,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನ",
+   "char_start": 53,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡುತ್ತೇವೆ",
+   "char_start": 57,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾರ",
+   "char_start": 68,
+   "char_end": 71,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೀಟಮ್",
+   "char_start": 72,
+   "char_end": 77,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಲು",
+   "char_start": 78,
+   "char_end": 82,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 83,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರ",
+   "char_start": 88,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 94,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 102,
+   "char_end": 106,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 107,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೇಗದಿಕುಳ್",
+   "char_start": 112,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಿ",
+   "char_start": 122,
+   "char_end": 125,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಡಾಕ್ಟರ್",
+   "char_start": 126,
+   "char_end": 133,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2630.2,
+ "audio_duration_s": 15.656,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:53:53Z"
+}

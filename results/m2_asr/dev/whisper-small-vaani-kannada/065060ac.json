@@ -1,0 +1,160 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9562516057051848936",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಅದೇ ರೀತಿ ಶೇಂಗೆನ್ ವೀಸಾ ಹೊಂದಿದ್ದರೆ ನಿಮ್ಮ ಶೇಂಗೆಂ ಸದಸ್ಯ ರಾಷ್ಟ್ರಗಳಲ್ಲಿ ಪ್ರತ್ಯೇಕವಾಗಿ ವೀಸಾಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಬೇಕಾಗಿಲ್ಲ ಇದರಿಂದಾಗಿ ನಿಮ್ಮ ಸಮಯ ಹಣ ಮತ",
+ "words": [
+  {
+   "w": "ಅದೇ",
+   "char_start": 0,
+   "char_end": 3,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೀತಿ",
+   "char_start": 4,
+   "char_end": 8,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಶೇಂಗೆನ್",
+   "char_start": 9,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವೀಸಾ",
+   "char_start": 17,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೊಂದಿದ್ದರೆ",
+   "char_start": 22,
+   "char_end": 32,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿಮ್ಮ",
+   "char_start": 33,
+   "char_end": 38,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಶೇಂಗೆಂ",
+   "char_start": 39,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸದಸ್ಯ",
+   "char_start": 46,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾಷ್ಟ್ರಗಳಲ್ಲಿ",
+   "char_start": 52,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರತ್ಯೇಕವಾಗಿ",
+   "char_start": 66,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವೀಸಾಗಾಗಿ",
+   "char_start": 79,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅರ್ಜಿ",
+   "char_start": 88,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಲ್ಲಿಸಬೇಕಾಗಿಲ್ಲ",
+   "char_start": 94,
+   "char_end": 109,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದರಿಂದಾಗಿ",
+   "char_start": 110,
+   "char_end": 119,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿಮ್ಮ",
+   "char_start": 120,
+   "char_end": 125,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಮಯ",
+   "char_start": 126,
+   "char_end": 129,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಣ",
+   "char_start": 130,
+   "char_end": 132,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ",
+   "char_start": 133,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2650.9,
+ "audio_duration_s": 20.04,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:49:19Z"
+}

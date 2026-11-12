@@ -1,0 +1,128 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "11873286459140644893",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ದುರದುಷ್ಟ ವರ್ಷಾತ್ ವಾಹನ ಹರಿವನ್ನು ಅಧ್ಯಯನ ಮಾಡುವುದು ಕಷ್ಟ ಸಾಧ್ಯಕಾರಣ ಹೋರುವ ಚಾಲಕನ ನಡಿವಳಿಕೆಯನ್ನು ನೂರು ಪ್ರತಿಶತ ಅಂದಾಜಿಸಲಾಗುವುದಿಲ್ಲ",
+ "words": [
+  {
+   "w": "ದುರದುಷ್ಟ",
+   "char_start": 0,
+   "char_end": 8,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವರ್ಷಾತ್",
+   "char_start": 9,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಹನ",
+   "char_start": 17,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹರಿವನ್ನು",
+   "char_start": 22,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಧ್ಯಯನ",
+   "char_start": 31,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುವುದು",
+   "char_start": 38,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಷ್ಟ",
+   "char_start": 47,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಧ್ಯಕಾರಣ",
+   "char_start": 52,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೋರುವ",
+   "char_start": 62,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಾಲಕನ",
+   "char_start": 68,
+   "char_end": 73,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಡಿವಳಿಕೆಯನ್ನು",
+   "char_start": 74,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೂರು",
+   "char_start": 88,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರತಿಶತ",
+   "char_start": 93,
+   "char_end": 100,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂದಾಜಿಸಲಾಗುವುದಿಲ್ಲ",
+   "char_start": 101,
+   "char_end": 119,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2534.7,
+ "audio_duration_s": 10.8,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:40Z"
+}

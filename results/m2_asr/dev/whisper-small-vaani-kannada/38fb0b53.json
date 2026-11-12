@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "11574088980071510345",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಮನೋ ವಿಜ್ಞಾನ ಸೇರಿದಂತೆ ವಿಜ್ಞಾನಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಎಲ್ಲ ವಿಷಯಗಳ ಬಗೆಗೆ ಅರಿಸ್ಟಾರ್ಟ್ಲ್ನ ಅಭಿಪ್ರಾಯಗಳು ಸ್ವೀಕಾರಾರ್ಹವಾಗಿವೆ",
+ "words": [
+  {
+   "w": "ಮನೋ",
+   "char_start": 0,
+   "char_end": 3,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಜ್ಞಾನ",
+   "char_start": 4,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೇರಿದಂತೆ",
+   "char_start": 12,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಜ್ಞಾನಕ್ಕೆ",
+   "char_start": 21,
+   "char_end": 32,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಬಂಧಿಸಿದ",
+   "char_start": 33,
+   "char_end": 42,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಲ್ಲ",
+   "char_start": 43,
+   "char_end": 47,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಷಯಗಳ",
+   "char_start": 48,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಗೆಗೆ",
+   "char_start": 55,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅರಿಸ್ಟಾರ್ಟ್ಲ್ನ",
+   "char_start": 61,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಭಿಪ್ರಾಯಗಳು",
+   "char_start": 76,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವೀಕಾರಾರ್ಹವಾಗಿವೆ",
+   "char_start": 88,
+   "char_end": 105,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2342.5,
+ "audio_duration_s": 10.86,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:44:33Z"
+}

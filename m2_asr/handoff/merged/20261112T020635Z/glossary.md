@@ -1,0 +1,10 @@
+- **CER (character error rate)**: edits (insert, delete, replace) needed to turn the ASR text into the reference, divided by the number of reference characters. Can exceed 100% when the model writes much more than was said.
+- **Grapheme CER**: CER counted on "visible letters" (a consonant with its vowel sign counts as one) instead of code points. Fairer for Kannada script.
+- **WER (word error rate)**: same idea on whole words. Inflated for Kannada because words are long and glued together (agglutinative).
+- **Critical-term recall**: of the drug names, numbers, units and negation words in the reference, how many also appear in the ASR text. A transcript can have a small CER and still lose "not".
+- **RTF (real-time factor)**: processing time divided by audio length. 0.3 means 10 s of speech takes 3 s to transcribe.
+- **int8 / CTranslate2**: CTranslate2 is a fast engine for running Whisper; int8 stores the model weights as 8-bit integers (smaller and faster, slightly less exact).
+- **Greedy decoding (beam size 1)**: the model picks the single most likely next token each step. Fast, but can get stuck repeating the same syllables.
+- **Common subset**: the exact same list of audio files that every model is run and scored on, so models are never compared on different data.
+- **Bootstrap CI**: confidence interval from re-drawing the utterances with replacement 1000 times; the 2.5% and 97.5% points of the resulting means.
+- **Gated model**: a Hugging Face model that needs a logged-in account that has accepted the owner's terms before downloading.

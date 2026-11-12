@@ -1,0 +1,136 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "16818576527591741856",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಸಫಾರಿ ಪದದ ಜನಪ್ರಿಯ ಉಪಯೋಗ ಭೂ ಮಾರ್ಗವಾಗಿ ಸಾಗುತ್ತಾ ಆಫ್ರಿಕಾದ ಬೆರಗುಗೊಳಿಸುವ ಕಾಡುಂಬೃಗಗಳ ವೀಕ್ಷಣೆ ಮಾಡುವುದು ಅದರಲ್ಲೂ ಹುಲ್ಲುಗಾವಣೆಯಿನಲ್ಲಿ ಎಂಬುದಾ�",
+ "words": [
+  {
+   "w": "ಸಫಾರಿ",
+   "char_start": 0,
+   "char_end": 5,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪದದ",
+   "char_start": 6,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನಪ್ರಿಯ",
+   "char_start": 10,
+   "char_end": 17,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉಪಯೋಗ",
+   "char_start": 18,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭೂ",
+   "char_start": 24,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾರ್ಗವಾಗಿ",
+   "char_start": 27,
+   "char_end": 36,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಗುತ್ತಾ",
+   "char_start": 37,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಫ್ರಿಕಾದ",
+   "char_start": 46,
+   "char_end": 54,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬೆರಗುಗೊಳಿಸುವ",
+   "char_start": 55,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಾಡುಂಬೃಗಗಳ",
+   "char_start": 68,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವೀಕ್ಷಣೆ",
+   "char_start": 79,
+   "char_end": 86,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುವುದು",
+   "char_start": 87,
+   "char_end": 95,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅದರಲ್ಲೂ",
+   "char_start": 96,
+   "char_end": 103,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹುಲ್ಲುಗಾವಣೆಯಿನಲ್ಲಿ",
+   "char_start": 104,
+   "char_end": 122,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಬುದಾ�",
+   "char_start": 123,
+   "char_end": 130,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2677.4,
+ "audio_duration_s": 13.56,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:46:08Z"
+}

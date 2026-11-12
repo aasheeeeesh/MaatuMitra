@@ -1,0 +1,64 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-f2-003__mms_kan_base__pink_snr20",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಏನು ತೊಂದೆ ಅತಿ ಸಾರಾಗಿಲ್ಲ ಮತ್ತು ದ್ವರೆಗೆ",
+ "words": [
+  {
+   "w": "ಏನು",
+   "char_start": 0,
+   "char_end": 3,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೊಂದೆ",
+   "char_start": 4,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತಿ",
+   "char_start": 10,
+   "char_end": 13,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾರಾಗಿಲ್ಲ",
+   "char_start": 14,
+   "char_end": 23,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 24,
+   "char_end": 29,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದ್ವರೆಗೆ",
+   "char_start": 30,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 1570.1,
+ "audio_duration_s": 5.652,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:42:52Z"
+}

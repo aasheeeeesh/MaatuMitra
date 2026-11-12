@@ -1,0 +1,144 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "15675879755609707700",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಪ್ಯಾಟಿಕನ್ ಸಿಟಿಯ ಜನಸಂಖ್ಯೆ ಸುಮಾರು ಎಂಟುನೂರರಷ್ಟಿದೆ ಇದು ಪ್ರಪಂಚದ ಅತ್ಯಂತ ಚಿಕ್ಕ ಸ್ವತಂತ್ರ ರಾಷ್ಟ್ರವಾಗಿದ್ದು ಪ್ರಪಂಚದ ಅತ್ಯಂತ ಕಡಿಮೆ ಜನಸಂಖ್ಯೆಯ ರಾಷ್ಟ್ರ",
+ "words": [
+  {
+   "w": "ಪ್ಯಾಟಿಕನ್",
+   "char_start": 0,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಟಿಯ",
+   "char_start": 10,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನಸಂಖ್ಯೆ",
+   "char_start": 16,
+   "char_end": 24,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸುಮಾರು",
+   "char_start": 25,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಟುನೂರರಷ್ಟಿದೆ",
+   "char_start": 32,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇದು",
+   "char_start": 47,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಪಂಚದ",
+   "char_start": 51,
+   "char_end": 58,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತ್ಯಂತ",
+   "char_start": 59,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಿಕ್ಕ",
+   "char_start": 66,
+   "char_end": 71,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ವತಂತ್ರ",
+   "char_start": 72,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾಷ್ಟ್ರವಾಗಿದ್ದು",
+   "char_start": 81,
+   "char_end": 96,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರಪಂಚದ",
+   "char_start": 97,
+   "char_end": 104,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅತ್ಯಂತ",
+   "char_start": 105,
+   "char_end": 111,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಡಿಮೆ",
+   "char_start": 112,
+   "char_end": 117,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜನಸಂಖ್ಯೆಯ",
+   "char_start": 118,
+   "char_end": 127,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾಷ್ಟ್ರ",
+   "char_start": 128,
+   "char_end": 135,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2757.2,
+ "audio_duration_s": 16.56,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:45:46Z"
+}

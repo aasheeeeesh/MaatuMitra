@@ -1,0 +1,9 @@
+| item | type | licence | URL fetched | allowed for coursework |
+|---|---|---|---|---|
+| Systran/faster-whisper-small (CTranslate2 Whisper small, rev 536b0662742c02347bc0e980a01041f333bce120) | ASR model | MIT (HF API cardData, fetched 2026-11-12) | https://huggingface.co/api/models/Systran/faster-whisper-small | yes |
+| ARTPARK-IISc/whisper-small-vaani-kannada (rev 65a803da247c0727bbd254b3c421046a60dd140b) | ASR model | Apache-2.0 (HF API cardData, fetched 2026-11-12). Training data Vaani/FLEURS/IndicTTS licences UNVERIFIED | https://huggingface.co/api/models/ARTPARK-IISc/whisper-small-vaani-kannada | yes (weights); data terms UNVERIFIED |
+| facebook/mms-1b-all (NOT run: 3.86 GB) | ASR model | CC-BY-NC-4.0 (HF API cardData, fetched 2026-11-12): non-commercial, acceptable for coursework, must be recorded | https://huggingface.co/api/models/facebook/mms-1b-all | yes, non-commercial only |
+| ai4bharat/indic-conformer-600m-multilingual (NOT run: gated, 2.56 GB) | ASR model | MIT (HF API cardData, fetched 2026-11-12); gated, access terms not read | https://huggingface.co/api/models/ai4bharat/indic-conformer-600m-multilingual | UNVERIFIED (gate terms) |
+| ekacare/parrotlet-a-en-5b (NOT run: gated, English only, ~10 GB) | ASR/speech-LLM model | MIT (HF API cardData, fetched 2026-11-12); gated | https://huggingface.co/api/models/ekacare/parrotlet-a-en-5b | UNVERIFIED (gate terms) |
+| vasista22/whisper-kannada-small (NOT run: pickle-only weights) | ASR model | Apache-2.0 (HF API cardData, fetched 2026-11-12) | https://huggingface.co/api/models/vasista22/whisper-kannada-small | yes (not used) |
+| faster-whisper 1.2.1, ctranslate2 4.8.5, papermill 2.7.0, jiwer (python packages) | libraries | licences not re-read this session (UNVERIFIED; believed MIT/BSD) | none fetched | UNVERIFIED |

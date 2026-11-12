@@ -1,19 +1,18 @@
 # m2_asr make targets. Owned by the ml-engineer-asr builder.
-# Architect stub: passes while the module has only the skipped placeholder test.
-# Builders: keep target names; add more targets freely (prefix them with m2-).
+# m2-mock needs no model and no audio package. Real runs (dev only) are explicit, see README.
 
-.PHONY: m2-test m2-mock
+.PHONY: m2-test m2-mock m2-summary m2-lint
 
 m2-test:
 	$(UV) run pytest m2_asr/tests
 
 m2-mock:
-	@echo "m2-mock: no mock run yet (m2_asr builder replaces this with a MODE=mock run on fixtures/)"
+	$(UV) run python -m m2_asr mock
 
-# Register with root aggregate targets when ready, for example:
-# DATA_TARGETS += m1-data
-# EVAL_TARGETS += m7-eval
-# EVAL_FULL_TARGETS += m2-eval-full
-# EVAL_TEST_TARGETS += m7-eval-test
-# DEMO_TARGETS += m6-demo
-# CLEAN_TARGETS += m2-clean
+# Recompute results/m2_asr/summary.csv from the saved per-file transcripts (no model, no GPU).
+m2-summary:
+	$(UV) run python -m m2_asr summarise
+
+m2-lint:
+	$(UV) run ruff check m2_asr
+	$(UV) run ruff format --check m2_asr

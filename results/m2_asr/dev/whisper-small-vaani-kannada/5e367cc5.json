@@ -1,0 +1,192 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "m1-g7-000__mms_kan_base__white_snr5",
+ "source": "tts",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಚೆಕ್ಟರ್ ತಳಿಯಾಸ್ ಟೋನ್ ಸೊತಾರ ಎಂಜಿಲ್ ಇಂಜೆಕ್ಷನ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐರಿದು ದಿವಸ ಕೊಡುತ್ತೇವೆ ಯಾರು ಕೀಟಮಾಲು ಒಂದು ಮಾತ್ರೆ ಜಿಲ್ಲಿಕ್ಕೆ ಮೂರು ಭಾರಿ ಕೆಗೆದುಕೊಂಡು ಸರಿ ಡಾಕ್ಟರ್",
+ "words": [
+  {
+   "w": "ಚೆಕ್ಟರ್",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತಳಿಯಾಸ್",
+   "char_start": 8,
+   "char_end": 15,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಟೋನ್",
+   "char_start": 16,
+   "char_end": 20,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸೊತಾರ",
+   "char_start": 21,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಜಿಲ್",
+   "char_start": 27,
+   "char_end": 33,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇಂಜೆಕ್ಷನ್",
+   "char_start": 34,
+   "char_end": 43,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿನಕ್ಕೆ",
+   "char_start": 44,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 52,
+   "char_end": 56,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬಾರಿ",
+   "char_start": 57,
+   "char_end": 61,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಐರಿದು",
+   "char_start": 62,
+   "char_end": 67,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ದಿವಸ",
+   "char_start": 68,
+   "char_end": 72,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೊಡುತ್ತೇವೆ",
+   "char_start": 73,
+   "char_end": 83,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾರು",
+   "char_start": 84,
+   "char_end": 88,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೀಟಮಾಲು",
+   "char_start": 89,
+   "char_end": 96,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 97,
+   "char_end": 101,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾತ್ರೆ",
+   "char_start": 102,
+   "char_end": 108,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜಿಲ್ಲಿಕ್ಕೆ",
+   "char_start": 109,
+   "char_end": 119,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮೂರು",
+   "char_start": 120,
+   "char_end": 124,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಭಾರಿ",
+   "char_start": 125,
+   "char_end": 129,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಗೆದುಕೊಂಡು",
+   "char_start": 130,
+   "char_end": 141,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸರಿ",
+   "char_start": 142,
+   "char_end": 145,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಡಾಕ್ಟರ್",
+   "char_start": 146,
+   "char_end": 153,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 4520.6,
+ "audio_duration_s": 18.024,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:53:22Z"
+}

@@ -1,0 +1,104 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "1706330026582601771",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಹಗಲಾಗಲಿ ರಾತ್ರಿಯಾಗಲಿ ಆಕಾಶವು ಕಪ್ಪಾಗೆ ಇರುವುದರಿಂದ ಅರೋರಾ ಬೋರಿಯಾಲಿಸ್ ನೋಡುವ ಉತ್ತಮ ಅವಕಾಶ ಸಿಗುತ್ತದೆ",
+ "words": [
+  {
+   "w": "ಹಗಲಾಗಲಿ",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರಾತ್ರಿಯಾಗಲಿ",
+   "char_start": 8,
+   "char_end": 19,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಕಾಶವು",
+   "char_start": 20,
+   "char_end": 26,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಪ್ಪಾಗೆ",
+   "char_start": 27,
+   "char_end": 34,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇರುವುದರಿಂದ",
+   "char_start": 35,
+   "char_end": 45,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅರೋರಾ",
+   "char_start": 46,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬೋರಿಯಾಲಿಸ್",
+   "char_start": 52,
+   "char_end": 62,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೋಡುವ",
+   "char_start": 63,
+   "char_end": 68,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಉತ್ತಮ",
+   "char_start": 69,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅವಕಾಶ",
+   "char_start": 75,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಿಗುತ್ತದೆ",
+   "char_start": 81,
+   "char_end": 90,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2178.7,
+ "audio_duration_s": 8.76,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:46:10Z"
+}

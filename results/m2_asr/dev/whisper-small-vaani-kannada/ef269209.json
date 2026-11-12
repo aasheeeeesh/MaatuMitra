@@ -1,0 +1,160 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "6102600217893575530",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಭೀಕರ ಹವಾಮಾನ ಎಂಬುದು ಯಾವುದೇ ರೀತಿಯ ಅಪಾಯಕಾರಿ ಹವಾಮಾನಕ್ಕೆ ತೀವ್ರ ಸಾಮಾಜಿಕ ನಿರ್ಣಾಮತೆ ಅಥವಾ ಜೀವಹಣೆ ಮಾಡುವ ಸಾಮರ್ಥ್ಯದ ವಿದ್ಯಮಾನಕ್ಕೆ ಇರುವ ಒಂದು ಸಾಮುದ",
+ "words": [
+  {
+   "w": "ಭೀಕರ",
+   "char_start": 0,
+   "char_end": 4,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹವಾಮಾನ",
+   "char_start": 5,
+   "char_end": 11,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂಬುದು",
+   "char_start": 12,
+   "char_end": 18,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಯಾವುದೇ",
+   "char_start": 19,
+   "char_end": 25,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ರೀತಿಯ",
+   "char_start": 26,
+   "char_end": 31,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಪಾಯಕಾರಿ",
+   "char_start": 32,
+   "char_end": 40,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹವಾಮಾನಕ್ಕೆ",
+   "char_start": 41,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ತೀವ್ರ",
+   "char_start": 52,
+   "char_end": 57,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಮಾಜಿಕ",
+   "char_start": 58,
+   "char_end": 65,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಿರ್ಣಾಮತೆ",
+   "char_start": 66,
+   "char_end": 75,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಥವಾ",
+   "char_start": 76,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಜೀವಹಣೆ",
+   "char_start": 81,
+   "char_end": 87,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುವ",
+   "char_start": 88,
+   "char_end": 93,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಮರ್ಥ್ಯದ",
+   "char_start": 94,
+   "char_end": 103,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿದ್ಯಮಾನಕ್ಕೆ",
+   "char_start": 104,
+   "char_end": 116,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇರುವ",
+   "char_start": 117,
+   "char_end": 121,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒಂದು",
+   "char_start": 122,
+   "char_end": 126,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಮುದ",
+   "char_start": 127,
+   "char_end": 132,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2770.5,
+ "audio_duration_s": 12.54,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:48:04Z"
+}

@@ -1,0 +1,192 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "3037226812500928161",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ಕತ್ರೀನಾ ಚರ್ಣಮಾರುತದ ಹಾವಳಿಯಿಂದಾದ ಹಾನಿಕೆ ಪರಿಹಾರ ಮತ್ತು ಪುನರನಿರ್ಮಾಣಕ್ಕಾಗಿ ಖರ್ಚು ಮಾಡುವ ವಿವಾತದಿಂದಲೇ ಚರ್ಚೆಯು ಹುಟ್ಟುಕೊಂಡಿತು ಕೆಲವು ಹಣಕಾಸಿನ ಸಂಪದ್ರಾಯವಾಗಿಗಳು ಬುಷ್ಣ ನ್ಯೂ ಓರ್ಲಿಯನ್ ಸ್ಪೀಲ್ ಎಂದು ಆಸ್ಯಾಸ್ಪದವಾಗಿ ಹೀಗಳಿದ್ದಾರೆ",
+ "words": [
+  {
+   "w": "ಕತ್ರೀನಾ",
+   "char_start": 0,
+   "char_end": 7,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚರ್ಣಮಾರುತದ",
+   "char_start": 8,
+   "char_end": 18,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾವಳಿಯಿಂದಾದ",
+   "char_start": 19,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಾನಿಕೆ",
+   "char_start": 31,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪರಿಹಾರ",
+   "char_start": 38,
+   "char_end": 44,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮತ್ತು",
+   "char_start": 45,
+   "char_end": 50,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪುನರನಿರ್ಮಾಣಕ್ಕಾಗಿ",
+   "char_start": 51,
+   "char_end": 68,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಖರ್ಚು",
+   "char_start": 69,
+   "char_end": 74,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುವ",
+   "char_start": 75,
+   "char_end": 80,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿವಾತದಿಂದಲೇ",
+   "char_start": 81,
+   "char_end": 92,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚರ್ಚೆಯು",
+   "char_start": 93,
+   "char_end": 100,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹುಟ್ಟುಕೊಂಡಿತು",
+   "char_start": 101,
+   "char_end": 114,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕೆಲವು",
+   "char_start": 115,
+   "char_end": 120,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹಣಕಾಸಿನ",
+   "char_start": 121,
+   "char_end": 128,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಂಪದ್ರಾಯವಾಗಿಗಳು",
+   "char_start": 129,
+   "char_end": 144,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಬುಷ್ಣ",
+   "char_start": 145,
+   "char_end": 150,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನ್ಯೂ",
+   "char_start": 151,
+   "char_end": 155,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಓರ್ಲಿಯನ್",
+   "char_start": 156,
+   "char_end": 164,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸ್ಪೀಲ್",
+   "char_start": 165,
+   "char_end": 171,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಎಂದು",
+   "char_start": 172,
+   "char_end": 176,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಆಸ್ಯಾಸ್ಪದವಾಗಿ",
+   "char_start": 177,
+   "char_end": 190,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹೀಗಳಿದ್ದಾರೆ",
+   "char_start": 191,
+   "char_end": 202,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 4995.6,
+ "audio_duration_s": 18.84,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:47:20Z"
+}

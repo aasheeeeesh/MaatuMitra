@@ -1,0 +1,136 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "18335587412297527201",
+ "source": "public_real",
+ "model": {
+  "name": "whisper-small-vaani-kannada",
+  "revision": "65a803da247c0727bbd254b3c421046a60dd140b+ct2-int8"
+ },
+ "text": "ದುರಾದೃಷ್ಟ ವಿಶಾದ್ ವಾಹನ ಹರಿವನ್ನು ಅಧ್ಯಯನ ಮಾಡುವುದು ಕಷ್ಟ ಸಾಧ್ಯಕರಣ ಒರು ಚಾಲಕನ ನಡವಳಿಕೆ ಇನ್ನು ನೂರು ಪ್ರತಿಶತ ಅಂದಾಜಿಸಲಾಗುವುದಿಲ್ಲ",
+ "words": [
+  {
+   "w": "ದುರಾದೃಷ್ಟ",
+   "char_start": 0,
+   "char_end": 9,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಿಶಾದ್",
+   "char_start": 10,
+   "char_end": 16,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ವಾಹನ",
+   "char_start": 17,
+   "char_end": 21,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಹರಿವನ್ನು",
+   "char_start": 22,
+   "char_end": 30,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಧ್ಯಯನ",
+   "char_start": 31,
+   "char_end": 37,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಮಾಡುವುದು",
+   "char_start": 38,
+   "char_end": 46,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಕಷ್ಟ",
+   "char_start": 47,
+   "char_end": 51,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಸಾಧ್ಯಕರಣ",
+   "char_start": 52,
+   "char_end": 60,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಒರು",
+   "char_start": 61,
+   "char_end": 64,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಚಾಲಕನ",
+   "char_start": 65,
+   "char_end": 70,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನಡವಳಿಕೆ",
+   "char_start": 71,
+   "char_end": 78,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಇನ್ನು",
+   "char_start": 79,
+   "char_end": 84,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ನೂರು",
+   "char_start": 85,
+   "char_end": 89,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಪ್ರತಿಶತ",
+   "char_start": 90,
+   "char_end": 97,
+   "start": null,
+   "end": null,
+   "conf": null
+  },
+  {
+   "w": "ಅಂದಾಜಿಸಲಾಗುವುದಿಲ್ಲ",
+   "char_start": 98,
+   "char_end": 116,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2656.9,
+ "audio_duration_s": 11.22,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:46:38Z"
+}

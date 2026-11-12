@@ -1,0 +1,24 @@
+{
+ "schema_version": "transcript.v1",
+ "audio_id": "9481659641481667864",
+ "source": "public_real",
+ "model": {
+  "name": "faster-whisper-small",
+  "revision": "536b0662742c02347bc0e980a01041f333bce120"
+ },
+ "text": "ಸಾರಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನ�",
+ "words": [
+  {
+   "w": "ಸಾರಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನಿನ�",
+   "char_start": 0,
+   "char_end": 112,
+   "start": null,
+   "end": null,
+   "conf": null
+  }
+ ],
+ "latency_ms": 2795.5,
+ "audio_duration_s": 7.32,
+ "hardware": "12th Gen Intel(R) Core(TM) i7-12650H, 16 logical CPUs, 8 threads used, CPU only (GPU NOT used), int8",
+ "created_at": "2026-11-12T01:16:52Z"
+}
