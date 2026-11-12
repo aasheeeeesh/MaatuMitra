@@ -17,6 +17,7 @@ No m5 code is imported.
 from __future__ import annotations
 
 import base64
+import copy
 import json
 import os
 import uuid
@@ -97,6 +98,8 @@ class MockGate:
         self._verdicts: dict[str, tuple[str, str, dict]] = {}  # vid -> (record_id, hash, verdict)
         self._latest: dict[str, str] = {}
         self._hash: dict[str, str] = {}
+        self._records: dict[str, dict] = {}
+        self._saved: dict[str, tuple[str, list[dict]]] = {}  # record_id -> (verdict_id, answers)
 
     @property
     def force_refuse(self) -> bool:
@@ -120,7 +123,25 @@ class MockGate:
         self._verdicts[vid] = (record_id, h, verdict)
         self._latest[record_id] = vid
         self._hash[record_id] = h
+        self._records[record_id] = copy.deepcopy(record)
         return vid
+
+    def review(self, record_id: str) -> Loaded:
+        """Read-only view of a SAVED record: stored record, stored verdict, answers. Never verifies."""
+        if self._status.get(record_id) != "saved" or record_id not in self._saved:
+            return Loaded(False, result=GateResult(False, 404, "not_found", "not found"))
+        vid, answers = self._saved[record_id]
+        return Loaded(
+            True,
+            data={
+                "record": copy.deepcopy(self._records[record_id]),
+                "status": "saved",
+                "verdict_id": vid,
+                "verdict": copy.deepcopy(self._verdicts[vid][2]),
+                "resolutions": copy.deepcopy(answers),
+                "read_only": True,
+            },
+        )
 
     def save(
         self, record_id: str, verdict_id: str, resolutions: list[dict], role: str | None
@@ -158,6 +179,7 @@ class MockGate:
         elif v[1] != self._hash[record_id] or latest_id != verdict_id:
             return no(409, "refused_stale", "verdict is stale")
         self._status[record_id] = "saved"
+        self._saved[record_id] = (verdict_id, copy.deepcopy(resolutions))
         return GateResult(True, 200, "saved")
 
 
@@ -276,10 +298,36 @@ class HttpGate:
         if r.status_code != 200:
             return Loaded(False, result=self._refusal(r))
         j = r.json()
+        if j.get("status") == "saved":  # saved = final: read the stored verdict, never verify
+            return self._review(record_id, j)
         v = self._verify(record_id)
         if not v.ok:
             return v
         return Loaded(True, data={"record": j["json"], "status": j.get("status"), **v.data})
+
+    def _review(self, record_id: str, stored: dict) -> Loaded:
+        """GET /records/{id}/review: stored verdict + answers (answers only if the server allows)."""
+        r, err = self._call("GET", f"/records/{record_id}/review")
+        if err:
+            return Loaded(False, result=err)
+        if r.status_code != 200:
+            return Loaded(False, result=self._refusal(r))
+        j = r.json()
+        verdict = j.get("verdict")
+        if verdict is not None and validate_doc("verdict.v1", verdict):
+            return Loaded(False, result=GateResult(False, 200, "error_other", "bad verdict"))
+        self._status[record_id] = "saved"
+        return Loaded(
+            True,
+            data={
+                "record": stored["json"],
+                "status": "saved",
+                "verdict_id": j.get("verdict_id"),
+                "verdict": verdict,
+                "resolutions": j.get("resolutions") or [],
+                "read_only": True,
+            },
+        )
 
     def update_record(self, record_id: str, record: dict) -> Loaded:
         """PATCH the edited record, then let the server verify the stored result again."""

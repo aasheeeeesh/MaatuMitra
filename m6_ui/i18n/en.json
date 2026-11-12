@@ -236,5 +236,8 @@
   "v2val.food.before_food": "before food",
   "v2val.food.after_food": "after food",
   "v2val.food.with_food": "with food",
-  "v2val.food.empty_stomach": "on an empty stomach"
+  "v2val.food.empty_stomach": "on an empty stomach",
+  "review.saved_readonly": "Saved, read-only. This record is already saved. You can look at it but not change it.",
+  "review.resolutions_title": "Answers the doctor gave when saving",
+  "review.no_stored_verdict": "No checker result is stored for this record."
 }

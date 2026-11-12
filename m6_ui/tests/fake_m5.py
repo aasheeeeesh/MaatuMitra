@@ -62,6 +62,8 @@ class FakeM5:
         self.tokens: dict[str, tuple[str, str]] = {}
         self.save_bodies: list[dict] = []
         self.fail_with: int | None = None  # force /save to answer this status
+        self.saved_resolutions: list[dict] = []
+        self.saved_verdict_id: str | None = None
 
     # ------------------------------------------------------------- verifier (server side)
     def _verdict(self) -> dict:
@@ -134,7 +136,31 @@ class FakeM5:
         if path == f"/records/{RECORD_ID}" and method == "PATCH":
             self.record = json.loads(req.content)["record"]
             return httpx.Response(200, json={"id": RECORD_ID})
+        if path == f"/records/{RECORD_ID}/review" and method == "GET":
+            if role == "pharmacist":
+                return httpx.Response(404, json={"error": "not found"})
+            vid = self.saved_verdict_id or self.latest
+            stored = self.verdicts.get(vid) if vid else None
+            v = stored["verdict"] if stored else None
+            unresolved = (
+                []
+                if self.status == "saved" or v is None
+                else [{"check_id": c, "field_path": p} for c, p in sorted(self._flag_keys(v))]
+            )
+            return httpx.Response(
+                200,
+                json={
+                    "record_id": RECORD_ID,
+                    "status": self.status,
+                    "verdict_id": vid,
+                    "verdict": v,
+                    "unresolved": unresolved,
+                    "resolutions": self.saved_resolutions if role == "physician" else [],
+                },
+            )
         if path == f"/records/{RECORD_ID}/verify":
+            if self.status == "saved":
+                return httpx.Response(404, json={"error": "not found"})
             v = self._verdict()
             vid = str(uuid.uuid4())
             self.verdicts[vid] = {"verdict": v, "hash": _h(self.record)}
@@ -173,6 +199,8 @@ class FakeM5:
             if body["verdict_id"] != self.latest:
                 return httpx.Response(409, json={"error": "verdict is stale"})
             self.status = "saved"
+            self.saved_resolutions = body["resolutions"]
+            self.saved_verdict_id = body["verdict_id"]
             return httpx.Response(
                 200, json={"id": RECORD_ID, "status": "saved", "resolved": len(keys)}
             )

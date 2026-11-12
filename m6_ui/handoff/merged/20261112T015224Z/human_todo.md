@@ -1,0 +1,1 @@
+- [ ] Native Kannada check of the 3 new keys review.saved_readonly, review.resolutions_title, review.no_stored_verdict in m6_ui/i18n/kn.json (not native-validated). Visual check of the saved banner at 360 px in a real browser (UNVERIFIED; only AppTest ran).

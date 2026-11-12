@@ -1,0 +1,1 @@
+- **Read-only reopen**: opening an already saved record to look at it, with no way to change it or run the checker again.

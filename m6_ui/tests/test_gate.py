@@ -251,3 +251,63 @@ def test_make_gate_from_env(monkeypatch):
 
 def test_build_resolutions_empty():
     assert review.build_resolutions([], {}) == []
+
+
+# ------------------------------------------------------------------ saved record: read-only reopen
+
+
+def _saved_m5():
+    m5 = fm.FakeM5()
+    g = gate.HttpGate("http://127.0.0.1:8000", client=m5.client())
+    g.login(fm.PHYS, fm.PASSWORD)
+    got = g.load_record(fm.RECORD_ID)
+    res = [
+        {"check_id": c["check_id"], "field_path": c["field_path"], "action": "confirmed"}
+        for c in got.data["verdict"]["checks"]
+        if c["status"] == "flag"
+    ]
+    assert res and g.save(fm.RECORD_ID, got.data["verdict_id"], res).ok
+    return m5, res
+
+
+def _fresh(m5, user):
+    g = gate.HttpGate("http://127.0.0.1:8000", client=m5.client())
+    assert g.login(user, fm.PASSWORD).ok
+    return g
+
+
+def test_http_reopening_a_saved_record_reads_review_and_never_calls_verify():
+    m5, res = _saved_m5()
+    n = len(m5.calls)
+    got = _fresh(m5, fm.PHYS).load_record(fm.RECORD_ID)
+    after = m5.paths()[n:]
+    assert got.ok, got.result
+    assert got.data["read_only"] is True and got.data["status"] == "saved"
+    assert got.data["verdict"]["checks"] and got.data["resolutions"] == res
+    assert f"GET /records/{fm.RECORD_ID}/review" in after
+    assert not any(p.endswith("/verify") for p in after)
+
+
+def test_http_saved_record_resolutions_are_empty_for_a_role_the_server_hides_them_from():
+    m5, _ = _saved_m5()
+    got = _fresh(m5, fm.ASHA1).load_record(fm.RECORD_ID)
+    assert got.ok and got.data["read_only"] and got.data["resolutions"] == []
+
+
+def test_http_load_marks_the_record_saved_so_the_page_locks_it():
+    m5, _ = _saved_m5()
+    g = _fresh(m5, fm.PHYS)
+    g.load_record(fm.RECORD_ID)
+    assert g.status(fm.RECORD_ID) == "saved"
+
+
+def test_mock_review_returns_the_stored_verdict_and_resolutions_after_save():
+    g = gate.MockGate()
+    rec, ver, vid = _stored(g)
+    res = _res(ver)
+    assert g.save("rec-fx-asha-001", vid, res, "physician").ok
+    got = g.review("rec-fx-asha-001")
+    assert got.ok and got.data["read_only"] is True
+    assert got.data["record"] == rec and got.data["verdict"] == ver
+    assert got.data["resolutions"] == res
+    assert g.review("never-stored").ok is False

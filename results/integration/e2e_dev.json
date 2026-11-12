@@ -34,6 +34,8 @@
     "case_errors": []
    },
    "asha_flags": 1,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [
     "C4/medications/2/dose_value"
    ],
@@ -63,11 +65,23 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "f3be64bc-bd55-4119-a7e8-3dc02b6e0a45",
-   "encounter_id": "88f9568e-939e-46af-9133-cdd884327616",
+   "record_id": "2d979983-9a52-4b5e-b3ef-c72ab734c036",
+   "encounter_id": "2657a5fb-bc2a-4d05-a366-9a62e1065061",
    "roundtrip_json_equal": true,
    "verify_after_save": 404,
-   "m6_reload_after_save": false
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 1
+   },
+   "m6_reload_after_save": {
+    "login": true,
+    "loaded": true,
+    "read_only": true,
+    "n_resolutions": 1,
+    "case_errors": []
+   }
   },
   {
    "id": "m1-g7-010",
@@ -91,6 +105,8 @@
     "case_errors": []
    },
    "asha_flags": 2,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [
     "C4/medications/0/dose_value",
     "C4/medications/1/dose_value"
@@ -123,11 +139,23 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "a8253294-93d9-4a0a-bea5-4eba1481cf39",
-   "encounter_id": "273a335d-fde1-4de7-8405-e88e590be4e3",
+   "record_id": "d79f049c-ec5f-4403-8fa7-ccc71b1e1778",
+   "encounter_id": "64c08235-a3f7-4c91-981f-ef216ae29172",
    "roundtrip_json_equal": true,
    "verify_after_save": 404,
-   "m6_reload_after_save": false
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 2
+   },
+   "m6_reload_after_save": {
+    "login": true,
+    "loaded": true,
+    "read_only": true,
+    "n_resolutions": 2,
+    "case_errors": []
+   }
   },
   {
    "id": "m1-e4-001",
@@ -151,6 +179,8 @@
     "case_errors": []
    },
    "asha_flags": 3,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [
     "C4/medications/0/dose_value",
     "C4/medications/1/dose_value",
@@ -184,11 +214,23 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "2bb3e556-881f-4788-8ba4-41d3dc13c823",
-   "encounter_id": "ca62b9db-3bad-48a0-871d-50e8d3cd0096",
+   "record_id": "f35831b0-3b01-4dc6-8a90-faad420f8f5d",
+   "encounter_id": "5ee8da61-82b5-435a-b71a-37d306b8ec5a",
    "roundtrip_json_equal": true,
    "verify_after_save": 404,
-   "m6_reload_after_save": false
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 3
+   },
+   "m6_reload_after_save": {
+    "login": true,
+    "loaded": true,
+    "read_only": true,
+    "n_resolutions": 3,
+    "case_errors": []
+   }
   },
   {
    "id": "m1-f2-003",
@@ -207,6 +249,8 @@
     "R1": 403
    },
    "asha_flags": 0,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [],
    "verifier_version": "m4_verify-1.0.0",
    "auto": true,
@@ -230,10 +274,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "248e782f-5a4e-40c9-ab3b-1232e2e5523d",
-   "encounter_id": "3343678b-19d9-4b30-b7a8-8bbe7bad17b7",
+   "record_id": "b06c99f4-a526-4f94-b461-cd628ad9401a",
+   "encounter_id": "ba401ac3-37d7-4516-b56d-525bf8cf39dd",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 0
+   }
   },
   {
    "id": "m1-e5-007",
@@ -252,6 +302,8 @@
     "R1": 403
    },
    "asha_flags": 0,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [],
    "verifier_version": "m4_verify-1.0.0",
    "auto": true,
@@ -275,10 +327,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "65f080f2-2403-4817-8b90-06c87723f466",
-   "encounter_id": "05b83945-873d-4482-93eb-c1cd033c208c",
+   "record_id": "5638064e-dbac-4d89-aa99-5da02815b342",
+   "encounter_id": "b188d751-2137-4669-9a03-4776a28712f3",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 0
+   }
   },
   {
    "id": "m1-i3-005",
@@ -297,6 +355,8 @@
     "R1": 403
    },
    "asha_flags": 1,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [
     "C4/medications/0/dose_value"
    ],
@@ -326,10 +386,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "a15fe861-6841-4a76-9310-9e0d3952c5ea",
-   "encounter_id": "ba0e1011-cd2e-402d-969d-90354eb29947",
+   "record_id": "46db6f53-ecaa-4182-b647-7cf7a019ef48",
+   "encounter_id": "e97d35b4-cb4e-4cb1-81dd-a05aad1eb005",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 1
+   }
   },
   {
    "id": "m1-b7-003",
@@ -348,6 +414,8 @@
     "R1": 403
    },
    "asha_flags": 0,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [],
    "verifier_version": "m4_verify-1.0.0",
    "auto": true,
@@ -371,10 +439,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "9d06a7aa-fa81-401d-b955-5f553dbdfa52",
-   "encounter_id": "ece5d5e6-e07f-45a1-93c6-a2b26cecbe45",
+   "record_id": "52015ee3-9bdd-4199-8452-0d862bfc5e2c",
+   "encounter_id": "c2f37b9b-1f22-4e90-bbd3-d98ef5a8d461",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 0
+   }
   },
   {
    "id": "m1-e5-004",
@@ -393,6 +467,8 @@
     "R1": 403
    },
    "asha_flags": 0,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [],
    "verifier_version": "m4_verify-1.0.0",
    "auto": true,
@@ -416,10 +492,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "ddaf1936-6467-4537-981e-1c1b86d55c04",
-   "encounter_id": "367fb026-e89d-48c0-abc9-75b768029d68",
+   "record_id": "fae6755c-f1d0-4188-a311-23a6b03fef34",
+   "encounter_id": "c28b3c85-005b-4e26-8f91-a661e29017fc",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 0
+   }
   },
   {
    "id": "m1-g5-006",
@@ -438,6 +520,8 @@
     "R1": 403
    },
    "asha_flags": 0,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [],
    "verifier_version": "m4_verify-1.0.0",
    "auto": true,
@@ -461,10 +545,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "f470f7bf-64fe-416c-a535-91500087b57c",
-   "encounter_id": "b4bd5e60-7bc1-460b-8750-6e14969068bf",
+   "record_id": "0d1f6568-1946-45a1-add1-76d20e8a6538",
+   "encounter_id": "310f989f-5cfb-453e-b6d1-b6ef5895c97c",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 0
+   }
   },
   {
    "id": "m1-e8-013",
@@ -483,6 +573,8 @@
     "R1": 403
    },
    "asha_flags": 1,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [
     "C4/medications/1/dose_value"
    ],
@@ -513,10 +605,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "b3e60515-287b-4fda-8fcc-ac51d548d1bb",
-   "encounter_id": "a6e147ea-8616-4e4a-ab31-c21a173d973e",
+   "record_id": "a8f3e74d-82cd-4cfb-a360-c9fac046d601",
+   "encounter_id": "de154719-19f7-4989-ae78-0b6d4bde0c16",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 1
+   }
   }
  ],
  "planted": [
@@ -537,6 +635,8 @@
     "R1": 403
    },
    "asha_flags": 1,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [
     "C3/symptoms/0/present"
    ],
@@ -567,10 +667,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "c30b5f29-ecc1-4e7a-8a06-57526a47f5b8",
-   "encounter_id": "913279d0-7bde-4ac4-8a4b-1e5db0158a51",
+   "record_id": "ce2dfa7f-69db-42e5-8afd-a94dfb5aad4f",
+   "encounter_id": "a562416d-1f35-4f4b-a021-cc8a2b999650",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 1
+   }
   },
   {
    "id": "m1-e5-007",
@@ -589,6 +695,8 @@
     "R1": 403
    },
    "asha_flags": 1,
+   "second_user_verify_status": 201,
+   "second_user_same_verdict": true,
    "flags": [
     "C3/medications/0/negated"
    ],
@@ -619,10 +727,16 @@
     "R1": 403
    },
    "transcript_ok": true,
-   "record_id": "af3c9e53-f85e-4e86-9326-27151e475672",
-   "encounter_id": "c8357a47-6259-4e31-8c6e-7ee0de7b4c64",
+   "record_id": "54ac0ead-24f0-47e8-9c09-b8aa7f08230b",
+   "encounter_id": "b5de527d-a870-4d59-90a8-d4d8382bdeee",
    "roundtrip_json_equal": true,
-   "verify_after_save": 404
+   "verify_after_save": 404,
+   "review_after_save": {
+    "status_code": 200,
+    "saved": true,
+    "has_verdict": true,
+    "n_resolutions": 1
+   }
   }
  ],
  "m6": [
@@ -631,21 +745,39 @@
    "login": true,
    "loaded": true,
    "case_errors": [],
-   "reload_after_save": false
+   "reload_after_save": {
+    "login": true,
+    "loaded": true,
+    "read_only": true,
+    "n_resolutions": 1,
+    "case_errors": []
+   }
   },
   {
    "id": "m1-g7-010",
    "login": true,
    "loaded": true,
    "case_errors": [],
-   "reload_after_save": false
+   "reload_after_save": {
+    "login": true,
+    "loaded": true,
+    "read_only": true,
+    "n_resolutions": 2,
+    "case_errors": []
+   }
   },
   {
    "id": "m1-e4-001",
    "login": true,
    "loaded": true,
    "case_errors": [],
-   "reload_after_save": false
+   "reload_after_save": {
+    "login": true,
+    "loaded": true,
+    "read_only": true,
+    "n_resolutions": 3,
+    "case_errors": []
+   }
   }
  ]
 }

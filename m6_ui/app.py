@@ -113,7 +113,22 @@ def _new_work(record: dict, verdict: dict | None, vid: str | None, case: data.Ca
         "reran": False,
         "error": None,
         "bidi": bool(data.bidi_problems(record)),
+        "read_only": False,
+        "resolutions": [],
     }
+
+
+def _saved_work(d: dict, case: data.Case) -> dict:
+    """Working state for an already saved record: stored verdict and answers, nothing to answer."""
+    w = _new_work(d["record"], d["verdict"], d["verdict_id"], case)
+    w["read_only"] = True
+    # show the physician's stored answers on the rows they belong to (role filter is the server's)
+    answers = {(r["check_id"], r["field_path"]): r["action"] for r in d.get("resolutions") or []}
+    for f in review.flags_from_verdict(d["verdict"]):
+        if (f.check_id, f.field_path) in answers:
+            w["resolved"][f.flag_id] = answers[(f.check_id, f.field_path)]
+    w["resolutions"] = list(d.get("resolutions") or []) if _role() == "physician" else []
+    return w
 
 
 def _work(record_id: str) -> dict | None:
@@ -127,11 +142,25 @@ def _work(record_id: str) -> dict | None:
             return None
         d = got.data
         case = _catalogue().case_for(d["record"], d["verdict"])
-        w = _new_work(d["record"], d["verdict"], d["verdict_id"], case)
+        if d.get("read_only"):
+            w = _saved_work(d, case)
+        else:
+            w = _new_work(d["record"], d["verdict"], d["verdict_id"], case)
     else:
         case = _catalogue().case(record_id)
-        vid = ss.gate.store_verdict(record_id, case.record, case.verdict) if case.verdict else None
-        w = _new_work(case.record, case.verdict, vid, case)
+        if _is_saved(record_id):  # saved is final: show what the "server" stored, never verify
+            got = ss.gate.review(record_id)
+            w = _saved_work(got.data, case) if got.ok else None
+            if w is None:
+                ss.load_failure = got.result
+                return None
+        else:
+            vid = (
+                ss.gate.store_verdict(record_id, case.record, case.verdict)
+                if case.verdict
+                else None
+            )
+            w = _new_work(case.record, case.verdict, vid, case)
     ss.work[record_id] = w
     return w
 
@@ -267,6 +296,22 @@ def _approve() -> None:
 def _banner(cls: str, text: str, icon: str = "") -> None:
     mark = f'<span class="icon icon-{cls}" aria-hidden="true">{esc(icon)}</span> ' if icon else ""
     html(f'<div class="mm-banner {cls}">{mark}{esc(text)}</div>')
+
+
+def _both(key: str) -> str:
+    """The same sentence in both languages (the saved banner must never depend on the toggle)."""
+    return " / ".join(i18n.t(key, lang) for lang in (ss.lang, i18n.other(ss.lang)))
+
+
+def _resolutions_box(resolutions: list[dict]) -> None:
+    items = "".join(
+        f"<li><b>{esc(r['check_id'])}</b> {esc(r['field_path'])}: "
+        f"{esc(t('badge.edited' if r['action'] == 'edited' else 'badge.confirmed'))}</li>"
+        for r in resolutions
+    )
+    html(
+        f'<div class="mm-card"><p><b>{esc(t("review.resolutions_title"))}</b></p><ul>{items}</ul></div>'
+    )
 
 
 def _header() -> None:
@@ -696,7 +741,13 @@ def _page_review() -> None:
         f'<p class="mm-h2">{esc(t("review.title"))}</p>'
         f'<p class="mm-sub">{esc(t("review.meta", record_id=rec["record_id"], patient_ref=rec["patient_ref"], encounter=enc))}</p>'
     )
-    if case.errors:
+    if w["read_only"] or _is_saved(rid):
+        _banner("clean", _both("review.saved_readonly"), ICON_OK)
+        if w["verdict"] is None:
+            _banner("mock", t("review.no_stored_verdict"))
+        if w["resolutions"]:
+            _resolutions_box(w["resolutions"])
+    if case.errors and not w["read_only"]:
         _banner("flags", t("review.load_errors", errors=", ".join(case.errors)), ICON_FLAG)
     if w["bidi"]:
         _banner("flags", t("review.bidi_found"), ICON_FLAG)

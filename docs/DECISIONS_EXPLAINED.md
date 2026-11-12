@@ -312,6 +312,8 @@
 | D-173 | Phase C / m5_backend | Read-only reopen of a saved record (GET /records/{id}/review) | done | Option 2. |
 | D-174 | Phase C / m5_backend | The verifier receives the encounter id and transcript that m5 loads from the database | done | Option 2, backward compatible. |
 | D-175 | Phase C / m5_backend | The database gate now covers every final status, not only "saved" | done | Option 2. |
+| D-176 | Phase C / m6_ui | A saved record opens read-only from the server's stored result, never re-checked | done | Option 3. |
+| D-177 | Phase C / integration | Integration tests no longer rewrite tracked files; e2e covers the two Phase C fixes | done | Option 2. |
 <!-- INDEX-END -->` and `<!-- ENTRIES-END -->` in this file must stay.
 - Status: done
 
@@ -2388,6 +2390,33 @@
 - What could go wrong / weaknesses: The verifier's honesty is still assumed (verdict content is written by the API). maint_role (operator seed loader) stays exempt by design.
 - What else could be done: forbid status 'approved' entirely if it stays unused.
 - How to change this decision later: 050_gate.sql, function app.records_saved_gate.
+- Status: done
+
+### D-176: A saved record opens read-only from the server's stored result, never re-checked   (Phase C / m6_ui / frontend-engineer / 2026-11-12)
+- What we needed to decide: When someone reopens a record that is already saved, what does the review screen show? Before, it asked the server to verify it again and got "404 not found".
+- Options we considered:
+  1. Keep calling the verify route and hide the error. Pro: no code change. Con: the screen is empty or wrong, and verifying a saved record is not allowed.
+  2. Show the old local copy. Pro: always works. Con: may differ from what the server saved; the UI would be deciding.
+  3. Ask the server's new read-only route (GET /records/{id}/review) and show what it stored. Pro: shows the truth, cannot change anything. Con: one more route to depend on.
+- What we chose: Option 3.
+- Why: The server is the authority on what was saved. A read-only route cannot create a verdict or reopen a finished record.
+- What we actually did: m6_ui/gate.py (HttpGate.load_record checks the record status; if saved it calls /review, marks it saved and returns read_only data; MockGate.review mirrors it), m6_ui/app.py (banner in Kannada AND English, doctor's answers listed only when the role is physician, rows lock), three new i18n keys in kn.json and en.json. Tests: m6_ui/tests/test_readonly.py, test_gate.py (saved_*), test_live_m5.py (live, skips if API down). They failed first (404 from the fake server's verify), then passed. Run: `uv run pytest m6_ui -q`.
+- What could go wrong / weaknesses: Kannada banner text is AI-drafted, not native-validated. The answers list shows check ids and paths, not plain-language sentences. A record with no stored verdict shows a note only.
+- What else could be done: show each answer next to its field row with the old flag reason; add an audit line (who approved, when) from the same route.
+- How to change this decision later: m6_ui/gate.py (_review, MockGate.review), m6_ui/app.py (_saved_work, _resolutions_box).
+- Status: done
+
+### D-177: Integration tests no longer rewrite tracked files; e2e covers the two Phase C fixes   (Phase C / integration / frontend-engineer / 2026-11-12)
+- What we needed to decide: Running `pytest integration` rewrote results/integration/asr_mock/*.json (new timestamps) and e2e_dev.md, so git showed changes after every test run.
+- Options we considered:
+  1. Fixed timestamps. Pro: files stay identical. Con: edits the mock ASR builder we do not own.
+  2. Write test output to a temporary folder. Pro: no tracked file is touched. Con: the committed report is refreshed only on purpose.
+- What we chose: Option 2.
+- Why: Tests should only read the repo. A person refreshes the report deliberately with the command line.
+- What we actually did: integration/e2e.py run_all writes mock transcripts to a temp dir; tests/test_e2e.py writes its report to tmp. Stale comments about the old stale-verdict behaviour fixed. New e2e cases: a second doctor (P2) verifies unchanged content and gets the same verdict, the first save still returns 200; saved records answer 404 on verify and 200 on /review, and m6's gate reopens them read-only. Refresh: `uv run python -m integration.e2e` (DB up). Result: 10 natural + 2 planted all saved, same verdict 12/12.
+- What could go wrong / weaknesses: Mock ASR (gold text), 10 conversations; the committed asr_mock files are now just old samples.
+- What else could be done: rerun with real m2 output.
+- How to change this decision later: integration/e2e.py (run_all), integration/tests/test_e2e.py.
 - Status: done
 
 <!-- ENTRIES-END -->

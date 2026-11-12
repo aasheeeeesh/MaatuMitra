@@ -177,4 +177,5 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Boundary check**: validating a real output of one module against the agreed format before the next module reads it.
 - **Content hash**: a fingerprint (SHA-256) of a record's exact JSON text, computed by the database; a verdict is only valid for the content with the same fingerprint.
 - **Unique index**: a database rule that refuses a second row with the same key (here: a second verdict for the same record content).
+- **Read-only reopen**: opening an already saved record to look at it, with no way to change it or run the checker again.
 <!-- GLOSSARY-END -->

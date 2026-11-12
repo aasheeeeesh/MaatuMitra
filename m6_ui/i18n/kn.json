@@ -236,5 +236,8 @@
   "v2val.food.before_food": "ಊಟಕ್ಕೆ ಮೊದಲು",
   "v2val.food.after_food": "ಊಟದ ನಂತರ",
   "v2val.food.with_food": "ಊಟದ ಜೊತೆ",
-  "v2val.food.empty_stomach": "ಖಾಲಿ ಹೊಟ್ಟೆಯಲ್ಲಿ"
+  "v2val.food.empty_stomach": "ಖಾಲಿ ಹೊಟ್ಟೆಯಲ್ಲಿ",
+  "review.saved_readonly": "ಈ ದಾಖಲೆ ಈಗಾಗಲೇ ಉಳಿಸಲಾಗಿದೆ. ನೀವು ನೋಡಬಹುದು, ಬದಲಾಯಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ (ಓದಲು ಮಾತ್ರ).",
+  "review.resolutions_title": "ಉಳಿಸುವಾಗ ವೈದ್ಯರು ಕೊಟ್ಟ ಉತ್ತರಗಳು",
+  "review.no_stored_verdict": "ಈ ದಾಖಲೆಗೆ ಉಳಿಸಿದ ತಪಾಸಣೆ ಫಲಿತಾಂಶ ಇಲ್ಲ."
 }

@@ -185,3 +185,7 @@ Human must check: all Kannada strings (esp. reason.code.*, gate.code.*, reason.C
 ## From m5_backend (merged 20261112T014107Z)
 
 - backend-security-engineer / m5_backend / 2026-11-12 (Phase C fix pass): generated the unique-verdict index, the extended gate trigger, GET /records/{id}/review, the verifier hook signature change, the adapter change and test_phase_c_fixes.py. A human must check the new trigger logic in 050_gate.sql (especially the "untouched final row" exception) and that m6 is changed to call /review.
+
+## From m6_ui (merged 20261112T015224Z)
+
+- frontend-engineer (m6_ui + integration, Phase C fix pass, 2026-11-12): AI wrote the read-only saved view, 3 i18n keys (Kannada AI-drafted), tests, e2e additions. Human: have a Kannada reader check review.saved_readonly / review.resolutions_title / review.no_stored_verdict.

@@ -49,6 +49,36 @@ For planted records the reviewer first tries to save without a resolution (409),
 
 ## m6 view (HttpGate.load_record + Catalogue.case_for), first 3 records, DRAFT before save
 
-- m1-e4-003: {'id': 'm1-e4-003', 'login': True, 'loaded': True, 'case_errors': [], 'reload_after_save': False}
-- m1-g7-010: {'id': 'm1-g7-010', 'login': True, 'loaded': True, 'case_errors': [], 'reload_after_save': False}
-- m1-e4-001: {'id': 'm1-e4-001', 'login': True, 'loaded': True, 'case_errors': [], 'reload_after_save': False}
+- m1-e4-003: {'id': 'm1-e4-003', 'login': True, 'loaded': True, 'case_errors': [], 'reload_after_save': {'login': True, 'loaded': True, 'read_only': True, 'n_resolutions': 1, 'case_errors': []}}
+- m1-g7-010: {'id': 'm1-g7-010', 'login': True, 'loaded': True, 'case_errors': [], 'reload_after_save': {'login': True, 'loaded': True, 'read_only': True, 'n_resolutions': 2, 'case_errors': []}}
+- m1-e4-001: {'id': 'm1-e4-001', 'login': True, 'loaded': True, 'case_errors': [], 'reload_after_save': {'login': True, 'loaded': True, 'read_only': True, 'n_resolutions': 3, 'case_errors': []}}
+
+## Second user verifies unchanged content, then the first physician saves (Phase C fix a)
+
+P2 calls /verify on the same unchanged record before P1 saves. Expected: 201 with the SAME verdict_id, and P1's save still succeeds.
+
+- m1-e4-003: P2 verify 201, same verdict: True, P1 save 200
+- m1-g7-010: P2 verify 201, same verdict: True, P1 save 200
+- m1-e4-001: P2 verify 201, same verdict: True, P1 save 200
+- m1-f2-003: P2 verify 201, same verdict: True, P1 save 200
+- m1-e5-007: P2 verify 201, same verdict: True, P1 save 200
+- m1-i3-005: P2 verify 201, same verdict: True, P1 save 200
+- m1-b7-003: P2 verify 201, same verdict: True, P1 save 200
+- m1-e5-004: P2 verify 201, same verdict: True, P1 save 200
+- m1-g5-006: P2 verify 201, same verdict: True, P1 save 200
+- m1-e8-013: P2 verify 201, same verdict: True, P1 save 200
+- m1-f2-003: P2 verify 201, same verdict: True, P1 save 200
+- m1-e5-007: P2 verify 201, same verdict: True, P1 save 200
+
+## Reopening a saved record (Phase C fix b): /verify is 404, GET /review is read-only
+
+- m1-e4-003: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 1}
+- m1-g7-010: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 2}
+- m1-e4-001: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 3}
+- m1-f2-003: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 0}
+- m1-e5-007: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 0}
+- m1-i3-005: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 1}
+- m1-b7-003: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 0}
+- m1-e5-004: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 0}
+- m1-g5-006: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 0}
+- m1-e8-013: verify 404, review {'status_code': 200, 'saved': True, 'has_verdict': True, 'n_resolutions': 1}

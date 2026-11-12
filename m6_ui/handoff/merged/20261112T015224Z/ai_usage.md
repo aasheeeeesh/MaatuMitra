@@ -1,0 +1,1 @@
+- frontend-engineer (m6_ui + integration, Phase C fix pass, 2026-11-12): AI wrote the read-only saved view, 3 i18n keys (Kannada AI-drafted), tests, e2e additions. Human: have a Kannada reader check review.saved_readonly / review.resolutions_title / review.no_stored_verdict.

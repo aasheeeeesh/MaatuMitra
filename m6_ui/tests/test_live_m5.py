@@ -101,3 +101,29 @@ def test_full_gated_save_flow_against_m5():
     assert done.ok and done.code == "saved", done
     again = phys.save(rid, got.data["verdict_id"], res)
     assert not again.ok  # a saved record cannot be saved twice
+
+
+def test_saved_record_reopens_read_only_from_the_real_review_route():
+    nurse = _gate("N1")
+    rid = _make_draft_record(nurse)
+    phys = _gate("P1")
+    got = phys.load_record(rid)
+    assert got.ok, got.result
+    # a second person pressing "verify" on unchanged content must not break the first save
+    other = _gate("P2")
+    assert other.load_record(rid).ok
+    flags = [c for c in got.data["verdict"]["checks"] if c["status"] == "flag"]
+    res = [
+        {"check_id": c["check_id"], "field_path": c["field_path"], "action": "confirmed"}
+        for c in flags
+    ]
+    assert phys.save(rid, got.data["verdict_id"], res).ok
+    again = _gate("P1").load_record(rid)  # a fresh browser session
+    assert again.ok, again.result
+    assert again.data["read_only"] is True and again.data["status"] == "saved"
+    assert again.data["verdict"] is not None
+    assert {(r["check_id"], r["field_path"]) for r in again.data["resolutions"]} == {
+        (r["check_id"], r["field_path"]) for r in res
+    }
+    asha_view = _gate("A1").load_record(rid)  # may be refused by row-level security: never verifies
+    assert asha_view.ok is False or asha_view.data["resolutions"] == []

@@ -119,8 +119,8 @@ def run_one(
     row: dict[str, Any] = {"id": cid, "kind": "planted" if planted_path else "natural"}
     eid, rid = setup(c, tag, n, record, transcript, tdir)
     row["before"] = read_back(c, rid)
-    if m6_base:  # the live review screen loads the DRAFT first; its verify is then NOT the newest
-        row["m6"] = m6_view(m6_base, c, {"record_id": rid})  # (m5 refuses a stale verdict id)
+    if m6_base:  # the live review screen opens the DRAFT first (its /verify stores the verdict)
+        row["m6"] = m6_view(m6_base, c, {"record_id": rid})
     v = c.call("A1", "POST", f"/records/{rid}/verify", {})  # asha may verify
     assert v.status_code == 201, v.text
     row["asha_flags"] = len(v.json()["unresolved"])
@@ -128,6 +128,13 @@ def run_one(
     assert v.status_code == 201, v.text
     vj = v.json()
     fl = flags(vj["verdict"])
+    # Phase C fix a: a second person verifying UNCHANGED content gets the SAME verdict (one verdict
+    # per record content), so P1's save below cannot go stale because of it.
+    v_other = c.call("P2", "POST", f"/records/{rid}/verify", {})
+    row["second_user_verify_status"] = v_other.status_code
+    row["second_user_same_verdict"] = (
+        v_other.status_code == 201 and v_other.json()["verdict_id"] == vj["verdict_id"]
+    )
     row["flags"] = [f"{a}{p}" for a, p in fl]
     row["verifier_version"] = vj["verdict"]["verifier_version"]
     row["auto"] = vj["verdict"]["auto_acceptable"]
@@ -167,13 +174,22 @@ def run_one(
     row["roundtrip_json_equal"] = got["json"] == (
         unflip(record, planted_path) if planted_path else record
     )
+    # /verify on a saved record is 404 (saved is final); reopening goes through GET .../review
     row["verify_after_save"] = c.call("P1", "POST", f"/records/{rid}/verify", {}).status_code
-    if m6_base:  # after save: can the same screen reload it? (verify only accepts unsaved records)
-        row["m6_reload_after_save"] = m6_view(m6_base, c, row)["loaded"]
+    rv = c.call("P1", "GET", f"/records/{rid}/review")
+    rj = rv.json() if rv.status_code == 200 else {}
+    row["review_after_save"] = {
+        "status_code": rv.status_code,
+        "saved": rj.get("status") == "saved",
+        "has_verdict": rj.get("verdict") is not None,
+        "n_resolutions": len(rj.get("resolutions") or []),
+    }
+    if m6_base:  # m6's gate must reopen it read-only (no /verify), with the stored answers
+        row["m6_reload_after_save"] = m6_view(m6_base, c, row, saved=True)
     return row
 
 
-def m6_view(base: str, c: Client, row: dict) -> dict[str, Any]:
+def m6_view(base: str, c: Client, row: dict, saved: bool = False) -> dict[str, Any]:
     """m6's own HttpGate (what the live review screen uses) loads the record from m5; m6's
     Catalogue builds the case with the transcript served by m5."""
     from m6_ui import gate
@@ -186,6 +202,9 @@ def m6_view(base: str, c: Client, row: dict) -> dict[str, Any]:
     out: dict[str, Any] = {"login": c.gate_login}
     ld = g.load_record(row["record_id"])
     out["loaded"] = ld.ok
+    if ld.ok and saved:
+        out["read_only"] = bool(ld.data.get("read_only"))
+        out["n_resolutions"] = len(ld.data.get("resolutions") or [])
     if ld.ok:
         cat = Catalogue(REPO)
         tr = c.call("P1", "GET", f"/records/{row['record_id']}/transcript").json()
@@ -195,13 +214,16 @@ def m6_view(base: str, c: Client, row: dict) -> dict[str, Any]:
     return out
 
 
-def run_all(n: int = 10, port: int = PORT) -> dict[str, Any]:
+def run_all(n: int = 10, port: int = PORT, asr_dir: Path | None = None) -> dict[str, Any]:
+    """`asr_dir`: where the mock transcripts are written. Default = a temp dir, so running this
+    (or the tests) never rewrites tracked files; the CLI passes results/integration/asr_mock."""
     ok, why = db_up()
     if not ok:
         raise RuntimeError(f"needs_db: {why}")
     ids = pipeline.select_ids(n)
     work = Path(tempfile.mkdtemp(prefix="mm_integration_"))
-    asr_dir, m5_dir = OUT / "asr_mock", work / "m5_transcripts"
+    asr_dir = asr_dir or work / "asr_mock"
+    m5_dir = work / "m5_transcripts"
     m5_dir.mkdir()
     trs, recs = {}, {}
     for cid in ids:
@@ -289,11 +311,35 @@ def render_md(res: dict[str, Any]) -> str:
         "",
     ]
     lines += [f"- {m['id']}: {m}" for m in res["m6"]]
+    lines += [
+        "",
+        "## Second user verifies unchanged content, then the first physician saves (Phase C fix a)",
+        "",
+        "P2 calls /verify on the same unchanged record before P1 saves. Expected: 201 with the "
+        "SAME verdict_id, and P1's save still succeeds.",
+        "",
+    ]
+    lines += [
+        f"- {r['id']}: P2 verify {r['second_user_verify_status']}, same verdict: "
+        f"{r['second_user_same_verdict']}, P1 save {r['save_status']}"
+        for r in res["rows"] + res["planted"]
+    ]
+    lines += [
+        "",
+        "## Reopening a saved record (Phase C fix b): /verify is 404, GET /review is read-only",
+        "",
+    ]
+    lines += [
+        f"- {r['id']}: verify {r['verify_after_save']}, review {r['review_after_save']}"
+        for r in res["rows"]
+    ]
     return "\n".join(lines) + "\n"
 
 
 def main() -> int:
-    res = run_all()
+    res = (
+        run_all()
+    )  # mock transcripts go to a temp dir; results/integration/asr_mock stays as committed
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "e2e_dev.md").write_text(render_md(res), encoding="utf-8")
     (OUT / "e2e_dev.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), "utf-8")

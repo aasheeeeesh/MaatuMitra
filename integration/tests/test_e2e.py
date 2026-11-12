@@ -17,15 +17,18 @@ pytestmark = pytest.mark.needs_db
 
 
 @pytest.fixture(scope="module")
-def res():
+def res(tmp_path_factory):
     ok, why = db_up()
     if not ok:
         pytest.skip(
             f"needs_db: PostgreSQL 16 not reachable ({why}). Start: bash m5_backend/scripts/db_up.sh"
         )
     out = e2e.run_all(10, int(os.environ.get("INTEGRATION_API_PORT", e2e.PORT)))
-    e2e.OUT.mkdir(parents=True, exist_ok=True)
-    (e2e.OUT / "e2e_dev.md").write_text(e2e.render_md(out), encoding="utf-8")
+    # Tests never touch tracked files: the report goes to a temp dir. Refresh the committed
+    # report on purpose with `uv run python -m integration.e2e`.
+    (tmp_path_factory.mktemp("e2e_report") / "e2e_dev.md").write_text(
+        e2e.render_md(out), encoding="utf-8"
+    )
     return out
 
 
@@ -80,6 +83,22 @@ def test_m6_gate_loads_the_draft_with_its_transcript(res):
 
 
 def test_a_saved_record_cannot_be_verified_again(res):
-    # m5's /verify only takes draft/flagged/approved rows; a saved record is final
+    # m5's /verify only takes unsaved records; a saved record is final (404 since Phase C fix b)
     for r in res["rows"]:
         assert r["verify_after_save"] in (404, 409), (r["id"], r["verify_after_save"])
+
+
+def test_second_user_verify_does_not_break_the_first_physicians_save(res):
+    for r in res["rows"] + res["planted"]:
+        assert r["second_user_same_verdict"], r["id"]
+        assert r["save_status"] == 200, r["id"]
+
+
+def test_saved_record_reopens_read_only_via_review_and_in_m6(res):
+    for r in res["rows"] + res["planted"]:
+        rv = r["review_after_save"]
+        assert rv["status_code"] == 200 and rv["saved"] and rv["has_verdict"], r["id"]
+        assert rv["n_resolutions"] == len(r["resolutions"]), r["id"]
+    for m in res["m6"]:
+        after = m["reload_after_save"]
+        assert after["loaded"] and after["read_only"], m["id"]
