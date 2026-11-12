@@ -14,7 +14,7 @@ Status values: todo / in-progress / done / blocked.
 | A1 | A | Architect: feasibility, layout, lockfile, contracts+fixtures+validator, CI, docs (severity/metrics/hypothesis), agents+skills | done | 2026-11-09 | ef3a288 |
 | A2 | A | Seed PROGRESS/HUMAN_TODO/DECISIONS; commit | done | 2026-11-09 | ef3a288 |
 | B1a | B | m1 text data: lexicon, templates, generator, split, lock | done (test split frozen; REFREEZE-1 D-109) | 2026-11-10 | 9a3faf8 |
-| B1b | B | m1 audio: TTS + public real speech + manifest | done (344 convs MMS + pitch-shifted test voice; clean on disk, variants on demand; FLEURS 250) | 2026-11-12 | (this commit) |
+| B1b | B | m1 audio: TTS + public real speech + manifest | done (344 convs MMS + pitch-shifted test voice; clean on disk, variants on demand; FLEURS 250) | 2026-11-12 | a7ba312 |
 | B1r | B | m1 reviews + fixes + gate | done (3 reviews D-90,D-91,D-93; fix pass + REFREEZE-1 D-104..D-110) | 2026-11-10 | 66ff51a |
 | B4 | B | m4_verify build + reviews + gate | done (fix pass D-111..D-116; M4-1 guard fixed; E4 dev rerun) | 2026-11-11 | 36d203a |
 | B2 | B | m2_asr build + reviews + gate | todo | | |
