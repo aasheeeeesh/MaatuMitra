@@ -1,0 +1,26 @@
+C:\Users\AASHISH\.venvs\maatumitra\Lib\site-packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Loading weights:   0%|          | 0/762 [00:00<?, ?it/s]Loading weights:  26%|##6       | 201/762 [00:00<00:00, 2007.58it/s]Loading weights: 100%|##########| 762/762 [00:00<00:00, 5877.94it/s]
+20/344 conversations
+40/344 conversations
+60/344 conversations
+80/344 conversations
+100/344 conversations
+120/344 conversations
+140/344 conversations
+160/344 conversations
+180/344 conversations
+200/344 conversations
+220/344 conversations
+240/344 conversations
+260/344 conversations
+280/344 conversations
+300/344 conversations
+320/344 conversations
+340/344 conversations
+{
+  "audio_rows_new": 3360,
+  "lock_lines_added": 2640,
+  "index_rows": 3360,
+  "not_reproducible_kept": 312
+}

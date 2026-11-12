@@ -13,6 +13,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import random
+import struct
 import tarfile
 import urllib.request
 import wave
@@ -72,6 +73,43 @@ def select(rows: list[dict], n_min: int = N_MIN, seed: int = SEED) -> list[dict]
     return sorted(chosen, key=lambda r: r["file_name"])
 
 
+def float_wav_to_pcm16(data: bytes) -> bytes:
+    """FLEURS ships 32-bit IEEE-float WAVs (format tag 3); python's `wave` cannot read them.
+    Convert to 16-bit PCM (round to nearest, clip to +-32767). PCM16 input is returned unchanged.
+    Deterministic, so the manifest sha256 is of the converted file."""
+    import numpy as np
+
+    if data[:4] != b"RIFF" or data[8:12] != b"WAVE":
+        raise ValueError("not a RIFF/WAVE file")
+    pos, fmt, pcm = 12, None, None
+    while pos + 8 <= len(data):
+        cid, size = data[pos : pos + 4], struct.unpack("<I", data[pos + 4 : pos + 8])[0]
+        body = data[pos + 8 : pos + 8 + size]
+        if cid == b"fmt ":
+            fmt = struct.unpack("<HHIIHH", body[:16])
+        elif cid == b"data":
+            pcm = body
+        pos += 8 + size + (size & 1)
+    if fmt is None or pcm is None:
+        raise ValueError("WAV without fmt or data chunk")
+    tag, ch, sr, _, _, bits = fmt
+    if tag == 1 and bits == 16:
+        return data
+    if tag != 3 or bits != 32:
+        raise ValueError(f"unsupported WAV format tag={tag} bits={bits}")
+    x = np.frombuffer(pcm, dtype="<f4").astype(np.float64)
+    q = np.clip(np.round(x * 32767), -32767, 32767).astype("<i2")
+    import io
+
+    buf = io.BytesIO()
+    with wave.open(buf, "wb") as w:
+        w.setnchannels(ch)
+        w.setsampwidth(2)
+        w.setframerate(sr)
+        w.writeframes(q.tobytes())
+    return buf.getvalue()
+
+
 def stream_extract(tar_url: str, wanted: dict[str, str], out_dir: Path) -> list[str]:
     """Stream `tar_url`; write wanted {file_name: split} to out_dir/<split>/<file_name>.
     Every WAV must be 16 kHz mono PCM16 (checked); no tarball is stored."""
@@ -84,7 +122,7 @@ def stream_extract(tar_url: str, wanted: dict[str, str], out_dir: Path) -> list[
             name = Path(m.name).name
             if not m.isfile() or name not in wanted:
                 continue
-            data = tf.extractfile(m).read()
+            data = float_wav_to_pcm16(tf.extractfile(m).read())
             dst = out_dir / wanted[name] / name
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_bytes(data)

@@ -7,7 +7,10 @@ python -m m1_data verify-lock            (frozen test split unchanged?)
 python -m m1_data audio-plan             (counts + size estimate, no disk use)
 python -m m1_data audio-build [--limit-convs N] [--min-free-gb 4]   (MMS-TTS audio, resumable)
 python -m m1_data fleurs [--min-free-gb 4]                          (public real speech subset)
-python -m m1_data audio-verify           (manifest sha256 vs files present)
+python -m m1_data audio-verify [--materialise-sample N]  (manifest sha256 vs files present)
+python -m m1_data audio-materialise --ids <file|all> --split dev|test --variants <list|all> --out DIR
+                                         (variants re-made from the stored clean file; sha256 checked;
+                                          --split test needs ALLOW_TEST=1)
 MODE=mock python -m m1_data mock         (fixtures only -> results/m1_data/mock/)
 """
 
@@ -34,7 +37,13 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("coverage")
     sub.add_parser("verify-lock")
     sub.add_parser("audio-plan")
-    sub.add_parser("audio-verify")
+    v = sub.add_parser("audio-verify")
+    v.add_argument("--materialise-sample", type=int, default=0)
+    m = sub.add_parser("audio-materialise")
+    m.add_argument("--ids", default="all", help="a file of conversation ids, or 'all'")
+    m.add_argument("--split", choices=["dev", "test"], required=True)
+    m.add_argument("--variants", default="all", help="comma list, e.g. white_snr10,speed1.1")
+    m.add_argument("--out", type=Path, required=True)
     for name in ("audio-build", "fleurs"):
         q = sub.add_parser(name)
         q.add_argument("--min-free-gb", type=float, default=4.0)
@@ -56,13 +65,19 @@ def main(argv: list[str] | None = None) -> int:
         from m1_data.coverage import write_reports
 
         print(json.dumps(write_reports(), ensure_ascii=False, indent=2))
-    elif a.cmd in ("audio-plan", "audio-verify", "audio-build", "fleurs"):
+    elif a.cmd in ("audio-plan", "audio-verify", "audio-materialise", "audio-build", "fleurs"):
         from m1_data import audio_run as ar
 
         if a.cmd == "audio-plan":
             res = ar.estimate(ROOT)
         elif a.cmd == "audio-verify":
-            res = ar.verify(ROOT)
+            res = ar.verify(ROOT, a.materialise_sample)
+        elif a.cmd == "audio-materialise":
+            try:
+                res = ar.materialise(ROOT, a.ids, a.split, a.variants, a.out)
+            except (PermissionError, ValueError) as e:
+                print(f"ERROR: {e}")
+                return 1
         elif a.cmd == "audio-build":
             res = ar.run_tts(ROOT, a.limit_convs, a.min_free_gb, a.threads)
         else:

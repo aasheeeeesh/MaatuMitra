@@ -1,6 +1,6 @@
 # PROGRESS
 
-NEXT STEP (2026-11-11): all Phase B reviews DONE (m3 clinical D-122, m6 security D-123, m6 kannada D-124). Max 2 agents at a time. record.v2 + gold.v2 added (additive, D-125..D-130; modules migrate in Phase C); ONE m6 pass in Phase C = new /save + security F1-F8 + Kannada fixes (D-123, D-124). Remaining builds: (1) B1b audio RUNNING (TTS + public real speech; may only ADD to test.lock); (2) m2 ASR; (3) m7 eval (incl. rerun m3 LLM comparison, cluster bootstrap); (4) m8 helper (first to cut); Phase C (record.v2, wire m4 into m5, m6 pass, e2e, final audits incl. gitleaks, make eval-test once, report); Phase D.
+NEXT STEP (2026-11-12): audio DONE. RUNNING: m6 pass (new /save, security F1-F8, Kannada). Next: m2 ASR on dev audio (download-use-delete models, keep >=1.5 GB free; disk ~2.9 GB), then Phase C: record.v2 migration (m3/m4/m5/m6/scorer), wire m4 into m5, e2e 10-conversation run, m7 LLM-comparison refresh, final audits (integrity + security incl. gitleaks), make eval-test ONCE, report; Phase D. Max 2 agents.
 
 NOTE: on Windows set `export UV_PROJECT_ENVIRONMENT=$USERPROFILE/.venvs/maatumitra` before `uv run` (path-length limit, D-3). Use `mingw32-make` for make.
 MODEL POLICY (D-65, user request 2026-11-10): Sonnet for kannada-language-reviewer, clinical-reviewer and fix passes (except m4); Opus for m4_verify work, scientific-integrity-auditor, security-auditor.
@@ -14,7 +14,7 @@ Status values: todo / in-progress / done / blocked.
 | A1 | A | Architect: feasibility, layout, lockfile, contracts+fixtures+validator, CI, docs (severity/metrics/hypothesis), agents+skills | done | 2026-11-09 | ef3a288 |
 | A2 | A | Seed PROGRESS/HUMAN_TODO/DECISIONS; commit | done | 2026-11-09 | ef3a288 |
 | B1a | B | m1 text data: lexicon, templates, generator, split, lock | done (test split frozen; REFREEZE-1 D-109) | 2026-11-10 | 9a3faf8 |
-| B1b | B | m1 audio: TTS + public real speech + manifest | in-progress (code 7fa360e; audio NOT generated: disk; Parler gated -> MMS + pitch-shifted test voice) | 2026-11-12 | 7fa360e |
+| B1b | B | m1 audio: TTS + public real speech + manifest | done (344 convs MMS + pitch-shifted test voice; clean on disk, variants on demand; FLEURS 250) | 2026-11-12 | (this commit) |
 | B1r | B | m1 reviews + fixes + gate | done (3 reviews D-90,D-91,D-93; fix pass + REFREEZE-1 D-104..D-110) | 2026-11-10 | 66ff51a |
 | B4 | B | m4_verify build + reviews + gate | done (fix pass D-111..D-116; M4-1 guard fixed; E4 dev rerun) | 2026-11-11 | 36d203a |
 | B2 | B | m2_asr build + reviews + gate | todo | | |

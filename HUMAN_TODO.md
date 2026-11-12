@@ -204,3 +204,7 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] Verify the E3 ablation assumption (UNVERIFIED): m4 checks C1..C8 do not use each other's results; better, have m4 re-run E4 with one check disabled at a time.
 - [ ] E7 user study: have a Kannada speaker review m7_eval/e7_kit/consent_form_kn.md and the 20 packets; ask the instructor whether ethics approval is needed; check the SUS wording; then run m7_eval/e7_kit/protocol.md and `uv run python -m m7_eval e7-analyse <filled sheet> --out results/m7_eval/e7`.
 - [ ] Confirm or correct the auto-suggested failure causes in results/m7_eval/dev/failure_gallery.md.
+
+## From m1_data (merged 20261112T004444Z)
+
+- [ ] On another machine run `uv run python -m m1_data audio-verify --materialise-sample 50` (dev only) to confirm bit-exact rebuild; re-check the FLEURS CC-BY-4.0 licence page.

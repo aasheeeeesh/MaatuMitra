@@ -288,6 +288,10 @@
 | D-149 | Phase C / m7_eval | The rules-versus-LLM comparison stays STALE; a refresh target is added but not run | needs human (run the refresh, about 2... | Option 3. |
 | D-150 | Phase C / m7_eval | E7 user-study kit: within-subject, flags shown versus hidden, simulated imperfect flags | needs human (run the study) | Option 2, descriptive results only. |
 | D-151 | Phase C / m7_eval | Where m7 writes, and what it did not write | done | Option 2. |
+| D-152 | Phase B / m1_data | Audio "clean on disk, variants on demand" | done | Option 2. Every variant hash is in data/manifest.jsonl (test ones also appended to test.lock). manifest.v1 has no "st... |
+| D-153 | Phase B / m1_data | 312 older dev noise files are kept on disk (not bit-reproducible) | done | Option 2, as instructed. Speed variants (104 files) and all test pitch voice noise variants were bit-exact and delete... |
+| D-154 | Phase B / m1_data | FLEURS subset built; FLEURS WAVs are 32-bit float and converted to PCM16 | done | Convert (round, clip), recorded sha256 is of the converted file. |
+| D-155 | Phase B / m1_data | Audio accepted; one integrity check rebuilt test audio, but nothing was evaluated on it | done | Option 2, and accept the audio. |
 <!-- INDEX-END -->` and `<!-- ENTRIES-END -->` in this file must stay.
 - Status: done
 
@@ -2059,6 +2063,53 @@
 - What could go wrong / weaknesses: A reader looking at results/tables/ finds nothing until the orchestrator copies or links the files.
 - What else could be done: The orchestrator widens m7's boundary and m7 writes the brief's paths directly.
 - How to change this decision later: `--out` in m7_eval/__main__.py and m7_eval/module.mk.
+- Status: done
+
+### D-152: Audio "clean on disk, variants on demand"   (Phase B / m1_data / data-scientist / 2026-11-12)
+- What we needed to decide: Disk had about 2.7 GB free; storing all 3360 WAVs did not fit and m2 needs room for models.
+- Options we considered:
+  1. Keep every variant on disk. Pro: simple. Con: does not fit.
+  2. Keep only clean files; re-make noise/speed variants when needed from the clean file plus seed, noise type, SNR and speed, and check each against a stored sha256. Pro: about 4x smaller. Con: needs a command and bit-exact determinism.
+  3. Drop variants. Con: loses the noise and speed experiments.
+- What we chose: Option 2. Every variant hash is in data/manifest.jsonl (test ones also appended to test.lock). manifest.v1 has no "stored or not" field and contracts/ is off limits, so that flag lives in data/audio_index/tts_index.jsonl (storage = stored | on_demand, reproducible, clean_file).
+- Why: Hashes are recorded before deletion, so nothing is unverifiable.
+- What we actually did: m1_data/audio_build.py (render, build, materialise_row), audio_run.py, cli: `python -m m1_data audio-materialise --ids all --split dev --variants white_snr10 --out DIR` (test needs ALLOW_TEST=1), `audio-verify --materialise-sample N`. Checked all 2440 on-demand variants (dev + test, with ALLOW_TEST=1): all rebuilt bit-exact (results/m1_data/materialise_full_check.json). Tests: m1_data/tests/test_audio_ondemand.py.
+- What could go wrong / weaknesses: Bit-exactness was shown on this machine only (numpy + ffmpeg version); another machine could differ. The 1.2 GB first run's _turns scratch was deleted, so the clean files cannot be rebuilt without running TTS again.
+- What else could be done: ask for a stored-flag field in manifest.v1.
+- How to change this decision later: audio_build.build and audio_run.
+- Status: done
+
+### D-153: 312 older dev noise files are kept on disk (not bit-reproducible)   (Phase B / m1_data / data-scientist / 2026-11-12)
+- What we needed to decide: The first run made dev noise variants from an unrounded float signal, so re-making them from the stored 16-bit clean file differs by up to one rounding step in some samples.
+- Options we considered: (1) delete and redefine them from the clean file (saves about 127 MB, but changes the files); (2) keep the originals and record their hash as the truth.
+- What we chose: Option 2, as instructed. Speed variants (104 files) and all test pitch voice noise variants were bit-exact and deleted. New variants are defined from the stored clean file, so they are exact.
+- Why: Honest hashes beat saved space.
+- What we actually did: 6 noise types x 52 dev conversations stay as storage=stored, reproducible=false; materialised_sha256 is recorded for comparison.
+- What could go wrong / weaknesses: costs about 127 MB.
+- What else could be done: redefine and delete them if disk is needed.
+- How to change this decision later: delete the files and set storage in the index.
+- Status: done
+
+### D-154: FLEURS subset built; FLEURS WAVs are 32-bit float and converted to PCM16   (Phase B / m1_data / data-scientist / 2026-11-12)
+- What we needed to decide: The first FLEURS run crashed: the files are IEEE-float WAV, not PCM16.
+- Options we considered: store float (breaks 16-bit rule and python wave); convert deterministically to 16-bit.
+- What we chose: Convert (round, clip), recorded sha256 is of the converted file.
+- Why: Same format as all other audio.
+- What we actually did: fleurs.float_wav_to_pcm16 plus tests. 250 utterances (124 dev, 126 test, split by sentence), 108 MB, CC-BY-4.0; 126 lines appended to test.lock.
+- What could go wrong / weaknesses: speaker overlap between dev and test not ruled out; licence page not re-fetched by me this session (UNVERIFIED).
+- What else could be done: Common Voice or Kathbath.
+- How to change this decision later: fleurs.py.
+- Status: done
+
+### D-155: Audio accepted; one integrity check rebuilt test audio, but nothing was evaluated on it   (Phase B / m1_data / orchestrator / 2026-11-12)
+- What we needed to decide: The audio build finished with a "clean recording on disk, noisy and speed-changed copies rebuilt on demand" design (to fit the nearly full disk). To prove the on-demand copies are exact, the builder rebuilt all 2440 of them once, including 2112 TEST copies, using the ALLOW_TEST=1 switch of the m1 rebuild command. Is that a test-split access, and do we accept the audio?
+- Options we considered: (1) Treat it as a test run and log it in results/test_access_log.md. Pro: maximally cautious. Con: that log is defined by the brief for `make eval-test` (scoring a system on test); logging a data check there would make the one real test run look like the second one. (2) Record it here as a data-integrity check, not an evaluation. Pro: accurate; no model, metric or threshold saw test audio. Con: relies on this entry for transparency.
+- What we chose: Option 2, and accept the audio.
+- Why: Rebuilding audio from locked clean files and comparing sha256 hashes reads no gold label, runs no ASR or extraction, and produces no score; it only proves the stored hashes are reproducible.
+- What we actually did: Re-ran checks myself: test.lock +2767 lines, 0 removed; manifest +3610 rows, 0 removed; text data (transcripts, gold, templates, lexicon) unchanged; 4796/4796 manifest rows valid; `split-lock: OK` (missing git-ignored copies are warnings by design); `audio-verify` checked 1170 stored files, 0 bad, and results/m1_data/materialise_full_check.json shows 2440/2440 on-demand copies rebuilt exactly; `pytest m1_data tests` 228 passed, 1 skipped; ruff clean; 0 audio files tracked by git; results/test_access_log.md does not exist. data/audio is 521 MB; 2.9 GB free on C:. FLEURS kn_in: 250 utterances (124 dev, 126 test), stored separately as source=public_real.
+- What could go wrong / weaknesses: 312 dev noise files (52 conversations x 6) are not bit-reproducible from the 16-bit clean file and stay on disk with their original hashes. Bit-exactness on another machine or ffmpeg version is UNVERIFIED. The "second voice" is a pitch-shifted copy of the one MMS voice (D-132), a weak form of the brief's held-out-voice rule. The per-turn synthesis cache was deleted, so rebuilding clean audio means running TTS again. The FLEURS licence page was not re-fetched in this round.
+- What else could be done: Add a "stored or on-demand" field to manifest.v2 instead of the sidecar file data/audio_index/tts_index.jsonl (contract request filed by m1).
+- How to change this decision later: m1_data/audio_build.py, `python -m m1_data audio-materialise`; never rebuild test audio for tuning.
 - Status: done
 
 <!-- ENTRIES-END -->

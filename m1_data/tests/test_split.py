@@ -48,8 +48,9 @@ def test_test_split_size(split_ids, gold_docs):
 
 def test_manifest_covers_every_generated_file(manifest_rows, split_ids):
     split_of = _split_of(split_ids)
-    files = {r["file"]: r for r in manifest_rows}
-    assert len(files) == len(manifest_rows)
+    text_rows = [r for r in manifest_rows if not r["file"].startswith("data/audio/")]
+    files = {r["file"]: r for r in text_rows}
+    assert len(files) == len(text_rows)  # audio rows are covered by test_audio_*.py
     expected = set()
     for cid in split_of:
         expected |= {f"data/gold/{cid}.json", f"data/transcripts/gold/{cid}__gold.json"}

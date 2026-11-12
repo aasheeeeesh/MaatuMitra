@@ -8,7 +8,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import random
 import shutil
+import tempfile
 import urllib.request
 from collections.abc import Callable
 from pathlib import Path
@@ -54,6 +57,13 @@ def estimate(root: Path) -> dict:
     }
 
 
+def load_index(root: Path) -> dict[str, dict]:
+    idx = root / ab.INDEX_REL
+    if not idx.exists():
+        return {}
+    return {r["audio_id"]: r for r in map(json.loads, idx.read_text(encoding="utf-8").splitlines())}
+
+
 def run_tts(root: Path, limit_convs: int | None, min_free_gb: float, threads: int) -> dict:
     items = ab.plan(root)
     if limit_convs:
@@ -64,10 +74,23 @@ def run_tts(root: Path, limit_convs: int | None, min_free_gb: float, threads: in
     from m1_data.tts_model import MmsKannada
 
     model = MmsKannada(threads=threads)
-    rows = ab.build(root, lambda t, s: model(t, s), items, check=guard)
-    mrows = ab.write_outputs(root, rows)
-    added = ab.append_lock(root, ab.manifest_rows(root, rows))
-    return {"audio_files": len(rows), "lock_lines_added": added, "manifest_rows": len(mrows)}
+    done = set(load_index(root))
+    got: list[dict] = []
+    added = 0
+
+    def flush(crows: list[dict]) -> None:  # after EVERY conversation, so a stop loses nothing
+        nonlocal added
+        got.extend(crows)
+        ab.write_outputs(root, crows)
+        added += ab.append_lock(root, ab.manifest_rows(root, crows))
+
+    ab.build(root, lambda t, s: model(t, s), items, check=guard, done=done, on_conv=flush)
+    return {
+        "audio_rows_new": len(got),
+        "lock_lines_added": added,
+        "index_rows": len(load_index(root)),
+        "not_reproducible_kept": sum(1 for r in got if not r["reproducible"]),
+    }
 
 
 def run_fleurs(root: Path, min_free_gb: float) -> dict:
@@ -114,22 +137,91 @@ def run_fleurs(root: Path, min_free_gb: float) -> dict:
     }
 
 
-def verify(root: Path) -> dict:
-    """Compare every audio row of manifest.jsonl with the file on disk (missing = not built here)."""
+def _is_audio_row(r: dict) -> bool:
+    return r["file"].startswith("data/audio/")
+
+
+def verify(root: Path, materialise_sample: int = 0, seed: int = 20261112) -> dict:
+    """Compare every audio row of manifest.jsonl with the file on disk. Rows whose index entry says
+    `on_demand` are not missing, they are counted separately. With `materialise_sample` N, N on-demand
+    variants are rebuilt into a temp dir, compared with the manifest hash and deleted
+    (TEST variants only when ALLOW_TEST=1)."""
     rows = [
         json.loads(x)
         for x in (root / "data" / "manifest.jsonl").read_text(encoding="utf-8").splitlines()
         if x.strip()
     ]
-    checked, missing, bad = 0, 0, []
+    index = {r["file"]: r for r in load_index(root).values()}
+    checked, missing, on_demand, bad = 0, 0, 0, []
     for r in rows:
-        if not r["file"].startswith("data/audio/"):
+        if not _is_audio_row(r):
             continue
         p = root / r["file"]
         if not p.exists():
-            missing += 1
+            if index.get(r["file"], {}).get("storage") == "on_demand":
+                on_demand += 1
+            else:
+                missing += 1
             continue
         checked += 1
         if hashlib.sha256(p.read_bytes()).hexdigest() != r["sha256"]:
             bad.append(r["file"])
-    return {"checked": checked, "missing": missing, "bad": bad}
+    res = {"checked": checked, "on_demand": on_demand, "missing": missing, "bad": bad}
+    if materialise_sample:
+        mrow = {r["file"]: r["sha256"] for r in rows}
+        pool = sorted(
+            (r for r in index.values() if r["storage"] == "on_demand"),
+            key=lambda r: r["audio_id"],
+        )
+        if os.environ.get("ALLOW_TEST") != "1":
+            pool = [r for r in pool if r["split"] != "test"]
+        pick = random.Random(seed).sample(pool, min(materialise_sample, len(pool)))  # noqa: S311
+        ok, fail = 0, []
+        with tempfile.TemporaryDirectory(prefix="m1_mat_") as td:
+            for r in pick:
+                dst = Path(td) / f"{r['audio_id']}.wav"
+                try:
+                    got = ab.materialise_row(root, r, dst)
+                    if got != mrow.get(r["file"]):
+                        raise ValueError("index and manifest disagree")
+                    ok += 1
+                except (ValueError, OSError) as e:
+                    fail.append(f"{r['audio_id']}: {e}")
+                dst.unlink(missing_ok=True)
+        res["materialised_ok"] = ok
+        res["materialise_failed"] = fail
+        res["materialise_pool"] = len(pool)
+        if fail:
+            res["bad"] = bad + fail
+    return res
+
+
+def materialise(
+    root: Path, ids: str, split: str, variants: str, out: Path, environ: dict | None = None
+) -> dict:
+    """Re-create variant WAVs from the stored clean file and verify each sha256 (mismatch = error).
+    The test split is refused unless ALLOW_TEST=1."""
+    env = os.environ if environ is None else environ
+    if split == "test" and env.get("ALLOW_TEST") != "1":
+        raise PermissionError(
+            "refusing --split test: set ALLOW_TEST=1 (the test run happens once, in Phase C)"
+        )
+    want_ids = None
+    if ids != "all":
+        want_ids = set(Path(ids).read_text(encoding="utf-8").split())
+    want_var = None if variants == "all" else set(variants.split(","))
+    index = load_index(root)
+    pick = [
+        r
+        for r in index.values()
+        if r["split"] == split
+        and (want_ids is None or r["conv_id"] in want_ids)
+        and (want_var is None or r["variant"] in want_var)
+    ]
+    if not pick:
+        raise ValueError("no audio rows match --ids/--split/--variants")
+    out_n = 0
+    for r in sorted(pick, key=lambda r: r["audio_id"]):
+        ab.materialise_row(root, r, out / r["voice"] / r["variant"] / f"{r['conv_id']}.wav")
+        out_n += 1
+    return {"materialised": out_n, "verified_sha256": out_n, "out": str(out)}

@@ -9,12 +9,22 @@ from pathlib import Path
 from contracts.validate import conversation_text, validate_doc
 from m1_data import kn, negation
 from m1_data.coverage import compute_coverage
+from m1_data.split import split_audio_tail
 
 from .conftest import DATA, ROOT, read_jsonl
 
 
 def _sha(p: Path) -> str:
-    return hashlib.sha256(p.read_bytes()).hexdigest()
+    """sha256 of a generated file. For manifest.jsonl and test.lock only the TEXT part counts:
+    audio rows / the appended audio tail are written by `audio-*`, not by `generate`."""
+    data = p.read_bytes()
+    if p.name == "manifest.jsonl":
+        data = b"".join(
+            ln for ln in data.splitlines(keepends=True) if b'"file": "data/audio/' not in ln
+        )
+    elif p.name == "test.lock":
+        data = split_audio_tail(data.decode("utf-8"))[0].encode("utf-8")
+    return hashlib.sha256(data).hexdigest()
 
 
 def _generated_files(base: Path) -> list[Path]:

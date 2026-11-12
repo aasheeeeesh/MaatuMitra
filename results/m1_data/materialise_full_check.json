@@ -1,0 +1,9 @@
+{
+  "checked": 1170,
+  "on_demand": 2440,
+  "missing": 0,
+  "bad": [],
+  "materialised_ok": 2440,
+  "materialise_failed": [],
+  "materialise_pool": 2440
+}

@@ -104,23 +104,53 @@ def _turn_seed(conv: str, k: int) -> int:
     return seed_int(AUDIO_SEED, "turn", conv, k)
 
 
+def clean_item(it: Item) -> Item:
+    return Item(it.conv, it.split, it.voice, CLEAN)
+
+
+def render(root: Path, it: Item, dst: Path) -> None:
+    """Make the file of a non-clean item from the STORED clean file of the same voice.
+    This is the single definition of a variant (used by build and by audio-materialise)."""
+    src = root / clean_item(it).rel_path
+    v = it.variant
+    if v.noise:
+        seed = seed_int(AUDIO_SEED, it.audio_id)
+        dsp.write_wav(dst, dsp.add_noise(dsp.read_wav(src), v.noise, v.snr, seed))
+    elif v.speed:
+        dsp.change_speed(src, dst, v.speed)
+    else:
+        raise ValueError("clean is stored, not rendered")
+
+
 def build(
     root: Path,
     synth: Callable[[str, int], np.ndarray],
     items: list[Item],
     log=print,
     check: Callable[[], None] | None = None,
+    done: set[str] | None = None,
+    on_conv: Callable[[list[dict]], None] | None = None,
 ) -> list[dict]:
-    """Make every file of `items` (skip files that exist). Returns one index row per item."""
+    """Make the items ("clean on disk, variants on demand"). Per conversation: the clean file(s)
+    stay on disk; every other variant is rendered to a scratch file, hashed (sha256 of the exact
+    bytes) and deleted. A variant file left over from an older run is compared byte-for-byte with
+    the fresh render: equal -> deleted; different -> the ORIGINAL is kept and its hash recorded
+    (`reproducible` false). Conversations whose items are all in `done` are skipped.
+    Returns one index row per item; `on_conv` is called with each conversation's rows."""
     table = build_table(root / "data" / "lexicon" / "drugs.csv")
     turns_dir = root / "data" / "audio" / "_turns"
+    tmp_dir = root / "data" / "audio" / "_tmp"
+    done = done or set()
     by_conv: dict[str, list[Item]] = {}
     for it in items:
         by_conv.setdefault(it.conv, []).append(it)
     rows: list[dict] = []
     for n, (conv, its) in enumerate(sorted(by_conv.items()), 1):
+        if all(i.audio_id in done for i in its):
+            continue
         if check:
             check()  # e.g. the free-disk guard; raises to stop cleanly (the build is resumable)
+        its = sorted(its, key=lambda i: i.variant != CLEAN)  # clean files first
         gold = json.loads((root / "data" / "gold" / f"{conv}.json").read_text(encoding="utf-8"))
         kn_texts = [kannadify(t["text"], table) for t in gold["turns"]]
         arrs = []
@@ -131,31 +161,41 @@ def build(
             arrs.append(dsp.read_wav(tp))
         base, offsets = dsp.concat_turns(arrs, GAP_S)
         base = dsp.peak_normalise(base, PEAK)
-        tmp_dir = root / "data" / "audio" / "_tmp"
         tmp_dir.mkdir(parents=True, exist_ok=True)
-        clean_src: dict[str, np.ndarray] = {BASE_VOICE: base}
-        for voice in {i.voice for i in its} - {BASE_VOICE}:
-            a, b = tmp_dir / f"{conv}_a.wav", tmp_dir / f"{conv}_b.wav"
-            dsp.write_wav(a, base)
-            dsp.shift_pitch(a, b, PITCH_RATIO)
-            clean_src[voice] = dsp.read_wav(b)
+        crows: list[dict] = []
         for it in its:
             dst = root / it.rel_path
             v = it.variant
             seed = seed_int(AUDIO_SEED, it.audio_id)
-            if not dst.exists():
-                x = clean_src[it.voice]
-                if v.noise:
-                    dsp.write_wav(dst, dsp.add_noise(x, v.noise, v.snr, seed))
-                elif v.speed:
-                    src = tmp_dir / f"{conv}_{it.voice}_src.wav"
-                    dsp.write_wav(src, x)
-                    dsp.change_speed(src, dst, v.speed)
-                else:
-                    dsp.write_wav(dst, x)
-            frames = dsp.wav_info(dst)[3]
+            extra: dict = {}
+            if v == CLEAN:
+                if not dst.exists():
+                    if it.voice == BASE_VOICE:
+                        dsp.write_wav(dst, base)
+                    else:
+                        a, b = tmp_dir / f"{conv}_a.wav", tmp_dir / f"{conv}_b.wav"
+                        dsp.write_wav(a, base)
+                        dsp.shift_pitch(a, b, PITCH_RATIO)
+                        dsp.write_wav(dst, dsp.read_wav(b))
+                sha, size, frames = _sha_file(dst), dst.stat().st_size, dsp.wav_info(dst)[3]
+                storage, repro = "stored", True
+            else:
+                scratch = tmp_dir / f"{it.audio_id}.wav"
+                render(root, it, scratch)
+                sha, size = _sha_file(scratch), scratch.stat().st_size
+                frames = dsp.wav_info(scratch)[3]
+                storage, repro = "on_demand", True
+                if dst.exists():  # leftover from the older "store everything" run
+                    old = _sha_file(dst)
+                    if old == sha:
+                        dst.unlink()
+                    else:
+                        extra = {"materialised_sha256": sha, "materialised_bytes": size}
+                        sha, size, frames = old, dst.stat().st_size, dsp.wav_info(dst)[3]
+                        storage, repro = "stored", False
+                scratch.unlink()
             scale = 1.0 / v.speed if v.speed else 1.0
-            rows.append(
+            crows.append(
                 {
                     "audio_id": it.audio_id,
                     "file": it.rel_path,
@@ -167,6 +207,11 @@ def build(
                     "snr_db": v.snr,
                     "speed_factor": v.speed,
                     "seed": seed,
+                    "sha256": sha,
+                    "bytes": size,
+                    "storage": storage,  # stored = file on disk; on_demand = audio-materialise
+                    "reproducible": repro,
+                    "clean_file": clean_item(it).rel_path,
                     "duration_s": round(frames / dsp.SR, 3),
                     "turn_offsets_s": [
                         [round(a * scale, 3), round(b * scale, 3)] for a, b in offsets
@@ -174,21 +219,40 @@ def build(
                     "tts_input": kn_texts,
                     "tts_model": TTS_MODEL,
                     "tts_revision": TTS_REVISION,
+                    **extra,
                 }
             )
+        rows += crows
+        if on_conv:
+            on_conv(crows)
         if n % 20 == 0:
             log(f"{n}/{len(by_conv)} conversations")
-    shutil.rmtree(root / "data" / "audio" / "_tmp", ignore_errors=True)
+    shutil.rmtree(tmp_dir, ignore_errors=True)
     return rows
 
 
+def materialise_row(root: Path, row: dict, dst: Path) -> str:
+    """Re-create the WAV of one index row at `dst` and verify its sha256. Raises on mismatch."""
+    variant = next(v for v in VARIANTS if v.name == row["variant"])
+    it = Item(row["conv_id"], row["split"], row["voice"], variant)
+    if row["storage"] == "stored" or row["variant"] == "clean":
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / row["file"], dst)
+    else:
+        render(root, it, dst)
+    got = _sha_file(dst)
+    if got != row["sha256"]:
+        dst.unlink(missing_ok=True)
+        raise ValueError(f"sha256 mismatch for {row['audio_id']}: {got} != {row['sha256']}")
+    return got
+
+
 def manifest_row(root: Path, r: dict) -> dict:
-    p = root / r["file"]
     return {
         "schema_version": "manifest.v1",
         "file": r["file"],
-        "sha256": _sha_file(p),
-        "bytes": p.stat().st_size,
+        "sha256": r["sha256"],
+        "bytes": r["bytes"],
         "source": "tts",
         "split": r["split"],
         "noise_snr_db": r["snr_db"],
@@ -232,14 +296,18 @@ def write_outputs(root: Path, index_rows: list[dict]) -> list[dict]:
 
 
 def merge_manifest(root: Path, new_rows: list[dict]) -> list[dict]:
+    """New files are appended; a row with an existing `file` is replaced IN PLACE (order kept)."""
     mp = root / "data" / "manifest.jsonl"
     old = [json.loads(x) for x in mp.read_text(encoding="utf-8").splitlines() if x.strip()]
-    keep = {r["file"]: r for r in old}
+    pos = {r["file"]: i for i, r in enumerate(old)}
     for r in new_rows:
-        keep[r["file"]] = r
-    out = [keep[k] for k in sorted(keep)]
-    mp.write_text(_jsonl(out), encoding="utf-8", newline="")
-    return out
+        if r["file"] in pos:
+            old[pos[r["file"]]] = r
+        else:
+            pos[r["file"]] = len(old)
+            old.append(r)
+    mp.write_text(_jsonl(old), encoding="utf-8", newline="")
+    return old
 
 
 LOCK_COMMENT = (

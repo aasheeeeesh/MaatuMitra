@@ -97,3 +97,41 @@ def test_manifest_row_validates(tmp_path):
     row = fl.manifest_row("data/audio/public_real/fleurs_kn_in/dev/x.wav", f, "dev", "FEMALE", 7)
     assert validate_doc("manifest.v1", row) == []
     assert row["source"] == "public_real" and row["licence_spdx"] == "CC-BY-4.0"
+
+
+def _float_wav_bytes(samples, sr=16000):
+    import struct
+
+    data = struct.pack(f"<{len(samples)}f", *samples)
+    fmt = struct.pack("<HHIIHHH", 3, 1, sr, sr * 4, 4, 32, 0)  # IEEE float, 18-byte fmt chunk
+    body = b"WAVE" + b"fmt " + struct.pack("<I", len(fmt)) + fmt
+    body += b"fact" + struct.pack("<II", 4, len(samples)) + b"data" + struct.pack("<I", len(data))
+    return b"RIFF" + struct.pack("<I", len(body) + len(data)) + body + data
+
+
+def test_float32_wav_is_converted_to_pcm16_deterministically(tmp_path):
+    raw = _float_wav_bytes([0.0, 0.5, -0.5, 1.0, -1.0, 2.0, 1 / 32767])
+    out = fl.float_wav_to_pcm16(raw)
+    assert out == fl.float_wav_to_pcm16(raw)
+    p = tmp_path / "x.wav"
+    p.write_bytes(out)
+    with wave.open(str(p), "rb") as w:
+        assert (w.getframerate(), w.getnchannels(), w.getsampwidth()) == (16000, 1, 2)
+        pcm = w.readframes(w.getnframes())
+    import numpy as np
+
+    assert list(np.frombuffer(pcm, dtype="<i2")) == [0, 16384, -16384, 32767, -32767, 32767, 1]
+    assert fl.float_wav_to_pcm16(_wav_bytes()) == _wav_bytes()  # PCM16 passes through unchanged
+
+
+def test_stream_extract_converts_float_wavs(tmp_path):
+    tar_path = tmp_path / "t.tar.gz"
+    with tarfile.open(tar_path, "w:gz") as tf:
+        d = _float_wav_bytes([0.1] * 800)
+        ti = tarfile.TarInfo("test/f.wav")
+        ti.size = len(d)
+        tf.addfile(ti, io.BytesIO(d))
+    got = fl.stream_extract(tar_path.as_uri(), {"f.wav": "dev"}, tmp_path / "o")
+    assert got == ["f.wav"]
+    with wave.open(str(tmp_path / "o" / "dev" / "f.wav"), "rb") as w:
+        assert w.getsampwidth() == 2 and w.getnframes() == 800
