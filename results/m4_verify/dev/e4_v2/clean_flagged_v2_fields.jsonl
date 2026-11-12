@@ -1,0 +1,2 @@
+{"record_id": "rec-m1-c3-005", "field": "/medications/0/status", "flags": ["C3: status_unsupported [MA-STATUS]: no past-tense word in the evidence sentence (negated=False; advise-against -; past -; directive -; regimen False; permission question -; ongoing -)"]}
+{"record_id": "rec-m1-c5-007", "field": "/medications/0/speaker", "flags": ["C3: speaker_not_prescriber [MA-STATUS]: status 'prescribed' but the evidence speaker is 'patient': a patient or caregiver does not prescribe"]}

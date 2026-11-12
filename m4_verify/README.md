@@ -97,3 +97,13 @@ close; use the DEV burden above.)
 - Negation scope is clause-level and rule-based; see negation_audit.md for measured misses.
 
 Files: `plan.md` (design), `CONTRACT.md` (inputs/outputs), `negation_audit.md`, `handoff/` (decisions).
+
+## record.v2 (Phase C)
+
+m4 accepts record.v1 and record.v2. For v2 input only, the checks also run `v2checks.py`
+(word lists in `v2rules.py`, AI-written, not native-validated): C1 every new evidence span; C2 route,
+strength, formulation, age band and weight re-derived from their own span; C3 status (CR-NEG /
+MA-STATUS) and speaker; C4 route (CR-ROUTE), paediatric (never passed, CR-PAEDIATRIC), liquid
+strength (CR-LIQUID-STRENGTH) and mg-equivalent range; C5 as_needed and food_timing
+(MA-MED-ATTRIBUTE). v1 verdicts are unchanged (v1 E4 reproduces results/m4_verify/dev/e4 exactly).
+E4-v2 (separate table): `make m4-e4-v2-dev` -> results/m4_verify/dev/e4_v2/.

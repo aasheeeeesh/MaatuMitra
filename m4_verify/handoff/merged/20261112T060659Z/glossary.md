@@ -1,0 +1,5 @@
+- **mg-equivalent**: the amount of medicine in milligrams that one dose contains, computed from the dose and the product strength (for example 5 ml of a 120 mg/5 ml syrup = 120 mg).
+- **Strength (of a product)**: how much medicine is in one unit of the product (500 mg per tablet, 120 mg per 5 ml of syrup); different from the dose, which is how much is taken at one time.
+- **Status flip**: a record that says a medicine was given (prescribed, already taken) when it was not (not taken, advised against), or the reverse; scored like a negation flip (CR-NEG).
+- **Permission question**: a question asking if something is allowed ("may I take it?", Kannada -ಬಹುದಾ?); its "no" answer means "advised against".
+- **Dev-informed rule**: a rule added after looking at results on the development data; it can make development results look better than they would be on new data.

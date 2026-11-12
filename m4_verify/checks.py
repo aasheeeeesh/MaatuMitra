@@ -48,6 +48,14 @@ Result = tuple[str, str, str]
 MASS = {"mg": 1.0, "g": 1000.0, "mcg": 0.001}
 
 
+def _v2():
+    """m4_verify.v2checks, looked up at call time: no import cycle, and a test can replace one of
+    its functions to prove fail-closed. Only record.v2 input ever reaches it."""
+    from m4_verify import v2checks
+
+    return v2checks
+
+
 @dataclass
 class Ctx:
     record: dict[str, Any]
@@ -61,6 +69,11 @@ class Ctx:
     @property
     def text(self) -> str:
         return self.transcript["text"]
+
+    @property
+    def is_v2(self) -> bool:
+        """record.v2 input: the v2 parts of C1..C5 (m4_verify/v2checks.py) run as well."""
+        return self.record.get("schema_version") == "record.v2"
 
     @cached_property
     def entity_tokens(self) -> frozenset[str]:
@@ -138,6 +151,8 @@ def c1_span_exists(ctx: Ctx) -> list[Result]:
             )
         else:
             out.append(("pass", "span text found at the stated offsets (NFC)", p))
+    if ctx.is_v2:
+        out += _v2().c1_extra(ctx)
     return out
 
 
@@ -252,6 +267,8 @@ def c2_span_supports_value(ctx: Ctx) -> list[Result]:
                     f"{path}/text",
                 )
             )
+    if ctx.is_v2:
+        out += _v2().c2_extra(ctx)
     return out or [
         ("flag", "record has no extracted fields: nothing could be verified (fail-closed)", "/")
     ]
@@ -295,6 +312,8 @@ def c3_negation(ctx: Ctx) -> list[Result]:
                     fpath,
                 )
             )
+    if ctx.is_v2:
+        out += _v2().c3_extra(ctx)
     return out or [("n/a", "record has no extracted fields", "/")]
 
 
@@ -334,6 +353,8 @@ def _c(code: str, cls: str, msg: str) -> str:
 
 
 def c4_dose_range(ctx: Ctx) -> list[Result]:
+    if ctx.is_v2:  # route, age band, strength and status need the v2 rules (v2checks.c4)
+        return _v2().c4(ctx)
     out: list[Result] = []
     kids = sorted(set(child_cues(ctx.text)))
     for i, it in enumerate(ctx.record["medications"]):
@@ -589,6 +610,8 @@ def c5_freq_duration(ctx: Ctx) -> list[Result]:
                 lambda q: q.unit in ("day", "week"),
             )
         )
+    if ctx.is_v2:
+        out += _v2().c5_extra(ctx)
     return out or [("n/a", "record has no medications", "/")]
 
 
@@ -928,6 +951,13 @@ def c8_ambiguity(ctx: Ctx) -> list[Result]:
                 ("duration", parse_durations),
             ):
                 vals = {f"{_fmt(q.value)} {q.unit}" for t in clause_text for q in fn(t)}
+                if ctx.is_v2 and name == "dose":  # v2: a concentration is a strength, not a dose
+                    vals = {
+                        f"{_fmt(q.value)} {q.unit}"
+                        for t in clause_text
+                        for q in fn(t)
+                        if not _v2().inside_concentration(t, q.start, q.end)
+                    }
                 if len(vals) > 1:
                     reasons.append(f"conflicting {name} values in one clause: {sorted(vals)}")
         if reasons:

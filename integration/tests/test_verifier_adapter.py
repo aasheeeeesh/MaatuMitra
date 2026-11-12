@@ -47,7 +47,7 @@ def test_m5_can_load_the_adapter_by_name():
 @pytest.mark.parametrize(
     "mutate",
     [
-        lambda r: r.update(schema_version="record.v2"),  # m4 has no v2 yet: fail closed
+        lambda r: r.update(schema_version="record.v3"),  # unknown version: fail closed
         lambda r: r.update(source_transcript_id="no-such-conversation"),
         lambda r: r.update(source_transcript_id="../../.env"),  # path characters refused
         lambda r: r.update(source_transcript_id=None),
@@ -117,3 +117,47 @@ def test_call_verifier_passes_kwargs_to_adapter(clean_record):
     assert v["auto_acceptable"] is True
     v = call_verifier(verify_record, copy.deepcopy(clean_record), "enc-1", None)  # no transcript
     assert v["auto_acceptable"] is False and len(flagged(v)) == 1
+
+
+# ---- Phase C: record.v2 goes to the real m4 v2 checks (no longer one blanket flag).
+# m3 may emit record.v1 or record.v2 (it is migrating in parallel); both are handled.
+def _v2(rec):
+    from contracts.migrate_v1_to_v2 import migrate_record
+
+    rec = copy.deepcopy(rec)
+    return rec if rec.get("schema_version") == "record.v2" else migrate_record(rec)
+
+
+def test_v2_clean_record_gets_real_checks_and_is_auto_acceptable(clean_record):
+    tr = pipeline.mock_asr(CLEAN_ID)
+    v2 = verify_record(_v2(clean_record), encounter_id="e", transcript=tr)
+    assert validate_doc("verdict", v2) == []
+    assert not [c for c in v2["checks"] if c["reason"].startswith("check_error")]
+    assert any(c["field_path"].endswith("/status") for c in v2["checks"])  # v2 entries present
+    assert v2["auto_acceptable"] is True
+    if clean_record["schema_version"] == "record.v1":  # migration keeps the v1 outcome
+        v1 = verify_record(copy.deepcopy(clean_record), encounter_id="e", transcript=tr)
+        assert v1["auto_acceptable"] is True and len(v2["checks"]) > len(v1["checks"])
+
+
+def test_v2_status_flip_is_flagged_at_the_field(clean_record):
+    tr = pipeline.mock_asr(CLEAN_ID)
+    rec = _v2(clean_record)
+    if not rec["medications"]:
+        pytest.skip("clean dev record has no medication")
+    m = rec["medications"][0]
+    m["status"] = "advised_against"  # flip "given" -> "not given" (CR-NEG)
+    m["field_evidence"].setdefault("status", copy.deepcopy(m["evidence"]))
+    v = verify_record(rec, encounter_id="e", transcript=tr)
+    assert ("C3", "/medications/0/status") in flagged(v)
+    assert v["auto_acceptable"] is False
+
+
+def test_v2_invalid_record_is_flagged_not_crashed(clean_record):
+    tr = pipeline.mock_asr(CLEAN_ID)
+    rec = _v2(clean_record)
+    rec["medications"][0]["route"] = "iv"
+    rec["medications"][0]["field_evidence"].pop("route", None)  # route without evidence: invalid
+    v = verify_record(rec, encounter_id="e", transcript=tr)
+    assert validate_doc("verdict", v) == [] and v["auto_acceptable"] is False
+    assert any(c["reason"].startswith("check_error: input fails its contract") for c in v["checks"])

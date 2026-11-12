@@ -1,0 +1,157 @@
+{
+  "gold_source": "data/gold",
+  "gold_v2_source": "data/gold_v2",
+  "gold_loaded": 328,
+  "gold_skipped": 264,
+  "gold_v2_loaded": 328,
+  "gold_v2_skipped": 264,
+  "problems": {
+    "no_v1_gold": 0,
+    "v1_v2_mismatch": 0
+  },
+  "lexicon": "C:\\Users\\AASHISH\\AppData\\Local\\Claude-Data\\claude_pzs8sxrjxfjjc\\scratch-workspaces\\3b3f3360-0ebd-4d41-b52b-62b6ca92ff4a\\467491e8-c22e-4280-a242-2bea353ccbd7\\scratch-2026-11-09-3cb2b8\\data\\lexicon\\drugs.csv",
+  "seed": 20261109,
+  "n_per_type": 200,
+  "verdicts": 928,
+  "verdict_validation_errors": [],
+  "clean": {
+    "n_records": 328,
+    "records_flagged": 190,
+    "records_flagged_excl_cannot_verify": 50,
+    "field_n": {
+      "patient_age_band": 80,
+      "route": 408,
+      "strength_value": 408,
+      "formulation": 408,
+      "as_needed": 408,
+      "food_timing": 408,
+      "status": 408,
+      "speaker": 408
+    },
+    "field_flagged": {
+      "status": 1,
+      "speaker": 1
+    },
+    "codes": {
+      "C4:cannot_verify:count_unit": 151,
+      "C4:cannot_verify:paediatric": 40,
+      "C2:uncoded": 39,
+      "C6:uncoded": 39,
+      "C4:cannot_verify:no_range": 32,
+      "C8:uncoded": 24,
+      "C4:cannot_verify:liquid_strength": 24,
+      "C3:status_unsupported": 1,
+      "C3:speaker_not_prescriber": 1
+    }
+  },
+  "catch_rates": [
+    {
+      "type": "j",
+      "type_name": "route swap",
+      "candidate_fields": 340,
+      "injections": 200,
+      "n_unique": 200,
+      "mixed_repeats": 0,
+      "caught": 200,
+      "caught_ci": [
+        0.9812,
+        1.0
+      ],
+      "detected": 200,
+      "detected_ci": [
+        0.9812,
+        1.0
+      ],
+      "to_review": 200,
+      "to_review_ci": [
+        0.9812,
+        1.0
+      ],
+      "checks_at_field": {
+        "C2": 200,
+        "C4": 200
+      },
+      "classes_at_field": {
+        "CR-ROUTE": 200,
+        "uncoded": 200
+      },
+      "note": ""
+    },
+    {
+      "type": "k",
+      "type_name": "strength drop",
+      "candidate_fields": 0,
+      "injections": 0,
+      "n_unique": 0,
+      "note": "not measurable: 0 candidate fields in the 328 source records (no record has this field filled)"
+    },
+    {
+      "type": "l",
+      "type_name": "status flip",
+      "candidate_fields": 392,
+      "injections": 200,
+      "n_unique": 200,
+      "mixed_repeats": 0,
+      "caught": 200,
+      "caught_ci": [
+        0.9812,
+        1.0
+      ],
+      "detected": 200,
+      "detected_ci": [
+        0.9812,
+        1.0
+      ],
+      "to_review": 200,
+      "to_review_ci": [
+        0.9812,
+        1.0
+      ],
+      "checks_at_field": {
+        "C3": 200
+      },
+      "classes_at_field": {
+        "CR-NEG": 200
+      },
+      "note": ""
+    },
+    {
+      "type": "m",
+      "type_name": "age band flip",
+      "candidate_fields": 80,
+      "injections": 200,
+      "n_unique": 80,
+      "mixed_repeats": 0,
+      "caught": 80,
+      "caught_ci": [
+        0.9542,
+        1.0
+      ],
+      "detected": 80,
+      "detected_ci": [
+        0.9542,
+        1.0
+      ],
+      "to_review": 80,
+      "to_review_ci": [
+        0.9542,
+        1.0
+      ],
+      "checks_at_field": {
+        "C2": 200,
+        "C4": 200
+      },
+      "classes_at_field": {
+        "CR-PAEDIATRIC": 200,
+        "uncoded": 200
+      },
+      "note": ""
+    }
+  ],
+  "types": {
+    "j": "route swap",
+    "k": "strength drop",
+    "l": "status flip",
+    "m": "age band flip"
+  }
+}

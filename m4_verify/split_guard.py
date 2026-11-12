@@ -221,8 +221,11 @@ def load_gold(
     ids: set[str] | None = None,
     splits_dir: str | Path | None = None,
     log_path: Path | None = None,
+    schema: str = "gold.v1",
 ) -> GoldLoad:
-    """Load gold.v1 documents from a directory (*.json, *.jsonl) or a .jsonl file, DEV only."""
+    """Load gold documents of `schema` (gold.v1 by default, or gold.v2 for data/gold_v2) from a
+    directory (*.json, *.jsonl) or a .jsonl file, DEV only. The guard is the same for both
+    versions: it works on the conversation id, template family and file hash, not on the folder."""
     info = split_info(str(splits_dir)) if splits_dir else split_info()
     p = Path(path)
     under = is_under_data(p)
@@ -254,7 +257,7 @@ def load_gold(
                         continue
                 guard_doc(doc, f"{f}:{k}", info, log_path)
                 res.docs.append(doc)
-    res.docs = [d for d in res.docs if d.get("schema_version") == "gold.v1"]
+    res.docs = [d for d in res.docs if d.get("schema_version") == schema]
     if ids is not None:
         res.docs = [d for d in res.docs if d["conversation_id"] in ids]
     res.docs.sort(key=lambda d: d["conversation_id"])

@@ -1,0 +1,11 @@
+unit,n,flagged,wilson_lo,wilson_hi
+record,328,190,0.5252,0.6315
+record_excl_cannot_verify,328,50,0.1176,0.1953
+v2_field:as_needed,408,0,0.0,0.0093
+v2_field:food_timing,408,0,0.0,0.0093
+v2_field:formulation,408,0,0.0,0.0093
+v2_field:patient_age_band,80,0,0.0,0.0458
+v2_field:route,408,0,0.0,0.0093
+v2_field:speaker,408,1,0.0004,0.0138
+v2_field:status,408,1,0.0004,0.0138
+v2_field:strength_value,408,0,0.0,0.0093

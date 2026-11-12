@@ -35,7 +35,12 @@ def _input_errors(record: Any, transcript: Any) -> list[str]:
     from contracts.validate import validate_doc
 
     errs = []
-    for name, doc in (("record", record), ("transcript", transcript)):
+    rname = (
+        "record.v2"
+        if isinstance(record, dict) and record.get("schema_version") == "record.v2"
+        else "record"
+    )
+    for name, doc in ((rname, record), ("transcript", transcript)):
         try:
             e = validate_doc(name, doc)
         except Exception as ex:  # validator itself failed on garbage input

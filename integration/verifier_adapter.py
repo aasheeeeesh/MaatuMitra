@@ -11,6 +11,10 @@ Fail closed: anything that stops m4 from really checking (no transcript, unsuppo
 a crash, an invalid verdict) returns a valid verdict.v1 with ONE flag, so a physician must
 resolve it explicitly. It never returns a clean verdict by accident.
 
+Schemas: record.v1 and record.v2 both go to the real m4 checks (Phase C; m4 validates the record
+against its own version and adds the v2 checks for route, age band, strength, status, speaker,
+as_needed and food_timing). Any other schema_version fails closed.
+
 PHASE C HOOK SIGNATURE: m5 calls `fn(record, *, encounter_id, transcript)`. The transcript is
 loaded by m5 from the DATABASE encounter of the record (as GET /records/{id}/transcript does),
 never from `source_transcript_id` inside the editable record. transcript=None -> fail closed.
@@ -31,7 +35,8 @@ from contracts.validate import validate_doc
 REPO = Path(__file__).resolve().parents[1]
 DEFAULT_DIRS = (REPO / "data" / "transcripts" / "gold",)
 ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.\-]{0,120}$")
-VERSION = "integration-adapter-1.0+m4"
+VERSION = "integration-adapter-1.1+m4"
+SUPPORTED = ("record.v1", "record.v2")
 
 
 def transcript_dirs() -> list[Path]:
@@ -90,8 +95,8 @@ def verify_record(
     try:
         if not isinstance(record, dict):
             return _closed(record, "record is not an object")
-        if record.get("schema_version") != "record.v1":
-            return _closed(record, f"m4 does not accept {record.get('schema_version')!r} yet")
+        if record.get("schema_version") not in SUPPORTED:
+            return _closed(record, f"m4 does not accept {record.get('schema_version')!r}")
         if encounter_id is _LEGACY:  # legacy call without the hook arguments
             transcript = find_transcript(record.get("source_transcript_id"))
         if not isinstance(transcript, dict):

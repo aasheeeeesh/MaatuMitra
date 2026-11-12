@@ -4,9 +4,11 @@
 #   m4-e4-data  E4 on the 6 fixture conversations with data/lexicon/drugs.csv
 #   m4-e4-dev   E4 on m1 DEV gold: data/gold filtered by data/splits/dev.txt (test files are never
 #               opened; see m4_verify/split_guard.py). Fixed seed 20261109. Several minutes.
+#   m4-e4-v2-dev  E4-v2 (planted record.v2 mistakes) on DEV: data/gold + data/gold_v2, same guard,
+#               writes results/m4_verify/dev/e4_v2/. A separate table from the v1 E4.
 #   m4-audit  re-run the negation matcher on the stored Kannada Wikipedia sentences
 
-.PHONY: m4-test m4-mock m4-e4-data m4-e4-dev m4-audit m4-clean
+.PHONY: m4-test m4-mock m4-e4-data m4-e4-dev m4-e4-v2-dev m4-audit m4-clean
 
 m4-test:
 	$(UV) run pytest m4_verify/tests
@@ -21,6 +23,9 @@ m4-e4-data:
 
 m4-e4-dev:
 	$(UV) run python -m m4_verify e4 --gold-dir data/gold --lexicon data/lexicon/drugs.csv --n 200 --seed 20261109 --out-dir results/m4_verify/dev
+
+m4-e4-v2-dev:
+	$(UV) run python -m m4_verify e4-v2 --gold-dir data/gold --gold-v2-dir data/gold_v2 --lexicon data/lexicon/drugs.csv --n 200 --seed 20261109 --out-dir results/m4_verify/dev
 
 m4-audit:
 	$(UV) run python -m m4_verify audit --sentences m4_verify/audit/kn_wikipedia_jvara_sentences.txt

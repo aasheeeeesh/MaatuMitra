@@ -1,0 +1,4 @@
+- [ ] Native Kannada review of m4_verify/v2rules.py word lists (route, past tense, advice-against, command, ongoing-use, permission-question, finish, as-needed, food-timing). For each list, mark wrong or missing forms; re-run `uv run pytest m4_verify` after edits.
+- [ ] Decide the oral-route convention: contracts/README.md says route null when only the formulation implies it, but data/gold_v2 sets "oral" on ಮಾತ್ರೆ/ಸಿರಪ್ spans. m4 accepts both (D-? oral route). Tell the architect which is right.
+- [ ] Make "strength drop" measurable: add a stated strength (e.g. "120 mg/5 ml") to some m1 syrup templates, regenerate gold_v2, then run `make m4-e4-v2-dev`.
+- [ ] Clinician check: is a stated regimen with no verb ("X 10 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ") safe to read as "prescribed"? Is "prescribed vs already taken" really MAJOR (docs/severity.md) and not CRITICAL (double dosing)?

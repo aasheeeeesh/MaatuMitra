@@ -1,0 +1,5 @@
+type,type_name,candidate_fields,n_unique,caught,caught_ci,detected,detected_ci,to_review,to_review_ci,injections,note
+j,route swap,340,200,200,"[0.9812, 1.0]",200,"[0.9812, 1.0]",200,"[0.9812, 1.0]",200,
+k,strength drop,0,0,,,,,,,0,not measurable: 0 candidate fields in the 328 source records (no record has this field filled)
+l,status flip,392,200,200,"[0.9812, 1.0]",200,"[0.9812, 1.0]",200,"[0.9812, 1.0]",200,
+m,age band flip,80,80,80,"[0.9542, 1.0]",80,"[0.9542, 1.0]",80,"[0.9542, 1.0]",200,

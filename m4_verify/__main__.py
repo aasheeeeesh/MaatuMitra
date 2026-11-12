@@ -6,6 +6,10 @@
   MODE=mock uv run python -m m4_verify mock [--out-dir results/m4_verify]
   uv run python -m m4_verify e4 [--gold-dir DIR_OR_JSONL] [--lexicon CSV] [--n 200] [--seed N] [--out-dir DIR]
       (DEV only: under data/ only ids in data/splits/dev.txt are opened; test data -> exit 2)
+  uv run python -m m4_verify e4-v2 [--gold-dir data/gold] [--gold-v2-dir data/gold_v2] [--lexicon CSV]
+                                   [--n 200] [--seed N] [--out-dir DIR]
+      (planted record.v2 mistakes: route swap, strength drop, status flip, age band flip; DEV only,
+       both gold folders through the same guard; writes DIR/e4_v2/)
   uv run python -m m4_verify audit --sentences FILE.txt      (prints negation matches per line)
   uv run python -m m4_verify tune-c7 --pairs DEV_PAIRS.jsonl  (DEV only; see tune_c7.py)
 
@@ -71,6 +75,16 @@ def main(argv: list[str] | None = None) -> int:
     e.add_argument("--n", type=int, default=200)
     e.add_argument("--seed", type=int, default=20261109)
     e.add_argument("--out-dir", default=str(ROOT / "results" / "m4_verify"))
+
+    e2 = sub.add_parser("e4-v2", help="planted record.v2 mistakes (DEV gold + gold_v2 only)")
+    e2.add_argument("--gold-dir", default=str(ROOT / "data" / "gold"))
+    e2.add_argument("--gold-v2-dir", default=str(ROOT / "data" / "gold_v2"))
+    e2.add_argument("--lexicon")
+    e2.add_argument("--config")
+    e2.add_argument("--disable", nargs="*", default=[])
+    e2.add_argument("--n", type=int, default=200)
+    e2.add_argument("--seed", type=int, default=20261109)
+    e2.add_argument("--out-dir", default=str(ROOT / "results" / "m4_verify" / "dev"))
 
     a = sub.add_parser("audit", help="print negation analysis for each line of a text file")
     a.add_argument("--sentences", required=True)
@@ -140,6 +154,42 @@ def main(argv: list[str] | None = None) -> int:
             print(f"error: {ex}", file=sys.stderr)
             return 2
         _print_e4(s)
+        return 1 if s["verdict_validation_errors"] else 0
+
+    if args.cmd == "e4-v2":
+        from m4_verify.e4_v2 import run_e4_v2
+        from m4_verify.lexicon import load_lexicon
+        from m4_verify.split_guard import SplitGuardError, SplitRefused
+
+        for d in (args.gold_dir, args.gold_v2_dir):
+            if not Path(d).exists():
+                print(
+                    f"error: {d} does not exist (run m1 first; then: make m4-e4-v2-dev)",
+                    file=sys.stderr,
+                )
+                return 2
+        cfg = _cfg(args)
+        lex = load_lexicon(cfg.lexicon_path) if cfg.lexicon_path else cfg.lexicon()
+        try:
+            s = run_e4_v2(
+                args.gold_dir, args.gold_v2_dir, lex, cfg, args.out_dir, args.n, args.seed
+            )
+        except (SplitRefused, SplitGuardError) as ex:
+            print(f"error: {ex}", file=sys.stderr)
+            return 2
+        sys.stdout.reconfigure(encoding="utf-8")
+        c = s["clean"]
+        print(
+            f"e4-v2: {c['n_records']} v2 source records (skipped {s['problems']}); clean records "
+            f"flagged {c['records_flagged']}/{c['n_records']}; verdict errors {len(s['verdict_validation_errors'])}"
+        )
+        for r in s["catch_rates"]:
+            if r["n_unique"]:
+                print(
+                    f"  {r['type']} {r['type_name']:<15} caught {r['caught']}/{r['n_unique']} {r['caught_ci']} detected {r['detected']}/{r['n_unique']} {r['detected_ci']}"
+                )
+            else:
+                print(f"  {r['type']} {r['type_name']:<15} {r['note']}")
         return 1 if s["verdict_validation_errors"] else 0
 
     if args.cmd == "audit":
