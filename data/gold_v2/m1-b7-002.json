@@ -1,0 +1,100 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-b7-002",
+  "template_family_id": "b_cross_turn__f4",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಮಗು ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "levoflox ಮಾತ್ರೆ ಮಗು ತಿನ್ನುತ್ತೆ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b7-002",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗು",
+        "char_start": 0,
+        "char_end": 3
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "levofloxacin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "levoflox ಮಾತ್ರೆ ಮಗು ತಿನ್ನುತ್ತೆ",
+          "char_start": 33,
+          "char_end": 63
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "already_taken",
+        "speaker": "caregiver",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 42,
+            "char_end": 48
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 42,
+            "char_end": 48
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತಿನ್ನುತ್ತೆ",
+            "char_start": 53,
+            "char_end": 63
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "ask the doctor and take a syrup",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 65,
+          "char_end": 99
+        },
+        "speaker": "nurse"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

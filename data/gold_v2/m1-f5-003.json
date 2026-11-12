@@ -1,0 +1,78 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-f5-003",
+  "template_family_id": "f_nurse_symptoms__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ತಲೆನೋವು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಮೂರು ದಿನದಿಂದ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಸುಸ್ತು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಬಂದಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f5-003",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 0,
+          "char_end": 7
+        }
+      },
+      {
+        "name": "tiredness",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸುಸ್ತು",
+          "char_start": 41,
+          "char_end": 47
+        }
+      },
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 4,
+          "span_text": "ಜ್ವರ",
+          "char_start": 62,
+          "char_end": 66
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

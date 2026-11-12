@@ -53,7 +53,11 @@ def test_manifest_covers_every_generated_file(manifest_rows, split_ids):
     assert len(files) == len(text_rows)  # audio rows are covered by test_audio_*.py
     expected = set()
     for cid in split_of:
-        expected |= {f"data/gold/{cid}.json", f"data/transcripts/gold/{cid}__gold.json"}
+        expected |= {
+            f"data/gold/{cid}.json",
+            f"data/gold_v2/{cid}.json",
+            f"data/transcripts/gold/{cid}__gold.json",
+        }
     expected |= {"data/twins/twins_dev.jsonl", "data/twins/twins_test.jsonl"}
     assert set(files) == expected
     for f, r in files.items():

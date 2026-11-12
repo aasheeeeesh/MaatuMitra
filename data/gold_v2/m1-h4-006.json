@@ -1,0 +1,103 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-h4-006",
+  "template_family_id": "h_followup__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಮೈಕೈನೋವು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಸೇಟಿರಿಜಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಎರಡು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h4-006",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "body ache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಮೈಕೈನೋವು",
+          "char_start": 0,
+          "char_end": 8
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cetirizine",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸೇಟಿರಿಜಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 22,
+          "char_end": 70
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 38,
+            "char_end": 44
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 38,
+            "char_end": 44
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 71,
+            "char_end": 83
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if you do not improve in two days, come back",
+      "gold_span": {
+        "turn_index": 3,
+        "span_text": "ಎರಡು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ",
+        "char_start": 85,
+        "char_end": 125
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

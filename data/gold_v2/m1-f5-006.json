@@ -1,0 +1,78 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-f5-006",
+  "template_family_id": "f_nurse_symptoms__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಅತಿಸಾರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಮೂರು ದಿನದಿಂದ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಮೈಕೈನೋವು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಬಂದಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f5-006",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "diarrhoea",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಅತಿಸಾರ",
+          "char_start": 0,
+          "char_end": 6
+        }
+      },
+      {
+        "name": "body ache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಮೈಕೈನೋವು",
+          "char_start": 40,
+          "char_end": 48
+        }
+      },
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 4,
+          "span_text": "ಜ್ವರ",
+          "char_start": 62,
+          "char_end": 66
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

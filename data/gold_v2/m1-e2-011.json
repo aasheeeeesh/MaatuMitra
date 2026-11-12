@@ -1,0 +1,150 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-e2-011",
+  "template_family_id": "e_pharmacist__f1",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಪ್ರೆಡ್ನಿಸಲೋನ್ 10 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಮಾಂಟೆಲುಕಾಸ್ಟ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e2-011",
+    "encounter_type": "pharmacist_dispensing",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "prednisolone",
+        "dose_value": 10,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಪ್ರೆಡ್ನಿಸಲೋನ್ 10 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 52
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 20,
+            "char_end": 26
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 20,
+            "char_end": 26
+          },
+          "food_timing": {
+            "turn_index": 3,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 174,
+            "char_end": 182
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 53,
+            "char_end": 65
+          }
+        }
+      },
+      {
+        "drug": "montelukast",
+        "dose_value": 4,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 14,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಮಾಂಟೆಲುಕಾಸ್ಟ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ",
+          "char_start": 67,
+          "char_end": 125
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 86,
+            "char_end": 92
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 86,
+            "char_end": 92
+          },
+          "food_timing": {
+            "turn_index": 3,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 174,
+            "char_end": 182
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 126,
+            "char_end": 138
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "take after food",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 3,
+          "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 174,
+          "char_end": 195
+        },
+        "speaker": "pharmacist"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

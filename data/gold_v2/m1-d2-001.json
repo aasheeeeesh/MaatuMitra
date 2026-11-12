@@ -1,0 +1,89 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-d2-001",
+  "template_family_id": "d_no_antibiotic__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ನೆಗಡಿ ಇದೆ, ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ನೆಗಡಿಗೆ ಡಾಕ್ಸಿಸೈಕ್ಲಿನ್ ಬೇಡ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ವೈದ್ಯರ ಚೀಟಿ ಇಲ್ಲದೆ ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡುವಂತಿಲ್ಲ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-d2-001",
+    "encounter_type": "pharmacist_dispensing",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 0,
+          "char_end": 5
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "doxycycline",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಡಾಕ್ಸಿಸೈಕ್ಲಿನ್ ಬೇಡ",
+          "char_start": 37,
+          "char_end": 55
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "advised_against",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಬೇಡ",
+            "char_start": 52,
+            "char_end": 55
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "antibiotics cannot be given without a doctor's prescription",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರ ಚೀಟಿ ಇಲ್ಲದೆ ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡುವಂತಿಲ್ಲ",
+          "char_start": 57,
+          "char_end": 99
+        },
+        "speaker": "pharmacist"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

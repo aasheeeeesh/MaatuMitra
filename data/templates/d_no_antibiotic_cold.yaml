@@ -14,12 +14,12 @@ families:
         turns:
           - {role: patient, text: "[[s1|ನೆಗಡಿ]] ಮತ್ತು [[s2|ಕೆಮ್ಮು]] {K1.kn} ದಿನದಿಂದ ಇದೆ, ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಿ."}
           - {role: physician, text: "[[a1|ನೆಗಡಿಗೆ {AB} {N1}]]."}
-          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
         items:
           - {kind: symptom, span: s1, name: cold}
           - {kind: symptom, span: s2, name: cough}
           - {kind: advice, span: a1, text: "do not take antibiotics for a cold", neg: N1}
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
       - id: d2
         encounter: pharmacist_dispensing
         grounding: [KN-3]
@@ -29,11 +29,11 @@ families:
           N2: {type: neg, p_neg: 1.0, forms: [{neg: "ಕೊಡುವಂತಿಲ್ಲ", pos: "ಕೊಡಬಹುದು", patterns: [NEG-S01]}]}
         turns:
           - {role: patient, text: "[[s1|ನೆಗಡಿ]] ಇದೆ, ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಿ."}
-          - {role: pharmacist, text: "ನೆಗಡಿಗೆ [[m1|{D1.name} {N1}]]."}
+          - {role: pharmacist, text: "ನೆಗಡಿಗೆ [[m1|{D1.name} [[t1|{N1}]]]]."}
           - {role: pharmacist, text: "[[a1|ವೈದ್ಯರ ಚೀಟಿ ಇಲ್ಲದೆ ಆಂಟಿಬಯಾಟಿಕ್ {N2}]]."}
         items:
           - {kind: symptom, span: s1, name: cold}
-          - {kind: medication, span: m1, slot: D1, neg: N1}
+          - {kind: medication, span: m1, slot: D1, neg: N1, status_neg: advised_against, status_pos: prescribed, status_span: t1}
           - {kind: advice, span: a1, text: "antibiotics cannot be given without a doctor's prescription", neg: N2}
   - id: d_no_antibiotic__f2
     templates:
@@ -52,7 +52,7 @@ families:
               - {neg: "ಕೊಡಬೇಡಿ", pos: "ಕೊಡಿ", patterns: [NEG-S06]}
               - {neg: "ಬೇಡ", pos: "ಬೇಕು", patterns: [NEG-W04]}
         turns:
-          - {role: nurse, text: "ಮಗುವಿಗೆ [[s1|ನೆಗಡಿ]] ಮಾತ್ರ ಇದೆಯಾ?"}
+          - {role: nurse, text: "[[g1|ಮಗುವಿಗೆ]] [[s1|ನೆಗಡಿ]] ಮಾತ್ರ ಇದೆಯಾ?"}
           - {role: caregiver, text: "ಹೌದು, [[s2|{S2.kn} {N1}]]."}
           - {role: nurse, text: "[[a1|ಹಾಗಾದರೆ {AB} {N2}]]. [[a2|ಬಿಸಿ ನೀರು ಕುಡಿಸಿ]]."}
         items:
@@ -71,12 +71,12 @@ families:
           - {role: patient, text: "ಡಾಕ್ಟರೇ, [[s1|ಕೆಮ್ಮು]] ಮತ್ತು [[s2|ನೆಗಡಿ]] ಇದೆ."}
           - {role: physician, text: "[[a1|ವೈರಲ್ ಸೋಂಕಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು {N1}]]."}
           - {role: patient, text: "ಸರಿ, [[m1|{D1.name} {D1.dose}]] ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"}
-          - {role: physician, text: "{X1}"}
+          - {role: physician, text: "[[t1|{X1}]]"}
         items:
           - {kind: symptom, span: s1, name: cough}
           - {kind: symptom, span: s2, name: cold}
           - {kind: advice, span: a1, text: "antibiotics are not needed for a viral infection", neg: N1}
-          - {kind: medication, span: m1, slot: D1, fields: [dose], neg: X1}
+          - {kind: medication, span: m1, slot: D1, fields: [dose], neg: X1, status_neg: advised_against, status_pos: prescribed, status_span: t1}
       - id: d5
         encounter: physician_consult
         grounding: [KN-3, KN-2]
@@ -92,9 +92,9 @@ families:
         turns:
           - {role: patient, text: "[[s1|ಜ್ವರ]] ಮತ್ತು [[s2|ಮೈಕೈನೋವು]] ಇದೆ."}
           - {role: physician, text: "ಇದು ವೈರಲ್ ಜ್ವರ, ಆದ್ದರಿಂದ [[a1|{AB} {N1}]]."}
-          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
         items:
           - {kind: symptom, span: s1, name: fever}
           - {kind: symptom, span: s2, name: "body ache"}
           - {kind: advice, span: a1, text: "do not take antibiotics", neg: N1}
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}

@@ -1,0 +1,120 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g2-009",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "levofloxacin 750 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಮತ್ತು ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಊಟದ ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g2-009",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "levofloxacin",
+        "dose_value": 750,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "levofloxacin 750 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 48
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "food_timing": {
+            "turn_index": 2,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 140,
+            "char_end": 148
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 99,
+            "char_end": 111
+          }
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ibuprofen 400 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 55,
+          "char_end": 98
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "food_timing": {
+            "turn_index": 2,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 140,
+            "char_end": 148
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 99,
+            "char_end": 111
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "take after food",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 140,
+          "char_end": 161
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

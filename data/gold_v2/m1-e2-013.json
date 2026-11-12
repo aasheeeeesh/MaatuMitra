@@ -1,0 +1,150 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-e2-013",
+  "template_family_id": "e_pharmacist__f1",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಒಮೆಪ್ರಜೋಲ್ ೨೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "clarithro ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಹೌದು, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e2-013",
+    "encounter_type": "pharmacist_dispensing",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "omeprazole",
+        "dose_value": 20,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 14,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಒಮೆಪ್ರಜೋಲ್ ೨೦ mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿವಸ",
+          "char_start": 0,
+          "char_end": 60
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "capsule",
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+            "char_start": 17,
+            "char_end": 27
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+            "char_start": 17,
+            "char_end": 27
+          },
+          "food_timing": {
+            "turn_index": 3,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 173,
+            "char_end": 181
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 61,
+            "char_end": 73
+          }
+        }
+      },
+      {
+        "drug": "clarithromycin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "clarithro ೫೦೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ",
+          "char_start": 75,
+          "char_end": 124
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 92,
+            "char_end": 98
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 92,
+            "char_end": 98
+          },
+          "food_timing": {
+            "turn_index": 3,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 173,
+            "char_end": 181
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 125,
+            "char_end": 137
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "take after food",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 3,
+          "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 173,
+          "char_end": 194
+        },
+        "speaker": "pharmacist"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-b5-005",
+  "template_family_id": "b_cross_turn__f3",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ Zinc ಕೊಟ್ಟಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "Ors ಕೊಟ್ಟಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಎಲ್ಲ ಔಷಧಿ ಸಮಯಕ್ಕೆ ಕೊಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b5-005",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "zinc",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Zinc",
+          "char_start": 8,
+          "char_end": 12
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "already_taken",
+        "speaker": "asha",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಹೌದು",
+            "char_start": 27,
+            "char_end": 31
+          }
+        }
+      },
+      {
+        "drug": "ors",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Ors",
+          "char_start": 33,
+          "char_end": 36
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "not_taken",
+        "speaker": "asha",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 3,
+            "span_text": "ಇಲ್ಲಾ",
+            "char_start": 51,
+            "char_end": 56
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "give all medicines on time",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 4,
+          "span_text": "ಎಲ್ಲ ಔಷಧಿ ಸಮಯಕ್ಕೆ ಕೊಡಿ",
+          "char_start": 58,
+          "char_end": 80
+        },
+        "speaker": "asha"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಎಲ್ಲ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": true
+  }
+}

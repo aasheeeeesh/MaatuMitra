@@ -1,0 +1,81 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-b3-000",
+  "template_family_id": "b_cross_turn__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಈ ವಾರ ಪ್ಯಾರಸಿಟಮಾಲ್ ತೆಗೆದುಕೊಂಡಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ತಲೆನೋವು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b3-000",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 44,
+          "char_end": 51
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+          "char_start": 6,
+          "char_end": 18
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "not_taken",
+        "speaker": "nurse",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಇಲ್ಲ",
+            "char_start": 38,
+            "char_end": 42
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

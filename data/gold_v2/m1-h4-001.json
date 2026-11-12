@@ -1,0 +1,103 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-h4-001",
+  "template_family_id": "h_followup__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಕೆಮ್ಮು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಎರಡು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h4-001",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 0,
+          "char_end": 6
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cefuroxime",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿನ",
+          "char_start": 20,
+          "char_end": 77
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 45,
+            "char_end": 51
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 45,
+            "char_end": 51
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 78,
+            "char_end": 90
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if you do not improve in two days, come back",
+      "gold_span": {
+        "turn_index": 3,
+        "span_text": "ಎರಡು ದಿನದಲ್ಲಿ ಸುಧಾರಿಸದಿದ್ದರೆ ಮತ್ತೆ ಬನ್ನಿ",
+        "char_start": 92,
+        "char_end": 132
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

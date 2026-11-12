@@ -1,0 +1,92 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-b2-001",
+  "template_family_id": "b_cross_turn__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮೆಟ್ರೊನಿಡಜೋಲ್ ಮಾತ್ರೆ ತೆಗೆದುಕೊಂಡಿರಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b2-001",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "metronidazole",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಮೆಟ್ರೊನಿಡಜೋಲ್ ಮಾತ್ರೆ",
+          "char_start": 0,
+          "char_end": 20
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "not_taken",
+        "speaker": "asha",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 14,
+            "char_end": 20
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 14,
+            "char_end": 20
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಇಲ್ಲಾ",
+            "char_start": 36,
+            "char_end": 41
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "take the tablets as the doctor said",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 43,
+          "char_end": 79
+        },
+        "speaker": "asha"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

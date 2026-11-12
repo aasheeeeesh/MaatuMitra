@@ -184,4 +184,7 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Greedy decoding (beam size 1)**: the model picks the single most likely next token each step. Fast, but can get stuck repeating the same syllables.
 - **Common subset**: the exact same list of audio files that every model is run and scored on, so models are never compared on different data.
 - **Bootstrap CI**: confidence interval from re-drawing the utterances with replacement 1000 times; the 2.5% and 97.5% points of the resulting means.
+- **Nested marker**: a template tag `[[x1|...]]` placed inside another tag, so a small evidence span can sit inside the span of the whole medication phrase.
+- **Append-only lock**: a hash list that may only gain new lines; old lines must stay byte-for-byte the same.
+- **Metadata key (template)**: an extra field in a template file that describes meaning (status, route) without changing the sentence that is produced.
 <!-- GLOSSARY-END -->

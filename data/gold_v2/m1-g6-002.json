@@ -1,0 +1,131 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g6-002",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಕೆಮ್ಮು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಮೂರು ದಿನದಿಂದ, ಯಾವುದೇ ಅತಿಸಾರ ಇಲ್ಲ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. Nitrofurantoin 100 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ. Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-002",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 0,
+          "char_end": 6
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಯಾವುದೇ ಅತಿಸಾರ ಇಲ್ಲ",
+          "char_start": 40,
+          "char_end": 58
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "nitrofurantoin",
+        "dose_value": 100,
+        "dose_unit": "mg",
+        "frequency_per_day": 4,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Nitrofurantoin 100 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 64,
+          "char_end": 113
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 114,
+            "char_end": 126
+          }
+        }
+      },
+      {
+        "drug": "cetirizine",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 128,
+          "char_end": 176
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 144,
+            "char_end": 150
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 144,
+            "char_end": 150
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ಕೂಡ",
+            "char_start": 177,
+            "char_end": 180
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

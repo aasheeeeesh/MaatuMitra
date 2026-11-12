@@ -1,0 +1,60 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-a1-000",
+  "template_family_id": "a_fever_cough__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಎಷ್ಟು ದಿನದಿಂದ ಜ್ವರ ಇದೆ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಮೂರು ದಿನದಿಂದ ಜ್ವರ ಇದೆ, ಅತಿಸಾರ ಇಲ್ಲ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a1-000",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಮೂರು ದಿನದಿಂದ ಜ್ವರ ಇದೆ",
+          "char_start": 32,
+          "char_end": 53
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಅತಿಸಾರ ಇಲ್ಲ",
+          "char_start": 55,
+          "char_end": 66
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

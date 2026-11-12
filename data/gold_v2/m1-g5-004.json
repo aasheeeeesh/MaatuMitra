@@ -1,0 +1,129 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g5-004",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "Tablet ciprofloxacin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Ibuprofen 200 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮಾತ್ರ, fever ಇದ್ದರೆ ಮಾತ್ರ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g5-004",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ciprofloxacin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ciprofloxacin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 7,
+          "char_end": 54
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "Tablet",
+            "char_start": 0,
+            "char_end": 6
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "Tablet",
+            "char_start": 0,
+            "char_end": 6
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ciprofloxacin 250 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+            "char_start": 7,
+            "char_end": 54
+          }
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": 200,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Ibuprofen 200 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 56,
+          "char_end": 90
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": true,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "as_needed": {
+            "turn_index": 1,
+            "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+            "char_start": 98,
+            "char_end": 116
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "Ibuprofen 200 mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+            "char_start": 56,
+            "char_end": 90
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "only if there is fever",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 98,
+          "char_end": 116
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರ",
+      "ಇದ್ದರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-h1-007",
+  "template_family_id": "h_followup__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h1-007",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ciprofloxacin",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ",
+          "char_start": 0,
+          "char_end": 57
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "nurse",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 24,
+            "char_end": 30
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 24,
+            "char_end": 30
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 58,
+            "char_end": 70
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if the fever does not come down, come back in three days",
+      "gold_span": {
+        "turn_index": 1,
+        "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
+        "char_start": 72,
+        "char_end": 118
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

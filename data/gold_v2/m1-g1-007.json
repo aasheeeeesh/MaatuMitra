@@ -1,0 +1,78 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g1-007",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "cephalexin 250 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Antibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ ಡಾಕ್ಟರ್."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g1-007",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cephalexin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": 4,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "cephalexin 250 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಒಂದು ವಾರ",
+          "char_start": 0,
+          "char_end": 46
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 47,
+            "char_end": 59
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "finish the full antibiotic course",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Antibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ",
+          "char_start": 61,
+          "char_end": 92
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

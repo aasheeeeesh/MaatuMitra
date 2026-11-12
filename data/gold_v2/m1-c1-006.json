@@ -1,0 +1,80 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-c1-006",
+  "template_family_id": "c_stopped_early__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಡಾಕ್ಟರ್ ಕೊಟ್ಟ ಮಾತ್ರೆ ಮುಗಿಯಿತಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ ಕೋರ್ಸ್ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆವು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಆಂಟಿಬಯಾಟಿಕ್ ಕೋರ್ಸ್ ಪೂರ್ತಿ ಮುಗಿಸಬೇಕು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c1-006",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefuroxime",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ ಕೋರ್ಸ್ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆವು",
+          "char_start": 31,
+          "char_end": 73
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "stopped_early",
+        "speaker": "caregiver",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆವು",
+            "char_start": 53,
+            "char_end": 73
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "the full antibiotic course must be finished",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಆಂಟಿಬಯಾಟಿಕ್ ಕೋರ್ಸ್ ಪೂರ್ತಿ ಮುಗಿಸಬೇಕು",
+          "char_start": 75,
+          "char_end": 110
+        },
+        "speaker": "asha"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

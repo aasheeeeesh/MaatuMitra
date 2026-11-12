@@ -1,0 +1,52 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-f2-007",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಏನು ತೊಂದರೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಜ್ವರ ಇಲ್ಲಾ ಮತ್ತು ಅತಿಸಾರ ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f2-007",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಇಲ್ಲಾ",
+          "char_start": 12,
+          "char_end": 22
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಅತಿಸಾರ ಇದೆ",
+          "char_start": 29,
+          "char_end": 39
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-a6-006",
+  "template_family_id": "a_fever_cough__f3",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಕೆಮ್ಮು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಜ್ವರ ಬಂದಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಆರೋಗ್ಯ ಕೇಂದ್ರ ಅಲ್ಲಿ ಇದೆ, ನಾಳೆ ಅಲ್ಲಿ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a6-006",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 8,
+          "char_end": 14
+        }
+      },
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಜ್ವರ",
+          "char_start": 28,
+          "char_end": 32
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": {
+      "text": "come to the health centre there tomorrow",
+      "gold_span": {
+        "turn_index": 4,
+        "span_text": "ನಾಳೆ ಅಲ್ಲಿ ಬನ್ನಿ",
+        "char_start": 74,
+        "char_end": 90
+      }
+    }
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಅಲ್ಲಿ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

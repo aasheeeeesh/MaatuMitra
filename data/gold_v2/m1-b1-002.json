@@ -1,0 +1,98 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-b1-002",
+  "template_family_id": "b_cross_turn__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗು ನಿನ್ನೆ Cetirizine ಸಿರಪ್ ಕುಡಿಯಿತಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಹೌದು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಔಷಧಿ ಕುಡಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b1-002",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗು",
+        "char_start": 0,
+        "char_end": 3
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cetirizine",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Cetirizine ಸಿರಪ್",
+          "char_start": 11,
+          "char_end": 27
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "syrup",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "already_taken",
+        "speaker": "asha",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 22,
+            "char_end": 27
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 22,
+            "char_end": 27
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಹೌದು",
+            "char_start": 38,
+            "char_end": 42
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "give the medicine as the doctor said",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರು ಹೇಳಿದಂತೆ ಔಷಧಿ ಕುಡಿಸಿ",
+          "char_start": 44,
+          "char_end": 72
+        },
+        "speaker": "asha"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -10,11 +10,11 @@ families:
         slots:
           D1: {type: drug, dose: given, needs: [freq, dur]}
         turns:
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: patient, text: "ಸರಿ, ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕಾ?"}
           - {role: pharmacist, text: "ಹೌದು, [[a1|ಊಟದ ನಂತರ]]. [[a2|ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1, food_timing: after_food, food_span: a1}
           - {kind: advice, span: a1, text: "take after food"}
           - {kind: advice, span: a2, text: "finish all tablets"}
       - id: e2
@@ -23,13 +23,13 @@ families:
           D1: {type: drug, dose: given, needs: [freq, dur]}
           D2: {type: drug, dose: given, needs: [freq, dur], distinct_from: [D1]}
         turns:
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
-          - {role: pharmacist, text: "[[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+          - {role: pharmacist, text: "[[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] [[t2|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: patient, text: "ಎರಡೂ ಔಷಧಿ ಒಟ್ಟಿಗೆ ಕೊಡಬಹುದಾ?"}
-          - {role: pharmacist, text: "ಹೌದು, [[a1|ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+          - {role: pharmacist, text: "ಹೌದು, [[a1|[[w1|ಊಟದ ನಂತರ]] ತೆಗೆದುಕೊಳ್ಳಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
-          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1, food_timing: after_food, food_span: w1}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur], status: prescribed, status_span: t2, food_timing: after_food, food_span: w1}
           - {kind: advice, span: a1, text: "take after food"}
       - id: e3
         grounding: [KN-4]
@@ -38,14 +38,14 @@ families:
           D2: {type: drug, dose: given, needs: [freq, dur], distinct_from: [D1]}
           D3: {type: drug, dose: given, needs: [freq, dur], distinct_from: [D1, D2]}
         turns:
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
-          - {role: pharmacist, text: "[[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
-          - {role: pharmacist, text: "[[m3|{D3.name} {D3.dose_tab} {D3.freq} {D3.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+          - {role: pharmacist, text: "[[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] [[t2|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+          - {role: pharmacist, text: "[[m3|{D3.name} {D3.dose_tab} {D3.freq} {D3.dur}]] [[t3|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: patient, text: "ಸರಿ, ಧನ್ಯವಾದಗಳು."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
-          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
-          - {kind: medication, span: m3, slot: D3, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur], status: prescribed, status_span: t2}
+          - {kind: medication, span: m3, slot: D3, fields: [dose, freq, dur], status: prescribed, status_span: t3}
   - id: e_pharmacist__f2
     templates:
       - id: e4
@@ -55,14 +55,14 @@ families:
           D2: {type: drug, dose: given, needs: [freq, dur], distinct_from: [D1]}
           D3: {type: drug, dose: given, needs: [freq, dur], distinct_from: [D1, D2]}
         turns:
-          - {role: patient, text: "ಡಾಕ್ಟರ್ ಚೀಟಿ ಇಲ್ಲಿ ಇದೆ."}
+          - {role: patient, text: "[[t1|ಡಾಕ್ಟರ್ ಚೀಟಿ]] ಇಲ್ಲಿ ಇದೆ."}
           - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]]."}
           - {role: pharmacist, text: "[[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]]."}
           - {role: pharmacist, text: "[[m3|{D3.name} {D3.dose_tab} {D3.freq} {D3.dur}]], [[a1|ಊಟದ ನಂತರ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
-          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
-          - {kind: medication, span: m3, slot: D3, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur], status: prescribed, status_span: t1}
+          - {kind: medication, span: m3, slot: D3, fields: [dose, freq, dur], status: prescribed, status_span: t1, food_timing: after_food, food_span: a1}
           - {kind: advice, span: a1, text: "take after food"}
       - id: e5
         grounding: [KN-1]
@@ -71,24 +71,24 @@ families:
           D2: {type: drug, dose: none, distinct_from: [D1]}
           N1: {type: neg, p_neg: 0.85, forms: [{neg: " ಅಲ್ಲ", pos: "", patterns: [NEG-W03]}]}
         turns:
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: patient, text: "ಇದು {D2.name} ಮಾತ್ರೆನಾ?"}
           - {role: pharmacist, text: "[[m2|ಇದು {D2.name}{N1}]], ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
-          - {kind: medication, span: m2, slot: D2, neg: N1}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
+          - {kind: medication, span: m2, slot: D2, neg: N1, status: unknown}
       - id: e6
         grounding: [KN-2]
         slots:
           D1: {type: drug, dose: given, needs: [freq]}
           D2: {type: drug, dose: given, needs: [freq, dur], distinct_from: [D1]}
         turns:
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq}]] ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq}]] ಮಾತ್ರ [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: patient, text: "{D1.freq}, ಅಲ್ವಾ?"}
-          - {role: pharmacist, text: "ಹೌದು. [[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "ಹೌದು. [[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] [[t2|ಕೂಡ ತೆಗೆದುಕೊಳ್ಳಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq]}
-          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq], status: prescribed, status_span: t1}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur], status: prescribed, status_span: t2}
   - id: e_pharmacist__f3
     templates:
       - id: e7
@@ -98,13 +98,13 @@ families:
           D2: {type: drug, where: {generic: [zinc]}, dose: given, needs: [freq, dur]}
           N1: {type: neg, p_neg: 0.9, forms: [{neg: "ಕುಡಿಯದಿದ್ದರೆ", pos: "ವಾಂತಿ ಮಾಡಿದರೆ", patterns: [NEG-S03]}]}
         turns:
-          - {role: caregiver, text: "ಮಗುವಿಗೆ [[s1|ಅತಿಸಾರ]] ಇದೆ."}
-          - {role: pharmacist, text: "[[m1|{D1.name}]] ಆಗಾಗ ಕುಡಿಸಿ. [[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] ಕೊಡಿ."}
+          - {role: caregiver, text: "[[g1|ಮಗುವಿಗೆ]] [[s1|ಅತಿಸಾರ]] ಇದೆ."}
+          - {role: pharmacist, text: "[[m1|{D1.name}]] ಆಗಾಗ [[t1|ಕುಡಿಸಿ]]. [[m2|{D2.name} {D2.dose_tab} {D2.freq} {D2.dur}]] [[t2|ಕೊಡಿ]]."}
           - {role: pharmacist, text: "[[f1|ಮಗು {N1} ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ]]."}
         items:
           - {kind: symptom, span: s1, name: diarrhoea}
-          - {kind: medication, span: m1, slot: D1}
-          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, status: prescribed, status_span: t1, route: oral, route_span: t1}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur], status: prescribed, status_span: t2}
           - {kind: follow_up, span: f1, neg: N1, text: "if the child does not drink, bring the child to hospital", text_pos: "if the child vomits, bring the child to hospital"}
       - id: e8
         grounding: [KN-4]
@@ -112,12 +112,12 @@ families:
           D1: {type: drug, where: {generic: [ors]}, dose: none}
           D2: {type: drug, where: {generic: [paracetamol]}, dose: child_syrup, needs: [freq, dur]}
         turns:
-          - {role: caregiver, text: "ಮಗುವಿಗೆ [[s1|ವಾಂತಿ]] ಮತ್ತು [[s2|ಜ್ವರ]] ಇದೆ."}
-          - {role: pharmacist, text: "[[m1|{D1.name}]] ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ."}
-          - {role: pharmacist, text: "[[m2|{D2.name} ಸಿರಪ್ {D2.dose} {D2.freq} {D2.dur}]] ಕೊಡಿ."}
+          - {role: caregiver, text: "[[g1|ಮಗುವಿಗೆ]] [[s1|ವಾಂತಿ]] ಮತ್ತು [[s2|ಜ್ವರ]] ಇದೆ."}
+          - {role: pharmacist, text: "[[m1|{D1.name}]] ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ [[t1|ಕುಡಿಸಿ]]."}
+          - {role: pharmacist, text: "[[m2|{D2.name} [[p1|ಸಿರಪ್]] {D2.dose} {D2.freq} {D2.dur}]] [[t2|ಕೊಡಿ]]."}
           - {role: caregiver, text: "ಸರಿ."}
         items:
           - {kind: symptom, span: s1, name: vomiting}
           - {kind: symptom, span: s2, name: fever}
-          - {kind: medication, span: m1, slot: D1}
-          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, status: prescribed, status_span: t1, route: oral, route_span: t1}
+          - {kind: medication, span: m2, slot: D2, fields: [dose, freq, dur], status: prescribed, status_span: t2, formulation: syrup, formulation_span: p1}

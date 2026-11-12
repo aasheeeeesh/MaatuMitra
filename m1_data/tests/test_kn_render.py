@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import random
 
+import pytest
+
 from m1_data import kn, negation, render
 
 
@@ -68,3 +70,27 @@ def test_drug_surface_forms_are_deterministic():
     a = [render.drug_surface(amox, "name", random.Random(7)) for _ in range(3)]
     b = [render.drug_surface(amox, "name", random.Random(7)) for _ in range(3)]
     assert a == b
+
+
+def test_nested_markers_and_automatic_form_span():
+    """gold.v2 evidence spans sit inside the main span; the removal of markers never changes text."""
+
+    from m1_data.lexicon import LEXICON_CSV, load_lexicon
+
+    drug = load_lexicon(LEXICON_CSV)["paracetamol"]
+    fill = render.DrugFill(drug=drug, dose=(500, "mg"), freq=None, dur=None, rng=random.Random(1))
+    slots = {"D1": fill}
+    plain, _ = render.render_text("{D1.name} {D1.dose_tab} ತೆಗೆದುಕೊಳ್ಳಿ.", slots)
+    marked, spans = render.render_text(
+        "[[m1|{D1.name} [[p1|{D1.dose_tab}]]]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]].", slots
+    )
+    assert marked == plain
+    s, e = spans["D1.form"]
+    assert marked[s:e] == "ಮಾತ್ರೆ"
+    ps, pe = spans["p1"]
+    ms, me = spans["m1"]
+    assert ms <= ps < pe <= me and marked[ms:me].endswith(marked[ps:pe])
+    with pytest.raises(ValueError):
+        render.render_text("[[m1|abc]]]]", slots)
+    with pytest.raises(ValueError):
+        render.render_text("[[m1|[[p1|abc]]", slots)

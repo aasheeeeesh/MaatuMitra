@@ -166,8 +166,50 @@ def write_reports(data_dir: Path = ROOT / "data", out_dir: Path = RESULTS) -> di
     (out_dir / "coverage.json").write_text(
         json.dumps(cov, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"
     )
+    write_gold_v2_reports(data_dir, out_dir)
     un = unattested_report()
     (out_dir / "unattested_tokens.json").write_text(
         json.dumps(un, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"
+    )
+    return cov
+
+
+def write_gold_v2_reports(data_dir: Path = ROOT / "data", out_dir: Path = RESULTS) -> dict:
+    """results/m1_data/gold_v2_coverage.{json,md}: counts of the gold.v2 labels per split."""
+    from m1_data.goldv2 import coverage_v2
+
+    docs = {}
+    for split in ("dev", "test"):
+        for cid in (data_dir / "splits" / f"{split}.txt").read_text(encoding="utf-8").split():
+            p = data_dir / "gold_v2" / f"{cid}.json"
+            docs[cid] = (split, json.loads(p.read_text(encoding="utf-8")))
+    cov = coverage_v2(docs)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "gold_v2_coverage.json").write_text(
+        json.dumps(cov, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"
+    )
+    cols = ("dev", "test", "all")
+    rows = ["| field | value | dev | test | all |", "|---|---|---|---|---|"]
+    for field in ("status", "route", "formulation", "as_needed", "food_timing", "patient_age_band"):
+        for v in sorted(set().union(*(cov[k][field] for k in cols))):
+            counts = " | ".join(str(cov[k][field].get(v, 0)) for k in cols)
+            rows.append(f"| {field} | {v} | {counts} |")
+    for field in (
+        "conversations",
+        "medications",
+        "liquid_doses_ml",
+        "liquid_doses_with_null_strength",
+        "strength_set",
+        "weight_kg_set",
+    ):
+        rows.append(f"| {field} | | " + " | ".join(str(cov[k][field]) for k in cols) + " |")
+    note = (
+        "Counts are conversations (patient_age_band, conversations) or medication entries (all "
+        "others), derived from data/gold_v2 (labels come from the templates). Liquid doses are "
+        "doses in ml; none states a strength, so all have null strength (the case m4 must flag "
+        "as CR-LIQUID-STRENGTH). Age is null where nobody says the word for child.\n\n"
+    )
+    (out_dir / "gold_v2_coverage.md").write_text(
+        "# gold.v2 coverage\n\n" + note + "\n".join(rows) + "\n", encoding="utf-8", newline="\n"
     )
     return cov

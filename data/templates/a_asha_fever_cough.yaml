@@ -11,7 +11,7 @@ families:
           S2: {type: symptom, pool: [cough, cold, headache, chills, diarrhoea]}
           N1: {type: neg, forms: EXIST, p_neg: 0.7}
         turns:
-          - {role: asha, text: "ಮಗುವಿಗೆ ಎಷ್ಟು ದಿನದಿಂದ ಜ್ವರ ಇದೆ?"}
+          - {role: asha, text: "[[g1|ಮಗುವಿಗೆ]] ಎಷ್ಟು ದಿನದಿಂದ ಜ್ವರ ಇದೆ?"}
           - {role: caregiver, text: "[[s1|{K1.kn} ದಿನದಿಂದ ಜ್ವರ ಇದೆ]], [[s2|{S2.kn} {N1}]]."}
         items:
           - {kind: symptom, span: s1, name: fever}
@@ -23,7 +23,7 @@ families:
           S2: {type: symptom, pool: [fever, cold, vomiting, chills]}
           N1: {type: neg, forms: EXIST, p_neg: 0.7}
         turns:
-          - {role: asha, text: "ಮಗುವಿಗೆ ಕೆಮ್ಮು ಇದೆಯಾ? ಎಷ್ಟು ದಿನದಿಂದ?"}
+          - {role: asha, text: "[[g1|ಮಗುವಿಗೆ]] ಕೆಮ್ಮು ಇದೆಯಾ? ಎಷ್ಟು ದಿನದಿಂದ?"}
           - {role: caregiver, text: "ಹೌದು, [[s1|ಕೆಮ್ಮು {K1.kn} ದಿನದಿಂದ ಇದೆ]], [[s2|{S2.kn} {N1}]]."}
         items:
           - {kind: symptom, span: s1, name: cough}
@@ -39,12 +39,12 @@ families:
           X1: {type: xturn, p_neg: 0.75}
         turns:
           - {role: asha, text: "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"}
-          - {role: caregiver, text: "[[s1|ಜ್ವರ {K1.kn} ದಿನದಿಂದ ಇದೆ]]. ನಿನ್ನೆ ರಾತ್ರಿ [[m1|{D1.name} ಸಿರಪ್]] ಕೊಟ್ಟೆ."}
+          - {role: caregiver, text: "[[s1|ಜ್ವರ {K1.kn} ದಿನದಿಂದ ಇದೆ]]. ನಿನ್ನೆ ರಾತ್ರಿ [[m1|{D1.name} [[p1|ಸಿರಪ್]]]] [[t1|ಕೊಟ್ಟೆ]]."}
           - {role: asha, text: "[[s2|{S2.kn}]] ಇದೆಯಾ?"}
           - {role: caregiver, text: "{X1}"}
         items:
           - {kind: symptom, span: s1, name: fever}
-          - {kind: medication, span: m1, slot: D1, fields: []}
+          - {kind: medication, span: m1, slot: D1, fields: [], status: already_taken, status_span: t1, formulation: syrup, formulation_span: p1}
           - {kind: symptom, span: s2, slot: S2, neg: X1}
       - id: a4
         grounding: [KN-2]
@@ -53,7 +53,7 @@ families:
           S2: {type: symptom, pool: [cough, vomiting, diarrhoea, cold]}
           X1: {type: xturn, p_neg: 0.75}
         turns:
-          - {role: asha, text: "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನ ಆಯಿತು?"}
+          - {role: asha, text: "[[g1|ಮಗುವಿಗೆ]] ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನ ಆಯಿತು?"}
           - {role: caregiver, text: "[[s1|ಜ್ವರ ಬಂದು {K1.kn} ದಿನ ಆಯಿತು]]."}
           - {role: asha, text: "[[s2|{S2.kn}]] ಇದೆಯಾ?"}
           - {role: caregiver, text: "{X1}"}
@@ -71,7 +71,7 @@ families:
           S3: {type: symptom, pool: [pain, "body ache", headache]}
           N1: {type: neg, forms: COMPOUND_PHRASE, subject: S3, p_neg: 0.9}
         turns:
-          - {role: asha, text: "ಮಗುವಿಗೆ ಏನು ತೊಂದರೆ?"}
+          - {role: asha, text: "[[g1|ಮಗುವಿಗೆ]] ಏನು ತೊಂದರೆ?"}
           - {role: caregiver, text: "[[s1|ಜ್ವರ]] ಮತ್ತು [[s2|ಕೆಮ್ಮು]] {K1.kn} ದಿನದಿಂದ ಇದೆ."}
           - {role: asha, text: "ಬೇರೆ ಏನಾದರೂ ತೊಂದರೆ ಇದೆಯಾ?"}
           - {role: caregiver, text: "[[s3|{N1}]]."}
@@ -87,7 +87,7 @@ families:
           X1: {type: xturn, p_neg: 0.7}
           X2: {type: xturn, p_neg: 0.7}
         turns:
-          - {role: asha, text: "ಮಗುವಿಗೆ [[s1|{S1.kn}]] ಇದೆಯಾ?"}
+          - {role: asha, text: "[[g1|ಮಗುವಿಗೆ]] [[s1|{S1.kn}]] ಇದೆಯಾ?"}
           - {role: caregiver, text: "{X1}"}
           - {role: asha, text: "[[s2|{S2.kn}]] ಬಂದಿದೆಯಾ?"}
           - {role: caregiver, text: "{X2}"}

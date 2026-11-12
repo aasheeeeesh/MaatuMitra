@@ -1,0 +1,98 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-b6-003",
+  "template_family_id": "b_cross_turn__f4",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಔಷಧಿ ಕೊಡುತ್ತಿದ್ದೀರಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಕೊಡುತ್ತೇವೆ, ಆದರೆ ಮಗು ibuprofen ಸಿರಪ್ ಕುಡಿಯಲ್ಲ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b6-003",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ibuprofen",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen ಸಿರಪ್ ಕುಡಿಯಲ್ಲ",
+          "char_start": 50,
+          "char_end": 74
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "syrup",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "not_taken",
+        "speaker": "caregiver",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 60,
+            "char_end": 65
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 60,
+            "char_end": 65
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಕುಡಿಯಲ್ಲ",
+            "char_start": 66,
+            "char_end": 74
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "give it to drink little by little",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸ್ವಲ್ಪ ಸ್ವಲ್ಪ ಕುಡಿಸಿ",
+          "char_start": 76,
+          "char_end": 96
+        },
+        "speaker": "asha"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -13,6 +13,7 @@
 | `lexicon/drugs.csv` | CSV, columns exactly as AGENT 2 step 1 | 34 drugs (18 antibiotics). `source_url` = pipe-separated fetched URLs; blank dose = UNVERIFIED |
 | `templates/*.yaml`, `templates/_forms.yaml`, `templates/SOURCES.md` | YAML / md | 59 templates, 9 categories, 22 families |
 | `gold/<cid>.json` | gold.v1 | `cid` = `m1-<template>-<nnn>`; `template_family_id` = `<category>_<name>__f<n>` |
+| `gold_v2/<cid>.json` | gold.v2 | same content as `gold/` plus route, strength, formulation, as_needed, food_timing, status, speaker, age band, each with an evidence span; derived from template metadata (data/templates/README.md). Test files are APPENDED to `test.lock` under their own comment |
 | `transcripts/gold/<cid>__gold.json` | transcript.v1 | model `{name: gold, revision: <generator version>}`, source `template_text`, text = turns joined by `\n` |
 | `twins/twins_{dev,test}.jsonl` | JSON lines (m1-defined, below) | minimal pairs, one per negated cue slot |
 | `splits/dev.txt`, `splits/test.txt` | one conversation id per line | split membership |

@@ -1,0 +1,4 @@
+- **Evidence span**: the exact words in the conversation that support one label (for example the word ಇಲ್ಲ that supports "not taken"); stored as turn number plus start and end character positions.
+- **Nested marker**: a template tag `[[x1|...]]` placed inside another tag, so a small evidence span can sit inside the span of the whole medication phrase.
+- **Append-only lock**: a hash list that may only gain new lines; old lines must stay byte-for-byte the same.
+- **Metadata key (template)**: an extra field in a template file that describes meaning (status, route) without changing the sentence that is produced.

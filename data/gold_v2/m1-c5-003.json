@@ -1,0 +1,89 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-c5-003",
+  "template_family_id": "c_stopped_early__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ನನಗೆ ಜ್ವರ ಇದೆ, ಮನೆಯಲ್ಲಿ ಇದ್ದ ಅಜಿತ್ರೋಮೈಸಿನ್ ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಸ್ವಯಂ ಔಷಧಿ ಮಾಡದೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c5-003",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ",
+          "char_start": 5,
+          "char_end": 9
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "azithromycin",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಅಜಿತ್ರೋಮೈಸಿನ್",
+          "char_start": 29,
+          "char_end": 42
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "advised_against",
+        "speaker": "patient",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಇಲ್ಲಾ",
+            "char_start": 61,
+            "char_end": 66
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not self-medicate; consult a doctor",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಸ್ವಯಂ ಔಷಧಿ ಮಾಡದೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ",
+          "char_start": 68,
+          "char_end": 105
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g4-007",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಡಾಕ್ಟರ್, ಕೆಮ್ಮು ಮತ್ತು ಚಳಿ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Cefixime ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ, Ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಕೂಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g4-007",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 9,
+          "char_end": 15
+        }
+      },
+      {
+        "name": "chills",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಚಳಿ",
+          "char_start": 22,
+          "char_end": 25
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cefixime",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 2,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Cefixime ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 31,
+          "char_end": 77
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 45,
+            "char_end": 51
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 45,
+            "char_end": 51
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 78,
+            "char_end": 90
+          }
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ",
+          "char_start": 92,
+          "char_end": 131
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 107,
+            "char_end": 113
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 107,
+            "char_end": 113
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಕೂಡ",
+            "char_start": 132,
+            "char_end": 135
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not stop the antibiotic midway",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
+          "char_start": 137,
+          "char_end": 169
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

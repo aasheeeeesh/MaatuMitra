@@ -1,0 +1,78 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-f5-005",
+  "template_family_id": "f_nurse_symptoms__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಕೆಮ್ಮು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನಾಲ್ಕು ದಿನದಿಂದ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಮೈಕೈನೋವು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಚಳಿ ಬಂದಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಹೌದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f5-005",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 0,
+          "char_end": 6
+        }
+      },
+      {
+        "name": "body ache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಮೈಕೈನೋವು",
+          "char_start": 42,
+          "char_end": 50
+        }
+      },
+      {
+        "name": "chills",
+        "present": true,
+        "gold_span": {
+          "turn_index": 4,
+          "span_text": "ಚಳಿ",
+          "char_start": 65,
+          "char_end": 68
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g7-000",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ceftriaxone 1000 ಎಂ.ಜಿ injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ಕೊಡುತ್ತೇವೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ ಡಾಕ್ಟರ್."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g7-000",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "ceftriaxone",
+        "dose_value": 1000,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ceftriaxone 1000 ಎಂ.ಜಿ injection ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 0,
+          "char_end": 59
+        },
+        "route": "injection_unspecified",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "injection",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "injection",
+            "char_start": 23,
+            "char_end": 32
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "injection",
+            "char_start": 23,
+            "char_end": 32
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ಕೊಡುತ್ತೇವೆ",
+            "char_start": 60,
+            "char_end": 70
+          }
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 72,
+          "char_end": 113
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 89,
+            "char_end": 95
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 89,
+            "char_end": 95
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 114,
+            "char_end": 126
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

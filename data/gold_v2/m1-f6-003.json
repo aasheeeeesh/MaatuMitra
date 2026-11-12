@@ -1,0 +1,101 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-f6-003",
+  "template_family_id": "f_nurse_symptoms__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಕೆಮ್ಮು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಈಗ ಜ್ವರ ಇಲ್ಲಾ ಆದ್ದರಿಂದ ಪ್ಯಾರಸಿಟಮಾಲ್ ಮಾತ್ರೆ ಬೇಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f6-003",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 0,
+          "char_end": 6
+        }
+      },
+      {
+        "name": "fever",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಜ್ವರ ಇಲ್ಲಾ",
+          "char_start": 24,
+          "char_end": 34
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಮಾತ್ರೆ ಬೇಡ",
+          "char_start": 44,
+          "char_end": 67
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "advised_against",
+        "speaker": "nurse",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 57,
+            "char_end": 63
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 57,
+            "char_end": 63
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ಬೇಡ",
+            "char_start": 64,
+            "char_end": 67
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

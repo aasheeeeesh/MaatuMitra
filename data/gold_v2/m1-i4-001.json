@@ -1,0 +1,77 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-i4-001",
+  "template_family_id": "i_traps__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಈ ಮಾತ್ರೆ ಎಷ್ಟು ಸಲ ತೆಗೆದುಕೊಳ್ಳಬೇಕು?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಚೀಟಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು. ಮೆಟ್ಫಾರ್ಮಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i4-001",
+    "encounter_type": "pharmacist_dispensing",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "metformin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಮೆಟ್ಫಾರ್ಮಿನ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+          "char_start": 67,
+          "char_end": 111
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 87,
+            "char_end": 93
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 87,
+            "char_end": 93
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 112,
+            "char_end": 124
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಓದಿದ್ದರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

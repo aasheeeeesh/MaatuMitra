@@ -1,0 +1,100 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-b7-005",
+  "template_family_id": "b_cross_turn__f4",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಮಗು ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುತ್ತಿದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಮಾತ್ರೆ ಮಗು ತಿನ್ನುವುದಿಲ್ಲ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-b7-005",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗು",
+        "char_start": 0,
+        "char_end": 3
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cotrimoxazole",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಮಾತ್ರೆ ಮಗು ತಿನ್ನುವುದಿಲ್ಲ",
+          "char_start": 33,
+          "char_end": 73
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "not_taken",
+        "speaker": "caregiver",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 49,
+            "char_end": 55
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 49,
+            "char_end": 55
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತಿನ್ನುವುದಿಲ್ಲ",
+            "char_start": 60,
+            "char_end": 73
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "ask the doctor and take a syrup",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 75,
+          "char_end": 109
+        },
+        "speaker": "nurse"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

@@ -220,3 +220,11 @@ Things nobody has verified yet, with what to check. Builders add items through
 - (m2) The baseline H2 comparison in m7 matches the run name substring `faster-whisper-small`; that run name is used.
 - (m2, contract) transcript.v1 has no field for decoding settings; they are stored in `results/m2_asr/<model>/run.json`. A `settings` field in a transcript.v2 would help.
 - (m2) Exact-token critical-term recall (shared definition with m7) undercounts: ref 'ಇಲ್ಲ' vs hyp 'ಇಲ್ಲಾ' is a miss. A spelling-variant-tolerant version needs a Kannada reviewer-approved variant list (see human_todo).
+
+## From m1_data (merged 20261112T022716Z)
+
+- (UNVERIFIED) Status mapping of c3 ("did you finish all X?" answered ಇಲ್ಲ) is stopped_early; not_taken or unknown might be better. Needs a clinician.
+- (UNVERIFIED) Contract note says route is null when not said; m1 sets route oral from the spoken words ಮಾತ್ರೆ / ಸಿರಪ್ / Tablet (evidence = that word) and from ORS "drink" verbs. architect: confirm this reading or ask m1 to null them.
+- Template h2 (paracetamol syrup in ml) never says ಮಗು, so its age band is null although the dose is paediatric. Fixing it needs a text change (a new freeze).
+- Nobody says "adult" in any template, so no conversation has age band adult; m7 cannot measure adult-vs-child confusions in that direction.
+- The frozen family split puts all injection (16) and as-needed (24) medications in DEV only; test has none.

@@ -5,9 +5,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+import regex
 import yaml
 
 from m1_data.config import ROOT
+from m1_data.goldv2 import check_item_keys
 from m1_data.render import SYMPTOMS
 
 TEMPLATES_DIR = ROOT / "data" / "templates"
@@ -71,9 +73,22 @@ def _check(t: Template) -> None:
             bad = set(s["pool"]) - set(SYMPTOMS)
             if bad:
                 raise ValueError(f"{w}: unknown symptoms {bad}")
+    markers = set(regex.findall(r"\[\[([a-z]+\d*)\|", " ".join(x["text"] for x in t.turns)))
     for it in t.items:
         if it["kind"] not in ITEM_KINDS:
             raise ValueError(f"{w}: bad item kind {it['kind']}")
+        if it["kind"] == "medication":
+            check_item_keys(it, f"{w}:{it['span']}")
+            for key in (
+                "status_span",
+                "formulation_span",
+                "route_span",
+                "as_needed_span",
+                "food_span",
+                "strength_span",
+            ):
+                if it.get(key) and it[key] not in markers:
+                    raise ValueError(f"{w}: {key} {it[key]!r} is not a marker in the turns")
         neg = it.get("neg")
         if neg:
             spec = t.slots[neg]

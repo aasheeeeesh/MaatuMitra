@@ -1,0 +1,84 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-h6-002",
+  "template_family_id": "h_followup__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಎರಿಥ್ರೊಮೈಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಲಕ್ಷಣಗಳು ಮುಂದುವರಿದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h6-002",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "erythromycin",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಎರಿಥ್ರೊಮೈಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ",
+          "char_start": 0,
+          "char_end": 52
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 19,
+            "char_end": 25
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 19,
+            "char_end": 25
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 53,
+            "char_end": 65
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if the symptoms continue, consult a doctor",
+      "gold_span": {
+        "turn_index": 1,
+        "span_text": "ಲಕ್ಷಣಗಳು ಮುಂದುವರಿದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ",
+        "char_start": 67,
+        "char_end": 108
+      }
+    }
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

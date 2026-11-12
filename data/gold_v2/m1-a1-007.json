@@ -1,0 +1,60 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-a1-007",
+  "template_family_id": "a_fever_cough__f1",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಎಷ್ಟು ದಿನದಿಂದ ಜ್ವರ ಇದೆ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ನಾಲ್ಕು ದಿನದಿಂದ ಜ್ವರ ಇದೆ, ನೆಗಡಿ ಇಲ್ಲಾ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a1-007",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನಾಲ್ಕು ದಿನದಿಂದ ಜ್ವರ ಇದೆ",
+          "char_start": 32,
+          "char_end": 55
+        }
+      },
+      {
+        "name": "cold",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೆಗಡಿ ಇಲ್ಲಾ",
+          "char_start": 57,
+          "char_end": 68
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

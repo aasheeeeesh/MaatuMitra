@@ -91,11 +91,11 @@ families:
         turns:
           - {role: nurse, text: "[[s1|{S1.kn}]] ಇದೆಯಾ?"}
           - {role: patient, text: "{X1}"}
-          - {role: nurse, text: "ಈಗ [[s2|ಜ್ವರ {N1}]] ಆದ್ದರಿಂದ [[m1|{D1.name} ಮಾತ್ರೆ {N2}]]."}
+          - {role: nurse, text: "ಈಗ [[s2|ಜ್ವರ {N1}]] ಆದ್ದರಿಂದ [[m1|{D1.name} [[p1|ಮಾತ್ರೆ]] [[t1|{N2}]]]]."}
         items:
           - {kind: symptom, span: s1, slot: S1, neg: X1}
           - {kind: symptom, span: s2, name: fever, neg: N1}
-          - {kind: medication, span: m1, slot: D1, neg: N2}
+          - {kind: medication, span: m1, slot: D1, neg: N2, status_neg: advised_against, status_pos: prescribed, status_span: t1, formulation: tablet, formulation_span: p1}
       - id: f7
         grounding: [KN-2]
         slots:

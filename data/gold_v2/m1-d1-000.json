@@ -1,0 +1,113 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-d1-000",
+  "template_family_id": "d_no_antibiotic__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ನೆಗಡಿ ಮತ್ತು ಕೆಮ್ಮು ಮೂರು ದಿನದಿಂದ ಇದೆ, ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ನೆಗಡಿಗೆ ಪ್ರತಿಜೈವಿಕ ಬೇಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "cetrizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-d1-000",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 0,
+          "char_end": 5
+        }
+      },
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 12,
+          "char_end": 18
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cetirizine",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "cetrizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "char_start": 79,
+          "char_end": 128
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 94,
+            "char_end": 100
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 94,
+            "char_end": 100
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 129,
+            "char_end": 141
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not take antibiotics for a cold",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೆಗಡಿಗೆ ಪ್ರತಿಜೈವಿಕ ಬೇಡ",
+          "char_start": 55,
+          "char_end": 77
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

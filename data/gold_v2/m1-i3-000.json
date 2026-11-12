@@ -1,0 +1,104 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-i3-000",
+  "template_family_id": "i_traps__f1",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಈ ಮಾತ್ರೆಗೆ ತುಂಬಾ ಬೇಡಿಕೆ ಇದೆ."
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್ 100 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕು, ಅಲ್ವ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಹೌದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i3-000",
+    "encounter_type": "pharmacist_dispensing",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "nitrofurantoin",
+        "dose_value": 100,
+        "dose_unit": "mg",
+        "frequency_per_day": 4,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೈಟ್ರೋಫ್ಯುರಾಂಟೋಯಿನ್ 100 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 29,
+          "char_end": 91
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": "after_food",
+        "status": "prescribed",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 56,
+            "char_end": 62
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 56,
+            "char_end": 62
+          },
+          "food_timing": {
+            "turn_index": 2,
+            "span_text": "ಊಟದ ನಂತರ",
+            "char_start": 106,
+            "char_end": 114
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 92,
+            "char_end": 104
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "take after food",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕು",
+          "char_start": 106,
+          "char_end": 130
+        },
+        "speaker": "patient"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಬೇಡಿಕೆ",
+      "ಮಾತ್ರೆ",
+      "ಅಲ್ವ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

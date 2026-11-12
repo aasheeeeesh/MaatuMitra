@@ -1,0 +1,80 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-c2-005",
+  "template_family_id": "c_stopped_early__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಆ ಮಾತ್ರೆ ಎಷ್ಟು ದಿನ ತೆಗೆದುಕೊಂಡಿರಿ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎರಡು ದಿನ ತೆಗೆದುಕೊಂಡೆ, ಆಮೇಲೆ cefalexin ೨೫೦ mg ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ವೈದ್ಯರ ಸಲಹೆ ಇಲ್ಲದೆ ಮಾತ್ರೆ ನಿಲ್ಲಿಸಬೇಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c2-005",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cephalexin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "cefalexin ೨೫೦ mg ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆ",
+          "char_start": 62,
+          "char_end": 97
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "stopped_early",
+        "speaker": "patient",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆ",
+            "char_start": 79,
+            "char_end": 97
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not stop the tablets without the doctor's advice",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರ ಸಲಹೆ ಇಲ್ಲದೆ ಮಾತ್ರೆ ನಿಲ್ಲಿಸಬೇಡಿ",
+          "char_start": 99,
+          "char_end": 136
+        },
+        "speaker": "nurse"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

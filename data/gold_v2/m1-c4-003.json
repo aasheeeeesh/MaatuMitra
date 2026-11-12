@@ -1,0 +1,92 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-c4-003",
+  "template_family_id": "c_stopped_early__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆದ ಮೇಲೆ ಏನು ಮಾಡಿದಿರಿ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "Amoxicillin 250 mg ಕ್ಯಾಪ್ಸೂಲ್ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c4-003",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "amoxicillin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Amoxicillin 250 mg ಕ್ಯಾಪ್ಸೂಲ್ ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ",
+          "char_start": 33,
+          "char_end": 83
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "capsule",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "stopped_early",
+        "speaker": "patient",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+            "char_start": 52,
+            "char_end": 62
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+            "char_start": 52,
+            "char_end": 62
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ",
+            "char_start": 63,
+            "char_end": 83
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not share leftover tablets",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು",
+          "char_start": 85,
+          "char_end": 112
+        },
+        "speaker": "nurse"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

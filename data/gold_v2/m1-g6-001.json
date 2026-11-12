@@ -1,0 +1,131 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g6-001",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ತಲೆನೋವು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನಾಲ್ಕು ದಿನದಿಂದ, ವಾಂತಿ ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. ciprofloxacin ೨೫೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ. paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಮೂರು ದಿವಸ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-001",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 0,
+          "char_end": 7
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವಾಂತಿ ಇಲ್ಲಾ",
+          "char_start": 43,
+          "char_end": 54
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ciprofloxacin",
+        "dose_value": 250,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ciprofloxacin ೨೫೦ mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ",
+          "char_start": 60,
+          "char_end": 106
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 107,
+            "char_end": 119
+          }
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 2,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಮೂರು ದಿವಸ",
+          "char_start": 121,
+          "char_end": 174
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 138,
+            "char_end": 144
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 138,
+            "char_end": 144
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ಕೂಡ",
+            "char_start": 175,
+            "char_end": 178
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

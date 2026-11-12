@@ -1,0 +1,113 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-d1-005",
+  "template_family_id": "d_no_antibiotic__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ನೆಗಡಿ ಮತ್ತು ಕೆಮ್ಮು ಎರಡು ದಿನದಿಂದ ಇದೆ, ಆಂಟಿಬಯಾಟಿಕ್ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ನೆಗಡಿಗೆ ಪ್ರತಿಜೈವಿಕ ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-d1-005",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 0,
+          "char_end": 5
+        }
+      },
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 12,
+          "char_end": 18
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 93,
+          "char_end": 146
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 111,
+            "char_end": 117
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 111,
+            "char_end": 117
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 147,
+            "char_end": 159
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not take antibiotics for a cold",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೆಗಡಿಗೆ ಪ್ರತಿಜೈವಿಕ ತೆಗೆದುಕೊಳ್ಳ ಬಾರದು",
+          "char_start": 55,
+          "char_end": 91
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

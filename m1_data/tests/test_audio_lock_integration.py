@@ -48,7 +48,11 @@ def test_generate_preserves_audio_rows_and_lock_tail(tmp_path):
     assert lock.read_bytes() == before
     rows = [json.loads(x) for x in mp.read_text(encoding="utf-8").splitlines()]
     assert row in rows
-    assert [r["file"] for r in rows] == sorted(r["file"] for r in rows)
+    # text rows sorted by file, audio rows kept after them in their existing order
+    # (so regenerating never rewrites or reorders audio rows; manifest diffs stay additive)
+    text_files = [r["file"] for r in rows if not r["file"].startswith("data/audio/")]
+    assert text_files == sorted(text_files)
+    assert rows[-1]["file"] == row["file"]
 
 
 def test_missing_ignored_audio_is_not_a_lock_failure(tmp_path):

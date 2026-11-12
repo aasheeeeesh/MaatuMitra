@@ -247,3 +247,8 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] (m2) Phase C (test run): after approval run the same adapters on the test subset with ALLOW_TEST via the orchestrator's guarded path. The dev runner refuses test audio by design; a separate wrapper that sets the paths must be added and logged in results/test_access_log.md.
 - [ ] (m2) A native Kannada reader should read 20 of `results/m2_asr/dev/<model>/*.json` outputs next to the reference text to confirm that the CER numbers match what a reader sees (all Kannada here is not native-validated).
 - [ ] (m2) Ask a Kannada reviewer to approve a list of spelling variants (for example ಇಲ್ಲ / ಇಲ್ಲಾ, drug-name transliterations) so critical-term recall can be variant-tolerant; until then recall numbers in results/m2_asr/summary.csv are lower bounds.
+
+## From m1_data (merged 20261112T022716Z)
+
+- [ ] (UNVERIFIED, clinician or native speaker) Review the gold.v2 status/route conventions: open `data/templates/*.yaml`, search `status_neg`, and for each template check that the status named for the "ಇಲ್ಲ" / "ಹೌದು" / "ಬೇಡ" case matches what the sentence means. Record corrections in `reviews/human_sheets/`.
+- [ ] Decide whether to add test-split templates for injection, as-needed, spoken strength and "continue the same medicine" (the test split has 0 of each, so CR-ROUTE for injection and CR-LIQUID-STRENGTH with a stated strength cannot be tested there). This needs a new freeze decision.

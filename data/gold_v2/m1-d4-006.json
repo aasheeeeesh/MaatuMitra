@@ -1,0 +1,103 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-d4-006",
+  "template_family_id": "d_no_antibiotic__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಡಾಕ್ಟರೇ, ಕೆಮ್ಮು ಮತ್ತು ನೆಗಡಿ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ವೈರಲ್ ಸೋಂಕಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು ಬೇಕಾಗುವುದಿಲ್ಲ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ, ಪ್ಯಾರಸಿಟಮಾಲ್ 500 mg ತೆಗೆದುಕೊಳ್ಳಬಹುದಾ?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಇಲ್ಲ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-d4-006",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 9,
+          "char_end": 15
+        }
+      },
+      {
+        "name": "cold",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 22,
+          "char_end": 27
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ 500 mg",
+          "char_start": 83,
+          "char_end": 102
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "advised_against",
+        "speaker": "patient",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 3,
+            "span_text": "ಇಲ್ಲ",
+            "char_start": 121,
+            "char_end": 125
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "antibiotics are not needed for a viral infection",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವೈರಲ್ ಸೋಂಕಿಗೆ ಆಂಟಿಬಯಾಟಿಕ್‌ಗಳು ಬೇಕಾಗುವುದಿಲ್ಲ",
+          "char_start": 33,
+          "char_end": 76
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": true
+  }
+}

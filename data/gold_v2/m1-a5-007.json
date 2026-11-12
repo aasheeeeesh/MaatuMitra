@@ -1,0 +1,78 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-a5-007",
+  "template_family_id": "a_fever_cough__f3",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಏನು ತೊಂದರೆ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಜ್ವರ ಮತ್ತು ಕೆಮ್ಮು ಐದು ದಿನದಿಂದ ಇದೆ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಬೇರೆ ಏನಾದರೂ ತೊಂದರೆ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಮೈಕೈನೋವು ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a5-007",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ",
+          "char_start": 20,
+          "char_end": 24
+        }
+      },
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 31,
+          "char_end": 37
+        }
+      },
+      {
+        "name": "body ache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 3,
+          "span_text": "ಮೈಕೈನೋವು ಇದೆ",
+          "char_start": 81,
+          "char_end": 93
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

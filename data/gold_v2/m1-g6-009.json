@@ -1,0 +1,131 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g6-009",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಕೆಮ್ಮು ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎರಡು ದಿನದಿಂದ, ವಾಂತಿ ಇಲ್ಲ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. Cefixime 400 mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ. Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-009",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 0,
+          "char_end": 6
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವಾಂತಿ ಇಲ್ಲ",
+          "char_start": 40,
+          "char_end": 50
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cefixime",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Cefixime 400 mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+          "char_start": 56,
+          "char_end": 97
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 98,
+            "char_end": 110
+          }
+        }
+      },
+      {
+        "drug": "cetirizine",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 112,
+          "char_end": 160
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 128,
+            "char_end": 134
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 128,
+            "char_end": 134
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ಕೂಡ",
+            "char_start": 161,
+            "char_end": 164
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

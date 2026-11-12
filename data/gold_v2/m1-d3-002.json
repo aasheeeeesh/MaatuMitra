@@ -1,0 +1,89 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-d3-002",
+  "template_family_id": "d_no_antibiotic__f2",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಮಗುವಿಗೆ ನೆಗಡಿ ಮಾತ್ರ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಹೌದು, ಜ್ವರ ಇಲ್ಲ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಹಾಗಾದರೆ antibiotic ಬೇಡ. ಬಿಸಿ ನೀರು ಕುಡಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-d3-002",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 8,
+          "char_end": 13
+        }
+      },
+      {
+        "name": "fever",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಇಲ್ಲ",
+          "char_start": 33,
+          "char_end": 42
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [
+      {
+        "text": "then do not give antibiotics",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಹಾಗಾದರೆ antibiotic ಬೇಡ",
+          "char_start": 44,
+          "char_end": 66
+        },
+        "speaker": "nurse"
+      },
+      {
+        "text": "give warm water to drink",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಬಿಸಿ ನೀರು ಕುಡಿಸಿ",
+          "char_start": 68,
+          "char_end": 84
+        },
+        "speaker": "nurse"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

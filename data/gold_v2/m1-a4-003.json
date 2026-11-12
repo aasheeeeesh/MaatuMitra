@@ -1,0 +1,84 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-a4-003",
+  "template_family_id": "a_fever_cough__f2",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದು ಎಷ್ಟು ದಿನ ಆಯಿತು?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಜ್ವರ ಬಂದು ಮೂರು ದಿನ ಆಯಿತು."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಅತಿಸಾರ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಇಲ್ಲಾ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಮಗುವಿಗೆ ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a4-003",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಬಂದು ಮೂರು ದಿನ ಆಯಿತು",
+          "char_start": 35,
+          "char_end": 59
+        }
+      },
+      {
+        "name": "diarrhoea",
+        "present": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಅತಿಸಾರ",
+          "char_start": 61,
+          "char_end": 67
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [
+      {
+        "text": "give the child enough water to drink",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 4,
+          "span_text": "ಮಗುವಿಗೆ ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ",
+          "char_start": 82,
+          "char_end": 110
+        },
+        "speaker": "asha"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": true
+  }
+}

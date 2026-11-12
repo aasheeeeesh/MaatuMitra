@@ -16,7 +16,7 @@ import time
 from collections import Counter
 from pathlib import Path
 
-from m1_data import kn
+from m1_data import goldv2, kn
 from m1_data.config import CONSENT_NOTE, CREATED_AT, ROOT, SEED, VERSION
 from m1_data.lexicon import LEXICON_CSV, load_lexicon
 from m1_data.negation import NON_CUE_IDS, load_table, trap_tokens_in
@@ -31,6 +31,7 @@ from m1_data.render import (
     render_text,
 )
 from m1_data.split import (
+    V2_LOCK_COMMENT,
     lock_text,
     plan_combos,
     plan_families,
@@ -175,6 +176,14 @@ def _slot_turn(t, sid: str) -> int:
 
 
 def build_conversation(t, i: int, fills: dict, split: str, table) -> tuple[dict, dict, list[dict]]:
+    """gold.v1, transcript.v1 and the twins of one conversation (see build_conversation_v2)."""
+    return build_conversation_v2(t, i, fills, split, table)[:3]
+
+
+def build_conversation_v2(
+    t, i: int, fills: dict, split: str, table
+) -> tuple[dict, dict, list[dict], dict]:
+    """Like build_conversation, plus the gold.v2 document as 4th result."""
     cid = f"m1-{t.id}-{i:03d}"
     texts, local = [], {}
     for k, turn in enumerate(t.turns):
@@ -194,6 +203,11 @@ def build_conversation(t, i: int, fills: dict, split: str, table) -> tuple[dict,
             "char_end": offsets[k] + e,
         }
 
+    def vspan(mid: str) -> dict:
+        k, s, e = local[mid]
+        return goldv2.trimmed(texts, offsets, k, s, e)
+
+    med_extra: list[tuple[dict, dict]] = []
     gr = {
         "patient_ref": f"pt-m1-{t.id}-{i:03d}",
         "encounter_type": t.encounter,
@@ -213,17 +227,20 @@ def build_conversation(t, i: int, fills: dict, split: str, table) -> tuple[dict,
             f = fills[it["slot"]]
             fields = it.get("fields", [])
             dv, du = f.dose if (f.dose and "dose" in fields) else (None, None)
-            gr["medications"].append(
-                {
-                    "drug": f.drug.generic,
-                    "dose_value": dv,
-                    "dose_unit": du,
-                    "frequency_per_day": f.freq if "freq" in fields else None,
-                    "duration_days": f.dur if "dur" in fields else None,
-                    "negated": negative,
-                    "gold_span": sp,
-                }
+            med = {
+                "drug": f.drug.generic,
+                "dose_value": dv,
+                "dose_unit": du,
+                "frequency_per_day": f.freq if "freq" in fields else None,
+                "duration_days": f.dur if "dur" in fields else None,
+                "negated": negative,
+                "gold_span": sp,
+            }
+            gr["medications"].append(med)
+            extra = goldv2.med_fields(
+                it, negative=negative, span=vspan, has_span=local.__contains__
             )
+            med_extra.append((med, extra))
         else:
             text = it["text"] if (negative or "neg" not in it) else it["text_pos"]
             text = _sub_text(text, fills)
@@ -262,6 +279,7 @@ def build_conversation(t, i: int, fills: dict, split: str, table) -> tuple[dict,
             "cross_turn_negation": "NEG-X01" in detected,
         },
     }
+    gold_v2 = goldv2.to_v2(gold, med_extra, vspan("g1") if "g1" in local else None)
     transcript = {
         "schema_version": "transcript.v1",
         "audio_id": cid,
@@ -335,7 +353,7 @@ def build_conversation(t, i: int, fills: dict, split: str, table) -> tuple[dict,
                 "native_validated": False,
             }
         )
-    return gold, transcript, twins
+    return gold, transcript, twins, gold_v2
 
 
 # ---------------------------------------------------------------- whole dataset
@@ -386,6 +404,25 @@ def _manifest_row(path: str, content: bytes, split: str, parent: str | None) -> 
     }
 
 
+def append_v2_lock(text: str, entries: dict[str, str]) -> str:
+    """APPEND the sha256 of every gold.v2 test file that is not yet in the lock text. Existing
+    lines are never touched; a locked file whose hash changed is an error (frozen test labels)."""
+    have = {}
+    for raw in text.splitlines():
+        if raw.strip() and not raw.startswith("#"):
+            sha, path = raw.split(maxsplit=1)
+            have[path.strip()] = sha
+    changed = [p for p, sha in entries.items() if p in have and have[p] != sha]
+    if changed:
+        raise GenerationError(f"locked gold.v2 test labels changed: {sorted(changed)[:3]}")
+    add = [(p, sha) for p, sha in sorted(entries.items()) if p not in have]
+    if not add:
+        return text
+    head = "" if V2_LOCK_COMMENT in text else V2_LOCK_COMMENT + "\n"
+    prefix = "" if text.endswith("\n") else "\n"
+    return text + prefix + head + "".join(f"{sha}  {p}\n" for p, sha in add)
+
+
 def generate(
     out_root: Path = ROOT,
     lexicon_path: Path = LEXICON_CSV,
@@ -417,13 +454,15 @@ def generate(
                     raise
                 skipped.append(str(exc))
                 break
-            gold, tr, tw = build_conversation(t, i, fills, split, table)
+            gold, tr, tw, gold2 = build_conversation_v2(t, i, fills, split, table)
             cid = gold["conversation_id"]
             gp, tp = f"data/gold/{cid}.json", f"data/transcripts/gold/{cid}__gold.json"
-            files[gp], files[tp] = _dump(gold), _dump(tr)
+            g2p = f"data/gold_v2/{cid}.json"
+            files[gp], files[tp], files[g2p] = _dump(gold), _dump(tr), _dump(gold2)
             manifest += [
                 _manifest_row(gp, files[gp], split, None),
                 _manifest_row(tp, files[tp], split, cid),
+                _manifest_row(g2p, files[g2p], split, cid),
             ]
             split_ids[split].append(cid)
             twins[split] += tw
@@ -449,6 +488,9 @@ def generate(
     }
     files["data/splits/split_plan.json"] = _dump(plan)
     # audio rows are written by `m1_data audio-*`; the text generator keeps them untouched
+    # text rows sorted by file, then the audio rows exactly as they already are (they are appended by
+    # `audio-*`; keeping their order means regenerating never rewrites them)
+    manifest.sort(key=lambda r: r["file"])
     old_manifest = out_root / "data" / "manifest.jsonl"
     if old_manifest.exists():
         manifest += [
@@ -456,7 +498,6 @@ def generate(
             for x in old_manifest.read_text(encoding="utf-8").splitlines()
             if x.strip() and json.loads(x)["file"].startswith("data/audio/")
         ]
-    manifest.sort(key=lambda r: r["file"])
     files["data/manifest.jsonl"] = _jsonl(manifest)
 
     locked = {
@@ -483,7 +524,14 @@ def generate(
                 "the regenerated TEST split differs from the frozen data/splits/test.lock. "
                 "Refusing to overwrite. Pass --refreeze only with a decision entry."
             )
-    files["data/splits/test.lock"] = (new_lock + audio_tail).encode("utf-8")
+    v2_locked = {
+        p: sha256_bytes(b)
+        for p, b in files.items()
+        if p.startswith("data/gold_v2/") and Path(p).stem in set(split_ids["test"])
+    }
+    files["data/splits/test.lock"] = append_v2_lock(new_lock + audio_tail, v2_locked).encode(
+        "utf-8"
+    )
 
     # write: overwrite changed files only, then remove stale generated files
     for rel, content in files.items():
@@ -493,6 +541,7 @@ def generate(
             _retry(lambda p=p, c=content: p.write_bytes(c))
     for sub, pat in (
         ("data/gold", "*.json"),
+        ("data/gold_v2", "*.json"),
         ("data/transcripts/gold", "*.json"),
         ("data/twins", "*.jsonl"),
     ):

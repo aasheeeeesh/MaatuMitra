@@ -12,10 +12,10 @@ families:
           K1: {type: count, values: [2, 3]}
           N1: {type: neg, p_neg: 0.9, forms: [{neg: "ಆಗದಿದ್ದರೆ", pos: "ಆದರೆ", patterns: [NEG-S03]}]}
         turns:
-          - {role: nurse, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: nurse, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: nurse, text: "[[f1|ಜ್ವರ ಕಡಿಮೆ {N1} {K1.kn} ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
           - {kind: follow_up, span: f1, neg: N1, text: "if the fever does not come down, come back in {K1.en} days", text_pos: "if the fever has come down, come back in {K1.en} days"}
       - id: h2
         encounter: asha_household_visit
@@ -24,10 +24,10 @@ families:
           D1: {type: drug, where: {generic: [paracetamol]}, dose: child_syrup, needs: [freq]}
           N1: {type: neg, p_neg: 0.9, forms: [{neg: "ಇಳಿಯದಿದ್ದರೆ", pos: "ಇದ್ದರೆ", patterns: [NEG-S03]}]}
         turns:
-          - {role: asha, text: "[[m1|{D1.name} ಸಿರಪ್ {D1.dose} {D1.freq}]] ಕೊಡಿ."}
+          - {role: asha, text: "[[m1|{D1.name} [[p1|ಸಿರಪ್]] {D1.dose} {D1.freq}]] [[t1|ಕೊಡಿ]]."}
           - {role: asha, text: "[[f1|ನಾಳೆ ಹೊತ್ತಿಗೆ ಜ್ವರ {N1} ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq], status: prescribed, status_span: t1, formulation: syrup, formulation_span: p1}
           - {kind: follow_up, span: f1, neg: N1, text: "if the fever does not come down by tomorrow, bring the child to hospital", text_pos: "if the fever is still there by tomorrow, bring the child to hospital"}
       - id: h3
         encounter: asha_household_visit
@@ -35,12 +35,12 @@ families:
         slots:
           D1: {type: drug, where: {generic: [paracetamol]}, dose: child_syrup, needs: [freq]}
         turns:
-          - {role: caregiver, text: "ಮಗುವಿಗೆ [[s1|ಜ್ವರ ಬಂದಿದೆ]]."}
-          - {role: asha, text: "[[m1|{D1.name} ಸಿರಪ್ {D1.dose} {D1.freq}]] ಕೊಡಿ."}
+          - {role: caregiver, text: "[[g1|ಮಗುವಿಗೆ]] [[s1|ಜ್ವರ ಬಂದಿದೆ]]."}
+          - {role: asha, text: "[[m1|{D1.name} [[p1|ಸಿರಪ್]] {D1.dose} {D1.freq}]] [[t1|ಕೊಡಿ]]."}
           - {role: asha, text: "[[f1|ನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ]]."}
         items:
           - {kind: symptom, span: s1, name: fever}
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq], status: prescribed, status_span: t1, formulation: syrup, formulation_span: p1}
           - {kind: follow_up, span: f1, text: "if the fever is still there tomorrow, bring the child to hospital"}
   - id: h_followup__f2
     templates:
@@ -56,11 +56,11 @@ families:
         turns:
           - {role: physician, text: "[[s1|{S1.kn}]] ಇದೆಯಾ?"}
           - {role: patient, text: "{X1}"}
-          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: physician, text: "[[f1|{K1.kn} ದಿನದಲ್ಲಿ {N1} ಮತ್ತೆ ಬನ್ನಿ]]."}
         items:
           - {kind: symptom, span: s1, slot: S1, neg: X1}
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
           - {kind: follow_up, span: f1, neg: N1, text: "if you do not improve in {K1.en} days, come back", text_pos: "if you improve in {K1.en} days, come back"}
       - id: h5
         encounter: nurse_consult
@@ -70,12 +70,12 @@ families:
           N1: {type: neg, p_neg: 0.9, forms: [{neg: "ನಿಲ್ಲದಿದ್ದರೆ", pos: "ಇದ್ದರೆ", patterns: [NEG-S03]}]}
         turns:
           - {role: patient, text: "[[s1|ವಾಂತಿ]] ಮತ್ತು [[s2|ಅತಿಸಾರ]] ಇದೆ."}
-          - {role: nurse, text: "[[m1|{D1.name}]] ಆಗಾಗ ಕುಡಿಯಿರಿ."}
+          - {role: nurse, text: "[[m1|{D1.name}]] ಆಗಾಗ [[t1|ಕುಡಿಯಿರಿ]]."}
           - {role: nurse, text: "[[f1|ವಾಂತಿ {N1} ತಕ್ಷಣ ಬನ್ನಿ]]."}
         items:
           - {kind: symptom, span: s1, name: vomiting}
           - {kind: symptom, span: s2, name: diarrhoea}
-          - {kind: medication, span: m1, slot: D1}
+          - {kind: medication, span: m1, slot: D1, status: prescribed, status_span: t1, route: oral, route_span: t1}
           - {kind: follow_up, span: f1, neg: N1, text: "if the vomiting does not stop, come immediately", text_pos: "if there is vomiting, come immediately"}
       - id: h6
         encounter: physician_consult
@@ -83,8 +83,8 @@ families:
         slots:
           D1: {type: drug, dose: given, needs: [freq, dur]}
         turns:
-          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: physician, text: "[[f1|ಲಕ್ಷಣಗಳು ಮುಂದುವರಿದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
           - {kind: follow_up, span: f1, text: "if the symptoms continue, consult a doctor"}

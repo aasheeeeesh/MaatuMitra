@@ -1,0 +1,131 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g6-011",
+  "template_family_id": "g_physician_english__f2",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಮೂರು ದಿನದಿಂದ, ವಾಂತಿ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "OK. Cefuroxime 500 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ. paracetmol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ ಕೂಡ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g6-011",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ",
+          "char_start": 0,
+          "char_end": 4
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವಾಂತಿ ಇದೆ",
+          "char_start": 38,
+          "char_end": 47
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "cefuroxime",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Cefuroxime 500 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 53,
+          "char_end": 97
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 2,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 98,
+            "char_end": 110
+          }
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": 3,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "paracetmol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 112,
+          "char_end": 163
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 128,
+            "char_end": 134
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 128,
+            "char_end": 134
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ಕೂಡ",
+            "char_start": 164,
+            "char_end": 167
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -11,21 +11,21 @@ families:
         slots:
           D1: {type: drug, dose: given, needs: [freq]}
         turns:
-          - {role: physician, text: "[[m1|{D1.name} {D1.dose} {D1.freq}]] ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[m1|{D1.name} {D1.dose} {D1.freq}]] ಮಾತ್ರ [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: patient, text: "ಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ, ಅಲ್ವಾ?"}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq], status: prescribed, status_span: t1}
       - id: i2
         encounter: pharmacist_dispensing
         grounding: [KN-2]
         slots:
           D1: {type: drug, dose: given, needs: [freq, dur]}
         turns:
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
           - {role: patient, text: "ಆಸ್ಪತ್ರೆ ಅಲ್ಲಿ ಇದೆಯಾ?"}
           - {role: pharmacist, text: "ಹೌದು, ಅಲ್ಲಿ ಇದೆ. [[a1|ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
           - {kind: advice, span: a1, text: "finish all tablets"}
       - id: i3
         encounter: pharmacist_dispensing
@@ -34,11 +34,11 @@ families:
           D1: {type: drug, dose: given, needs: [freq, dur]}
         turns:
           - {role: pharmacist, text: "ಈ ಮಾತ್ರೆಗೆ ತುಂಬಾ ಬೇಡಿಕೆ ಇದೆ."}
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
-          - {role: patient, text: "[[a1|ಊಟದ ನಂತರ ತೆಗೆದುಕೊಳ್ಳಬೇಕು]], ಅಲ್ವ?"}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
+          - {role: patient, text: "[[a1|[[w1|ಊಟದ ನಂತರ]] ತೆಗೆದುಕೊಳ್ಳಬೇಕು]], ಅಲ್ವ?"}
           - {role: pharmacist, text: "ಹೌದು."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1, food_timing: after_food, food_span: w1}
           - {kind: advice, span: a1, text: "take after food"}
       - id: i4
         encounter: pharmacist_dispensing
@@ -47,20 +47,20 @@ families:
           D1: {type: drug, dose: given, needs: [freq]}
         turns:
           - {role: patient, text: "ಈ ಮಾತ್ರೆ ಎಷ್ಟು ಸಲ ತೆಗೆದುಕೊಳ್ಳಬೇಕು?"}
-          - {role: pharmacist, text: "ಚೀಟಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು. [[m1|{D1.name} {D1.dose_tab} {D1.freq}]] ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: pharmacist, text: "ಚೀಟಿ ಓದಿದ್ದರೆ ಗೊತ್ತಾಗುತ್ತಿತ್ತು. [[m1|{D1.name} {D1.dose_tab} {D1.freq}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq], status: prescribed, status_span: t1}
       - id: i5
         encounter: asha_household_visit
         grounding: [KN-2]
         slots:
           D1: {type: drug, where: {generic: [paracetamol]}, dose: child_syrup}
         turns:
-          - {role: caregiver, text: "ಮಗುವಿಗೆ [[s1|ಜ್ವರ ಬಂದಿದೆ]]."}
-          - {role: asha, text: "[[a1|ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ]] [[m1|{D1.name} ಸಿರಪ್ {D1.dose}]] ಕೊಡಿ."}
+          - {role: caregiver, text: "[[g1|ಮಗುವಿಗೆ]] [[s1|ಜ್ವರ ಬಂದಿದೆ]]."}
+          - {role: asha, text: "[[a1|ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ]] [[m1|{D1.name} [[p1|ಸಿರಪ್]] {D1.dose}]] [[t1|ಕೊಡಿ]]."}
         items:
           - {kind: symptom, span: s1, name: fever}
-          - {kind: medication, span: m1, slot: D1, fields: [dose]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose], status: prescribed, status_span: t1, formulation: syrup, formulation_span: p1, as_needed: true, as_needed_span: a1}
           - {kind: advice, span: a1, text: "only if there is fever"}
   - id: i_traps__f2
     templates:
@@ -73,10 +73,10 @@ families:
           D1: {type: drug, dose: given}
         turns:
           - {role: patient, text: "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?"}
-          - {role: physician, text: "[[s1|{N1}]], [[m1|{D1.name} {D1.dose_tab}]] ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."}
+          - {role: physician, text: "[[s1|{N1}]], [[m1|{D1.name} {D1.dose_tab}]] ಮಾತ್ರ [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]]."}
         items:
           - {kind: symptom, span: s1, slot: S1, neg: N1}
-          - {kind: medication, span: m1, slot: D1, fields: [dose]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose], status: prescribed, status_span: t1}
       - id: i7
         encounter: pharmacist_dispensing
         grounding: [KN-1]
@@ -91,10 +91,10 @@ families:
               - {neg: "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ", pos: "ತೆಗೆದುಕೊಳ್ಳಿ", patterns: [NEG-S06]}
         turns:
           - {role: pharmacist, text: "ಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ."}
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] ತೆಗೆದುಕೊಳ್ಳಿ, [[m2|{D2.name} {N1}]]."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq} {D1.dur}]] [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]], [[m2|{D2.name} [[t2|{N1}]]]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur]}
-          - {kind: medication, span: m2, slot: D2, neg: N1}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq, dur], status: prescribed, status_span: t1}
+          - {kind: medication, span: m2, slot: D2, neg: N1, status_neg: advised_against, status_pos: prescribed, status_span: t2}
       - id: i8
         encounter: pharmacist_dispensing
         grounding: [KN-3]
@@ -103,7 +103,7 @@ families:
           N1: {type: neg, p_neg: 1.0, forms: [{neg: "ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ", pos: "ತೆಗೆದುಕೊಳ್ಳಿ", patterns: [NEG-S06]}]}
         turns:
           - {role: patient, text: "ಈ ಮಾತ್ರೆ ಜಾಸ್ತಿ ತಗೊಂಡ್ರೆ ಏನಾಗುತ್ತದೆ?"}
-          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq}]] ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ, [[a1|ಜಾಸ್ತಿ {N1}]]."}
+          - {role: pharmacist, text: "[[m1|{D1.name} {D1.dose_tab} {D1.freq}]] ಮಾತ್ರ [[t1|ತೆಗೆದುಕೊಳ್ಳಿ]], [[a1|ಜಾಸ್ತಿ {N1}]]."}
         items:
-          - {kind: medication, span: m1, slot: D1, fields: [dose, freq]}
+          - {kind: medication, span: m1, slot: D1, fields: [dose, freq], status: prescribed, status_span: t1}
           - {kind: advice, span: a1, text: "do not take more", neg: N1}

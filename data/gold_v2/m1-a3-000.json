@@ -1,0 +1,103 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-a3-000",
+  "template_family_id": "a_fever_cough__f2",
+  "turns": [
+    {
+      "speaker_role": "asha",
+      "text": "ಜ್ವರ ಎಷ್ಟು ದಿನದಿಂದ ಇದೆ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಜ್ವರ ಮೂರು ದಿನದಿಂದ ಇದೆ. ನಿನ್ನೆ ರಾತ್ರಿ ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಕೊಟ್ಟೆ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ನೆಗಡಿ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "caregiver",
+      "text": "ಹೌದು."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-a3-000",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಜ್ವರ ಮೂರು ದಿನದಿಂದ ಇದೆ",
+          "char_start": 24,
+          "char_end": 45
+        }
+      },
+      {
+        "name": "cold",
+        "present": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ನೆಗಡಿ",
+          "char_start": 88,
+          "char_end": 93
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್",
+          "char_start": 61,
+          "char_end": 79
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "syrup",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "already_taken",
+        "speaker": "caregiver",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 74,
+            "char_end": 79
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 74,
+            "char_end": 79
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಕೊಟ್ಟೆ",
+            "char_start": 80,
+            "char_end": 86
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

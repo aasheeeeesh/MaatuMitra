@@ -4,7 +4,10 @@ Turn text syntax:
   {D1.name} {D1.dose} ...  typed slot attribute (see *Fill classes)
   {N1}                     negation / cross-turn slot: replaced by its negative or positive form
                            (forms may contain other placeholders)
-  [[m1| ... ]]             gold-span marker (not nested); offsets are computed while rendering
+  [[m1| ... ]]             gold-span marker; markers MAY be nested (gold.v2 evidence spans live
+                           inside the main span); offsets are computed while rendering
+  automatic sub-spans      a drug slot whose dose text ends in a form word (ಮಾತ್ರೆ, ಕ್ಯಾಪ್ಸೂಲ್, ...)
+                           also reports the span "<slot>.form" for that word (gold.v2 formulation)
 
 Every surface choice is drawn ONCE when a slot is filled, so re-rendering a turn for its
 minimal-pair twin gives identical text except for the flipped negation form.
@@ -22,6 +25,7 @@ from m1_data import kn
 PLACEHOLDER = regex.compile(r"\{([A-Z]+\d*)(?:\.([a-z_]+))?\}")
 TOKEN = regex.compile(r"\[\[([a-z]+\d*)\||\]\]|\{([A-Z]+\d*)(?:\.([a-z_]+))?\}")
 FORM_WORD = {"tablet": "ಮಾತ್ರೆ", "capsule": "ಕ್ಯಾಪ್ಸೂಲ್", "injection": "ಇಂಜೆಕ್ಷನ್", "sachet": "ಪ್ಯಾಕೆಟ್"}
+FORMULATION_OF_WORD = {w: f for f, w in FORM_WORD.items()}
 
 SYMPTOMS = {
     "fever": "ಜ್ವರ",
@@ -124,6 +128,17 @@ class DrugFill:
             raise KeyError(f"drug slot has no attribute {a!r} (dose/freq/dur not chosen?)")
         return self.surfaces[a]
 
+    def parts(self, a: str | None) -> list[tuple[str, int, int]]:
+        """Named sub-spans (offsets inside the surface text). Only the form word at the end of a
+        dose text ("500 mg ಮಾತ್ರೆ", "ಒಂದು ಮಾತ್ರೆ") is reported, as "form"."""
+        if a not in ("dose", "dose_tab") or a not in self.surfaces:
+            return []
+        text = self.surfaces[a]
+        for word in FORM_WORD.values():
+            if text.endswith(word):
+                return [("form", len(text) - len(word), len(text))]
+        return []
+
 
 @dataclass
 class SymptomFill:
@@ -189,8 +204,7 @@ def render_text(
     out: list[str] = []
     pos = 0
     length = 0
-    open_id: str | None = None
-    open_at = 0
+    stack: list[tuple[str, int]] = []
     spans: dict[str, tuple[int, int]] = {}
     for m in TOKEN.finditer(src):
         lit = src[pos : m.start()]
@@ -198,23 +212,25 @@ def render_text(
         length += len(lit)
         pos = m.end()
         if m.group(1):
-            if open_id is not None:
-                raise ValueError(f"nested marker in {template!r}")
-            open_id, open_at = m.group(1), length
+            stack.append((m.group(1), length))
         elif m.group(0) == "]]":
-            if open_id is None:
+            if not stack:
                 raise ValueError(f"unbalanced ]] in {template!r}")
+            open_id, open_at = stack.pop()
             spans[open_id] = (open_at, length)
-            open_id = None
         else:
             sid, attr = m.group(2), m.group(3)
             if sid not in slots:
                 raise KeyError(f"unknown slot {sid} in {template!r}")
             val = slots[sid].attr(attr)
+            parts = getattr(slots[sid], "parts", None)
+            if parts is not None:
+                for name, ps, pe in parts(attr):
+                    spans.setdefault(f"{sid}.{name}", (length + ps, length + pe))
             out.append(val)
             length += len(val)
     out.append(src[pos:])
-    if open_id is not None:
+    if stack:
         raise ValueError(f"unclosed marker in {template!r}")
     text = "".join(out)
     if "  " in text or " ," in text or " ." in text or "{" in text or "[[" in text:

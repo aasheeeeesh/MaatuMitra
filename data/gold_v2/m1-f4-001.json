@@ -1,0 +1,62 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-f4-001",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ನೆಗಡಿ, ಚಳಿ, ಸುಸ್ತು ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ನೆಗಡಿ ಇಲ್ಲಾ, ಚಳಿ ಇಲ್ಲಾ, ಸುಸ್ತು ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f4-001",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cold",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ನೆಗಡಿ ಇಲ್ಲಾ",
+          "char_start": 26,
+          "char_end": 37
+        }
+      },
+      {
+        "name": "chills",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಚಳಿ ಇಲ್ಲಾ",
+          "char_start": 39,
+          "char_end": 48
+        }
+      },
+      {
+        "name": "tiredness",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಸುಸ್ತು ಇದೆ",
+          "char_start": 50,
+          "char_end": 60
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

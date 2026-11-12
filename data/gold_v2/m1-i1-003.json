@@ -1,0 +1,68 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-i1-003",
+  "template_family_id": "i_traps__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "ಮೊಂಟೆಲುಕಾಸ್ಟ್ 5 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎಲ್ಲಾ ಮಾತ್ರೆ ಇಲ್ಲಿ ಇವೆ, ಅಲ್ವಾ?"
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i1-003",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "montelukast",
+        "dose_value": 5,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಮೊಂಟೆಲುಕಾಸ್ಟ್ 5 mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+          "char_start": 0,
+          "char_end": 36
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 43,
+            "char_end": 55
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರ",
+      "ಎಲ್ಲಾ",
+      "ಮಾತ್ರೆ",
+      "ಇಲ್ಲಿ",
+      "ಅಲ್ವಾ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

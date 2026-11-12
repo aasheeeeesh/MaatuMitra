@@ -1,0 +1,82 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-h1-003",
+  "template_family_id": "h_followup__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "amox 500 ಎಂ.ಜಿ ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h1-003",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "amoxicillin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "amox 500 ಎಂ.ಜಿ ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 0,
+          "char_end": 52
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "capsule",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "nurse",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+            "char_start": 15,
+            "char_end": 25
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+            "char_start": 15,
+            "char_end": 25
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 53,
+            "char_end": 65
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if the fever does not come down, come back in three days",
+      "gold_span": {
+        "turn_index": 1,
+        "span_text": "ಜ್ವರ ಕಡಿಮೆ ಆಗದಿದ್ದರೆ ಮೂರು ದಿನದಲ್ಲಿ ಮತ್ತೆ ಬನ್ನಿ",
+        "char_start": 67,
+        "char_end": 113
+      }
+    }
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

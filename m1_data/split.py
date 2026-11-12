@@ -67,12 +67,20 @@ def lock_text(entries: dict[str, str], header: str) -> str:
 
 
 AUDIO_LOCK_COMMENT = "# audio files of the test split"
+V2_LOCK_COMMENT = (
+    "# gold.v2 labels of the test split (appended by m1_data generate; lines are only ever added)"
+)
 
 
 def split_audio_tail(text: str) -> tuple[str, str]:
-    """(text part, appended audio tail) of a lock file; the tail starts at the audio comment."""
-    i = text.find(AUDIO_LOCK_COMMENT)
-    return (text, "") if i < 0 else (text[:i], text[i:])
+    """(text part, appended tail) of a lock file. Everything that is only ever APPENDED after the
+    v1 freeze belongs to the tail: it starts at the first appended-section comment (audio files
+    or gold.v2 labels), whichever comes first."""
+    cuts = [i for i in (text.find(AUDIO_LOCK_COMMENT), text.find(V2_LOCK_COMMENT)) if i >= 0]
+    if not cuts:
+        return text, ""
+    i = min(cuts)
+    return text[:i], text[i:]
 
 
 def read_lock(lock: Path) -> dict[str, str]:

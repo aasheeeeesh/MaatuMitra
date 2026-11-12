@@ -1,0 +1,62 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-f4-006",
+  "template_family_id": "f_nurse_symptoms__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಕೆಮ್ಮು, ಮೈಕೈನೋವು, ವಾಂತಿ ಇದೆಯಾ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಕೆಮ್ಮು ಇದೆ, ಮೈಕೈನೋವು ಇಲ್ಲ, ವಾಂತಿ ಇದೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-f4-006",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಕೆಮ್ಮು ಇದೆ",
+          "char_start": 31,
+          "char_end": 41
+        }
+      },
+      {
+        "name": "body ache",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಮೈಕೈನೋವು ಇಲ್ಲ",
+          "char_start": 43,
+          "char_end": 56
+        }
+      },
+      {
+        "name": "vomiting",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ವಾಂತಿ ಇದೆ",
+          "char_start": 58,
+          "char_end": 67
+        }
+      }
+    ],
+    "medications": [],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

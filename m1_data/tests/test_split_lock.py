@@ -32,7 +32,7 @@ def test_lock_lists_every_test_file(split_ids):
 def test_lock_fails_when_a_test_file_is_edited(tmp_path, split_ids):
     copy = tmp_path / "repo"
     (copy / "data").mkdir(parents=True)
-    for sub in ("gold", "transcripts", "twins", "splits"):
+    for sub in ("gold", "gold_v2", "transcripts", "twins", "splits"):
         shutil.copytree(DATA / sub, copy / "data" / sub)
     lock = copy / "data" / "splits" / "test.lock"
     assert verify_lock(lock, copy) == []

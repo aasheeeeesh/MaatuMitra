@@ -1,0 +1,108 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-h3-003",
+  "template_family_id": "h_followup__f1",
+  "turns": [
+    {
+      "speaker_role": "caregiver",
+      "text": "ಮಗುವಿಗೆ ಜ್ವರ ಬಂದಿದೆ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಏಳೂವರೆ ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಕೊಡಿ."
+    },
+    {
+      "speaker_role": "asha",
+      "text": "ನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-h3-003",
+    "encounter_type": "asha_household_visit",
+    "patient_age_band": {
+      "band": "child",
+      "gold_span": {
+        "turn_index": 0,
+        "span_text": "ಮಗುವಿಗೆ",
+        "char_start": 0,
+        "char_end": 7
+      }
+    },
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಜ್ವರ ಬಂದಿದೆ",
+          "char_start": 8,
+          "char_end": 19
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": 7.5,
+        "dose_unit": "ml",
+        "frequency_per_day": 4,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಏಳೂವರೆ ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "char_start": 21,
+          "char_end": 73
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "syrup",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "asha",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 34,
+            "char_end": 39
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಸಿರಪ್",
+            "char_start": 34,
+            "char_end": 39
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಕೊಡಿ",
+            "char_start": 74,
+            "char_end": 78
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": {
+      "text": "if the fever is still there tomorrow, bring the child to hospital",
+      "gold_span": {
+        "turn_index": 2,
+        "span_text": "ನಾಳೆಯೂ ಜ್ವರ ಇದ್ದರೆ ಆಸ್ಪತ್ರೆಗೆ ಕರೆದುಕೊಂಡು ಬನ್ನಿ",
+        "char_start": 80,
+        "char_end": 126
+      }
+    }
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಬಂದಿದೆ",
+      "ಇದ್ದರೆ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

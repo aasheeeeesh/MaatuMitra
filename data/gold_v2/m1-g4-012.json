@@ -1,0 +1,129 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g4-012",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಡಾಕ್ಟರ್, ಕೆಮ್ಮು ಮತ್ತು ಚಳಿ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "metronidazole 400 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ, Paracetamol 650 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ ಕೂಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g4-012",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "cough",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಕೆಮ್ಮು",
+          "char_start": 9,
+          "char_end": 15
+        }
+      },
+      {
+        "name": "chills",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಚಳಿ",
+          "char_start": 22,
+          "char_end": 25
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "metronidazole",
+        "dose_value": 400,
+        "dose_unit": "mg",
+        "frequency_per_day": 3,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "metronidazole 400 ಎಂ.ಜಿ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 31,
+          "char_end": 81
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 82,
+            "char_end": 94
+          }
+        }
+      },
+      {
+        "drug": "paracetamol",
+        "dose_value": 650,
+        "dose_unit": "mg",
+        "frequency_per_day": 4,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Paracetamol 650 mg ದಿನಕ್ಕೆ ನಾಲ್ಕು ಸಾರಿ",
+          "char_start": 96,
+          "char_end": 134
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಕೂಡ",
+            "char_start": 135,
+            "char_end": 138
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not stop the antibiotic midway",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
+          "char_start": 140,
+          "char_end": 172
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

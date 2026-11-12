@@ -1,0 +1,103 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-e5-007",
+  "template_family_id": "e_pharmacist__f2",
+  "turns": [
+    {
+      "speaker_role": "pharmacist",
+      "text": "Cefuroxime 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಇದು ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಮಾತ್ರೆನಾ?"
+    },
+    {
+      "speaker_role": "pharmacist",
+      "text": "ಇದು ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಅಲ್ಲ, ನಾನು ಹೇಳಿದ ಮಾತ್ರೆ ಬೇರೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-e5-007",
+    "encounter_type": "pharmacist_dispensing",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cefuroxime",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 7,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "Cefuroxime 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ",
+          "char_start": 0,
+          "char_end": 51
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "pharmacist",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 18,
+            "char_end": 24
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 18,
+            "char_end": 24
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 52,
+            "char_end": 64
+          }
+        }
+      },
+      {
+        "drug": "cotrimoxazole",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ಇದು ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್ ಅಲ್ಲ",
+          "char_start": 96,
+          "char_end": 120
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "unknown",
+        "speaker": "pharmacist",
+        "gold_field_spans": {}
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

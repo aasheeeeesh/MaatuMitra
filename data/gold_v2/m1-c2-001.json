@@ -1,0 +1,92 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-c2-001",
+  "template_family_id": "c_stopped_early__f1",
+  "turns": [
+    {
+      "speaker_role": "nurse",
+      "text": "ಆ ಮಾತ್ರೆ ಎಷ್ಟು ದಿನ ತೆಗೆದುಕೊಂಡಿರಿ?"
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಎರಡು ದಿನ ತೆಗೆದುಕೊಂಡೆ, ಆಮೇಲೆ cotrimoxazole ಒಂದು ಮಾತ್ರೆ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆ."
+    },
+    {
+      "speaker_role": "nurse",
+      "text": "ವೈದ್ಯರ ಸಲಹೆ ಇಲ್ಲದೆ ಮಾತ್ರೆ ನಿಲ್ಲಿಸಬೇಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-c2-001",
+    "encounter_type": "nurse_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "cotrimoxazole",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "cotrimoxazole ಒಂದು ಮಾತ್ರೆ ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆ",
+          "char_start": 62,
+          "char_end": 106
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "stopped_early",
+        "speaker": "patient",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 81,
+            "char_end": 87
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 81,
+            "char_end": 87
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಮುಗಿಸದೆ ನಿಲ್ಲಿಸಿದೆ",
+            "char_start": 88,
+            "char_end": 106
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not stop the tablets without the doctor's advice",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "ವೈದ್ಯರ ಸಲಹೆ ಇಲ್ಲದೆ ಮಾತ್ರೆ ನಿಲ್ಲಿಸಬೇಡಿ",
+          "char_start": 108,
+          "char_end": 145
+        },
+        "speaker": "nurse"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "dev": {
+    "conversations": 328,
+    "medications": 408,
+    "status": {
+      "advised_against": 15,
+      "already_taken": 13,
+      "not_taken": 20,
+      "prescribed": 329,
+      "stopped_early": 15,
+      "unknown": 16
+    },
+    "route": {
+      "None": 68,
+      "injection_unspecified": 16,
+      "oral": 324
+    },
+    "formulation": {
+      "None": 108,
+      "capsule": 24,
+      "injection": 16,
+      "syrup": 40,
+      "tablet": 220
+    },
+    "as_needed": {
+      "None": 384,
+      "True": 24
+    },
+    "food_timing": {
+      "None": 384,
+      "after_food": 24
+    },
+    "patient_age_band": {
+      "child": 80,
+      "null": 248
+    },
+    "weight_kg_set": 0,
+    "liquid_doses_ml": 24,
+    "liquid_doses_with_null_strength": 24,
+    "strength_set": 0
+  },
+  "test": {
+    "conversations": 264,
+    "medications": 352,
+    "status": {
+      "advised_against": 35,
+      "already_taken": 15,
+      "not_taken": 22,
+      "prescribed": 269,
+      "stopped_early": 11
+    },
+    "route": {
+      "None": 145,
+      "oral": 207
+    },
+    "formulation": {
+      "None": 145,
+      "capsule": 26,
+      "syrup": 24,
+      "tablet": 157
+    },
+    "as_needed": {
+      "None": 352
+    },
+    "food_timing": {
+      "None": 272,
+      "after_food": 80
+    },
+    "patient_age_band": {
+      "child": 48,
+      "null": 216
+    },
+    "weight_kg_set": 0,
+    "liquid_doses_ml": 16,
+    "liquid_doses_with_null_strength": 16,
+    "strength_set": 0
+  },
+  "all": {
+    "conversations": 592,
+    "medications": 760,
+    "status": {
+      "advised_against": 50,
+      "already_taken": 28,
+      "not_taken": 42,
+      "prescribed": 598,
+      "stopped_early": 26,
+      "unknown": 16
+    },
+    "route": {
+      "None": 213,
+      "injection_unspecified": 16,
+      "oral": 531
+    },
+    "formulation": {
+      "None": 253,
+      "capsule": 50,
+      "injection": 16,
+      "syrup": 64,
+      "tablet": 377
+    },
+    "as_needed": {
+      "None": 736,
+      "True": 24
+    },
+    "food_timing": {
+      "None": 656,
+      "after_food": 104
+    },
+    "patient_age_band": {
+      "child": 128,
+      "null": 464
+    },
+    "weight_kg_set": 0,
+    "liquid_doses_ml": 40,
+    "liquid_doses_with_null_strength": 40,
+    "strength_set": 0
+  }
+}

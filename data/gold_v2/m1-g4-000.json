@@ -1,0 +1,143 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g4-000",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಡಾಕ್ಟರ್, ತಲೆನೋವು ಮತ್ತು ಚಳಿ ಇದೆ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ciprofloxacin 500 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ, ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಕೂಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g4-000",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ತಲೆನೋವು",
+          "char_start": 9,
+          "char_end": 16
+        }
+      },
+      {
+        "name": "chills",
+        "present": true,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "ಚಳಿ",
+          "char_start": 23,
+          "char_end": 26
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "ciprofloxacin",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": 2,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ciprofloxacin 500 mg ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 32,
+          "char_end": 79
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 80,
+            "char_end": 92
+          }
+        }
+      },
+      {
+        "drug": "ibuprofen",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 3,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ibuprofen ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 94,
+          "char_end": 133
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 109,
+            "char_end": 115
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 109,
+            "char_end": 115
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಕೂಡ",
+            "char_start": 134,
+            "char_end": 137
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "do not stop the antibiotic midway",
+        "negated": true,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Antibiotic ಮಧ್ಯದಲ್ಲಿ ನಿಲ್ಲಿಸಬೇಡಿ",
+          "char_start": 139,
+          "char_end": 171
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

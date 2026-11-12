@@ -1,0 +1,92 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g1-000",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "nitrofurantoin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Antibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ."
+    },
+    {
+      "speaker_role": "patient",
+      "text": "ಸರಿ ಡಾಕ್ಟರ್."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g1-000",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "nitrofurantoin",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 4,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "nitrofurantoin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 0,
+          "char_end": 54
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 20,
+            "char_end": 26
+          },
+          "formulation": {
+            "turn_index": 0,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 20,
+            "char_end": 26
+          },
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 55,
+            "char_end": 67
+          }
+        }
+      }
+    ],
+    "advice": [
+      {
+        "text": "finish the full antibiotic course",
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Antibiotic course ಪೂರ್ತಿ ಮುಗಿಸಿ",
+          "char_start": 69,
+          "char_end": 100
+        },
+        "speaker": "doctor"
+      }
+    ],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

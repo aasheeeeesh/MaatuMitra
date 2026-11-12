@@ -29,7 +29,7 @@ def _sha(p: Path) -> str:
 
 def _generated_files(base: Path) -> list[Path]:
     out = []
-    for sub in ("gold", "transcripts", "twins", "splits"):
+    for sub in ("gold", "gold_v2", "transcripts", "twins", "splits"):
         out += [
             p for p in (base / "data" / sub).rglob("*") if p.is_file() and p.name != "README.md"
         ]

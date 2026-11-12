@@ -1,0 +1,88 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-i6-002",
+  "template_family_id": "i_traps__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ಯಾವುದೇ ಜ್ವರ ಇಲ್ಲ, ಪ್ಯಾರಾಸಿಟಮಾಲ್ 500 mg ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i6-002",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "fever",
+        "present": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಯಾವುದೇ ಜ್ವರ ಇಲ್ಲ",
+          "char_start": 21,
+          "char_end": 37
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "paracetamol",
+        "dose_value": 500,
+        "dose_unit": "mg",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್ 500 mg ಮಾತ್ರೆ",
+          "char_start": 39,
+          "char_end": 66
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 60,
+            "char_end": 66
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 60,
+            "char_end": 66
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 73,
+            "char_end": 85
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}

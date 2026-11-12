@@ -1,0 +1,88 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-i6-006",
+  "template_family_id": "i_traps__f2",
+  "turns": [
+    {
+      "speaker_role": "patient",
+      "text": "ಏನು ಮಾಡಬೇಕು ಡಾಕ್ಟರ್?"
+    },
+    {
+      "speaker_role": "physician",
+      "text": "ತಲೆನೋವು ಇದೆ, ಮೆಟ್ಫಾರ್ಮಿನ್ ಒಂದು ಮಾತ್ರೆ ಮಾತ್ರ ತೆಗೆದುಕೊಳ್ಳಿ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-i6-006",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [
+      {
+        "name": "headache",
+        "present": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ತಲೆನೋವು ಇದೆ",
+          "char_start": 21,
+          "char_end": 32
+        }
+      }
+    ],
+    "medications": [
+      {
+        "drug": "metformin",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "ಮೆಟ್ಫಾರ್ಮಿನ್ ಒಂದು ಮಾತ್ರೆ",
+          "char_start": 34,
+          "char_end": 58
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 52,
+            "char_end": 58
+          },
+          "formulation": {
+            "turn_index": 1,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 52,
+            "char_end": 58
+          },
+          "status": {
+            "turn_index": 1,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 65,
+            "char_end": 77
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": false,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ",
+      "ಮಾತ್ರ"
+    ],
+    "code_switched": false,
+    "cross_turn_negation": false
+  }
+}

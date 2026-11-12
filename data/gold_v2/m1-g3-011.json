@@ -1,0 +1,140 @@
+{
+  "schema_version": "gold.v2",
+  "conversation_id": "m1-g3-011",
+  "template_family_id": "g_physician_english__f1",
+  "turns": [
+    {
+      "speaker_role": "physician",
+      "text": "dexamethasone ೨ mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ ತೆಗೆದುಕೊಳ್ಳಿ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Diclofenac ಬೇಡ."
+    },
+    {
+      "speaker_role": "physician",
+      "text": "Cefadroxil ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಕೊಡುತ್ತೇನೆ."
+    }
+  ],
+  "gold_record": {
+    "patient_ref": "pt-m1-g3-011",
+    "encounter_type": "physician_consult",
+    "patient_age_band": null,
+    "weight_kg": null,
+    "symptoms": [],
+    "medications": [
+      {
+        "drug": "dexamethasone",
+        "dose_value": 2,
+        "dose_unit": "mg",
+        "frequency_per_day": 1,
+        "duration_days": 5,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 0,
+          "span_text": "dexamethasone ೨ mg ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 0,
+          "char_end": 45
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 0,
+            "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+            "char_start": 46,
+            "char_end": 58
+          }
+        }
+      },
+      {
+        "drug": "diclofenac",
+        "dose_value": null,
+        "dose_unit": null,
+        "frequency_per_day": null,
+        "duration_days": null,
+        "negated": true,
+        "gold_span": {
+          "turn_index": 1,
+          "span_text": "Diclofenac ಬೇಡ",
+          "char_start": 60,
+          "char_end": 74
+        },
+        "route": null,
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": null,
+        "as_needed": null,
+        "food_timing": null,
+        "status": "advised_against",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "status": {
+            "turn_index": 1,
+            "span_text": "ಬೇಡ",
+            "char_start": 71,
+            "char_end": 74
+          }
+        }
+      },
+      {
+        "drug": "cefadroxil",
+        "dose_value": 1,
+        "dose_unit": "tablet",
+        "frequency_per_day": 2,
+        "duration_days": null,
+        "negated": false,
+        "gold_span": {
+          "turn_index": 2,
+          "span_text": "Cefadroxil ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+          "char_start": 76,
+          "char_end": 116
+        },
+        "route": "oral",
+        "strength_value": null,
+        "strength_unit": null,
+        "formulation": "tablet",
+        "as_needed": null,
+        "food_timing": null,
+        "status": "prescribed",
+        "speaker": "doctor",
+        "gold_field_spans": {
+          "route": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 92,
+            "char_end": 98
+          },
+          "formulation": {
+            "turn_index": 2,
+            "span_text": "ಮಾತ್ರೆ",
+            "char_start": 92,
+            "char_end": 98
+          },
+          "status": {
+            "turn_index": 2,
+            "span_text": "ಕೊಡುತ್ತೇನೆ",
+            "char_start": 117,
+            "char_end": 127
+          }
+        }
+      }
+    ],
+    "advice": [],
+    "follow_up": null
+  },
+  "tags": {
+    "has_negation": true,
+    "trap_tokens": [
+      "ಮಾತ್ರೆ"
+    ],
+    "code_switched": true,
+    "cross_turn_negation": false
+  }
+}
