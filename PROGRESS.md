@@ -17,7 +17,7 @@ Status values: todo / in-progress / done / blocked.
 | B1b | B | m1 audio: TTS + public real speech + manifest | done (344 convs MMS + pitch-shifted test voice; clean on disk, variants on demand; FLEURS 250) | 2026-11-12 | a7ba312 |
 | B1r | B | m1 reviews + fixes + gate | done (3 reviews D-90,D-91,D-93; fix pass + REFREEZE-1 D-104..D-110) | 2026-11-10 | 66ff51a |
 | B4 | B | m4_verify build + reviews + gate | done (fix pass D-111..D-116; M4-1 guard fixed; E4 dev rerun) | 2026-11-11 | 36d203a |
-| B2 | B | m2_asr build + reviews + gate | done on dev (2 models; test-run command pending) | 2026-11-12 | (this commit) |
+| B2 | B | m2_asr build + reviews + gate | done on dev (2 models; test-run command pending) | 2026-11-12 | ffc4a3d |
 | B3 | B | m3_extract build + reviews + gate | done (fix pass D-117..D-121; clinical review D-122 -> record.v2 in Phase C) | 2026-11-11 | 18bb537 |
 | B5 | B | m5_backend build + reviews + gate | done (fix pass verified D-103; open: m4 wiring + m6 adapt in Phase C) | 2026-11-10 | 4f3c5ad |
 | B6 | B | m6_ui build + reviews + gate | done (reviews D-123 security, D-124 kannada; fixes in the Phase C m6 pass) | 2026-11-11 | 6440bbd |
