@@ -184,3 +184,13 @@ Things nobody has verified yet, with what to check. Builders add items through
 
 - Request (contracts/ untouched): manifest.v1 has no field for "file stored vs materialised on demand". Worked around with data/audio_index/tts_index.jsonl (`storage`). Consider an optional field.
 - UNVERIFIED: audio bit-exactness on another machine or ffmpeg version; FLEURS licence page re-check.
+
+## From m6_ui (merged 20261112T005833Z)
+
+- m5 /approve (POST /records/{id}/approve) sets status approved and approved_by with NO flag check (D-123 F3). m6 no longer calls it, but it should be removed or gated like /save. Needs a small m5 change.
+- m5 has no endpoint that lists records the caller may open. m6 live mode asks the user to type a record id and only lists patients (GET /patients). Request: GET /records returning id, patient, status and flagged count under the same row-level security.
+- m5 has no transcript endpoint. m6 looks the transcript up locally by source_transcript_id; a record whose transcript is not in the local fixtures shows a load error.
+- m5 rule: an edit that creates a NEW flag kind (not one of the original flags) can never be saved (409 'edited record is not cleanly re-verified'). Is that intended? The UI shows the refusal but cannot guide the physician.
+- The role claim is decoded without verifying the signature (display only; m5 verifies). UNVERIFIED whether that is acceptable for the final audit.
+- X-Frame-Options / frame-ancestors (F8): Streamlit 1.67 cannot set them; open unless a reverse proxy is added.
+- Native review of the changed Kannada strings and a real-browser check are UNVERIFIED (see human_todo.md).

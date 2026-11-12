@@ -31,6 +31,7 @@ TOKEN = regex.compile(r"[\p{L}\p{M}\p{N}]+")
 KN_DIGITS = {0x0CE6 + i: str(i) for i in range(10)}
 NUMERIC = {"dose_value": "C2", "frequency_per_day": "C5", "duration_days": "C5"}
 BOOLEAN = {"present", "negated"}
+MIN_NAME_LEN = 3  # shortest accepted edited drug name (letters)
 
 
 @lru_cache(maxsize=1)
@@ -160,8 +161,14 @@ class MockVerifier:
                 f"mock re-run: edited value {_fmt(value)} is not heard in the evidence span; listen and confirm",
                 path,
             )
-        needle = "" if value is None else str(value).casefold()
-        if needle and (needle in _comparison_tokens(span) or needle in span.casefold()):
+        # F7 (D-123): whole-token match and a minimum length. A letter or a word fragment of the
+        # evidence is not a drug name. (A lexicon check is the real m4's job.)
+        needle_toks = _comparison_tokens("" if value is None else str(value))
+        span_toks = _comparison_tokens(span)
+        if attr == "drug" and sum(len(t) for t in needle_toks) < MIN_NAME_LEN:
+            needle_toks = []
+        n = len(needle_toks)
+        if n and any(span_toks[i : i + n] == needle_toks for i in range(len(span_toks) - n + 1)):
             return _check(
                 "C2", "pass", f"mock re-run: edited text '{value}' is in the evidence span", path
             )

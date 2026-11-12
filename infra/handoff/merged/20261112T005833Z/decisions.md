@@ -1,0 +1,10 @@
+### D-?: m6 pass accepted; m5's /approve still needs the same flag check   (Phase C / m6_ui / orchestrator / 2026-11-12)
+- What we needed to decide: The m6 pass (Sonnet) moved the app to the gated /save, fixed security findings F1-F7, documented F8, and applied the Kannada fixes (D-123, D-124). Accept it, and what is left?
+- Options we considered: (1) Accept and route the m5 leftovers to the Phase C integration work. Pro: m6 itself is done and tested against the real backend. Con: /approve in m5 can still mark a record approved without the flag check. (2) Hold m6 until m5 changes. Pro: one combined change. Con: blocks finished work for no gain.
+- What we chose: Option 1.
+- Why: m6 no longer calls /approve at all, so the app cannot use that route; the remaining risk is a hand-crafted API call, which belongs to m5.
+- What we actually did: Re-ran checks myself: `pytest m6_ui` 163 passed, 2 skipped (live tests); then started the m5 database and API on 127.0.0.1, ran the 2 live m6-to-m5 tests (2 passed), and stopped both (nothing listening on 54329 or 8000 afterwards); ruff clean; only m6_ui and results/m6_ui changed (m5 untouched). The builder ran the new tests against the old code (git archive of HEAD): 73 failed there; it did not watch each fail before writing the fix, so "red before green" is shown after the fact.
+- What could go wrong / weaknesses: m5 /approve has no flag check (fix in Phase C: make it run the save-gate check or remove it). No list-records or transcript endpoint in m5, so the reviewer types a record id. An edit that creates a new kind of flag cannot be saved yet. F8 (clickjacking headers) stays open because Streamlit cannot set them. The role shown on screen is decoded from the token without checking its signature, for display only; the server still checks it. All new Kannada text is AI-drafted (native review in HUMAN_TODO).
+- What else could be done: Put a small local proxy in front of Streamlit for headers (out of scope).
+- How to change this decision later: m5_backend/app/main.py (/approve, list and transcript endpoints) in Phase C; m6_ui/gate.py.
+- Status: done

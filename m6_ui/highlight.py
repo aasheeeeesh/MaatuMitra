@@ -24,8 +24,16 @@ class Span:
     label: str  # row path, used only as a data attribute after escaping
 
 
+BIDI_RE = re.compile("[\u202a-\u202e\u2066-\u2069]")
+
+
+def neutralise(text: object) -> str:
+    """F6 (D-123): replace Unicode bidi controls by a visible [U+XXXX] marker (ZWJ/ZWNJ stay)."""
+    return BIDI_RE.sub(lambda m: f"[U+{ord(m.group()):04X}]", str(text))
+
+
 def esc(text: object) -> str:
-    return html.escape(str(text), quote=True)
+    return html.escape(neutralise(text), quote=True)
 
 
 def render_transcript(text: str, spans: list[Span]) -> str:

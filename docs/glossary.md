@@ -167,4 +167,7 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Grapheme CER**: character error rate counted on visible letter clusters (a Kannada letter with its signs counts once).
 - **Real-time factor (RTF)**: processing time divided by audio length; below 1 means faster than real time.
 - **In-sample**: measured on the same data that was used to build or fix the system, so it overestimates performance on new data.
+- **Verdict id**: the identifier of the checker result that the SERVER stored; the save request names it instead of sending the result.
+- **Cannot verify**: the checker's way of saying it had no rule or data to check a value; it does not mean the value is right.
+- **Clickjacking**: tricking a user into clicking a page that is hidden inside another page's frame.
 <!-- GLOSSARY-END -->

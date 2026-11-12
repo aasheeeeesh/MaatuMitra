@@ -50,3 +50,18 @@ def test_xss_fixture_renders_inert():
 
 def test_escape_helper():
     assert highlight.esc("<b>&") == "&lt;b&gt;&amp;"
+
+
+def test_bidi_controls_are_neutralised_and_made_visible():
+    # F6 (D-123): U+202A..U+202E and U+2066..U+2069 can reorder digits on screen
+    for cp in [*range(0x202A, 0x202F), *range(0x2066, 0x206A)]:
+        out = highlight.esc(f"dose 5\u200d00{chr(cp)}x")
+        assert chr(cp) not in out
+        assert f"[U+{cp:04X}]" in out
+    out = highlight.render_transcript("take \u202e500\u202c mg", [])
+    assert chr(0x202E) not in out and "[U+202E]" in out
+
+
+def test_zwj_and_zwnj_are_kept():
+    assert "‌" in highlight.esc("a‌b")
+    assert "\u200d" in highlight.esc("a\u200db")

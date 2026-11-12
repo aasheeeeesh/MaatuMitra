@@ -95,3 +95,51 @@ def test_missing_key_fails_loudly():
 
     with pytest.raises(KeyError):
         i18n.t("does.not.exist", "en")
+
+
+def test_new_reason_code_and_v2_keys_exist_and_text_is_nfc():
+    import unicodedata
+
+    for code in (
+        "out_of_range exceeds_max_daily unit_not_allowed route cannot_verify "
+        "cannot_verify_paediatric cannot_verify_no_range cannot_verify_not_in_lexicon "
+        "cannot_verify_liquid_strength cannot_verify_count_unit"
+    ).split():
+        assert i18n.has(f"reason.code.{code}"), code
+    for grp, vals in {
+        "age": "infant child adolescent adult older_adult unknown",
+        "route": "oral iv im sc topical inhaled rectal injection_unspecified other unknown",
+        "form": "tablet capsule syrup suspension drops injection sachet other",
+        "mstatus": "prescribed already_taken not_taken advised_against stopped_early continue_existing unknown",
+        "food": "before_food after_food with_food empty_stomach",
+    }.items():
+        for v in vals.split():
+            assert i18n.has(f"v2val.{grp}.{v}"), (grp, v)
+    for lang in i18n.LANGS:
+        for k, v in i18n.load(lang).items():
+            if isinstance(v, str):
+                assert unicodedata.is_normalized("NFC", v), (lang, k)
+
+
+def test_accepted_kannada_review_fixes_are_applied():
+    kn = lambda k: i18n.t(k, "kn", raw=True)  # noqa: E731
+    assert kn("approve.ready").index("\u0c86\u0ca6\u0cb0\u0cc2") < kn("approve.ready").index(
+        "\u0cb8\u0cb0\u0ccd\u0cb5\u0cb0\u0ccd"
+    )  # "aadaru" before "server"
+    assert "\u0c89\u0cb2\u0ccd\u0c9f\u0cbe" in kn("reason.C3")  # 'ulta' = reversed
+    assert "\u0c87\u0ca6\u0cc6" in kn("reason.C4") and "\u0ca1\u0ccb\u0cb8\u0ccd" in kn("reason.C4")
+    assert (
+        kn("badge.ok") != "\u0caa\u0cb0\u0cbf\u0cb6\u0cc0\u0cb2\u0c95: \u0cb8\u0cb0\u0cbf"
+    )  # old text
+    assert "\u0cb8\u0cb0\u0cbf" not in kn("badge.ok").split(":")[-1]  # no 'correct' word
+    assert "\u0c9a\u0cbf\u0c95\u0cbf\u0ca4\u0ccd\u0cb8\u0cc6" in kn(
+        "app.mock_banner"
+    )  # 'treatment'
+    assert "\u0cac\u0cc7\u0ca1" in kn("fail.blind_spot")  # also 'bEDa'
+    assert "\u0ca4\u0cc6\u0cb0\u0cc6\u0ca6" not in kn(
+        "gate.code.refused_unresolved_flags"
+    )  # calque
+    assert kn("help.not_clinician") != kn("help.clinician")
+    assert len(kn("help.not_clinician")) > len(kn("help.clinician")) + 15
+    assert not regex.search(r"[A-Za-z]", i18n.t("error.load_transcript", "kn"))
+    assert not i18n.has("error.load")

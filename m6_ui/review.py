@@ -208,3 +208,27 @@ def approve_enabled(verdict: dict | None, resolved: dict) -> bool:
         # fail-closed: the reviewer must explicitly acknowledge the missing verifier result
         return not unresolved(verdict, resolved) and bool(resolved)
     return not unresolved(verdict, resolved)
+
+
+def build_resolutions(base_flags: list[Flag], resolved: dict) -> list[dict] | None:
+    """One resolution per (check_id, field_path) of the verdict the server stored (m5 key).
+
+    None while any base flag is unanswered, or when the only "flag" is the fail-closed
+    pseudo flag (no verdict): that can never be sent as a resolution."""
+    if any(f.check_id == NO_VERDICT_CHECK for f in base_flags):
+        return None
+    by_key: dict[tuple[str, str], list[str | None]] = {}
+    for f in base_flags:
+        by_key.setdefault((f.check_id, f.field_path), []).append(resolved.get(f.flag_id))
+    out = []
+    for (cid, path), answers in by_key.items():
+        if any(a is None for a in answers):
+            return None
+        out.append(
+            {
+                "check_id": cid,
+                "field_path": path,
+                "action": "edited" if "edited" in answers else "confirmed",
+            }
+        )
+    return out

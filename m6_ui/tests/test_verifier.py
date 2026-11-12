@@ -95,3 +95,29 @@ def test_default_live_command_uses_m4_cli_not_import():
     assert sv.cmd_prefix[-3:] == ["-m", "m4_verify", "verify"]
     src = Path(verifier.__file__).read_text(encoding="utf-8")
     assert "import m4_verify" not in src and "from m4_verify" not in src
+
+
+def test_mock_rerun_rejects_a_one_letter_drug_name():
+    # F7 (D-123): a single letter of the evidence is not a drug name
+    rec, ver, tr = fixture_triplet("rec-fx-asha-002")
+    for bad in (chr(0x0CAA), "p", "pa", " "):
+        edited = review.set_pointer(rec, "/medications/0/drug", bad)
+        v2 = verifier.MockVerifier().verify(edited, tr, ver, {"/medications/0/drug"})
+        c2 = [c for c in v2["checks"] if c["field_path"] == "/medications/0/drug"]
+        assert c2 and all(c["status"] == "flag" for c in c2), bad
+    rec4, ver4, tr4 = fixture_triplet("rec-fx-phys-004")
+    same = review.set_pointer(rec4, "/medications/0/drug", "azithromycin")
+    v3 = verifier.MockVerifier().verify(same, tr4, ver4, {"/medications/0/drug"})
+    assert any(
+        c["status"] == "pass" for c in v3["checks"] if c["field_path"] == "/medications/0/drug"
+    )
+
+
+def test_mock_rerun_requires_a_whole_token_or_lexicon_hit():
+    rec, ver, tr = fixture_triplet("rec-fx-phys-004")
+    span = rec["medications"][0]["evidence"]["span_text"]
+    part = span.split()[0][:4]  # a fragment of a longer word, 4 letters, not a whole token
+    edited = review.set_pointer(rec, "/medications/0/drug", part)
+    v2 = verifier.MockVerifier().verify(edited, tr, ver, {"/medications/0/drug"})
+    c2 = [c for c in v2["checks"] if c["field_path"] == "/medications/0/drug"]
+    assert all(c["status"] == "flag" for c in c2)

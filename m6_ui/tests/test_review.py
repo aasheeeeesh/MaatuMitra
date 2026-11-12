@@ -108,3 +108,38 @@ def test_every_row_kind_is_known():
         rec, ver, _ = fixture_triplet(rid)
         for r in review.build_rows(rec, ver):
             assert r.kind in review.KINDS
+
+
+# ---------------------------------------------------------------- D-94: one resolution per flag
+
+
+def _flag(check, path, reason="r"):
+    return review.Flag(check, "n", reason, path)
+
+
+def test_build_resolutions_needs_every_base_flag_answered():
+    flags = [_flag("C4", "/m/0/dose_value"), _flag("C7", "/m/0/dose_value")]
+    resolved: dict = {}
+    assert review.build_resolutions(flags, resolved) is None
+    resolved[flags[0].flag_id] = "confirmed"
+    assert review.build_resolutions(flags, resolved) is None  # C7 still open
+    resolved[flags[1].flag_id] = "edited"
+    assert review.build_resolutions(flags, resolved) == [
+        {"check_id": "C4", "field_path": "/m/0/dose_value", "action": "confirmed"},
+        {"check_id": "C7", "field_path": "/m/0/dose_value", "action": "edited"},
+    ]
+
+
+def test_build_resolutions_has_one_entry_per_check_and_path():
+    # m5 keys a flag by (check_id, field_path); two reasons on one key must not duplicate it
+    flags = [_flag("C4", "/p", "a"), _flag("C4", "/p", "b")]
+    resolved = {flags[0].flag_id: "confirmed", flags[1].flag_id: "confirmed"}
+    assert review.build_resolutions(flags, resolved) == [
+        {"check_id": "C4", "field_path": "/p", "action": "confirmed"}
+    ]
+
+
+def test_fail_closed_pseudo_flag_is_never_sent_as_a_resolution():
+    flags = review.flags_from_verdict(None)
+    resolved = {flags[0].flag_id: "confirmed"}
+    assert review.build_resolutions(flags, resolved) is None

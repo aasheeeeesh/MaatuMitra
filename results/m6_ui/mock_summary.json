@@ -31,7 +31,7 @@
       ],
       "flagged_first": true,
       "approve_enabled_before_answers": false,
-      "gate_after_confirming_all": "refused_unresolved_flags",
+      "gate_after_confirming_all": "saved",
       "transcript_markup_inert": true
     },
     {
@@ -45,7 +45,7 @@
       ],
       "flagged_first": true,
       "approve_enabled_before_answers": false,
-      "gate_after_confirming_all": "refused_invalid",
+      "gate_after_confirming_all": "refused_stale",
       "transcript_markup_inert": true
     },
     {
@@ -57,7 +57,7 @@
       ],
       "flagged_first": true,
       "approve_enabled_before_answers": false,
-      "gate_after_confirming_all": "refused_unresolved_flags",
+      "gate_after_confirming_all": "saved",
       "transcript_markup_inert": true
     },
     {
@@ -69,7 +69,7 @@
       ],
       "flagged_first": true,
       "approve_enabled_before_answers": false,
-      "gate_after_confirming_all": "refused_unresolved_flags",
+      "gate_after_confirming_all": "saved",
       "transcript_markup_inert": true
     },
     {
@@ -92,7 +92,147 @@
       ],
       "flagged_first": true,
       "approve_enabled_before_answers": false,
-      "gate_after_confirming_all": "refused_unresolved_flags",
+      "gate_after_confirming_all": "saved",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-asha-001",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 3,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-asha-002",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 6,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-child-007",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 7,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-child-007-no-strength",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 7,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-inj-008",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 6,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-nurse-005",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 4,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-past-009",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 11,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-pharm-003",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 8,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-phys-004",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 7,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
+      "transcript_markup_inert": true
+    },
+    {
+      "record_id": "rec2-fx-trap-006",
+      "load_errors": [
+        "no_verdict"
+      ],
+      "rows": 6,
+      "flagged_rows": [
+        "/"
+      ],
+      "flagged_first": true,
+      "approve_enabled_before_answers": false,
+      "gate_after_confirming_all": "refused_stale",
       "transcript_markup_inert": true
     }
   ]

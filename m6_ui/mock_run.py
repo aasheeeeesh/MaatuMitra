@@ -40,12 +40,12 @@ def main() -> int:
             if r.flags:
                 review.mark_row(resolved, r, "confirmed")
         g = gate.MockGate()
-        g.approve(rid)
-        res = (
-            g.save(rid, case.verdict)
-            if case.verdict
-            else gate.GateResult(False, 0, "refused_invalid")
-        )
+        if case.verdict:
+            vid = g.store_verdict(rid, case.record, case.verdict)
+            answers = review.build_resolutions(review.flags_from_verdict(case.verdict), resolved)
+            res = g.save(rid, vid, answers or [], "physician")
+        else:
+            res = gate.GateResult(False, 0, "refused_stale")
         markup = (
             highlight.render_transcript(
                 case.transcript["text"], highlight.spans_for_record(case.record, case.verdict)

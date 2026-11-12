@@ -23,7 +23,7 @@ def _texts(at) -> str:
 
 
 def _start(
-    record_id: str | None = None, page: str = "review", lang: str = "en", role: str = "nurse"
+    record_id: str | None = None, page: str = "review", lang: str = "en", role: str = "physician"
 ):
     at = AppTest.from_file(str(APP), default_timeout=T)
     at.session_state["lang"] = lang
@@ -145,15 +145,27 @@ def test_approve_disabled_until_every_flag_is_individually_resolved():
 
 
 def test_server_refusal_is_shown_and_record_is_not_saved():
+    # an edit that the re-run checker still flags: the server (mock gate) refuses the save
     at = _start("rec-fx-pharm-003-asr")
+    _click(at, "no_medications-0-dose_value")
+    at.number_input(key="in_medications-0-dose_value_dose_value").set_value(500.0)
+    _click(at, "save_medications-0-dose_value")
     _click(at, "yes_medications-0-dose_value")
     assert not at.button(key="approve").disabled
     _click(at, "approve")
     text = _texts(at)
     assert i18n.t("gate.refused_title", "en") in text
-    assert htmllib.escape(i18n.t("gate.code.refused_unresolved_flags", "en")) in text
+    assert htmllib.escape(i18n.t("gate.code.refused_not_reverified", "en")) in text
     assert i18n.t("status.not_saved", "en") in text
     assert i18n.t("gate.saved", "en") not in text
+
+
+def test_confirming_every_flag_one_by_one_then_approve_is_saved_by_the_server():
+    # D-94: the physician's per-flag confirmation IS the approval; the server checks it
+    at = _start("rec-fx-pharm-003-asr")
+    _click(at, "yes_medications-0-dose_value")
+    _click(at, "approve")
+    assert i18n.t("gate.saved", "en") in _texts(at)
 
 
 def test_forced_server_refusal_is_handled(monkeypatch):
@@ -185,6 +197,8 @@ def test_edit_reruns_verifier_and_new_flag_must_be_resolved():
     assert at.button(key="approve").disabled, "new C2 flag after the edit is still open"
     _click(at, "yes_medications-0-dose_value")
     assert not at.button(key="approve").disabled
+    _click(at, "approve")  # the stand-in still flags the edit: the server refuses
+    assert htmllib.escape(i18n.t("gate.code.refused_not_reverified", "en")) in _texts(at)
 
 
 # --------------------------------------------------------------------------- security
@@ -218,7 +232,7 @@ def test_counselling_card_shows_not_validated_status():
     _click(at, "card_card-hand-hygiene")
     text = _texts(at)
     assert i18n.t("help.card_status_machine", "en") in text
-    assert i18n.t("help.not_clinician", "en") in text
+    assert htmllib.escape(i18n.t("help.not_clinician", "en")) in text
 
 
 def test_failure_panel_lists_cases():
