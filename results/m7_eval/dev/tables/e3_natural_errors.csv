@@ -1,0 +1,2 @@
+errors,status,n_fields,wilson_hi_per_1000,rule_of_three_per_1000,note
+0,verifier NOT yet run on m3 output (Phase C integration m3->m4),3624,1.06,0.83,"0 natural critical errors on dev means verifier recall on natural errors is NOT MEASURABLE here (0/0), not 100%."

@@ -1,0 +1,5 @@
+system,subset,code,severity,errors,n_fields,per_1000,wilson_lo_per_1000,wilson_hi_per_1000,label
+rules,full_dev,MA-MISSED-ADVICE,major,40,3624,11.0375,8.1163,14.9943,"IN-SAMPLE (DEV): the m3 rules and m4 checks were written and fixed while looking at dev (D-115, D-120, D-121); dev numbers are not an estimate of performance on new wording."
+rules,full_dev,MA-MISSED-FOLLOWUP,major,8,3624,2.2075,1.119,4.3502,"IN-SAMPLE (DEV): the m3 rules and m4 checks were written and fixed while looking at dev (D-115, D-120, D-121); dev numbers are not an estimate of performance on new wording."
+rules,llm_subset,MA-MISSED-ADVICE,major,3,488,6.1475,2.0929,17.9165,"IN-SAMPLE (DEV): the m3 rules and m4 checks were written and fixed while looking at dev (D-115, D-120, D-121); dev numbers are not an estimate of performance on new wording."
+rules,llm_subset,MA-MISSED-FOLLOWUP,major,1,488,2.0492,0.3618,11.5149,"IN-SAMPLE (DEV): the m3 rules and m4 checks were written and fixed while looking at dev (D-115, D-120, D-121); dev numbers are not an estimate of performance on new wording."

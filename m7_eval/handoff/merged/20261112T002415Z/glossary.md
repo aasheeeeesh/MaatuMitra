@@ -1,0 +1,14 @@
+- **Wilson interval**: a 95% confidence range for a proportion k/n that behaves well even at 0% or 100% and with small n.
+- **Rule of three**: if something happened 0 times in N tries, the true rate is (with 95% confidence) below about 3/N.
+- **Cluster bootstrap**: estimating uncertainty by resampling whole groups (here: template families) instead of single items, because items in one group tend to fail together.
+- **Paired bootstrap**: comparing two systems on the SAME items by resampling the per-item differences; a difference counts only if its 95% range excludes zero.
+- **Ablation**: switching off one part (here one safety check) to see how much it contributes.
+- **Review burden**: the share of error-free fields that the verifier flags anyway, which a human must then check.
+- **Unique mutation**: one distinct planted mistake; repeats of the same mistake are counted once.
+- **Seen frame / unseen frame**: whether a test sentence pattern (with names and numbers blanked out) also occurs in a dev template.
+- **Automation bias**: trusting a machine's warnings so much that people miss problems the machine does not point at.
+- **Within-subject design**: every participant does every condition (here: flags shown and flags hidden), so people are compared with themselves.
+- **SUS (System Usability Scale)**: a 10-question usability questionnaire scored 0 to 100.
+- **Grapheme CER**: character error rate counted on visible letter clusters (a Kannada letter with its signs counts once).
+- **Real-time factor (RTF)**: processing time divided by audio length; below 1 means faster than real time.
+- **In-sample**: measured on the same data that was used to build or fix the system, so it overestimates performance on new data.

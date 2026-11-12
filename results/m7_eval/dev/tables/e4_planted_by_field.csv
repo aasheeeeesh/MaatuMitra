@@ -1,0 +1,24 @@
+level,condition,row_label,field,caught_at_field_k,caught_at_field_n,caught_at_field_rate,caught_at_field_wilson_lo,caught_at_field_wilson_hi,caught_at_field_rule_of_three_upper,detected_k,detected_n,detected_rate,detected_wilson_lo,detected_wilson_hi,detected_rule_of_three_upper
+record,no_encounter_index,"record-level wrong patient, no encounter index (blind spot)",patient_ref,0,200,0.0,0.0,0.0188,0.015,0,200,0.0,0.0,0.0188,0.015
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",dose_unit,200,200,1.0,0.9812,1.0,,200,200,1.0,0.9812,1.0,
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",dose_value,186,186,1.0,0.9798,1.0,,186,186,1.0,0.9798,1.0,
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",drug,185,185,1.0,0.9797,1.0,,185,185,1.0,0.9797,1.0,
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",duration_days,285,285,1.0,0.9867,1.0,,285,285,1.0,0.9867,1.0,
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",frequency_per_day,258,258,1.0,0.9853,1.0,,258,258,1.0,0.9853,1.0,
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",negated,222,222,1.0,0.983,1.0,,222,222,1.0,0.983,1.0,
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",patient_ref,200,200,1.0,0.9812,1.0,,200,200,1.0,0.9812,1.0,
+record,with_encounter_index,"record-level: record mutated, transcript correct (easier)",present,171,171,1.0,0.978,1.0,,171,171,1.0,0.978,1.0,
+transcript,oracle_second_transcript_upper_bound,UPPER BOUND: oracle (perfect) second transcript,dose_unit,200,200,1.0,0.9812,1.0,,200,200,1.0,0.9812,1.0,
+transcript,oracle_second_transcript_upper_bound,UPPER BOUND: oracle (perfect) second transcript,dose_value,315,315,1.0,0.988,1.0,,315,315,1.0,0.988,1.0,
+transcript,oracle_second_transcript_upper_bound,UPPER BOUND: oracle (perfect) second transcript,drug,183,183,1.0,0.9794,1.0,,183,183,1.0,0.9794,1.0,
+transcript,oracle_second_transcript_upper_bound,UPPER BOUND: oracle (perfect) second transcript,duration_days,200,200,1.0,0.9812,1.0,,200,200,1.0,0.9812,1.0,
+transcript,oracle_second_transcript_upper_bound,UPPER BOUND: oracle (perfect) second transcript,frequency_per_day,200,200,1.0,0.9812,1.0,,200,200,1.0,0.9812,1.0,
+transcript,oracle_second_transcript_upper_bound,UPPER BOUND: oracle (perfect) second transcript,negated,222,222,1.0,0.983,1.0,,222,222,1.0,0.983,1.0,
+transcript,oracle_second_transcript_upper_bound,UPPER BOUND: oracle (perfect) second transcript,present,171,171,1.0,0.978,1.0,,171,171,1.0,0.978,1.0,
+transcript,text_only,"HEADLINE: error in the transcript itself, text-only checks",dose_unit,191,200,0.955,0.9167,0.9761,,131,200,0.655,0.5868,0.7174,
+transcript,text_only,"HEADLINE: error in the transcript itself, text-only checks",dose_value,219,315,0.6952,0.6423,0.7435,,131,315,0.4159,0.3628,0.471,
+transcript,text_only,"HEADLINE: error in the transcript itself, text-only checks",drug,0,183,0.0,0.0,0.0206,0.0164,0,183,0.0,0.0,0.0206,0.0164
+transcript,text_only,"HEADLINE: error in the transcript itself, text-only checks",duration_days,0,200,0.0,0.0,0.0188,0.015,0,200,0.0,0.0,0.0188,0.015
+transcript,text_only,"HEADLINE: error in the transcript itself, text-only checks",frequency_per_day,0,200,0.0,0.0,0.0188,0.015,0,200,0.0,0.0,0.0188,0.015
+transcript,text_only,"HEADLINE: error in the transcript itself, text-only checks",negated,11,222,0.0495,0.0279,0.0865,,11,222,0.0495,0.0279,0.0865,
+transcript,text_only,"HEADLINE: error in the transcript itself, text-only checks",present,16,171,0.0936,0.0584,0.1466,,16,171,0.0936,0.0584,0.1466,

@@ -1,0 +1,70 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r14",
+ "patient_ref": "pt-m1-g6-003",
+ "encounter_type": "physician_consult",
+ "source_transcript_id": "m1-g6-003",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [
+  {
+   "name": "headache",
+   "present": true,
+   "evidence": {
+    "span_text": "ತಲೆನೋವು",
+    "char_start": 0,
+    "char_end": 7,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "name": "chills",
+   "present": false,
+   "evidence": {
+    "span_text": "ಚಳಿ ಇಲ್ಲ",
+    "char_start": 41,
+    "char_end": 49,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "medications": [
+  {
+   "drug": "metronidazole",
+   "dose_value": 1,
+   "dose_unit": "tablet",
+   "frequency_per_day": 3,
+   "duration_days": 7,
+   "negated": false,
+   "evidence": {
+    "span_text": "metronidazole ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಏಳು ದಿನ",
+    "char_start": 55,
+    "char_end": 106,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "cetirizine",
+   "dose_value": 1,
+   "dose_unit": "tablet",
+   "frequency_per_day": 1,
+   "duration_days": 5,
+   "negated": false,
+   "evidence": {
+    "span_text": "Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ",
+    "char_start": 121,
+    "char_end": 170,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [],
+ "follow_up": null
+}

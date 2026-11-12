@@ -1,0 +1,47 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r13",
+ "patient_ref": "pt-m1-e5-013",
+ "encounter_type": "pharmacist_dispensing",
+ "source_transcript_id": "m1-e5-013",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [],
+ "medications": [
+  {
+   "drug": "amoxicillin",
+   "dose_value": 4,
+   "dose_unit": "mg",
+   "frequency_per_day": 3,
+   "duration_days": 5,
+   "negated": false,
+   "evidence": {
+    "span_text": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್ 4 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ",
+    "char_start": 0,
+    "char_end": 55,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "cefixime",
+   "dose_value": null,
+   "dose_unit": null,
+   "frequency_per_day": null,
+   "duration_days": null,
+   "negated": true,
+   "evidence": {
+    "span_text": "ಇದು Cefixime ಅಲ್ಲ",
+    "char_start": 93,
+    "char_end": 110,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [],
+ "follow_up": null
+}

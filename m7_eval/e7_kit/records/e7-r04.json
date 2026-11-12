@@ -1,0 +1,56 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r04",
+ "patient_ref": "pt-m1-i5-003",
+ "encounter_type": "asha_household_visit",
+ "source_transcript_id": "m1-i5-003",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [
+  {
+   "name": "fever",
+   "present": true,
+   "evidence": {
+    "span_text": "ಜ್ವರ ಬಂದಿದೆ",
+    "char_start": 8,
+    "char_end": 19,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "medications": [
+  {
+   "drug": "paracetamol",
+   "dose_value": 2.5,
+   "dose_unit": "ml",
+   "frequency_per_day": null,
+   "duration_days": null,
+   "negated": false,
+   "evidence": {
+    "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಎರಡೂವರೆ ಎಂ.ಎಲ್",
+    "char_start": 39,
+    "char_end": 72,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [
+  {
+   "text": "only if there is fever",
+   "negated": false,
+   "evidence": {
+    "span_text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ",
+    "char_start": 21,
+    "char_end": 38,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "follow_up": null
+}

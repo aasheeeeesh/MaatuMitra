@@ -1,0 +1,64 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r16",
+ "patient_ref": "pt-m1-h5-002",
+ "encounter_type": "nurse_consult",
+ "source_transcript_id": "m1-h5-002",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [
+  {
+   "name": "vomiting",
+   "present": true,
+   "evidence": {
+    "span_text": "ವಾಂತಿ",
+    "char_start": 0,
+    "char_end": 5,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "name": "diarrhoea",
+   "present": true,
+   "evidence": {
+    "span_text": "ಅತಿಸಾರ",
+    "char_start": 12,
+    "char_end": 18,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "medications": [
+  {
+   "drug": "ors",
+   "dose_value": null,
+   "dose_unit": null,
+   "frequency_per_day": null,
+   "duration_days": null,
+   "negated": false,
+   "evidence": {
+    "span_text": "Ors",
+    "char_start": 24,
+    "char_end": 27,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [],
+ "follow_up": {
+  "text": "if there is vomiting, come immediately",
+  "evidence": {
+   "span_text": "ವಾಂತಿ ಇದ್ದರೆ ತಕ್ಷಣ ಬನ್ನಿ",
+   "char_start": 43,
+   "char_end": 67,
+   "audio_start": null,
+   "audio_end": null
+  }
+ }
+}

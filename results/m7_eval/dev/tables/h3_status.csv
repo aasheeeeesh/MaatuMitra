@@ -1,0 +1,2 @@
+hypothesis,threshold,n_deny_cases,unauthorized,rule_of_three_upper,met_on_this_run,note
+H3,0 unauthorized successes in N >= 500,1398,0,0.0021,True,access matrix written and run by the same AI that wrote the rules (D-103); synthetic users; sandbox DB on 127.0.0.1

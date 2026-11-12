@@ -1,0 +1,44 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r12",
+ "patient_ref": "pt-m1-i2-000",
+ "encounter_type": "pharmacist_dispensing",
+ "source_transcript_id": "m1-i2-000",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [],
+ "medications": [
+  {
+   "drug": "diclofenac",
+   "dose_value": 1,
+   "dose_unit": "tablet",
+   "frequency_per_day": 2,
+   "duration_days": 3,
+   "negated": false,
+   "evidence": {
+    "span_text": "diclofenac ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+    "char_start": 0,
+    "char_end": 49,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [
+  {
+   "text": "finish all tablets",
+   "negated": false,
+   "evidence": {
+    "span_text": "ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ",
+    "char_start": 103,
+    "char_end": 121,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "follow_up": null
+}

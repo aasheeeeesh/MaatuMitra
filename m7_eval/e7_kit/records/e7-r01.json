@@ -1,0 +1,74 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r01",
+ "patient_ref": "pt-m1-e4-015",
+ "encounter_type": "pharmacist_dispensing",
+ "source_transcript_id": "m1-e4-015",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [],
+ "medications": [
+  {
+   "drug": "cefadroxil",
+   "dose_value": 50.0,
+   "dose_unit": "mg",
+   "frequency_per_day": 2,
+   "duration_days": 5,
+   "negated": false,
+   "evidence": {
+    "span_text": "Cefadroxil 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಐದು ದಿವಸ",
+    "char_start": 24,
+    "char_end": 78,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "prednisolone",
+   "dose_value": 1,
+   "dose_unit": "tablet",
+   "frequency_per_day": 1,
+   "duration_days": 5,
+   "negated": false,
+   "evidence": {
+    "span_text": "Prednisolone ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+    "char_start": 80,
+    "char_end": 130,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "paracetamol",
+   "dose_value": 2,
+   "dose_unit": "tablet",
+   "frequency_per_day": 4,
+   "duration_days": 3,
+   "negated": false,
+   "evidence": {
+    "span_text": "Paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+    "char_start": 132,
+    "char_end": 184,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [
+  {
+   "text": "take after food",
+   "negated": false,
+   "evidence": {
+    "span_text": "ಊಟದ ನಂತರ",
+    "char_start": 186,
+    "char_end": 194,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "follow_up": null
+}

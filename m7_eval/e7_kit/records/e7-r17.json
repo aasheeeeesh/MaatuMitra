@@ -1,0 +1,70 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r17",
+ "patient_ref": "pt-m1-e8-008",
+ "encounter_type": "pharmacist_dispensing",
+ "source_transcript_id": "m1-e8-008",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [
+  {
+   "name": "vomiting",
+   "present": true,
+   "evidence": {
+    "span_text": "ವಾಂತಿ",
+    "char_start": 8,
+    "char_end": 13,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "name": "fever",
+   "present": true,
+   "evidence": {
+    "span_text": "ಜ್ವರ",
+    "char_start": 20,
+    "char_end": 24,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "medications": [
+  {
+   "drug": "ors",
+   "dose_value": null,
+   "dose_unit": null,
+   "frequency_per_day": null,
+   "duration_days": null,
+   "negated": false,
+   "evidence": {
+    "span_text": "Ors",
+    "char_start": 30,
+    "char_end": 33,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "paracetamol",
+   "dose_value": 10,
+   "dose_unit": "ml",
+   "frequency_per_day": 4,
+   "duration_days": 3,
+   "negated": false,
+   "evidence": {
+    "span_text": "ಪ್ಯಾರಸಿಟಮೋಲ್ ಸಿರಪ್ 10 ml ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+    "char_start": 56,
+    "char_end": 109,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [],
+ "follow_up": null
+}

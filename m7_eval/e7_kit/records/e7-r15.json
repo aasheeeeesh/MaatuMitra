@@ -1,0 +1,59 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r15",
+ "patient_ref": "pt-m1-g5-014",
+ "encounter_type": "physician_consult",
+ "source_transcript_id": "m1-g5-014",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [],
+ "medications": [
+  {
+   "drug": "erythromycin",
+   "dose_value": 1,
+   "dose_unit": "tablet",
+   "frequency_per_day": 1,
+   "duration_days": 5,
+   "negated": false,
+   "evidence": {
+    "span_text": "erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿನ",
+    "char_start": 7,
+    "char_end": 59,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "paracetamol",
+   "dose_value": 2,
+   "dose_unit": "tablet",
+   "frequency_per_day": 4,
+   "duration_days": null,
+   "negated": false,
+   "evidence": {
+    "span_text": "Paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+    "char_start": 61,
+    "char_end": 104,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [
+  {
+   "text": "only if there is fever",
+   "negated": false,
+   "evidence": {
+    "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+    "char_start": 112,
+    "char_end": 130,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "follow_up": null
+}

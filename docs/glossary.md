@@ -158,4 +158,13 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Embedding**: a list of numbers standing for the meaning of a text, so similar texts get similar lists.
 - **Demo mode**: helper mode that shows unreviewed draft cards with a visible DRAFT label.
 - **Held-out (test) split**: questions never used to choose the threshold.
+- **Cluster bootstrap**: estimating uncertainty by resampling whole groups (here: template families) instead of single items, because items in one group tend to fail together.
+- **Paired bootstrap**: comparing two systems on the SAME items by resampling the per-item differences; a difference counts only if its 95% range excludes zero.
+- **Seen frame / unseen frame**: whether a test sentence pattern (with names and numbers blanked out) also occurs in a dev template.
+- **Automation bias**: trusting a machine's warnings so much that people miss problems the machine does not point at.
+- **Within-subject design**: every participant does every condition (here: flags shown and flags hidden), so people are compared with themselves.
+- **SUS (System Usability Scale)**: a 10-question usability questionnaire scored 0 to 100.
+- **Grapheme CER**: character error rate counted on visible letter clusters (a Kannada letter with its signs counts once).
+- **Real-time factor (RTF)**: processing time divided by audio length; below 1 means faster than real time.
+- **In-sample**: measured on the same data that was used to build or fix the system, so it overestimates performance on new data.
 <!-- GLOSSARY-END -->

@@ -1,0 +1,20 @@
+# Critical-term lists for ASR critical-term recall (docs/metrics.md section 1).
+# STARTER lists from the kannada-nlp skill section 4 (UNVERIFIED, not native-validated).
+# Drug names come from data/lexicon/drugs.csv (generic_en, kn_primary, kn_variants,
+# roman_variants); negation cues from .claude/skills/kannada-nlp/negation_table.yaml
+# (types strong_whole_token and suffix only; m7 may read it, only m4 must not).
+# Every term is matched on comparison-normalised tokens ([\p{L}\p{M}\p{N}]+), so
+# "ಎಂ.ಜಿ" is the two-token sequence "ಎಂ ಜಿ".
+version: 1
+number_words: [ಒಂದು, ಎರಡು, ಮೂರು, ನಾಲ್ಕು, ಐದು, ಆರು, ಏಳು, ಎಂಟು, ಒಂಬತ್ತು, ಹತ್ತು, ಅರ್ಧ, ಎರಡೂವರೆ, ಒಂದೂವರೆ, ನೂರು, ಐನೂರು, ಸಾವಿರ]
+units:
+  - [mg]
+  - [ml]
+  - [mcg]
+  - [g]
+  - [ಎಂ, ಜಿ]
+  - [ಎಂ, ಎಲ್]
+  - [ಮಿಲಿಗ್ರಾಂ]
+  - [ಮಾತ್ರೆ]
+  - [tablet]
+  - [ಚಮಚ]

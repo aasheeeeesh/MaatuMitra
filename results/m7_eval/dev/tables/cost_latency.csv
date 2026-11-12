@@ -1,0 +1,4 @@
+component,status,n,latency_ms_p50,latency_ms_p95,hardware,cloud_cost_usd,source_file
+m3 LLM extraction (qwen3:4b-instruct),STALE pre-REFREEZE-1,40,47169.9,253269.0,"i7-12650H, 16 GB RAM, RTX 3050 Ti 4 GB VRAM, Windows 11 (builder_rules.md)",0,results/m3_extract/llm_STALE_pre_refreeze/run_summary.json
+m2 ASR,m2 not run yet,,,,,0,
+m7 evaluation (this run),"local CPU, no GPU, no network",,,,"i7-12650H, 16 GB RAM, RTX 3050 Ti 4 GB VRAM, Windows 11 (infra/builder_rules.md)",0,

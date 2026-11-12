@@ -1,0 +1,2 @@
+status,detail
+m2 not run yet,no results/m2_asr/<run>/dev/transcripts.jsonl found; E1 and the ASR part of H2 are pending (m2_asr is not built). Code tested on fixtures.

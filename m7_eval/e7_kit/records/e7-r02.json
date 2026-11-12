@@ -1,0 +1,59 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r02",
+ "patient_ref": "pt-m1-g5-007",
+ "encounter_type": "physician_consult",
+ "source_transcript_id": "m1-g5-007",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [],
+ "medications": [
+  {
+   "drug": "cephalexin",
+   "dose_value": 1,
+   "dose_unit": "capsule",
+   "frequency_per_day": 4,
+   "duration_days": 9,
+   "negated": false,
+   "evidence": {
+    "span_text": "cephalexin ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ",
+    "char_start": 7,
+    "char_end": 62,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "ibuprofen",
+   "dose_value": 200,
+   "dose_unit": "mg",
+   "frequency_per_day": 3,
+   "duration_days": null,
+   "negated": false,
+   "evidence": {
+    "span_text": "ibuprofen ೨೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+    "char_start": 64,
+    "char_end": 98,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [
+  {
+   "text": "only if there is fever",
+   "negated": false,
+   "evidence": {
+    "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+    "char_start": 106,
+    "char_end": 124,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "follow_up": null
+}

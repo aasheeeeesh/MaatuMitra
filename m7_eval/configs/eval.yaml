@@ -1,0 +1,57 @@
+# m7_eval experiment configuration. Fixed seeds; every path is repo-relative.
+# `make eval` (DEV) recomputes every table from the saved raw outputs listed here.
+version: 1
+seed: 20261109          # bootstrap / cluster-bootstrap / E7 order seed
+n_resamples: 1000
+hardware: "i7-12650H, 16 GB RAM, RTX 3050 Ti 4 GB VRAM, Windows 11 (infra/builder_rules.md)"
+cluster_unit: template_family_id      # PRIMARY CI for extraction rates (D-121)
+asr_baseline: faster-whisper-small    # H2 baseline (substring of the m2 run name)
+held_out_voices: [mms_kan_pitch084]   # D-132: test only
+required_test_slices: [a_fever_cough__f3, c_stopped_early__f1, i_traps__f2]   # D-90
+in_sample_label: >-
+  IN-SAMPLE (DEV): the m3 rules and m4 checks were written and fixed while looking at dev
+  (D-115, D-120, D-121); dev numbers are not an estimate of performance on new wording.
+
+# Audio variants (D-133). Name -> noise type, SNR (dB), speed factor.
+variants:
+  clean: {noise: null, snr_db: null, speed: 1.0}
+  white_snr20: {noise: white, snr_db: 20, speed: 1.0}
+  white_snr10: {noise: white, snr_db: 10, speed: 1.0}
+  white_snr5: {noise: white, snr_db: 5, speed: 1.0}
+  pink_snr20: {noise: pink, snr_db: 20, speed: 1.0}
+  pink_snr10: {noise: pink, snr_db: 10, speed: 1.0}
+  pink_snr5: {noise: pink, snr_db: 5, speed: 1.0}
+  speed0.9: {noise: null, snr_db: null, speed: 0.9}
+  speed1.1: {noise: null, snr_db: null, speed: 1.1}
+
+inputs:
+  common:
+    split_plan: data/splits/split_plan.json
+    critical_terms: m7_eval/configs/critical_terms.yaml
+    m5_results: results/m5_backend/access_matrix_results.jsonl
+    m8_predictions:
+      tfidf: results/m8_helper/predictions_tfidf.jsonl
+      ollama: results/m8_helper/predictions_ollama.jsonl
+  dev:
+    gold_dir: data/gold
+    gold_transcripts_dir: data/transcripts/gold
+    # m2 contract defined by m7 (m2 not built yet): results/m2_asr/<run>/<split>/transcripts.jsonl
+    # (one transcript.v1 per line; audio_id = <conv>__<voice>__<variant> for TTS, or the FLEURS
+    # file stem for public_real) + optional results/m2_asr/<run>/run.json.
+    m2_dir: results/m2_asr
+    fleurs_subset: data/public_real/fleurs_kn_in_test_subset.jsonl
+    m3_rules_dir: results/m3_extract/rules
+    m3_llm_dir: results/m3_extract/llm
+    m3_llm_stale_dir: results/m3_extract/llm_STALE_pre_refreeze
+    m3_llm_subset: results/m3_extract/llm_subset.txt
+    m4_e4_dir: results/m4_verify/dev/e4
+  test:   # read ONLY by the guarded eval-test path; modules must write their test runs here
+    gold_dir: data/gold
+    gold_transcripts_dir: data/transcripts/gold
+    m2_dir: results/m2_asr
+    fleurs_subset: data/public_real/fleurs_kn_in_test_subset.jsonl
+    m3_rules_dir: results/m3_extract/test/rules
+    m3_llm_dir: results/m3_extract/test/llm
+    m3_llm_stale_dir: results/m3_extract/test/llm_STALE
+    m3_llm_subset: results/m3_extract/test/llm_subset.txt
+    m4_e4_dir: results/m4_verify/test/e4

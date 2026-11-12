@@ -194,3 +194,13 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] A native Kannada speaker checks kn_text of every card, ABSTAIN_KN in m8_helper/helper.py, the Kannada questions in m8_helper/eval/questions.jsonl and the Kannada gate patterns (UNVERIFIED).
 - [ ] Fetch ICMR / NCDC / MoHFW pages (and any official Kannada leaflet) for the missing topics (finish the course, leftovers, colds, when to see a doctor) and extend to 20-30 cards; none were fetched here.
 - [ ] Optional: run `mingw32-make m8-eval` with a multilingual embedding model (multilingual-e5 or BGE-M3, licence to verify) when disk allows and compare on dev.
+
+## From m7_eval (merged 20261112T002415Z)
+
+- [ ] Copy (or link) results/m7_eval/dev/cost_report.md to infra/cost_report.md and add an infra/inventory.md line: "m7_eval: local CPU only, no GPU hours, no cloud, nothing created or deleted" (m7 was not allowed to write infra/).
+- [ ] When m2_asr has run: put transcripts at results/m2_asr/<run>/dev/transcripts.jsonl (transcript.v1 per line, audio_id `<conv>__<voice>__<variant>`), then `mingw32-make eval`; E1 fills in automatically.
+- [ ] Refresh the STALE rules-vs-LLM comparison: start Ollama (qwen3:4b-instruct) and run `mingw32-make m7-e2-llm-refresh` (about 25 min).
+- [ ] Phase C: make m3 and m4 write their guarded test runs to results/m3_extract/test/rules/ and results/m4_verify/test/e4/ (or change `inputs.test` in m7_eval/configs/eval.yaml) BEFORE the single `ALLOW_TEST=1 PURPOSE="..." mingw32-make eval-test`.
+- [ ] Verify the E3 ablation assumption (UNVERIFIED): m4 checks C1..C8 do not use each other's results; better, have m4 re-run E4 with one check disabled at a time.
+- [ ] E7 user study: have a Kannada speaker review m7_eval/e7_kit/consent_form_kn.md and the 20 packets; ask the instructor whether ethics approval is needed; check the SUS wording; then run m7_eval/e7_kit/protocol.md and `uv run python -m m7_eval e7-analyse <filled sheet> --out results/m7_eval/e7`.
+- [ ] Confirm or correct the auto-suggested failure causes in results/m7_eval/dev/failure_gallery.md.

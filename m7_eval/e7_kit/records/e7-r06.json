@@ -1,0 +1,70 @@
+{
+ "schema_version": "record.v1",
+ "record_id": "e7-r06",
+ "patient_ref": "pt-m1-g6-005",
+ "encounter_type": "physician_consult",
+ "source_transcript_id": "m1-g6-005",
+ "extractor": {
+  "name": "e7-kit-synthetic",
+  "version": "1"
+ },
+ "status": "draft",
+ "symptoms": [
+  {
+   "name": "fever",
+   "present": true,
+   "evidence": {
+    "span_text": "ಜ್ವರ",
+    "char_start": 0,
+    "char_end": 4,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "name": "breathing difficulty",
+   "present": true,
+   "evidence": {
+    "span_text": "ಉಸಿರಾಟದ ತೊಂದರೆ ಇದೆ",
+    "char_start": 38,
+    "char_end": 56,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "medications": [
+  {
+   "drug": "erythromycin",
+   "dose_value": 1,
+   "dose_unit": "tablet",
+   "frequency_per_day": 4,
+   "duration_days": 7,
+   "negated": false,
+   "evidence": {
+    "span_text": "Erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಒಂದು ವಾರ",
+    "char_start": 62,
+    "char_end": 115,
+    "audio_start": null,
+    "audio_end": null
+   }
+  },
+  {
+   "drug": "cetirizine",
+   "dose_value": 1,
+   "dose_unit": "tablet",
+   "frequency_per_day": 1,
+   "duration_days": 3,
+   "negated": false,
+   "evidence": {
+    "span_text": "Cetirizine ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಮೂರು ದಿವಸ",
+    "char_start": 130,
+    "char_end": 180,
+    "audio_start": null,
+    "audio_end": null
+   }
+  }
+ ],
+ "advice": [],
+ "follow_up": null
+}

@@ -1,0 +1,21 @@
+record_id,has_planted_error,error_code,error_field,before,after,simulated_flag,source_conversation,set
+e7-r01,yes,CR-DOSE,/medications/0/dose_value,500,50.0,yes,m1-e4-015,A
+e7-r02,yes,CR-DUR,/medications/0/duration_days,7,9,yes,m1-g5-007,B
+e7-r03,yes,CR-NEG,/medications/0/negated,False,True,yes,m1-g7-007,A
+e7-r04,no,,,,,no,m1-i5-003,B
+e7-r05,yes,CR-DUR,/medications/0/duration_days,7,9,no,m1-g6-006,A
+e7-r06,no,,/medications/0/dose_value (false alarm),,,yes,m1-g6-005,B
+e7-r07,yes,CR-DRUG,/medications/0/drug,cetirizine,amoxicillin,no,m1-d1-001,B
+e7-r08,no,,,,,no,m1-e5-004,A
+e7-r09,yes,CR-FREQ,/medications/0/frequency_per_day,1,3,yes,m1-d1-006,A
+e7-r10,no,,,,,no,m1-i4-003,A
+e7-r11,no,,,,,no,m1-b6-000,B
+e7-r12,no,,,,,no,m1-i2-000,B
+e7-r13,yes,CR-DRUG,/medications/0/drug,salbutamol,amoxicillin,yes,m1-e5-013,A
+e7-r14,no,,,,,no,m1-g6-003,A
+e7-r15,yes,CR-FREQ,/medications/0/frequency_per_day,4,1,yes,m1-g5-014,B
+e7-r16,no,,/medications/0/dose_value (false alarm),,,yes,m1-h5-002,A
+e7-r17,no,,,,,no,m1-e8-008,B
+e7-r18,yes,CR-NEG,/medications/0/negated,False,True,yes,m1-i2-007,B
+e7-r19,no,,,,,no,m1-b3-001,A
+e7-r20,yes,CR-DOSE,/medications/0/dose_value,500,50.0,no,m1-e4-009,B
