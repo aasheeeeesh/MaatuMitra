@@ -48,7 +48,7 @@ def test_case_ids_unique(cases):
 
 
 def test_full_base_cross_product(cases):
-    base = [c for c in cases if c.case["attack"] is None]
+    base = [c for c in cases if c.case["case_id"].startswith("base.")]
     assert len(base) == len(ROLES) * len(RESOURCES) * len(ACTIONS) * len(OWNERSHIPS)
 
 

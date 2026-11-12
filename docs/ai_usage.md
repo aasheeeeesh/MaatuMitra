@@ -171,3 +171,9 @@ A human must check:
 ## m6_ui fix pass (2026-11-12) - frontend-engineer (AI)
 Generated: gate.py (mock + HTTP save gate), login flow, bidi handling, record.v2 display, i18n changes (kn/en), a fake m5 test double, tests (test_gate, test_security, test_live_m5, additions to others).
 Human must check: all Kannada strings (esp. reason.code.*, gate.code.*, reason.C3/C4, v2val.*) with a native speaker and a clinician; that the mock gate still matches m5 main.py save rules after any m5 change; the live login screen in a real browser on a phone.
+
+## From m5_backend (merged 20261112T011746Z)
+
+## m5_backend Phase C follow-ups (backend-security-engineer, 2026-11-12)
+- Generated: removal of /approve, GET /records, GET /records/{id}/transcript, load_verifier, record.v2 acceptance, new matrix cases and tests (m5_backend/tests/test_followups.py).
+- A human must check: the hand-written `endpoints` expectations in tests/access_matrix_expected.yaml; that no client still calls /approve; that the transcript folder is not world-readable.

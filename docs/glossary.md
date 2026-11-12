@@ -170,4 +170,6 @@ Plain definitions of every technical word used in this project. Builders add ter
 - **Verdict id**: the identifier of the checker result that the SERVER stored; the save request names it instead of sending the result.
 - **Cannot verify**: the checker's way of saying it had no rule or data to check a value; it does not mean the value is right.
 - **Clickjacking**: tricking a user into clicking a page that is hidden inside another page's frame.
+- **Import path**: text like `package.module:function` that tells Python which function to load by name.
+- **Pagination**: returning a long list in small pages (`limit` = page size, `offset` = rows skipped).
 <!-- GLOSSARY-END -->

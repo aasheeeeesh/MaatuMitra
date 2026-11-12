@@ -194,3 +194,10 @@ Things nobody has verified yet, with what to check. Builders add items through
 - The role claim is decoded without verifying the signature (display only; m5 verifies). UNVERIFIED whether that is acceptable for the final audit.
 - X-Frame-Options / frame-ancestors (F8): Streamlit 1.67 cannot set them; open unless a reverse proxy is added.
 - Native review of the changed Kannada strings and a real-browser check are UNVERIFIED (see human_todo.md).
+
+## From m5_backend (merged 20261112T011746Z)
+
+- Contract request (m5 cannot edit contracts/): the access_case.v1 `resource` list lacks `records_list` and `transcript`; m5 uses resource "records" for those cases. Add both names if separate reporting is wanted.
+- Where do real transcripts come from? m5 serves only files named `<encounter uuid>.json` placed by the operator or the seed. Integration (ASR) must write them there, or we add a transcripts table.
+- Should status "approved" be removed from the schema now that only /save approves? (needs a migration)
+- UNVERIFIED: MAATUMITRA_VERIFIER pointed at the real m4 verifier (Phase C integration).

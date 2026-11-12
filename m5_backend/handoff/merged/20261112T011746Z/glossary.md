@@ -1,0 +1,2 @@
+- **Import path**: text like `package.module:function` that tells Python which function to load by name.
+- **Pagination**: returning a long list in small pages (`limit` = page size, `offset` = rows skipped).

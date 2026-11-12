@@ -1,0 +1,2 @@
+- [ ] Phase C integration: set `MAATUMITRA_VERIFIER=<m4 adapter module>:<function>` in .env, start the API, call `POST /records/{id}/verify` on a record and check `verifier_version` in the response (UNVERIFIED).
+- [ ] Check that M5_AUDIO_DIR and M5_TRANSCRIPT_DIR are not readable by other OS users (UNVERIFIED, outside the database).

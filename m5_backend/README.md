@@ -105,3 +105,11 @@ tests no longer rewrite tracked result files (`make m5-matrix` does).
 - **Catalog / EXPLAIN leak (F8, accepted)**: any app role can read `pg_class.reltuples`, `pg_stat_*` and
   `EXPLAIN ANALYZE` shows "Rows Removed by Filter" for the pharmacist view, i.e. row counts of tables
   it cannot read. It needs raw SQL (the API never runs EXPLAIN). Not fixed.
+
+## Phase C follow-ups (2026-11-12)
+
+- No `/approve` route: `POST /records/{id}/save` is the only approval path; the DB trigger stays the last guard.
+- `GET /records?limit=&offset=` lists what the caller role may open (RLS only; pharmacist/researcher get 403). `GET /records/{id}/transcript` serves `<M5_TRANSCRIPT_DIR or M5_AUDIO_DIR/transcripts>/<encounter uuid>.json` if the record is visible; the file name comes from the database.
+- `MAATUMITRA_VERIFIER=package.module:function` (in .env) is loaded at startup; a bad value stops the API. `create_app(verifier=fn)` wins. Empty = flag everything.
+- record.v1 and record.v2 bodies are accepted (bidi controls refused), stored as JSONB; the research export still reads only the v1-style allowlist.
+- Matrix 2026-11-12: 1757 cases, unauthorized successes 0 of 1642 deny-expected, upper bound 3/1642 = 0.0018.

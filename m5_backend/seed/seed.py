@@ -28,6 +28,7 @@ from m5_backend.app.directory import Directory, load_directory
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 RECORD_FIXTURES = REPO_ROOT / "fixtures" / "record" / "valid"
+TRANSCRIPT_FIXTURE = REPO_ROOT / "fixtures" / "transcript" / "valid" / "fx-phys-004__gold.json"
 IST = timezone(timedelta(hours=5, minutes=30))
 FAKE_NAMES = [
     "Kaveri",
@@ -238,4 +239,11 @@ def seed(
         wav = _wav_silence()
         for eid in ids.encounters.values():
             (audio_dir / f"{eid}.wav").write_bytes(wav)
+        # synthetic transcript per encounter (served by GET /records/{id}/transcript)
+        tdir = audio_dir / "transcripts"
+        tdir.mkdir(exist_ok=True)
+        base = json.loads(TRANSCRIPT_FIXTURE.read_text(encoding="utf-8"))
+        for eid in ids.encounters.values():
+            doc = {**base, "audio_id": f"seed-{eid}"}
+            (tdir / f"{eid}.json").write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
     return ids

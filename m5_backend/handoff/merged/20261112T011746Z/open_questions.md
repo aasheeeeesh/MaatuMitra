@@ -1,0 +1,4 @@
+- Contract request (m5 cannot edit contracts/): the access_case.v1 `resource` list lacks `records_list` and `transcript`; m5 uses resource "records" for those cases. Add both names if separate reporting is wanted.
+- Where do real transcripts come from? m5 serves only files named `<encounter uuid>.json` placed by the operator or the seed. Integration (ASR) must write them there, or we add a transcripts table.
+- Should status "approved" be removed from the schema now that only /save approves? (needs a migration)
+- UNVERIFIED: MAATUMITRA_VERIFIER pointed at the real m4 verifier (Phase C integration).

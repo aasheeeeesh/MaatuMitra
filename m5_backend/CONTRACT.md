@@ -20,8 +20,8 @@
   - FastAPI app bound to 127.0.0.1 (`m5_backend.app.main:create_app`). Endpoints:
     `POST /auth/token` (sandbox mock issuer), `GET|POST /households`, `GET|POST /patients`,
     `GET|PATCH /patients/{id}`, `POST /encounters`, `GET|PATCH /encounters/{id}`,
-    `GET /encounters/{id}/audio`, `POST /records`, `GET|PATCH /records/{id}`,
-    `POST /records/{id}/approve`, `POST /records/{id}/verify`, `POST /records/{id}/save`, `GET /verdicts/{id}`, `POST /medication-orders`,
+    `GET /encounters/{id}/audio`, `GET /records` (list), `GET /records/{id}/transcript`, `POST /records`, `GET|PATCH /records/{id}`,
+    `POST /records/{id}/verify`, `POST /records/{id}/save`, `GET /verdicts/{id}`, `POST /medication-orders`,
     `GET|PATCH /medication-orders/{id}`, `POST /pharmacist/active-patient`,
     `GET /pharmacist/orders`, `GET /research/encounters`. Errors are `{"error": "<generic>"}`.
   - SQL migrations `m5_backend/sql/*.sql`.

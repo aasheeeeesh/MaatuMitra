@@ -1,6 +1,6 @@
 # PROGRESS
 
-NEXT STEP (2026-11-12): audio DONE. m6 pass DONE. RUNNING: m2 ASR on dev. Next: m2 ASR on dev audio (download-use-delete models, keep >=1.5 GB free; disk ~2.9 GB), then Phase C: record.v2 migration (m3/m4/m5/m6/scorer), wire m4 into m5 + m5 /approve flag check + list/transcript endpoints, e2e 10-conversation run, m7 LLM-comparison refresh, final audits (integrity + security incl. gitleaks), make eval-test ONCE, report; Phase D. Max 2 agents.
+NEXT STEP (2026-11-12): audio DONE. m6 pass DONE. RUNNING: m2 ASR on dev. Next: m2 ASR on dev audio (download-use-delete models, keep >=1.5 GB free; disk ~2.9 GB), then Phase C: record.v2 migration (m3/m4/m5/m6/scorer), m5 follow-ups DONE (/approve removed, list+transcript endpoints, MAATUMITRA_VERIFIER); wire m4 into m5 via MAATUMITRA_VERIFIER; C2 must test direct-SQL 'approved' gap; e2e 10-conversation run, m7 LLM-comparison refresh, final audits (integrity + security incl. gitleaks), make eval-test ONCE, report; Phase D. Max 2 agents.
 
 NOTE: on Windows set `export UV_PROJECT_ENVIRONMENT=$USERPROFILE/.venvs/maatumitra` before `uv run` (path-length limit, D-3). Use `mingw32-make` for make.
 MODEL POLICY (D-65, user request 2026-11-10): Sonnet for kannada-language-reviewer, clinical-reviewer and fix passes (except m4); Opus for m4_verify work, scientific-integrity-auditor, security-auditor.
@@ -23,7 +23,7 @@ Status values: todo / in-progress / done / blocked.
 | B6 | B | m6_ui build + reviews + gate | done (reviews D-123 security, D-124 kannada; fixes in the Phase C m6 pass) | 2026-11-11 | 6440bbd |
 | B7 | B | m7_eval build + reviews + gate | built (make eval on dev; E1 waits for m2; LLM comparison stale) reviews in C2 | 2026-11-12 | 38e4034 |
 | B8 | B | m8_helper build + reviews + gate | built (H4 not met; D-138..) reviews pending | 2026-11-12 | c7d1cba |
-| C1 | C | Integration boundaries + e2e + fresh-clone make eval | in-progress (m6 pass done) | 2026-11-12 | e7d9f96 |
+| C1 | C | Integration boundaries + e2e + fresh-clone make eval | in-progress (m6 pass e7d9f96; m5 follow-ups this commit) | 2026-11-12 | (this commit) |
 | C2 | C | Final audits (integrity, security) + fixes | todo | | |
 | C3 | C | make eval-test once (ALLOW_TEST=1) + log | todo | | |
 | C4 | C | docs/final_report_draft.md + demo script | todo | | |

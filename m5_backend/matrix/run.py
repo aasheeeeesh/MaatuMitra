@@ -335,6 +335,25 @@ class Runner:
                 c["action"]
             ]
             return ok(self.call(role, method, path))
+        if kind == "api_ep_transcript":
+            rid = self.target(role, "records", c["ownership"])
+            method = {"select": "GET", "insert": "PUT", "update": "PATCH", "delete": "DELETE"}[
+                c["action"]
+            ]
+            return ok(self.call(role, method, f"/records/{rid}/transcript"))
+        if kind == "api_ep_records_list":
+            if c["action"] != "select":
+                method = {"insert": "POST", "update": "PATCH", "delete": "DELETE"}[c["action"]]
+                return ok(self.call(role, method, "/records", {} if method == "POST" else None))
+            rid, offset, seen = str(self.target(role, "records", c["ownership"])), 0, False
+            while offset is not None:
+                r = self.call(role, "GET", "/records", params={"limit": 100, "offset": offset})
+                if not 200 <= r.status_code < 300:
+                    return "deny", f"http={r.status_code}"
+                body = r.json()
+                seen = seen or rid in {i["id"] for i in body["items"]}
+                offset = body["next_offset"]
+            return ("allow" if seen else "deny"), "target listed" if seen else "target not listed"
         if kind == "api_token":
             path = self.resolve(role, pr["path"])
             body = (

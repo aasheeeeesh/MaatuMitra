@@ -1,0 +1,10 @@
+### D-?: m5 follow-ups accepted; "approved" status still only guarded for saved records   (Phase C / m5_backend / orchestrator / 2026-11-12)
+- What we needed to decide: The m5 follow-up pass (Sonnet) removed /approve, added list and transcript endpoints, a verifier plug-in setting and record.v2 bodies. Accept, and what stays open?
+- Options we considered: (1) Accept and send the remaining gap to the final security audit (C2). Pro: everything requested works and is tested. Con: one database-level gap stays. (2) Ask for another pass now. Pro: closes it sooner. Con: the gap needs a direct SQL login as a physician, which the final audit should test anyway.
+- What we chose: Option 1.
+- Why: The API no longer offers any way to approve without the gate; the remaining path is direct SQL by the record's own physician.
+- What we actually did: Re-ran checks myself: started the m5 database, `pytest m5_backend` 170 passed (no skips), stopped the database (nothing listening on 54329 or 8000); ruff clean; access matrix 1757 cases, 0 unauthorized successes of 1642 deny-expected (rule-of-three upper bound 3/1642 = 0.0018), 0 unexpected denials, 0 integrity failures; .env.example gained only two empty settings (M5_TRANSCRIPT_DIR, MAATUMITRA_VERIFIER); .env stays git-ignored. The builder showed a hand-made /approve call succeeding on the old code (HTTP 200) and refused now.
+- What could go wrong / weaknesses: The database trigger checks only the "saved" status, so a physician with direct SQL access can still set "approved" on their own record without resolving flags (C2 must test and fix, e.g. extend the trigger). The new endpoint cases reuse the resource name "records" because access_case.v1 has a fixed resource list (contract request filed). The real m4 verifier through MAATUMITRA_VERIFIER is not tested yet (Phase C integration).
+- What else could be done: Extend the save-gate trigger to every status change in the same pass as the final audit.
+- How to change this decision later: m5_backend/sql/050_gate.sql, m5_backend/app/main.py.
+- Status: done

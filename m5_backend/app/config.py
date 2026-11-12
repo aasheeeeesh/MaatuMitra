@@ -50,6 +50,8 @@ class Settings:
     hmac_key: str | None = None
     mock_login_password: str | None = None
     audio_dir: str | None = None
+    transcript_dir: str | None = None
+    verifier_spec: str | None = None
     api_host: str = "127.0.0.1"
     api_port: int = 8000
     mode: str = "mock"
@@ -119,6 +121,8 @@ def load_settings(env_file: Path = ENV_FILE, environ: dict[str, str] | None = No
         hmac_key=get("RESEARCH_PSEUDONYM_HMAC_KEY"),
         mock_login_password=get("MOCK_LOGIN_PASSWORD"),
         audio_dir=get("M5_AUDIO_DIR"),
+        transcript_dir=get("M5_TRANSCRIPT_DIR"),
+        verifier_spec=get("MAATUMITRA_VERIFIER"),
         api_host=get("API_HOST", "127.0.0.1"),
         api_port=int(get("API_PORT", "8000")),
         mode=get("MODE", "mock"),

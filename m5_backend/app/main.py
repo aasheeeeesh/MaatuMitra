@@ -10,6 +10,7 @@ Run: uv run python -m m5_backend.app.main     (needs a reachable Postgres, see R
 from __future__ import annotations
 
 import hmac
+import json
 import threading
 import time
 import uuid
@@ -18,7 +19,7 @@ from pathlib import Path
 from typing import Annotated, Any
 
 import psycopg
-from fastapi import Depends, FastAPI, Request
+from fastapi import Depends, FastAPI, Query, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from psycopg.types.json import Jsonb
@@ -32,7 +33,7 @@ from .config import Settings, load_settings
 from .db import Database, audit
 from .directory import Directory, load_directory
 from .ratelimit import LoginRateLimiter
-from .verifier import Verifier, manual_review_verifier
+from .verifier import Verifier, load_verifier
 
 GENERIC = {
     400: "bad request",
@@ -106,8 +107,10 @@ def create_app(
         db = Database(settings.conninfo("api"))
     if check_login:
         db.verify_login()  # F6: RuntimeError (the API does not start) on an unsafe DB login
-    verifier = verifier or manual_review_verifier
+    # explicit argument > MAATUMITRA_VERIFIER=module:function > fail-closed "flag everything"
+    verifier = verifier or load_verifier(settings.verifier_spec)
     audio_root = Path(audio_dir or settings.audio_dir or ".").resolve()
+    transcript_root = Path(settings.transcript_dir or (audio_root / "transcripts")).resolve()
     limiter = rate_limiter or LoginRateLimiter(max_attempts=5, window_s=60)
     ip_limiter = LoginRateLimiter(max_attempts=30, window_s=60)
     active: dict[uuid.UUID, tuple[uuid.UUID, float]] = {}
@@ -285,8 +288,62 @@ def create_app(
     # ------------------------------------------------------------ records + saved gate
 
     def _check_record(rec: dict) -> None:
-        if validate_doc("record.v1", rec) or rec.get("status") not in ("draft", "flagged"):
+        """record.v1 and record.v2 bodies are accepted (v2 is additive, stored as-is in the JSONB
+        column). Any other schema_version, a bidi control character, or a status other than
+        draft/flagged is refused."""
+        name = rec.get("schema_version")
+        if name not in ("record.v1", "record.v2"):
             raise ApiError(422)
+        if validate_doc(name, rec, reject_bidi=True) or rec.get("status") not in (
+            "draft",
+            "flagged",
+        ):
+            raise ApiError(422)
+
+    @app.get("/records")
+    def list_records(
+        p: Auth,
+        limit: Annotated[int, Query(ge=1, le=100)] = 50,
+        offset: Annotated[int, Query(ge=0, le=1_000_000)] = 0,
+    ):
+        """Records the CALLER may open (forced RLS decides; nothing is filtered in Python).
+        flagged_count = open flags in the newest stored verdict for the record's current content,
+        or null when it has not been verified. No names, no free text, no ids of hidden rows."""
+        sql = (
+            "SELECT r.id, r.json->>'record_id' AS record_id, r.encounter_id, e.patient_id, r.status,"
+            " (SELECT CASE WHEN v.verdict IS NULL THEN NULL ELSE count(DISTINCT (c->>'check_id', c->>'field_path'))::int END"
+            "  FROM jsonb_array_elements(v.verdict->'checks') c WHERE c->>'status' = 'flag') AS flagged_count"
+            " FROM clinic.records r JOIN clinic.encounters e ON e.id = r.encounter_id"
+            " LEFT JOIN LATERAL (SELECT x.verdict FROM clinic.verdicts x WHERE x.record_id = r.id"
+            "   AND x.record_hash = app.record_hash(r.json) ORDER BY x.created_at DESC, x.id DESC LIMIT 1) v ON true"
+            " ORDER BY r.id LIMIT %s OFFSET %s"
+        )
+        rows = run(p, "list", "records", None, lambda c: all_rows(c, sql, (limit + 1, offset)))
+        more = len(rows) > limit
+        return {
+            "items": rows[:limit],
+            "limit": limit,
+            "offset": offset,
+            "next_offset": offset + limit if more else None,
+        }
+
+    @app.get("/records/{record_id}/transcript")
+    def get_transcript(record_id: uuid.UUID, p: Auth):
+        """Transcript of the record's ENCOUNTER, served only if the record is visible to the caller
+        under RLS. The file name is the encounter id read from the database, never anything the
+        client or the record JSON says (so a forged source_transcript_id reads nothing)."""
+        enc = run(p, "select", "records", record_id, lambda c: one(
+            c, "SELECT encounter_id FROM clinic.records WHERE id = %s", (record_id,)))  # fmt: skip
+        path = (transcript_root / f"{enc['encounter_id']}.json").resolve()
+        if path.parent != transcript_root or not path.is_file():
+            raise ApiError(404)
+        try:
+            doc = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            raise ApiError(500) from None
+        if validate_doc("transcript.v1", doc):
+            raise ApiError(500)
+        return doc
 
     @app.get("/records/{record_id}")
     def get_record(record_id: uuid.UUID, p: Auth):
@@ -308,12 +365,8 @@ def create_app(
                " WHERE id = %s AND status IN ('draft', 'flagged') RETURNING id",
             (Jsonb(body.record), body.record["status"], record_id)))  # fmt: skip
 
-    @app.post("/records/{record_id}/approve")
-    def approve_record(record_id: uuid.UUID, p: Auth):
-        return run(p, "approve", "records", record_id, lambda c: one(
-            c, "UPDATE clinic.records SET status = 'approved', approved_by = %s, approved_at = now()"
-               " WHERE id = %s AND status IN ('draft', 'flagged') RETURNING id, status",
-            (p.user_id, record_id)))  # fmt: skip
+    # There is deliberately NO /approve route: POST /records/{id}/save is the only way to approve
+    # (verdict stored server-side, one resolution per open flag). The DB trigger is the last guard.
 
     def _flag_keys(verdict: dict) -> set[tuple[str, str]]:
         return {

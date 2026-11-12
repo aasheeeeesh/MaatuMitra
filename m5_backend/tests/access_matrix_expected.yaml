@@ -65,6 +65,22 @@ roles:
     #  consents.research_ok = true". The research schema is not facility-scoped.
     research_export:   {select: [own, same_facility_other, other_facility]}
 
+# Phase C endpoints (written by hand 2026-11-12, same rules as `records`; access_case.v1 has no
+# separate resource name for them, so their cases use resource "records").
+#   records_list = GET /records     allow = the target record APPEARS in the caller's list
+#   transcript   = GET /records/{id}/transcript   allow = HTTP 2xx
+# A record the caller cannot open must not appear in the list nor yield its transcript.
+# Pharmacist and researcher have no grants on records: everything is deny. Nothing is writable.
+endpoints:
+  records_list:
+    asha:      {select: [own]}
+    nurse:     {select: [own, same_facility_other, none]}
+    physician: {select: [own, same_facility_other, none]}
+  transcript:
+    asha:      {select: [own]}
+    nurse:     {select: [own, same_facility_other, none]}
+    physician: {select: [own, same_facility_other, none]}
+
 # Attack expectations (also by hand). Every authentication / GUC attack expects deny
 # (contracts/validate.py enforces this for tampered_jwt, expired_jwt, alg_none, wrong_aud,
 # guc_tamper).

@@ -214,3 +214,8 @@ with the required items (a)-(g) from PROJECT_BRIEF section 13 as placeholders.
 - [ ] Native review of CHANGED Kannada strings (m6_ui/i18n/kn.json v1.1.0): reason.C3, C4, C6, C7, reason.none, reason.code.* (10 keys), reason.cannot_verify_note, badge.ok, badge.confirmed, approve.ready, approve.blocked, app.mock_banner, app.live_banner, fail.blind_spot, help.not_clinician, help.clinician, gate.code.* (8 new), login.*, v2.* and v2val.* (about 35 keys). Add them to reviews/human_sheets; a clinician should read the child-dose, liquid-strength and route sentences. UNVERIFIED.
 - [ ] Open the live app in a real phone browser: `bash m5_backend/scripts/db_up.sh`, `uv run python -m m5_backend.app.main`, then `MODE=live API_URL=http://127.0.0.1:8000 mingw32-make m6-run`; log in with a user id from m5_backend/seed/synthetic_users.json and the sandbox password from .env; check the 360 px layout of the login and review screens and that [U+202E] text displays as a marker. Stop with `bash m5_backend/scripts/db_down.sh`. UNVERIFIED (no browser run).
 - [ ] After any m5 change to /save or /approve, re-run `uv run pytest m6_ui/tests/test_live_m5.py` with the DB and API up.
+
+## From m5_backend (merged 20261112T011746Z)
+
+- [ ] Phase C integration: set `MAATUMITRA_VERIFIER=<m4 adapter module>:<function>` in .env, start the API, call `POST /records/{id}/verify` on a record and check `verifier_version` in the response (UNVERIFIED).
+- [ ] Check that M5_AUDIO_DIR and M5_TRANSCRIPT_DIR are not readable by other OS users (UNVERIFIED, outside the database).

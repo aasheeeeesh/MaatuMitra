@@ -10,6 +10,8 @@ the real one: `create_app(..., verifier=my_m4_adapter)`. Until then the default 
 
 from __future__ import annotations
 
+import importlib
+import re
 from collections.abc import Callable
 from typing import Any
 
@@ -37,3 +39,29 @@ def manual_review_verifier(record: dict[str, Any]) -> dict[str, Any]:
         "auto_acceptable": False,
         "verifier_version": "m5-manual-review-v1",
     }
+
+
+_SPEC = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)*:[A-Za-z_][A-Za-z0-9_]*$")
+
+
+def load_verifier(spec: str | None) -> Verifier:
+    """Load the verifier named by MAATUMITRA_VERIFIER (`package.module:function`).
+
+    Empty/None -> the fail-closed default (flag everything). Anything else must import and be a
+    callable, otherwise RuntimeError: the API refuses to start rather than silently running with
+    a different verifier than the operator asked for. The setting comes from the operator's
+    environment (.env), never from a request.
+    """
+    if not spec or not spec.strip():
+        return manual_review_verifier
+    spec = spec.strip()
+    if not _SPEC.fullmatch(spec) or spec.split(":", 1)[1].startswith("__"):
+        raise RuntimeError("MAATUMITRA_VERIFIER must look like 'package.module:function'")
+    mod_name, fn_name = spec.split(":", 1)
+    try:
+        fn = getattr(importlib.import_module(mod_name), fn_name)
+    except Exception:
+        raise RuntimeError(f"cannot load verifier {spec!r}") from None
+    if not callable(fn):
+        raise RuntimeError(f"verifier {spec!r} is not callable")
+    return fn

@@ -73,6 +73,15 @@ ROLE_ENDPOINTS: dict[str, list[tuple[str, str, str, str]]] = {
     "pharmacist": [("pharmacist_orders_v", "POST", "/pharmacist/active-patient", "own")],
     "researcher": [("research_export", "GET", "/research/encounters", "own")],
 }
+# Phase C endpoints. access_case.v1 has a fixed resource enum, so they use resource "records";
+# the tag keeps case ids unique.
+EXTRA_TOKEN_ENDPOINTS: dict[str, list[tuple[str, str, str, str, str]]] = {
+    r: [
+        ("records_list", "records", "GET", "/records", "own"),
+        ("transcript", "records", "GET", "/records/{records.own}/transcript", "own"),
+    ]
+    for r in ("asha", "nurse", "physician")
+}
 TOKEN_VARIANTS = {
     "tampered_jwt": (
         "payload_role_escalation",
@@ -115,6 +124,11 @@ def load_expected(path: Path = DEFAULT_EXPECTED) -> dict[str, Any]:
 
 def expected_for(exp: dict[str, Any], role: str, resource: str, action: str, ownership: str) -> str:
     allowed = (((exp.get("roles") or {}).get(role) or {}).get(resource) or {}).get(action) or []
+    return "allow" if ownership in allowed else "deny"
+
+
+def endpoint_expected(exp: dict[str, Any], ep: str, role: str, action: str, ownership: str) -> str:
+    allowed = (((exp.get("endpoints") or {}).get(ep) or {}).get(role) or {}).get(action) or []
     return "allow" if ownership in allowed else "deny"
 
 
@@ -163,11 +177,13 @@ def all_cases(exp: dict[str, Any]) -> list[Case]:
     for attack, variants in TOKEN_VARIANTS.items():
         e = _attack_expected(exp, attack)
         for role in ROLES:
-            for res, method, path, own in ROLE_ENDPOINTS[role]:
+            eps = [(res, res, m, pa, o) for res, m, pa, o in ROLE_ENDPOINTS[role]]
+            eps += EXTRA_TOKEN_ENDPOINTS.get(role, [])
+            for tag, res, method, path, own in eps:
                 for v in variants:
                     out.append(
                         Case(
-                            _case(f"atk.{attack}.{role}.{res}.{method.lower()}.{v}", role, uid[role],
+                            _case(f"atk.{attack}.{role}.{tag}.{method.lower()}.{v}", role, uid[role],
                                   res, "select", own, attack, e),
                             {"kind": "api_token", "variant": v, "method": method, "path": path},
                         )
@@ -408,6 +424,24 @@ def all_cases(exp: dict[str, Any]) -> list[Case]:
             _case(f"atk.{atk}.save_gate.{role}.{variant}", role, uid[role], "records", "update", own,
                   atk, e),
             {"kind": "api_save_gate", "variant": variant}))  # fmt: skip
+
+    # 5b) Phase C endpoints: GET /records (list) and GET /records/{id}/transcript.
+    #     Expected comes from the hand-written `endpoints` section of the expected table.
+    for ep in ("records_list", "transcript"):
+        for role in ROLES:
+            for act in ACTIONS:
+                for own in OWNERSHIPS:
+                    out.append(Case(
+                        _case(f"ep.{ep}.{role}.{act}.{own}", role, uid[role], "records", act, own,
+                              None, endpoint_expected(exp, ep, role, act, own)),
+                        {"kind": "api_ep_" + ep}))  # fmt: skip
+    e = _attack_expected(exp, "id_guess")
+    for role in ROLES:
+        for gname, gval in guesses.items():
+            out.append(Case(
+                _case(f"atk.id_guess.{role}.transcript.{gname}", role, uid[role], "records",
+                      "select", "none", "id_guess", e),
+                {"kind": "api_get", "path": f"/records/{gval}/transcript"}))  # fmt: skip
 
     # 6) IDOR on audio files
     e = _attack_expected(exp, "idor_audio")
