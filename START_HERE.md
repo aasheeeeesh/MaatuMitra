@@ -65,10 +65,7 @@ clinician yet.
 `.env.example`), the Python environment, model weights, and the PostgreSQL program and
 database (all can be re-created; see below).
 
-**Uncommitted work inside this zip:** the files under `m3_extract/` and
-`results/m3_extract/` include an **unfinished, unchecked** migration of m3 to record format
-version 2. It was stopped mid-run. Run `git status` to see it; check it or discard it with
-`git checkout -- m3_extract results/m3_extract` and `git clean -fd m3_extract results/m3_extract`.
+**Unfinished work:** the m3 migration to record format version 2 is on the git branch `wip/m3-record-v2` (unchecked; do not merge before verifying it).
 
 ## 3. How to set it up (fresh Windows machine)
 
@@ -134,7 +131,7 @@ uv run python -m m1_data audio-materialise --ids all --split dev --variants all 
 | Phase A (architecture, contracts, docs) | done |
 | m1 data (text, gold v1 + v2, audio, FLEURS) | done |
 | m2 speech recognition (dev) | done; test-run command not written yet |
-| m3 extraction | v1 done and reviewed; **v2 migration unfinished (uncommitted)** |
+| m3 extraction | v1 done and reviewed; **v2 migration unfinished (branch `wip/m3-record-v2`)** |
 | m4 verifier (v1 + v2 checks) | done |
 | m5 backend | done, plus Phase C fixes |
 | m6 review app | done, plus Phase C fixes |
