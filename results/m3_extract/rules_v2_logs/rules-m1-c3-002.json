@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-c3-002",
+  "source_transcript_id": "m1-c3-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "erythromycin",
+      "match_type": "variant",
+      "form": "ಎರಿಥ್ರೋಮಿಸಿನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "cross_turn",
+      "item": "erythromycin",
+      "polarity": "negative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-GIVE",
+      "negated": true
+    }
+  ]
+}

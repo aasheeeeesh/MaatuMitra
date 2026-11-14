@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-002",
+  "source_transcript_id": "m1-e4-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "levofloxacin",
+      "match_type": "exact",
+      "form": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "erythromycin",
+      "match_type": "exact",
+      "form": "erythromycin",
+      "char_start": 80
+    },
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "exact",
+      "form": "salbutamol",
+      "char_start": 135
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

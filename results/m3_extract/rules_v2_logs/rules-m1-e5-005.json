@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-005",
+  "source_transcript_id": "m1-e5-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "metronidazole",
+      "match_type": "exact",
+      "form": "ಮೆಟ್ರೋನಿಡಜೋಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "zinc",
+      "char_start": 70
+    },
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "zinc",
+      "char_start": 89
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "zinc"
+    }
+  ]
+}

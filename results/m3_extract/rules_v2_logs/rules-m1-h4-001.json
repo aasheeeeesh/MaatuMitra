@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-h4-001",
+  "source_transcript_id": "m1-h4-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefuroxime",
+      "match_type": "exact",
+      "form": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್",
+      "char_start": 20
+    },
+    {
+      "rule": "cross_turn",
+      "item": "cough",
+      "polarity": "affirmative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-IMPROVE-N-DAYS",
+      "negated": false
+    }
+  ]
+}

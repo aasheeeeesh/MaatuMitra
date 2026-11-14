@@ -1,0 +1,78 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-i2-000",
+  "patient_ref": "pt-m1-i2-000",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-i2-000",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "diclofenac",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 2,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "diclofenac ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 0,
+        "char_end": 49,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 16,
+          "char_end": 22,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 16,
+          "char_end": 22,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 50,
+          "char_end": 62,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "finish all tablets",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಎಲ್ಲ ಮಾತ್ರೆ ಮುಗಿಸಿ",
+        "char_start": 103,
+        "char_end": 121,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "pharmacist"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

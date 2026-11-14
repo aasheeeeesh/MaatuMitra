@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-a3-003",
+  "source_transcript_id": "m1-a3-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ಐಬ್ಯುಪ್ರೋಫೆನ್",
+      "char_start": 63
+    },
+    {
+      "rule": "cross_turn",
+      "item": "vomiting",
+      "polarity": "affirmative"
+    }
+  ]
+}

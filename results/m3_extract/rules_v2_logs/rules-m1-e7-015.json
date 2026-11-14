@@ -1,0 +1,25 @@
+{
+  "record_id": "rules-m1-e7-015",
+  "source_transcript_id": "m1-e7-015",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "variant",
+      "form": "oral rehydration salts",
+      "char_start": 20
+    },
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "zinc",
+      "char_start": 56
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-DRINK-HOSPITAL",
+      "negated": false
+    }
+  ]
+}

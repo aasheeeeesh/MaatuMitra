@@ -1,0 +1,106 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-i5-003",
+  "patient_ref": "pt-m1-i5-003",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-i5-003",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಬಂದಿದೆ",
+        "char_start": 8,
+        "char_end": 19,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 2.5,
+      "dose_unit": "ml",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಸಿರಪ್ ಎರಡೂವರೆ ಎಂ.ಎಲ್",
+        "char_start": 39,
+        "char_end": 72,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "syrup",
+      "as_needed": true,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "asha",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಸಿರಪ್",
+          "char_start": 52,
+          "char_end": 57,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಸಿರಪ್",
+          "char_start": 52,
+          "char_end": 57,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "as_needed": {
+          "span_text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 21,
+          "char_end": 38,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕೊಡಿ",
+          "char_start": 73,
+          "char_end": 77,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "only if there is fever",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದ್ದರೆ ಮಾತ್ರ",
+        "char_start": 21,
+        "char_end": 38,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "asha"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": {
+    "band": "child",
+    "evidence": {
+      "span_text": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "audio_start": null,
+      "audio_end": null
+    }
+  },
+  "weight_kg": null
+}

@@ -1,0 +1,16 @@
+{
+  "record_id": "rules-m1-b4-003",
+  "source_transcript_id": "m1-b4-003",
+  "events": [
+    {
+      "rule": "cross_turn",
+      "item": "tiredness",
+      "polarity": "affirmative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "diarrhoea",
+      "polarity": "negative"
+    }
+  ]
+}

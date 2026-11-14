@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-008",
+  "source_transcript_id": "m1-e4-008",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "diclofenac",
+      "match_type": "exact",
+      "form": "ಡೈಕ್ಲೋಫೆನಾಕ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "prednisolone",
+      "match_type": "exact",
+      "form": "ಪ್ರೆಡ್ನಿಸೋಲೋನ್",
+      "char_start": 78
+    },
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "ಜಿಂಕ್",
+      "char_start": 132
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-007",
+  "source_transcript_id": "m1-e5-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefuroxime",
+      "match_type": "exact",
+      "form": "cefuroxime",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cotrimoxazole",
+      "match_type": "exact",
+      "form": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್",
+      "char_start": 70
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cotrimoxazole",
+      "match_type": "exact",
+      "form": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್",
+      "char_start": 100
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "cotrimoxazole"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g7-001",
+  "source_transcript_id": "m1-g7-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ceftriaxone",
+      "match_type": "exact",
+      "form": "ceftriaxone",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 68
+    }
+  ]
+}

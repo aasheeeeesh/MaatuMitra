@@ -1,0 +1,89 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e5-001",
+  "patient_ref": "pt-m1-e5-001",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಸಾರಿ ಮೂರು ದಿನ",
+        "char_start": 0,
+        "char_end": 51,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 18,
+          "char_end": 24,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 18,
+          "char_end": 24,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 52,
+          "char_end": 64,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "iron-folic acid",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಐರನ್ ಫೋಲಿಕ್ ಆಸಿಡ್ ಅಲ್ಲ",
+        "char_start": 102,
+        "char_end": 124,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "unknown",
+      "speaker": "pharmacist",
+      "field_evidence": {}
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

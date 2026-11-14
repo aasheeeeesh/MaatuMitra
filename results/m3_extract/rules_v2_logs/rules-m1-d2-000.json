@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-d2-000",
+  "source_transcript_id": "m1-d2-000",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "variant",
+      "form": "ಸೆಫಡ್ರೋಕ್ಸಿಲ್",
+      "char_start": 37
+    }
+  ]
+}

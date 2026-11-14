@@ -1,0 +1,104 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-g5-013",
+  "patient_ref": "pt-m1-g5-013",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g5-013",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefadroxil",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "cefadroxil 500 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ",
+        "char_start": 7,
+        "char_end": 50,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "Tablet",
+          "char_start": 0,
+          "char_end": 6,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "Tablet",
+          "char_start": 0,
+          "char_end": 6,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "cefadroxil 500 mg ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿನ",
+          "char_start": 7,
+          "char_end": 50,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "ibuprofen",
+      "dose_value": 200,
+      "dose_unit": "mg",
+      "frequency_per_day": 3,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ibuprofen ೨೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+        "char_start": 52,
+        "char_end": 86,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": true,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "as_needed": {
+          "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 94,
+          "char_end": 112,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ibuprofen ೨೦೦ mg ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 52,
+          "char_end": 86,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

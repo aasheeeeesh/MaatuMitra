@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-012",
+  "source_transcript_id": "m1-e4-012",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "exact",
+      "form": "ಒಂಡಾನ್ಸೆಟ್ರಾನ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "exact",
+      "form": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್",
+      "char_start": 79
+    },
+    {
+      "rule": "drug_match",
+      "drug": "doxycycline",
+      "match_type": "exact",
+      "form": "ಡಾಕ್ಸಿಸೈಕ್ಲಿನ್",
+      "char_start": 135
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

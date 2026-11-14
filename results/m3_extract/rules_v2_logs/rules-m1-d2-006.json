@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-d2-006",
+  "source_transcript_id": "m1-d2-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cephalexin",
+      "match_type": "exact",
+      "form": "ಸೆಫಲೆಕ್ಸಿನ್",
+      "char_start": 37
+    }
+  ]
+}

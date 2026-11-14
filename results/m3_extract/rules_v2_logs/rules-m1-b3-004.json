@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-b3-004",
+  "source_transcript_id": "m1-b3-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 6
+    },
+    {
+      "rule": "cross_turn",
+      "item": "clarithromycin",
+      "polarity": "negative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "diarrhoea",
+      "polarity": "negative"
+    }
+  ]
+}

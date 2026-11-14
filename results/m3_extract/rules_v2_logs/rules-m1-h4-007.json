@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-h4-007",
+  "source_transcript_id": "m1-h4-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "diclofenac",
+      "match_type": "exact",
+      "form": "ಡೈಕ್ಲೋಫೆನಾಕ್",
+      "char_start": 19
+    },
+    {
+      "rule": "cross_turn",
+      "item": "cold",
+      "polarity": "affirmative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-IMPROVE-N-DAYS",
+      "negated": false
+    }
+  ]
+}

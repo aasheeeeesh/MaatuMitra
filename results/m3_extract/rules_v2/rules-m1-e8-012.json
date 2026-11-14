@@ -1,0 +1,136 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e8-012",
+  "patient_ref": "pt-m1-e8-012",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e8-012",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": true,
+      "evidence": {
+        "span_text": "ವಾಂತಿ",
+        "char_start": 8,
+        "char_end": 13,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 20,
+        "char_end": 28,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "ors",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ors",
+        "char_start": 30,
+        "char_end": 33,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಕುಡಿಸಿ",
+          "char_start": 48,
+          "char_end": 54,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕುಡಿಸಿ",
+          "char_start": 48,
+          "char_end": 54,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 10,
+      "dose_unit": "ml",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "paracetamol ಸಿರಪ್ ಹತ್ತು ಎಂ.ಎಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 56,
+        "char_end": 113,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "syrup",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಸಿರಪ್",
+          "char_start": 68,
+          "char_end": 73,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಸಿರಪ್",
+          "char_start": 68,
+          "char_end": 73,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕೊಡಿ",
+          "char_start": 114,
+          "char_end": 118,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": {
+    "band": "child",
+    "evidence": {
+      "span_text": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "audio_start": null,
+      "audio_end": null
+    }
+  },
+  "weight_kg": null
+}

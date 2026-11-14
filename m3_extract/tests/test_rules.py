@@ -10,7 +10,7 @@ from m3_extract.tests._helpers import CTX, FIX, fixture_pairs, load_json, make_t
 
 
 def run(text, lex):
-    rec, log = extract(make_transcript(text), CTX, lexicon=lex)
+    rec, log = extract(make_transcript(text), CTX, lexicon=lex, schema="record.v1")
     assert validate_doc("record.v1", rec) == []
     assert check_evidence(rec, text) == []
     return rec, log
@@ -20,7 +20,7 @@ def run(text, lex):
 def test_fixture_records_valid_and_no_critical_or_major_errors(pair, fx_lexicon):
     gold, tr = pair
     ctx = {k: gold["gold_record"][k] for k in ("patient_ref", "encounter_type")}
-    rec, _ = extract(tr, ctx, lexicon=fx_lexicon)
+    rec, _ = extract(tr, ctx, lexicon=fx_lexicon, schema="record.v1")
     assert validate_doc("record.v1", rec) == []
     assert check_evidence(rec, tr["text"]) == []
     errs = [r for r in score_record(rec, gold) if r.code and r.severity in ("critical", "major")]
@@ -126,6 +126,7 @@ def test_asr_fixture_keeps_audio_times_and_faithful_value(fx_lexicon):
         tr,
         {"patient_ref": "pt-fx-0003", "encounter_type": "pharmacist_dispensing"},
         lexicon=fx_lexicon,
+        schema="record.v1",
     )
     (m,) = rec["medications"]
     assert m["dose_value"] == 50  # faithful to what the ASR wrote (the error is upstream)

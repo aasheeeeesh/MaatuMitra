@@ -1,0 +1,63 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-b3-002",
+  "patient_ref": "pt-m1-b3-002",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b3-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು",
+        "char_start": 46,
+        "char_end": 52,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "cefuroxime",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸೆಫ್ಯುರೋಕ್ಸಿಮ್",
+        "char_start": 6,
+        "char_end": 20,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "already_taken",
+      "speaker": "nurse",
+      "field_evidence": {
+        "status": {
+          "span_text": "ಹೌದು",
+          "char_start": 40,
+          "char_end": 44,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

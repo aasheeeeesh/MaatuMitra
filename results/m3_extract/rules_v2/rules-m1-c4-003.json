@@ -1,0 +1,78 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-c4-003",
+  "patient_ref": "pt-m1-c4-003",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-c4-003",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "amoxicillin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "Amoxicillin 250 mg ಕ್ಯಾಪ್ಸೂಲ್ ತೆಗೆದುಕೊಳ್ಳದೆ",
+        "char_start": 33,
+        "char_end": 76,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "capsule",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "stopped_early",
+      "speaker": "patient",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 52,
+          "char_end": 62,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 52,
+          "char_end": 62,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ",
+          "char_start": 63,
+          "char_end": 83,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not share leftover tablets",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳ ಕೂಡದು",
+        "char_start": 85,
+        "char_end": 112,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "nurse"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

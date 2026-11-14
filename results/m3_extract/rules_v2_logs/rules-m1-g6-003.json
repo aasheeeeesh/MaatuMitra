@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-003",
+  "source_transcript_id": "m1-g6-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "metronidazole",
+      "match_type": "exact",
+      "form": "metronidazole",
+      "char_start": 55
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "exact",
+      "form": "cetirizine",
+      "char_start": 121
+    }
+  ]
+}

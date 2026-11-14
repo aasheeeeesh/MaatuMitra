@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i1-006",
+  "source_transcript_id": "m1-i1-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "levofloxacin",
+      "match_type": "variant",
+      "form": "ಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್",
+      "char_start": 0
+    }
+  ]
+}

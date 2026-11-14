@@ -1,0 +1,78 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-c4-004",
+  "patient_ref": "pt-m1-c4-004",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-c4-004",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "levofloxacin",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಲೆವೊಫ್ಲೋಕ್ಸಾಸಿನ್ 500 mg ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳದೆ",
+        "char_start": 33,
+        "char_end": 77,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "stopped_early",
+      "speaker": "patient",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 57,
+          "char_end": 63,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 57,
+          "char_end": 63,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳದೆ ಬಿಟ್ಟೆ",
+          "char_start": 64,
+          "char_end": 84,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not share leftover tablets",
+      "negated": true,
+      "evidence": {
+        "span_text": "ಉಳಿದ ಮಾತ್ರೆ ಹಂಚಿಕೊಳ್ಳಕೂಡದು",
+        "char_start": 86,
+        "char_end": 112,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "nurse"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-b3-003",
+  "source_transcript_id": "m1-b3-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin",
+      "match_type": "variant",
+      "form": "ಅಮಾಕ್ಸಿ",
+      "char_start": 6
+    },
+    {
+      "rule": "cross_turn",
+      "item": "amoxicillin",
+      "polarity": "negative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "vomiting",
+      "polarity": "affirmative"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-a4-003",
+  "patient_ref": "pt-m1-a4-003",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-a4-003",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ",
+        "char_start": 35,
+        "char_end": 39,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "diarrhoea",
+      "present": false,
+      "evidence": {
+        "span_text": "ಅತಿಸಾರ",
+        "char_start": 61,
+        "char_end": 67,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [
+    {
+      "text": "give the child enough water to drink",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಮಗುವಿಗೆ ತಕ್ಕಷ್ಟು ನೀರು ಕುಡಿಸಿ",
+        "char_start": 82,
+        "char_end": 110,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "asha"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": {
+    "band": "child",
+    "evidence": {
+      "span_text": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "audio_start": null,
+      "audio_end": null
+    }
+  },
+  "weight_kg": null
+}

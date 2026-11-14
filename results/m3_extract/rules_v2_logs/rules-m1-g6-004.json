@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-004",
+  "source_transcript_id": "m1-g6-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clindamycin",
+      "match_type": "exact",
+      "form": "clindamycin",
+      "char_start": 58
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 117
+    }
+  ]
+}

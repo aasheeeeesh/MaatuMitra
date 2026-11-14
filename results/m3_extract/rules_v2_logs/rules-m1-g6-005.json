@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-005",
+  "source_transcript_id": "m1-g6-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "erythromycin",
+      "match_type": "exact",
+      "form": "erythromycin",
+      "char_start": 62
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "exact",
+      "form": "cetirizine",
+      "char_start": 130
+    }
+  ]
+}

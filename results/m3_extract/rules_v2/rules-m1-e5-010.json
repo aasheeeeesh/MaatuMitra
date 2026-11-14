@@ -1,0 +1,89 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e5-010",
+  "patient_ref": "pt-m1-e5-010",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-010",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "doxycycline",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಡೊಕ್ಸಿಸೈಕ್ಲಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 0,
+        "char_end": 57,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "capsule",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 20,
+          "char_end": 30,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 20,
+          "char_end": 30,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 58,
+          "char_end": 70,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "azithromycin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಅಜಿತ್ರೋಮೈಸಿನ್ ಅಲ್ಲ",
+        "char_start": 104,
+        "char_end": 122,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "unknown",
+      "speaker": "pharmacist",
+      "field_evidence": {}
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

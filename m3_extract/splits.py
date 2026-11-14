@@ -17,6 +17,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SPLITS = ROOT / "data" / "splits"
 GOLD_DIR = ROOT / "data" / "gold"
+GOLD_V2_DIR = ROOT / "data" / "gold_v2"
 GOLD_TRANSCRIPTS = ROOT / "data" / "transcripts" / "gold"
 
 # Fixed BEFORE any rule was written (2026-11-10): one template id per category, chosen with
@@ -108,6 +109,11 @@ def load_gold(cid: str, gold_dir: Path = GOLD_DIR) -> dict[str, Any]:
     return _load(gold_dir / f"{cid}.json")
 
 
+def load_gold_v2(cid: str) -> dict[str, Any]:
+    """gold.v2 (same guard: a TEST id is refused before any file is opened)."""
+    return load_gold(cid, GOLD_V2_DIR)
+
+
 def load_transcript(path: Path) -> dict[str, Any]:
     assert_allowed(path.stem)  # refuse BEFORE opening the file
     doc = _load(path)
@@ -124,4 +130,7 @@ def encounter_context(gold: dict[str, Any]) -> dict[str, str]:
     """patient_ref and encounter_type are encounter METADATA (chosen in the app, not spoken).
     Only these two fields are taken from the gold file; they are not scored."""
     gr = gold["gold_record"]
-    return {"patient_ref": gr["patient_ref"], "encounter_type": gr["encounter_type"]}
+    ctx = {"patient_ref": gr["patient_ref"], "encounter_type": gr["encounter_type"]}
+    if "turns" in gold:  # speaker per transcript line: the gold turn roles (oracle diarisation)
+        ctx["turn_roles"] = [t["speaker_role"] for t in gold["turns"]]
+    return ctx

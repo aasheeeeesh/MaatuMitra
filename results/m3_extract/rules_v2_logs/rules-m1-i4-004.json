@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i4-004",
+  "source_transcript_id": "m1-i4-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "metronidazole",
+      "match_type": "exact",
+      "form": "metronidazole",
+      "char_start": 67
+    }
+  ]
+}

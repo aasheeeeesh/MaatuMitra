@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-c4-002",
+  "source_transcript_id": "m1-c4-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-SHARE",
+      "negated": true
+    }
+  ]
+}

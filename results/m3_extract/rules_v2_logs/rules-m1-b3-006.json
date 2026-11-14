@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-b3-006",
+  "source_transcript_id": "m1-b3-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin-clavulanate",
+      "match_type": "exact",
+      "form": "amoxicillin clavulanate",
+      "char_start": 6
+    },
+    {
+      "rule": "cross_turn",
+      "item": "amoxicillin-clavulanate",
+      "polarity": "negative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "vomiting",
+      "polarity": "affirmative"
+    }
+  ]
+}

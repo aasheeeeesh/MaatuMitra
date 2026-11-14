@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-c4-003",
+  "source_transcript_id": "m1-c4-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin",
+      "match_type": "exact",
+      "form": "amoxicillin",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-SHARE",
+      "negated": true
+    }
+  ]
+}

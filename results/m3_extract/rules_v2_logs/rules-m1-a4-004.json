@@ -1,0 +1,16 @@
+{
+  "record_id": "rules-m1-a4-004",
+  "source_transcript_id": "m1-a4-004",
+  "events": [
+    {
+      "rule": "cross_turn",
+      "item": "cough",
+      "polarity": "negative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-WATER",
+      "negated": false
+    }
+  ]
+}

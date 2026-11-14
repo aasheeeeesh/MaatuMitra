@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-h4-002",
+  "source_transcript_id": "m1-h4-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clindamycin",
+      "match_type": "exact",
+      "form": "ಕ್ಲಿಂಡಾಮೈಸಿನ್",
+      "char_start": 22
+    },
+    {
+      "rule": "cross_turn",
+      "item": "body ache",
+      "polarity": "affirmative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-IMPROVE-N-DAYS",
+      "negated": false
+    }
+  ]
+}

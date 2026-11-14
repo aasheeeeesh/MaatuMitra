@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-c4-001",
+  "source_transcript_id": "m1-c4-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefuroxime",
+      "match_type": "exact",
+      "form": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-SHARE",
+      "negated": true
+    }
+  ]
+}

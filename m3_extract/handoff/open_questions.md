@@ -1,0 +1,3 @@
+- UNVERIFIED: Kannada words ಒಂದೂವರೆ, ಕೆಜಿ, ಪ್ಯಾಕೆಟ್, ಸಿರಪ್, ಕುಡಿಸು and all verb forms in v2fields.py have no fetched source (Wiktionary 404 on 2026-11-12). Verified by fetch: ಮಗು child, ವರ್ಷ year, ತಿಂಗಳು month, ಶಿಶು infant, ಕುಡಿ drink, ತಿನ್ನು eat.
+- Template g5 says "Tablet X ... ಕ್ಯಾಪ್ಸೂಲ್" and gold.v2 says tablet; should m3 flag a contradiction instead of choosing a form?
+- Should "once every N days" be 1/N per day rather than null?

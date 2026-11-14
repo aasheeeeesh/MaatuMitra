@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i1-005",
+  "source_transcript_id": "m1-i1-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amlodipine",
+      "match_type": "variant",
+      "form": "ಅಮ್ಲೋಡಿಪೈನ್",
+      "char_start": 0
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-f2-006",
+  "patient_ref": "pt-m1-f2-006",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f2-006",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cold",
+      "present": false,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ ಇಲ್ಲ",
+        "char_start": 12,
+        "char_end": 22,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 29,
+        "char_end": 37,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-i2-003",
+  "source_transcript_id": "m1-i2-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "omeprazole",
+      "match_type": "exact",
+      "form": "ಒಮೆಪ್ರಜೋಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-FINISH-ALL",
+      "negated": false
+    }
+  ]
+}

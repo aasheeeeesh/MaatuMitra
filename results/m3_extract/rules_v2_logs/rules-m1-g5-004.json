@@ -1,0 +1,25 @@
+{
+  "record_id": "rules-m1-g5-004",
+  "source_transcript_id": "m1-g5-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ciprofloxacin",
+      "match_type": "exact",
+      "form": "ciprofloxacin",
+      "char_start": 7
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ibuprofen",
+      "char_start": 56
+    },
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "fever",
+      "char_start": 98
+    }
+  ]
+}

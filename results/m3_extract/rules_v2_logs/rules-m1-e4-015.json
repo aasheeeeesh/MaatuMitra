@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-015",
+  "source_transcript_id": "m1-e4-015",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "exact",
+      "form": "cefadroxil",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "prednisolone",
+      "match_type": "exact",
+      "form": "prednisolone",
+      "char_start": 80
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 132
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

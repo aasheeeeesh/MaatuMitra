@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-c3-004",
+  "source_transcript_id": "m1-c3-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cotrimoxazole",
+      "match_type": "variant",
+      "form": "ಕೋಟ್ರೈಮೋಕ್ಸಜೋಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "cross_turn",
+      "item": "cotrimoxazole",
+      "polarity": "negative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-GIVE",
+      "negated": true
+    }
+  ]
+}

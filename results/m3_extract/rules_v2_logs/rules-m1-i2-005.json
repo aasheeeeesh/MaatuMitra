@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-i2-005",
+  "source_transcript_id": "m1-i2-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "variant",
+      "form": "ಸಾಲ್ಬುಟಮಾಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-FINISH-ALL",
+      "negated": false
+    }
+  ]
+}

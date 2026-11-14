@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-b3-000",
+  "source_transcript_id": "m1-b3-000",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 6
+    },
+    {
+      "rule": "cross_turn",
+      "item": "paracetamol",
+      "polarity": "negative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "headache",
+      "polarity": "negative"
+    }
+  ]
+}

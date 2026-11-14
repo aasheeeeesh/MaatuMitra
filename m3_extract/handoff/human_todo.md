@@ -1,0 +1,4 @@
+- [ ] Kannada reviewer: confirm verb lists (PRESCRIBE_VERBS, TAKEN_VERBS, question classes) in m3_extract/v2fields.py and the ಚಮಚ / ಪ್ಯಾಕೆಟ್ / ಒಂದೂವರೆ / ಕೆಜಿ / ಊಟದ ನಂತರ usage (UNVERIFIED, Wiktionary 404 on 2026-11-12).
+- [ ] Decide when `results/m3_extract/rules` (v1) is replaced by `rules_v2`, and switch integration/ (calls extract() expecting v1).
+- [ ] Add dev/test templates that SAY a strength or a weight; gold.v2 has none, so those two fields are unmeasured.
+- [ ] Speaker accuracy on ASR text is unmeasured (needs diarisation from m2).

@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-006",
+  "source_transcript_id": "m1-e6-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "exact",
+      "form": "nitrofurantoin",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "exact",
+      "form": "ondansetron",
+      "char_start": 103
+    }
+  ]
+}

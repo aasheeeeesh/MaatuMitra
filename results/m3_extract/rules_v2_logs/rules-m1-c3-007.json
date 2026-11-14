@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-c3-007",
+  "source_transcript_id": "m1-c3-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin-clavulanate",
+      "match_type": "exact",
+      "form": "ಅಮಾಕ್ಸಿಕ್ಲಾವ್",
+      "char_start": 0
+    },
+    {
+      "rule": "cross_turn",
+      "item": "amoxicillin-clavulanate",
+      "polarity": "negative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-GIVE",
+      "negated": true
+    }
+  ]
+}
