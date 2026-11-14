@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-i5-001",
+  "source_transcript_id": "m1-i5-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 39
+    },
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "fever",
+      "char_start": 21
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-ONLY-IF-FEVER",
+      "negated": false
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e4-000",
+  "patient_ref": "pt-m1-e4-000",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-000",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "clindamycin",
+      "dose_value": 1,
+      "dose_unit": "capsule",
+      "frequency_per_day": 3,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಕ್ಲಿಂಡಾಮೈಸಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 24,
+        "char_end": 80,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "capsule",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 43,
+          "char_end": 53,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 43,
+          "char_end": 53,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕ್ಲಿಂಡಾಮೈಸಿನ್ ಒಂದು ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 24,
+          "char_end": 80,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "salbutamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 82,
+        "char_end": 134,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 101,
+          "char_end": 107,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 101,
+          "char_end": 107,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 82,
+          "char_end": 134,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "amoxicillin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 3,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ 250 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 136,
+        "char_end": 194,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "capsule",
+      "as_needed": null,
+      "food_timing": "after_food",
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 157,
+          "char_end": 167,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಕ್ಯಾಪ್ಸೂಲ್",
+          "char_start": 157,
+          "char_end": 167,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "food_timing": {
+          "span_text": "ಊಟದ ನಂತರ",
+          "char_start": 196,
+          "char_end": 204,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಅಮಾಕ್ಸಿಸಿಲಿನ್ 250 mg ಕ್ಯಾಪ್ಸೂಲ್ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 136,
+          "char_end": 194,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 196,
+        "char_end": 204,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "pharmacist"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

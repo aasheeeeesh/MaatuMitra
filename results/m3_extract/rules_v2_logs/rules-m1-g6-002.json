@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-002",
+  "source_transcript_id": "m1-g6-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "exact",
+      "form": "nitrofurantoin",
+      "char_start": 64
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cetirizine",
+      "match_type": "exact",
+      "form": "cetirizine",
+      "char_start": 128
+    }
+  ]
+}

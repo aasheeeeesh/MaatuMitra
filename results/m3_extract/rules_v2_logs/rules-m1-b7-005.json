@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-b7-005",
+  "source_transcript_id": "m1-b7-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cotrimoxazole",
+      "match_type": "exact",
+      "form": "ಕೊಟ್ರೈಮಾಕ್ಸಜೋಲ್",
+      "char_start": 33
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-ASK-DOCTOR-SYRUP",
+      "negated": false
+    }
+  ]
+}

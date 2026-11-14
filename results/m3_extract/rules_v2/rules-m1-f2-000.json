@@ -1,0 +1,41 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-f2-000",
+  "patient_ref": "pt-m1-f2-000",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f2-000",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cough",
+      "present": false,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು ಇಲ್ಲ",
+        "char_start": 12,
+        "char_end": 23,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 30,
+        "char_end": 38,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

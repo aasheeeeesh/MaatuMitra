@@ -1,0 +1,101 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-d1-007",
+  "patient_ref": "pt-m1-d1-007",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-d1-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cold",
+      "present": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ",
+        "char_start": 0,
+        "char_end": 5,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು",
+        "char_start": 12,
+        "char_end": 18,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 94,
+        "char_end": 146,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 113,
+          "char_end": 119,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 113,
+          "char_end": 119,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 147,
+          "char_end": 159,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "do not take antibiotics for a cold",
+      "negated": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿಗೆ antibiotic ತೆಗೆದುಕೊಳ್ಳಬಾರದು",
+        "char_start": 57,
+        "char_end": 92,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "doctor"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

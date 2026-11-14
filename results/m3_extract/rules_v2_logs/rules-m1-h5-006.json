@@ -1,0 +1,27 @@
+{
+  "record_id": "rules-m1-h5-006",
+  "source_transcript_id": "m1-h5-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "exact",
+      "form": "ಓ ಆರ್ ಎಸ್",
+      "char_start": 24
+    },
+    {
+      "rule": "coordination",
+      "item": "vomiting"
+    },
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "vomiting",
+      "char_start": 49
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-VOMIT-STOP",
+      "negated": false
+    }
+  ]
+}

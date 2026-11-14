@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-h4-003",
+  "source_transcript_id": "m1-h4-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "metronidazole",
+      "match_type": "exact",
+      "form": "metronidazole",
+      "char_start": 21
+    },
+    {
+      "rule": "cross_turn",
+      "item": "headache",
+      "polarity": "affirmative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-IMPROVE-N-DAYS",
+      "negated": false
+    }
+  ]
+}

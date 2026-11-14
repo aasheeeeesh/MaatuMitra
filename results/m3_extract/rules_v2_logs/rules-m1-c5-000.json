@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-c5-000",
+  "source_transcript_id": "m1-c5-000",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "exact",
+      "form": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್",
+      "char_start": 29
+    },
+    {
+      "rule": "cross_turn",
+      "item": "cefadroxil",
+      "polarity": "negative"
+    }
+  ]
+}

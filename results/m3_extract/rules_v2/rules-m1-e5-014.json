@@ -1,0 +1,89 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e5-014",
+  "patient_ref": "pt-m1-e5-014",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-014",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "prednisolone",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ರೆಡ್ನಿಸೋಲೋನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+        "char_start": 0,
+        "char_end": 52,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 20,
+          "char_end": 26,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 20,
+          "char_end": 26,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 53,
+          "char_end": 65,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "clindamycin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "clindamycin ಅಲ್ಲ",
+        "char_start": 97,
+        "char_end": 113,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "unknown",
+      "speaker": "pharmacist",
+      "field_evidence": {}
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

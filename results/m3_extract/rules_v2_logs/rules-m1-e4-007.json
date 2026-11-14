@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-007",
+  "source_transcript_id": "m1-e4-007",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "zinc",
+      "match_type": "exact",
+      "form": "zinc",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "diclofenac",
+      "match_type": "exact",
+      "form": "ಡೈಕ್ಲೋಫೆನಾಕ್",
+      "char_start": 74
+    },
+    {
+      "rule": "drug_match",
+      "drug": "nitrofurantoin",
+      "match_type": "exact",
+      "form": "nitrofurantoin",
+      "char_start": 127
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

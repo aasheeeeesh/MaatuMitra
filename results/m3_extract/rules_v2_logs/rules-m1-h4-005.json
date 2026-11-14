@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-h4-005",
+  "source_transcript_id": "m1-h4-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "amoxicillin",
+      "match_type": "variant",
+      "form": "ಅಮಾಕ್ಸಿ",
+      "char_start": 21
+    },
+    {
+      "rule": "cross_turn",
+      "item": "headache",
+      "polarity": "affirmative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "FU-IMPROVE-N-DAYS",
+      "negated": false
+    }
+  ]
+}

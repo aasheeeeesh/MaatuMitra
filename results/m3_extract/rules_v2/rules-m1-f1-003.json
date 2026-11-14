@@ -1,0 +1,41 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-f1-003",
+  "patient_ref": "pt-m1-f1-003",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f1-003",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "headache",
+      "present": false,
+      "evidence": {
+        "span_text": "ತಲೆನೋವು ಇಲ್ಲಾ",
+        "char_start": 34,
+        "char_end": 47,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "vomiting",
+      "present": false,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ಆಗಿಲ್ಲ",
+        "char_start": 54,
+        "char_end": 66,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

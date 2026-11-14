@@ -1,0 +1,111 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e6-005",
+  "patient_ref": "pt-m1-e6-005",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e6-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "zinc",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ",
+        "char_start": 0,
+        "char_end": 35,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 11,
+          "char_end": 17,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 11,
+          "char_end": 17,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 42,
+          "char_end": 54,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "cefadroxil",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 88,
+        "char_end": 143,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 110,
+          "char_end": 116,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 110,
+          "char_end": 116,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 148,
+          "char_end": 160,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

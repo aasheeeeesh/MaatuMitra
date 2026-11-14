@@ -1,0 +1,111 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e6-010",
+  "patient_ref": "pt-m1-e6-010",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e6-010",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "ondansetron",
+      "dose_value": 4,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ",
+        "char_start": 0,
+        "char_end": 44,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 20,
+          "char_end": 26,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 20,
+          "char_end": 26,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 51,
+          "char_end": 63,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "salbutamol",
+      "dose_value": 4,
+      "dose_unit": "mg",
+      "frequency_per_day": 3,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್ ೪ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 97,
+        "char_end": 148,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 116,
+          "char_end": 122,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 116,
+          "char_end": 122,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 153,
+          "char_end": 165,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

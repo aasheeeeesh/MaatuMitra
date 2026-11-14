@@ -1,0 +1,177 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e4-008",
+  "patient_ref": "pt-m1-e4-008",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-008",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "diclofenac",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 2,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಡೈಕ್ಲೋಫೆನಾಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ",
+        "char_start": 24,
+        "char_end": 76,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 42,
+          "char_end": 48,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 42,
+          "char_end": 48,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಡೈಕ್ಲೋಫೆನಾಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಮೂರು ದಿವಸ",
+          "char_start": 24,
+          "char_end": 76,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "prednisolone",
+      "dose_value": 5,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ರೆಡ್ನಿಸೋಲೋನ್ 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 78,
+        "char_end": 130,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 98,
+          "char_end": 104,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 98,
+          "char_end": 104,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಪ್ರೆಡ್ನಿಸೋಲೋನ್ 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 78,
+          "char_end": 130,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "zinc",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 14,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+        "char_start": 132,
+        "char_end": 181,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": "after_food",
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 143,
+          "char_end": 149,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 143,
+          "char_end": 149,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "food_timing": {
+          "span_text": "ಊಟದ ನಂತರ",
+          "char_start": 183,
+          "char_end": 191,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಜಿಂಕ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಹದಿನಾಲ್ಕು ದಿನ",
+          "char_start": 132,
+          "char_end": 181,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 183,
+        "char_end": 191,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "pharmacist"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

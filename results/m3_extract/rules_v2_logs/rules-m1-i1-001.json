@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i1-001",
+  "source_transcript_id": "m1-i1-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ಐಬ್ಯುಪ್ರೋಫೆನ್",
+      "char_start": 0
+    }
+  ]
+}

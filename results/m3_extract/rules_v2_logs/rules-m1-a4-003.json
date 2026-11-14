@@ -1,0 +1,16 @@
+{
+  "record_id": "rules-m1-a4-003",
+  "source_transcript_id": "m1-a4-003",
+  "events": [
+    {
+      "rule": "cross_turn",
+      "item": "diarrhoea",
+      "polarity": "negative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-WATER",
+      "negated": false
+    }
+  ]
+}

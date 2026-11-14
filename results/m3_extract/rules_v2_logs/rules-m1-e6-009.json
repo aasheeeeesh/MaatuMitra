@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-009",
+  "source_transcript_id": "m1-e6-009",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "dexamethasone",
+      "match_type": "exact",
+      "form": "ಡೆಕ್ಸಾಮೆಥಾಸೋನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 97
+    }
+  ]
+}

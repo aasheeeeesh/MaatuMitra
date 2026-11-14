@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i3-005",
+  "source_transcript_id": "m1-i3-005",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "doxycycline",
+      "match_type": "exact",
+      "form": "ಡಾಕ್ಸಿಸೈಕ್ಲಿನ್",
+      "char_start": 29
+    }
+  ]
+}

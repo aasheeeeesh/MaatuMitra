@@ -1,0 +1,52 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-f4-005",
+  "patient_ref": "pt-m1-f4-005",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f4-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 28,
+        "char_end": 36,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "headache",
+      "present": false,
+      "evidence": {
+        "span_text": "ತಲೆನೋವು ಇಲ್ಲ",
+        "char_start": 45,
+        "char_end": 57,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "vomiting",
+      "present": false,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ಇಲ್ಲ",
+        "char_start": 66,
+        "char_end": 76,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

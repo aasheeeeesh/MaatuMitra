@@ -1,0 +1,118 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-g5-015",
+  "patient_ref": "pt-m1-g5-015",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g5-015",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefadroxil",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "cefadroxil ೫೦೦ mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ",
+        "char_start": 7,
+        "char_end": 51,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "Tablet",
+          "char_start": 0,
+          "char_end": 6,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "Tablet",
+          "char_start": 0,
+          "char_end": 6,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "cefadroxil ೫೦೦ mg ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿವಸ",
+          "char_start": 7,
+          "char_end": 51,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+        "char_start": 53,
+        "char_end": 94,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": true,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 70,
+          "char_end": 76,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 70,
+          "char_end": 76,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "as_needed": {
+          "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 102,
+          "char_end": 120,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ",
+          "char_start": 53,
+          "char_end": 94,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

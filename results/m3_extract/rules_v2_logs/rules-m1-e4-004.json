@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-004",
+  "source_transcript_id": "m1-e4-004",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "variant",
+      "form": "ಸಲ್ಬುಟಮೋಲ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "omeprazole",
+      "match_type": "exact",
+      "form": "omeprazole",
+      "char_start": 75
+    },
+    {
+      "rule": "drug_match",
+      "drug": "montelukast",
+      "match_type": "exact",
+      "form": "montelukast",
+      "char_start": 136
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

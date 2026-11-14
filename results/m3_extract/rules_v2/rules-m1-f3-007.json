@@ -1,0 +1,41 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-f3-007",
+  "patient_ref": "pt-m1-f3-007",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-f3-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "vomiting",
+      "present": false,
+      "evidence": {
+        "span_text": "ವಾಂತಿ ಇಲ್ಲಾ",
+        "char_start": 11,
+        "char_end": 22,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "cough",
+      "present": true,
+      "evidence": {
+        "span_text": "ಕೆಮ್ಮು ಇದೆ",
+        "char_start": 28,
+        "char_end": 38,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e5-002",
+  "patient_ref": "pt-m1-e5-002",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e5-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefadroxil",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್ 500 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 0,
+        "char_end": 54,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 22,
+          "char_end": 28,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 22,
+          "char_end": 28,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 55,
+          "char_end": 67,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "azithromycin",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "Azithromycin ಅಲ್ಲ",
+        "char_start": 100,
+        "char_end": 117,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "unknown",
+      "speaker": "pharmacist",
+      "field_evidence": {}
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

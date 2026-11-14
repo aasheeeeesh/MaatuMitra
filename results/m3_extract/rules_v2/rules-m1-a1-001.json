@@ -1,0 +1,50 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-a1-001",
+  "patient_ref": "pt-m1-a1-001",
+  "encounter_type": "asha_household_visit",
+  "source_transcript_id": "m1-a1-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 47,
+        "char_end": 55,
+        "audio_start": null,
+        "audio_end": null
+      }
+    },
+    {
+      "name": "chills",
+      "present": false,
+      "evidence": {
+        "span_text": "ಚಳಿ ಇಲ್ಲಾ",
+        "char_start": 57,
+        "char_end": 66,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": {
+    "band": "child",
+    "evidence": {
+      "span_text": "ಮಗುವಿಗೆ",
+      "char_start": 0,
+      "char_end": 7,
+      "audio_start": null,
+      "audio_end": null
+    }
+  },
+  "weight_kg": null
+}

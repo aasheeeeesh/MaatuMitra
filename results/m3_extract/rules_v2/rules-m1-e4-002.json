@@ -1,0 +1,177 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e4-002",
+  "patient_ref": "pt-m1-e4-002",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-002",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "levofloxacin",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 24,
+        "char_end": 78,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 46,
+          "char_end": 52,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 46,
+          "char_end": 52,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಲೇವೋಫ್ಲಾಕ್ಸಾಸಿನ್ ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 24,
+          "char_end": 78,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "erythromycin",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 4,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "Erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 80,
+        "char_end": 133,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 98,
+          "char_end": 104,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 98,
+          "char_end": 104,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "Erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 80,
+          "char_end": 133,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "salbutamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 3,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "salbutamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ",
+        "char_start": 135,
+        "char_end": 183,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": "after_food",
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 151,
+          "char_end": 157,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 151,
+          "char_end": 157,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "food_timing": {
+          "span_text": "ಊಟದ ನಂತರ",
+          "char_start": 185,
+          "char_end": 193,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "salbutamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಮೂರು ಬಾರಿ ಐದು ದಿನ",
+          "char_start": 135,
+          "char_end": 183,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 185,
+        "char_end": 193,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "pharmacist"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

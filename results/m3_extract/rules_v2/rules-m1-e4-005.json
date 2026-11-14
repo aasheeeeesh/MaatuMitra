@@ -1,0 +1,177 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e4-005",
+  "patient_ref": "pt-m1-e4-005",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-005",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "prednisolone",
+      "dose_value": 5,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "prednisolone 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ",
+        "char_start": 24,
+        "char_end": 75,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 42,
+          "char_end": 48,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 42,
+          "char_end": 48,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "prednisolone 5 mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಬಾರಿ ಐದು ದಿವಸ",
+          "char_start": 24,
+          "char_end": 75,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "ciprofloxacin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ciprofloxacin ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿವಸ",
+        "char_start": 77,
+        "char_end": 131,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 98,
+          "char_end": 104,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 98,
+          "char_end": 104,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ciprofloxacin ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಐದು ದಿವಸ",
+          "char_start": 77,
+          "char_end": 131,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 4,
+      "duration_days": 3,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+        "char_start": 133,
+        "char_end": 187,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": "after_food",
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 152,
+          "char_end": 158,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 152,
+          "char_end": 158,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "food_timing": {
+          "span_text": "ಊಟದ ನಂತರ",
+          "char_start": 189,
+          "char_end": 197,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಪ್ಯಾರಾಸಿಟಮಾಲ್ ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ ಮೂರು ದಿನ",
+          "char_start": 133,
+          "char_end": 187,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 189,
+        "char_end": 197,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "pharmacist"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

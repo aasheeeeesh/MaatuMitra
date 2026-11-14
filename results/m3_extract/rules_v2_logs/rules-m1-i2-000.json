@@ -1,0 +1,18 @@
+{
+  "record_id": "rules-m1-i2-000",
+  "source_transcript_id": "m1-i2-000",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "diclofenac",
+      "match_type": "exact",
+      "form": "diclofenac",
+      "char_start": 0
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-FINISH-ALL",
+      "negated": false
+    }
+  ]
+}

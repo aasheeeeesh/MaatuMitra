@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g7-008",
+  "source_transcript_id": "m1-g7-008",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefazolin",
+      "match_type": "variant",
+      "form": "cephazolin",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 67
+    }
+  ]
+}

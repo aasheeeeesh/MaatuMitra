@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-012",
+  "source_transcript_id": "m1-g6-012",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "cefixime",
+      "char_start": 57
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "paracetamol",
+      "char_start": 113
+    }
+  ]
+}

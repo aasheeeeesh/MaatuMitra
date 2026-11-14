@@ -1,0 +1,16 @@
+{
+  "record_id": "rules-m1-b4-002",
+  "source_transcript_id": "m1-b4-002",
+  "events": [
+    {
+      "rule": "cross_turn",
+      "item": "chills",
+      "polarity": "negative"
+    },
+    {
+      "rule": "cross_turn",
+      "item": "body ache",
+      "polarity": "affirmative"
+    }
+  ]
+}

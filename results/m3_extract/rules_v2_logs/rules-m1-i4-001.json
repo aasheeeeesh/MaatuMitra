@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i4-001",
+  "source_transcript_id": "m1-i4-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "metformin",
+      "match_type": "exact",
+      "form": "ಮೆಟ್ಫಾರ್ಮಿನ್",
+      "char_start": 67
+    }
+  ]
+}

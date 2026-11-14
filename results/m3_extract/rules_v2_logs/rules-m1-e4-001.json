@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-001",
+  "source_transcript_id": "m1-e4-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "ಕ್ಲಾರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cephalexin",
+      "match_type": "exact",
+      "form": "cephalexin",
+      "char_start": 80
+    },
+    {
+      "rule": "drug_match",
+      "drug": "omeprazole",
+      "match_type": "exact",
+      "form": "ಒಮೆಪ್ರಜೋಲ್",
+      "char_start": 135
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

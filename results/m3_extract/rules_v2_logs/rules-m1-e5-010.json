@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-010",
+  "source_transcript_id": "m1-e5-010",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "doxycycline",
+      "match_type": "variant",
+      "form": "ಡೊಕ್ಸಿಸೈಕ್ಲಿನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "azithromycin",
+      "match_type": "exact",
+      "form": "ಅಜಿತ್ರೋಮೈಸಿನ್",
+      "char_start": 76
+    },
+    {
+      "rule": "drug_match",
+      "drug": "azithromycin",
+      "match_type": "exact",
+      "form": "ಅಜಿತ್ರೋಮೈಸಿನ್",
+      "char_start": 104
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "azithromycin"
+    }
+  ]
+}

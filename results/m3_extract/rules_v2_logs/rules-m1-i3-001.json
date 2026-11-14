@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i3-001",
+  "source_transcript_id": "m1-i3-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "ಸೆಫಿಕ್ಸಿಮ್",
+      "char_start": 29
+    }
+  ]
+}

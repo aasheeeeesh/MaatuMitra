@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-i3-002",
+  "source_transcript_id": "m1-i3-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "variant",
+      "form": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್",
+      "char_start": 29
+    }
+  ]
+}

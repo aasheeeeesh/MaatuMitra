@@ -1,0 +1,13 @@
+{
+  "record_id": "rules-m1-h6-001",
+  "source_transcript_id": "m1-h6-001",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "erythromycin",
+      "match_type": "exact",
+      "form": "ಎರಿಥ್ರೋಮೈಸಿನ್",
+      "char_start": 0
+    }
+  ]
+}

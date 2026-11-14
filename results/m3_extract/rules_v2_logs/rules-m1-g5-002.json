@@ -1,0 +1,25 @@
+{
+  "record_id": "rules-m1-g5-002",
+  "source_transcript_id": "m1-g5-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "clarithromycin",
+      "match_type": "exact",
+      "form": "clarithromycin",
+      "char_start": 7
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "variant",
+      "form": "acetaminophen",
+      "char_start": 60
+    },
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "fever",
+      "char_start": 111
+    }
+  ]
+}

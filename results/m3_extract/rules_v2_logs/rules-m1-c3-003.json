@@ -1,0 +1,23 @@
+{
+  "record_id": "rules-m1-c3-003",
+  "source_transcript_id": "m1-c3-003",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cephalexin",
+      "match_type": "exact",
+      "form": "ಸೆಫಲೆಕ್ಸಿನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "cross_turn",
+      "item": "cephalexin",
+      "polarity": "negative"
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-LEFTOVER-GIVE",
+      "negated": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "record_id": "rules-m1-g5-006",
+  "source_transcript_id": "m1-g5-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "cefixime",
+      "char_start": 7
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ibuprofen",
+      "char_start": 50
+    },
+    {
+      "rule": "symptom_skipped_conditional",
+      "item": "fever",
+      "char_start": 92
+    }
+  ]
+}

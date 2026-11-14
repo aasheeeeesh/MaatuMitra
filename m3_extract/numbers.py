@@ -29,6 +29,7 @@ NUMBER_WORDS: dict[str, float] = {
     "ಹದಿನಾಲ್ಕು": 14,
     "ಹದಿನೈದು": 15,
     "ಅರ್ಧ": 0.5,
+    "ಒಂದೂವರೆ": 1.5,  # "one and a half"; UNVERIFIED: Wiktionary 404 on 2026-11-12 (review M3-m1)
     "ಎರಡೂವರೆ": 2.5,  # "two and a half" (child syrup dose); UNVERIFIED: not fetched by us
     # UNVERIFIED (see module docstring)
     "ಹನ್ನೊಂದು": 11,

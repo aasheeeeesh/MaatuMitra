@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-010",
+  "source_transcript_id": "m1-e6-010",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ondansetron",
+      "match_type": "variant",
+      "form": "ಒಂಡಾನ್ಸೆಟ್ರೋನ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "exact",
+      "form": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್",
+      "char_start": 97
+    }
+  ]
+}

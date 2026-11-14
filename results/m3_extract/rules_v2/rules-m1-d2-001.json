@@ -1,0 +1,63 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-d2-001",
+  "patient_ref": "pt-m1-d2-001",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-d2-001",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "cold",
+      "present": true,
+      "evidence": {
+        "span_text": "ನೆಗಡಿ ಇದೆ",
+        "char_start": 0,
+        "char_end": 9,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "doxycycline",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಡಾಕ್ಸಿಸೈಕ್ಲಿನ್ ಬೇಡ",
+        "char_start": 37,
+        "char_end": 55,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "advised_against",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "status": {
+          "span_text": "ಬೇಡ",
+          "char_start": 52,
+          "char_end": 55,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

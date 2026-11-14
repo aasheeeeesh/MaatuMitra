@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-e6-011",
+  "source_transcript_id": "m1-e6-011",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefixime",
+      "match_type": "exact",
+      "form": "ಸೆಫಿಕ್ಸಿಮ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "exact",
+      "form": "cefadroxil",
+      "char_start": 95
+    }
+  ]
+}

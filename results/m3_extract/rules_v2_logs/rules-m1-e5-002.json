@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-002",
+  "source_transcript_id": "m1-e5-002",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefadroxil",
+      "match_type": "exact",
+      "form": "ಸೆಫಾಡ್ರಾಕ್ಸಿಲ್",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "azithromycin",
+      "match_type": "exact",
+      "form": "azithromycin",
+      "char_start": 73
+    },
+    {
+      "rule": "drug_match",
+      "drug": "azithromycin",
+      "match_type": "exact",
+      "form": "azithromycin",
+      "char_start": 100
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "azithromycin"
+    }
+  ]
+}

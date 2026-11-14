@@ -1,0 +1,63 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-c5-007",
+  "patient_ref": "pt-m1-c5-007",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-c5-007",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [
+    {
+      "name": "fever",
+      "present": true,
+      "evidence": {
+        "span_text": "ಜ್ವರ ಇದೆ",
+        "char_start": 5,
+        "char_end": 13,
+        "audio_start": null,
+        "audio_end": null
+      }
+    }
+  ],
+  "medications": [
+    {
+      "drug": "doxycycline",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "doxycycline",
+        "char_start": 29,
+        "char_end": 40,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": null,
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": null,
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "patient",
+      "field_evidence": {
+        "status": {
+          "span_text": "ಹೌದು",
+          "char_start": 59,
+          "char_end": 63,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

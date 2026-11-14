@@ -1,0 +1,118 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-g5-008",
+  "patient_ref": "pt-m1-g5-008",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g5-008",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "azithromycin",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "azithromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+        "char_start": 7,
+        "char_end": 57,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 25,
+          "char_end": 31,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 25,
+          "char_end": 31,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "azithromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+          "char_start": 7,
+          "char_end": 57,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 4,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+        "char_start": 59,
+        "char_end": 102,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": true,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 76,
+          "char_end": 82,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 76,
+          "char_end": 82,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "as_needed": {
+          "span_text": "fever ಇದ್ದರೆ ಮಾತ್ರ",
+          "char_start": 110,
+          "char_end": 128,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "paracetamol ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+          "char_start": 59,
+          "char_end": 102,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

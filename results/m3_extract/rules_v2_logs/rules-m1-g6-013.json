@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-013",
+  "source_transcript_id": "m1-g6-013",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cephalexin",
+      "match_type": "exact",
+      "form": "cephalexin",
+      "char_start": 66
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "variant",
+      "form": "paracetmol",
+      "char_start": 133
+    }
+  ]
+}

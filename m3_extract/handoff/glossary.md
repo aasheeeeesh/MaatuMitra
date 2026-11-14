@@ -1,0 +1,4 @@
+- **record.v2**: the newer extraction format with route, strength, formulation, as_needed, food_timing, status, speaker, age band and weight, each with its own evidence span.
+- **Cluster bootstrap (per template)**: re-drawing whole templates at random many times to see how much an error rate changes; used because conversations from one template are near copies.
+- **Oracle diarisation**: using the true speaker of each turn (from the gold file) instead of working it out from audio; it makes the speaker field look better than it would be in real use.
+- **Strength vs dose**: strength is what the product contains (500 mg tablet, 120 mg per 5 ml syrup); dose is how much is given each time (2 tablets, 5 ml).

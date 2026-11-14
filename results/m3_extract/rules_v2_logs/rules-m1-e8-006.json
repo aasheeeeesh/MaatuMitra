@@ -1,0 +1,24 @@
+{
+  "record_id": "rules-m1-e8-006",
+  "source_transcript_id": "m1-e8-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ors",
+      "match_type": "exact",
+      "form": "ಓ ಆರ್ ಎಸ್",
+      "char_start": 30
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "exact",
+      "form": "ಪ್ಯಾರಸಿಟಮಾಲ್",
+      "char_start": 62
+    },
+    {
+      "rule": "advice_skipped_drug_clause",
+      "pattern": "ADV-LITTLE"
+    }
+  ]
+}

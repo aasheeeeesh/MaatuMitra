@@ -42,6 +42,13 @@ def iter_evidence(record: dict[str, Any]) -> Iterator[tuple[str, dict[str, Any]]
     fu = record.get("follow_up")
     if fu is not None:
         yield "follow_up", fu.get("evidence")
+    # record.v2: one span per non-null new field, plus age band and weight
+    for i, med in enumerate(record.get("medications") or []):
+        for key, ev in (med.get("field_evidence") or {}).items():
+            yield f"medications/{i}/field_evidence/{key}", ev
+    for key in ("patient_age_band", "weight_kg"):
+        if record.get(key) is not None:
+            yield key, record[key].get("evidence")
 
 
 def check_evidence(record: dict[str, Any], transcript_text: str) -> list[str]:

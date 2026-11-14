@@ -1,0 +1,32 @@
+{
+  "record_id": "rules-m1-e4-006",
+  "source_transcript_id": "m1-e4-006",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "salbutamol",
+      "match_type": "exact",
+      "form": "ಸಾಲ್ಬ್ಯುಟಮಾಲ್",
+      "char_start": 24
+    },
+    {
+      "rule": "drug_match",
+      "drug": "cefuroxime",
+      "match_type": "exact",
+      "form": "cefuroxime",
+      "char_start": 78
+    },
+    {
+      "rule": "drug_match",
+      "drug": "prednisolone",
+      "match_type": "exact",
+      "form": "prednisolone",
+      "char_start": 131
+    },
+    {
+      "rule": "phrase",
+      "pattern": "ADV-AFTER-FOOD",
+      "negated": false
+    }
+  ]
+}

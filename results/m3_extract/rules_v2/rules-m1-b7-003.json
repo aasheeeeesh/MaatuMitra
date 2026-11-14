@@ -1,0 +1,87 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-b7-003",
+  "patient_ref": "pt-m1-b7-003",
+  "encounter_type": "nurse_consult",
+  "source_transcript_id": "m1-b7-003",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "metronidazole",
+      "dose_value": null,
+      "dose_unit": null,
+      "frequency_per_day": null,
+      "duration_days": null,
+      "negated": true,
+      "evidence": {
+        "span_text": "ಮೆಟ್ರೋನಿಡಜೋಲ್ ಮಾತ್ರೆ ಮಗು ತಿನ್ನುವುದಿಲ್ಲ",
+        "char_start": 33,
+        "char_end": 71,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "not_taken",
+      "speaker": "caregiver",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 47,
+          "char_end": 53,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 47,
+          "char_end": 53,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತಿನ್ನುವುದಿಲ್ಲ",
+          "char_start": 58,
+          "char_end": 71,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "ask the doctor and take a syrup",
+      "negated": false,
+      "evidence": {
+        "span_text": "ವೈದ್ಯರನ್ನು ಕೇಳಿ ಸಿರಪ್ ತೆಗೆದುಕೊಳ್ಳಿ",
+        "char_start": 73,
+        "char_end": 107,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "nurse"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": {
+    "band": "child",
+    "evidence": {
+      "span_text": "ಮಗು",
+      "char_start": 0,
+      "char_end": 3,
+      "audio_start": null,
+      "audio_end": null
+    }
+  },
+  "weight_kg": null
+}

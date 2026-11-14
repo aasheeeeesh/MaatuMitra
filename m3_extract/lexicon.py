@@ -19,7 +19,11 @@ import yaml
 from m3_extract.textnorm import Token, comparison_form, tokenize
 
 LATIN = regex.compile(r"^[a-z]+$")
+DIGITS_ONLY = regex.compile(r"^[0-9]+$")
 MIN_FUZZY_LEN = 6
+AMOXICLAV = "amoxicillin-clavulanate"
+AMOX_FAMILY = {"amoxicillin", AMOXICLAV}
+TABLET_WORDS = {"ಮಾತ್ರೆ", "tablet", "tab"}
 
 
 def levenshtein(a: str, b: str, cap: int = 2) -> int:
@@ -72,6 +76,29 @@ class DrugLexicon:
                 i = hit.end_tok
             else:
                 i += 1
+        return self._numeric_aliases(tokens, out)
+
+    @staticmethod
+    def _numeric_aliases(tokens: list[Token], found: list[DrugMatch]) -> list[DrugMatch]:
+        """A purely numeric alias ("625" = amoxicillin-clavulanate 500+125 mg) is a drug name only
+        in a drug context (clinical review M3-M7): right after an amoxicillin / amoxiclav match it
+        is part of that product ("amox 625" is amoxiclav, "amoxiclav 625 mg" is one drug); alone it
+        needs a tablet word after it; anywhere else (a price, a count) it is no drug."""
+        out: list[DrugMatch] = []
+        for m in found:
+            if not DIGITS_ONLY.match(m.form):
+                out.append(m)
+                continue
+            prev = out[-1] if out else None
+            if prev is not None and prev.end_tok == m.start_tok and prev.drug in AMOX_FAMILY:
+                if prev.drug != AMOXICLAV:
+                    out[-1] = DrugMatch(
+                        m.drug, prev.start_tok, m.end_tok, "variant", prev.form + " " + m.form
+                    )
+                continue
+            nxt = tokens[m.end_tok].norm if m.end_tok < len(tokens) else ""
+            if nxt in TABLET_WORDS:
+                out.append(m)
         return out
 
     def _fuzzy(self, tokens: list[Token], i: int) -> DrugMatch | None:

@@ -1,0 +1,177 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-e4-009",
+  "patient_ref": "pt-m1-e4-009",
+  "encounter_type": "pharmacist_dispensing",
+  "source_transcript_id": "m1-e4-009",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "cefuroxime",
+      "dose_value": 500,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ",
+        "char_start": 24,
+        "char_end": 82,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 49,
+          "char_end": 55,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 49,
+          "char_end": 55,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಸೆಫ್ಯುರಾಕ್ಸಿಮ್ 500 ಎಂ.ಜಿ ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಏಳು ದಿವಸ",
+          "char_start": 24,
+          "char_end": 82,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "erythromycin",
+      "dose_value": 1,
+      "dose_unit": "tablet",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "Erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿವಸ",
+        "char_start": 84,
+        "char_end": 135,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 102,
+          "char_end": 108,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 102,
+          "char_end": 108,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "Erythromycin ಒಂದು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಸಾರಿ ಏಳು ದಿವಸ",
+          "char_start": 84,
+          "char_end": 135,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "clarithromycin",
+      "dose_value": 250,
+      "dose_unit": "mg",
+      "frequency_per_day": 2,
+      "duration_days": 7,
+      "negated": false,
+      "evidence": {
+        "span_text": "ಕ್ಲಾರಿತ್ರೋಮೈಸಿನ್ ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+        "char_start": 137,
+        "char_end": 194,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": "after_food",
+      "status": "prescribed",
+      "speaker": "pharmacist",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 161,
+          "char_end": 167,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 161,
+          "char_end": 167,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "food_timing": {
+          "span_text": "ಊಟದ ನಂತರ",
+          "char_start": 196,
+          "char_end": 204,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕ್ಲಾರಿತ್ರೋಮೈಸಿನ್ ೨೫೦ mg ಮಾತ್ರೆ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಒಂದು ವಾರ",
+          "char_start": 137,
+          "char_end": 194,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [
+    {
+      "text": "take after food",
+      "negated": false,
+      "evidence": {
+        "span_text": "ಊಟದ ನಂತರ",
+        "char_start": 196,
+        "char_end": 204,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "speaker": "pharmacist"
+    }
+  ],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

@@ -1,0 +1,31 @@
+{
+  "record_id": "rules-m1-e5-009",
+  "source_transcript_id": "m1-e5-009",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "ibuprofen",
+      "match_type": "exact",
+      "form": "ibuprofen",
+      "char_start": 0
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ciprofloxacin",
+      "match_type": "exact",
+      "form": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 69
+    },
+    {
+      "rule": "drug_match",
+      "drug": "ciprofloxacin",
+      "match_type": "exact",
+      "form": "ಸಿಪ್ರೋಫ್ಲಾಕ್ಸಾಸಿನ್",
+      "char_start": 102
+    },
+    {
+      "rule": "polarity_conflict",
+      "item": "ciprofloxacin"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "record.v2",
+  "record_id": "rules-m1-g7-014",
+  "patient_ref": "pt-m1-g7-014",
+  "encounter_type": "physician_consult",
+  "source_transcript_id": "m1-g7-014",
+  "extractor": {
+    "name": "m3-rules",
+    "version": "0.2.0+negtable-v2+drugs.csv"
+  },
+  "status": "draft",
+  "symptoms": [],
+  "medications": [
+    {
+      "drug": "ceftriaxone",
+      "dose_value": 2000,
+      "dose_unit": "mg",
+      "frequency_per_day": 1,
+      "duration_days": 5,
+      "negated": false,
+      "evidence": {
+        "span_text": "ceftriaxon 2000 ಎಂ.ಜಿ injection ದಿನಕ್ಕೆ ಒಂದು ಸಾರಿ ಐದು ದಿನ",
+        "char_start": 0,
+        "char_end": 57,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "injection_unspecified",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "injection",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "injection",
+          "char_start": 22,
+          "char_end": 31,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "injection",
+          "char_start": 22,
+          "char_end": 31,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ಕೊಡುತ್ತೇವೆ",
+          "char_start": 58,
+          "char_end": 68,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    },
+    {
+      "drug": "paracetamol",
+      "dose_value": 2,
+      "dose_unit": "tablet",
+      "frequency_per_day": 4,
+      "duration_days": null,
+      "negated": false,
+      "evidence": {
+        "span_text": "Paracetamol ಎರಡು ಮಾತ್ರೆ ದಿನಕ್ಕೆ ನಾಲ್ಕು ಬಾರಿ",
+        "char_start": 70,
+        "char_end": 113,
+        "audio_start": null,
+        "audio_end": null
+      },
+      "route": "oral",
+      "strength_value": null,
+      "strength_unit": null,
+      "formulation": "tablet",
+      "as_needed": null,
+      "food_timing": null,
+      "status": "prescribed",
+      "speaker": "doctor",
+      "field_evidence": {
+        "route": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 87,
+          "char_end": 93,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "formulation": {
+          "span_text": "ಮಾತ್ರೆ",
+          "char_start": 87,
+          "char_end": 93,
+          "audio_start": null,
+          "audio_end": null
+        },
+        "status": {
+          "span_text": "ತೆಗೆದುಕೊಳ್ಳಿ",
+          "char_start": 114,
+          "char_end": 126,
+          "audio_start": null,
+          "audio_end": null
+        }
+      }
+    }
+  ],
+  "advice": [],
+  "follow_up": null,
+  "patient_age_band": null,
+  "weight_kg": null
+}

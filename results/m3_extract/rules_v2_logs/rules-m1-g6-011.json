@@ -1,0 +1,20 @@
+{
+  "record_id": "rules-m1-g6-011",
+  "source_transcript_id": "m1-g6-011",
+  "events": [
+    {
+      "rule": "drug_match",
+      "drug": "cefuroxime",
+      "match_type": "exact",
+      "form": "cefuroxime",
+      "char_start": 53
+    },
+    {
+      "rule": "drug_match",
+      "drug": "paracetamol",
+      "match_type": "variant",
+      "form": "paracetmol",
+      "char_start": 112
+    }
+  ]
+}
